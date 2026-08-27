@@ -27,6 +27,7 @@ function validateDocument(document, label) {
 
 validateDocument(ledger, 'Synthetic JSON fixture');
 validateDocument(YAML.parse(YAML.stringify(ledger)), 'YAML round trip');
+assert(ledger.meta.dataKind === 'synthetic', 'demo.synthetic.json must declare meta.dataKind as synthetic.');
 
 const expectedScenarioIds = new Set([
   'scenario_clean_sale',
@@ -69,8 +70,10 @@ for (const node of ledger.nodes) {
   for (const detail of [...node.checks, ...node.failureSignals, ...node.recoveries]) {
     assert(!allDetailIds.has(detail.id), `Duplicate detail ID: ${detail.id}`);
     allDetailIds.add(detail.id);
+    assert(detail.claimIds.length > 0, `${detail.id} must link at least one evidence claim.`);
     detail.claimIds.forEach((id) => assert(idsByCollection.claims.has(id), `Unknown claim reference ${id} in ${detail.id}`));
   }
+  node.failureSignals.forEach((detail) => assert(detail.actualError, `${detail.id} must exercise an actualError string.`));
   node.scenarioIds.forEach((id) => assert(idsByCollection.scenarios.has(id), `Unknown scenario reference ${id} in ${node.id}`));
   node.claimIds.forEach((id) => assert(idsByCollection.claims.has(id), `Unknown claim reference ${id} in ${node.id}`));
   if (node.ownerAgencyId) assert(idsByCollection.agencies.has(node.ownerAgencyId), `Unknown agency reference ${node.ownerAgencyId} in ${node.id}`);
@@ -78,6 +81,14 @@ for (const node of ledger.nodes) {
 
 for (const scenario of ledger.scenarios) {
   scenario.pathNodeIds.forEach((id) => assert(idsByCollection.nodes.has(id), `Unknown path node ${id} in ${scenario.id}`));
+  for (let index = 0; index < scenario.pathNodeIds.length - 1; index += 1) {
+    const fromNodeId = scenario.pathNodeIds[index];
+    const toNodeId = scenario.pathNodeIds[index + 1];
+    assert(
+      ledger.edges.some((edge) => edge.fromNodeId === fromNodeId && edge.toNodeId === toNodeId && edge.scenarioIds.includes(scenario.id)),
+      `Missing scenario edge ${fromNodeId} → ${toNodeId} in ${scenario.id}`,
+    );
+  }
   assert(ledger.journeys.some((journey) => journey.scenarioId === scenario.id), `Missing journey for ${scenario.id}`);
 }
 for (const claim of ledger.claims) {
@@ -93,11 +104,13 @@ for (const claim of ledger.claims) {
 }
 assert(ledger.claims.some((claim) => claim.contradictsClaimIds.length), 'Fixture must contain a contradiction pair.');
 assert(ledger.sources.every((source) => new URL(source.url).hostname.endsWith('example.invalid')), 'Synthetic sources must use example.invalid URLs.');
+assert(ledger.sources.every((source) => /^\d{4}-\d{2}-\d{2}$/.test(source.accessedAt)), 'Every synthetic source must expose an ISO access date.');
 
 for (const edge of ledger.edges) {
   assert(idsByCollection.nodes.has(edge.fromNodeId), `Unknown fromNodeId in ${edge.id}`);
   assert(idsByCollection.nodes.has(edge.toNodeId), `Unknown toNodeId in ${edge.id}`);
   edge.scenarioIds.forEach((id) => assert(idsByCollection.scenarios.has(id), `Unknown scenario reference ${id} in ${edge.id}`));
+  assert(edge.claimIds.length > 0, `${edge.id} must link at least one evidence claim.`);
   edge.claimIds.forEach((id) => assert(idsByCollection.claims.has(id), `Unknown claim reference ${id} in ${edge.id}`));
 }
 for (const roadblock of ledger.roadblocks) {

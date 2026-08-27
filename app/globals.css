@@ -536,7 +536,8 @@ h1 {
   .chain { flex-direction: column; overflow: visible; margin: 0; padding: 0 0 26px; }
   .chain-item { flex-direction: column; align-items: stretch; }
   .node { width: 100%; min-height: 128px; }
-  .edge { width: 100%; height: 54px; justify-content: center; transform: rotate(90deg); }
+  .edge { width: 100%; height: 54px; justify-content: center; transform: none; }
+  .edge > span { transform: rotate(90deg); }
   .edge small { display: none; }
   .node-detail { margin-left: -8px; margin-right: -8px; border-radius: 20px; }
   .node-detail-header { grid-template-columns: 1fr; gap: 28px; padding: 26px 22px; }

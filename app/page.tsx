@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 
 type Survey = {
-  outcome?: string;
-  systems?: string[];
-  officialJourney?: string;
-  citizenPain?: { text: string; url: string; accessedAt: string } | 'none found';
+  outcome: string;
+  systems: string[];
+  officialJourney: string;
+  sources: Array<{ label: string; url: string; grade: 'B' | 'E'; accessedAt: string }>;
+  citizenPain: { text: string; url: string; accessedAt: string } | 'none found';
 };
 
 type Service = {
@@ -17,13 +18,13 @@ type Service = {
 
 const services: Service[] = [
   { title: 'Electricity name transfer', category: 'Utility account', status: 'Mapped', href: '/bescom' },
-  { title: 'Birth certificate', category: 'Civil record', status: 'Unmapped' },
+  { title: 'Birth certificate', category: 'Civil record', status: 'Unmapped', survey: { outcome: 'Obtain or re-obtain a Bengaluru birth certificate with the needed details.', systems: ['GBA / BBMP Birth & Death Certificate service', 'Online Birth Certificate Request form'], officialJourney: 'An official online request route is published; this survey did not locate a verified end-to-end dependency map.', sources: [{ label: 'Official service directory', url: 'https://site.bbmp.gov.in/citizenservice.html', grade: 'B', accessedAt: '2026-08-28' }], citizenPain: { text: 'A citizen reported needing to digitise an older certificate while also updating parent-name details.', url: 'https://www.reddit.com/r/bangalore/comments/1oql5rj/', accessedAt: '2026-08-28' } } },
   { title: 'Death certificate', category: 'Civil record', status: 'Unmapped' },
-  { title: 'New water / sewer connection', category: 'BWSSB utility', status: 'Unmapped' },
+  { title: 'New water / sewer connection', category: 'BWSSB utility', status: 'Unmapped', survey: { outcome: 'Obtain a new BWSSB water and sewer connection for a Bengaluru property.', systems: ['BWSSB Online Water Connection portal', 'BWSSB water and underground-drainage service'], officialJourney: 'An official consumer manual describes a new-connection entry point; this survey did not locate a verified end-to-end dependency map.', sources: [{ label: 'Official BWSSB consumer manual', url: 'https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf', grade: 'B', accessedAt: '2026-08-28' }], citizenPain: { text: 'A citizen reported needing an official water-and-sewer connection after a BWSSB notice, while seeking clarity on the connection path.', url: 'https://www.reddit.com/r/BangaloreRealEstates/comments/1rz16nm/how_much_does_new_bwssb_connection_would_cost/', accessedAt: '2026-08-28' } } },
   { title: 'Water account name transfer', category: 'BWSSB utility', status: 'Unmapped' },
   { title: 'New electricity connection', category: 'Electricity utility', status: 'Unmapped' },
-  { title: 'Property tax name transfer', category: 'Municipal property', status: 'Unmapped' },
-  { title: 'Khata transfer / mutation', category: 'Municipal property', status: 'Unmapped' },
+  { title: 'Property tax name transfer', category: 'Municipal property', status: 'Unmapped', survey: { outcome: 'Update the recorded owner name for a Bengaluru property-tax record after a property transfer.', systems: ['BBMP Property Tax System', 'Municipal property record / khata'], officialJourney: 'The official tax system links to name-and-address change and correction routes; this survey did not locate a verified end-to-end dependency map.', sources: [{ label: 'Official BBMP Property Tax System', url: 'https://bbmptax.karnataka.gov.in/forms/helplinkDetails.aspx', grade: 'B', accessedAt: '2026-08-28' }], citizenPain: { text: 'A citizen reported a pending property-tax name-update grievance despite an e-Khata already being in their name.', url: 'https://www.reddit.com/r/indianrealestate/comments/1qanujt/property_tax_name_update_process_bangalore/', accessedAt: '2026-08-28' } } },
+  { title: 'Khata transfer / mutation', category: 'Municipal property', status: 'Unmapped', survey: { outcome: 'Record a property transfer in the municipal khata / mutation record.', systems: ['e-Aasthi Property Record Management System', 'BBMP Revenue Department', 'Property-tax record'], officialJourney: 'Official e-Aasthi and revenue pages expose records and guidance; this survey did not locate a verified end-to-end dependency map.', sources: [{ label: 'Official e-Aasthi property search', url: 'https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx', grade: 'B', accessedAt: '2026-08-28' }, { label: 'Official BBMP Revenue FAQ', url: 'https://site.bbmp.gov.in/departmentwebsites/revenue/faq.html', grade: 'B', accessedAt: '2026-08-28' }], citizenPain: { text: 'A citizen reported duplicate khata-mutation requests in e-Swathu blocking a property sale.', url: 'https://www.reddit.com/r/BangaloreRealEstates/comments/1uiz461/duplicate_khata_mutation_requests_blocking/', accessedAt: '2026-08-28' } } },
   { title: 'Trade licence', category: 'Municipal business', status: 'Unmapped' },
   { title: 'Building plan approval', category: 'Municipal planning', status: 'Unmapped' },
   { title: 'Marriage registration', category: 'Civil record', status: 'Unmapped' },
@@ -77,7 +78,7 @@ export default function AtlasHome() {
         </div>
         <div className="service-grid">
           {services.map((service) => {
-            const content = <><span className="service-category">{service.category}</span><div className={`service-status service-${service.status.toLowerCase()}`}>{service.status}</div><h3>{service.title}</h3><p>{service.status === 'Mapped' ? 'A fully mapped evidence-led entry: dependencies, roadblocks, claims, sources, and known gaps.' : 'No verified public map of this journey exists; that absence is the documentation gap this project documents.'}</p>{service.status === 'Mapped' && <span className="service-cta">Open the BESCOM entry →</span>}</>;
+            const content = <><span className="service-category">{service.category}</span><div className={`service-status service-${service.status.toLowerCase()}`}>{service.status}</div><h3>{service.title}</h3><p>{service.status === 'Mapped' ? 'A fully mapped evidence-led entry: dependencies, roadblocks, claims, sources, and known gaps.' : service.survey ? 'Unmapped — what we know so far.' : 'No verified public map of this journey exists; that absence is the documentation gap this project documents.'}</p>{service.survey && <details className="survey-card"><summary>What we know so far</summary><dl><div><dt>Citizen outcome</dt><dd>{service.survey.outcome}</dd></div><div><dt>Systems touched</dt><dd>{service.survey.systems.join(' · ')}</dd></div><div><dt>Official journey map</dt><dd>{service.survey.officialJourney}</dd></div><div><dt>Citizen pain · Grade E</dt><dd>{service.survey.citizenPain === 'none found' ? 'None found in this survey.' : <a href={service.survey.citizenPain.url} rel="noreferrer" target="_blank">{service.survey.citizenPain.text} ↗ <small>accessed {service.survey.citizenPain.accessedAt}</small></a>}</dd></div></dl><div className="survey-sources">{service.survey.sources.map((source) => <a href={source.url} key={source.url} rel="noreferrer" target="_blank">Grade {source.grade} · {source.label} <small>accessed {source.accessedAt} ↗</small></a>)}</div></details>}{service.status === 'Mapped' && <span className="service-cta">Open the BESCOM entry →</span>}</>;
             return service.href ? <a className="service-card mapped-service" href={service.href} key={service.title}>{content}</a> : <article className="service-card" key={service.title}>{content}</article>;
           })}
         </div>

@@ -1,0 +1,163 @@
+{
+  "_handoff": {
+    "issue": "IND-32",
+    "generatedAt": "2026-08-28",
+    "status": "in_review",
+    "scope": "Public first-person citizen accounts about Bengaluru khata transfer/mutation only. These are failure-mode and terminology leads, not official procedure or universal requirements. Personal details, usernames, phone numbers, property identifiers, and address details are omitted."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind32_old_owner_reapplication",
+      "title": "Finally I got Ekhata yesterday, costed 125₹",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1k4xnji/finally_i_got_ekhata_yesterday_costed_125/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2025-04-22",
+      "type": "citizen_evidence",
+      "notes": "First-person report. It describes one property and a reported recovery; it does not establish portal rules, fees, document acceptance, or a generally available municipal remedy."
+    },
+    {
+      "id": "source_ind32_statusless_rejection",
+      "title": "E Khata transfer stuck",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1ot94yz/e_khata_transfer_stuck/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2025-11-10",
+      "type": "citizen_evidence",
+      "notes": "First-person post and follow-up. It provides an account of unavailable status after uploads, then a later reported rejection for a missing document. It does not identify the portal state, office, or cause for other applications."
+    },
+    {
+      "id": "source_ind32_manual_khata_auto_mutation",
+      "title": "Anybody here who can help me with E Khata transfer / Mutation?",
+      "publisher": "r/BangaloreRealEstates (Reddit)",
+      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1qvdz7q/anybody_here_who_can_help_me_with_e_khata/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-02-04",
+      "type": "citizen_evidence",
+      "notes": "First-person account of a buyer whose bifurcated e-Khata remained in a previous holder's name; the poster says their manual-khata registration case would not mutate automatically. The proposed automatic-mutation route in a reply is not treated as first-person procedure evidence."
+    },
+    {
+      "id": "source_ind32_manual_application_success",
+      "title": "Got eKhata through manual application - costed just few bucks and 7 days",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1vxzqo3/got_ekhata_through_manual_application_costed_just/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-08-25",
+      "type": "citizen_evidence",
+      "notes": "First-person reported completion after a self-filed application. The account is retained only as a possible recovery lead; the stated document list and timing are not verified requirements or service levels."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind32_old_owner_draft_mismatch",
+      "text": "One citizen reported having a physical khata in their own name while the draft e-Khata displayed a previous owner's name.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata"],
+      "nodeIds": ["node_final_e_khata"],
+      "sourceIds": ["source_ind32_old_owner_reapplication"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single report of a record mismatch. The reported scanning explanation and the meaning of a draft record were not independently verified."
+    },
+    {
+      "id": "claim_ind32_reapplication_after_invalidating",
+      "text": "The same citizen reported submitting a request to invalidate an existing e-Khata application and then reapplying with their khata document, after which they obtained an e-Khata.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata"],
+      "nodeIds": ["node_final_e_khata"],
+      "sourceIds": ["source_ind32_old_owner_reapplication"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": ["claim_ind32_missing_document_reapply"],
+      "notes": "Possible case-specific recovery only. Another citizen report instead describes reapplication following an eventually visible missing-document rejection; neither report establishes when invalidation or reapplication is appropriate."
+    },
+    {
+      "id": "claim_ind32_uploads_no_visible_status",
+      "text": "One citizen reported that their application showed documents uploaded but did not expose a status online, and that visits to multiple BBMP offices did not clarify its state.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata"],
+      "nodeIds": ["node_final_e_khata"],
+      "sourceIds": ["source_ind32_statusless_rejection"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One applicant's reported visibility failure; it does not prove a system-wide outage or office-access rule."
+    },
+    {
+      "id": "claim_ind32_missing_document_reapply",
+      "text": "In a follow-up to the statusless application report, the citizen said the application was rejected for a missing document and advised reapplying based on the stated reason.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata"],
+      "nodeIds": ["node_final_e_khata"],
+      "sourceIds": ["source_ind32_statusless_rejection"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": ["claim_ind32_reapplication_after_invalidating"],
+      "notes": "This is a reported case outcome and recovery, not a document checklist or a verified status-disclosure sequence."
+    },
+    {
+      "id": "claim_ind32_manual_khata_not_automatic",
+      "text": "One buyer with a bifurcated e-Khata in a prior holder's name stated that their manual-khata registration case would not mutate automatically.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata"],
+      "nodeIds": ["node_mutation", "node_final_e_khata"],
+      "sourceIds": ["source_ind32_manual_khata_auto_mutation"],
+      "evidenceGrade": "F",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [],
+      "notes": "The post identifies manual khata as a potentially material term, but predicts an outcome rather than reporting a completed transfer. A separate reply's claim that mutation happens automatically is not first-person evidence and is intentionally excluded."
+    },
+    {
+      "id": "claim_ind32_self_file_reported_success",
+      "text": "One citizen reported receiving an e-Khata after filing an application without using an agent.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "nodeIds": ["node_final_e_khata"],
+      "sourceIds": ["source_ind32_manual_application_success"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single reported success. Do not generalize its reported turnaround, costs, or informal document-selection advice."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind32_status_not_visible",
+      "title": "Documents appear uploaded but application state is not visible",
+      "category": "infrastructure",
+      "symptom": "A citizen reports uploaded documents with no visible online status and no clear status from visited offices.",
+      "likelyCause": "Unknown; the account does not distinguish application rejection, workflow queueing, or interface failure.",
+      "recovery": "Treat the reported later rejection reason as a case-specific lead. Seek authorized, case-specific status guidance rather than resubmitting repeatedly.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_final_e_khata"],
+      "scenarioIds": ["scenario_draft_e_khata"],
+      "claimIds": ["claim_ind32_uploads_no_visible_status", "claim_ind32_missing_document_reapply"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_prior_holder_record",
+      "title": "Bifurcated or draft record retains a prior holder",
+      "category": "documentation",
+      "symptom": "Citizen accounts describe a prior holder's name remaining despite a later physical khata or bifurcated e-Khata state.",
+      "likelyCause": "Unknown. The accounts indicate different property histories and do not establish a common technical or legal cause.",
+      "recovery": "Use the accounts only to identify terms for official case-specific support: draft e-Khata, physical/manual khata, bifurcation, mutation, and application invalidation.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_final_e_khata", "node_mutation"],
+      "scenarioIds": ["scenario_draft_e_khata"],
+      "claimIds": ["claim_ind32_old_owner_draft_mismatch", "claim_ind32_manual_khata_not_automatic"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

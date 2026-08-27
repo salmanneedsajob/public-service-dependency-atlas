@@ -1,0 +1,366 @@
+{
+  "_handoff": {
+    "issue": "IND-32",
+    "generatedAt": "2026-08-28",
+    "status": "in_review",
+    "scopeNote": "Official-source pass limited to Bengaluru khata transfer and mutation. Primary laws/rules, BBMP Revenue guidance, GBA/e-Aasthi public pages, and official portals were used. No login, form submission, private API, or end-to-end journey was attempted. Individual claims preserve whether they describe law, published guidance, or a directly visible public interface.",
+    "documentationShelf": [
+      {
+        "title": "The Bruhat Bengaluru Mahanagara Palike Act, 2020 (India Code copy)",
+        "url": "https://www.indiacode.nic.in/bitstream/123456789/17244/1/53_of_2020_%28e%29.pdf",
+        "accessedAt": "2026-08-28",
+        "whatItCovers": "Section 149 notice of transfer of title, the one-year notice rule for succession after death, entry in the property-tax register, continuing tax liability until notice/recording, and section 150 review for fraudulent or incorrect recording.",
+        "whereItStops": "The Act does not expose a current citizen form, portal field list, document checklist, payment demand, or live processing status. Amendment applicability should be checked before treating the 2020 text as the complete current text."
+      },
+      {
+        "title": "BBMP Property Tax Assessment, Recovery and Management Rules, 2024 (Government of Karnataka / India Code)",
+        "url": "https://upload.indiacode.nic.in/showfile?actid=AC_KA_71_402_00015_202053_1650367545129&filename=53_of_2020_bbmp_%28property_tax_assessment_recovery_and_management%29_rules%2C_2024.pdf&type=rule",
+        "accessedAt": "2026-08-28",
+        "whatItCovers": "Rule 10 mutation intake and registers; Forms 18, 19, 20, 21, and 22; Form 23 publication and objection notice; the minimum 15-day objection period; certification after no objection; and Form 24 e-Khata order.",
+        "whereItStops": "The rules and specimen forms do not establish that every route is currently enabled in the public portal, the current fee calculation, portal uptime, or an end-to-end outcome for a particular property."
+      },
+      {
+        "title": "BBMP Revenue Department — Documents Required for Khatha Services",
+        "url": "https://site.bbmp.gov.in/departmentwebsites/revenue/kathaservice.html",
+        "accessedAt": "2026-08-28",
+        "whatItCovers": "Scenario-specific published documents for Khatha Transfer through sale deed, inheritance with or without a will, gift, court decree, and partition/release deed.",
+        "whereItStops": "The page is undated and does not say which requirements supersede older guidance, how the current e-Aasthi route applies, or how an objection or rejection is handled."
+      },
+      {
+        "title": "BBMP Revenue Department — Frequently Asked Questions",
+        "url": "https://site.bbmp.gov.in/departmentwebsites/revenue/faq.html",
+        "accessedAt": "2026-08-28",
+        "whatItCovers": "Published BBMP answers on title-holder eligibility, prescribed-form filing with the Assistant Revenue Officer, notice timing, khatha certificate/extract copies, current-tax proof, and the stated transfer-fee calculation.",
+        "whereItStops": "The page is undated and references the Karnataka Municipal Corporation Act, 1976; it does not reconcile its older office/demand instructions with the BBMP Act 2020, 2024 rules, or live e-Aasthi screens."
+      },
+      {
+        "title": "e-Aasthi citizen login and public instructions",
+        "url": "https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx",
+        "accessedAt": "2026-08-28",
+        "whatItCovers": "Publicly visible links for e-Khata pendency, automatic mutations, EPID status, draft/final e-Khata guidance, and the additional information the page associates with final e-Khata.",
+        "whereItStops": "The page does not expose the authenticated mutation form, acceptance rules, review owner, error handling, or whether a visible link is available for every property."
+      },
+      {
+        "title": "e-Aasthi — Online payment for Khatha Transfer",
+        "url": "https://www.bbmpeaasthi.karnataka.gov.in/office/frmKhathaTransferPayOnline.aspx?id=BTqOdaLv1WZFXnr4ei0KIQ%3D%3D",
+        "accessedAt": "2026-08-28",
+        "whatItCovers": "A public payment surface labelled Online payment for Khatha Transfer, with property/mutation fields, applicant fields, total amount, online payment methods, and payment-failure instructions.",
+        "whereItStops": "This is a generated/tokenized payment endpoint with blank property values in the public observation; it does not prove how an application is initiated, how a demand is calculated, or that payment completes mutation."
+      },
+      {
+        "title": "Greater Bengaluru Authority public service directory",
+        "url": "https://bbmp.gov.in/",
+        "accessedAt": "2026-08-28",
+        "whatItCovers": "Current agency directory entries for e-Aasthi, B to A Khata / Single Plot Khata, and the eKhata/New Khata helpline.",
+        "whereItStops": "The directory does not publish the transfer/mutation eligibility rules, forms, objection procedure, or service-level outcome."
+      }
+    ]
+  },
+  "agencies": [
+    {
+      "id": "agency_bbmp_ind32",
+      "name": "Bruhat Bengaluru Mahanagara Palike / Bengaluru City Corporations Revenue Department",
+      "shortName": "BBMP Revenue",
+      "officialUrl": "https://site.bbmp.gov.in/departmentwebsites/revenue/"
+    },
+    {
+      "id": "agency_gba_ind32",
+      "name": "Greater Bengaluru Authority",
+      "shortName": "GBA",
+      "officialUrl": "https://bbmp.gov.in/"
+    }
+  ],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind32_bbmp_act_2020",
+      "title": "The Bruhat Bengaluru Mahanagara Palike Act, 2020",
+      "publisher": "Government of Karnataka / India Code",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/17244/1/53_of_2020_%28e%29.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "law",
+      "notes": "Official Act text. Sections 149 and 150 are directly relevant to title-transfer notice, register entry, and review. The text should be checked against subsequent amendments before being presented as a complete current compilation."
+    },
+    {
+      "id": "source_ind32_bbmp_rules_2024",
+      "title": "The Bruhat Bengaluru Mahanagara Palike (Property Tax Assessment, Recovery and Management) Rules, 2024",
+      "publisher": "Government of Karnataka / India Code",
+      "url": "https://upload.indiacode.nic.in/showfile?actid=AC_KA_71_402_00015_202053_1650367545129&filename=53_of_2020_bbmp_%28property_tax_assessment_recovery_and_management%29_rules%2C_2024.pdf&type=rule",
+      "accessedAt": "2026-08-28",
+      "type": "regulation",
+      "notes": "Official 2024 rules PDF. Rule 10 and Forms 18–24 are the primary source for the published mutation-record and objection sequence."
+    },
+    {
+      "id": "source_ind32_bbmp_khatha_documents",
+      "title": "Revenue Department — Documents Required for Khatha Services",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike, Revenue Department",
+      "url": "https://site.bbmp.gov.in/departmentwebsites/revenue/kathaservice.html",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Official published checklist page; undated and not reconciled on-page with the 2024 rules or current e-Aasthi implementation."
+    },
+    {
+      "id": "source_ind32_bbmp_revenue_faq",
+      "title": "Revenue Department — Frequently Asked Questions",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike, Revenue Department",
+      "url": "https://site.bbmp.gov.in/departmentwebsites/revenue/faq.html",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Official FAQ with filing, fee, and timing statements. It appears legacy/undated and is retained with a currentness limitation."
+    },
+    {
+      "id": "source_ind32_eaasthi_citizen_login",
+      "title": "e-Aasthi citizen login and public e-Khata instructions",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Current public page observation: advertises eKhata Automatic Mutations, pendency reports, EPID status, and draft/final e-Khata guidance. No login or submission was used."
+    },
+    {
+      "id": "source_ind32_eaasthi_transfer_payment",
+      "title": "e-Aasthi — Online payment for Khatha Transfer",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://www.bbmpeaasthi.karnataka.gov.in/office/frmKhathaTransferPayOnline.aspx?id=BTqOdaLv1WZFXnr4ei0KIQ%3D%3D",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Current public payment-page observation. Generated ID leaves property and amount values blank in the public view; no payment was attempted."
+    },
+    {
+      "id": "source_ind32_gba_directory",
+      "title": "Greater Bengaluru Authority public service directory",
+      "publisher": "Greater Bengaluru Authority / Bengaluru City Corporations",
+      "url": "https://bbmp.gov.in/",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Current public directory observation: lists e-Aasthi, B to A Khata / Single Plot Khata, and eKhata/New Khata helpline."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind32_act_transfer_notice_three_months",
+      "text": "Section 149(1) of the Bruhat Bengaluru Mahanagara Palike Act, 2020 states that the transferor and transferee must give notice of a title transfer to the Chief Commissioner within three months after execution, registration, or the transfer being effected, as applicable.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_consent_unavailable"],
+      "nodeIds": ["node_mutation"],
+      "sourceIds": ["source_ind32_bbmp_act_2020"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Direct reading of the official Act text. This claim is not a complete current-law compilation; check later amendments and any statutory exemption before using it as current advice."
+    },
+    {
+      "id": "claim_ind32_act_successor_notice_one_year",
+      "text": "Section 149(2) of the Bruhat Bengaluru Mahanagara Palike Act, 2020 states that the person receiving title as heir or otherwise after the death of the person primarily liable must give notice of the transfer within one year from the death.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_previous_consumer_deceased"],
+      "nodeIds": ["node_mutation", "node_transfer_evidence"],
+      "sourceIds": ["source_ind32_bbmp_act_2020"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Statutory timing only; it does not identify the current submission channel or required successor documents."
+    },
+    {
+      "id": "claim_ind32_act_name_register_entry",
+      "text": "Section 149(3) of the Bruhat Bengaluru Mahanagara Palike Act, 2020 states that when the transfer comes to the Chief Commissioner's or authorised officer's knowledge through notice or otherwise, the transferee's name is to be entered in the property-tax register.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_previous_consumer_deceased"],
+      "nodeIds": ["node_mutation"],
+      "sourceIds": ["source_ind32_bbmp_act_2020"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The section describes the statutory register outcome; it does not prove that a specific property has been updated."
+    },
+    {
+      "id": "claim_ind32_rule10_mutation_intake_routes",
+      "text": "Rule 10(1)(a) of the BBMP Property Tax Assessment, Recovery and Management Rules, 2024 provides mutation information from a Sub-Registrar intimation slip in Form 18, an authorised-officer or court order, or information supplied by an interested person, with the information recorded in the prescribed mutation registers.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_mutation"],
+      "sourceIds": ["source_ind32_bbmp_rules_2024"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published legal/administrative intake routes; the rule does not establish which route a given property or live portal will expose."
+    },
+    {
+      "id": "claim_ind32_rule10_form21_form22",
+      "text": "Rule 10 of the BBMP Property Tax Assessment, Recovery and Management Rules, 2024 specifies Form 21 for an inheritor, survivor, or successor after death, and Form 22 for a registered deed where the Sub-Registrar intimation slip has not reached BBMP; Form 22 requires a certified copy of the registered deed.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_previous_consumer_deceased", "scenario_clean_sale"],
+      "nodeIds": ["node_mutation", "node_transfer_evidence"],
+      "sourceIds": ["source_ind32_bbmp_rules_2024"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The forms are prescribed by the rules; no current blank public Form 21/22 submission screen was inspected."
+    },
+    {
+      "id": "claim_ind32_rule10_notice_and_objection",
+      "text": "Rule 10(2) of the BBMP Property Tax Assessment, Recovery and Management Rules, 2024 provides for immediate publication of mutation information in Form 23 and individual notice to concerned parties, with at least fifteen days to file objections.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_mutation"],
+      "sourceIds": ["source_ind32_bbmp_rules_2024"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The rule sets a published objection opportunity; it does not prove that notice was issued for any particular property."
+    },
+    {
+      "id": "claim_ind32_rule10_no_objection_form24",
+      "text": "Rule 10(3) of the BBMP Property Tax Assessment, Recovery and Management Rules, 2024 states that if no objection is received within fifteen days of service of notice, the Assistant Revenue Officer or authorised officer certifies the mutation and the e-Khata order is issued in Form 24.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_previous_consumer_deceased"],
+      "nodeIds": ["node_mutation", "node_final_e_khata"],
+      "sourceIds": ["source_ind32_bbmp_rules_2024"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is a conditional rule, not a promise of approval or a service-level timeline."
+    },
+    {
+      "id": "claim_ind32_form24_records_transfer",
+      "text": "The Form 24 specimen in the BBMP Property Tax Assessment, Recovery and Management Rules, 2024 is an e-Khata order that records approval after verification, transfer of the name in the property-tax register, and the resulting property-tax/e-Khata fields.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_previous_consumer_deceased"],
+      "nodeIds": ["node_final_e_khata", "node_mutation"],
+      "sourceIds": ["source_ind32_bbmp_rules_2024"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Specimen-form content describes an order record; it is not evidence that the order has issued for a particular property."
+    },
+    {
+      "id": "claim_ind32_bbmp_sale_transfer_documents",
+      "text": "The BBMP Revenue Department's published Khatha Services page lists a sale deed, current-year tax-paid receipt, and an Encumbrance Certificate in Form 15 from the sale-deed date to the current date for Khatha Transfer through sale deed.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale"],
+      "nodeIds": ["node_sale_deed", "node_mutation"],
+      "sourceIds": ["source_ind32_bbmp_khatha_documents"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Current official page observation, but it is undated and does not state whether the list is exhaustive or reconciled with the 2024 rules/e-Aasthi."
+    },
+    {
+      "id": "claim_ind32_bbmp_inheritance_will_documents",
+      "text": "The BBMP Revenue Department's published Khatha Services page lists a previous title deed or government-agency possession certificate, current-year tax-paid receipt, will, original death certificate, Form 15 Encumbrance Certificate, and—where the will is unregistered—a notarised family tree and family NOC for Khatha Transfer through inheritance with a will.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_previous_consumer_deceased"],
+      "nodeIds": ["node_transfer_evidence", "node_mutation"],
+      "sourceIds": ["source_ind32_bbmp_khatha_documents"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Official checklist page; exact acceptance and any newer e-Aasthi requirements are not established."
+    },
+    {
+      "id": "claim_ind32_bbmp_faq_title_holder_form",
+      "text": "The BBMP Revenue Department FAQ says a title holder of property within BBMP jurisdiction may apply for Khatha in a prescribed form with relevant documents to the concerned Assistant Revenue Officer, and that the prescribed form contains the filing-document list.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_mutation"],
+      "sourceIds": ["source_ind32_bbmp_revenue_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ is an undated official page and describes an office/prescribed-form route; it does not establish that this is the only current route."
+    },
+    {
+      "id": "claim_ind32_bbmp_faq_transfer_fee",
+      "text": "The BBMP Revenue Department FAQ states that a change of Khatha requires proof of property tax paid up to date and a Khatha Transfer fee of 2% of the stamp-duty value of the sale deed.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale"],
+      "nodeIds": ["node_mutation"],
+      "sourceIds": ["source_ind32_bbmp_revenue_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published FAQ statement only. It is undated and does not establish the current amount demanded by e-Aasthi for a particular application."
+    },
+    {
+      "id": "claim_ind32_eaasthi_auto_mutation_visible",
+      "text": "The current public e-Aasthi citizen page visibly advertises eKhata Automatic Mutations — Get Your Mutation and eKhata Pendency Reports.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "nodeIds": ["node_mutation", "node_final_e_khata"],
+      "sourceIds": ["source_ind32_eaasthi_citizen_login"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct public-page observation; the linked automatic-mutation flow and its eligibility were not entered or tested."
+    },
+    {
+      "id": "claim_ind32_eaasthi_draft_register_basis",
+      "text": "The current public e-Aasthi citizen page states that Draft eKhata has been issued as per the existing BBMP Property Tax Register and directs citizens to upload additional information online for Final eKhata, including a registered deed and other listed information.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_clean_sale"],
+      "nodeIds": ["node_final_e_khata", "node_mutation"],
+      "sourceIds": ["source_ind32_eaasthi_citizen_login"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This establishes what the public guidance says about Draft/Final e-Khata; it does not establish that Final e-Khata is a prerequisite for every mutation route."
+    },
+    {
+      "id": "claim_ind32_eaasthi_payment_surface",
+      "text": "A public e-Aasthi page is labelled Online payment for Khatha Transfer and visibly contains property details, mutation type, applicant name/mobile/email fields, a total amount field, and online payment options.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "nodeIds": ["node_mutation"],
+      "sourceIds": ["source_ind32_eaasthi_transfer_payment"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The generated public endpoint showed blank property/amount values. The observation proves a payment surface exists, not that an application can be initiated there or that payment completes transfer."
+    },
+    {
+      "id": "claim_ind32_eaasthi_payment_recovery_text",
+      "text": "The public e-Aasthi Khatha Transfer payment page says BBMP is not responsible for online-payment failure or auto-refund and directs a user whose amount was deducted but not updated in e-Aasthi to contact the Assistant Revenue Officer with details.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "nodeIds": ["node_mutation"],
+      "sourceIds": ["source_ind32_eaasthi_transfer_payment"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published payment-recovery instruction only; no refund SLA or case-resolution outcome is stated."
+    },
+    {
+      "id": "claim_ind32_gba_directory_khata_services",
+      "text": "The current Greater Bengaluru Authority public directory lists e-Aasthi and B to A Khata / Single Plot Khata among its e-services and publishes an eKhata/New Khata helpline.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "nodeIds": ["node_mutation", "node_final_e_khata"],
+      "sourceIds": ["source_ind32_gba_directory"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Directory-level observation; no transfer/mutation procedure, eligibility, or status contract is published on the directory page."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

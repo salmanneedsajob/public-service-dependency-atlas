@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import LedgerEntry from '@/components/LedgerEntry';
 
-const mappedServices = ['bescom'] as const;
+const mappedServices = ['bescom', 'khata'] as const;
 
 export function generateStaticParams() {
   return mappedServices.map((service) => ({ service }));

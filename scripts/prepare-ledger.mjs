@@ -10,6 +10,8 @@ const inputPath = path.resolve(projectRoot, process.env.LEDGER_PATH ?? 'ledger/r
 const schemaPath = path.resolve(projectRoot, 'ledger/schema.json');
 const outputPath = path.resolve(projectRoot, 'public/data/ledger.json');
 const serviceOutputPath = path.resolve(projectRoot, 'public/data/bescom.json');
+const khataInputPath = path.resolve(projectRoot, 'ledger/khata.json');
+const khataOutputPath = path.resolve(projectRoot, 'public/data/khata.json');
 
 const [rawInput, rawSchema] = await Promise.all([
   readFile(inputPath, 'utf8'),
@@ -33,4 +35,11 @@ if (!validate(ledger)) {
 await mkdir(path.dirname(outputPath), { recursive: true });
 const serializedLedger = `${JSON.stringify(ledger, null, 2)}\n`;
 await Promise.all([writeFile(outputPath, serializedLedger), writeFile(serviceOutputPath, serializedLedger)]);
+try {
+  const khata = JSON.parse(await readFile(khataInputPath, 'utf8'));
+  if (!validate(khata)) throw new Error('khata ledger does not satisfy schema');
+  await writeFile(khataOutputPath, `${JSON.stringify(khata, null, 2)}\n`);
+} catch (error) {
+  if (error && error.code !== 'ENOENT') throw error;
+}
 console.log(`Prepared ${path.relative(projectRoot, inputPath)} for the site.`);

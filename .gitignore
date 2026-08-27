@@ -1,0 +1,20 @@
+# dependencies
+/node_modules
+
+# framework and deployment output
+/.next/
+/.vinext/
+/dist/
+/.wrangler/
+/outputs/
+/work/
+next-env.d.ts
+
+# generated ledger copy
+/public/data/ledger.json
+
+# local environment and system files
+.env*
+.DS_Store
+*.pem
+npm-debug.log*

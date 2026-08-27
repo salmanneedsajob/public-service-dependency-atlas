@@ -1,0 +1,349 @@
+{
+  "_handoff": {
+    "issue": "IND-7",
+    "generatedAt": "2026-08-27",
+    "status": "in_review",
+    "scopeNote": "Desk research only. Public citizen accounts are preserved as source-bound evidence, not current official guidance; no interviews, submissions, or personal data were collected."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_citizen_bescom_e_khata_transfer",
+      "title": "Bescom name transfer can be done fully online if you have ekhata",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1vceniq/bescom_name_transfer_can_be_done_fully_online_if/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-08-01",
+      "type": "citizen_evidence",
+      "notes": "Multiple attributed public first-person comments; do not treat as a current official procedure."
+    },
+    {
+      "id": "source_citizen_bescom_login_payment",
+      "title": "Don't pay brokers ₹5k for BESCOM name changes. Here is how to do it 100% online for ₹1,294 (Updated 2026 e-Khata method)",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1vlfrnl/dont_pay_brokers_5k_for_bescom_name_changes_here/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-08-11",
+      "type": "citizen_evidence",
+      "notes": "First-person walkthrough plus corroborating comments; personal-contact details in source must not be copied."
+    },
+    {
+      "id": "source_citizen_easthi_missing_epid",
+      "title": "Non Availability of EPID/Draft E-Khata in E-Swathi portal",
+      "publisher": "r/BangaloreRealEstates (Reddit)",
+      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1r3hhqt/non_availability_of_epiddraft_ekhata_in_eswathi/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-02-13",
+      "type": "citizen_evidence",
+      "notes": "First-person missing draft/EPID report and another public commenter's recovery account."
+    },
+    {
+      "id": "source_citizen_easthi_owner_error",
+      "title": "E-Khata Name Correction",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1oqksj1/ekhata_name_correction/",
+      "accessedAt": "2026-08-27",
+      "type": "citizen_evidence",
+      "notes": "Public first-person reports of final e-Khata displaying prior owner or correction error."
+    },
+    {
+      "id": "source_citizen_easthi_missing_draft",
+      "title": "Non Availability of Draft E-khata",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1ikojje/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2025-02-08",
+      "type": "citizen_evidence",
+      "notes": "Older public accounts of absent draft e-Khata and delayed self-service request."
+    },
+    {
+      "id": "source_citizen_easthi_old_owner_recovery",
+      "title": "Finally I got Ekhata yesterday, costed 125₹",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1k4xnji/",
+      "accessedAt": "2026-08-27",
+      "type": "citizen_evidence",
+      "notes": "Public account of draft showing old owner; recovery is one person's experience, not a standard instruction."
+    },
+    {
+      "id": "source_citizen_bescom_noc_offline",
+      "title": "Bescom bill name change",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1bx2oer/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2024-04-06",
+      "type": "citizen_evidence",
+      "notes": "Older offline-process accounts; explicitly conflicts with later e-Khata-enabled no-builder-NOC account."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_citizen_e_khata_named_owner_reported_online_transfer",
+      "text": "One citizen reported completing a BESCOM name transfer online after having an e-Khata in their own name.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale"],
+      "nodeIds": ["node_final_e_khata", "node_epid", "node_name_transfer"],
+      "sourceIds": ["source_citizen_bescom_e_khata_transfer"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Individual report; not a universally established prerequisite or duration."
+    },
+    {
+      "id": "claim_citizen_epid_characters_could_not_fetch",
+      "text": "One citizen reported that an EPID containing dashes could not be entered or used to fetch details in the transfer flow.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_epid_mapping_failure"],
+      "nodeIds": ["node_epid", "node_bescom_mapping"],
+      "sourceIds": ["source_citizen_bescom_e_khata_transfer"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No validated recovery was reported."
+    },
+    {
+      "id": "claim_citizen_bescom_open_application_error",
+      "text": "One citizen reported a BESCOM message blocking a new application because the system said an open application of the same type existed, while the citizen could not see one.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_epid_mapping_failure"],
+      "nodeIds": ["node_bescom_mapping", "node_name_transfer"],
+      "sourceIds": ["source_citizen_bescom_e_khata_transfer"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Reported text is retained in the related node detail."
+    },
+    {
+      "id": "claim_citizen_bescom_upload_loading_failure",
+      "text": "One citizen reported being stuck on a loading screen after uploading identity proof, then later reported the application succeeded after delay and a duplicate initial fee payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_citizen_bescom_e_khata_transfer"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Supports a failure signal and eventual outcome, not a reliable recovery method or refund conclusion."
+    },
+    {
+      "id": "claim_citizen_bescom_login_reset_error_recovered",
+      "text": "One citizen reported an Already Registered login state and a password-reset mail error, then reported resolving access through a BESCOM helpdesk request.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale"],
+      "nodeIds": ["node_bescom_mapping", "node_name_transfer"],
+      "sourceIds": ["source_citizen_bescom_login_payment"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Do not copy account identifiers or contact details from the source. A commenter reported the suggested escalation worked for them too."
+    },
+    {
+      "id": "claim_citizen_e_khata_wrong_owner_record",
+      "text": "One citizen reported a final e-Khata displaying the previous owner's name despite submitting documents for the purchaser.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure"],
+      "nodeIds": ["node_final_e_khata", "node_epid"],
+      "sourceIds": ["source_citizen_easthi_owner_error"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is a user account, not verification that the record was wrong or a general e-Khata behaviour."
+    },
+    {
+      "id": "claim_citizen_e_khata_correction_error",
+      "text": "One citizen reported an Unauthorized Activity Has Been Detected message after e-KYC while trying to submit a final e-Khata correction.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure"],
+      "nodeIds": ["node_final_e_khata"],
+      "sourceIds": ["source_citizen_easthi_owner_error"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Other commenters reported the same error; an asserted helpline answer that correction could not be made online remains unverified."
+    },
+    {
+      "id": "claim_citizen_missing_draft_epid_no_response",
+      "text": "One citizen reported that a property fetched by tax identifier had neither a linked draft e-Khata nor EPID, and that a non-availability request had no movement after 45 days.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure"],
+      "nodeIds": ["node_final_e_khata", "node_epid"],
+      "sourceIds": ["source_citizen_easthi_missing_epid"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A second commenter reported eventual EPID generation after applying and following up; not a guaranteed recovery."
+    },
+    {
+      "id": "claim_citizen_missing_draft_delayed_self_service",
+      "text": "Multiple citizens in one public thread reported an absent draft e-Khata and no response after using the portal's cannot-find-draft-e-Khata path for about 45 days.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata"],
+      "nodeIds": ["node_final_e_khata"],
+      "sourceIds": ["source_citizen_easthi_missing_draft"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Older accounts; this is evidence of reported exception signals, not a current SLA."
+    },
+    {
+      "id": "claim_citizen_draft_old_owner_recovery_reported",
+      "text": "One citizen reported resolving a draft e-Khata that showed the old owner by invalidating their application and reapplying with supporting Khata material after speaking with an ARO.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata"],
+      "nodeIds": ["node_final_e_khata", "node_mutation"],
+      "sourceIds": ["source_citizen_easthi_old_owner_recovery"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Candidate recovery only; exact uploads/options in the account must not become a general instruction without official confirmation."
+    },
+    {
+      "id": "claim_citizen_older_noc_route_reported",
+      "text": "In an older offline-process account, a citizen reported that a previous-owner or builder NOC was needed for BESCOM name change.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_consent_unavailable"],
+      "nodeIds": ["node_bescom_mapping", "node_name_transfer"],
+      "sourceIds": ["source_citizen_bescom_noc_offline"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": ["claim_citizen_updated_e_khata_route_no_builder_noc_reported"],
+      "notes": "Older account; do not use as a current requirement."
+    },
+    {
+      "id": "claim_citizen_updated_e_khata_route_no_builder_noc_reported",
+      "text": "One 2026 citizen reported completing an online BESCOM name change after e-Khata was updated without a builder NOC.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_consent_unavailable"],
+      "nodeIds": ["node_final_e_khata", "node_bescom_mapping", "node_name_transfer"],
+      "sourceIds": ["source_citizen_bescom_login_payment"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": ["claim_citizen_older_noc_route_reported"],
+      "notes": "Individual 2026 report; does not establish that NOC or consent is never needed."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_easthi_missing_draft_epid",
+      "title": "Draft e-Khata or EPID not linked to a found property",
+      "category": "infrastructure",
+      "symptom": "A citizen reported that a property could be found by tax identifier but had no linked draft e-Khata or EPID; another reported no result after the missing-draft route.",
+      "likelyCause": "One citizen relayed that relevant books had not been digitised; this is an unverified citizen-reported explanation, not an established cause.",
+      "recovery": "Candidate only: use the portal's missing-draft/non-availability route and pursue the responsible e-Khata office or helpline; one commenter reported eventual EPID generation after follow-up.",
+      "nodeIds": ["node_final_e_khata", "node_epid"],
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure"],
+      "claimIds": ["claim_citizen_missing_draft_epid_no_response", "claim_citizen_missing_draft_delayed_self_service"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_easthi_owner_or_correction_error",
+      "title": "e-Khata shows wrong owner or correction submission fails",
+      "category": "process",
+      "symptom": "Citizens reported a final e-Khata showing a previous owner and an Unauthorized Activity Has Been Detected message during a correction attempt.",
+      "likelyCause": "Unknown; a user attributed one wrong name to an office data-entry error, but that was not independently verified.",
+      "recovery": "Candidate only: a citizen reported successful correction after helpdesk follow-up; another reported success after invalidating and reapplying following ARO guidance.",
+      "nodeIds": ["node_final_e_khata", "node_epid"],
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure"],
+      "claimIds": ["claim_citizen_e_khata_wrong_owner_record", "claim_citizen_e_khata_correction_error", "claim_citizen_draft_old_owner_recovery_reported"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_bescom_epid_format_or_mapping",
+      "title": "EPID cannot be entered or fetch details",
+      "category": "infrastructure",
+      "symptom": "One citizen reported that an EPID with dashes could not be entered or used to fetch details.",
+      "likelyCause": "Unknown; no source supports a specific normalization or mapping rule.",
+      "recovery": "No evidence-backed recovery found; retain as an unknown escalation point.",
+      "nodeIds": ["node_epid", "node_bescom_mapping"],
+      "scenarioIds": ["scenario_epid_mapping_failure"],
+      "claimIds": ["claim_citizen_epid_characters_could_not_fetch"],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_bescom_login_reset",
+      "title": "BESCOM login profile or password-reset failure",
+      "category": "infrastructure",
+      "symptom": "A citizen reported an Already Registered state and password-reset mail failure.",
+      "likelyCause": "Unknown; the citizen hypothesized prior account mapping, which is not independently evidenced.",
+      "recovery": "Candidate only: the source author and a commenter reported access was restored after a helpdesk request. Do not store or advise submitting sensitive account identifiers in the ledger.",
+      "nodeIds": ["node_bescom_mapping", "node_name_transfer"],
+      "scenarioIds": ["scenario_clean_sale"],
+      "claimIds": ["claim_citizen_bescom_login_reset_error_recovered"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_bescom_open_application_or_upload",
+      "title": "BESCOM application blocked or stalls after upload",
+      "category": "infrastructure",
+      "symptom": "Citizens reported a system message about an unseen open application, and a loading stall after identity-proof upload; the latter account also reported duplicate initial-fee payment.",
+      "likelyCause": "Unknown; no source verifies an account-state or upload-service cause.",
+      "recovery": "For the upload report, eventual completion occurred, but no reliable workaround or refund outcome was evidenced. The unseen-open-application report named an SDO contact as the system message's next step; efficacy was not reported.",
+      "nodeIds": ["node_bescom_mapping", "node_name_transfer"],
+      "scenarioIds": ["scenario_clean_sale", "scenario_epid_mapping_failure"],
+      "claimIds": ["claim_citizen_bescom_open_application_error", "claim_citizen_bescom_upload_loading_failure"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_bescom_consent_noc_route_conflict",
+      "title": "Consent/NOC route differs across citizen accounts",
+      "category": "documentation",
+      "symptom": "An older offline account reported needing a previous-owner/builder NOC, while a 2026 e-Khata-enabled account reported no builder NOC.",
+      "likelyCause": "The route may have changed or the accounts may concern different conditions; desk evidence cannot resolve this.",
+      "recovery": "Do not assume an NOC is or is not required. Verify the route against current official material; when consent is unavailable, record the condition as unresolved.",
+      "nodeIds": ["node_bescom_mapping", "node_name_transfer"],
+      "scenarioIds": ["scenario_consent_unavailable"],
+      "claimIds": ["claim_citizen_older_noc_route_reported", "claim_citizen_updated_e_khata_route_no_builder_noc_reported"],
+      "status": "contested"
+    }
+  ],
+  "journeys": [],
+  "_nodeEnrichments": {
+    "node_final_e_khata": {
+      "failureSignals": [
+        {"id":"detail_final_e_khata_missing_draft_epid","label":"Draft/EPID absent","description":"Public accounts report missing draft e-Khata/EPID even where a property was found by tax identifier.","claimIds":["claim_citizen_missing_draft_epid_no_response","claim_citizen_missing_draft_delayed_self_service"],"status":"partial"},
+        {"id":"detail_final_e_khata_wrong_owner","label":"Wrong owner or correction error","description":"Public accounts report prior-owner data in final e-Khata and an error during online correction.","actualError":"Unauthorized Activity Has Been Detected","claimIds":["claim_citizen_e_khata_wrong_owner_record","claim_citizen_e_khata_correction_error"],"status":"partial"}
+      ],
+      "recoveries": [
+        {"id":"detail_final_e_khata_reapply_candidate","label":"Reapply after case-specific guidance","description":"One citizen reported resolving an old-owner draft after invalidating and reapplying with case-specific ARO guidance; not a general procedure.","claimIds":["claim_citizen_draft_old_owner_recovery_reported"],"status":"partial"}
+      ]
+    },
+    "node_epid": {
+      "failureSignals": [
+        {"id":"detail_epid_characters_unusable","label":"EPID rejected or does not fetch","description":"One citizen reported that an EPID containing dashes could not be entered or used to fetch details.","claimIds":["claim_citizen_epid_characters_could_not_fetch"],"status":"partial"}
+      ]
+    },
+    "node_bescom_mapping": {
+      "failureSignals": [
+        {"id":"detail_bescom_login_reset","label":"Login/reset failure","description":"A citizen reported an Already Registered state and a password-reset mail error.","actualError":"Failed to send mail due to internal server error. Please try again.","claimIds":["claim_citizen_bescom_login_reset_error_recovered"],"status":"partial"},
+        {"id":"detail_bescom_open_application","label":"Unseen open application blocks new one","description":"A citizen reported being blocked by a claimed open application they could not see.","actualError":"Dear Consumer, Since there is an open application or case of same type present in the system, new application of same types is not permitted. Please contact respective SDO officer on this.","claimIds":["claim_citizen_bescom_open_application_error"],"status":"partial"}
+      ]
+    },
+    "node_name_transfer": {
+      "failureSignals": [
+        {"id":"detail_bescom_upload_stall","label":"Stall after ID upload","description":"A citizen reported a loading stall after upload and later a duplicate initial-fee payment before eventual completion.","claimIds":["claim_citizen_bescom_upload_loading_failure"],"status":"partial"}
+      ],
+      "recoveries": [
+        {"id":"detail_bescom_helpdesk_recovery_candidate","label":"Helpdesk recovery candidate","description":"A citizen and one commenter reported restored login access after a helpdesk request; not a guaranteed route.","claimIds":["claim_citizen_bescom_login_reset_error_recovered"],"status":"partial"}
+      ]
+    }
+  },
+  "_evidenceGaps": [
+    {"scenarioId":"scenario_tenant","status":"unknown","note":"No suitable attributable public citizen account was found in this desk pass; do not infer a tenant route."},
+    {"scenarioId":"scenario_previous_consumer_deceased","status":"unknown","note":"No suitable attributable public citizen account was found in this desk pass; do not infer a succession route."}
+  ]
+}

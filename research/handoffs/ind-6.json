@@ -1,0 +1,408 @@
+{
+  "_handoff": {
+    "issue": "IND-6",
+    "generatedAt": "2026-08-27",
+    "status": "in_review",
+    "scopeNote": "Clean-sale e-Khata/EPID dependency baseline. Public official-interface observations are B; the citizen-provided firsthand note is E. Unverified mapping and authenticated EPID-flow requirements remain Unknown."
+  },
+  "agencies": [
+    {
+      "id": "agency_bescom",
+      "name": "Bangalore Electricity Supply Company Limited",
+      "shortName": "BESCOM",
+      "officialUrl": "https://www.bescom.co.in/"
+    },
+    {
+      "id": "agency_bengaluru_city_corporations",
+      "name": "Bengaluru City Corporations e-Aasthi",
+      "shortName": "e-Aasthi",
+      "officialUrl": "https://bbmpeaasthi.karnataka.gov.in/"
+    }
+  ],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_bescom_home",
+      "title": "BESCOM homepage",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Public official interface observed to expose a Name Change with EPID entry."
+    },
+    {
+      "id": "source_bescom_faq",
+      "title": "BESCOM Frequently Asked Questions",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/main/faq",
+      "accessedAt": "2026-08-27",
+      "type": "official_guidance",
+      "notes": "Public official guidance for the standard Name Change/Change of Ownership route."
+    },
+    {
+      "id": "source_eaasthi_login",
+      "title": "e-Aasthi citizen portal",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Public official interface lists Final e-Khata inputs, draft-record origin, and Automatic Mutations."
+    },
+    {
+      "id": "source_eaasthi_search",
+      "title": "e-Aasthi e-Khata public search",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Public search permits SAS property-tax ID, property EPID, ward, and owner-name search; it exposes a missing-property route."
+    },
+    {
+      "id": "source_eaasthi_status",
+      "title": "e-Khata application status by EPID",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Public interface asks for EPID to see application status."
+    },
+    {
+      "id": "source_eaasthi_mutation",
+      "title": "e-Aasthi Pending Mutation Report",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/PendingMutationReport",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Public report is headed Aadhaar based Automatic Mutation and exposes fields for registered-deed/mutation date, basis, EPID, seller/giving party, purchaser/receiving party, and pending owner."
+    },
+    {
+      "id": "source_firsthand_e_khata_note",
+      "title": "Firsthand e-Khata dependency note",
+      "publisher": "Citizen-provided firsthand note",
+      "url": "https://app.notion.com/p/3c9006f0b6ee804b9481f7f40646d782",
+      "accessedAt": "2026-08-27",
+      "type": "firsthand_observation",
+      "notes": "User-designated firsthand note. It is not official BESCOM or municipal documentation and is used only for a possible dependency/failure signal."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_bescom_epid_entry",
+      "text": "BESCOM's public homepage exposes a service entry labelled Name Change with EPID.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_epid_mapping_failure"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_bescom_home"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This verifies the public entry only; it does not verify eligibility, backend matching, or post-login fields."
+    },
+    {
+      "id": "claim_bescom_standard_name_change",
+      "text": "BESCOM's FAQ says the standard Name Change/Change of Ownership route redirects the customer to login, then asks the customer to select an account, complete mandatory fields, upload required documents, submit, receive a request ID, and pay applicable charges.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_bescom_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is a documented standard route and fallback; it does not describe the EPID route."
+    },
+    {
+      "id": "claim_bescom_account_id",
+      "text": "BESCOM's FAQ describes the Account ID as a 10-digit unique number printed on the electricity bill and used for future communication and consumer-portal registration.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_epid_mapping_failure"],
+      "nodeIds": ["node_bescom_mapping", "node_name_transfer"],
+      "sourceIds": ["source_bescom_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This confirms the Account ID's public description, not an EPID mapping rule."
+    },
+    {
+      "id": "claim_eaasthi_search_epid",
+      "text": "The public e-Aasthi search supports lookup by SAS property-tax ID, property EPID, ward, or owner name.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure"],
+      "nodeIds": ["node_epid", "node_final_e_khata"],
+      "sourceIds": ["source_eaasthi_search"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A result requires property-specific input and was not attempted."
+    },
+    {
+      "id": "claim_eaasthi_missing_property_route",
+      "text": "The public e-Aasthi search tells a user who cannot find the property to use the Do Not Find My Property eKhata route for corporation review.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure"],
+      "nodeIds": ["node_epid", "node_final_e_khata"],
+      "sourceIds": ["source_eaasthi_search"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No submission was made."
+    },
+    {
+      "id": "claim_eaasthi_draft_origin",
+      "text": "The e-Aasthi citizen portal says Draft e-Khata has been issued according to the existing BBMP property-tax register.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_clean_sale"],
+      "nodeIds": ["node_final_e_khata"],
+      "sourceIds": ["source_eaasthi_login"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Draft existence is not evidence that ownership has been updated or that the record is final."
+    },
+    {
+      "id": "claim_eaasthi_final_inputs",
+      "text": "The e-Aasthi citizen portal lists a registered deed, Aadhaar-based eKYC, SAS property-tax application number, property photo, and A-Khata-supporting documents as information to upload for Final e-Khata; it says an encumbrance certificate is needed when immediate sale or transfer is planned.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "nodeIds": ["node_sale_deed", "node_final_e_khata"],
+      "sourceIds": ["source_eaasthi_login"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The public page lists inputs, not a guaranteed processing outcome or a universal mutation sequence."
+    },
+    {
+      "id": "claim_eaasthi_mutation_service",
+      "text": "The e-Aasthi citizen portal publicly offers eKhata Automatic Mutations—Get Your Mutation.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_previous_consumer_deceased"],
+      "nodeIds": ["node_mutation"],
+      "sourceIds": ["source_eaasthi_login"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Public availability of the route does not verify an individual property's eligibility or automatic completion."
+    },
+    {
+      "id": "claim_eaasthi_mutation_fields",
+      "text": "The public e-Aasthi Pending Mutation Report labels a workflow as Aadhaar based Automatic Mutation and displays fields for date of registered deed or mutation application, basis of mutation, property EPID, seller/giving-party name, purchaser/receiving-party name, and pending owner.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_previous_consumer_deceased", "scenario_draft_e_khata"],
+      "nodeIds": ["node_sale_deed", "node_mutation", "node_epid"],
+      "sourceIds": ["source_eaasthi_mutation"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This observes exposed report fields. It does not establish that every registered sale automatically mutates."
+    },
+    {
+      "id": "claim_eaasthi_status_by_epid",
+      "text": "The public e-Aasthi application-status page accepts an EPID to show e-Khata application status.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure"],
+      "nodeIds": ["node_epid", "node_final_e_khata", "node_mutation"],
+      "sourceIds": ["source_eaasthi_status"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No property-specific status was queried."
+    },
+    {
+      "id": "claim_mapping_firsthand_signal",
+      "text": "The firsthand e-Khata note identifies a possible failure in matching a BESCOM Account ID to an EPID even when an e-Khata record exists.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_epid_mapping_failure", "scenario_clean_sale"],
+      "nodeIds": ["node_bescom_mapping"],
+      "sourceIds": ["source_firsthand_e_khata_note"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One firsthand signal only; it is not evidence of a published interface contract, cause, or universal rule."
+    },
+    {
+      "id": "claim_clean_sale_sequence_inference",
+      "text": "For a clean sale, a prudent working hypothesis is registered sale deed, municipal mutation/final-record resolution in the buyer's name, usable EPID, then BESCOM transfer; the official sources verify portions of this chain but not this end-to-end dependency.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale"],
+      "nodeIds": ["node_sale_deed", "node_mutation", "node_final_e_khata", "node_epid", "node_bescom_mapping", "node_name_transfer"],
+      "sourceIds": ["source_eaasthi_login", "source_eaasthi_mutation", "source_eaasthi_search", "source_bescom_home", "source_firsthand_e_khata_note"],
+      "evidenceGrade": "E",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Official sources verify the municipal inputs/routes and BESCOM entry; the end-to-end order and mapping dependency are inference, prompted by the firsthand note."
+    },
+    {
+      "id": "claim_transfer_requirements_unknown",
+      "text": "The public materials reviewed do not document the Name Change with EPID route's exact Account-ID↔EPID validation, identity-document, payment, agreement, e-sign, approval, or bill-update steps.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_epid_mapping_failure"],
+      "nodeIds": ["node_bescom_mapping", "node_name_transfer", "node_updated_bill"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Do not import detailed authenticated-flow assertions from community reports as official requirements. Fresh public/authenticated evidence is needed."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_sale_deed",
+      "label": "Registered sale deed",
+      "kind": "document",
+      "ownerAgencyId": "agency_bengaluru_city_corporations",
+      "summary": "Registered property-transfer document available to support Final e-Khata inputs; it is not by itself proof that a mutation or BESCOM transfer completed.",
+      "requiredState": "A registered deed is available where the Final e-Khata route requests it.",
+      "checks": [{"id":"check_sale_deed_final_input","label":"Final e-Khata input","description":"The public e-Aasthi portal lists a registered deed among Final e-Khata uploads.","url":"https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx","claimIds":["claim_eaasthi_final_inputs"],"status":"verified"}],
+      "failureSignals": [{"id":"failure_sale_deed_unavailable","label":"Deed unavailable","description":"No public source reviewed supplies a recovery rule for a missing deed in this chain.","claimIds":[],"status":"unknown"}],
+      "recoveries": [{"id":"recovery_sale_deed_document_route","label":"Use the municipal record route","description":"Use the official Final e-Khata guidance to identify its listed deed requirement; property-specific recovery is not evidenced here.","url":"https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx","claimIds":["claim_eaasthi_final_inputs"],"status":"partial"}],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "claimIds": ["claim_eaasthi_final_inputs", "claim_eaasthi_mutation_fields"],
+      "status": "verified",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_mutation",
+      "label": "Municipal mutation",
+      "kind": "record",
+      "ownerAgencyId": "agency_bengaluru_city_corporations",
+      "summary": "e-Aasthi exposes an Automatic Mutations route and a report connecting mutation data with registered deeds, party names, EPID, and a pending owner.",
+      "requiredState": "The applicable municipal ownership/mutation record has reached the buyer-facing state required for the next route; automatic completion is not assumed.",
+      "checks": [{"id":"check_mutation_public_route","label":"Automatic mutation route","description":"The citizen portal exposes eKhata Automatic Mutations—Get Your Mutation.","url":"https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx","claimIds":["claim_eaasthi_mutation_service"],"status":"verified"},{"id":"check_mutation_report_fields","label":"Mutation report fields","description":"The public report shows deed/mutation date, basis, EPID, seller, purchaser, and pending owner fields.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/PendingMutationReport","claimIds":["claim_eaasthi_mutation_fields"],"status":"verified"}],
+      "failureSignals": [{"id":"failure_mutation_pending","label":"Mutation pending","description":"A mutation can remain with a named pending owner in the public report; do not infer completion from deed registration alone.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/PendingMutationReport","claimIds":["claim_eaasthi_mutation_fields"],"status":"partial"}],
+      "recoveries": [{"id":"recovery_mutation_official_route","label":"Check mutation route/status","description":"Use the official Automatic Mutations entry and EPID status page; no property-specific request was submitted.","url":"https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx","claimIds":["claim_eaasthi_mutation_service","claim_eaasthi_status_by_epid"],"status":"partial"}],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_previous_consumer_deceased"],
+      "claimIds": ["claim_eaasthi_mutation_service", "claim_eaasthi_mutation_fields", "claim_eaasthi_status_by_epid"],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_final_e_khata",
+      "label": "Final e-Khata",
+      "kind": "record",
+      "ownerAgencyId": "agency_bengaluru_city_corporations",
+      "summary": "Municipal record state after the draft/final process; a Draft record is explicitly derived from the existing property-tax register and must not be presented as buyer-name confirmation.",
+      "requiredState": "A Final e-Khata state whose displayed ownership is suitable for the buyer's transfer route; public sources reviewed do not establish a universal final-state test.",
+      "checks": [{"id":"check_final_e_khata_inputs","label":"Final e-Khata guidance","description":"The citizen portal lists uploads for getting Final e-Khata, including registered deed and eKYC.","url":"https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx","claimIds":["claim_eaasthi_final_inputs"],"status":"verified"},{"id":"check_final_e_khata_epid_status","label":"EPID status","description":"The public status page accepts EPID for e-Khata application status.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus","claimIds":["claim_eaasthi_status_by_epid"],"status":"verified"}],
+      "failureSignals": [{"id":"failure_draft_e_khata","label":"Draft e-Khata","description":"A Draft e-Khata is based on the existing BBMP property-tax register; it may therefore fail to prove the buyer-facing final record required by the inferred clean-sale chain.","url":"https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx","claimIds":["claim_eaasthi_draft_origin","claim_clean_sale_sequence_inference"],"status":"partial"},{"id":"failure_wrong_owner_record","label":"Seller or builder remains recorded","description":"Public mutation fields distinguish giving and receiving parties, but no public source reviewed proves when BESCOM accepts or rejects a different owner name.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/PendingMutationReport","claimIds":["claim_eaasthi_mutation_fields","claim_transfer_requirements_unknown"],"status":"partial"}],
+      "recoveries": [{"id":"recovery_final_e_khata_inputs","label":"Follow Final e-Khata guidance","description":"Use the official final-record guidance and required uploads; do not assume a draft will be upgraded automatically.","url":"https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx","claimIds":["claim_eaasthi_final_inputs","claim_eaasthi_draft_origin"],"status":"partial"}],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_previous_consumer_deceased"],
+      "claimIds": ["claim_eaasthi_draft_origin", "claim_eaasthi_final_inputs", "claim_eaasthi_status_by_epid", "claim_clean_sale_sequence_inference"],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_epid",
+      "label": "Property EPID",
+      "kind": "record",
+      "ownerAgencyId": "agency_bengaluru_city_corporations",
+      "summary": "Municipal property identifier that the public e-Aasthi search and application-status interfaces accept.",
+      "requiredState": "The property can be located by EPID or a public alternate lookup, and the EPID can be used for municipal status checks.",
+      "checks": [{"id":"check_epid_public_search","label":"Public property search","description":"Search by property EPID, SAS property-tax ID, ward, or owner name.","url":"https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx","claimIds":["claim_eaasthi_search_epid"],"status":"verified"},{"id":"check_epid_status","label":"Application status","description":"Enter EPID to view e-Khata application status.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus","claimIds":["claim_eaasthi_status_by_epid"],"status":"verified"}],
+      "failureSignals": [{"id":"failure_epid_missing_property","label":"Property not found","description":"The search interface offers a dedicated route when the property is not found.","url":"https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx","claimIds":["claim_eaasthi_missing_property_route"],"status":"verified"}],
+      "recoveries": [{"id":"recovery_epid_missing_property","label":"Use missing-property route","description":"Use Do Not Find My Property eKhata for corporation review; no submission was made.","url":"https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx","claimIds":["claim_eaasthi_missing_property_route"],"status":"verified"}],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_previous_consumer_deceased"],
+      "claimIds": ["claim_eaasthi_search_epid", "claim_eaasthi_missing_property_route", "claim_eaasthi_status_by_epid", "claim_eaasthi_mutation_fields"],
+      "status": "verified",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_bescom_mapping",
+      "label": "BESCOM Account-ID to EPID mapping",
+      "kind": "system",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Unpublished interface relationship between the 10-digit BESCOM Account ID and the municipal EPID, if the EPID service uses such a match.",
+      "requiredState": "A property-specific mapping succeeds in the Name Change with EPID route; public evidence of the validation, owner, and repair process is absent.",
+      "checks": [{"id":"check_bescom_account_id","label":"Account ID available","description":"The BESCOM FAQ says Account ID is 10 digits and printed on the bill.","url":"https://www.bescom.co.in/bescom/main/faq","claimIds":["claim_bescom_account_id"],"status":"verified"},{"id":"check_bescom_epid_entry","label":"EPID entry exposed","description":"BESCOM's homepage exposes Name Change with EPID.","url":"https://www.bescom.co.in/","claimIds":["claim_bescom_epid_entry"],"status":"verified"}],
+      "failureSignals": [{"id":"failure_bescom_epid_mapping","label":"Mapping does not resolve","description":"A firsthand note identifies this possible failure; exact public error text and repair owner are not verified.","claimIds":["claim_mapping_firsthand_signal","claim_transfer_requirements_unknown"],"status":"partial"}],
+      "recoveries": [{"id":"recovery_bescom_standard_name_change","label":"Use documented standard transfer route","description":"BESCOM documents Name Change/Change of Ownership using login, account selection, mandatory fields, document upload, submission, request ID, and payment.","url":"https://www.bescom.co.in/bescom/main/faq","claimIds":["claim_bescom_standard_name_change"],"status":"verified"}],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_bescom_account_id", "claim_bescom_epid_entry", "claim_mapping_firsthand_signal", "claim_transfer_requirements_unknown"],
+      "status": "partial",
+      "displayOrder": 50
+    },
+    {
+      "id": "node_name_transfer",
+      "label": "BESCOM name transfer",
+      "kind": "outcome",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "BESCOM exposes both a standard Name Change/Change of Ownership flow and a public Name Change with EPID entry; their equivalence and EPID route requirements are not documented by reviewed public sources.",
+      "requiredState": "A request is completed under the applicable BESCOM route; the Name Change with EPID post-login requirements and completion evidence are unknown.",
+      "checks": [{"id":"check_transfer_standard_route","label":"Standard transfer guidance","description":"The FAQ documents customer login, account selection, fields, documents, request ID, and payment for Name Change/Change of Ownership.","url":"https://www.bescom.co.in/bescom/main/faq","claimIds":["claim_bescom_standard_name_change"],"status":"verified"},{"id":"check_transfer_epid_entry","label":"EPID route entry","description":"The homepage publicly exposes Name Change with EPID.","url":"https://www.bescom.co.in/","claimIds":["claim_bescom_epid_entry"],"status":"verified"}],
+      "failureSignals": [{"id":"failure_transfer_epid_requirements_unknown","label":"EPID route cannot be completed from public evidence","description":"The reviewed public material does not disclose exact EPID validation, identity, payment, agreement, e-sign, approval, or bill-update steps.","claimIds":["claim_transfer_requirements_unknown"],"status":"unknown"}],
+      "recoveries": [{"id":"recovery_transfer_standard_route","label":"Choose the documented standard route when appropriate","description":"Use the standard BESCOM Name Change/Change of Ownership route and its official request tracking; eligibility against EPID-route failures remains unverified.","url":"https://www.bescom.co.in/bescom/main/faq","claimIds":["claim_bescom_standard_name_change","claim_transfer_requirements_unknown"],"status":"partial"}],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_bescom_epid_entry", "claim_bescom_standard_name_change", "claim_transfer_requirements_unknown"],
+      "status": "partial",
+      "displayOrder": 60
+    },
+    {
+      "id": "node_updated_bill",
+      "label": "Updated BESCOM bill",
+      "kind": "outcome",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "A bill showing the new consumer's name is the practical downstream confirmation, but no reviewed public source documents the timing or display condition after the EPID route.",
+      "requiredState": "A future bill/account display shows the updated name; source and timing remain to be evidenced.",
+      "checks": [],
+      "failureSignals": [{"id":"failure_updated_bill_unknown","label":"No documented post-transfer confirmation","description":"No reviewed official public source specifies when or where an EPID-route name update appears after approval.","claimIds":["claim_transfer_requirements_unknown"],"status":"unknown"}],
+      "recoveries": [],
+      "scenarioIds": ["scenario_clean_sale", "scenario_epid_mapping_failure"],
+      "claimIds": ["claim_transfer_requirements_unknown"],
+      "status": "unknown",
+      "displayOrder": 70
+    }
+  ],
+  "edges": [
+    {"id":"edge_sale_deed_to_mutation","fromNodeId":"node_sale_deed","toNodeId":"node_mutation","relationship":"produces","label":"Registered-deed information is exposed in the municipal mutation workflow; universal automatic completion is not established.","scenarioIds":["scenario_clean_sale","scenario_draft_e_khata"],"claimIds":["claim_eaasthi_mutation_fields"],"status":"partial"},
+    {"id":"edge_mutation_to_final_e_khata","fromNodeId":"node_mutation","toNodeId":"node_final_e_khata","relationship":"requires","label":"A buyer-facing final municipal record is a prudent inferred dependency, not a published universal rule.","scenarioIds":["scenario_clean_sale","scenario_draft_e_khata","scenario_previous_consumer_deceased"],"claimIds":["claim_clean_sale_sequence_inference"],"status":"partial"},
+    {"id":"edge_final_e_khata_to_epid","fromNodeId":"node_final_e_khata","toNodeId":"node_epid","relationship":"produces","label":"Final-record and EPID relationship is a working hypothesis; the public interface separately supports EPID lookup/status.","scenarioIds":["scenario_clean_sale","scenario_draft_e_khata","scenario_epid_mapping_failure","scenario_previous_consumer_deceased"],"claimIds":["claim_clean_sale_sequence_inference","claim_eaasthi_search_epid","claim_eaasthi_status_by_epid"],"status":"partial"},
+    {"id":"edge_epid_to_bescom_mapping","fromNodeId":"node_epid","toNodeId":"node_bescom_mapping","relationship":"maps_to","label":"BESCOM exposes an EPID transfer entry, but its Account-ID mapping contract is not publicly documented in reviewed material.","scenarioIds":["scenario_clean_sale","scenario_draft_e_khata","scenario_epid_mapping_failure","scenario_previous_consumer_deceased"],"claimIds":["claim_bescom_epid_entry","claim_mapping_firsthand_signal","claim_transfer_requirements_unknown"],"status":"partial"},
+    {"id":"edge_bescom_mapping_to_name_transfer","fromNodeId":"node_bescom_mapping","toNodeId":"node_name_transfer","relationship":"requires","label":"A successful EPID mapping appears necessary for the EPID route; the standard document route is an officially documented alternative.","scenarioIds":["scenario_clean_sale","scenario_draft_e_khata","scenario_epid_mapping_failure","scenario_tenant","scenario_previous_consumer_deceased","scenario_consent_unavailable"],"claimIds":["claim_clean_sale_sequence_inference","claim_bescom_standard_name_change","claim_transfer_requirements_unknown"],"status":"partial"},
+    {"id":"edge_name_transfer_to_updated_bill","fromNodeId":"node_name_transfer","toNodeId":"node_updated_bill","relationship":"produces","label":"Expected downstream confirmation; timing and display are not documented by reviewed evidence.","scenarioIds":["scenario_clean_sale","scenario_epid_mapping_failure"],"claimIds":["claim_transfer_requirements_unknown"],"status":"unknown"}
+  ],
+  "roadblocks": [
+    {"id":"roadblock_draft_e_khata","title":"Draft e-Khata is not a verified buyer-facing final record","category":"documentation","symptom":"A property has a Draft e-Khata but the clean-sale chain cannot establish a final record in the buyer's name.","likelyCause":"The portal says draft e-Khata was issued from the existing property-tax register; it does not prove current ownership or finality.","recovery":"Use the official Final e-Khata guidance and EPID status route; supply only the listed documents through the official flow, not through this research process.","ownerAgencyIds":["agency_bengaluru_city_corporations"],"nodeIds":["node_final_e_khata","node_epid"],"scenarioIds":["scenario_draft_e_khata","scenario_clean_sale"],"claimIds":["claim_eaasthi_draft_origin","claim_eaasthi_final_inputs","claim_eaasthi_status_by_epid"],"status":"partial"},
+    {"id":"roadblock_property_missing_from_ekhara","title":"Property cannot be found in public e-Khata search","category":"process","symptom":"The property cannot be located using available public e-Aasthi lookup paths.","likelyCause":"The public interface identifies a missing-property state but does not expose a property-specific cause without input.","recovery":"Use the official Do Not Find My Property eKhata route for corporation review; do not submit personal data in the ledger.","ownerAgencyIds":["agency_bengaluru_city_corporations"],"nodeIds":["node_epid","node_final_e_khata"],"scenarioIds":["scenario_draft_e_khata","scenario_epid_mapping_failure"],"claimIds":["claim_eaasthi_search_epid","claim_eaasthi_missing_property_route"],"status":"verified"},
+    {"id":"roadblock_owner_not_updated","title":"Municipal record still presents a prior owner","category":"process","symptom":"A mutation record may retain a seller/giving party, purchaser/receiving party, or pending-owner state rather than a confirmed buyer-facing final record.","likelyCause":"Mutation/report data are not the same as verified final ownership for the BESCOM EPID route; exact acceptance behavior is undocumented.","recovery":"Check the official mutation and EPID-status routes, then use Final e-Khata guidance where applicable. If the EPID route remains unusable, consider BESCOM's separately documented standard name-change route.","ownerAgencyIds":["agency_bengaluru_city_corporations","agency_bescom"],"nodeIds":["node_mutation","node_final_e_khata","node_bescom_mapping"],"scenarioIds":["scenario_clean_sale","scenario_draft_e_khata","scenario_previous_consumer_deceased"],"claimIds":["claim_eaasthi_mutation_fields","claim_eaasthi_status_by_epid","claim_bescom_standard_name_change","claim_transfer_requirements_unknown"],"status":"partial"},
+    {"id":"roadblock_epid_bescom_mapping_failure","title":"EPID does not resolve to the intended BESCOM account","category":"infrastructure","symptom":"An EPID and BESCOM Account ID are available but the EPID transfer route cannot establish the expected match.","likelyCause":"One firsthand note identifies this possible integration failure; public sources reviewed do not disclose matching rules, error text, repair owner, or SLA.","recovery":"Do not repeatedly submit. Preserve non-sensitive error wording, use BESCOM's official support/standard name-change guidance, and obtain fresh official evidence before claiming a mapping repair procedure.","ownerAgencyIds":["agency_bescom","agency_bengaluru_city_corporations"],"nodeIds":["node_epid","node_bescom_mapping","node_name_transfer"],"scenarioIds":["scenario_epid_mapping_failure","scenario_clean_sale"],"claimIds":["claim_mapping_firsthand_signal","claim_bescom_standard_name_change","claim_transfer_requirements_unknown"],"status":"partial"}
+  ],
+  "journeys": [
+    {
+      "id": "journey_clean_sale_epid",
+      "title": "Clean sale: municipal record toward BESCOM EPID transfer",
+      "scenarioId": "scenario_clean_sale",
+      "context": "Partial reconstructed journey for Bengaluru. Official public interfaces verify municipal search/status/mutation entry points and BESCOM service entries; the full EPID transaction is not observed or submitted.",
+      "steps": [
+        {"id":"step_clean_sale_deed","label":"Keep the registered deed available","nodeId":"node_sale_deed","action":"Check the official Final e-Khata guidance for its listed deed input.","expectedResult":"The deed is available for the municipal record route, without assuming any downstream state.","claimIds":["claim_eaasthi_final_inputs"],"status":"verified"},
+        {"id":"step_clean_sale_mutation","label":"Inspect municipal mutation state","nodeId":"node_mutation","action":"Use the public e-Aasthi mutation entry/report and, where available, the official status path.","expectedResult":"The user can distinguish a published route/report from a completed buyer-facing record.","claimIds":["claim_eaasthi_mutation_service","claim_eaasthi_mutation_fields","claim_eaasthi_status_by_epid"],"status":"partial"},
+        {"id":"step_clean_sale_final","label":"Resolve final e-Khata state","nodeId":"node_final_e_khata","action":"Follow the official Final e-Khata document guidance; do not treat Draft as final buyer-name confirmation.","expectedResult":"A final municipal record state may be established, but its precise BESCOM acceptance condition is unknown.","claimIds":["claim_eaasthi_draft_origin","claim_eaasthi_final_inputs","claim_clean_sale_sequence_inference"],"status":"partial"},
+        {"id":"step_clean_sale_epid","label":"Locate EPID and inspect status","nodeId":"node_epid","action":"Use official public e-Aasthi search/status interfaces, or the dedicated missing-property route.","expectedResult":"An EPID/status route or explicit missing-property recovery is visible.","claimIds":["claim_eaasthi_search_epid","claim_eaasthi_status_by_epid","claim_eaasthi_missing_property_route"],"status":"verified"},
+        {"id":"step_clean_sale_mapping","label":"Assess BESCOM EPID match","nodeId":"node_bescom_mapping","action":"Use no personal data in research; record this as a property-specific operational check in the public EPID entry.","expectedResult":"The exact match result and repair path remain unknown until fresh official evidence exists.","claimIds":["claim_bescom_epid_entry","claim_mapping_firsthand_signal","claim_transfer_requirements_unknown"],"status":"partial"},
+        {"id":"step_clean_sale_transfer","label":"Use the appropriate BESCOM transfer route","nodeId":"node_name_transfer","action":"The public homepage exposes Name Change with EPID; BESCOM separately documents the standard Name Change/Change of Ownership workflow.","expectedResult":"A documented fallback exists, while EPID-route requirements/approval are unknown.","claimIds":["claim_bescom_epid_entry","claim_bescom_standard_name_change","claim_transfer_requirements_unknown"],"status":"partial"},
+        {"id":"step_clean_sale_bill","label":"Confirm later bill/account display","nodeId":"node_updated_bill","action":"Check for a future official account/bill name update only after transfer completion.","expectedResult":"No timing or confirmation source is yet evidenced.","claimIds":["claim_transfer_requirements_unknown"],"status":"unknown"}
+      ],
+      "dependencies": [
+        {"id":"journey_dependency_sale_mutation","fromNodeId":"node_sale_deed","toNodeId":"node_mutation","description":"The municipal report connects registered-deed/mutation data to EPID and parties, without proving a universal automatic outcome.","claimIds":["claim_eaasthi_mutation_fields"],"status":"partial"},
+        {"id":"journey_dependency_mutation_final","fromNodeId":"node_mutation","toNodeId":"node_final_e_khata","description":"Buyer-facing final-record resolution is inferred as a clean-sale prerequisite; public material does not publish the full rule.","claimIds":["claim_clean_sale_sequence_inference"],"status":"partial"},
+        {"id":"journey_dependency_final_epid","fromNodeId":"node_final_e_khata","toNodeId":"node_epid","description":"EPID is publicly searchable/status-checkable, but its exact production from finalisation is not established.","claimIds":["claim_eaasthi_search_epid","claim_eaasthi_status_by_epid","claim_clean_sale_sequence_inference"],"status":"partial"},
+        {"id":"journey_dependency_epid_mapping","fromNodeId":"node_epid","toNodeId":"node_bescom_mapping","description":"BESCOM exposes a Name Change with EPID entry, while the Account-ID mapping contract is unknown.","claimIds":["claim_bescom_epid_entry","claim_transfer_requirements_unknown"],"status":"unknown"},
+        {"id":"journey_dependency_mapping_transfer","fromNodeId":"node_bescom_mapping","toNodeId":"node_name_transfer","description":"A mapping success is inferred for the EPID route; standard document-based transfer is separately documented.","claimIds":["claim_clean_sale_sequence_inference","claim_bescom_standard_name_change"],"status":"partial"}
+      ],
+      "failureRoadblockIds": ["roadblock_draft_e_khata", "roadblock_property_missing_from_ekhara", "roadblock_owner_not_updated", "roadblock_epid_bescom_mapping_failure"],
+      "recoveryNotes": ["Use the official e-Aasthi missing-property and status routes before assuming a BESCOM-only failure.", "Treat BESCOM's documented standard Name Change/Change of Ownership flow as a separate fallback, not proof that the EPID route is identical.", "Keep account IDs, EPIDs, addresses, identity documents, login data, OTPs, and screenshots with personal data out of the ledger."],
+      "documentationQualityNotes": ["Municipal public interfaces expose search, status, mutation, and final-record guidance with concrete fields and routes.", "BESCOM publicly exposes Name Change with EPID but reviewed public materials do not document its workflow or Account-ID↔EPID matching behavior.", "The only mapping-failure signal in this baseline is a firsthand note, so it is retained as E/partial and not elevated to official evidence."],
+      "status": "partial"
+    }
+  ]
+}

@@ -1,0 +1,516 @@
+{
+  "_handoff": {
+    "issue": "IND-4",
+    "generatedAt": "2026-08-27",
+    "status": "in_review",
+    "scope": "First-party inventory of BESCOM name-transfer routes and Bengaluru e-Khata/EPID dependencies. Public-interface observations are grade B; unresolved EPID mapping and offline fallback remain unknown."
+  },
+  "agencies": [
+    {
+      "id": "agency_bescom",
+      "name": "Bangalore Electricity Supply Company Limited",
+      "shortName": "BESCOM",
+      "officialUrl": "https://bescom.co.in/"
+    },
+    {
+      "id": "agency_gba",
+      "name": "Greater Bengaluru Authority",
+      "shortName": "GBA",
+      "officialUrl": "https://www.bbmp.gov.in/"
+    },
+    {
+      "id": "agency_kerc",
+      "name": "Karnataka Electricity Regulatory Commission",
+      "shortName": "KERC",
+      "officialUrl": "https://kerc.karnataka.gov.in/"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_kerc_conditions_supply",
+      "title": "Conditions of Supply of Electricity of Distribution Licensees in Karnataka, with first and second amendments",
+      "publisher": "Karnataka Electricity Regulatory Commission",
+      "url": "https://www.bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
+      "accessedAt": "2026-08-27",
+      "type": "regulation",
+      "notes": "Official BESCOM-hosted copy says it was notified in the Karnataka Gazette in 2006, with 2008 and 2010 amendments. It is binding-source material, but the hosted consolidated copy is old; current amendment status was not independently established."
+    },
+    {
+      "id": "source_bescom_current_home",
+      "title": "BESCOM public homepage and service directory",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://bescom.co.in/",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Current public interface observed. It exposes Janasnehi services, Track Name Change, Name Change with EPID, and helpline 1912."
+    },
+    {
+      "id": "source_bescom_name_change_faq",
+      "title": "BESCOM Frequently Asked Questions — How To Change Name?",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/main/faq",
+      "accessedAt": "2026-08-27",
+      "type": "official_guidance",
+      "notes": "Current official guidance for the authenticated Janasnehi Vidhyuth Sevegalu workflow."
+    },
+    {
+      "id": "source_bescom_jvs_name_change",
+      "title": "Janasnehi Vidhyuth Sevegalu — Name Change/Change of Ownership",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/dashboard/consumer-dashboard/janasnehi-vidhyuth-sevagalu/name-change-form",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Current public page states the 24-hour service wording for name change and related services."
+    },
+    {
+      "id": "source_bescom_track_name_change",
+      "title": "Track Name Change",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/main/track-name-change",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Current public tracker asks for the request ID entered from SMS."
+    },
+    {
+      "id": "source_bescom_legacy_online_services",
+      "title": "BESCOM Online Portal — Online Services Details",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://onlineservices.bescom.org/",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Official legacy portal. It publishes fast-track, regular, and HT name-change route distinctions; reconcile with the newer bescom.co.in interface before presenting as a single current workflow."
+    },
+    {
+      "id": "source_gba_service_directory",
+      "title": "Greater Bengaluru Authority service directory",
+      "publisher": "Greater Bengaluru Authority",
+      "url": "https://www.bbmp.gov.in/",
+      "accessedAt": "2026-08-27",
+      "type": "official_guidance",
+      "notes": "Current GBA page lists e-Aasthi and eHelpdesk eKhata; it publishes eKhata/New Khata helpline 9480683695 and general helpline 1533."
+    },
+    {
+      "id": "source_eaasthi_property_search",
+      "title": "e-Aasthi Property Record Management System — Search Property Details",
+      "publisher": "Bengaluru city corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/office/frmSearchProperties.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Public property-search interface; says information is updated and no physical visit is required for the search function. It publishes Revenue contact and ARO-find channels."
+    },
+    {
+      "id": "source_eaasthi_khata_download",
+      "title": "e-Aasthi — Online Khatha Download (BBMP)",
+      "publisher": "Bengaluru city corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/office/frmKhathaDownload.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Public download page. For deducted-but-not-updated payment it directs users to contact the ARO with details."
+    },
+    {
+      "id": "source_bbmp_ekhata_order_form",
+      "title": "BBMP Property Tax Assessment, Recovery and Management Rules, 2024 — Form 24 e-Khata Order",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/PDF/53of2020BBMP%28PropertyTaxassessmentRecoveryandManagement%29Rules%2C2024_watermark.pdf",
+      "accessedAt": "2026-08-27",
+      "type": "official_form",
+      "notes": "Officially hosted rules PDF. Form 24 is an e-Khata order template for a Khata transfer after verification; verify operative version before treating it as a complete present-day application procedure."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_bescom_epid_name_change_route_visible",
+      "text": "BESCOM's current public homepage exposes a service labelled “Name Change with EPID.”",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_previous_consumer_deceased"],
+      "nodeIds": ["node_epid", "node_name_transfer"],
+      "sourceIds": ["source_bescom_current_home"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The public page does not disclose the route's field-level prerequisites or EPID-to-account matching rules."
+    },
+    {
+      "id": "claim_bescom_name_change_authenticated_workflow",
+      "text": "BESCOM's FAQ says Name Change redirects a user to customer login, then to Janasnehi Vidhyuth Sevegalu and Name change/Change of Ownership.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_bescom_name_change_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No authenticated account was used."
+    },
+    {
+      "id": "claim_bescom_name_change_uploads_and_request_id",
+      "text": "BESCOM's FAQ says the name-change flow selects an account ID, requires mandatory fields and document uploads, and returns a request ID on successful submission.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_bescom_name_change_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ does not enumerate the current mandatory documents."
+    },
+    {
+      "id": "claim_bescom_name_change_tracker_request_id",
+      "text": "BESCOM's public Track Name Change page requests a request ID described as entered from SMS.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_bescom_track_name_change"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A request ID is necessary to use this public status route."
+    },
+    {
+      "id": "claim_bescom_jvs_name_change_timeline",
+      "text": "BESCOM's current Janasnehi name-change page states that Name Change, Tariff Change, Load Enhancement, and Load Reduction are within 24 hours.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_bescom_jvs_name_change"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The page does not define whether the 24 hours starts at submission, verification, payment, or complete compliance."
+    },
+    {
+      "id": "claim_bescom_legacy_route_categories",
+      "text": "BESCOM's legacy official online-services portal lists Name Change as fast-track for residential LT2(a) and commercial LT3(a), regular for other categories, and separately for HT customers.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_bescom_legacy_online_services"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This route taxonomy is official but appears on a legacy portal; the newer public interface should be treated as primary for current navigation."
+    },
+    {
+      "id": "claim_kerc_transfer_consent",
+      "text": "KERC Conditions of Supply clause 36.01(a) says the registered consumer shall furnish a consent letter for transfer of the installation and deposits to the transferee.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_kerc_conditions_supply"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The official consolidated copy is old; current amendment status requires confirmation."
+    },
+    {
+      "id": "claim_kerc_transfer_without_consent_documents",
+      "text": "KERC Conditions of Supply clause 36.01 permits absence of consent to be addressed with specified ownership evidence, including a registered sale deed, partition deed, katha, succession or heirship certificate, or deed of last will.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_sale_deed", "node_final_e_khata", "node_name_transfer"],
+      "sourceIds": ["source_kerc_conditions_supply"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The same clause also identifies tenancy/occupancy evidence only for specified non-commercial installations."
+    },
+    {
+      "id": "claim_kerc_transfer_tenant_evidence_scope",
+      "text": "KERC Conditions of Supply clause 36.01 identifies valid power of attorney, latest rent receipt, or valid lease deed as occupancy evidence only for non-commercial lighting and non-commercial combined lighting and heating installations.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": ["scenario_tenant"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_kerc_conditions_supply"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The official consolidated copy is old; current amendment status requires confirmation."
+    },
+    {
+      "id": "claim_kerc_transfer_no_arrears",
+      "text": "KERC Conditions of Supply clause 36.01(c) requires no arrears outstanding against the installation for transfer.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_kerc_conditions_supply"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The official consolidated copy is old; current amendment status requires confirmation."
+    },
+    {
+      "id": "claim_kerc_transfer_indemnity_and_agreement",
+      "text": "KERC Conditions of Supply clause 36.01 requires the transferee to execute the Annexure 9 indemnity bond and a fresh power-supply agreement.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_kerc_conditions_supply"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The Annexure 9 text is included in the same official document."
+    },
+    {
+      "id": "claim_kerc_transfer_fee_schedule",
+      "text": "The published KERC Conditions of Supply schedule sets transfer-of-installation charges at ₹100 per LT installation and ₹500 per HT installation.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_kerc_conditions_supply"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Do not present these as current payable amounts without a current tariff/schedule confirmation."
+    },
+    {
+      "id": "claim_kerc_transfer_seven_day_rule",
+      "text": "KERC Conditions of Supply clause 36.02 says the original consumer's agreement is deemed terminated on transfer order or seven days after the transferee complies with required formalities, whichever is earlier.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_kerc_conditions_supply"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is a legal consequence rule, not an independently evidenced current service-level promise."
+    },
+    {
+      "id": "claim_gba_ekhata_recovery_channels",
+      "text": "The current GBA website publishes eKhata/New Khata helpline 9480683695 and general helpline 1533.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_previous_consumer_deceased"],
+      "nodeIds": ["node_final_e_khata", "node_epid"],
+      "sourceIds": ["source_gba_service_directory"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The page also lists e-Aasthi and eHelpdesk eKhata as services."
+    },
+    {
+      "id": "claim_eaasthi_public_property_search",
+      "text": "The public e-Aasthi portal provides property search by district, urban local body, property number, assessment number, or owner name.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_previous_consumer_deceased"],
+      "nodeIds": ["node_final_e_khata", "node_epid"],
+      "sourceIds": ["source_eaasthi_property_search"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No personal data was entered."
+    },
+    {
+      "id": "claim_eaasthi_download_payment_recovery",
+      "text": "The public e-Aasthi Khatha-download page directs a user whose payment was deducted but not updated to contact the ARO with details.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure"],
+      "nodeIds": ["node_final_e_khata"],
+      "sourceIds": ["source_eaasthi_khata_download"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Use the portal's published ARO/contact channels; do not expose personal payment data in the ledger."
+    },
+    {
+      "id": "claim_bbmp_ekhata_transfer_order_template",
+      "text": "The official BBMP-hosted 2024 rules PDF includes Form 24, an e-Khata Order template recording a Khata transfer after verification and updating the property-tax register and eKhata.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_previous_consumer_deceased"],
+      "nodeIds": ["node_mutation", "node_final_e_khata"],
+      "sourceIds": ["source_bbmp_ekhata_order_form"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This evidences an order template and record effect; it does not establish an end-to-end live e-Khata workflow or EPID issuance sequence."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_final_e_khata",
+      "label": "Final e-Khata",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Municipal property-record state relevant to the published e-Khata transfer-order template and public e-Aasthi services.",
+      "requiredState": "The public evidence supports property lookup, Khatha download, and a verified transfer-order outcome; it does not establish when a record is final for BESCOM.",
+      "checks": [
+        {
+          "id": "detail_eaasthi_property_search",
+          "label": "Public e-Aasthi property search",
+          "description": "Use public property search without entering unnecessary personal data.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/office/frmSearchProperties.aspx",
+          "claimIds": ["claim_eaasthi_public_property_search"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "detail_eaasthi_payment_not_updated",
+          "label": "Payment deducted but not updated",
+          "description": "The download page explicitly identifies this payment-state problem.",
+          "claimIds": ["claim_eaasthi_download_payment_recovery"],
+          "status": "verified"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "detail_eaasthi_contact_aro",
+          "label": "Contact ARO",
+          "description": "For a deducted-but-not-updated payment, the public portal directs the user to contact the ARO with details.",
+          "claimIds": ["claim_eaasthi_download_payment_recovery"],
+          "status": "verified"
+        },
+        {
+          "id": "detail_ekhata_helpline",
+          "label": "eKhata/New Khata helpline",
+          "description": "Current GBA-published eKhata/New Khata helpline: 9480683695.",
+          "claimIds": ["claim_gba_ekhata_recovery_channels"],
+          "status": "verified"
+        }
+      ],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_previous_consumer_deceased"],
+      "claimIds": ["claim_bbmp_ekhata_transfer_order_template", "claim_eaasthi_public_property_search", "claim_eaasthi_download_payment_recovery"],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_epid",
+      "label": "EPID",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "A property identifier named by BESCOM's public Name Change with EPID route; its issuance and account-mapping rules are not evidenced by the reviewed public sources.",
+      "requiredState": "Unknown. Do not infer that every e-Khata, PID, or property record automatically supplies a usable EPID for BESCOM.",
+      "checks": [
+        {
+          "id": "detail_bescom_epid_route",
+          "label": "BESCOM EPID-labelled route",
+          "description": "Current BESCOM public homepage exposes Name Change with EPID.",
+          "url": "https://bescom.co.in/",
+          "claimIds": ["claim_bescom_epid_name_change_route_visible"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [
+        {
+          "id": "detail_ekhata_epid_help",
+          "label": "eKhata/New Khata help",
+          "description": "Use GBA's published eKhata/New Khata helpline for municipal-record assistance; no official cross-system EPID remediation was found.",
+          "claimIds": ["claim_gba_ekhata_recovery_channels"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_previous_consumer_deceased"],
+      "claimIds": ["claim_bescom_epid_name_change_route_visible", "claim_gba_ekhata_recovery_channels"],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_name_transfer",
+      "label": "BESCOM name transfer",
+      "kind": "outcome",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Name Change/Change of Ownership is exposed through BESCOM's authenticated Janasnehi workflow, an EPID-labelled public route, and legacy fast-track/regular/HT route listings.",
+      "requiredState": "Use the applicable current BESCOM route; the legal source identifies consent or specified alternative evidence, no arrears, indemnity, and a fresh agreement, but the currently operative consolidated conditions need confirmation.",
+      "checks": [
+        {
+          "id": "detail_bescom_name_change_login",
+          "label": "Authenticated JVS route",
+          "description": "BESCOM FAQ directs the user through customer login and Janasnehi Vidhyuth Sevegalu.",
+          "url": "https://www.bescom.co.in/bescom/main/faq",
+          "claimIds": ["claim_bescom_name_change_authenticated_workflow"],
+          "status": "verified"
+        },
+        {
+          "id": "detail_bescom_tracker",
+          "label": "Request-ID status tracking",
+          "description": "The public tracker takes the request ID sent by SMS.",
+          "url": "https://www.bescom.co.in/bescom/main/track-name-change",
+          "claimIds": ["claim_bescom_name_change_tracker_request_id"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "detail_bescom_epid_rules_undisclosed",
+          "label": "EPID route requirements undisclosed",
+          "description": "Public pages expose the EPID-labelled service but do not state mapping, eligibility, or recovery requirements.",
+          "claimIds": ["claim_bescom_epid_name_change_route_visible"],
+          "status": "unknown"
+        },
+        {
+          "id": "detail_bescom_arrears",
+          "label": "Outstanding arrears",
+          "description": "The KERC Conditions source says arrears must be cleared for transfer.",
+          "claimIds": ["claim_kerc_transfer_no_arrears"],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "detail_bescom_1912",
+          "label": "BESCOM customer care",
+          "description": "Current BESCOM public pages publish 1912 for help.",
+          "claimIds": ["claim_bescom_epid_name_change_route_visible"],
+          "status": "verified"
+        },
+        {
+          "id": "detail_bescom_status_tracker",
+          "label": "Track request",
+          "description": "Use the BESCOM tracker after a request ID is received by SMS.",
+          "claimIds": ["claim_bescom_name_change_tracker_request_id"],
+          "status": "verified"
+        }
+      ],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_bescom_name_change_authenticated_workflow", "claim_bescom_name_change_uploads_and_request_id", "claim_bescom_name_change_tracker_request_id", "claim_bescom_jvs_name_change_timeline", "claim_bescom_legacy_route_categories", "claim_kerc_transfer_consent", "claim_kerc_transfer_without_consent_documents", "claim_kerc_transfer_tenant_evidence_scope", "claim_kerc_transfer_no_arrears", "claim_kerc_transfer_indemnity_and_agreement", "claim_kerc_transfer_fee_schedule", "claim_kerc_transfer_seven_day_rule"],
+      "status": "partial",
+      "displayOrder": 60
+    }
+  ],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_epid_mapping_undocumented",
+      "title": "EPID route exists, but public mapping rules are not documented",
+      "category": "documentation",
+      "symptom": "A user can see Name Change with EPID on BESCOM's public homepage but cannot determine from reviewed public material whether an EPID maps to the intended electricity account or what remediation applies.",
+      "likelyCause": "The current public interface exposes the route without its field-level eligibility or cross-system mapping documentation.",
+      "recovery": "Use BESCOM 1912 for utility guidance and GBA's eKhata/New Khata helpline 9480683695 for municipal-record help; record the outcome only if an official response is obtained.",
+      "ownerAgencyIds": ["agency_bescom", "agency_gba"],
+      "nodeIds": ["node_epid", "node_bescom_mapping", "node_name_transfer"],
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure"],
+      "claimIds": ["claim_bescom_epid_name_change_route_visible", "claim_gba_ekhata_recovery_channels"],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_transfer_charge_currentness",
+      "title": "Published transfer-fee schedule may not be current",
+      "category": "documentation",
+      "symptom": "The official KERC consolidated Conditions document gives transfer charges, but its copy predates the current portal and may not capture later changes.",
+      "likelyCause": "No current BESCOM demand letter, tariff circular, or current fee schedule for transfer was found in this pass.",
+      "recovery": "Treat the historic schedule as context only and rely on the fee breakdown or demand letter generated by the current BESCOM process.",
+      "ownerAgencyIds": ["agency_bescom", "agency_kerc"],
+      "nodeIds": ["node_name_transfer"],
+      "scenarioIds": ["scenario_clean_sale", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_kerc_transfer_fee_schedule", "claim_bescom_name_change_uploads_and_request_id"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

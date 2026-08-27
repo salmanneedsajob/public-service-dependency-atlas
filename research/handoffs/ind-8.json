@@ -1,0 +1,437 @@
+{
+  "_handoff": {
+    "issue": "IND-8",
+    "generatedAt": "2026-08-27",
+    "status": "in_review",
+    "scopeNote": "Five BESCOM exception journeys branch from IND-6's canonical clean-sale chain. Direct current public-official interface observations are Grade B. The official BESCOM-hosted Clause 36 copy is Grade A but partial because its consolidated content is dated 2013. Authenticated fields, EPID mapping, backend repair, and outcome timing remain Unknown."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_kerc_cos_consolidated",
+      "title": "Conditions of Supply of Electricity with I and II Amendments",
+      "publisher": "BESCOM / Karnataka Electricity Regulatory Commission",
+      "url": "https://bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
+      "accessedAt": "2026-08-27",
+      "type": "regulation",
+      "notes": "Officially hosted consolidated copy. Its content/pagination is dated 2013, therefore statutory-text claims are Grade A but partial for current procedural applicability."
+    },
+    {
+      "id": "source_bescom_namechange_tracker",
+      "title": "Track Name Change",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/main/track-name-change",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Current public interface asks for the Request ID sent by SMS and displays 1912 help."
+    },
+    {
+      "id": "source_bescom_jvs_faq_ind8",
+      "title": "BESCOM FAQ — How To Change Name?",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/main/faq",
+      "accessedAt": "2026-08-27",
+      "type": "official_guidance",
+      "notes": "Current public FAQ observes the authenticated JVS name-change workflow, but does not enumerate its field-level document eligibility."
+    },
+    {
+      "id": "source_ekhata_citizen_login_ind8",
+      "title": "e-Aasthi citizen login and Final e-Khata instructions",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Current public interface distinguishes Draft e-Khata and guidance for Final e-Khata."
+    },
+    {
+      "id": "source_ekhata_public_search_ind8",
+      "title": "e-Aasthi public e-Khata search",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Current public search supports ward, SAS property-tax ID, and property EPID; it exposes a missing-property route."
+    },
+    {
+      "id": "source_ekhata_epid_status_ind8",
+      "title": "e-Khata Application Status",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Current public status interface accepts an EPID and displays the e-Khata helpline; it does not document BESCOM mapping."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind8_transfer_consent_letter",
+      "text": "Clause 36.01 says the registered consumer is to furnish consent to transfer the installation and deposits held in that consumer's name.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_evidence", "node_transfer_obligations"],
+      "sourceIds": ["source_kerc_cos_consolidated"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The officially hosted copy is historic; current portal material inspected does not restate the rule."
+    },
+    {
+      "id": "claim_ind8_transfer_alt_ownership",
+      "text": "In the absence of consent, Clause 36.01 lists registered sale deed, partition deed, khata, succession or heirship certificate, and deed of last will as ownership-evidence alternatives.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_evidence"],
+      "sourceIds": ["source_kerc_cos_consolidated"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Do not infer that every historical alternative is accepted by the current authenticated form."
+    },
+    {
+      "id": "claim_ind8_transfer_alt_occupancy",
+      "text": "In the absence of consent, Clause 36.01 lists valid power of attorney, latest rent-paid receipt, or valid lease deed as occupancy evidence only for non-commercial lighting and non-commercial combined lighting-and-heating installations.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant"],
+      "nodeIds": ["node_transfer_evidence"],
+      "sourceIds": ["source_kerc_cos_consolidated"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This limitation must not be generalized to commercial installations."
+    },
+    {
+      "id": "claim_ind8_transfer_indemnity",
+      "text": "Clause 36.01 requires the transferee to execute an indemnity bond for disputes arising from the transfer.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_obligations"],
+      "sourceIds": ["source_kerc_cos_consolidated"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The current public FAQ does not expose the form or its present upload handling."
+    },
+    {
+      "id": "claim_ind8_transfer_no_arrears",
+      "text": "Clause 36.01 states that no arrears may be outstanding against the installation.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_obligations"],
+      "sourceIds": ["source_kerc_cos_consolidated"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No inspected public current interface exposes an arrears-clearing sequence."
+    },
+    {
+      "id": "claim_ind8_transfer_fee",
+      "text": "Clause 30.10 publishes transfer charges of Rs.100 per LT installation and Rs.500 per HT installation.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_obligations"],
+      "sourceIds": ["source_kerc_cos_consolidated"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Historic official schedule; current payable amount must be checked in the live demand/payment flow."
+    },
+    {
+      "id": "claim_ind8_transfer_fresh_agreement",
+      "text": "Clause 36.01 requires the transferee to execute a fresh power-supply agreement.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_obligations"],
+      "sourceIds": ["source_kerc_cos_consolidated"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The current public FAQ does not say where or how the agreement is completed."
+    },
+    {
+      "id": "claim_ind8_transfer_deposit",
+      "text": "Clause 36.01 says a fresh deposit as for a new consumer is payable when consent to transfer the registered consumer's deposit is absent, and says no additional deposit is demanded when that consent is produced.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_obligations"],
+      "sourceIds": ["source_kerc_cos_consolidated"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Current calculation and payment timing are not publicly verified."
+    },
+    {
+      "id": "claim_ind8_bescom_authenticated_request",
+      "text": "BESCOM's current FAQ directs a name-change applicant to authenticate, select JVS Name change/Change of Ownership, choose an account ID, complete mandatory fields, upload required documents, submit, retain the displayed Request ID, and pay applicable charges.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_authenticated_name_change", "node_transfer_request_tracking"],
+      "sourceIds": ["source_bescom_jvs_faq_ind8"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Post-login fields, document list, account/EPID eligibility, and backend behavior were not observed."
+    },
+    {
+      "id": "claim_ind8_bescom_request_tracker",
+      "text": "BESCOM's current public name-change tracker requests the Request ID sent by SMS.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_request_tracking"],
+      "sourceIds": ["source_bescom_namechange_tracker"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The tracker does not establish approval or updated-bill timing."
+    },
+    {
+      "id": "claim_ind8_draft_final_guidance",
+      "text": "The current e-Aasthi public guidance says Draft e-Khata is available after mobile-OTP login and directs citizens to upload additional information for Final e-Khata, including registered deed, eKYC, SAS property-tax application number, property photo, and A-Khata documents; it says encumbrance certificate is needed only when immediate sale or transfer is planned.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata"],
+      "nodeIds": ["node_final_e_khata"],
+      "sourceIds": ["source_ekhata_citizen_login_ind8"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This establishes municipal guidance, not that BESCOM requires Final e-Khata."
+    },
+    {
+      "id": "claim_ind8_ekhata_missing_property_recovery",
+      "text": "The current public e-Aasthi search offers a Do not find my property eKhata submission route when the property cannot be found.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure"],
+      "nodeIds": ["node_final_e_khata", "node_epid"],
+      "sourceIds": ["source_ekhata_public_search_ind8"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Later processing state and turnaround are not established."
+    },
+    {
+      "id": "claim_ind8_ekhata_status_epid",
+      "text": "The current public e-Khata Application Status page accepts an EPID for status lookup and publishes the e-Khata helpline.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure"],
+      "nodeIds": ["node_epid", "node_final_e_khata"],
+      "sourceIds": ["source_ekhata_epid_status_ind8"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The page does not describe EPID-to-BESCOM account mapping."
+    },
+    {
+      "id": "claim_ind8_epid_mapping_unknown",
+      "text": "No inspected public official material establishes eligibility rules, failure messages, repair owner, or recovery sequence for mapping an EPID to a BESCOM account.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure"],
+      "nodeIds": ["node_epid", "node_bescom_mapping"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Do not turn the visible public Name Change with EPID entry into an inferred mapping contract."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_transfer_evidence",
+      "label": "Transfer evidence",
+      "kind": "document",
+      "summary": "Consent, ownership, or scope-limited occupancy evidence for an exception transfer.",
+      "requiredState": "Use consent or the appropriate Clause 36.01 alternative; tenant occupancy alternatives are textually limited to specified non-commercial installations.",
+      "checks": [
+        {"id": "detail_transfer_evidence_scope", "label": "Choose evidence branch", "description": "Separate ownership or succession evidence from tenant occupancy evidence.", "claimIds": ["claim_ind8_transfer_alt_ownership", "claim_ind8_transfer_alt_occupancy"], "status": "partial"}
+      ],
+      "failureSignals": [
+        {"id": "detail_transfer_evidence_missing", "label": "Evidence does not fit", "description": "Consent is absent but no listed alternative is available, or tenant use falls outside the stated scope.", "claimIds": ["claim_ind8_transfer_alt_ownership", "claim_ind8_transfer_alt_occupancy"], "status": "partial"}
+      ],
+      "recoveries": [
+        {"id": "detail_transfer_evidence_recovery", "label": "Confirm current acceptance", "description": "Use authorized BESCOM support or authenticated workflow for case-specific acceptance; no public current checklist was observed.", "claimIds": ["claim_ind8_bescom_authenticated_request"], "status": "partial"}
+      ],
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind8_transfer_consent_letter", "claim_ind8_transfer_alt_ownership", "claim_ind8_transfer_alt_occupancy"],
+      "status": "partial",
+      "displayOrder": 45
+    },
+    {
+      "id": "node_transfer_obligations",
+      "label": "Transfer obligations",
+      "kind": "decision",
+      "summary": "Arrears, indemnity, fee, agreement, and deposit conditions recorded in Clause 36.01.",
+      "requiredState": "No arrears; indemnity and fresh agreement; applicable transfer fee; deposit handling depends on deposit-transfer consent.",
+      "checks": [
+        {"id": "detail_transfer_obligations", "label": "Apply obligations", "description": "Historical text requires no arrears, indemnity, fee, fresh agreement, and sometimes a fresh deposit.", "claimIds": ["claim_ind8_transfer_indemnity", "claim_ind8_transfer_no_arrears", "claim_ind8_transfer_fee", "claim_ind8_transfer_fresh_agreement", "claim_ind8_transfer_deposit"], "status": "partial"}
+      ],
+      "failureSignals": [
+        {"id": "detail_transfer_arrears", "label": "Outstanding arrears", "description": "The historical clause says arrears block transfer; current public clearing sequence was not found.", "claimIds": ["claim_ind8_transfer_no_arrears"], "status": "partial"}
+      ],
+      "recoveries": [
+        {"id": "detail_transfer_current_demand", "label": "Obtain current demand", "description": "The FAQ says the authenticated request exposes applicable payment information; it does not validate historic values as current.", "claimIds": ["claim_ind8_bescom_authenticated_request", "claim_ind8_transfer_fee"], "status": "partial"}
+      ],
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind8_transfer_indemnity", "claim_ind8_transfer_no_arrears", "claim_ind8_transfer_fee", "claim_ind8_transfer_fresh_agreement", "claim_ind8_transfer_deposit"],
+      "status": "partial",
+      "displayOrder": 55
+    },
+    {
+      "id": "node_authenticated_name_change",
+      "label": "Authenticated BESCOM name-change request",
+      "kind": "service",
+      "summary": "The current public FAQ's post-login JVS name-change path.",
+      "requiredState": "Authorized user can authenticate, select an account ID, complete mandatory fields, and upload required documents.",
+      "checks": [
+        {"id": "detail_authenticated_name_change", "label": "Submit JVS request", "description": "The FAQ describes authentication, account selection, mandatory fields, document upload, and submission.", "claimIds": ["claim_ind8_bescom_authenticated_request"], "status": "verified"}
+      ],
+      "failureSignals": [
+        {"id": "detail_authenticated_unknown", "label": "Post-login validation unknown", "description": "No private fields, error states, EPID eligibility, or document list was observed.", "claimIds": ["claim_ind8_bescom_authenticated_request", "claim_ind8_epid_mapping_unknown"], "status": "unknown"}
+      ],
+      "recoveries": [],
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind8_bescom_authenticated_request"],
+      "status": "verified",
+      "displayOrder": 65
+    },
+    {
+      "id": "node_transfer_request_tracking",
+      "label": "Name-change request tracking",
+      "kind": "record",
+      "summary": "Public tracking state keyed by the Request ID sent by SMS.",
+      "requiredState": "Retain the Request ID after submission.",
+      "checks": [
+        {"id": "detail_request_tracker", "label": "Track Request ID", "description": "The public tracker asks for the Request ID sent by SMS.", "claimIds": ["claim_ind8_bescom_request_tracker"], "status": "verified"}
+      ],
+      "failureSignals": [
+        {"id": "detail_request_outcome_unknown", "label": "Outcome timing unknown", "description": "The tracker does not establish approval or updated-bill timing.", "claimIds": ["claim_ind8_bescom_request_tracker"], "status": "unknown"}
+      ],
+      "recoveries": [],
+      "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind8_bescom_request_tracker"],
+      "status": "verified",
+      "displayOrder": 70
+    }
+  ],
+  "edges": [
+    {"id": "edge_transfer_evidence_to_obligations", "fromNodeId": "node_transfer_evidence", "toNodeId": "node_transfer_obligations", "relationship": "requires", "label": "Exception evidence precedes transfer obligations.", "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"], "claimIds": ["claim_ind8_transfer_consent_letter", "claim_ind8_transfer_alt_ownership", "claim_ind8_transfer_alt_occupancy"], "status": "partial"},
+    {"id": "edge_transfer_obligations_to_name_transfer", "fromNodeId": "node_transfer_obligations", "toNodeId": "node_name_transfer", "relationship": "requires", "label": "Historical conditions list these obligations for transfer.", "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"], "claimIds": ["claim_ind8_transfer_indemnity", "claim_ind8_transfer_no_arrears", "claim_ind8_transfer_fresh_agreement", "claim_ind8_transfer_deposit"], "status": "partial"},
+    {"id": "edge_authenticated_name_change_to_tracking", "fromNodeId": "node_authenticated_name_change", "toNodeId": "node_transfer_request_tracking", "relationship": "produces", "label": "The documented public workflow produces a Request ID after submission.", "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"], "claimIds": ["claim_ind8_bescom_authenticated_request", "claim_ind8_bescom_request_tracker"], "status": "verified"}
+  ],
+  "roadblocks": [
+    {"id": "roadblock_tenant_scope_unclear", "title": "Tenant route outside stated non-commercial scope", "category": "documentation", "symptom": "An occupier seeks transfer for an installation that may not fit the historical non-commercial scope.", "likelyCause": "The occupancy alternative is explicitly limited and current authenticated eligibility is not publicly documented.", "recovery": "Do not assume tenant eligibility; confirm current evidence and installation category through authorized BESCOM channels.", "nodeIds": ["node_transfer_evidence", "node_authenticated_name_change"], "scenarioIds": ["scenario_tenant"], "claimIds": ["claim_ind8_transfer_alt_occupancy", "claim_ind8_bescom_authenticated_request"], "status": "partial"},
+    {"id": "roadblock_successor_evidence_unconfirmed", "title": "Successor evidence cannot be confirmed in the current form", "category": "documentation", "symptom": "The prior consumer is deceased and consent cannot be obtained.", "likelyCause": "Clause 36.01 lists succession/heirship certificate or will, but the public FAQ does not enumerate current uploads.", "recovery": "Use the listed alternative as a historical evidence lead and confirm acceptance in the official authorized workflow.", "nodeIds": ["node_transfer_evidence", "node_authenticated_name_change"], "scenarioIds": ["scenario_previous_consumer_deceased"], "claimIds": ["claim_ind8_transfer_alt_ownership", "claim_ind8_bescom_authenticated_request"], "status": "partial"},
+    {"id": "roadblock_consent_deposit_exception", "title": "Consent unavailable and deposit treatment unresolved", "category": "documentation", "symptom": "The applicant cannot furnish consent for transfer and deposit transfer.", "likelyCause": "The historic rule substitutes evidence but also describes a fresh-deposit consequence.", "recovery": "Prepare the applicable historical alternative and verify the current demand/deposit amount; do not use historic amounts as current.", "nodeIds": ["node_transfer_evidence", "node_transfer_obligations"], "scenarioIds": ["scenario_consent_unavailable", "scenario_previous_consumer_deceased", "scenario_tenant"], "claimIds": ["claim_ind8_transfer_alt_ownership", "claim_ind8_transfer_alt_occupancy", "claim_ind8_transfer_deposit"], "status": "partial"},
+    {"id": "roadblock_transfer_arrears_unknown_recovery", "title": "Arrears block transfer but public clearing path is not documented", "category": "process", "symptom": "An outstanding balance may prevent transfer.", "likelyCause": "Clause 36.01 states no arrears may be outstanding; no public remediation sequence was found.", "recovery": "Resolve billing through an authorized BESCOM path before retrying; exact current sequence remains unknown.", "nodeIds": ["node_transfer_obligations", "node_authenticated_name_change"], "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"], "claimIds": ["claim_ind8_transfer_no_arrears", "claim_ind8_bescom_authenticated_request"], "status": "partial"},
+    {"id": "roadblock_authenticated_document_requirements_unknown", "title": "Current uploaded-document checklist is not public", "category": "process", "symptom": "The FAQ route is visible but the pre-login document checklist cannot be verified.", "likelyCause": "The current FAQ says to upload required documents without listing them.", "recovery": "Use the authorized route only; retain the Request ID if submitted and do not infer errors or bypass login.", "nodeIds": ["node_authenticated_name_change", "node_transfer_request_tracking"], "scenarioIds": ["scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"], "claimIds": ["claim_ind8_bescom_authenticated_request", "claim_ind8_bescom_request_tracker"], "status": "partial"}
+  ],
+  "journeys": [
+    {
+      "id": "journey_draft_e_khata",
+      "title": "Draft or pending e-Khata before the BESCOM request",
+      "scenarioId": "scenario_draft_e_khata",
+      "context": "Branch from IND-6's sale-deed to Final e-Khata to EPID to BESCOM-mapping chain. Public evidence confirms Draft/Final e-Khata guidance, but does not prove BESCOM rejects Draft or requires Final e-Khata.",
+      "steps": [
+        {"id": "step_draft_check", "label": "Inspect e-Khata state", "nodeId": "node_final_e_khata", "action": "Use public search/status without submitting personal data.", "expectedResult": "Discoverability and any available EPID/status state.", "claimIds": ["claim_ind8_ekhata_missing_property_recovery", "claim_ind8_ekhata_status_epid"], "status": "verified"},
+        {"id": "step_draft_finalize", "label": "Follow Final e-Khata guidance", "nodeId": "node_final_e_khata", "action": "Where only Draft exists, follow the official Final e-Khata input guidance.", "expectedResult": "Municipal record work can proceed; BESCOM impact remains unverified.", "claimIds": ["claim_ind8_draft_final_guidance"], "status": "partial"},
+        {"id": "step_draft_mapping", "label": "Preserve mapping uncertainty", "nodeId": "node_bescom_mapping", "action": "Do not infer that Final e-Khata produces an EPID-to-BESCOM mapping.", "expectedResult": "Unresolved cross-system dependency remains visible.", "claimIds": ["claim_ind8_epid_mapping_unknown"], "status": "unknown"},
+        {"id": "step_draft_request", "label": "Use documented request route if eligible", "nodeId": "node_authenticated_name_change", "action": "Authorized user may use JVS Name change/Change of Ownership.", "expectedResult": "A submission can yield a Request ID; eligibility remains separate.", "claimIds": ["claim_ind8_bescom_authenticated_request"], "status": "verified"}
+      ],
+      "dependencies": [
+        {"id": "dependency_draft_final_to_epid", "fromNodeId": "node_final_e_khata", "toNodeId": "node_epid", "description": "IND-6 marks this as partial/inferred rather than verified.", "claimIds": ["claim_ind8_epid_mapping_unknown"], "status": "partial"},
+        {"id": "dependency_draft_mapping_to_transfer", "fromNodeId": "node_bescom_mapping", "toNodeId": "node_name_transfer", "description": "Public evidence does not establish this mapping/transfer handoff.", "claimIds": ["claim_ind8_epid_mapping_unknown"], "status": "unknown"}
+      ],
+      "failureRoadblockIds": ["roadblock_draft_e_khata", "roadblock_property_missing_from_ekhara", "roadblock_owner_not_updated", "roadblock_epid_bescom_mapping_failure", "roadblock_authenticated_document_requirements_unknown"],
+      "recoveryNotes": ["Use official Final e-Khata guidance and public search/status; do not promise that it unblocks BESCOM.", "Use the official missing-property route when absent.", "Retain BESCOM Request ID if an authorized request is submitted."],
+      "documentationQualityNotes": ["Municipal Draft/Final guidance is current public evidence (B).", "The municipal-to-BESCOM mapping chain remains partial or unknown."],
+      "status": "partial"
+    },
+    {
+      "id": "journey_epid_mapping_failure",
+      "title": "EPID exists or is expected, but BESCOM mapping fails",
+      "scenarioId": "scenario_epid_mapping_failure",
+      "context": "IND-6 mapping-failure branch. Public official interfaces expose EPID-based e-Khata status and BESCOM name-change routes, but not mapping rules or repair ownership.",
+      "steps": [
+        {"id": "step_mapping_status", "label": "Check municipal EPID status", "nodeId": "node_epid", "action": "Use public status only with an EPID already held by the user.", "expectedResult": "Municipal status lookup; it does not establish BESCOM mapping.", "claimIds": ["claim_ind8_ekhata_status_epid"], "status": "verified"},
+        {"id": "step_mapping_search", "label": "Check property discoverability", "nodeId": "node_final_e_khata", "action": "Use public search and its missing-property route if absent.", "expectedResult": "A municipal recovery entry, not a demonstrated BESCOM repair.", "claimIds": ["claim_ind8_ekhata_missing_property_recovery"], "status": "verified"},
+        {"id": "step_mapping_unknown", "label": "Keep mapping behavior unknown", "nodeId": "node_bescom_mapping", "action": "Do not infer format rules, error text, repair owner, or offline fallback.", "expectedResult": "The cross-system failure remains explicit.", "claimIds": ["claim_ind8_epid_mapping_unknown"], "status": "unknown"},
+        {"id": "step_mapping_request", "label": "Use authorized BESCOM route only when eligible", "nodeId": "node_authenticated_name_change", "action": "Use authorized login and retain a Request ID if accepted.", "expectedResult": "A public workflow exists, not proof of mapping repair.", "claimIds": ["claim_ind8_bescom_authenticated_request", "claim_ind8_bescom_request_tracker"], "status": "partial"}
+      ],
+      "dependencies": [
+        {"id": "dependency_mapping_epid_to_bescom", "fromNodeId": "node_epid", "toNodeId": "node_bescom_mapping", "description": "The relationship is not publicly specified.", "claimIds": ["claim_ind8_epid_mapping_unknown"], "status": "unknown"}
+      ],
+      "failureRoadblockIds": ["roadblock_epid_bescom_mapping_failure", "roadblock_property_missing_from_ekhara", "roadblock_authenticated_document_requirements_unknown"],
+      "recoveryNotes": ["Use municipal property/status channels for municipal-side discoverability and BESCOM authorized support for the utility-side case.", "No inspected official source assigns mapping repair or a turnaround."],
+      "documentationQualityNotes": ["Public endpoints are evidenced; their cross-system contract is not.", "Do not treat an EPID-labelled public entry as a proven successful mapping path."],
+      "status": "unknown"
+    },
+    {
+      "id": "journey_tenant_transfer",
+      "title": "Tenant or occupier seeks transfer",
+      "scenarioId": "scenario_tenant",
+      "context": "Historical Clause 36.01 alternative is limited to specified non-commercial installations. It joins BESCOM's current authenticated request path without inferring current field-level acceptance.",
+      "steps": [
+        {"id": "step_tenant_scope", "label": "Assess tenant-route scope", "nodeId": "node_transfer_evidence", "action": "Distinguish the stated non-commercial scope from commercial or unverified use.", "expectedResult": "Historically described evidence branch or explicit out-of-scope uncertainty.", "claimIds": ["claim_ind8_transfer_alt_occupancy"], "status": "partial"},
+        {"id": "step_tenant_evidence", "label": "Prepare occupancy evidence", "nodeId": "node_transfer_evidence", "action": "Use the historic valid power-of-attorney, rent-receipt, or lease-deed alternatives as evidence leads when consent is absent.", "expectedResult": "Evidence ready for current acceptance check.", "claimIds": ["claim_ind8_transfer_alt_occupancy"], "status": "partial"},
+        {"id": "step_tenant_obligations", "label": "Address obligations", "nodeId": "node_transfer_obligations", "action": "Address arrears, indemnity, fee, fresh agreement, and deposit treatment.", "expectedResult": "Transfer package subject to current confirmation.", "claimIds": ["claim_ind8_transfer_indemnity", "claim_ind8_transfer_no_arrears", "claim_ind8_transfer_fee", "claim_ind8_transfer_fresh_agreement", "claim_ind8_transfer_deposit"], "status": "partial"},
+        {"id": "step_tenant_submit_track", "label": "Submit and track if eligible", "nodeId": "node_transfer_request_tracking", "action": "Use JVS only with authorization and retain Request ID after successful submission.", "expectedResult": "Trackable request, not guaranteed approval or updated bill.", "claimIds": ["claim_ind8_bescom_authenticated_request", "claim_ind8_bescom_request_tracker"], "status": "verified"}
+      ],
+      "dependencies": [
+        {"id": "dependency_tenant_evidence_obligations", "fromNodeId": "node_transfer_evidence", "toNodeId": "node_transfer_obligations", "description": "Tenant evidence does not remove the other historical transfer obligations.", "claimIds": ["claim_ind8_transfer_alt_occupancy", "claim_ind8_transfer_indemnity", "claim_ind8_transfer_no_arrears"], "status": "partial"}
+      ],
+      "failureRoadblockIds": ["roadblock_tenant_scope_unclear", "roadblock_transfer_arrears_unknown_recovery", "roadblock_authenticated_document_requirements_unknown"],
+      "recoveryNotes": ["Do not present occupancy evidence as a universal tenant entitlement.", "For commercial or unclear use, current eligibility must be confirmed rather than inferred."],
+      "documentationQualityNotes": ["Grade A supports historical text but only partially supports current handling.", "The current public FAQ confirms a route, not a tenant-specific checklist."],
+      "status": "partial"
+    },
+    {
+      "id": "journey_previous_consumer_deceased",
+      "title": "Previous consumer is deceased; successor seeks transfer",
+      "scenarioId": "scenario_previous_consumer_deceased",
+      "context": "Consent-unavailable ownership branch. It can intersect with IND-6's municipal chain, but no evidence establishes that municipal Final e-Khata or EPID is a current prerequisite for this exception transfer.",
+      "steps": [
+        {"id": "step_deceased_evidence", "label": "Choose successor ownership evidence", "nodeId": "node_transfer_evidence", "action": "Use the historic list including succession/heirship certificate or deed of last will; do not invent a death-only portal rule.", "expectedResult": "Documented evidence lead for absent consent.", "claimIds": ["claim_ind8_transfer_alt_ownership"], "status": "partial"},
+        {"id": "step_deceased_obligations", "label": "Address obligations", "nodeId": "node_transfer_obligations", "action": "Address arrears, indemnity, fee, fresh agreement, and deposit; verify current values live.", "expectedResult": "Package for current case-specific confirmation.", "claimIds": ["claim_ind8_transfer_indemnity", "claim_ind8_transfer_no_arrears", "claim_ind8_transfer_fee", "claim_ind8_transfer_fresh_agreement", "claim_ind8_transfer_deposit"], "status": "partial"},
+        {"id": "step_deceased_request", "label": "Use JVS and retain Request ID", "nodeId": "node_transfer_request_tracking", "action": "If the authorized account path permits submission, use the documented FAQ route.", "expectedResult": "Trackable request; document validation and outcome remain unverified.", "claimIds": ["claim_ind8_bescom_authenticated_request", "claim_ind8_bescom_request_tracker"], "status": "partial"}
+      ],
+      "dependencies": [
+        {"id": "dependency_deceased_evidence_obligations", "fromNodeId": "node_transfer_evidence", "toNodeId": "node_transfer_obligations", "description": "Alternative ownership evidence does not remove other recorded obligations.", "claimIds": ["claim_ind8_transfer_alt_ownership", "claim_ind8_transfer_no_arrears", "claim_ind8_transfer_indemnity"], "status": "partial"}
+      ],
+      "failureRoadblockIds": ["roadblock_successor_evidence_unconfirmed", "roadblock_consent_deposit_exception", "roadblock_transfer_arrears_unknown_recovery", "roadblock_authenticated_document_requirements_unknown"],
+      "recoveryNotes": ["Use the successor-evidence list as a lead only and confirm current acceptance.", "Follow IND-6 municipal recovery separately if the property record also needs updating."],
+      "documentationQualityNotes": ["No current public FAQ enumerates a deceased-consumer route.", "Municipal record and BESCOM transfer routes are not linked by a verified public rule."],
+      "status": "partial"
+    },
+    {
+      "id": "journey_consent_unavailable",
+      "title": "Prior-consumer consent unavailable",
+      "scenarioId": "scenario_consent_unavailable",
+      "context": "General Clause 36.01 exception. Historical text supplies ownership or limited occupancy alternatives and related obligations; it converges on the documented current BESCOM request/tracker states without assuming eligibility.",
+      "steps": [
+        {"id": "step_consent_alternative", "label": "Select evidence alternative", "nodeId": "node_transfer_evidence", "action": "Use consent if present; otherwise distinguish listed ownership evidence from narrow non-commercial occupancy evidence.", "expectedResult": "Classified exception branch instead of an assumed workaround.", "claimIds": ["claim_ind8_transfer_consent_letter", "claim_ind8_transfer_alt_ownership", "claim_ind8_transfer_alt_occupancy"], "status": "partial"},
+        {"id": "step_consent_obligations", "label": "Handle liability and deposit", "nodeId": "node_transfer_obligations", "action": "Address no arrears, indemnity, fee, fresh agreement, and fresh-deposit consequence where deposit-transfer consent is absent.", "expectedResult": "Known historical obligations and current-value uncertainty.", "claimIds": ["claim_ind8_transfer_indemnity", "claim_ind8_transfer_no_arrears", "claim_ind8_transfer_fee", "claim_ind8_transfer_fresh_agreement", "claim_ind8_transfer_deposit"], "status": "partial"},
+        {"id": "step_consent_submit_track", "label": "Submit through documented current channel", "nodeId": "node_transfer_request_tracking", "action": "Use authorized JVS name-change flow and track by SMS Request ID when submission is accepted.", "expectedResult": "Tracked request, not inferred transfer decision.", "claimIds": ["claim_ind8_bescom_authenticated_request", "claim_ind8_bescom_request_tracker"], "status": "verified"}
+      ],
+      "dependencies": [
+        {"id": "dependency_consent_evidence_obligations", "fromNodeId": "node_transfer_evidence", "toNodeId": "node_transfer_obligations", "description": "Absent consent changes evidence and deposit treatment but leaves other historical obligations in place.", "claimIds": ["claim_ind8_transfer_consent_letter", "claim_ind8_transfer_deposit", "claim_ind8_transfer_no_arrears"], "status": "partial"},
+        {"id": "dependency_consent_request_tracking", "fromNodeId": "node_authenticated_name_change", "toNodeId": "node_transfer_request_tracking", "description": "Public FAQ and tracker connect submission to Request ID independent of exception eligibility.", "claimIds": ["claim_ind8_bescom_authenticated_request", "claim_ind8_bescom_request_tracker"], "status": "verified"}
+      ],
+      "failureRoadblockIds": ["roadblock_consent_deposit_exception", "roadblock_transfer_arrears_unknown_recovery", "roadblock_authenticated_document_requirements_unknown"],
+      "recoveryNotes": ["Do not manufacture consent or treat historical amounts as current payable demand.", "Use authorized BESCOM channels for current document and payment treatment; retain Request ID."],
+      "documentationQualityNotes": ["Historic rule is specific enough to model alternatives and liabilities, not to guarantee current portal behavior.", "Current public workflow is B; unobserved authenticated and backend behavior remains Unknown."],
+      "status": "partial"
+    }
+  ]
+}

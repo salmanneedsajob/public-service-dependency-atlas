@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Why is my BESCOM transfer blocked?",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-27",
+    "disclaimer": "Independent research, not official BESCOM or government guidance. Verify current requirements with the responsible agency."
+  },
+  "agencies": [],
+  "scenarios": [
+    {
+      "id": "scenario_clean_sale",
+      "label": "Clean sale",
+      "summary": "Registered sale with no known property-record issue.",
+      "tags": ["sale"],
+      "pathNodeIds": ["node_sale_deed", "node_mutation", "node_final_e_khata", "node_epid", "node_bescom_mapping", "node_name_transfer"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_draft_e_khata",
+      "label": "Draft or pending e-Khata",
+      "summary": "The property record exists but is not known to be final.",
+      "tags": ["sale", "e-khata", "pending"],
+      "pathNodeIds": ["node_sale_deed", "node_mutation", "node_final_e_khata", "node_epid", "node_bescom_mapping", "node_name_transfer"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_epid_mapping_failure",
+      "label": "EPID mapping failure",
+      "summary": "An EPID or property record may exist but is not mapping to the BESCOM account.",
+      "tags": ["epid", "mapping"],
+      "pathNodeIds": ["node_final_e_khata", "node_epid", "node_bescom_mapping", "node_name_transfer"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_tenant",
+      "label": "Tenant",
+      "summary": "An occupier seeks a bill-name change without owning the property.",
+      "tags": ["tenant", "consent"],
+      "pathNodeIds": ["node_bescom_mapping", "node_name_transfer"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_previous_consumer_deceased",
+      "label": "Previous consumer deceased",
+      "summary": "The recorded consumer has died and a successor seeks the transfer.",
+      "tags": ["death", "inheritance", "succession"],
+      "pathNodeIds": ["node_mutation", "node_final_e_khata", "node_epid", "node_bescom_mapping", "node_name_transfer"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_consent_unavailable",
+      "label": "Consent unavailable",
+      "summary": "The previous consumer cannot or will not provide consent.",
+      "tags": ["consent", "exception"],
+      "pathNodeIds": ["node_bescom_mapping", "node_name_transfer"],
+      "status": "unknown"
+    }
+  ],
+  "sources": [],
+  "claims": [
+    {
+      "id": "claim_transfer_requirements_unknown",
+      "text": "The precise current requirement represented by this placeholder node has not yet been evidenced.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Replace this fixture claim during IND-6 or IND-8; do not silently delete uncertainty."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_sale_deed",
+      "label": "Sale deed",
+      "kind": "document",
+      "summary": "Registered property-transfer document.",
+      "requiredState": "To be established by research.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "claimIds": [],
+      "status": "unknown",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_mutation",
+      "label": "Mutation",
+      "kind": "record",
+      "summary": "Change in the relevant property or revenue record.",
+      "requiredState": "To be established by research.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_previous_consumer_deceased"],
+      "claimIds": [],
+      "status": "unknown",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_final_e_khata",
+      "label": "Final e-Khata",
+      "kind": "record",
+      "summary": "Final municipal property record state, pending verification by research.",
+      "requiredState": "To be established by research.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_previous_consumer_deceased"],
+      "claimIds": [],
+      "status": "unknown",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_epid",
+      "label": "EPID",
+      "kind": "record",
+      "summary": "Property identifier and state to be established by research.",
+      "requiredState": "To be established by research.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_previous_consumer_deceased"],
+      "claimIds": [],
+      "status": "unknown",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_bescom_mapping",
+      "label": "BESCOM mapping",
+      "kind": "system",
+      "summary": "Link between the property identifier and the electricity account.",
+      "requiredState": "To be established by research.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": [],
+      "status": "unknown",
+      "displayOrder": 50
+    },
+    {
+      "id": "node_name_transfer",
+      "label": "BESCOM name transfer",
+      "kind": "outcome",
+      "summary": "The electricity account is recorded in the new consumer's name.",
+      "requiredState": "To be established by research.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_transfer_requirements_unknown"],
+      "status": "unknown",
+      "displayOrder": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_sale_deed_to_mutation",
+      "fromNodeId": "node_sale_deed",
+      "toNodeId": "node_mutation",
+      "relationship": "produces",
+      "label": "Possible upstream relationship; verify during research",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "claimIds": [],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_mutation_to_final_e_khata",
+      "fromNodeId": "node_mutation",
+      "toNodeId": "node_final_e_khata",
+      "relationship": "requires",
+      "label": "Possible prerequisite; verify during research",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_previous_consumer_deceased"],
+      "claimIds": [],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_final_e_khata_to_epid",
+      "fromNodeId": "node_final_e_khata",
+      "toNodeId": "node_epid",
+      "relationship": "produces",
+      "label": "Possible record relationship; verify during research",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_previous_consumer_deceased"],
+      "claimIds": [],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_epid_to_bescom_mapping",
+      "fromNodeId": "node_epid",
+      "toNodeId": "node_bescom_mapping",
+      "relationship": "maps_to",
+      "label": "Possible system mapping; verify during research",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_previous_consumer_deceased"],
+      "claimIds": [],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_bescom_mapping_to_name_transfer",
+      "fromNodeId": "node_bescom_mapping",
+      "toNodeId": "node_name_transfer",
+      "relationship": "requires",
+      "label": "Possible downstream requirement; verify during research",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": [],
+      "status": "unknown"
+    }
+  ],
+  "roadblocks": [],
+  "journeys": []
+}

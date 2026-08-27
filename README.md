@@ -27,7 +27,12 @@ Swapping the ledger requires no renderer change. Invalid documents fail before t
 ```sh
 npm test
 npm run lint
+npm run typecheck
 npm run build
 ```
 
 `npm run build` produces the Cloudflare Worker-compatible `dist` artifact consumed by the one-step Sites publishing workflow. The repository contains no backend, account system, live submissions, or private API calls.
+
+For a connected Cloudflare account, `npm run deploy` performs the build and Worker deployment in one command. It is intentionally not run by the test suite.
+
+Set `NEXT_PUBLIC_SITE_ORIGIN` to the trusted production origin during a hosted build so social-preview metadata resolves `public/og.png` to the deployed site. Local builds intentionally use `http://localhost:3000`.

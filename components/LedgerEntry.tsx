@@ -39,6 +39,14 @@ const datasetCopy = {
   },
 } as const;
 
+function publicNote(note = '') {
+  return note
+    .replace(/Canonical source for [^.]+\.\s*/g, '')
+    .replace(/Reconciles IND-[0-9]+(?:, IND-[0-9]+)*(?: duplicate [^.]+)?\.\s*/g, 'Cross-verified across independent research passes. ')
+    .replace(/IND-[0-9]+ /g, '')
+    .trim();
+}
+
 type RoadblockCategory = 'documentation' | 'process' | 'infrastructure';
 
 function StatusBadge({ status, compact = false }: { status: RecordStatus; compact?: boolean }) {
@@ -161,7 +169,7 @@ function DetailGroup({
   );
 }
 
-export default function Home() {
+export default function LedgerEntry({ service }: { service: string }) {
   const [ledger, setLedger] = useState<Ledger | null>(null);
   const [loadError, setLoadError] = useState('');
   const [selectedScenarioId, setSelectedScenarioId] = useState('');
@@ -171,7 +179,7 @@ export default function Home() {
 
   useEffect(() => {
     let active = true;
-    fetch('/data/ledger.json')
+    fetch(`/data/${service}.json`)
       .then((response) => {
         if (!response.ok) throw new Error(`Ledger request failed: ${response.status}`);
         return response.json() as Promise<Ledger>;
@@ -188,7 +196,7 @@ export default function Home() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [service]);
 
   const selectedScenario = useMemo(
     () => ledger?.scenarios.find((scenario) => scenario.id === selectedScenarioId),
@@ -236,6 +244,7 @@ export default function Home() {
     { verified: 0, partial: 0, contested: 0, unknown: 0 } as Record<RecordStatus, number>,
   );
   const datasetNotice = datasetCopy[ledger.meta.dataKind];
+  const officialSources = ledger.sources.filter((source) => source.type !== 'citizen_evidence');
 
   function selectScenario(id: string) {
     const scenario = ledger!.scenarios.find((item) => item.id === id);
@@ -613,6 +622,26 @@ export default function Home() {
           {(Object.keys(gradeCopy) as EvidenceGrade[]).map((grade) => <EvidenceBadge grade={grade} key={grade} />)}
         </div>
         <ClaimCards claimIds={scenarioClaims.map((claim) => claim.id)} ledger={ledger} />
+      </section>
+
+      <section className="section official-shelf" aria-labelledby="official-shelf-heading">
+        <div className="section-heading split-heading">
+          <div>
+            <p className="step-label">Official documentation inventory</p>
+            <h2 id="official-shelf-heading">What official documentation exists</h2>
+          </div>
+          <p>These documents and public routes are evidence, not a promise that their handoffs form a complete journey. The gap is shown against what is actually published.</p>
+        </div>
+        <div className="official-source-grid">
+          {officialSources.map((source) => (
+            <article key={source.id}>
+              <a href={source.url} rel="noreferrer" target="_blank">{source.title} ↗</a>
+              <small>{source.publisher} · accessed {source.accessedAt}</small>
+              <p><b>What it covers:</b> A published {source.type.replaceAll('_', ' ')} used in this entry’s evidence ledger.</p>
+              <p><b>Where it stops:</b> {publicNote(source.notes) || 'Its relationship to the other systems in this journey is not established here.'}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <footer className="footer">

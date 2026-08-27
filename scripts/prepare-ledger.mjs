@@ -9,6 +9,7 @@ const projectRoot = process.cwd();
 const inputPath = path.resolve(projectRoot, process.env.LEDGER_PATH ?? 'ledger/research.json');
 const schemaPath = path.resolve(projectRoot, 'ledger/schema.json');
 const outputPath = path.resolve(projectRoot, 'public/data/ledger.json');
+const serviceOutputPath = path.resolve(projectRoot, 'public/data/bescom.json');
 
 const [rawInput, rawSchema] = await Promise.all([
   readFile(inputPath, 'utf8'),
@@ -30,5 +31,6 @@ if (!validate(ledger)) {
 }
 
 await mkdir(path.dirname(outputPath), { recursive: true });
-await writeFile(outputPath, `${JSON.stringify(ledger, null, 2)}\n`);
+const serializedLedger = `${JSON.stringify(ledger, null, 2)}\n`;
+await Promise.all([writeFile(outputPath, serializedLedger), writeFile(serviceOutputPath, serializedLedger)]);
 console.log(`Prepared ${path.relative(projectRoot, inputPath)} for the site.`);

@@ -548,6 +548,7 @@ h1 {
 .evidence-section .evidence-badge { background: #fffdf7; color: var(--ink); }
 .evidence-section .claim-card { background: #fffdf7; color: var(--ink); border-color: #d8d4c8; }
 .evidence-section .claim-meta, .evidence-section .claim-note { color: #63716c; }
+.official-shelf { background: var(--paper-deep); }.official-source-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 38px; }.official-source-grid article { border: 1px solid var(--line); border-radius: 16px; padding: 20px; background: var(--card); }.official-source-grid a { display: block; font-family: Georgia, serif; font-size: 21px; font-weight: 500; line-height: 1.08; }.official-source-grid small { display: block; margin-top: 8px; color: var(--muted); font-size: 10px; }.official-source-grid p { margin: 16px 0 0; font-size: 12px; line-height: 1.5; }.official-source-grid p + p { margin-top: 9px; color: var(--muted); }
 
 .footer {
   display: grid;
@@ -580,6 +581,7 @@ h1 {
   .roadblock { grid-template-columns: 44px 1fr; }
   .contradiction-callout { grid-template-columns: 1fr 1fr; }
   .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .official-source-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .contradiction-label { grid-column: 1 / -1; }
   .roadblock-resolution { grid-column: 2; }
   .roadblock-evidence { grid-column: 2; }
@@ -595,6 +597,7 @@ h1 {
   .ledger-subtitle { margin-top: -10px; }
   .thesis { font-size: 14px; }
   .atlas-hero { padding-top: 74px; }.atlas-thesis { font-size: 14px; }.layer-grid, .service-grid, .contribution { grid-template-columns: 1fr; }.layer-grid article, .layer-grid article:first-child { min-height: auto; padding: 24px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.25); }.layer-grid article:last-child { border-bottom: 0; }.layer-grid h3 { margin-top: 28px; }.service-card { min-height: 220px; }
+  .official-source-grid { grid-template-columns: 1fr; }
   .hero-aside { display: block; }
   .hero-aside .fixture-flag { margin-bottom: 18px; }
   .uncertainty-strip { grid-template-columns: 1fr 1fr; }

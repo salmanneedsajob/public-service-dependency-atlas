@@ -5,19 +5,19 @@ const siteOrigin = new URL(process.env.NEXT_PUBLIC_SITE_ORIGIN ?? 'http://localh
 
 export const metadata: Metadata = {
   metadataBase: siteOrigin,
-  title: 'Why is my BESCOM transfer blocked?',
+  title: 'Public Service Dependency Atlas',
   description:
-    'Trace the upstream record, system handoff, and evidence behind a blocked BESCOM name transfer.',
+    'A Bengaluru-first atlas of the undocumented dependencies between public services.',
   openGraph: {
     type: 'website',
-    title: 'Why is my BESCOM transfer blocked?',
-    description: 'Trace the upstream record. See the evidence. Find the next step.',
+    title: 'Public Service Dependency Atlas',
+    description: 'Map the undocumented links between public services.',
     images: [{ url: '/og.png', width: 1731, height: 909, alt: 'BESCOM transfer dependency chain preview' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Why is my BESCOM transfer blocked?',
-    description: 'Trace the upstream record. See the evidence. Find the next step.',
+    title: 'Public Service Dependency Atlas',
+    description: 'Map the undocumented links between public services.',
     images: ['/og.png'],
   },
 };

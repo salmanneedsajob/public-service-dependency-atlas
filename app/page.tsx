@@ -20,6 +20,24 @@ const gradeCopy: Record<EvidenceGrade, string> = {
   Unknown: 'No usable source',
 };
 
+const datasetCopy = {
+  synthetic: {
+    label: 'Synthetic data',
+    summary: 'This preview tests the interface, not the real BESCOM process.',
+    footer: 'This ledger is a deliberately synthetic fixture for interface testing. Its publishers, links, claims, errors, and recovery routes are invented placeholders; they are not BESCOM instructions or findings about Bengaluru.',
+  },
+  template: {
+    label: 'Research template',
+    summary: 'This ledger is incomplete. Unknowns show where audited research still needs to land.',
+    footer: 'This ledger is a research template, not a completed finding. Empty and Unknown records are intentionally visible so missing evidence cannot be mistaken for a clear path.',
+  },
+  research: {
+    label: 'Independent research',
+    summary: 'This view renders the dated evidence ledger below. Check each claim’s source and status before acting.',
+    footer: 'This ledger contains independent, dated research rather than official guidance. Use the claim-level source, access date, evidence grade, and status to judge each step, and verify current requirements with the responsible agency.',
+  },
+} as const;
+
 type RoadblockCategory = 'documentation' | 'process' | 'infrastructure';
 
 function StatusBadge({ status, compact = false }: { status: RecordStatus; compact?: boolean }) {
@@ -200,6 +218,9 @@ export default function Home() {
   const selectedNode = ledger.nodes.find((node) => node.id === selectedNodeId) ?? selectedPathNodes[0];
   const agency = ledger.agencies.find((item) => item.id === selectedNode?.ownerAgencyId);
   const selectedJourney = ledger.journeys.find((journey) => journey.scenarioId === selectedScenario.id);
+  const selectedJourneyRoadblocks = selectedJourney?.failureRoadblockIds
+    .map((roadblockId) => ledger.roadblocks.find((roadblock) => roadblock.id === roadblockId))
+    .filter((roadblock): roadblock is Ledger['roadblocks'][number] => Boolean(roadblock)) ?? [];
   const scenarioClaims = ledger.claims.filter((claim) => claim.scenarioIds.includes(selectedScenario.id));
   const scenarioRoadblocks = ledger.roadblocks.filter((roadblock) => roadblock.scenarioIds.includes(selectedScenario.id));
   const roadblocks = ledger.roadblocks.filter((roadblock) => {
@@ -212,6 +233,7 @@ export default function Home() {
     (counts, claim) => ({ ...counts, [claim.status]: counts[claim.status] + 1 }),
     { verified: 0, partial: 0, contested: 0, unknown: 0 } as Record<RecordStatus, number>,
   );
+  const datasetNotice = datasetCopy[ledger.meta.dataKind];
 
   function selectScenario(id: string) {
     const scenario = ledger!.scenarios.find((item) => item.id === id);
@@ -243,9 +265,9 @@ export default function Home() {
           </p>
           <a className="primary-link" href="#scenarios">Find my path <span>↓</span></a>
         </div>
-        <aside className="hero-aside" aria-label="Fixture notice">
-          <div className="fixture-flag">Synthetic data</div>
-          <p>This preview tests the interface, not the real BESCOM process.</p>
+        <aside className="hero-aside" aria-label="Dataset notice">
+          <div className={`fixture-flag fixture-${ledger.meta.dataKind}`}>{datasetNotice.label}</div>
+          <p>{datasetNotice.summary}</p>
           <dl>
             <div><dt>Scenarios</dt><dd>{ledger.scenarios.length}</dd></div>
             <div><dt>Dependencies</dt><dd>{ledger.nodes.length}</dd></div>
@@ -345,6 +367,45 @@ export default function Home() {
           })}
         </div>
 
+        <section className="relationship-register" aria-labelledby="relationship-heading">
+          <div className="relationship-heading">
+            <div>
+              <p className="eyebrow">Scenario-highlighted graph</p>
+              <h3 id="relationship-heading">{activeEdges.length} active relationships</h3>
+            </div>
+            <p>Every edge comes from the ledger and is tagged to this scenario, including alternative and non-sequential links.</p>
+          </div>
+          <div className="relationship-list">
+            {activeEdges.map((edge) => {
+              const fromNode = ledger.nodes.find((node) => node.id === edge.fromNodeId);
+              const toNode = ledger.nodes.find((node) => node.id === edge.toNodeId);
+              const grades = [...new Set(edge.claimIds
+                .map((claimId) => ledger.claims.find((claim) => claim.id === claimId)?.evidenceGrade)
+                .filter((grade): grade is EvidenceGrade => Boolean(grade)))];
+
+              return (
+                <article className={`relationship status-border-${edge.status}`} key={edge.id}>
+                  <div className="relationship-topline">
+                    <span>{edge.relationship.replaceAll('_', ' ')}</span>
+                    <StatusBadge status={edge.status} compact />
+                  </div>
+                  <div className="relationship-nodes">
+                    <b>{fromNode?.label ?? edge.fromNodeId}</b>
+                    <span aria-hidden="true">→</span>
+                    <b>{toNode?.label ?? edge.toNodeId}</b>
+                  </div>
+                  <p>{edge.label}</p>
+                  <div className="relationship-grades" aria-label="Evidence grades for this relationship">
+                    {grades.length
+                      ? grades.map((grade) => <EvidenceBadge grade={grade} key={grade} />)
+                      : <span>No linked claim yet</span>}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+
         {selectedNode && (
           <article className="node-detail" aria-live="polite">
             <header className="node-detail-header">
@@ -418,6 +479,38 @@ export default function Home() {
               );
             })}
           </ol>
+          <div className="journey-support">
+            <article>
+              <span>Recorded dependencies</span>
+              <div className="journey-dependency-list">
+                {selectedJourney.dependencies.map((dependency) => {
+                  const fromNode = ledger.nodes.find((node) => node.id === dependency.fromNodeId);
+                  const toNode = ledger.nodes.find((node) => node.id === dependency.toNodeId);
+                  return (
+                    <div key={dependency.id}>
+                      <div>
+                        <b>{fromNode?.label ?? dependency.fromNodeId} → {toNode?.label ?? dependency.toNodeId}</b>
+                        <StatusBadge status={dependency.status} compact />
+                      </div>
+                      <p>{dependency.description}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </article>
+            <article>
+              <span>Failure roadblocks on this journey</span>
+              <div className="journey-roadblock-list">
+                {selectedJourneyRoadblocks.map((roadblock) => (
+                  <a href={`#${roadblock.id}`} key={roadblock.id}>
+                    <span className={`category category-${roadblock.category}`}>{roadblock.category}</span>
+                    <b>{roadblock.title}</b>
+                    <small>{roadblock.symptom}</small>
+                  </a>
+                ))}
+              </div>
+            </article>
+          </div>
           <div className="journey-notes">
             <article>
               <span>Recovery notes</span>
@@ -463,7 +556,7 @@ export default function Home() {
         {roadblocks.length ? (
           <div className="roadblock-list">
             {roadblocks.map((roadblock, index) => (
-              <article className="roadblock" key={roadblock.id}>
+              <article className="roadblock" key={roadblock.id} id={roadblock.id}>
                 <div className="roadblock-index">R{String(index + 1).padStart(2, '0')}</div>
                 <div className="roadblock-main">
                   <div className="roadblock-topline">
@@ -514,12 +607,7 @@ export default function Home() {
             edges, claims, sources, roadblocks, and journey steps. Status is data: Unknown,
             Partial, and Contested records are never silently converted into a confident answer.
           </p>
-          <p>
-            The current ledger is a deliberately synthetic fixture for interface testing. Its
-            publishers, links, claims, errors, and recovery routes are invented placeholders;
-            they are not BESCOM instructions or findings about Bengaluru. Swap in an audited
-            JSON or compiled YAML ledger before publication.
-          </p>
+          <p>{datasetNotice.footer}</p>
           <div className="footer-meta">
             <StatusBadge status="unknown" />
             <span>{ledger.meta.disclaimer}</span>

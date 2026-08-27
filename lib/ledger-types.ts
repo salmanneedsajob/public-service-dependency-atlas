@@ -12,7 +12,7 @@ export interface Detail {
 }
 
 export interface Ledger {
-  meta: { schemaVersion: '1.0.0'; title: string; jurisdiction: string; asOf: string; disclaimer: string };
+  meta: { schemaVersion: '1.0.0'; title: string; jurisdiction: string; asOf: string; dataKind: 'synthetic' | 'template' | 'research'; disclaimer: string };
   agencies: Array<{ id: string; name: string; shortName: string; officialUrl: string }>;
   scenarios: Array<{ id: string; label: string; summary: string; tags: string[]; pathNodeIds: string[]; status: RecordStatus }>;
   sources: Array<{ id: string; title: string; publisher: string; url: string; accessedAt: string; publishedAt?: string; type: string; notes?: string }>;

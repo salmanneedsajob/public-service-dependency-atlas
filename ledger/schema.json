@@ -25,12 +25,13 @@
     "meta": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["schemaVersion", "title", "jurisdiction", "asOf", "disclaimer"],
+      "required": ["schemaVersion", "title", "jurisdiction", "asOf", "dataKind", "disclaimer"],
       "properties": {
         "schemaVersion": { "const": "1.0.0" },
         "title": { "type": "string", "minLength": 1 },
         "jurisdiction": { "type": "string", "minLength": 1 },
         "asOf": { "$ref": "#/$defs/date" },
+        "dataKind": { "enum": ["synthetic", "template", "research"] },
         "disclaimer": { "type": "string", "minLength": 1 }
       }
     },

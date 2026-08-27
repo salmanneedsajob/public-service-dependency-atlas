@@ -4,6 +4,7 @@ This directory is the shared contract between research and the static site.
 
 - `schema.json` defines the JSON structure consumed by the site.
 - `example.json` is a valid, deliberately unknown-heavy fixture covering the six v1 scenarios.
+- `demo.synthetic.json` is a richer, clearly synthetic renderer fixture. It exercises every evidence grade and uncertainty state, contradictions, roadblocks, and journeys without adding invented facts to the canonical research example.
 - `AGENT_PROTOCOL.md` defines evidence grades, research roles, merge rules, and safety boundaries.
 
 ## Contract decisions
@@ -29,3 +30,5 @@ The site should load one ledger document and render:
 6. visible uncertainty from every record's `status` and each claim's `evidenceGrade`.
 
 JSON is canonical for v1. YAML may be authored later only if it compiles to this exact shape before the site reads it.
+
+The site build accepts either JSON or YAML through `LEDGER_PATH`, validates it against `schema.json`, and writes a generated browser-ready JSON copy. Never promote `demo.synthetic.json` to a research ledger: every claim and source in it is an interface-testing placeholder.

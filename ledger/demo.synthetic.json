@@ -1,0 +1,578 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Why is my BESCOM transfer blocked?",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-27",
+    "dataKind": "synthetic",
+    "disclaimer": "Synthetic demonstration data only — not official BESCOM or government guidance. Every claim and source in this fixture is invented to test the renderer. Replace this file with audited research before public use."
+  },
+  "agencies": [
+    {
+      "id": "agency_registration_demo",
+      "name": "Synthetic Registration Authority",
+      "shortName": "Registration demo",
+      "officialUrl": "https://registration.example.invalid/"
+    },
+    {
+      "id": "agency_municipal_demo",
+      "name": "Synthetic Municipal Records Authority",
+      "shortName": "Municipal demo",
+      "officialUrl": "https://municipal.example.invalid/"
+    },
+    {
+      "id": "agency_utility_demo",
+      "name": "Synthetic Electricity Utility",
+      "shortName": "Utility demo",
+      "officialUrl": "https://utility.example.invalid/"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_clean_sale",
+      "label": "Clean sale",
+      "summary": "A registered sale is present and no property-record mismatch is known.",
+      "tags": ["sale", "registered"],
+      "pathNodeIds": ["node_sale_deed", "node_mutation", "node_final_e_khata", "node_epid", "node_bescom_mapping", "node_name_transfer"],
+      "status": "verified"
+    },
+    {
+      "id": "scenario_draft_e_khata",
+      "label": "Draft or pending e-Khata",
+      "summary": "The municipal record exists, but its final state is unresolved.",
+      "tags": ["sale", "e-khata", "pending"],
+      "pathNodeIds": ["node_sale_deed", "node_mutation", "node_final_e_khata", "node_epid", "node_bescom_mapping", "node_name_transfer"],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_epid_mapping_failure",
+      "label": "EPID mapping failure",
+      "summary": "A property identifier is visible, but the utility account cannot resolve it.",
+      "tags": ["epid", "mapping", "system"],
+      "pathNodeIds": ["node_final_e_khata", "node_epid", "node_bescom_mapping", "node_name_transfer"],
+      "status": "contested"
+    },
+    {
+      "id": "scenario_tenant",
+      "label": "Tenant",
+      "summary": "An occupier needs a bill-name change without owning the property.",
+      "tags": ["tenant", "consent", "occupancy"],
+      "pathNodeIds": ["node_occupancy_basis", "node_bescom_mapping", "node_name_transfer"],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_previous_consumer_deceased",
+      "label": "Previous consumer deceased",
+      "summary": "A successor is seeking transfer after the recorded consumer died.",
+      "tags": ["death", "inheritance", "succession"],
+      "pathNodeIds": ["node_succession_record", "node_mutation", "node_final_e_khata", "node_epid", "node_bescom_mapping", "node_name_transfer"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_consent_unavailable",
+      "label": "Consent unavailable",
+      "summary": "The previous consumer cannot or will not provide the expected consent.",
+      "tags": ["consent", "exception", "occupancy"],
+      "pathNodeIds": ["node_occupancy_basis", "node_bescom_mapping", "node_name_transfer"],
+      "status": "contested"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_demo_law",
+      "title": "Synthetic transfer statute excerpt",
+      "publisher": "Example legislature",
+      "url": "https://law.example.invalid/transfer-statute",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-01-10",
+      "type": "law",
+      "notes": "Invented source used only to exercise grade A rendering."
+    },
+    {
+      "id": "source_demo_portal",
+      "title": "Synthetic current service portal",
+      "publisher": "Example utility",
+      "url": "https://utility.example.invalid/name-transfer",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Invented source used only to exercise grade B rendering."
+    },
+    {
+      "id": "source_demo_archive",
+      "title": "Synthetic archived mutation instructions",
+      "publisher": "Example municipal archive",
+      "url": "https://municipal.example.invalid/archive/mutation",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2023-04-15",
+      "type": "official_guidance",
+      "notes": "Invented, intentionally stale source used only to exercise grade C rendering."
+    },
+    {
+      "id": "source_demo_professional",
+      "title": "Synthetic professional explainer on account mapping",
+      "publisher": "Example civic practice",
+      "url": "https://civic.example.invalid/mapping-explainer",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-06-20",
+      "type": "secondary",
+      "notes": "Invented source used only to exercise grade D rendering."
+    },
+    {
+      "id": "source_demo_citizen",
+      "title": "Synthetic first-person tenant account",
+      "publisher": "Example public forum",
+      "url": "https://forum.example.invalid/tenant-transfer",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-07-02",
+      "type": "citizen_evidence",
+      "notes": "Invented citizen account used only to exercise grade E rendering."
+    },
+    {
+      "id": "source_demo_uncorroborated",
+      "title": "Synthetic uncorroborated counter note",
+      "publisher": "Example community note",
+      "url": "https://community.example.invalid/offline-exception",
+      "accessedAt": "2026-08-27",
+      "type": "citizen_evidence",
+      "notes": "Invented single assertion used only to exercise grade F rendering."
+    },
+    {
+      "id": "source_demo_observation",
+      "title": "Synthetic public interface observation",
+      "publisher": "Example research team",
+      "url": "https://research.example.invalid/interface-observation",
+      "accessedAt": "2026-08-27",
+      "type": "firsthand_observation",
+      "notes": "Invented observation used to show a contested interface state."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_demo_registered_deed",
+      "text": "[Synthetic placeholder] A registered conveyance is treated as the upstream ownership record in the clean-sale path.",
+      "jurisdiction": "Bengaluru, Karnataka, India — synthetic fixture",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "nodeIds": ["node_sale_deed", "node_mutation"],
+      "sourceIds": ["source_demo_law"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Invented claim for renderer coverage; it is not a legal conclusion."
+    },
+    {
+      "id": "claim_demo_final_record",
+      "text": "[Synthetic placeholder] The service portal asks for a final municipal record before exposing the property identifier.",
+      "jurisdiction": "Bengaluru, Karnataka, India — synthetic fixture",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_previous_consumer_deceased"],
+      "nodeIds": ["node_final_e_khata", "node_epid"],
+      "sourceIds": ["source_demo_portal"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Invented interface behavior; marked partial to test visible caveats."
+    },
+    {
+      "id": "claim_demo_mutation_match",
+      "text": "[Synthetic placeholder] An archived instruction suggests the purchaser name must match the mutation record.",
+      "jurisdiction": "Bengaluru, Karnataka, India — synthetic fixture",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_previous_consumer_deceased"],
+      "nodeIds": ["node_mutation", "node_final_e_khata"],
+      "sourceIds": ["source_demo_archive"],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Invented archived guidance; deliberately not treated as current."
+    },
+    {
+      "id": "claim_demo_mapping_handoff",
+      "text": "[Synthetic placeholder] A professional explainer attributes some transfer blocks to a failed identifier-to-account handoff.",
+      "jurisdiction": "Bengaluru, Karnataka, India — synthetic fixture",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_previous_consumer_deceased"],
+      "nodeIds": ["node_epid", "node_bescom_mapping"],
+      "sourceIds": ["source_demo_professional"],
+      "evidenceGrade": "D",
+      "basis": "inference",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Invented inference retained only to exercise grade D."
+    },
+    {
+      "id": "claim_demo_tenant_consent",
+      "text": "[Synthetic placeholder] One tenant reports being asked for prior-consumer consent.",
+      "jurisdiction": "Bengaluru, Karnataka, India — synthetic fixture",
+      "scenarioIds": ["scenario_tenant", "scenario_consent_unavailable"],
+      "nodeIds": ["node_occupancy_basis", "node_name_transfer"],
+      "sourceIds": ["source_demo_citizen"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [],
+      "notes": "A single invented account must not be generalized."
+    },
+    {
+      "id": "claim_demo_offline_exception",
+      "text": "[Synthetic placeholder] An uncorroborated note says an offline exception may exist when consent is unavailable.",
+      "jurisdiction": "Bengaluru, Karnataka, India — synthetic fixture",
+      "scenarioIds": ["scenario_consent_unavailable", "scenario_previous_consumer_deceased"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_demo_uncorroborated"],
+      "evidenceGrade": "F",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [],
+      "notes": "Invented assertion; included to demonstrate a weak-source warning."
+    },
+    {
+      "id": "claim_demo_deceased_documents_unknown",
+      "text": "[Synthetic placeholder] The exact succession documents needed for this branch have not been verified.",
+      "jurisdiction": "Bengaluru, Karnataka, India — synthetic fixture",
+      "scenarioIds": ["scenario_previous_consumer_deceased"],
+      "nodeIds": ["node_succession_record", "node_name_transfer"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The missing evidence is intentional and must remain visible."
+    },
+    {
+      "id": "claim_demo_mapping_automatic",
+      "text": "[Synthetic placeholder] The observed interface appears to create the utility mapping automatically after identifier validation.",
+      "jurisdiction": "Bengaluru, Karnataka, India — synthetic fixture",
+      "scenarioIds": ["scenario_epid_mapping_failure", "scenario_clean_sale"],
+      "nodeIds": ["node_epid", "node_bescom_mapping"],
+      "sourceIds": ["source_demo_observation"],
+      "evidenceGrade": "B",
+      "basis": "inference",
+      "status": "contested",
+      "contradictsClaimIds": ["claim_demo_mapping_manual"],
+      "notes": "Invented interface inference paired with a deliberate contradiction."
+    },
+    {
+      "id": "claim_demo_mapping_manual",
+      "text": "[Synthetic placeholder] A citizen account says staff had to create the utility mapping manually.",
+      "jurisdiction": "Bengaluru, Karnataka, India — synthetic fixture",
+      "scenarioIds": ["scenario_epid_mapping_failure", "scenario_clean_sale"],
+      "nodeIds": ["node_epid", "node_bescom_mapping"],
+      "sourceIds": ["source_demo_citizen"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": ["claim_demo_mapping_automatic"],
+      "notes": "Invented citizen account paired with a deliberate contradiction."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_sale_deed",
+      "label": "Sale deed",
+      "kind": "document",
+      "ownerAgencyId": "agency_registration_demo",
+      "summary": "The registered document that starts the synthetic clean-sale journey.",
+      "requiredState": "Synthetic target: registered, legible, and naming the same purchaser used downstream.",
+      "checks": [{"id":"check_sale_registration","label":"Check registration state","description":"Synthetic check: compare the displayed registration state and purchaser name.","url":"https://registration.example.invalid/check","claimIds":["claim_demo_registered_deed"],"status":"verified"}],
+      "failureSignals": [{"id":"failure_sale_name_mismatch","label":"Purchaser name mismatch","description":"Synthetic failure: the name shown downstream differs from the deed.","actualError":"Synthetic example: Applicant name does not match source record","claimIds":["claim_demo_registered_deed"],"status":"partial"}],
+      "recoveries": [{"id":"recovery_sale_verify_record","label":"Verify the source record","description":"Synthetic recovery: confirm the registered record before changing a downstream system.","claimIds":["claim_demo_registered_deed"],"status":"verified"}],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "claimIds": ["claim_demo_registered_deed"],
+      "status": "verified",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_succession_record",
+      "label": "Succession record",
+      "kind": "document",
+      "ownerAgencyId": "agency_registration_demo",
+      "summary": "The unverified set of documents that may establish who can act after a death.",
+      "requiredState": "Unknown: the fixture deliberately does not assert which succession documents are sufficient.",
+      "checks": [{"id":"check_succession_requirements","label":"Ask for the current document list","description":"Synthetic check: obtain a current written list from the responsible office.","claimIds":["claim_demo_deceased_documents_unknown"],"status":"unknown"}],
+      "failureSignals": [{"id":"failure_succession_unspecified","label":"Unspecified document rejection","description":"Synthetic failure: a generic rejection does not name the missing succession record.","actualError":"Synthetic example: Supporting document insufficient","claimIds":["claim_demo_deceased_documents_unknown"],"status":"unknown"}],
+      "recoveries": [{"id":"recovery_succession_written_list","label":"Request a written checklist","description":"Synthetic recovery: ask the responsible office to identify the missing item in writing.","claimIds":["claim_demo_deceased_documents_unknown"],"status":"unknown"}],
+      "scenarioIds": ["scenario_previous_consumer_deceased"],
+      "claimIds": ["claim_demo_deceased_documents_unknown"],
+      "status": "unknown",
+      "displayOrder": 15
+    },
+    {
+      "id": "node_occupancy_basis",
+      "label": "Occupancy & consent",
+      "kind": "decision",
+      "ownerAgencyId": "agency_utility_demo",
+      "summary": "The basis on which a non-owner or exception applicant is allowed to proceed.",
+      "requiredState": "Contested: the synthetic sources disagree on when consent or an exception is accepted.",
+      "checks": [{"id":"check_consent_route","label":"Check the applicable route","description":"Synthetic check: distinguish tenant, owner, and consent-unavailable routes.","claimIds":["claim_demo_tenant_consent","claim_demo_offline_exception"],"status":"contested"}],
+      "failureSignals": [{"id":"failure_consent_missing","label":"Consent prompt blocks progress","description":"Synthetic failure: the interface requests consent but exposes no exception path.","actualError":"Synthetic example: Previous consumer consent required","claimIds":["claim_demo_tenant_consent"],"status":"contested"}],
+      "recoveries": [{"id":"recovery_consent_escalate","label":"Ask for the exception checklist","description":"Synthetic recovery: request written confirmation of any alternate route.","claimIds":["claim_demo_offline_exception"],"status":"contested"}],
+      "scenarioIds": ["scenario_tenant", "scenario_consent_unavailable"],
+      "claimIds": ["claim_demo_tenant_consent", "claim_demo_offline_exception"],
+      "status": "contested",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_mutation",
+      "label": "Mutation",
+      "kind": "record",
+      "ownerAgencyId": "agency_municipal_demo",
+      "summary": "A downstream property-record change represented by intentionally incomplete evidence.",
+      "requiredState": "Synthetic target: purchaser identity matches the registered source document.",
+      "checks": [{"id":"check_mutation_name","label":"Compare the recorded name","description":"Synthetic check: compare the mutation holder with the deed purchaser.","claimIds":["claim_demo_mutation_match"],"status":"partial"}],
+      "failureSignals": [{"id":"failure_mutation_pending","label":"Mutation remains pending","description":"Synthetic failure: the next municipal record cannot reach final state.","actualError":"Synthetic example: Mutation verification pending","claimIds":["claim_demo_mutation_match"],"status":"partial"}],
+      "recoveries": [{"id":"recovery_mutation_status","label":"Resolve the upstream mismatch","description":"Synthetic recovery: correct or complete the mutation record before retrying downstream.","claimIds":["claim_demo_mutation_match"],"status":"partial"}],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_previous_consumer_deceased"],
+      "claimIds": ["claim_demo_registered_deed", "claim_demo_mutation_match"],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_final_e_khata",
+      "label": "Final e-Khata",
+      "kind": "record",
+      "ownerAgencyId": "agency_municipal_demo",
+      "summary": "The municipal record state whose Draft versus Final distinction matters in this fixture.",
+      "requiredState": "Synthetic target: status explicitly displays Final rather than Draft or Pending.",
+      "checks": [{"id":"check_khata_state","label":"Read the record state","description":"Synthetic check: look for an explicit Draft, Pending, or Final label.","url":"https://municipal.example.invalid/property-status","claimIds":["claim_demo_final_record"],"status":"partial"}],
+      "failureSignals": [{"id":"failure_khata_draft","label":"Record remains Draft","description":"Synthetic failure: identifier generation or mapping is unavailable while the record is Draft.","actualError":"Synthetic example: Final property record not available","claimIds":["claim_demo_final_record","claim_demo_mutation_match"],"status":"partial"}],
+      "recoveries": [{"id":"recovery_khata_finalize","label":"Complete the upstream record","description":"Synthetic recovery: resolve the mutation dependency and ask how the record reaches Final.","claimIds":["claim_demo_final_record","claim_demo_mutation_match"],"status":"partial"}],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_previous_consumer_deceased"],
+      "claimIds": ["claim_demo_final_record", "claim_demo_mutation_match"],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_epid",
+      "label": "EPID",
+      "kind": "record",
+      "ownerAgencyId": "agency_municipal_demo",
+      "summary": "A synthetic property identifier that must survive the handoff to the utility account.",
+      "requiredState": "Synthetic target: an identifier is visible and matches the property record used in the mapping check.",
+      "checks": [{"id":"check_epid_visible","label":"Confirm the identifier","description":"Synthetic check: verify that the final record exposes an identifier.","claimIds":["claim_demo_final_record"],"status":"partial"}],
+      "failureSignals": [{"id":"failure_epid_not_resolved","label":"Identifier cannot be resolved","description":"Synthetic failure: the utility lookup rejects an identifier that appears upstream.","actualError":"Synthetic example: Property identifier not found","claimIds":["claim_demo_mapping_handoff"],"status":"contested"}],
+      "recoveries": [{"id":"recovery_epid_compare","label":"Compare both system records","description":"Synthetic recovery: capture the non-sensitive identifiers shown by both public views and ask which record owns correction.","claimIds":["claim_demo_mapping_handoff"],"status":"partial"}],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_previous_consumer_deceased"],
+      "claimIds": ["claim_demo_final_record", "claim_demo_mapping_handoff", "claim_demo_mapping_automatic", "claim_demo_mapping_manual"],
+      "status": "contested",
+      "displayOrder": 50
+    },
+    {
+      "id": "node_bescom_mapping",
+      "label": "BESCOM mapping",
+      "kind": "system",
+      "ownerAgencyId": "agency_utility_demo",
+      "summary": "The system handoff between a property identifier and the electricity account.",
+      "requiredState": "Contested: the fixture deliberately disagrees on whether mapping is automatic or staff-mediated.",
+      "checks": [{"id":"check_mapping_result","label":"Check the mapping result","description":"Synthetic check: record whether the account lookup recognizes the property identifier.","url":"https://utility.example.invalid/mapping-check","claimIds":["claim_demo_mapping_handoff","claim_demo_mapping_automatic","claim_demo_mapping_manual"],"status":"contested"}],
+      "failureSignals": [{"id":"failure_mapping_unavailable","label":"Mapping unavailable","description":"Synthetic failure: the utility account cannot resolve the upstream identifier.","actualError":"Synthetic example: Account-to-property mapping unavailable","claimIds":["claim_demo_mapping_handoff"],"status":"partial"}],
+      "recoveries": [{"id":"recovery_mapping_owner","label":"Identify the correction owner","description":"Synthetic recovery: ask which agency must correct the handoff before retrying transfer.","claimIds":["claim_demo_mapping_automatic","claim_demo_mapping_manual"],"status":"contested"}],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_demo_mapping_handoff", "claim_demo_mapping_automatic", "claim_demo_mapping_manual"],
+      "status": "contested",
+      "displayOrder": 60
+    },
+    {
+      "id": "node_name_transfer",
+      "label": "Name transfer",
+      "kind": "outcome",
+      "ownerAgencyId": "agency_utility_demo",
+      "summary": "The electricity account displays the new consumer name after every prerequisite passes.",
+      "requiredState": "Synthetic target: the submitted route, property mapping, and applicant basis are accepted.",
+      "checks": [{"id":"check_transfer_state","label":"Read the final application state","description":"Synthetic check: distinguish accepted, pending, and rejected states.","claimIds":["claim_demo_offline_exception","claim_demo_deceased_documents_unknown"],"status":"unknown"}],
+      "failureSignals": [{"id":"failure_transfer_generic","label":"Generic rejection","description":"Synthetic failure: the final response does not identify which upstream node failed.","actualError":"Synthetic example: Transfer cannot be processed","claimIds":["claim_demo_offline_exception","claim_demo_deceased_documents_unknown"],"status":"unknown"}],
+      "recoveries": [{"id":"recovery_transfer_upstream","label":"Return to the earliest failed node","description":"Synthetic recovery: use the highlighted path to resolve the first non-ready dependency.","claimIds":["claim_demo_mapping_handoff"],"status":"partial"}],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_demo_tenant_consent", "claim_demo_offline_exception", "claim_demo_deceased_documents_unknown"],
+      "status": "unknown",
+      "displayOrder": 70
+    }
+  ],
+  "edges": [
+    {"id":"edge_sale_to_mutation","fromNodeId":"node_sale_deed","toNodeId":"node_mutation","relationship":"produces","label":"Synthetic registered-record handoff","scenarioIds":["scenario_clean_sale","scenario_draft_e_khata"],"claimIds":["claim_demo_registered_deed"],"status":"verified"},
+    {"id":"edge_succession_to_mutation","fromNodeId":"node_succession_record","toNodeId":"node_mutation","relationship":"requires","label":"Unknown succession prerequisite","scenarioIds":["scenario_previous_consumer_deceased"],"claimIds":["claim_demo_deceased_documents_unknown"],"status":"unknown"},
+    {"id":"edge_mutation_to_khata","fromNodeId":"node_mutation","toNodeId":"node_final_e_khata","relationship":"requires","label":"Synthetic identity-match prerequisite","scenarioIds":["scenario_clean_sale","scenario_draft_e_khata","scenario_previous_consumer_deceased"],"claimIds":["claim_demo_mutation_match"],"status":"partial"},
+    {"id":"edge_khata_to_epid","fromNodeId":"node_final_e_khata","toNodeId":"node_epid","relationship":"produces","label":"Synthetic final-record identifier handoff","scenarioIds":["scenario_clean_sale","scenario_draft_e_khata","scenario_epid_mapping_failure","scenario_previous_consumer_deceased"],"claimIds":["claim_demo_final_record"],"status":"partial"},
+    {"id":"edge_epid_to_mapping","fromNodeId":"node_epid","toNodeId":"node_bescom_mapping","relationship":"maps_to","label":"Contested automatic versus manual handoff","scenarioIds":["scenario_clean_sale","scenario_draft_e_khata","scenario_epid_mapping_failure","scenario_previous_consumer_deceased"],"claimIds":["claim_demo_mapping_handoff","claim_demo_mapping_automatic","claim_demo_mapping_manual"],"status":"contested"},
+    {"id":"edge_occupancy_to_mapping","fromNodeId":"node_occupancy_basis","toNodeId":"node_bescom_mapping","relationship":"requires","label":"Synthetic applicant-basis gate","scenarioIds":["scenario_tenant","scenario_consent_unavailable"],"claimIds":["claim_demo_tenant_consent"],"status":"contested"},
+    {"id":"edge_mapping_to_transfer","fromNodeId":"node_bescom_mapping","toNodeId":"node_name_transfer","relationship":"requires","label":"Synthetic mapping prerequisite","scenarioIds":["scenario_clean_sale","scenario_draft_e_khata","scenario_epid_mapping_failure","scenario_tenant","scenario_previous_consumer_deceased","scenario_consent_unavailable"],"claimIds":["claim_demo_mapping_handoff"],"status":"partial"},
+    {"id":"edge_consent_alternative","fromNodeId":"node_occupancy_basis","toNodeId":"node_name_transfer","relationship":"alternative","label":"Unverified offline exception route","scenarioIds":["scenario_consent_unavailable","scenario_previous_consumer_deceased"],"claimIds":["claim_demo_offline_exception"],"status":"contested"}
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_draft_wording",
+      "title": "Draft and Final are not explained together",
+      "category": "documentation",
+      "symptom": "A synthetic applicant sees Draft but cannot tell what is missing.",
+      "likelyCause": "The fixture intentionally separates a status label from its prerequisite explanation.",
+      "recovery": "Use the node checks to identify the mutation dependency and request a written completion step.",
+      "ownerAgencyIds": ["agency_municipal_demo"],
+      "nodeIds": ["node_mutation", "node_final_e_khata"],
+      "scenarioIds": ["scenario_draft_e_khata"],
+      "claimIds": ["claim_demo_mutation_match", "claim_demo_final_record"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_consent_exception",
+      "title": "Consent exception has no published route",
+      "category": "documentation",
+      "symptom": "The synthetic flow asks for consent but does not explain the unavailable-consent branch.",
+      "likelyCause": "Only an uncorroborated placeholder claim describes an exception.",
+      "recovery": "Ask the responsible office for the current exception checklist instead of relying on the fixture.",
+      "ownerAgencyIds": ["agency_utility_demo"],
+      "nodeIds": ["node_occupancy_basis", "node_name_transfer"],
+      "scenarioIds": ["scenario_consent_unavailable", "scenario_previous_consumer_deceased"],
+      "claimIds": ["claim_demo_offline_exception", "claim_demo_deceased_documents_unknown"],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_tenant_consent",
+      "title": "Tenant route depends on contested consent evidence",
+      "category": "process",
+      "symptom": "A synthetic tenant cannot tell whether occupancy evidence can substitute for consent.",
+      "likelyCause": "The only placeholder evidence is a single citizen account.",
+      "recovery": "Confirm the current applicant categories and required documents with the utility.",
+      "ownerAgencyIds": ["agency_utility_demo"],
+      "nodeIds": ["node_occupancy_basis", "node_name_transfer"],
+      "scenarioIds": ["scenario_tenant", "scenario_consent_unavailable"],
+      "claimIds": ["claim_demo_tenant_consent"],
+      "status": "contested"
+    },
+    {
+      "id": "roadblock_deceased_checklist",
+      "title": "Succession checklist is unknown",
+      "category": "process",
+      "symptom": "A synthetic successor receives a generic supporting-document rejection.",
+      "likelyCause": "The fixture has no usable source for the deceased-consumer branch.",
+      "recovery": "Request an itemized, current checklist and keep this branch marked unknown until sourced.",
+      "ownerAgencyIds": ["agency_registration_demo", "agency_utility_demo"],
+      "nodeIds": ["node_succession_record", "node_name_transfer"],
+      "scenarioIds": ["scenario_previous_consumer_deceased"],
+      "claimIds": ["claim_demo_deceased_documents_unknown"],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_mapping_contradiction",
+      "title": "Automatic and manual mapping claims conflict",
+      "category": "infrastructure",
+      "symptom": "The synthetic identifier exists upstream but the utility account cannot resolve it.",
+      "likelyCause": "Two placeholder sources disagree on whether the handoff is automatic or staff-mediated.",
+      "recovery": "Compare the two public record states and ask the agencies to identify the correction owner.",
+      "ownerAgencyIds": ["agency_municipal_demo", "agency_utility_demo"],
+      "nodeIds": ["node_epid", "node_bescom_mapping"],
+      "scenarioIds": ["scenario_epid_mapping_failure", "scenario_clean_sale"],
+      "claimIds": ["claim_demo_mapping_automatic", "claim_demo_mapping_manual", "claim_demo_mapping_handoff"],
+      "status": "contested"
+    },
+    {
+      "id": "roadblock_generic_transfer_error",
+      "title": "Final error hides the upstream blocker",
+      "category": "infrastructure",
+      "symptom": "The synthetic transfer ends with a generic rejection instead of naming the failed dependency.",
+      "likelyCause": "The final service response does not preserve an upstream failure reason.",
+      "recovery": "Trace backward to the earliest non-ready node and verify that record first.",
+      "ownerAgencyIds": ["agency_utility_demo"],
+      "nodeIds": ["node_bescom_mapping", "node_name_transfer"],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure", "scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_demo_mapping_handoff", "claim_demo_offline_exception"],
+      "status": "partial"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_clean_sale",
+      "title": "Synthetic clean-sale path",
+      "scenarioId": "scenario_clean_sale",
+      "context": "Demonstrates the full six-node happy path without asserting that it is real guidance.",
+      "steps": [
+        {"id":"step_clean_source","label":"Confirm source record","nodeId":"node_sale_deed","action":"Compare the synthetic deed name with the next record.","expectedResult":"The purchaser identity matches.","claimIds":["claim_demo_registered_deed"],"status":"verified"},
+        {"id":"step_clean_property","label":"Confirm final property record","nodeId":"node_final_e_khata","action":"Read the synthetic Draft or Final label.","expectedResult":"Final is explicitly displayed.","claimIds":["claim_demo_final_record"],"status":"partial"},
+        {"id":"step_clean_mapping","label":"Test the handoff","nodeId":"node_bescom_mapping","action":"Check whether the synthetic account resolves the identifier.","expectedResult":"The account and property record map.","claimIds":["claim_demo_mapping_handoff","claim_demo_mapping_automatic","claim_demo_mapping_manual"],"status":"contested"}
+      ],
+      "dependencies": [{"id":"dependency_clean_records","fromNodeId":"node_sale_deed","toNodeId":"node_final_e_khata","description":"Synthetic ownership records must remain consistent across the chain.","claimIds":["claim_demo_registered_deed","claim_demo_mutation_match"],"status":"partial"}],
+      "failureRoadblockIds": ["roadblock_mapping_contradiction", "roadblock_generic_transfer_error"],
+      "recoveryNotes": ["Resolve the earliest mismatch before retrying the final transfer."],
+      "documentationQualityNotes": ["Synthetic sources make the sequence look cleaner than real research may support.", "Automatic versus manual mapping remains deliberately contested."],
+      "status": "partial"
+    },
+    {
+      "id": "journey_draft_khata",
+      "title": "Synthetic Draft e-Khata path",
+      "scenarioId": "scenario_draft_e_khata",
+      "context": "Exercises a partial municipal record and the downstream effects of that state.",
+      "steps": [
+        {"id":"step_draft_mutation","label":"Check mutation","nodeId":"node_mutation","action":"Compare the synthetic purchaser name.","expectedResult":"No identity mismatch remains.","claimIds":["claim_demo_mutation_match"],"status":"partial"},
+        {"id":"step_draft_state","label":"Read record state","nodeId":"node_final_e_khata","action":"Identify whether the synthetic record says Draft, Pending, or Final.","expectedResult":"The state is explicit.","claimIds":["claim_demo_final_record"],"status":"partial"},
+        {"id":"step_draft_retry","label":"Retry after finalization","nodeId":"node_name_transfer","action":"Retry only after the upstream record changes.","expectedResult":"The final flow exposes a new outcome.","claimIds":["claim_demo_final_record"],"status":"partial"}
+      ],
+      "dependencies": [{"id":"dependency_draft_final","fromNodeId":"node_mutation","toNodeId":"node_final_e_khata","description":"The synthetic Final state depends on the mutation check.","claimIds":["claim_demo_mutation_match"],"status":"partial"}],
+      "failureRoadblockIds": ["roadblock_draft_wording", "roadblock_generic_transfer_error"],
+      "recoveryNotes": ["Ask which unresolved upstream step keeps the record in Draft."],
+      "documentationQualityNotes": ["The fixture intentionally provides no authoritative transition rule from Draft to Final."],
+      "status": "partial"
+    },
+    {
+      "id": "journey_mapping_failure",
+      "title": "Synthetic EPID mapping failure path",
+      "scenarioId": "scenario_epid_mapping_failure",
+      "context": "Exercises a cross-system contradiction with a visible upstream identifier.",
+      "steps": [
+        {"id":"step_mapping_epid","label":"Confirm identifier","nodeId":"node_epid","action":"Read the synthetic property identifier.","expectedResult":"An identifier is visible upstream.","claimIds":["claim_demo_final_record"],"status":"partial"},
+        {"id":"step_mapping_lookup","label":"Test utility mapping","nodeId":"node_bescom_mapping","action":"Check whether the synthetic account resolves it.","expectedResult":"The handoff either resolves or returns a specific failure.","claimIds":["claim_demo_mapping_handoff"],"status":"contested"},
+        {"id":"step_mapping_owner","label":"Find the correction owner","nodeId":"node_bescom_mapping","action":"Ask which side owns the mismatch.","expectedResult":"One agency accepts responsibility for correction.","claimIds":["claim_demo_mapping_automatic","claim_demo_mapping_manual"],"status":"contested"}
+      ],
+      "dependencies": [{"id":"dependency_mapping_systems","fromNodeId":"node_epid","toNodeId":"node_bescom_mapping","description":"Two synthetic systems must agree on the property identity.","claimIds":["claim_demo_mapping_handoff"],"status":"contested"}],
+      "failureRoadblockIds": ["roadblock_mapping_contradiction", "roadblock_generic_transfer_error"],
+      "recoveryNotes": ["Preserve non-sensitive evidence of both displayed states while asking for correction ownership."],
+      "documentationQualityNotes": ["The fixture deliberately leaves staff-mediated versus automatic mapping unresolved."],
+      "status": "contested"
+    },
+    {
+      "id": "journey_tenant",
+      "title": "Synthetic tenant path",
+      "scenarioId": "scenario_tenant",
+      "context": "Exercises a non-owner applicant route with weak citizen evidence.",
+      "steps": [
+        {"id":"step_tenant_basis","label":"Identify applicant basis","nodeId":"node_occupancy_basis","action":"Select the synthetic tenant route.","expectedResult":"The flow names the relevant applicant category.","claimIds":["claim_demo_tenant_consent"],"status":"contested"},
+        {"id":"step_tenant_consent","label":"Check consent requirement","nodeId":"node_occupancy_basis","action":"Read whether consent is requested.","expectedResult":"The requirement and alternatives are explicit.","claimIds":["claim_demo_tenant_consent"],"status":"contested"},
+        {"id":"step_tenant_transfer","label":"Submit the correct route","nodeId":"node_name_transfer","action":"Use only the verified applicant path.","expectedResult":"The result names any remaining blocker.","claimIds":["claim_demo_tenant_consent"],"status":"contested"}
+      ],
+      "dependencies": [{"id":"dependency_tenant_basis","fromNodeId":"node_occupancy_basis","toNodeId":"node_name_transfer","description":"The synthetic transfer depends on the accepted applicant basis.","claimIds":["claim_demo_tenant_consent"],"status":"contested"}],
+      "failureRoadblockIds": ["roadblock_tenant_consent", "roadblock_generic_transfer_error"],
+      "recoveryNotes": ["Do not generalize the fixture’s single citizen account; confirm current categories."],
+      "documentationQualityNotes": ["The tenant branch has no synthetic primary source and remains contested."],
+      "status": "contested"
+    },
+    {
+      "id": "journey_deceased_consumer",
+      "title": "Synthetic deceased-consumer path",
+      "scenarioId": "scenario_previous_consumer_deceased",
+      "context": "Exercises a branch where the critical document list is explicitly unknown.",
+      "steps": [
+        {"id":"step_deceased_list","label":"Request document list","nodeId":"node_succession_record","action":"Ask for a current written synthetic checklist.","expectedResult":"The missing evidence is named item by item.","claimIds":["claim_demo_deceased_documents_unknown"],"status":"unknown"},
+        {"id":"step_deceased_records","label":"Check downstream names","nodeId":"node_mutation","action":"Compare the successor path with the property record.","expectedResult":"Any mismatch is explicit.","claimIds":["claim_demo_mutation_match"],"status":"partial"},
+        {"id":"step_deceased_exception","label":"Confirm exception route","nodeId":"node_name_transfer","action":"Ask whether an alternate route exists.","expectedResult":"A sourced rule replaces the placeholder assertion.","claimIds":["claim_demo_offline_exception","claim_demo_deceased_documents_unknown"],"status":"unknown"}
+      ],
+      "dependencies": [{"id":"dependency_deceased_successor","fromNodeId":"node_succession_record","toNodeId":"node_mutation","description":"An unknown synthetic succession step precedes the property-record handoff.","claimIds":["claim_demo_deceased_documents_unknown"],"status":"unknown"}],
+      "failureRoadblockIds": ["roadblock_deceased_checklist", "roadblock_consent_exception"],
+      "recoveryNotes": ["Keep the branch unknown until a current source names the required documents."],
+      "documentationQualityNotes": ["No usable source exists in the fixture for the succession checklist."],
+      "status": "unknown"
+    },
+    {
+      "id": "journey_consent_unavailable",
+      "title": "Synthetic consent-unavailable path",
+      "scenarioId": "scenario_consent_unavailable",
+      "context": "Exercises a contested exception path and a grade F assertion.",
+      "steps": [
+        {"id":"step_consent_block","label":"Confirm the blocking prompt","nodeId":"node_occupancy_basis","action":"Record the synthetic consent requirement without personal data.","expectedResult":"The failure is specific enough to route.","claimIds":["claim_demo_tenant_consent"],"status":"contested"},
+        {"id":"step_consent_exception","label":"Verify an exception","nodeId":"node_name_transfer","action":"Ask for a current written exception route.","expectedResult":"A stronger source replaces the grade F placeholder.","claimIds":["claim_demo_offline_exception"],"status":"contested"},
+        {"id":"step_consent_retry","label":"Retry with verified route","nodeId":"node_name_transfer","action":"Retry only after the accepted route is confirmed.","expectedResult":"The service names any next blocker.","claimIds":["claim_demo_offline_exception"],"status":"contested"}
+      ],
+      "dependencies": [{"id":"dependency_consent_alternative","fromNodeId":"node_occupancy_basis","toNodeId":"node_name_transfer","description":"The synthetic alternative is not established by reliable evidence.","claimIds":["claim_demo_offline_exception"],"status":"contested"}],
+      "failureRoadblockIds": ["roadblock_consent_exception", "roadblock_tenant_consent"],
+      "recoveryNotes": ["Treat the offline-exception statement as a lead to verify, not an instruction."],
+      "documentationQualityNotes": ["The only exception claim is deliberately grade F and contested."],
+      "status": "contested"
+    }
+  ]
+}

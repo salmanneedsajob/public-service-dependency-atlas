@@ -147,6 +147,8 @@ h1 {
   font-size: 9px;
   font-weight: 850;
 }
+.fixture-template { background: #876b04; }
+.fixture-research { background: var(--green); }
 .hero-aside > p { margin: 0 0 22px; color: var(--muted); line-height: 1.55; font-size: 14px; }
 .hero-aside dl { margin: 0; }
 .hero-aside dl div {
@@ -318,6 +320,28 @@ h1 {
 .edge > span { font-size: 24px; }
 .edge small { max-width: 62px; color: #aebdb8; text-align: center; text-transform: uppercase; letter-spacing: .07em; font-size: 7px; }
 
+.relationship-register { margin: 4px 0 28px; border-top: 1px solid #466158; padding-top: 28px; }
+.relationship-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, .7fr); gap: 28px; align-items: end; margin-bottom: 18px; }
+.relationship-heading h3 { margin: 7px 0 0; font-family: Georgia, serif; font-size: 30px; font-weight: 500; letter-spacing: -.03em; }
+.relationship-heading > p { max-width: 520px; margin: 0; color: #b7c5c0; font-size: 12px; line-height: 1.5; }
+.relationship-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+.relationship { min-width: 0; border: 1px solid #466158; border-top: 4px solid #91a39d; border-radius: 12px; padding: 14px; background: #213f37; }
+.relationship.status-border-verified { border-top-color: #68d09c; }
+.relationship.status-border-partial { border-top-color: var(--yellow); }
+.relationship.status-border-contested { border-top-color: var(--orange); }
+.relationship.status-border-unknown { border-top-color: #aab5b1; }
+.relationship-topline { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+.relationship-topline > span:first-child { color: var(--yellow); text-transform: uppercase; letter-spacing: .08em; font-size: 8px; font-weight: 850; }
+.relationship-nodes { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 8px; align-items: center; margin: 15px 0 10px; }
+.relationship-nodes b { font-family: Georgia, serif; font-size: 17px; font-weight: 500; line-height: 1.1; }
+.relationship-nodes span { color: var(--yellow); }
+.relationship > p { min-height: 38px; margin: 0 0 12px; color: #b7c5c0; font-size: 10px; line-height: 1.45; }
+.relationship-grades { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+.relationship-grades .evidence-badge { width: auto; min-height: 25px; padding: 3px 6px 3px 4px; color: var(--ink); }
+.relationship-grades .evidence-badge b { min-width: 18px; height: 18px; font-size: 9px; }
+.relationship-grades .evidence-badge span { display: none; }
+.relationship-grades > span { color: #b7c5c0; font-size: 9px; font-style: italic; }
+
 .node-detail {
   margin-top: 18px;
   overflow: hidden;
@@ -343,7 +367,7 @@ h1 {
   border-left: 1px solid var(--line);
   padding-left: 28px;
 }
-.owner-card > span, .required-state > span, .journey-notes article > span {
+.owner-card > span, .required-state > span, .journey-notes article > span, .journey-support > article > span {
   text-transform: uppercase;
   letter-spacing: .1em;
   font-size: 9px;
@@ -437,6 +461,16 @@ h1 {
 .journey-steps p { min-height: 58px; color: var(--muted); font-size: 13px; line-height: 1.5; }
 .expected-result { min-height: 78px; display: flex; flex-direction: column; gap: 5px; margin: 16px 0; border-left: 3px solid var(--green); padding: 10px 12px; background: var(--mint); font-size: 12px; line-height: 1.45; }
 .expected-result span { color: var(--green); text-transform: uppercase; letter-spacing: .08em; font-size: 8px; font-weight: 850; }
+.journey-support { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 26px; }
+.journey-support > article { border: 1px solid var(--line); border-radius: 16px; padding: 22px; background: var(--card); }
+.journey-dependency-list, .journey-roadblock-list { display: grid; gap: 9px; margin-top: 14px; }
+.journey-dependency-list > div, .journey-roadblock-list a { border-radius: 11px; padding: 13px; background: var(--paper-deep); }
+.journey-dependency-list > div > div { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+.journey-dependency-list b, .journey-roadblock-list b { font-size: 12px; line-height: 1.35; }
+.journey-dependency-list p { margin: 7px 0 0; color: var(--muted); font-size: 11px; line-height: 1.45; }
+.journey-roadblock-list a { display: grid; grid-template-columns: max-content 1fr; gap: 8px 10px; align-items: center; text-decoration: none; }
+.journey-roadblock-list a:hover { background: var(--mint); }
+.journey-roadblock-list small { grid-column: 1 / -1; color: var(--muted); font-size: 10px; line-height: 1.45; }
 .journey-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 26px; }
 .journey-notes article { border-radius: 16px; padding: 22px; background: var(--paper-deep); }
 .journey-notes ul { margin: 12px 0 0; padding-left: 18px; }
@@ -505,6 +539,7 @@ h1 {
   .hero-aside > p { margin: 0; }
   .scenario-grid { grid-template-columns: repeat(2, 1fr); }
   .detail-columns { grid-template-columns: 1fr; }
+  .relationship-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .detail-group { border-right: 0; border-bottom: 1px solid var(--line); }
   .detail-group:last-child { border-bottom: 0; }
   .detail-group-heading { min-height: auto; }
@@ -539,6 +574,8 @@ h1 {
   .edge { width: 100%; height: 54px; justify-content: center; transform: none; }
   .edge > span { transform: rotate(90deg); }
   .edge small { display: none; }
+  .relationship-heading { grid-template-columns: 1fr; align-items: start; }
+  .relationship-list { grid-template-columns: 1fr; }
   .node-detail { margin-left: -8px; margin-right: -8px; border-radius: 20px; }
   .node-detail-header { grid-template-columns: 1fr; gap: 28px; padding: 26px 22px; }
   .owner-card { border-left: 0; border-top: 1px solid var(--line); padding: 20px 0 0; }
@@ -552,6 +589,7 @@ h1 {
   .journey-steps p { min-height: 0; }
   .expected-result { min-height: 0; }
   .journey-notes { grid-template-columns: 1fr; }
+  .journey-support { grid-template-columns: 1fr; }
   .roadblock-controls { align-items: flex-start; flex-direction: column; }
   .segmented-control { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
   .segmented-control button { width: 100%; }

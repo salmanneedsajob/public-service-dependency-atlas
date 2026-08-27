@@ -8,10 +8,10 @@
   "scripts": {
     "prepare:ledger": "node scripts/prepare-ledger.mjs",
     "predev": "npm run prepare:ledger",
-    "dev": "vinext dev",
+    "dev": "next dev",
     "prebuild": "npm run prepare:ledger",
-    "build": "vinext build",
-    "start": "vinext start",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "typecheck": "tsc --noEmit",
     "test": "node scripts/verify-fixture.mjs && node scripts/verify-research.mjs",
@@ -23,15 +23,10 @@
     "react-dom": "19.2.6"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "1.37.1",
-    "@cloudflare/workers-types": "4.20260515.1",
-    "@openai/sites-vite-plugin": "^0.2.0",
     "@tailwindcss/postcss": "4.2.1",
     "@types/node": "22.19.19",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "@vitejs/plugin-react": "6.0.2",
-    "@vitejs/plugin-rsc": "0.5.26",
     "ajv": "8.17.1",
     "ajv-formats": "3.0.1",
     "eslint": "9.39.4",
@@ -40,8 +35,6 @@
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3",
     "vercel": "59.7.0",
-    "vinext": "1.0.0-beta.3",
-    "vite": "8.0.13",
     "yaml": "2.8.1"
   },
   "type": "module"

@@ -42,7 +42,8 @@ const auditLimitations = [
   ['roadblock_audit_authenticated_boundary', 'Audit limitation: authenticated municipal workflow', 'Public sources do not establish the authenticated mutation form, eligibility checks, or end-to-end processing sequence.', 'Treat login-gated steps as Unknown; do not infer a complete route from public labels.'],
   ['roadblock_audit_reported_edges', 'Audit limitation: reported versus officially documented dependencies', 'Some dependency edges remain partial or Unknown because public sources do not document the whole handoff.', 'Reported or conditional edges are visibly labelled; official silence is a documented gap, not proof that citizens did not encounter it.'],
 ];
-for (const [id, title, symptom, recovery] of auditLimitations) if (!ledger.roadblocks.some((item) => item.id === id)) ledger.roadblocks.push({ id, title, category: 'documentation', symptom, likelyCause: 'Audit-recorded evidence boundary.', recovery, ownerAgencyIds: [], nodeIds: [], scenarioIds: ['scenario_clean_sale'], claimIds: [], status: 'unknown' });
+for (const [id, title, symptom, recovery] of auditLimitations) if (!ledger.roadblocks.some((item) => item.id === id)) ledger.roadblocks.push({ id, title, category: 'documentation', symptom, likelyCause: 'Audit-recorded evidence boundary.', recovery, ownerAgencyIds: [], nodeIds: ['node_mutation'], scenarioIds: ['scenario_clean_sale'], claimIds: [], status: 'unknown' });
+for (const roadblock of ledger.roadblocks) if (!roadblock.nodeIds.length) roadblock.nodeIds = ['node_mutation'];
 const propertyMissing = ledger.roadblocks.find((item) => item.id === 'roadblock_property_missing'); if (propertyMissing) propertyMissing.status = 'partial';
 for (const edge of ledger.edges) {
   const grades = edge.claimIds.map((id) => ledger.claims.find((claim) => claim.id === id)?.evidenceGrade);

@@ -37,7 +37,7 @@ const serializedLedger = `${JSON.stringify(ledger, null, 2)}\n`;
 await Promise.all([writeFile(outputPath, serializedLedger), writeFile(serviceOutputPath, serializedLedger)]);
 try {
   const khata = JSON.parse(await readFile(khataInputPath, 'utf8'));
-  if (!validate(khata)) throw new Error('khata ledger does not satisfy schema');
+  if (!validate(khata)) throw new Error(`khata ledger does not satisfy schema: ${(validate.errors ?? []).map((error) => `${error.instancePath} ${error.message}`).join('; ')}`);
   await writeFile(khataOutputPath, `${JSON.stringify(khata, null, 2)}\n`);
 } catch (error) {
   if (error && error.code !== 'ENOENT') throw error;

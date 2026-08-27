@@ -228,6 +228,7 @@ export default function Home() {
     const scenarioMatch = showAllRoadblocks || roadblock.scenarioIds.includes(selectedScenario.id);
     return categoryMatch && scenarioMatch;
   });
+  const nocConflict = ledger.roadblocks.find((roadblock) => roadblock.id === 'roadblock_noc_conflict');
   const unresolvedCount = selectedPathNodes.filter((node) => node.status !== 'verified').length;
   const statusCounts = ledger.claims.reduce(
     (counts, claim) => ({ ...counts, [claim.status]: counts[claim.status] + 1 }),
@@ -532,6 +533,24 @@ export default function Home() {
           </div>
           <p>{scenarioRoadblocks.length} roadblocks are linked to this path. Contradictions stay flat and browsable so a generic final error can be traced upstream.</p>
         </div>
+        {nocConflict && (
+          <aside className="contradiction-callout" aria-labelledby="noc-conflict-heading">
+            <div className="contradiction-label">Prominent contested finding</div>
+            <div>
+              <div className="roadblock-topline">
+                <span className="category category-documentation">documentation</span>
+                <StatusBadge status="contested" compact />
+              </div>
+              <h3 id="noc-conflict-heading">{nocConflict.title}</h3>
+              <p>{nocConflict.symptom}</p>
+            </div>
+            <div className="contradiction-copy">
+              <p><code>claim_citizen_old_noc</code> ↔ <code>claim_citizen_no_builder_noc</code></p>
+              <p>These are conflicting citizen accounts, not a checklist. Do not infer that an NOC is either required or unnecessary.</p>
+              <a href={`#${nocConflict.id}`}>Open both sources and recovery guidance ↓</a>
+            </div>
+          </aside>
+        )}
         <div className="roadblock-controls">
           <div className="segmented-control" aria-label="Filter by roadblock category">
             {(['all', 'documentation', 'process', 'infrastructure'] as const).map((category) => (

@@ -2,7 +2,9 @@
 
 A static, single-page renderer for BESCOM transfer evidence ledgers using schema v1.0.0. The interface is driven entirely by ledger data: scenarios select dependency paths; nodes expose checks, failure signals, and recoveries; claims resolve to evidence grades and sources; roadblocks and journeys are rendered without hard-coded case logic.
 
-The default data file is `ledger/demo.synthetic.json`. It is deliberately richer than the canonical unknown-heavy example and is clearly synthetic: it exists to exercise every UI state, not to make claims about BESCOM. Do not publish it as guidance and do not replace `ledger/example.json` with it.
+The default data file is `ledger/research.json`: the audited, dated BESCOM micro-study. It is independent research rather than official advice, and its claim-level grades, source dates, Unknown states, and contradictions must remain visible.
+
+`ledger/demo.synthetic.json` remains a deliberately rich test fixture. It exists to exercise every interface state, not to make claims about BESCOM, and must not be published as guidance.
 
 ## Run locally
 

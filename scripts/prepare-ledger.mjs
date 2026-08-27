@@ -6,7 +6,7 @@ import addFormats from 'ajv-formats';
 import YAML from 'yaml';
 
 const projectRoot = process.cwd();
-const inputPath = path.resolve(projectRoot, process.env.LEDGER_PATH ?? 'ledger/demo.synthetic.json');
+const inputPath = path.resolve(projectRoot, process.env.LEDGER_PATH ?? 'ledger/research.json');
 const schemaPath = path.resolve(projectRoot, 'ledger/schema.json');
 const outputPath = path.resolve(projectRoot, 'public/data/ledger.json');
 

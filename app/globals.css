@@ -477,6 +477,13 @@ h1 {
 .journey-notes li { margin: 6px 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
 
 .roadblock-section { background: #fffaf0; }
+.contradiction-callout { display: grid; grid-template-columns: 150px minmax(220px, .95fr) minmax(280px, 1.05fr); gap: 24px; margin: 0 0 24px; border: 2px solid var(--orange); border-radius: 18px; padding: 24px; background: #fff1e9; box-shadow: var(--shadow); }
+.contradiction-label { color: #9f371d; text-transform: uppercase; letter-spacing: .1em; font-size: 9px; font-weight: 850; line-height: 1.45; }
+.contradiction-callout h3 { margin: 11px 0 8px; font-family: Georgia, serif; font-size: 27px; font-weight: 500; line-height: 1.06; letter-spacing: -.025em; }
+.contradiction-callout p { margin: 0; color: #5f4137; font-size: 13px; line-height: 1.5; }
+.contradiction-copy { display: grid; align-content: start; gap: 12px; border-left: 1px solid rgba(159, 55, 29, .32); padding-left: 24px; }
+.contradiction-copy code { border-radius: 4px; padding: 2px 4px; background: rgba(255, 255, 255, .62); color: #712611; font-size: 10px; }
+.contradiction-copy a { width: max-content; color: #712611; font-size: 11px; font-weight: 850; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .roadblock-controls { display: flex; justify-content: space-between; gap: 18px; align-items: center; margin-bottom: 24px; }
 .segmented-control { display: flex; flex-wrap: wrap; gap: 6px; }
 .segmented-control button {
@@ -544,6 +551,8 @@ h1 {
   .detail-group:last-child { border-bottom: 0; }
   .detail-group-heading { min-height: auto; }
   .roadblock { grid-template-columns: 44px 1fr; }
+  .contradiction-callout { grid-template-columns: 1fr 1fr; }
+  .contradiction-label { grid-column: 1 / -1; }
   .roadblock-resolution { grid-column: 2; }
   .roadblock-evidence { grid-column: 2; }
 }
@@ -591,6 +600,9 @@ h1 {
   .journey-notes { grid-template-columns: 1fr; }
   .journey-support { grid-template-columns: 1fr; }
   .roadblock-controls { align-items: flex-start; flex-direction: column; }
+  .contradiction-callout { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
+  .contradiction-label { grid-column: auto; }
+  .contradiction-copy { border-top: 1px solid rgba(159, 55, 29, .32); border-left: 0; padding-top: 16px; padding-left: 0; }
   .segmented-control { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
   .segmented-control button { width: 100%; }
   .roadblock { grid-template-columns: 1fr; gap: 14px; }

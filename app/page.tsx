@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import type { Detail, EvidenceGrade, Ledger, RecordStatus } from '@/lib/ledger-types';
 
 const statusCopy: Record<RecordStatus, string> = {
-  verified: 'Supported by the fixture at the stated grade',
+  verified: 'Supported by evidence at the stated grade',
   partial: 'Some of this record is supported; important gaps remain',
   contested: 'Sources or observed states disagree',
   unknown: 'No usable source yet; do not infer the answer',
@@ -259,11 +259,13 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="eyebrow">Bengaluru · Evidence-led pathfinder</p>
-          <h1>{ledger.meta.title}</h1>
+          <h1>Why is my BESCOM transfer blocked?</h1>
+          <p className="ledger-subtitle">{ledger.meta.title}</p>
           <p className="lede">
-            Start with your situation. Then trace the records, decisions, and system handoffs
-            upstream from the final error — with gaps and disagreements left visible.
+            Bought, inherited, or rented a home in Bengaluru but cannot get the electricity bill into your name? The blocker is often upstream in municipal property records, not the final BESCOM form. This site maps the whole chain with evidence and honest gaps.
           </p>
+          <p className="thesis">Government services are digitized as separate departments, but citizens live connected events. When the links between systems are undocumented, the citizen becomes the integration layer. This site documents those links.</p>
+          <p className="term-glossary"><b>Key terms:</b> EPID (Electronic Property Identification number) · e-Khata (Bengaluru’s digital property record) · mutation (the municipal update that records a property transfer) · NOC (No Objection Certificate)</p>
           <a className="primary-link" href="#scenarios">Find my path <span>↓</span></a>
         </div>
         <aside className="hero-aside" aria-label="Dataset notice">
@@ -628,7 +630,6 @@ export default function Home() {
           </p>
           <p>{datasetNotice.footer}</p>
           <div className="footer-meta">
-            <StatusBadge status="unknown" />
             <span>{ledger.meta.disclaimer}</span>
           </div>
           <small>Snapshot {ledger.meta.asOf} · {ledger.meta.jurisdiction} · Schema {ledger.meta.schemaVersion}</small>

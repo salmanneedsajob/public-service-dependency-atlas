@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { atlasServices, registerOpenedOn } from '@/lib/atlas-data';
-import { buildGapRegister } from '@/lib/gap-register';
+import { atlasServices } from '@/lib/atlas-data';
 import { collectUndocumentedQuestions } from '@/lib/undocumented';
 
 export const metadata: Metadata = {
@@ -11,19 +10,18 @@ export const metadata: Metadata = {
 
 export default function AtlasHome() {
   const serviceGaps = atlasServices.map((service) => ({ service, gaps: collectUndocumentedQuestions(service.ledger) }));
-  const register = buildGapRegister();
-  const headlineGaps = serviceGaps
+  const exampleGaps = serviceGaps
     .filter((item) => item.gaps.length)
     .map((item) => ({ service: item.service, gap: item.gaps[0] }))
     .sort((a, b) => a.gap.priority - b.gap.priority || a.service.title.localeCompare(b.service.title))
     .slice(0, 5);
+  const documentedGapCount = serviceGaps.reduce((count, item) => count + item.gaps.length, 0);
 
   return (
     <main className="atlas-page">
       <header className="site-header">
         <a className="wordmark" href="#top">Public service dependency atlas</a>
         <nav aria-label="Page navigation">
-          <a href="#register">Gap register</a>
           <a href="#directory">Service directory</a>
           <a href="#method">Contribute</a>
         </nav>
@@ -38,26 +36,18 @@ export default function AtlasHome() {
         <p className="prototype-note">This is a working prototype of a method for mapping documentation gaps across government services, demonstrated on Bengaluru utilities and municipal services.</p>
         <div className="hero-actions">
           <a className="primary-link" href="#directory">Explore the directory <span>↓</span></a>
-          <a className="secondary-link" href="#register">Open the gap register →</a>
         </div>
       </section>
 
-      <section className="atlas-gap-rollup" id="register" aria-labelledby="atlas-gap-heading">
+      <section className="atlas-missing" id="missing" aria-labelledby="missing-heading">
         <div>
-          <p className="step-label">Working register · opened {registerOpenedOn}</p>
-          <h2 id="atlas-gap-heading">The documentation-debt register</h2>
-          <p className="register-tally">{register.length} so far, from {atlasServices.length} services in one city — a lower bound, from desk research against public sources.</p>
-          <p className="landing-register-note">A gap here means we found no published procedure. If one exists, point us to it and the gap closes.</p>
+          <p className="step-label">What the public record leaves out</p>
+          <h2 id="missing-heading">What&apos;s missing</h2>
+          <p>{documentedGapCount} gaps so far, from {atlasServices.length} services in one city — a lower bound from desk research against public sources.</p>
         </div>
-        <div>
-          <ul>
-            {headlineGaps.map(({ service, gap }) => {
-              const record = register.find((item) => item.service.id === service.id && item.id === gap.id);
-              return <li key={`${service.href}:${gap.id}`}><Link href={record ? `/register/${record.slug}` : service.href}>{service.title}</Link><strong>{gap.situation}</strong><span>{gap.missing}</span></li>;
-            })}
-          </ul>
-          <Link className="register-link" href="/register">View all {register.length} open gaps →</Link>
-        </div>
+        <ol className="missing-example-list">
+          {exampleGaps.map(({ service, gap }) => <li key={`${service.href}:${gap.id}`}><strong>{gap.situation}</strong><span>{gap.missing}</span><Link href={`${service.href}#what-nobody-has-documented`}>See this in {service.title} →</Link></li>)}
+        </ol>
       </section>
 
       <section className="failure-layers synthesis" aria-labelledby="synthesis-heading">

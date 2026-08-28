@@ -3,7 +3,6 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import type { Detail, EvidenceGrade, Ledger, RecordStatus } from '@/lib/ledger-types';
-import { gapRegisterSlug } from '@/lib/gap-slug';
 import { collectUndocumentedQuestions, publicNodeLabel } from '@/lib/undocumented';
 
 const statusCopy: Record<RecordStatus, string> = {
@@ -270,20 +269,20 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
         </aside>
       </section>
 
-      <section className="gap-section" aria-labelledby="gap-heading">
+      <section className="gap-section" id="what-nobody-has-documented" aria-labelledby="gap-heading">
         <div>
           <p className="step-label">The atlas’s central finding</p>
           <h2 id="gap-heading">What nobody has documented</h2>
           <p>These are the Unknown handoffs and unresolved roadblocks that can leave a citizen stuck. Routine empty fields and research artifacts are not counted.</p>
         </div>
         <ol className="gap-list">
-          {topGaps.map((gap) => <li key={gap.id}><strong>{gap.situation}</strong><span>{gap.missing}</span><Link className="gap-record-link" href={`/register/${gapRegisterSlug(service, gap.id)}`}>Open gap record →</Link></li>)}
+          {topGaps.map((gap) => <li key={gap.id}><strong>{gap.situation}</strong><span>{gap.missing}</span></li>)}
         </ol>
         {remainingGaps.length > 0 && (
           <details className="gap-more">
             <summary>Show all {gaps.length} gaps</summary>
             <ol className="gap-list" style={{ counterReset: `gap ${topGaps.length}` }}>
-              {remainingGaps.map((gap) => <li key={gap.id}><strong>{gap.situation}</strong><span>{gap.missing}</span><Link className="gap-record-link" href={`/register/${gapRegisterSlug(service, gap.id)}`}>Open gap record →</Link></li>)}
+              {remainingGaps.map((gap) => <li key={gap.id}><strong>{gap.situation}</strong><span>{gap.missing}</span></li>)}
             </ol>
           </details>
         )}
@@ -387,7 +386,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
           })}
         </div>
 
-        <section className="relationship-register" aria-labelledby="relationship-heading">
+        <section className="relationship-chain" aria-labelledby="relationship-heading">
           <div className="relationship-heading">
             <div>
               <p className="eyebrow">How the records connect</p>
@@ -554,7 +553,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
         <div className="section-heading split-heading">
           <div>
             <p className="step-label">04 · What goes wrong, and why</p>
-            <h2 id="roadblock-heading">Roadblock register</h2>
+              <h2 id="roadblock-heading">Recorded roadblocks</h2>
           </div>
             <p>{scenarioRoadblocks.length} recorded problems are linked to this path. Conflicting accounts stay visible so a generic error can be traced back to the record that may be causing it.</p>
         </div>

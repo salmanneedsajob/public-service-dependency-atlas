@@ -21,8 +21,6 @@ export type AtlasService = {
   ledger: Ledger;
 };
 
-export const registerOpenedOn = '2026-08-28';
-
 export const atlasServices: AtlasService[] = [
   { id: 'bescom', title: 'Electricity name transfer', category: 'Utility account', status: 'Mapped', href: '/bescom', ledger: bescomLedger as Ledger },
   { id: 'birth-certificate', title: 'Birth certificate', category: 'Civil record', status: 'Partially mapped', href: '/birth-certificate', ledger: birthCertificateLedger as Ledger },

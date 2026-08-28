@@ -1,0 +1,114 @@
+{
+  "_handoff": {
+    "issue": "IND-32",
+    "generatedAt": "2026-08-28",
+    "status": "in_review",
+    "scope": "Public first-person accounts about obtaining or correcting a Bengaluru death certificate only. These reports are case evidence, not official registration, document, fee, registrar, correction, or service-level evidence. Usernames, names, event identifiers, locations, contact details, and other personal data are omitted."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind32_death_citizen_offline_application",
+      "title": "How to apply for death certificate?",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1n7lwbo",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2025-09-03",
+      "type": "citizen_evidence",
+      "notes": "A commenter reports obtaining a certificate offline through a BBMP office and describes documents they personally said they were asked for. The same discussion includes other unverified accounts; no document list, office routing, charge, or timing is retained as a rule."
+    },
+    {
+      "id": "source_ind32_death_citizen_portal_registration_unit",
+      "title": "How to obtain death certificate in Bengaluru?",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1rcdzi3/how_to_obtain_death_certificate_in_bengaluru/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-02-23",
+      "type": "citizen_evidence",
+      "notes": "The original poster reports that the e-JanMa registration-unit selector had no available option during an attempted death-certificate process. It is one unverified portal observation, not proof of an outage or a universal remote-application limitation."
+    },
+    {
+      "id": "source_ind32_death_citizen_certificate_error",
+      "title": "Bangalore parents: Please don’t edit government certificates using PDF editors — sharing a real case we recently saw",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1rqrehs/bangalore_parents_please_dont_edit_government/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-03-11",
+      "type": "citizen_evidence",
+      "notes": "A commenter reports encountering a spelling error when seeking a death certificate and submitting a correction request. It is a single, unverified account and does not establish correction procedure or outcome."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind32_death_citizen_offline_case",
+      "text": "One citizen reported completing an offline death-certificate request through a BBMP office and being asked for several supporting records in that case.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_copy", "scenario_ind32_death_hospital"],
+      "nodeIds": ["node_death_classify_record", "node_death_registrar", "node_death_outcome"],
+      "sourceIds": ["source_ind32_death_citizen_offline_application"],
+      "evidenceGrade": "F",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A commenter account about one offline interaction. It does not establish the right office, necessary documents, record state, payment, or whether the event was registered before the visit."
+    },
+    {
+      "id": "claim_ind32_death_citizen_registration_unit_blank",
+      "text": "One citizen reported that the e-JanMa registration-unit selector showed no options while they were trying to start a Bengaluru death-certificate process.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_hospital", "scenario_ind32_death_home", "scenario_ind32_death_delayed"],
+      "nodeIds": ["node_death_service_entry", "node_death_classify_record", "node_death_registrar"],
+      "sourceIds": ["source_ind32_death_citizen_portal_registration_unit"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One attempted use. It does not prove a portal fault, determine the appropriate registrar, or show whether event facts, device state, availability, or authentication affected the selector."
+    },
+    {
+      "id": "claim_ind32_death_citizen_error_correction",
+      "text": "One citizen reported finding a spelling error in a death certificate and submitting a correction request during the same office interaction.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_correction"],
+      "nodeIds": ["node_death_public_tools", "node_death_registrar", "node_death_outcome"],
+      "sourceIds": ["source_ind32_death_citizen_certificate_error"],
+      "evidenceGrade": "F",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single commenter account. It does not establish how corrections must be requested, whether a correction was accepted, or the time to issue a corrected certificate."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind32_death_citizen_registration_selector",
+      "title": "Reported empty registration-unit selector",
+      "category": "infrastructure",
+      "symptom": "A citizen reports that an e-JanMa registration-unit selector did not offer a choice during an attempted process.",
+      "likelyCause": "Unknown; the account does not establish portal status, required prior inputs, jurisdiction, or user/session conditions.",
+      "recovery": "Do not infer an outage or choose a registrar from the report. Confirm the event's competent registrar and current official route before entering personal/deceased-person data.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_death_service_entry", "node_death_classify_record", "node_death_registrar"],
+      "scenarioIds": ["scenario_ind32_death_hospital", "scenario_ind32_death_home", "scenario_ind32_death_delayed"],
+      "claimIds": ["claim_ind32_death_citizen_registration_unit_blank"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_death_citizen_certificate_error",
+      "title": "Reported certificate spelling error",
+      "category": "documentation",
+      "symptom": "A commenter reports finding an error in a death certificate and seeking a correction.",
+      "likelyCause": "Unknown; the account does not identify whether the error began in the event report, underlying register, certificate generation, or later transcription.",
+      "recovery": "Treat the report as a reason to check the issued certificate carefully and use the competent registration centre's authorised correction process for a real case.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_death_public_tools", "node_death_registrar", "node_death_outcome"],
+      "scenarioIds": ["scenario_ind32_death_correction"],
+      "claimIds": ["claim_ind32_death_citizen_error_correction"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

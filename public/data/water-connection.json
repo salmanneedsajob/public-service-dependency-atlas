@@ -1,0 +1,3586 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru water connection evidence ledger — partially mapped v1",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-28",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Public sources and known gaps are shown together; do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_bescom",
+      "name": "Bangalore Electricity Supply Company Limited",
+      "shortName": "BESCOM",
+      "officialUrl": "https://bescom.co.in/"
+    },
+    {
+      "id": "agency_gba",
+      "name": "Greater Bengaluru Authority / Bengaluru City Corporations",
+      "shortName": "GBA",
+      "officialUrl": "https://www.bbmp.gov.in/"
+    },
+    {
+      "id": "agency_kerc",
+      "name": "Karnataka Electricity Regulatory Commission",
+      "shortName": "KERC",
+      "officialUrl": "https://kerc.karnataka.gov.in/"
+    },
+    {
+      "id": "agency_bwssb_ind32_water",
+      "name": "Bangalore Water Supply and Sewerage Board",
+      "shortName": "BWSSB",
+      "officialUrl": "https://bwssb.gov.in/"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_clean_sale",
+      "label": "Clean sale",
+      "summary": "Registered sale with no known municipal-record issue.",
+      "tags": [
+        "sale"
+      ],
+      "pathNodeIds": [
+        "node_sale_deed",
+        "node_mutation",
+        "node_final_e_khata",
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_draft_e_khata",
+      "label": "Draft or pending e-Khata",
+      "summary": "Property information exists but finality or buyer-name state is unresolved.",
+      "tags": [
+        "sale",
+        "e-khata",
+        "pending"
+      ],
+      "pathNodeIds": [
+        "node_final_e_khata",
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_epid_mapping_failure",
+      "label": "EPID mapping failure",
+      "summary": "An EPID or property record exists but the BESCOM-account relationship cannot be established.",
+      "tags": [
+        "epid",
+        "mapping"
+      ],
+      "pathNodeIds": [
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_tenant",
+      "label": "Tenant",
+      "summary": "An occupier seeks a bill-name change without owning the property.",
+      "tags": [
+        "tenant",
+        "consent"
+      ],
+      "pathNodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_previous_consumer_deceased",
+      "label": "Previous consumer deceased",
+      "summary": "The recorded consumer has died and a successor seeks transfer.",
+      "tags": [
+        "death",
+        "succession"
+      ],
+      "pathNodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_consent_unavailable",
+      "label": "Consent unavailable",
+      "summary": "The previous consumer cannot or will not provide consent.",
+      "tags": [
+        "consent",
+        "exception"
+      ],
+      "pathNodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_ind32_water_residential",
+      "label": "New residential water and UGD connection",
+      "summary": "A Bengaluru property owner seeks a new water-supply and underground-drainage connection through the public Jaladhare entry.",
+      "tags": [
+        "new-connection",
+        "residential",
+        "water",
+        "underground-drainage"
+      ],
+      "pathNodeIds": [
+        "node_mobile_otp",
+        "node_buy_application",
+        "node_consumer_details",
+        "node_site_details",
+        "node_building_plumber",
+        "node_documents_review",
+        "node_inspection_review",
+        "node_demand_payment",
+        "node_rr_status"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_ind32_water_commercial_highrise",
+      "label": "Commercial or high-rise connection",
+      "summary": "A commercial or high-rise applicant uses the same public entry but may encounter different parameters, charges, review, and displayed target label.",
+      "tags": [
+        "new-connection",
+        "commercial",
+        "high-rise"
+      ],
+      "pathNodeIds": [
+        "node_mobile_otp",
+        "node_buy_application",
+        "node_consumer_details",
+        "node_site_details",
+        "node_building_plumber",
+        "node_documents_review",
+        "node_inspection_review",
+        "node_demand_payment",
+        "node_rr_status"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_ind32_water_existing_rr",
+      "label": "Premises with existing BWSSB RR number",
+      "summary": "A new-connection application is for a premise where the form asks whether an existing BWSSB connection/RR number is present.",
+      "tags": [
+        "new-connection",
+        "existing-connection",
+        "rr-number",
+        "arrears"
+      ],
+      "pathNodeIds": [
+        "node_mobile_otp",
+        "node_buy_application",
+        "node_consumer_details",
+        "node_site_details",
+        "node_documents_review",
+        "node_inspection_review",
+        "node_demand_payment",
+        "node_rr_status"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_ind32_water_conditional_docs",
+      "label": "Conditional OC, RWH, STP, or NOC requirements",
+      "summary": "A property whose application or demand note triggers conditional occupancy, rainwater-harvesting, sewage-treatment, KSPCB, or NOC requirements.",
+      "tags": [
+        "rwh",
+        "stp",
+        "oc",
+        "noc",
+        "conditional-documents"
+      ],
+      "pathNodeIds": [
+        "node_site_details",
+        "node_building_plumber",
+        "node_documents_review",
+        "node_demand_payment",
+        "node_rr_status"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_ind32_water_payment_or_grievance",
+      "label": "Demand-note payment or unresolved application",
+      "summary": "The applicant receives a demand note, needs to pay, or needs to use the public grievance/status path after an unresolved step.",
+      "tags": [
+        "demand-note",
+        "payment",
+        "status",
+        "grievance",
+        "recovery"
+      ],
+      "pathNodeIds": [
+        "node_demand_payment",
+        "node_rr_status",
+        "node_grievance"
+      ],
+      "status": "unknown"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_kerc_conditions_supply",
+      "title": "Conditions of Supply of Electricity with first and second amendments",
+      "publisher": "KERC / BESCOM",
+      "url": "https://www.bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
+      "accessedAt": "2026-08-27",
+      "type": "regulation",
+      "notes": "Canonical source for IND-4 source_kerc_conditions_supply and IND-8 source_kerc_cos_consolidated. Historic consolidated text: Grade A claims are partial until current applicability is confirmed."
+    },
+    {
+      "id": "source_bescom_home",
+      "title": "BESCOM public homepage and service directory",
+      "publisher": "BESCOM",
+      "url": "https://bescom.co.in/",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-4 source_bescom_current_home and IND-6 source_bescom_home; direct current public-interface observation."
+    },
+    {
+      "id": "source_bescom_faq",
+      "title": "BESCOM FAQ — How To Change Name?",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/main/faq",
+      "accessedAt": "2026-08-27",
+      "type": "official_guidance",
+      "notes": "Canonical source for IND-4 source_bescom_name_change_faq, IND-6 source_bescom_faq, and IND-8 source_bescom_jvs_faq_ind8. Public guidance only; authenticated fields were not inspected."
+    },
+    {
+      "id": "source_bescom_tracker",
+      "title": "Track Name Change",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/main/track-name-change",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-4 source_bescom_track_name_change and IND-8 source_bescom_namechange_tracker."
+    },
+    {
+      "id": "source_bescom_jvs",
+      "title": "Janasnehi Vidhyuth Sevegalu — Name Change",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/dashboard/consumer-dashboard/janasnehi-vidhyuth-sevagalu/name-change-form",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Current public page; timing wording does not establish start point or exception applicability."
+    },
+    {
+      "id": "source_bescom_legacy",
+      "title": "BESCOM current public homepage and service directory",
+      "publisher": "BESCOM",
+      "url": "https://bescom.co.in/",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "The formerly cited legacy portal endpoint was unreachable during the Stage 0 link check. No current public route taxonomy was verified; retain the historical lead only as an Unknown gap."
+    },
+    {
+      "id": "source_eaasthi_login",
+      "title": "e-Aasthi citizen login and Final e-Khata instructions",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-6 source_eaasthi_login and IND-8 source_ekhata_citizen_login_ind8."
+    },
+    {
+      "id": "source_eaasthi_search",
+      "title": "e-Aasthi public e-Khata search",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-6 source_eaasthi_search and IND-8 source_ekhata_public_search_ind8."
+    },
+    {
+      "id": "source_eaasthi_status",
+      "title": "e-Khata Application Status",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-6 source_eaasthi_status and IND-8 source_ekhata_epid_status_ind8."
+    },
+    {
+      "id": "source_eaasthi_mutation",
+      "title": "e-Aasthi Pending Mutation Report",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/office/frmPendingMutationReport.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Public observation only; it does not establish a completed buyer-facing record."
+    },
+    {
+      "id": "source_gba_directory",
+      "title": "GBA service directory",
+      "publisher": "Greater Bengaluru Authority",
+      "url": "https://www.bbmp.gov.in/",
+      "accessedAt": "2026-08-27",
+      "type": "official_guidance",
+      "notes": "Current public helpline listing."
+    },
+    {
+      "id": "source_citizen_transfer",
+      "title": "Bescom name transfer can be done fully online if you have ekhata",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1vceniq/bescom_name_transfer_can_be_done_fully_online_if/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-08-01",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person evidence; not procedure proof."
+    },
+    {
+      "id": "source_citizen_login_payment",
+      "title": "Updated 2026 e-Khata BESCOM name-change account",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1vlfrnl/dont_pay_brokers_5k_for_bescom_name_changes_here/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-08-11",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person evidence; personal details are intentionally omitted."
+    },
+    {
+      "id": "source_citizen_missing_epid",
+      "title": "Non Availability of EPID/Draft E-Khata in E-Swathi portal",
+      "publisher": "r/BangaloreRealEstates (Reddit)",
+      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1r3hhqt/non_availability_of_epiddraft_ekhata_in_eswathi/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-02-13",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person missing draft/EPID account."
+    },
+    {
+      "id": "source_citizen_owner_error",
+      "title": "E-Khata Name Correction",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1oqksj1/ekhata_name_correction/",
+      "accessedAt": "2026-08-27",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person prior-owner and correction-error account."
+    },
+    {
+      "id": "source_citizen_missing_draft",
+      "title": "Non Availability of Draft E-khata",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1ikojje/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2025-02-08",
+      "type": "citizen_evidence",
+      "notes": "IND-7 public reports of absent draft e-Khata and delayed self-service request."
+    },
+    {
+      "id": "source_citizen_old_owner_recovery",
+      "title": "Finally I got Ekhata yesterday, costed 125₹",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1k4xnji/",
+      "accessedAt": "2026-08-27",
+      "type": "citizen_evidence",
+      "notes": "IND-7 citizen recovery account; not a standard instruction."
+    },
+    {
+      "id": "source_citizen_noc",
+      "title": "Bescom bill name change",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1bx2oer/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2024-04-06",
+      "type": "citizen_evidence",
+      "notes": "Older offline-process account retained as one side of the NOC contradiction."
+    },
+    {
+      "id": "source_ind32_bwssb_jaladhare_consumer",
+      "title": "BWSSB Jaladhare consumer public entry",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Direct public-page observation. The page says to log in by mobile number, pay to buy the application form, fill details/upload documents, and use the same mobile number for status. It lists document and charge categories and displays the public status-table labels."
+    },
+    {
+      "id": "source_ind32_bwssb_consumer_manual",
+      "title": "BWSSB Consumer User Manual — Jaladhare 3.0",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Official manual indexed/publicly accessible through BWSSB. Used for the five displayed stages, field and upload descriptions, review charge tables, and payment/demand-note wording. Manual examples are not treated as a live application."
+    },
+    {
+      "id": "source_ind32_bwssb_more_info",
+      "title": "BWSSB More Information — Documents Required",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/more-info",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Public page lists building plan, lease-cum-sale deed, building photo with owner, khata, and conditional OC/RWH/STP photos."
+    },
+    {
+      "id": "source_ind32_bwssb_important_docs",
+      "title": "BWSSB Important Documents",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/important-docs",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Public index exposes links for application, attachment, inspection, deposit, prorata, GBWASP/BCC and related references; values were not assumed without a property context."
+    },
+    {
+      "id": "source_ind32_bwssb_faq",
+      "title": "BWSSB Jaladhare Frequently Asked Questions",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/member/faq",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Official FAQ. It describes registration/password and a Rs 100 buy-application route, draft/confirm behavior, stage/designation status, routing, inspection, registered-plumber agreement, demand-note payment, and support contacts. The current public consumer entry uses mobile OTP, so the FAQ route is retained with a currentness limitation."
+    },
+    {
+      "id": "source_ind32_bwssb_grievance",
+      "title": "BWSSB Grievance Form",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/member/grievance-form",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Direct public observation of grievance fields and the page-level 1916/email contact display. No grievance was submitted."
+    },
+    {
+      "id": "source_ind32_water_public_entry",
+      "title": "BWSSB Jaladhare consumer public entry",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Direct current public observation: mobile-number OTP entry, application-number status lookup, Show All Application link, high-level instructions, document/charge links, and status table."
+    },
+    {
+      "id": "source_ind32_water_legacy_entry",
+      "title": "BWSSB OWC/Jaladhare public login",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Direct current public observation: mobile number, Generate OTP, Login, manual links, More Information, Important Docs, and application-status entry. No OTP or status query was attempted."
+    },
+    {
+      "id": "source_ind32_water_consumer_manual",
+      "title": "BWSSB Consumer User Manual — Jaladhare 3.0",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Public official manual used for the five-step screen sequence, fields, upload limits, review charge tables, demand-note conditions, and Cashfree/PayU receipt flow. It is not a live application."
+    },
+    {
+      "id": "source_ind32_water_faq",
+      "title": "BWSSB Jaladhare Frequently Asked Questions",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/member/faq",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Public FAQ describes draft/status/routing/inspection/plumber/demand-note behavior, but its registered-email/password SAJALA route differs from the mobile-OTP public consumer entry."
+    },
+    {
+      "id": "source_ind32_water_grievance",
+      "title": "BWSSB public grievance form",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/member/grievance-form",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Direct current public observation of grievance fields, 1916, and page-level email. No grievance was submitted."
+    },
+    {
+      "id": "source_ind32_water_more_info",
+      "title": "BWSSB More Information — Documents Required",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/more-info",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Direct public observation of base document classes and conditional OC/RWH/STP photo items."
+    },
+    {
+      "id": "source_ind32_water_citizen_unavailable_connection",
+      "title": "Need help regarding the Cauvery water connection (BWSSB)",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/nxaw3d",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2021-06-11",
+      "type": "citizen_evidence",
+      "notes": "A first-person post reports an on-site quotation for a planned connection and a stated future supply estimate. It did not report a completed application or connection, so pricing, timing, and eligibility are not retained as facts."
+    },
+    {
+      "id": "source_ind32_water_citizen_new_connection_costs",
+      "title": "How much does new BWSSB connection would cost?",
+      "publisher": "r/BangaloreRealEstates (Reddit)",
+      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1rz16nm/how_much_does_new_bwssb_connection_would_cost/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-03-20",
+      "type": "citizen_evidence",
+      "notes": "The original poster reports a building without a permanent water-and-sewer connection and an agent quote amid a plan-deviation issue. It is one account; reported notice, quotation, construction history, and outcomes are not official evidence."
+    },
+    {
+      "id": "source_ind32_water_citizen_connection_supply_gap",
+      "title": "Bengaluru Cauvery Water: Government mandates Cauvery water connection for all Bengaluru apartments",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1icoflv/bengaluru_cauvery_water_government_mandates/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2025-01-29",
+      "type": "citizen_evidence",
+      "notes": "A commenter gives a first-person account of having a connection but still using supplementary water, and states that underground drainage was not obtained because a contractor found it infeasible for the lane. This is not a BWSSB capacity, supply, or technical-feasibility determination."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_epid_route_visible",
+      "text": "BESCOM's current public homepage exposes a service labelled Name Change with EPID.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_bescom_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4 and IND-6 duplicate observations; this does not verify eligibility or a mapping contract."
+    },
+    {
+      "id": "claim_standard_authenticated_route",
+      "text": "BESCOM's public FAQ directs a name-change applicant to authenticate, select an account ID, complete mandatory fields, upload required documents, submit, retain a request ID, and pay applicable charges.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "sourceIds": [
+        "source_bescom_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4, IND-6, and IND-8 duplicate FAQ claims. The public FAQ does not enumerate the current document checklist."
+    },
+    {
+      "id": "claim_request_tracker",
+      "text": "BESCOM's public tracker requests the request ID sent by SMS.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_request_tracking"
+      ],
+      "sourceIds": [
+        "source_bescom_tracker"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4 and IND-8 duplicate tracker claims."
+    },
+    {
+      "id": "claim_jvs_timeline_wording",
+      "text": "BESCOM's current Janasnehi page states that Name Change and some related services are within 24 hours.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_bescom_jvs"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The start point and exception applicability are not specified; it is not a verified end-to-end service-level promise."
+    },
+    {
+      "id": "claim_legacy_route_taxonomy",
+      "text": "No current public official route taxonomy for fast-track, regular, and HT name-change paths was verified in the Stage 0 link check.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_tenant"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_bescom_legacy"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The previous legacy endpoint was unreachable. This replaces an unverified historic route claim with an explicit current documentation gap."
+    },
+    {
+      "id": "claim_historic_consent_rule",
+      "text": "Historic KERC Conditions clause 36.01 says the registered consumer furnishes consent for transfer of the installation and deposits.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Historic binding text; current applicability is not established."
+    },
+    {
+      "id": "claim_historic_alternative_evidence",
+      "text": "Historic clause 36.01 lists ownership evidence, including registered sale deed, khata, succession or heirship certificate, and will, where consent is absent.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_sale_deed",
+        "node_transfer_evidence"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Historic binding text; it is an evidence lead, not a verified current checklist."
+    },
+    {
+      "id": "claim_historic_tenant_scope",
+      "text": "Historic clause 36.01 limits occupancy evidence alternatives to specified non-commercial installations.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_tenant"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Current authenticated acceptance is unknown."
+    },
+    {
+      "id": "claim_historic_transfer_obligations",
+      "text": "Historic clause 36.01 records no-arrears, indemnity, fresh-agreement, and deposit conditions for transfer; its published schedule also records LT and HT transfer charges.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_transfer_obligations"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Atomicity exception noted: these are one historic conditions cluster used solely to model a decision node. Current amounts and applicability are unverified."
+    },
+    {
+      "id": "claim_ekhata_final_guidance",
+      "text": "The public e-Aasthi guidance distinguishes Draft e-Khata from Final e-Khata and lists registered deed, eKYC, SAS property-tax application number, property photo, and A-Khata material among Final e-Khata inputs.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "nodeIds": [
+        "node_sale_deed",
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_eaasthi_login"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-6 and IND-8; it does not prove BESCOM acceptance."
+    },
+    {
+      "id": "claim_ekhata_search_recovery",
+      "text": "Public e-Aasthi search supports EPID/property lookup and offers a Do Not Find My Property route when a property cannot be found.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_eaasthi_search"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-6 and IND-8 duplicate observations."
+    },
+    {
+      "id": "claim_ekhata_status",
+      "text": "The public e-Khata Application Status page accepts an EPID for status lookup.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_eaasthi_status"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "It does not document BESCOM mapping."
+    },
+    {
+      "id": "claim_mutation_fields",
+      "text": "The public e-Aasthi Pending Mutation Report displays registered-deed or mutation date, property EPID, seller, purchaser, and pending-owner fields.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_previous_consumer_deceased"
+      ],
+      "nodeIds": [
+        "node_sale_deed",
+        "node_mutation",
+        "node_epid"
+      ],
+      "sourceIds": [
+        "source_eaasthi_mutation"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The visible report does not establish a completed buyer-facing record."
+    },
+    {
+      "id": "claim_helpline_channels",
+      "text": "Current public pages publish BESCOM 1912 and GBA e-Khata/New Khata support channels.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_bescom_mapping"
+      ],
+      "sourceIds": [
+        "source_bescom_home",
+        "source_gba_directory"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Channels are observable; their case-resolution scope is not."
+    },
+    {
+      "id": "claim_epid_mapping_unknown",
+      "text": "No inspected public official material establishes EPID-to-BESCOM-account eligibility rules, failure messages, repair owner, or recovery sequence.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4, IND-6, and IND-8 Unknown records. No private/authenticated evidence was accessed."
+    },
+    {
+      "id": "claim_citizen_mapping_failure",
+      "text": "One citizen account identifies a possible failure matching a BESCOM Account ID to an EPID even when an e-Khata record exists.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_bescom_mapping"
+      ],
+      "sourceIds": [
+        "source_citizen_transfer"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Single public account, retained as a failure signal rather than a universal rule."
+    },
+    {
+      "id": "claim_citizen_missing_draft_epid",
+      "text": "One citizen reported a property found by tax identifier with neither linked Draft e-Khata nor EPID, and no movement on a non-availability request after 45 days.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_epid"
+      ],
+      "sourceIds": [
+        "source_citizen_missing_epid"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One public account; it does not establish cause or service level."
+    },
+    {
+      "id": "claim_citizen_owner_correction",
+      "text": "One citizen reported a final e-Khata displaying a previous owner's name and an Unauthorized Activity Has Been Detected message during a correction attempt.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_citizen_owner_error"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One public account; no root cause is established."
+    },
+    {
+      "id": "claim_citizen_old_owner_recovery",
+      "text": "One citizen reported resolving a draft e-Khata showing the old owner after invalidating and reapplying with ARO guidance.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_mutation"
+      ],
+      "sourceIds": [
+        "source_citizen_old_owner_recovery"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A candidate recovery, not a general procedure."
+    },
+    {
+      "id": "claim_citizen_bescom_stalls",
+      "text": "Citizen accounts report EPID-entry, login/reset, unseen-open-application, and upload-stall failures in BESCOM flows.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_citizen_transfer",
+        "source_citizen_login_payment"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Reports identify failure modes only; no backend cause, support outcome, or general workaround is established."
+    },
+    {
+      "id": "claim_citizen_old_noc",
+      "text": "An older offline-process citizen account reported needing a previous-owner or builder NOC for BESCOM name change.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_citizen_noc"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_citizen_no_builder_noc"
+      ],
+      "notes": "Older account; conflicting evidence is retained, not resolved by chronology alone."
+    },
+    {
+      "id": "claim_citizen_no_builder_noc",
+      "text": "One 2026 citizen account reported completing an online BESCOM name change after e-Khata update without a builder NOC.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_citizen_login_payment"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_citizen_old_noc"
+      ],
+      "notes": "One current citizen account; it does not establish an exception rule."
+    },
+    {
+      "id": "claim_ind32_water_jaladhare_entry",
+      "text": "The current public Jaladhare consumer entry says a new connection applicant should log in with a mobile number, pay to buy the application form, fill the application and upload documents, and use the same mobile number to know application status.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_bwssb_jaladhare_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct unauthenticated page text. No mobile number, OTP, payment, or application was entered."
+    },
+    {
+      "id": "claim_ind32_water_current_docs",
+      "text": "The current Jaladhare public page lists lease-cum-sale deed or sale deed, khata certificate, building/sanction plan, photograph of the building with owner, and an RWH adoption document for premises measuring 1200 square feet and above as document classes for a new connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_bwssb_jaladhare_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is a public checklist, not proof that every item is required for every connection type. The separate More Information page also lists conditional OC and STP photos; the public pages do not reconcile those variants."
+    },
+    {
+      "id": "claim_ind32_water_charge_categories",
+      "text": "The current Jaladhare public page exposes charge categories for application, attachment, inspection, three-month minimum deposit, meter, sanitary points, GBWASP/BCC, prorata, and actual line cost; it also links connection-fee references.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_bwssb_jaladhare_consumer",
+        "source_ind32_bwssb_important_docs"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No fixed total or property-specific rate is asserted. The public page does not calculate a case-specific demand without application context."
+    },
+    {
+      "id": "claim_ind32_water_displayed_targets",
+      "text": "As observed on 2026-08-28, the public Jaladhare page displayed a status table for permission for a new or additional water/underground-drainage connection with headings of 14 days for residential connections and 42 days for commercial and high-rise connections.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_bwssb_jaladhare_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "These are displayed target headings, not an unconditional service-level promise. The table metrics were blank in the public observation and the trigger for the clock is not stated."
+    },
+    {
+      "id": "claim_ind32_water_manual_stages",
+      "text": "The official consumer manual describes a five-stage new-connection interface: Consumer Details, Site Details, Building Details, Documents, and Review.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_bwssb_consumer_manual"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct reading of the official manual's page descriptions; not a claim that the current unauthenticated page exposes all five screens."
+    },
+    {
+      "id": "claim_ind32_water_manual_consumer_site_fields",
+      "text": "The official manual describes consumer/connection fields including applicant contact and communication address, connection pincode/service area/service station/division/subdivision/ward, existing BWSSB connection and RR number, and BESCOM account verification; its site screen includes PID/khata, construction date, purpose, flat/toilet counts where applicable, sital and built-up area, and NOC/RWH/OC information.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_bwssb_consumer_manual"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Manual examples and guidance; PID verification is described as optional in the manual material, while property-specific validation and requiredness remain untested."
+    },
+    {
+      "id": "claim_ind32_water_manual_building_plumber",
+      "text": "The manual describes floor-by-floor building rows with purpose/type and amenity or parking details and a plumber-selection section; it says that if RWH is marked yes, plumber selection and a mutual agreement are mandatory.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_conditional_docs"
+      ],
+      "nodeIds": [
+        "node_building_plumber"
+      ],
+      "sourceIds": [
+        "source_ind32_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Manual-described behavior; live plumber eligibility and current RWH enforcement were not tested."
+    },
+    {
+      "id": "claim_ind32_water_manual_documents",
+      "text": "The official manual describes uploads for building plan, building photograph with owner, lease-cum-sale deed, and khata; it lists road-cutting endorsement when applicable and says up to five documents per type may be uploaded with a five-MB file-size limit.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_bwssb_consumer_manual"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Manual upload instructions; no files were selected or transmitted. Conditional OC/RWH/STP documents appear on a separate official page and are not treated as universal."
+    },
+    {
+      "id": "claim_ind32_water_manual_review",
+      "text": "The official manual's Review screen describes tentative charges based on the entered inputs, with prorata, standard, and GBWASP/BCC tables, a total payable display, and a declaration that incorrect information may lead to rejection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_bwssb_consumer_manual"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The manual's sample amounts are masked/illustrative and no case-specific calculation was run."
+    },
+    {
+      "id": "claim_ind32_water_manual_demand_payment",
+      "text": "The official manual describes a demand note after connection approval, conditional completion of RWH and, where applicable, STP/dual piping, KSPCB consent, and additional billing until OC; it says the demand note is valid for 90 days, payment is online through Cashfree or PayU, and a receipt is generated after successful payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_bwssb_consumer_manual"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Manual/demand-note wording, not a property-specific obligation or approval. It also says plumbing works are to be executed by a BWSSB-licensed plumber; no payment or work order was initiated."
+    },
+    {
+      "id": "claim_ind32_water_faq_workflow",
+      "text": "BWSSB's FAQ says applications can be saved as drafts, status can show stage and designation, ward/service-area selection routes an application to a concerned sub-division AEE, engineers may contact the registered number and pre-inform an inspection visit, and after inspection a demand note is raised for charges such as prorata and GBWASP.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_bwssb_faq"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Official FAQ guidance. It is not a live case observation and uses a registered-email/password route that differs from the current public mobile-OTP entry."
+    },
+    {
+      "id": "claim_ind32_water_faq_plumber",
+      "text": "BWSSB's FAQ says the plumber should be BWSSB-registered, plumber details may be changed before final payment, and a scanned consumer/registered-plumber agreement should be attached before final payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_conditional_docs"
+      ],
+      "nodeIds": [
+        "node_building_plumber",
+        "node_demand_payment"
+      ],
+      "sourceIds": [
+        "source_ind32_water_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published FAQ guidance; no plumber was selected and no agreement was uploaded."
+    },
+    {
+      "id": "claim_ind32_water_grievance_surface",
+      "text": "The BWSSB public grievance page exposes consumer/mobile, subject, application number/name, address, plumber name, and remarks fields, and displays toll-free 1916 and an email contact.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_bwssb_grievance"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Only the public form is verified; no grievance was submitted and no response time or routing was observed."
+    },
+    {
+      "id": "claim_ind32_water_current_sequence_unknown",
+      "text": "The reviewed official materials do not establish a complete current, property-specific sequence from mobile OTP and application-form purchase through document acceptance, inspection, demand-note approval, payment verification, RR-number generation, and physical water/UGD connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Public pages and manual describe separate stages and outcomes, but the pass did not authenticate, submit, or observe a case-specific transition."
+    },
+    {
+      "id": "claim_ind32_water_fee_currentness_unknown",
+      "text": "A current fixed total for a new Bengaluru BWSSB water/UGD connection cannot be derived from the reviewed public pages alone; the pages expose charge categories and references but the demand depends on property, building, connection, and other parameters.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Do not substitute citizen-reported or agent-quoted totals for an official demand note."
+    },
+    {
+      "id": "claim_ind32_water_route_conflict_unknown",
+      "text": "The relationship between the current mobile-OTP Jaladhare public entry and the FAQ's older registered-email/password SAJALA instructions is unresolved by the reviewed official pages.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_bwssb_jaladhare_consumer",
+        "source_ind32_bwssb_faq"
+      ],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [
+        "claim_ind32_water_jaladhare_entry"
+      ],
+      "notes": "This is a route/currentness limitation, not a finding that either page is false."
+    },
+    {
+      "id": "claim_ind32_water_public_entry_controls",
+      "text": "The current public Jaladhare page exposes a mobile-number OTP entry, an application-number status lookup, and a Show All Application link; it says to use the same mobile number to know application status.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr",
+        "scenario_ind32_water_payment_or_grievance"
+      ],
+      "nodeIds": [
+        "node_mobile_otp",
+        "node_rr_status"
+      ],
+      "sourceIds": [
+        "source_ind32_water_public_entry",
+        "source_ind32_water_legacy_entry"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Only controls and labels were inspected. No phone number, OTP, application number, or property data was entered."
+    },
+    {
+      "id": "claim_ind32_water_public_high_level_path",
+      "text": "The current public Jaladhare page summarizes the route as mobile login, payment to buy the application form, filling details and uploading documents, followed by status tracking; it labels the service as permission for a new or additional water-supply and underground-drainage connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise"
+      ],
+      "nodeIds": [
+        "node_mobile_otp",
+        "node_buy_application",
+        "node_documents_review",
+        "node_rr_status"
+      ],
+      "sourceIds": [
+        "source_ind32_water_public_entry"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "High-level public wording only; it does not prove the exact current post-login transition or eligibility."
+    },
+    {
+      "id": "claim_ind32_water_public_targets",
+      "text": "On 2026-08-28 the public Jaladhare status section displayed headings of 14 days for residential connections and 42 days for commercial and high-rise connections.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise"
+      ],
+      "nodeIds": [
+        "node_rr_status"
+      ],
+      "sourceIds": [
+        "source_ind32_water_public_entry"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Displayed target headings are not treated as a guaranteed service level. The public metrics were blank and the clock-start event is not stated."
+    },
+    {
+      "id": "claim_ind32_water_manual_screen_sequence",
+      "text": "The official consumer manual describes a five-screen sequence: Consumer Details, Site Details, Building Details, Documents, and Review.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr"
+      ],
+      "nodeIds": [
+        "node_consumer_details",
+        "node_site_details",
+        "node_building_plumber",
+        "node_documents_review"
+      ],
+      "sourceIds": [
+        "source_ind32_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Official manual sequence; post-login screens were not opened in a live account."
+    },
+    {
+      "id": "claim_ind32_water_manual_consumer_site",
+      "text": "The manual describes applicant/communication fields and connection-address routing fields, an existing BWSSB connection/RR number, BESCOM account verification, and site fields for PID/khata, construction date, purpose, flat/toilet counts where applicable, sital/built-up area, and NOC/RWH/OC information.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr",
+        "scenario_ind32_water_conditional_docs"
+      ],
+      "nodeIds": [
+        "node_consumer_details",
+        "node_site_details"
+      ],
+      "sourceIds": [
+        "source_ind32_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Manual-described fields; no property-specific validation, PID lookup, RR verification, or BESCOM request was run."
+    },
+    {
+      "id": "claim_ind32_water_manual_uploads",
+      "text": "The manual describes document uploads for building plan, building photograph with owner, lease-cum-sale deed, and khata; it lists road-cutting endorsement when applicable and says up to five documents per type may be uploaded with a five-MB limit per file.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_conditional_docs"
+      ],
+      "nodeIds": [
+        "node_documents_review"
+      ],
+      "sourceIds": [
+        "source_ind32_water_consumer_manual",
+        "source_ind32_water_more_info"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No file was selected, uploaded, or transmitted. The separate More Information page additionally lists OC/RWH/STP photos conditionally; the current property-specific checklist remains Unknown."
+    },
+    {
+      "id": "claim_ind32_water_manual_review_charges",
+      "text": "The manual describes a Review screen with tentative charges based on entered inputs, prorata, standard, and GBWASP/BCC tables, a total-payable display, and a declaration that incorrect information may lead to rejection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise"
+      ],
+      "nodeIds": [
+        "node_documents_review"
+      ],
+      "sourceIds": [
+        "source_ind32_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The manual's examples do not establish a current amount or fee formula for a particular property."
+    },
+    {
+      "id": "claim_ind32_water_faq_routing_inspection",
+      "text": "BWSSB's FAQ says status can show the application's stage and designation, ward/service-area selection routes it to the concerned sub-division AEE, engineers may contact the registered number, and the engineer should pre-inform the applicant of an inspection visit.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr"
+      ],
+      "nodeIds": [
+        "node_inspection_review",
+        "node_rr_status"
+      ],
+      "sourceIds": [
+        "source_ind32_water_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Official FAQ guidance, not a case observation; its email/password route differs from the current mobile-OTP entry."
+    },
+    {
+      "id": "claim_ind32_water_faq_demand_payment",
+      "text": "BWSSB's FAQ says that after AE/JE inspection, charges such as prorata and GBWASP are calculated and a demand note is raised; after AEE approval the applicant is notified and can pay through the payment-history tab, with an e-receipt after successful payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_payment_or_grievance"
+      ],
+      "nodeIds": [
+        "node_inspection_review",
+        "node_demand_payment"
+      ],
+      "sourceIds": [
+        "source_ind32_water_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published FAQ route; no inspection, demand note, payment, or receipt was observed."
+    },
+    {
+      "id": "claim_ind32_water_manual_demand_conditions",
+      "text": "The manual's demand-note wording describes RWH, and where applicable STP/dual piping, KSPCB consent, and additional billing until OC as conditions before service; it states a 90-day demand-note validity period and a Cashfree or PayU online payment/receipt flow.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_conditional_docs",
+        "scenario_ind32_water_payment_or_grievance"
+      ],
+      "nodeIds": [
+        "node_demand_payment"
+      ],
+      "sourceIds": [
+        "source_ind32_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Manual/demand-note wording, not a case-specific obligation or approval."
+    },
+    {
+      "id": "claim_ind32_water_grievance_fields",
+      "text": "The public BWSSB grievance page exposes fields for consumer/mobile, subject, application number/name, address, plumber name, and remarks, with 1916 and an email contact displayed on the page.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_payment_or_grievance"
+      ],
+      "nodeIds": [
+        "node_grievance"
+      ],
+      "sourceIds": [
+        "source_ind32_water_grievance"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Only the blank public form was inspected; no personal details or grievance were submitted."
+    },
+    {
+      "id": "claim_ind32_water_unobserved_case_state",
+      "text": "The public pass did not establish whether a particular property is eligible, whether its PID/RR/BESCOM details verify, whether documents are accepted, whether inspection occurred, or whether a demand note/RR number exists.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr",
+        "scenario_ind32_water_conditional_docs",
+        "scenario_ind32_water_payment_or_grievance"
+      ],
+      "nodeIds": [
+        "node_consumer_details",
+        "node_site_details",
+        "node_documents_review",
+        "node_inspection_review",
+        "node_demand_payment",
+        "node_rr_status"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No login, OTP, property lookup, upload, submission, inspection, payment, or case-status lookup was performed."
+    },
+    {
+      "id": "claim_ind32_water_end_to_end_unknown",
+      "text": "No reviewed public page establishes a complete current sequence from mobile OTP and application purchase through review, field inspection, demand-note approval, payment verification, RR-number generation, and physical water/UGD connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_payment_or_grievance"
+      ],
+      "nodeIds": [
+        "node_mobile_otp",
+        "node_buy_application",
+        "node_consumer_details",
+        "node_site_details",
+        "node_building_plumber",
+        "node_documents_review",
+        "node_inspection_review",
+        "node_demand_payment",
+        "node_rr_status"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The public page and manual describe parts of a route, but no authenticated case transition was observed."
+    },
+    {
+      "id": "claim_ind32_water_route_currentness_unknown",
+      "text": "The currentness and relationship of the public mobile-OTP Jaladhare page to the FAQ's older registered-email/password SAJALA flow are unresolved by this pass.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise"
+      ],
+      "nodeIds": [
+        "node_mobile_otp",
+        "node_buy_application"
+      ],
+      "sourceIds": [
+        "source_ind32_water_public_entry",
+        "source_ind32_water_faq",
+        "source_ind32_water_legacy_entry"
+      ],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The surfaces may represent versions or separate paths; do not merge their credentials or fee instructions without current BWSSB confirmation."
+    },
+    {
+      "id": "claim_ind32_water_citizen_connection_not_completed",
+      "text": "One citizen seeking a connection reported receiving an on-site quotation and being told a future supply estimate, but did not report a completed application or connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [
+        "node_site_details",
+        "node_inspection_review",
+        "node_rr_status"
+      ],
+      "sourceIds": [
+        "source_ind32_water_citizen_unavailable_connection"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This only records a citizen's reported pre-application experience; it establishes no agency commitment, connection availability, inspection rule, or wait time."
+    },
+    {
+      "id": "claim_ind32_water_citizen_plan_feasibility_concern",
+      "text": "One citizen reported that a building without a permanent water-and-sewer connection faced uncertainty about obtaining one while its construction differed from the approved plan.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_conditional_docs"
+      ],
+      "nodeIds": [
+        "node_site_details",
+        "node_documents_review",
+        "node_inspection_review"
+      ],
+      "sourceIds": [
+        "source_ind32_water_citizen_new_connection_costs"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One applicant's uncertainty, not proof that plan variation, occupancy documentation, or any specific condition controls BWSSB eligibility."
+    },
+    {
+      "id": "claim_ind32_water_citizen_connection_supply_gap",
+      "text": "One citizen reported having a water connection while continuing to use supplementary water, and reported that underground-drainage connection was not obtained in that case.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_conditional_docs"
+      ],
+      "nodeIds": [
+        "node_rr_status",
+        "node_inspection_review"
+      ],
+      "sourceIds": [
+        "source_ind32_water_citizen_connection_supply_gap"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single post-connection account. It does not prove service quantity, an entitlement, drainage feasibility criteria, or that the same outcome applies elsewhere."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_sale_deed",
+      "label": "Sale deed",
+      "kind": "document",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Registered property-transfer document referenced by municipal and historic transfer material.",
+      "requiredState": "Available only where the applicable municipal or exception route asks for it.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_previous_consumer_deceased"
+      ],
+      "claimIds": [
+        "claim_ekhata_final_guidance",
+        "claim_historic_alternative_evidence"
+      ],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_mutation",
+      "label": "Mutation",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Publicly visible municipal mutation report state; not proof of completed buyer-facing ownership.",
+      "requiredState": "A municipal report may be inspected without assuming its downstream acceptance.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_previous_consumer_deceased"
+      ],
+      "claimIds": [
+        "claim_mutation_fields"
+      ],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_final_e_khata",
+      "label": "Final e-Khata",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Municipal final-record state with public input guidance and reported citizen failure modes.",
+      "requiredState": "Finality and holder state need case-specific verification; Draft is not treated as final proof.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_final_guidance",
+        "claim_ekhata_status",
+        "claim_citizen_missing_draft_epid",
+        "claim_citizen_owner_correction",
+        "claim_citizen_old_owner_recovery"
+      ],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_epid",
+      "label": "EPID",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Property identifier exposed in public search and status routes.",
+      "requiredState": "An EPID may be located or its absence recovered through official municipal channels; BESCOM mapping is separate and unknown.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_search_recovery",
+        "claim_ekhata_status",
+        "claim_epid_mapping_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_transfer_evidence",
+      "label": "Exception transfer evidence",
+      "kind": "document",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Historic consent, ownership, succession, or scope-limited occupancy evidence branch.",
+      "requiredState": "Current acceptance must be confirmed; historical text is not presented as a current checklist.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_consent_rule",
+        "claim_historic_alternative_evidence",
+        "claim_historic_tenant_scope"
+      ],
+      "status": "partial",
+      "displayOrder": 45
+    },
+    {
+      "id": "node_bescom_mapping",
+      "label": "BESCOM mapping",
+      "kind": "system",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Unpublished relationship between a property EPID and a BESCOM account.",
+      "requiredState": "No evidence-backed state, validation rule, repair owner, or recovery sequence is known.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_epid_route_visible",
+        "claim_epid_mapping_unknown",
+        "claim_citizen_mapping_failure",
+        "claim_citizen_bescom_stalls"
+      ],
+      "status": "unknown",
+      "displayOrder": 50
+    },
+    {
+      "id": "node_transfer_obligations",
+      "label": "Transfer obligations",
+      "kind": "decision",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Historic transfer conditions such as arrears, indemnity, agreement, deposit, and charges.",
+      "requiredState": "Obtain current case-specific confirmation; historic values and applicability are partial.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_transfer_obligations"
+      ],
+      "status": "partial",
+      "displayOrder": 55
+    },
+    {
+      "id": "node_name_transfer",
+      "label": "BESCOM name transfer",
+      "kind": "service",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Current public FAQ exposes an authenticated standard route and the homepage exposes an EPID-labelled entry.",
+      "requiredState": "Use an authorized route; exact authenticated validation and EPID behaviour remain Unknown.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_epid_route_visible",
+        "claim_epid_mapping_unknown",
+        "claim_citizen_bescom_stalls",
+        "claim_citizen_old_noc",
+        "claim_citizen_no_builder_noc"
+      ],
+      "status": "partial",
+      "displayOrder": 60
+    },
+    {
+      "id": "node_request_tracking",
+      "label": "Request tracking",
+      "kind": "record",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Public name-change tracking keyed by an SMS request ID.",
+      "requiredState": "Retain a request ID after successful submission; outcome timing is not established.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_request_tracker"
+      ],
+      "status": "verified",
+      "displayOrder": 70
+    },
+    {
+      "id": "node_mobile_otp",
+      "label": "Mobile OTP entry",
+      "kind": "service",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Public Jaladhare entry for mobile-number OTP access.",
+      "requiredState": "A mobile number and OTP would be required to proceed, but no login was attempted.",
+      "checks": [
+        {
+          "id": "check_ind32_water_mobile_entry",
+          "label": "Mobile OTP controls",
+          "description": "The public page exposes a Mobile Number field, OTP action, and OTP submit control.",
+          "url": "https://owcv2.bwssb.gov.in/consumer",
+          "claimIds": [
+            "claim_ind32_water_public_entry_controls"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr"
+      ],
+      "claimIds": [
+        "claim_ind32_water_public_entry_controls",
+        "claim_ind32_water_public_high_level_path",
+        "claim_ind32_water_route_currentness_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_buy_application",
+      "label": "Buy application form",
+      "kind": "service",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Application-form purchase step described by the public Jaladhare entry and FAQ.",
+      "requiredState": "The current page says payment is made to buy the application form; amount and active payment route were not checked in a session.",
+      "checks": [
+        {
+          "id": "check_ind32_water_buy_application",
+          "label": "Application-form purchase label",
+          "description": "The public page says applicants make payment to buy the application form.",
+          "url": "https://owcv2.bwssb.gov.in/consumer",
+          "claimIds": [
+            "claim_ind32_water_public_high_level_path"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_water_buy_payment_unknown",
+          "label": "Purchase payment outcome unknown",
+          "description": "No account or payment gateway was opened, so transaction failure/refund behavior for this current route was not observed.",
+          "claimIds": [
+            "claim_ind32_water_unobserved_case_state"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr"
+      ],
+      "claimIds": [
+        "claim_ind32_water_public_high_level_path",
+        "claim_ind32_water_route_currentness_unknown"
+      ],
+      "status": "unknown",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_consumer_details",
+      "label": "Consumer and connection details",
+      "kind": "record",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Manual-described applicant, communication, and connection-address form stage.",
+      "requiredState": "Manual describes mandatory fields and, where applicable, existing RR/BESCOM verification; no live form was opened.",
+      "checks": [
+        {
+          "id": "check_ind32_water_consumer_stage",
+          "label": "Consumer Details stage",
+          "description": "The manual lists Consumer Details as the first application stage and describes address/routing fields.",
+          "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+          "claimIds": [
+            "claim_ind32_water_manual_screen_sequence",
+            "claim_ind32_water_manual_consumer_site"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_water_rr_or_bescom_unknown",
+          "label": "Existing RR/BESCOM validation unknown",
+          "description": "The manual describes RR and BESCOM checks but no identifier was entered or verified.",
+          "claimIds": [
+            "claim_ind32_water_manual_consumer_site",
+            "claim_ind32_water_unobserved_case_state"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr"
+      ],
+      "claimIds": [
+        "claim_ind32_water_manual_screen_sequence",
+        "claim_ind32_water_manual_consumer_site",
+        "claim_ind32_water_unobserved_case_state"
+      ],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_site_details",
+      "label": "Site details",
+      "kind": "record",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Manual-described property, construction, purpose, area, and conditional NOC/RWH/OC stage.",
+      "requiredState": "Property-specific PID/khata, construction, purpose, area, and conditional-document state are Unknown because no form was completed.",
+      "checks": [
+        {
+          "id": "check_ind32_water_site_stage",
+          "label": "Site Details stage",
+          "description": "The manual describes PID/khata, construction date, purpose, counts, area, and NOC/RWH/OC fields.",
+          "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+          "claimIds": [
+            "claim_ind32_water_manual_screen_sequence",
+            "claim_ind32_water_manual_consumer_site"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_water_conditional_site_docs",
+          "label": "Conditional site documents unknown",
+          "description": "Public More Information and manual material mention conditional OC/RWH/STP/NOC information without establishing the case-specific checklist.",
+          "url": "https://owc.bwssb.gov.in/more-info",
+          "claimIds": [
+            "claim_ind32_water_manual_uploads",
+            "claim_ind32_water_unobserved_case_state"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr",
+        "scenario_ind32_water_conditional_docs"
+      ],
+      "claimIds": [
+        "claim_ind32_water_manual_screen_sequence",
+        "claim_ind32_water_manual_consumer_site",
+        "claim_ind32_water_unobserved_case_state"
+      ],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_building_plumber",
+      "label": "Building and plumber details",
+      "kind": "record",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Manual-described floor/purpose area rows and registered-plumber selection/agreement path.",
+      "requiredState": "Building rows and plumber state are Unknown for an individual property; no plumber was selected.",
+      "checks": [
+        {
+          "id": "check_ind32_water_building_fields",
+          "label": "Building/plumber stage",
+          "description": "The manual describes floor-by-floor area rows and plumber selection, with RWH-linked mutual-agreement wording.",
+          "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+          "claimIds": [
+            "claim_ind32_water_manual_building_plumber"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "check_ind32_water_registered_plumber_guidance",
+          "label": "Registered plumber guidance",
+          "description": "The FAQ says the plumber should be BWSSB-registered and agreement evidence is needed before final payment.",
+          "url": "https://owcv2.bwssb.gov.in/member/faq",
+          "claimIds": [
+            "claim_ind32_water_faq_plumber"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_water_plumber_state_unknown",
+          "label": "Plumber selection/acceptance unknown",
+          "description": "The public pass did not determine the currently eligible plumber list, selection validation, or agreement acceptance.",
+          "claimIds": [
+            "claim_ind32_water_faq_plumber",
+            "claim_ind32_water_unobserved_case_state"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_conditional_docs"
+      ],
+      "claimIds": [
+        "claim_ind32_water_manual_building_plumber",
+        "claim_ind32_water_faq_plumber",
+        "claim_ind32_water_unobserved_case_state"
+      ],
+      "status": "partial",
+      "displayOrder": 50
+    },
+    {
+      "id": "node_documents_review",
+      "label": "Document upload and review",
+      "kind": "record",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Manual-described document upload followed by tentative charge review and declaration.",
+      "requiredState": "Listed document classes and limits are known from the manual; actual acceptance and conditional requirements are Unknown.",
+      "checks": [
+        {
+          "id": "check_ind32_water_documents",
+          "label": "Document classes and limits",
+          "description": "The manual lists building plan/photo, deed, khata, conditional road-cutting endorsement, up-to-five files per type, and 5 MB per file.",
+          "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+          "claimIds": [
+            "claim_ind32_water_manual_uploads"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "check_ind32_water_review",
+          "label": "Tentative charge review",
+          "description": "The manual describes prorata, standard, GBWASP/BCC, total-payable, and declaration content in Review.",
+          "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+          "claimIds": [
+            "claim_ind32_water_manual_review_charges"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_water_document_rejection_unknown",
+          "label": "Document rejection/validation unknown",
+          "description": "No upload or submission was made, so rejection messages and resubmission behavior are unknown.",
+          "claimIds": [
+            "claim_ind32_water_manual_uploads",
+            "claim_ind32_water_unobserved_case_state"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr",
+        "scenario_ind32_water_conditional_docs"
+      ],
+      "claimIds": [
+        "claim_ind32_water_manual_uploads",
+        "claim_ind32_water_manual_review_charges",
+        "claim_ind32_water_unobserved_case_state"
+      ],
+      "status": "partial",
+      "displayOrder": 60
+    },
+    {
+      "id": "node_inspection_review",
+      "label": "BWSSB review and inspection",
+      "kind": "service",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "FAQ-described stage/designation routing and AE/JE inspection before demand-note calculation.",
+      "requiredState": "Application routing, inspection date, measurements, and findings are Unknown for a particular case.",
+      "checks": [
+        {
+          "id": "check_ind32_water_routing_inspection",
+          "label": "Routing and inspection guidance",
+          "description": "The FAQ describes ward/service-area routing, stage/designation status, and pre-informed inspection contact.",
+          "url": "https://owcv2.bwssb.gov.in/member/faq",
+          "claimIds": [
+            "claim_ind32_water_faq_routing_inspection"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_water_review_outcome_unknown",
+          "label": "Review outcome unknown",
+          "description": "No case was submitted or reviewed, so correction, rejection, or inspection outcomes are unknown.",
+          "claimIds": [
+            "claim_ind32_water_faq_routing_inspection",
+            "claim_ind32_water_unobserved_case_state"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr"
+      ],
+      "claimIds": [
+        "claim_ind32_water_faq_routing_inspection",
+        "claim_ind32_water_unobserved_case_state"
+      ],
+      "status": "unknown",
+      "displayOrder": 70
+    },
+    {
+      "id": "node_demand_payment",
+      "label": "Demand note and final payment",
+      "kind": "record",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Demand-note, conditional service requirements, and online payment/receipt stage.",
+      "requiredState": "A property-specific demand note, amount, validity, payment state, and receipt are Unknown.",
+      "checks": [
+        {
+          "id": "check_ind32_water_demand_note",
+          "label": "Demand-note sequence",
+          "description": "FAQ/manual describe inspection-based calculation, AEE approval, online payment, and receipt generation.",
+          "url": "https://owcv2.bwssb.gov.in/member/faq",
+          "claimIds": [
+            "claim_ind32_water_faq_demand_payment",
+            "claim_ind32_water_manual_demand_conditions"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_water_payment_or_expiry",
+          "label": "Payment/expiry state unknown",
+          "description": "The manual says a demand note is valid for 90 days, but no demand note or payment gateway was opened.",
+          "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+          "claimIds": [
+            "claim_ind32_water_manual_demand_conditions",
+            "claim_ind32_water_unobserved_case_state"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind32_water_grievance",
+          "label": "Public grievance form",
+          "description": "BWSSB exposes a grievance form for application and plumber details, but response/routing was not observed.",
+          "url": "https://owcv2.bwssb.gov.in/member/grievance-form",
+          "claimIds": [
+            "claim_ind32_water_grievance_fields"
+          ],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_conditional_docs",
+        "scenario_ind32_water_payment_or_grievance"
+      ],
+      "claimIds": [
+        "claim_ind32_water_faq_demand_payment",
+        "claim_ind32_water_manual_demand_conditions",
+        "claim_ind32_water_unobserved_case_state"
+      ],
+      "status": "unknown",
+      "displayOrder": 80
+    },
+    {
+      "id": "node_rr_status",
+      "label": "Application status and RR number",
+      "kind": "record",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Public application-number status lookup and FAQ/manual-described generated RR-number outcome.",
+      "requiredState": "Application number, current stage, and generated RR number are Unknown for an individual case.",
+      "checks": [
+        {
+          "id": "check_ind32_water_status_lookup",
+          "label": "Public status lookup",
+          "description": "The current public page exposes application-number status input and shows a status-table section.",
+          "url": "https://owcv2.bwssb.gov.in/consumer",
+          "claimIds": [
+            "claim_ind32_water_public_entry_controls"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind32_water_time_labels",
+          "label": "Displayed time labels",
+          "description": "The status section displays 14-day residential and 42-day commercial/high-rise headings.",
+          "url": "https://owcv2.bwssb.gov.in/consumer",
+          "claimIds": [
+            "claim_ind32_water_public_targets"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_water_case_status_unknown",
+          "label": "Case status not checked",
+          "description": "No application number was entered; no case-specific stage, error, or RR number was observed.",
+          "claimIds": [
+            "claim_ind32_water_unobserved_case_state"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind32_water_grievance_status",
+          "label": "Grievance route",
+          "description": "The public grievance form can carry an application number, but no grievance was filed.",
+          "url": "https://owcv2.bwssb.gov.in/member/grievance-form",
+          "claimIds": [
+            "claim_ind32_water_grievance_fields"
+          ],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr",
+        "scenario_ind32_water_payment_or_grievance"
+      ],
+      "claimIds": [
+        "claim_ind32_water_public_entry_controls",
+        "claim_ind32_water_public_targets",
+        "claim_ind32_water_unobserved_case_state",
+        "claim_ind32_water_end_to_end_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 90
+    },
+    {
+      "id": "node_grievance",
+      "label": "Public grievance form",
+      "kind": "service",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Unauthenticated BWSSB grievance form for an application or connection issue.",
+      "requiredState": "Form fields are visible; submission, acknowledgement, owner, and response time are Unknown.",
+      "checks": [
+        {
+          "id": "check_ind32_water_grievance",
+          "label": "Grievance fields",
+          "description": "Public form exposes consumer/mobile, subject, application, address, plumber, and remarks fields.",
+          "url": "https://owcv2.bwssb.gov.in/member/grievance-form",
+          "claimIds": [
+            "claim_ind32_water_grievance_fields"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_water_payment_or_grievance"
+      ],
+      "claimIds": [
+        "claim_ind32_water_grievance_fields",
+        "claim_ind32_water_unobserved_case_state"
+      ],
+      "status": "partial",
+      "displayOrder": 100
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_sale_to_mutation",
+      "fromNodeId": "node_sale_deed",
+      "toNodeId": "node_mutation",
+      "relationship": "produces",
+      "label": "Municipal report displays deed/mutation fields; universal automatic completion is not established.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "claimIds": [
+        "claim_mutation_fields"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_mutation_to_final",
+      "fromNodeId": "node_mutation",
+      "toNodeId": "node_final_e_khata",
+      "relationship": "requires",
+      "label": "A buyer-facing final record is a prudent clean-sale hypothesis, not a published universal rule.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "claimIds": [
+        "claim_mutation_fields",
+        "claim_ekhata_final_guidance"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_final_to_epid",
+      "fromNodeId": "node_final_e_khata",
+      "toNodeId": "node_epid",
+      "relationship": "produces",
+      "label": "Public sources support EPID lookup/status but do not establish its exact production from finalisation.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_search_recovery",
+        "claim_ekhata_status"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_epid_to_mapping",
+      "fromNodeId": "node_epid",
+      "toNodeId": "node_bescom_mapping",
+      "relationship": "maps_to",
+      "label": "An EPID route is visible, but its cross-system mapping contract is Unknown.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_epid_route_visible",
+        "claim_epid_mapping_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_mapping_to_transfer",
+      "fromNodeId": "node_bescom_mapping",
+      "toNodeId": "node_name_transfer",
+      "relationship": "requires",
+      "label": "Mapping success is inferred only for the EPID route; a separate standard route is publicly documented.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_epid_mapping_unknown"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_evidence_to_obligations",
+      "fromNodeId": "node_transfer_evidence",
+      "toNodeId": "node_transfer_obligations",
+      "relationship": "requires",
+      "label": "Historical exception evidence does not remove historical obligations.",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_consent_rule",
+        "claim_historic_alternative_evidence",
+        "claim_historic_tenant_scope",
+        "claim_historic_transfer_obligations"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_obligations_to_transfer",
+      "fromNodeId": "node_transfer_obligations",
+      "toNodeId": "node_name_transfer",
+      "relationship": "requires",
+      "label": "Historic conditions cluster feeds transfer; current implementation remains partial.",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_transfer_obligations",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_transfer_to_tracking",
+      "fromNodeId": "node_name_transfer",
+      "toNodeId": "node_request_tracking",
+      "relationship": "produces",
+      "label": "The documented standard workflow returns a request ID after successful submission.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_request_tracker"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "edge_ind32_water_entry_to_application",
+      "fromNodeId": "node_mobile_otp",
+      "toNodeId": "node_buy_application",
+      "relationship": "requires",
+      "label": "The current public page describes mobile login followed by payment to buy the application form; the live transition was not tested.",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr"
+      ],
+      "claimIds": [
+        "claim_ind32_water_public_high_level_path",
+        "claim_ind32_water_route_currentness_unknown"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_water_application_to_forms",
+      "fromNodeId": "node_buy_application",
+      "toNodeId": "node_consumer_details",
+      "relationship": "produces",
+      "label": "The public page says payment buys the application form; the manual then describes Consumer Details as the first form stage.",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr"
+      ],
+      "claimIds": [
+        "claim_ind32_water_public_high_level_path",
+        "claim_ind32_water_manual_screen_sequence"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_water_forms_to_review",
+      "fromNodeId": "node_consumer_details",
+      "toNodeId": "node_documents_review",
+      "relationship": "produces",
+      "label": "The manual presents Consumer Details, Site Details, Building Details, Documents, and Review as successive stages; no live form was completed.",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr",
+        "scenario_ind32_water_conditional_docs"
+      ],
+      "claimIds": [
+        "claim_ind32_water_manual_screen_sequence",
+        "claim_ind32_water_manual_consumer_site",
+        "claim_ind32_water_manual_building_plumber",
+        "claim_ind32_water_manual_uploads"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_water_review_to_inspection",
+      "fromNodeId": "node_documents_review",
+      "toNodeId": "node_inspection_review",
+      "relationship": "requires",
+      "label": "FAQ guidance describes status/routing and inspection after application information is submitted; the live handoff and owner are not observed.",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr"
+      ],
+      "claimIds": [
+        "claim_ind32_water_faq_routing_inspection",
+        "claim_ind32_water_end_to_end_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_ind32_water_inspection_to_demand",
+      "fromNodeId": "node_inspection_review",
+      "toNodeId": "node_demand_payment",
+      "relationship": "produces",
+      "label": "FAQ/manual wording says inspection and review precede demand-note calculation/approval and online payment; no demand note was observed.",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_conditional_docs",
+        "scenario_ind32_water_payment_or_grievance"
+      ],
+      "claimIds": [
+        "claim_ind32_water_faq_demand_payment",
+        "claim_ind32_water_manual_demand_conditions",
+        "claim_ind32_water_end_to_end_unknown"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_water_payment_to_rr",
+      "fromNodeId": "node_demand_payment",
+      "toNodeId": "node_rr_status",
+      "relationship": "produces",
+      "label": "The public entry advertises a generated RR-number outcome and status controls, but the payment-to-RR transition was not verified in a case.",
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr",
+        "scenario_ind32_water_payment_or_grievance"
+      ],
+      "claimIds": [
+        "claim_ind32_water_public_entry_controls",
+        "claim_ind32_water_faq_demand_payment",
+        "claim_ind32_water_end_to_end_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_ind32_water_status_to_grievance",
+      "fromNodeId": "node_rr_status",
+      "toNodeId": "node_grievance",
+      "relationship": "requires",
+      "label": "The public grievance form accepts application details as a support route; no acknowledgement or resolution was observed.",
+      "scenarioIds": [
+        "scenario_ind32_water_payment_or_grievance"
+      ],
+      "claimIds": [
+        "claim_ind32_water_grievance_fields",
+        "claim_ind32_water_unobserved_case_state"
+      ],
+      "status": "partial"
+    }
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_draft_not_final",
+      "title": "Draft e-Khata is not a verified final buyer record",
+      "category": "documentation",
+      "symptom": "The property has Draft e-Khata but finality or holder state is unresolved.",
+      "likelyCause": "Public guidance distinguishes Draft and Final, but no public evidence connects Draft to BESCOM acceptance.",
+      "recovery": "Use official Final e-Khata guidance and status/search channels; do not treat Draft as transfer approval.",
+      "ownerAgencyIds": [
+        "agency_gba"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_epid"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "claimIds": [
+        "claim_ekhata_final_guidance",
+        "claim_ekhata_status"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_property_missing",
+      "title": "Property cannot be found in public e-Khata search",
+      "category": "process",
+      "symptom": "Available public lookup paths do not find the property.",
+      "likelyCause": "The public interface exposes a missing-property state without a property-specific cause.",
+      "recovery": "Use the official Do Not Find My Property route for corporation review.",
+      "ownerAgencyIds": [
+        "agency_gba"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_epid"
+      ],
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_search_recovery"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "roadblock_owner_correction",
+      "title": "e-Khata holder is wrong or correction fails",
+      "category": "process",
+      "symptom": "Citizen accounts describe a prior holder in e-Khata or correction failure.",
+      "likelyCause": "Unknown; citizen reports do not establish a data, identity, or workflow cause.",
+      "recovery": "Use official municipal support; a reported reapplication is not a general procedure.",
+      "ownerAgencyIds": [
+        "agency_gba"
+      ],
+      "nodeIds": [
+        "node_final_e_khata"
+      ],
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_citizen_owner_correction",
+        "claim_citizen_old_owner_recovery"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_epid_mapping",
+      "title": "EPID does not resolve to the intended BESCOM account",
+      "category": "infrastructure",
+      "symptom": "An EPID route is visible but the intended account relationship cannot be established.",
+      "likelyCause": "Cross-system mapping rules, errors, repair owner, and SLA are Unknown; one citizen report identifies a possible failure.",
+      "recovery": "Do not repeatedly submit; use published support channels and obtain official case-specific guidance.",
+      "ownerAgencyIds": [
+        "agency_gba",
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_epid_mapping_unknown",
+        "claim_citizen_mapping_failure",
+        "claim_helpline_channels"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_bescom_stalls",
+      "title": "BESCOM login or application flow stalls",
+      "category": "infrastructure",
+      "symptom": "Citizen accounts describe login/reset, unseen-open-application, EPID-entry, and upload-stall failures.",
+      "likelyCause": "Unknown; no public evidence establishes backend cause or remedy.",
+      "recovery": "Use authorized BESCOM support without placing account or identity data in the ledger.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_citizen_bescom_stalls",
+        "claim_helpline_channels"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_tenant_scope",
+      "title": "Tenant route outside stated historical scope",
+      "category": "documentation",
+      "symptom": "An occupier seeks transfer for an installation that may not fit the historic non-commercial scope.",
+      "likelyCause": "The historic occupancy alternative is limited and current authenticated eligibility is undisclosed.",
+      "recovery": "Confirm current eligibility and installation category through authorized BESCOM channels.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_tenant"
+      ],
+      "claimIds": [
+        "claim_historic_tenant_scope",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_successor_evidence",
+      "title": "Successor evidence cannot be confirmed in the current form",
+      "category": "documentation",
+      "symptom": "Prior consumer is deceased and consent is unavailable.",
+      "likelyCause": "Historic text lists successor evidence but the current public FAQ omits its authenticated document list.",
+      "recovery": "Use historical evidence only as a lead; confirm current acceptance in authorized channels.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_previous_consumer_deceased"
+      ],
+      "claimIds": [
+        "claim_historic_alternative_evidence",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_consent_deposit",
+      "title": "Consent unavailable and deposit treatment unresolved",
+      "category": "documentation",
+      "symptom": "Applicant cannot furnish consent to transfer the installation and deposit.",
+      "likelyCause": "Historic text describes alternatives and a fresh-deposit consequence, but current demand treatment is unverified.",
+      "recovery": "Obtain case-specific current demand; do not use historic amounts as current amounts.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations"
+      ],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_consent_rule",
+        "claim_historic_transfer_obligations"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_arrears_recovery",
+      "title": "Arrears may block transfer but public clearing path is not documented",
+      "category": "process",
+      "symptom": "An outstanding balance may prevent transfer.",
+      "likelyCause": "Historic text states no arrears; no current public remediation sequence was found.",
+      "recovery": "Resolve billing through an authorized BESCOM path before retrying; exact sequence remains unknown.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_obligations",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_transfer_obligations",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_document_checklist",
+      "title": "Current authenticated document checklist is not public",
+      "category": "process",
+      "symptom": "Public FAQ directs uploads but does not enumerate them before login.",
+      "likelyCause": "Authenticated/back-end requirements were not inspected and are Unknown.",
+      "recovery": "Use the authorized route and retain the request ID if submission succeeds; do not infer or bypass requirements.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_epid_mapping_unknown",
+        "claim_request_tracker"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_noc_conflict",
+      "title": "NOC requirement differs across citizen accounts",
+      "category": "documentation",
+      "symptom": "An older account reports needing an NOC while a 2026 account reports completion without builder NOC.",
+      "likelyCause": "The route may have changed or conditions differed; desk evidence cannot resolve it.",
+      "recovery": "Do not assume NOC is or is not required; verify current case-specific requirements through authorized sources.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_citizen_old_noc",
+        "claim_citizen_no_builder_noc"
+      ],
+      "status": "contested"
+    },
+    {
+      "id": "roadblock_ind32_water_property_case_unknown",
+      "title": "Property-specific verification is login-gated",
+      "category": "documentation",
+      "symptom": "Public pages show forms and lookup controls but no property-specific PID, RR, BESCOM, document, inspection, or demand result.",
+      "likelyCause": "The relevant fields and records are behind OTP/authenticated workflow and require applicant/property data.",
+      "recovery": "Use the official portal with the applicant's own details and retain the application number; this research pass did not transmit any data.",
+      "ownerAgencyIds": [
+        "agency_bwssb_ind32_water"
+      ],
+      "nodeIds": [
+        "node_consumer_details",
+        "node_site_details",
+        "node_documents_review",
+        "node_rr_status"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_existing_rr"
+      ],
+      "claimIds": [
+        "claim_ind32_water_unobserved_case_state"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind32_water_conditional_checklist",
+      "title": "Conditional OC/RWH/STP/NOC requirements are not resolved",
+      "category": "documentation",
+      "symptom": "Current public summary and separate official manual/More Information page describe overlapping but not identical conditional document classes.",
+      "likelyCause": "Connection type, premises size, applicable rules, or portal version may alter the checklist.",
+      "recovery": "Treat the live application checklist and BWSSB demand note as authoritative for the specific case; do not infer universal requirements from the generic list.",
+      "ownerAgencyIds": [
+        "agency_bwssb_ind32_water"
+      ],
+      "nodeIds": [
+        "node_site_details",
+        "node_documents_review",
+        "node_demand_payment"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_water_conditional_docs",
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise"
+      ],
+      "claimIds": [
+        "claim_ind32_water_manual_uploads",
+        "claim_ind32_water_manual_demand_conditions"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_water_route_version",
+      "title": "Jaladhare mobile-OTP and FAQ SAJALA routes differ",
+      "category": "infrastructure",
+      "symptom": "The current public entry uses mobile OTP while the FAQ describes registered email/password and a Rs 100 buy-application flow.",
+      "likelyCause": "Different portal versions or documentation paths; current relationship is not stated on-page.",
+      "recovery": "Do not merge credentials, fee amounts, or step assumptions across the two surfaces without current BWSSB confirmation.",
+      "ownerAgencyIds": [
+        "agency_bwssb_ind32_water"
+      ],
+      "nodeIds": [
+        "node_mobile_otp",
+        "node_buy_application"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise"
+      ],
+      "claimIds": [
+        "claim_ind32_water_route_currentness_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind32_water_status_metrics",
+      "title": "Displayed target labels are not a case SLA",
+      "category": "documentation",
+      "symptom": "Public status section shows 14-day residential and 42-day commercial/high-rise headings but no populated metrics or case-specific clock.",
+      "likelyCause": "The page is a general dashboard/target display rather than a submitted application record.",
+      "recovery": "Retain the application number and use the authenticated status route; escalate through the public grievance form if needed, without assuming a guaranteed date.",
+      "ownerAgencyIds": [
+        "agency_bwssb_ind32_water"
+      ],
+      "nodeIds": [
+        "node_rr_status"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_payment_or_grievance"
+      ],
+      "claimIds": [
+        "claim_ind32_water_public_targets",
+        "claim_ind32_water_grievance_fields"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_water_citizen_uncertain_feasibility",
+      "title": "Reported uncertainty about whether a connection can be completed",
+      "category": "process",
+      "symptom": "Citizen accounts describe a quotation or an unresolved building context without a completed new connection.",
+      "likelyCause": "Unknown; the accounts do not distinguish network availability, documentation, inspection, demand-note, construction, or third-party issues.",
+      "recovery": "Use the reports only to prompt authorised, premise-specific confirmation of service availability and application status. Do not treat reported quotations or explanations as official determinations.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_site_details",
+        "node_documents_review",
+        "node_inspection_review"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_commercial_highrise",
+        "scenario_ind32_water_conditional_docs"
+      ],
+      "claimIds": [
+        "claim_ind32_water_citizen_connection_not_completed",
+        "claim_ind32_water_citizen_plan_feasibility_concern"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_water_citizen_supply_or_drainage_gap",
+      "title": "Connection reportedly does not resolve every water or drainage need",
+      "category": "infrastructure",
+      "symptom": "A citizen reports a water connection alongside supplementary-water use and no underground-drainage connection in that case.",
+      "likelyCause": "Unknown; the account does not establish supply capacity, drainage-network feasibility, design standards, or agency action.",
+      "recovery": "Treat this as a case-specific planning lead only. Ask BWSSB through authorised channels for property-specific connection and drainage information.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_rr_status",
+        "node_inspection_review"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_water_residential",
+        "scenario_ind32_water_conditional_docs"
+      ],
+      "claimIds": [
+        "claim_ind32_water_citizen_connection_supply_gap"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_audit_water_connection",
+      "title": "Independent audit limitations",
+      "category": "documentation",
+      "symptom": "## Result The IND-32 water-connection records parse cleanly and their audited claims, nested details, journey steps, dependencies, and top-level edges resolve to existing IDs. Both journey dependencies are represented as top-level edges with matching endpoints, claim linkage, and status. ## Stated limitations 1. **Six official-guidance claims are over-graded.** `claim_ind32_water_manual_stages`, `claim_ind32_water_manual_consumer_site_fields`, `claim_ind32_water_manual_documents`, `claim_ind32_water_manual_review`, `claim_ind32_water_manual_demand_payment`, and `claim_ind32_water_faq_workflow` use evidence grade `A`, while their cited sources are `official_guidance`. Under the protocol, those direct official manual/FAQ observations support grade `B`, not grade `A` (which is reserved for binding law, regulation, order, or gazette material). Treat their present grade as a traceability limi",
+      "likelyCause": "Evidence and schema boundaries identified by the single independent audit.",
+      "recovery": "Read the cited evidence and retain Unknown or partial status where the public record stops.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_sale_deed"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "claimIds": [],
+      "status": "unknown"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_clean_sale",
+      "title": "Clean sale",
+      "scenarioId": "scenario_clean_sale",
+      "context": "Partial chain: municipal public routes and BESCOM public entry points are verified, but their end-to-end dependency is not.",
+      "steps": [
+        {
+          "id": "step_clean_municipal",
+          "label": "Inspect municipal state",
+          "nodeId": "node_final_e_khata",
+          "action": "Use public e-Aasthi guidance, search, and status routes.",
+          "expectedResult": "A visible municipal state or a published recovery route, not a BESCOM approval.",
+          "claimIds": [
+            "claim_ekhata_final_guidance",
+            "claim_ekhata_search_recovery",
+            "claim_ekhata_status"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_clean_transfer",
+          "label": "Use authorized BESCOM route",
+          "nodeId": "node_name_transfer",
+          "action": "Use the documented standard route or the visible EPID entry as applicable.",
+          "expectedResult": "Request flow is documented; EPID mapping and outcome are unknown.",
+          "claimIds": [
+            "claim_standard_authenticated_route",
+            "claim_epid_route_visible",
+            "claim_epid_mapping_unknown"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_clean_epid_mapping",
+          "fromNodeId": "node_epid",
+          "toNodeId": "node_bescom_mapping",
+          "description": "Cross-system mapping is not publicly specified.",
+          "claimIds": [
+            "claim_epid_mapping_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_draft_not_final",
+        "roadblock_property_missing",
+        "roadblock_epid_mapping",
+        "roadblock_bescom_stalls"
+      ],
+      "recoveryNotes": [
+        "Use municipal routes before assuming a BESCOM-only fault.",
+        "Standard transfer is not proof that the EPID route is identical."
+      ],
+      "documentationQualityNotes": [
+        "Current public interfaces are Grade B.",
+        "Authenticated and backend behaviour remains Unknown."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_draft_ekhata",
+      "title": "Draft or pending e-Khata",
+      "scenarioId": "scenario_draft_e_khata",
+      "context": "Draft availability and public status routes are observable; a final buyer state and BESCOM acceptance are not verified.",
+      "steps": [
+        {
+          "id": "step_draft_finalise",
+          "label": "Resolve municipal record",
+          "nodeId": "node_final_e_khata",
+          "action": "Follow official Final e-Khata guidance and use status/search routes.",
+          "expectedResult": "Record state or published municipal recovery route.",
+          "claimIds": [
+            "claim_ekhata_final_guidance",
+            "claim_ekhata_search_recovery",
+            "claim_ekhata_status"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_draft_track",
+          "label": "Retain request tracking identifier",
+          "nodeId": "node_request_tracking",
+          "action": "If submission succeeds through an authorized BESCOM route, retain the SMS request ID.",
+          "expectedResult": "Trackable request, not verified approval.",
+          "claimIds": [
+            "claim_request_tracker"
+          ],
+          "status": "verified"
+        }
+      ],
+      "dependencies": [],
+      "failureRoadblockIds": [
+        "roadblock_draft_not_final",
+        "roadblock_property_missing",
+        "roadblock_owner_correction",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Do not treat Draft as final proof.",
+        "No personal records belong in this ledger."
+      ],
+      "documentationQualityNotes": [
+        "Municipal inputs are public; utility-side acceptance remains unverified."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_epid_failure",
+      "title": "EPID mapping failure",
+      "scenarioId": "scenario_epid_mapping_failure",
+      "context": "Public municipal lookup and BESCOM EPID entry coexist, but mapping behaviour is Unknown.",
+      "steps": [
+        {
+          "id": "step_epid_check",
+          "label": "Check EPID municipal state",
+          "nodeId": "node_epid",
+          "action": "Use public search/status or missing-property route.",
+          "expectedResult": "Publicly visible status or municipal recovery channel.",
+          "claimIds": [
+            "claim_ekhata_search_recovery",
+            "claim_ekhata_status"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "step_epid_escalate",
+          "label": "Escalate without repeated submissions",
+          "nodeId": "node_bescom_mapping",
+          "action": "Use published support channels for case-specific guidance.",
+          "expectedResult": "No promised repair owner or SLA.",
+          "claimIds": [
+            "claim_epid_mapping_unknown",
+            "claim_helpline_channels"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_epid_mapping",
+          "fromNodeId": "node_epid",
+          "toNodeId": "node_bescom_mapping",
+          "description": "The relationship is unverified.",
+          "claimIds": [
+            "claim_epid_mapping_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_epid_mapping",
+        "roadblock_bescom_stalls",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Preserve only non-sensitive error wording outside this ledger if needed for support."
+      ],
+      "documentationQualityNotes": [
+        "Public endpoints are verified; their contract is not."
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "journey_tenant",
+      "title": "Tenant or occupier",
+      "scenarioId": "scenario_tenant",
+      "context": "Historic occupancy evidence is scope-limited; current eligibility is not public.",
+      "steps": [
+        {
+          "id": "step_tenant_scope",
+          "label": "Assess historic scope",
+          "nodeId": "node_transfer_evidence",
+          "action": "Distinguish specified non-commercial occupancy from other cases.",
+          "expectedResult": "An explicit eligibility unknown where scope does not fit.",
+          "claimIds": [
+            "claim_historic_tenant_scope"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_tenant_obligations",
+          "label": "Confirm current conditions",
+          "nodeId": "node_transfer_obligations",
+          "action": "Confirm arrears, agreement, indemnity, deposit, and charges through authorized channels.",
+          "expectedResult": "Current treatment is confirmed case-specifically, not inferred from historic text.",
+          "claimIds": [
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_tenant_conditions",
+          "fromNodeId": "node_transfer_evidence",
+          "toNodeId": "node_transfer_obligations",
+          "description": "Historical evidence branch does not remove historical conditions.",
+          "claimIds": [
+            "claim_historic_tenant_scope",
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_tenant_scope",
+        "roadblock_arrears_recovery",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Do not present historic occupancy evidence as a universal entitlement."
+      ],
+      "documentationQualityNotes": [
+        "Historic text is Grade A but partial for current use."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_deceased",
+      "title": "Previous consumer deceased",
+      "scenarioId": "scenario_previous_consumer_deceased",
+      "context": "Historic successor evidence is an evidence lead; current form fields are not public.",
+      "steps": [
+        {
+          "id": "step_deceased_evidence",
+          "label": "Choose successor evidence",
+          "nodeId": "node_transfer_evidence",
+          "action": "Use the historic successor-evidence list only as a lead.",
+          "expectedResult": "Case-specific current acceptance remains necessary.",
+          "claimIds": [
+            "claim_historic_alternative_evidence"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_deceased_request",
+          "label": "Use documented request and tracking route",
+          "nodeId": "node_request_tracking",
+          "action": "If the authorized route permits submission, retain request ID.",
+          "expectedResult": "Tracked request, not automatic acceptance.",
+          "claimIds": [
+            "claim_standard_authenticated_route",
+            "claim_request_tracker"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_deceased_conditions",
+          "fromNodeId": "node_transfer_evidence",
+          "toNodeId": "node_transfer_obligations",
+          "description": "Alternative ownership evidence does not remove historical obligations.",
+          "claimIds": [
+            "claim_historic_alternative_evidence",
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_successor_evidence",
+        "roadblock_consent_deposit",
+        "roadblock_arrears_recovery",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Municipal record work may be separate; no verified rule links it to exception acceptance."
+      ],
+      "documentationQualityNotes": [
+        "No current public deceased-consumer checklist was found."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_consent",
+      "title": "Consent unavailable",
+      "scenarioId": "scenario_consent_unavailable",
+      "context": "Historic rule offers alternatives and conditions, while current authenticated requirements remain unknown.",
+      "steps": [
+        {
+          "id": "step_consent_alternative",
+          "label": "Classify evidence branch",
+          "nodeId": "node_transfer_evidence",
+          "action": "Separate ownership alternatives from scope-limited occupancy alternatives.",
+          "expectedResult": "No assumed workaround.",
+          "claimIds": [
+            "claim_historic_consent_rule",
+            "claim_historic_alternative_evidence",
+            "claim_historic_tenant_scope"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_consent_verify",
+          "label": "Verify current submission conditions",
+          "nodeId": "node_name_transfer",
+          "action": "Use authorized current route and do not infer NOC, deposit, or document requirements.",
+          "expectedResult": "Current case-specific answer or explicit unresolved state.",
+          "claimIds": [
+            "claim_standard_authenticated_route",
+            "claim_citizen_old_noc",
+            "claim_citizen_no_builder_noc"
+          ],
+          "status": "contested"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_consent_conditions",
+          "fromNodeId": "node_transfer_evidence",
+          "toNodeId": "node_transfer_obligations",
+          "description": "Absent consent may change historic evidence and deposit treatment.",
+          "claimIds": [
+            "claim_historic_consent_rule",
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_consent_deposit",
+        "roadblock_noc_conflict",
+        "roadblock_arrears_recovery",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Do not manufacture consent or rely on historic amounts as current."
+      ],
+      "documentationQualityNotes": [
+        "The NOC evidence conflict is preserved as contested citizen evidence."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_ind32_water_new_connection",
+      "title": "New BWSSB water/UGD connection — public route",
+      "scenarioId": "scenario_ind32_water_residential",
+      "context": "Unauthenticated inspection of the public Jaladhare entry, official manual, and FAQ for a new residential water-supply and underground-drainage connection. No applicant, property, document, OTP, or payment data was used.",
+      "steps": [
+        {
+          "id": "step_ind32_water_open_entry",
+          "label": "Open public Jaladhare entry",
+          "nodeId": "node_mobile_otp",
+          "action": "Open the public BWSSB consumer entry and inspect its mobile-OTP and status controls.",
+          "expectedResult": "Mobile OTP, application-number status, and high-level new-connection labels are visible; no case is created.",
+          "claimIds": [
+            "claim_ind32_water_public_entry_controls",
+            "claim_ind32_water_public_high_level_path"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "step_ind32_water_review_application",
+          "label": "Review application-form route",
+          "nodeId": "node_buy_application",
+          "action": "Read the public instruction that payment is used to buy the application form; do not open a payment gateway.",
+          "expectedResult": "An application purchase step is documented, but fee amount and transaction outcome remain Unknown for the current mobile-OTP route.",
+          "claimIds": [
+            "claim_ind32_water_public_high_level_path",
+            "claim_ind32_water_route_currentness_unknown"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind32_water_review_form_stages",
+          "label": "Review form stages",
+          "nodeId": "node_consumer_details",
+          "action": "Use the official manual to inspect Consumer Details, Site Details, Building Details, Documents, and Review descriptions.",
+          "expectedResult": "The five-stage form sequence and listed field classes are visible in the manual; no live form validation is known.",
+          "claimIds": [
+            "claim_ind32_water_manual_screen_sequence",
+            "claim_ind32_water_manual_consumer_site",
+            "claim_ind32_water_manual_building_plumber"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind32_water_review_documents",
+          "label": "Review document boundary",
+          "nodeId": "node_documents_review",
+          "action": "Read the public document summary and manual upload instructions without selecting or transmitting files.",
+          "expectedResult": "Listed document classes and upload limits are visible; case-specific acceptance and conditional documents remain Unknown.",
+          "claimIds": [
+            "claim_ind32_water_manual_uploads",
+            "claim_ind32_water_manual_review_charges"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind32_water_review_inspection",
+          "label": "Recognize inspection boundary",
+          "nodeId": "node_inspection_review",
+          "action": "Use FAQ wording to identify routing, stage/designation status, and prior inspection contact as published guidance.",
+          "expectedResult": "Inspection and review are described, but no case-specific owner, date, measurement, or outcome is known.",
+          "claimIds": [
+            "claim_ind32_water_faq_routing_inspection",
+            "claim_ind32_water_unobserved_case_state"
+          ],
+          "status": "unknown"
+        },
+        {
+          "id": "step_ind32_water_review_demand",
+          "label": "Recognize demand/payment boundary",
+          "nodeId": "node_demand_payment",
+          "action": "Read FAQ/manual demand-note and payment wording without opening a case or gateway.",
+          "expectedResult": "Inspection-based demand, conditional requirements, online payment, validity, and receipt wording are visible; no demand amount or receipt exists in this pass.",
+          "claimIds": [
+            "claim_ind32_water_faq_demand_payment",
+            "claim_ind32_water_manual_demand_conditions"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind32_water_status_boundary",
+          "label": "Check public status boundary",
+          "nodeId": "node_rr_status",
+          "action": "Inspect the application-number status input and general status table without entering an application number.",
+          "expectedResult": "Status controls and displayed 14/42-day headings are visible; no case stage or RR number is known.",
+          "claimIds": [
+            "claim_ind32_water_public_entry_controls",
+            "claim_ind32_water_public_targets",
+            "claim_ind32_water_unobserved_case_state"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dep_ind32_water_form_to_inspection",
+          "fromNodeId": "node_documents_review",
+          "toNodeId": "node_inspection_review",
+          "description": "FAQ describes routing and inspection after application details are submitted, but the live handoff is not observed.",
+          "claimIds": [
+            "claim_ind32_water_faq_routing_inspection",
+            "claim_ind32_water_end_to_end_unknown"
+          ],
+          "status": "unknown"
+        },
+        {
+          "id": "dep_ind32_water_inspection_to_payment",
+          "fromNodeId": "node_inspection_review",
+          "toNodeId": "node_demand_payment",
+          "description": "FAQ/manual describe inspection and review before demand-note calculation/payment; no case transition was observed.",
+          "claimIds": [
+            "claim_ind32_water_faq_demand_payment",
+            "claim_ind32_water_manual_demand_conditions"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_ind32_water_property_case_unknown",
+        "roadblock_ind32_water_conditional_checklist",
+        "roadblock_ind32_water_route_version",
+        "roadblock_ind32_water_status_metrics"
+      ],
+      "recoveryNotes": [
+        "No identifiers, contact details, files, OTPs, grievance data, or payment data were entered.",
+        "Use the public grievance route only for a real case and retain its application number; this pass did not submit one."
+      ],
+      "documentationQualityNotes": [
+        "Current public page exposes entry/status controls and summary labels; post-login behavior remains Unknown.",
+        "The consumer manual describes screens and payment wording but is not a property-specific transaction.",
+        "FAQ instructions use an older email/password SAJALA flow and are not merged with the current mobile-OTP route."
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "journey_ind32_water_support_boundary",
+      "title": "BWSSB application status or grievance support",
+      "scenarioId": "scenario_ind32_water_payment_or_grievance",
+      "context": "Unauthenticated inspection of the public application-status and grievance entry points. No application number, consumer details, or grievance was entered.",
+      "steps": [
+        {
+          "id": "step_ind32_water_support_status",
+          "label": "Open public status controls",
+          "nodeId": "node_rr_status",
+          "action": "Inspect the application-number input and public status headings without entering an identifier.",
+          "expectedResult": "The status route is visible; case-specific stage, demand, payment, and RR number remain Unknown.",
+          "claimIds": [
+            "claim_ind32_water_public_entry_controls",
+            "claim_ind32_water_public_targets"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind32_water_support_grievance",
+          "label": "Inspect grievance route",
+          "nodeId": "node_grievance",
+          "action": "Open the blank BWSSB grievance form and read its fields/contact display without submitting.",
+          "expectedResult": "Application and plumber-related fields plus 1916/email are visible; acknowledgement, owner, and response remain Unknown.",
+          "claimIds": [
+            "claim_ind32_water_grievance_fields"
+          ],
+          "status": "verified"
+        }
+      ],
+      "dependencies": [],
+      "failureRoadblockIds": [
+        "roadblock_ind32_water_property_case_unknown",
+        "roadblock_ind32_water_status_metrics"
+      ],
+      "recoveryNotes": [
+        "The grievance form is a visible handoff only; no ticket or response was created."
+      ],
+      "documentationQualityNotes": [
+        "Support surfaces are directly observed but do not establish response timing or resolution."
+      ],
+      "status": "partial"
+    }
+  ]
+}

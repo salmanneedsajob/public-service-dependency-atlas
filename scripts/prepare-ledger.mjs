@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 import Ajv2020 from 'ajv/dist/2020.js';
@@ -10,8 +10,6 @@ const inputPath = path.resolve(projectRoot, process.env.LEDGER_PATH ?? 'ledger/r
 const schemaPath = path.resolve(projectRoot, 'ledger/schema.json');
 const outputPath = path.resolve(projectRoot, 'public/data/ledger.json');
 const serviceOutputPath = path.resolve(projectRoot, 'public/data/bescom.json');
-const khataInputPath = path.resolve(projectRoot, 'ledger/khata.json');
-const khataOutputPath = path.resolve(projectRoot, 'public/data/khata.json');
 
 const [rawInput, rawSchema] = await Promise.all([
   readFile(inputPath, 'utf8'),
@@ -35,11 +33,9 @@ if (!validate(ledger)) {
 await mkdir(path.dirname(outputPath), { recursive: true });
 const serializedLedger = `${JSON.stringify(ledger, null, 2)}\n`;
 await Promise.all([writeFile(outputPath, serializedLedger), writeFile(serviceOutputPath, serializedLedger)]);
-try {
-  const khata = JSON.parse(await readFile(khataInputPath, 'utf8'));
-  if (!validate(khata)) throw new Error(`khata ledger does not satisfy schema: ${(validate.errors ?? []).map((error) => `${error.instancePath} ${error.message}`).join('; ')}`);
-  await writeFile(khataOutputPath, `${JSON.stringify(khata, null, 2)}\n`);
-} catch (error) {
-  if (error && error.code !== 'ENOENT') throw error;
+for (const filename of (await readdir(path.resolve(projectRoot, 'ledger'))).filter((name) => !['research.json','example.json','demo.synthetic.json','schema.json'].includes(name) && name.endsWith('.json'))) {
+  const serviceLedger = JSON.parse(await readFile(path.resolve(projectRoot, 'ledger', filename), 'utf8'));
+  if (!validate(serviceLedger)) throw new Error(`${filename} does not satisfy schema: ${(validate.errors ?? []).map((error) => `${error.instancePath} ${error.message}`).join('; ')}`);
+  await writeFile(path.resolve(projectRoot, 'public/data', filename), `${JSON.stringify(serviceLedger, null, 2)}\n`);
 }
 console.log(`Prepared ${path.relative(projectRoot, inputPath)} for the site.`);

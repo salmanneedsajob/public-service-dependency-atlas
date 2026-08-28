@@ -1,0 +1,3622 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru birth certificate evidence ledger — partially mapped v1",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-28",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Public sources and known gaps are shown together; do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_bescom",
+      "name": "Bangalore Electricity Supply Company Limited",
+      "shortName": "BESCOM",
+      "officialUrl": "https://bescom.co.in/"
+    },
+    {
+      "id": "agency_gba",
+      "name": "Greater Bengaluru Authority / Bengaluru City Corporations",
+      "shortName": "GBA",
+      "officialUrl": "https://www.bbmp.gov.in/"
+    },
+    {
+      "id": "agency_kerc",
+      "name": "Karnataka Electricity Regulatory Commission",
+      "shortName": "KERC",
+      "officialUrl": "https://kerc.karnataka.gov.in/"
+    },
+    {
+      "id": "agency_bbmp_birth_ind32",
+      "name": "Greater Bengaluru Authority / Bengaluru City Corporations birth and death administration",
+      "shortName": "GBA / Bengaluru City Corporations Birth & Death",
+      "officialUrl": "https://bbmp.gov.in/"
+    },
+    {
+      "id": "agency_bbmp_health_ind32",
+      "name": "Bruhat Bengaluru Mahanagara Palike Health Department",
+      "shortName": "BBMP Health",
+      "officialUrl": "https://site.bbmp.gov.in/citizenservice.html"
+    },
+    {
+      "id": "agency_karnataka_crs_ind32",
+      "name": "Office of the Chief Registrar of Births and Deaths, Government of Karnataka",
+      "shortName": "Karnataka Chief Registrar (Births & Deaths)",
+      "officialUrl": "https://ejanma.karnataka.gov.in/"
+    },
+    {
+      "id": "agency_bbmp_birth_workflow_ind32",
+      "name": "Greater Bengaluru Authority / Bengaluru City Corporations birth and death administration",
+      "shortName": "GBA / Bengaluru City Corporations Birth & Death",
+      "officialUrl": "https://bbmp.gov.in/"
+    },
+    {
+      "id": "agency_bbmp_health_workflow_ind32",
+      "name": "Bruhat Bengaluru Mahanagara Palike Health Department",
+      "shortName": "BBMP Health",
+      "officialUrl": "https://site.bbmp.gov.in/citizenservice.html"
+    },
+    {
+      "id": "agency_karnataka_crs_workflow_ind32",
+      "name": "Office of the Chief Registrar of Births and Deaths, Government of Karnataka",
+      "shortName": "Karnataka Chief Registrar (Births & Deaths)",
+      "officialUrl": "https://ejanma.karnataka.gov.in/"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_clean_sale",
+      "label": "Clean sale",
+      "summary": "Registered sale with no known municipal-record issue.",
+      "tags": [
+        "sale"
+      ],
+      "pathNodeIds": [
+        "node_sale_deed",
+        "node_mutation",
+        "node_final_e_khata",
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_draft_e_khata",
+      "label": "Draft or pending e-Khata",
+      "summary": "Property information exists but finality or buyer-name state is unresolved.",
+      "tags": [
+        "sale",
+        "e-khata",
+        "pending"
+      ],
+      "pathNodeIds": [
+        "node_final_e_khata",
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_epid_mapping_failure",
+      "label": "EPID mapping failure",
+      "summary": "An EPID or property record exists but the BESCOM-account relationship cannot be established.",
+      "tags": [
+        "epid",
+        "mapping"
+      ],
+      "pathNodeIds": [
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_tenant",
+      "label": "Tenant",
+      "summary": "An occupier seeks a bill-name change without owning the property.",
+      "tags": [
+        "tenant",
+        "consent"
+      ],
+      "pathNodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_previous_consumer_deceased",
+      "label": "Previous consumer deceased",
+      "summary": "The recorded consumer has died and a successor seeks transfer.",
+      "tags": [
+        "death",
+        "succession"
+      ],
+      "pathNodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_consent_unavailable",
+      "label": "Consent unavailable",
+      "summary": "The previous consumer cannot or will not provide consent.",
+      "tags": [
+        "consent",
+        "exception"
+      ],
+      "pathNodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_birth_registered_copy",
+      "label": "Copy of an already registered birth",
+      "summary": "A person seeks a certificate or certified electronic copy for a birth already recorded in the relevant register.",
+      "tags": [
+        "registered-birth",
+        "certificate-copy",
+        "search"
+      ],
+      "pathNodeIds": [
+        "node_event_jurisdiction",
+        "node_public_entry",
+        "node_record_search",
+        "node_certificate_issue"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_birth_name_inclusion",
+      "label": "Child name inclusion",
+      "summary": "A registered birth certificate was issued without the child's name and a parent or guardian seeks name entry.",
+      "tags": [
+        "name-inclusion",
+        "registered-birth"
+      ],
+      "pathNodeIds": [
+        "node_event_jurisdiction",
+        "node_name_inclusion",
+        "node_certificate_issue"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_birth_record_correction",
+      "label": "Correction or cancellation of a birth entry",
+      "summary": "A person seeks correction of an erroneous birth-register entry or certificate field through the Registrar.",
+      "tags": [
+        "correction",
+        "record"
+      ],
+      "pathNodeIds": [
+        "node_event_jurisdiction",
+        "node_record_correction",
+        "node_certificate_issue"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_birth_delayed_or_missing",
+      "label": "Delayed or non-registered birth",
+      "summary": "A birth was not reported on time or cannot be found in the register and the applicant needs the correct delayed-registration or non-availability route.",
+      "tags": [
+        "delayed-registration",
+        "missing-record",
+        "non-availability"
+      ],
+      "pathNodeIds": [
+        "node_event_jurisdiction",
+        "node_delayed_registration",
+        "node_record_search",
+        "node_certificate_issue"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_birth_authenticity",
+      "label": "Certificate authenticity check",
+      "summary": "A relying authority or citizen seeks to verify a BBMP/Karnataka birth certificate through the public authenticity route.",
+      "tags": [
+        "verification",
+        "authenticity"
+      ],
+      "pathNodeIds": [
+        "node_public_entry",
+        "node_authenticity"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_ind32_birth_copy_workflow",
+      "label": "Already registered birth — certificate copy",
+      "summary": "A citizen starts from the public Birth & Death entry and seeks a certificate/certified copy for an existing register entry.",
+      "tags": [
+        "copy",
+        "registered-birth",
+        "public-entry"
+      ],
+      "pathNodeIds": [
+        "node_birth_public_entry",
+        "node_event_jurisdiction",
+        "node_record_lookup",
+        "node_certificate_output"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_ind32_birth_name_workflow",
+      "label": "Name inclusion after registration",
+      "summary": "A parent or guardian seeks to add a child's name to a birth registered without one.",
+      "tags": [
+        "name-inclusion",
+        "parent",
+        "correction"
+      ],
+      "pathNodeIds": [
+        "node_birth_public_entry",
+        "node_event_jurisdiction",
+        "node_name_inclusion",
+        "node_certificate_output"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_ind32_birth_correction_workflow",
+      "label": "Birth-record correction",
+      "summary": "A requester seeks correction/cancellation of an erroneous entry through the Registrar.",
+      "tags": [
+        "correction",
+        "record"
+      ],
+      "pathNodeIds": [
+        "node_birth_public_entry",
+        "node_event_jurisdiction",
+        "node_correction",
+        "node_certificate_output"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_ind32_birth_delayed_workflow",
+      "label": "Delayed or missing registration",
+      "summary": "A birth was reported late or is not found and needs the appropriate delayed-registration or record-search route.",
+      "tags": [
+        "delayed-registration",
+        "missing-record"
+      ],
+      "pathNodeIds": [
+        "node_birth_public_entry",
+        "node_event_jurisdiction",
+        "node_delayed_registration",
+        "node_record_lookup",
+        "node_certificate_output"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_ind32_birth_verify_workflow",
+      "label": "Certificate authenticity verification",
+      "summary": "A relying authority or citizen uses the publicly listed authenticity entry without submitting an identifier in this pass.",
+      "tags": [
+        "authenticity",
+        "verification"
+      ],
+      "pathNodeIds": [
+        "node_birth_public_entry",
+        "node_authenticity"
+      ],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_kerc_conditions_supply",
+      "title": "Conditions of Supply of Electricity with first and second amendments",
+      "publisher": "KERC / BESCOM",
+      "url": "https://www.bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
+      "accessedAt": "2026-08-27",
+      "type": "regulation",
+      "notes": "Canonical source for IND-4 source_kerc_conditions_supply and IND-8 source_kerc_cos_consolidated. Historic consolidated text: Grade A claims are partial until current applicability is confirmed."
+    },
+    {
+      "id": "source_bescom_home",
+      "title": "BESCOM public homepage and service directory",
+      "publisher": "BESCOM",
+      "url": "https://bescom.co.in/",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-4 source_bescom_current_home and IND-6 source_bescom_home; direct current public-interface observation."
+    },
+    {
+      "id": "source_bescom_faq",
+      "title": "BESCOM FAQ — How To Change Name?",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/main/faq",
+      "accessedAt": "2026-08-27",
+      "type": "official_guidance",
+      "notes": "Canonical source for IND-4 source_bescom_name_change_faq, IND-6 source_bescom_faq, and IND-8 source_bescom_jvs_faq_ind8. Public guidance only; authenticated fields were not inspected."
+    },
+    {
+      "id": "source_bescom_tracker",
+      "title": "Track Name Change",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/main/track-name-change",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-4 source_bescom_track_name_change and IND-8 source_bescom_namechange_tracker."
+    },
+    {
+      "id": "source_bescom_jvs",
+      "title": "Janasnehi Vidhyuth Sevegalu — Name Change",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/dashboard/consumer-dashboard/janasnehi-vidhyuth-sevagalu/name-change-form",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Current public page; timing wording does not establish start point or exception applicability."
+    },
+    {
+      "id": "source_bescom_legacy",
+      "title": "BESCOM current public homepage and service directory",
+      "publisher": "BESCOM",
+      "url": "https://bescom.co.in/",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "The formerly cited legacy portal endpoint was unreachable during the Stage 0 link check. No current public route taxonomy was verified; retain the historical lead only as an Unknown gap."
+    },
+    {
+      "id": "source_eaasthi_login",
+      "title": "e-Aasthi citizen login and Final e-Khata instructions",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-6 source_eaasthi_login and IND-8 source_ekhata_citizen_login_ind8."
+    },
+    {
+      "id": "source_eaasthi_search",
+      "title": "e-Aasthi public e-Khata search",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-6 source_eaasthi_search and IND-8 source_ekhata_public_search_ind8."
+    },
+    {
+      "id": "source_eaasthi_status",
+      "title": "e-Khata Application Status",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-6 source_eaasthi_status and IND-8 source_ekhata_epid_status_ind8."
+    },
+    {
+      "id": "source_eaasthi_mutation",
+      "title": "e-Aasthi Pending Mutation Report",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/office/frmPendingMutationReport.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Public observation only; it does not establish a completed buyer-facing record."
+    },
+    {
+      "id": "source_gba_directory",
+      "title": "GBA service directory",
+      "publisher": "Greater Bengaluru Authority",
+      "url": "https://www.bbmp.gov.in/",
+      "accessedAt": "2026-08-27",
+      "type": "official_guidance",
+      "notes": "Current public helpline listing."
+    },
+    {
+      "id": "source_citizen_transfer",
+      "title": "Bescom name transfer can be done fully online if you have ekhata",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1vceniq/bescom_name_transfer_can_be_done_fully_online_if/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-08-01",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person evidence; not procedure proof."
+    },
+    {
+      "id": "source_citizen_login_payment",
+      "title": "Updated 2026 e-Khata BESCOM name-change account",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1vlfrnl/dont_pay_brokers_5k_for_bescom_name_changes_here/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-08-11",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person evidence; personal details are intentionally omitted."
+    },
+    {
+      "id": "source_citizen_missing_epid",
+      "title": "Non Availability of EPID/Draft E-Khata in E-Swathi portal",
+      "publisher": "r/BangaloreRealEstates (Reddit)",
+      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1r3hhqt/non_availability_of_epiddraft_ekhata_in_eswathi/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-02-13",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person missing draft/EPID account."
+    },
+    {
+      "id": "source_citizen_owner_error",
+      "title": "E-Khata Name Correction",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1oqksj1/ekhata_name_correction/",
+      "accessedAt": "2026-08-27",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person prior-owner and correction-error account."
+    },
+    {
+      "id": "source_citizen_missing_draft",
+      "title": "Non Availability of Draft E-khata",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1ikojje/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2025-02-08",
+      "type": "citizen_evidence",
+      "notes": "IND-7 public reports of absent draft e-Khata and delayed self-service request."
+    },
+    {
+      "id": "source_citizen_old_owner_recovery",
+      "title": "Finally I got Ekhata yesterday, costed 125₹",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1k4xnji/",
+      "accessedAt": "2026-08-27",
+      "type": "citizen_evidence",
+      "notes": "IND-7 citizen recovery account; not a standard instruction."
+    },
+    {
+      "id": "source_citizen_noc",
+      "title": "Bescom bill name change",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1bx2oer/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2024-04-06",
+      "type": "citizen_evidence",
+      "notes": "Older offline-process account retained as one side of the NOC contradiction."
+    },
+    {
+      "id": "source_ind32_birth_rbd_act",
+      "title": "Registration of Births and Deaths Act, 1969",
+      "publisher": "Government of India / India Code",
+      "url": "https://www.indiacode.nic.in/handle/123456789/1682?locale=en",
+      "accessedAt": "2026-08-28",
+      "type": "law",
+      "notes": "India Code listing exposes sections 8, 12, 13, 14, 15, and 17; primary legal basis."
+    },
+    {
+      "id": "source_ind32_birth_model_rules",
+      "title": "Model Registration of Births and Deaths Rules, 1999",
+      "publisher": "Government of India / India Code",
+      "url": "https://upload.indiacode.nic.in/showfile?actid=AC_CEN_5_40_00006_196918_1517807324141&filename=Model+Registration+of+Births+and+Deaths+Rules%2C+1999.pdf&type=rule",
+      "accessedAt": "2026-08-28",
+      "type": "regulation",
+      "notes": "Official model rules; historical fees are not treated as current Karnataka amounts."
+    },
+    {
+      "id": "source_ind32_birth_bbmp_citizen_services",
+      "title": "BBMP Citizen Services — Birth & Death Certificate",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/citizenservice.html",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Public indexed page lists Online Birth Certificate Request Form and Authenticity Of Certificates; live transition not verified."
+    },
+    {
+      "id": "source_ind32_birth_gba_home",
+      "title": "Greater Bengaluru Authority public home / e-Services",
+      "publisher": "Greater Bengaluru Authority",
+      "url": "https://bbmp.gov.in/",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Current public page lists Birth & Death Certificate among e-Services."
+    },
+    {
+      "id": "source_ind32_birth_district_page",
+      "title": "Birth Certificate — District Bengaluru Urban",
+      "publisher": "District Administration, Bengaluru Urban",
+      "url": "https://bengaluruurban.nic.in/en/service/birth-certificate/",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Current page expressly limits its eJanMa description to rural Karnataka; retained as a routing boundary, not BBMP procedure."
+    },
+    {
+      "id": "source_ind32_birth_bbmp_reforms",
+      "title": "Karnataka Administrative Reforms — Issue of Birth, Still Birth and Death Certificates",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://bbmp.gov.in/ucc_file/KarnatakaAdministrativeReforms.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "BBMP 2023 report section on designated officers, reported Sakala timing, SMS rejection, and status-tracking audit observations."
+    },
+    {
+      "id": "source_ind32_birth_bbmp_it",
+      "title": "BBMP IT Department — About Us",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/departmentwebsites/BBMPIT/Aboutus.html",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Legacy/undated e-governance description naming web, mobile, IVRS, and citizen service centres."
+    },
+    {
+      "id": "source_ind32_birth_workflow_bbmp_index",
+      "title": "BBMP Citizen Services — Birth & Death Certificate",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/citizenservice.html",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Public indexed page lists Online Birth Certificate Request Form and Authenticity Of Certificates. The indexed observation is older than the as-of date; live targets were not opened."
+    },
+    {
+      "id": "source_ind32_birth_workflow_gba_home",
+      "title": "Greater Bengaluru Authority public home / e-Services",
+      "publisher": "Greater Bengaluru Authority",
+      "url": "https://bbmp.gov.in/",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Current public home lists Birth & Death Certificate among e-Services. It does not expose a birth-specific form or status flow."
+    },
+    {
+      "id": "source_ind32_birth_workflow_district",
+      "title": "Birth Certificate — District Bengaluru Urban",
+      "publisher": "District Administration, Bengaluru Urban",
+      "url": "https://bengaluruurban.nic.in/en/service/birth-certificate/",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Current page links eJanMa but expressly describes rural Karnataka; it gives rural name-inclusion/copy/correction routing and is not used as BBMP workflow proof."
+    },
+    {
+      "id": "source_ind32_birth_workflow_ejanma",
+      "title": "eJanMa — Karnataka birth and death registration portal",
+      "publisher": "Government of Karnataka",
+      "url": "https://ejanma.karnataka.gov.in/",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Official URL linked by the district page. The portal was not entered or queried; BBMP municipal applicability and public controls were not verified."
+    },
+    {
+      "id": "source_ind32_birth_workflow_act",
+      "title": "Registration of Births and Deaths Act, 1969 — India Code",
+      "publisher": "Government of India / India Code",
+      "url": "https://www.indiacode.nic.in/handle/123456789/1682?locale=en",
+      "accessedAt": "2026-08-28",
+      "type": "law",
+      "notes": "Sections 8, 12, 13, 14, 15, and 17 define reporting, certificate access, delayed registration, name inclusion, correction/cancellation, and search."
+    },
+    {
+      "id": "source_ind32_birth_workflow_bbmp_reforms",
+      "title": "Karnataka Administrative Reforms — Issue of Birth, Still Birth and Death Certificates",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://bbmp.gov.in/ucc_file/KarnatakaAdministrativeReforms.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "2023 report describes a reviewed process and reported Sakala timing; it is not a current end-to-end portal manual."
+    },
+    {
+      "id": "source_ind32_birth_workflow_bbmp_it",
+      "title": "BBMP IT Department — About Us",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/departmentwebsites/BBMPIT/Aboutus.html",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Legacy/undated description says web, mobile, IVRS, and citizen service centres such as Bangalore One delivered birth/death registration."
+    },
+    {
+      "id": "source_ind32_birth_name_addition_delay",
+      "title": "BBMP Bommanahalli open corruption - very sad state",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1rqyxwl/bbmp_bommanahalli_open_corruption_very_sad_state/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-03-11",
+      "type": "citizen_evidence",
+      "notes": "First-person account of a delayed child-name addition. It reports the applicant's experience and what they were told at one office; it does not establish an office-jurisdiction rule, online eligibility, an official fee, or cause of delay."
+    },
+    {
+      "id": "source_ind32_birth_record_correction_error",
+      "title": "My Birth Certificate Has Had More Character Development Than Me",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1twx57y/my_birth_certificate_has_had_more_character/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-06-04",
+      "type": "citizen_evidence",
+      "notes": "First-person account of correcting spelling fields on a birth certificate. The account is retained for potential record-versus-certificate mismatch and correction quality issues only; reported identity-document requests, letters, fees, and office handling are not verified requirements."
+    },
+    {
+      "id": "source_ind32_birth_name_correction_direct_success",
+      "title": "Bengaluru govt office works without BRIBE !",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1v43td3/bengaluru_govt_office_works_without_bribe/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-07-23",
+      "type": "citizen_evidence",
+      "notes": "A first-person comment reports a successful in-person child-name correction at a BBMP office, involving a form submission and later collection. It does not establish a general channel, turnaround standard, or payment rule."
+    },
+    {
+      "id": "source_ind32_birth_qr_copy_dependency",
+      "title": "My Birth Certificate Has Had More Character Development Than Me",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1twx57y/my_birth_certificate_has_had_more_character/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-06-04",
+      "type": "citizen_evidence",
+      "notes": "A commenter reports that another service rejected an older-format birth certificate and directed the family to obtain a QR-code version from the website. This is an unverified downstream compatibility report, not proof of a BBMP issuance requirement."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_epid_route_visible",
+      "text": "BESCOM's current public homepage exposes a service labelled Name Change with EPID.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_bescom_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4 and IND-6 duplicate observations; this does not verify eligibility or a mapping contract."
+    },
+    {
+      "id": "claim_standard_authenticated_route",
+      "text": "BESCOM's public FAQ directs a name-change applicant to authenticate, select an account ID, complete mandatory fields, upload required documents, submit, retain a request ID, and pay applicable charges.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "sourceIds": [
+        "source_bescom_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4, IND-6, and IND-8 duplicate FAQ claims. The public FAQ does not enumerate the current document checklist."
+    },
+    {
+      "id": "claim_request_tracker",
+      "text": "BESCOM's public tracker requests the request ID sent by SMS.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_request_tracking"
+      ],
+      "sourceIds": [
+        "source_bescom_tracker"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4 and IND-8 duplicate tracker claims."
+    },
+    {
+      "id": "claim_jvs_timeline_wording",
+      "text": "BESCOM's current Janasnehi page states that Name Change and some related services are within 24 hours.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_bescom_jvs"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The start point and exception applicability are not specified; it is not a verified end-to-end service-level promise."
+    },
+    {
+      "id": "claim_legacy_route_taxonomy",
+      "text": "No current public official route taxonomy for fast-track, regular, and HT name-change paths was verified in the Stage 0 link check.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_tenant"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_bescom_legacy"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The previous legacy endpoint was unreachable. This replaces an unverified historic route claim with an explicit current documentation gap."
+    },
+    {
+      "id": "claim_historic_consent_rule",
+      "text": "Historic KERC Conditions clause 36.01 says the registered consumer furnishes consent for transfer of the installation and deposits.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Historic binding text; current applicability is not established."
+    },
+    {
+      "id": "claim_historic_alternative_evidence",
+      "text": "Historic clause 36.01 lists ownership evidence, including registered sale deed, khata, succession or heirship certificate, and will, where consent is absent.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_sale_deed",
+        "node_transfer_evidence"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Historic binding text; it is an evidence lead, not a verified current checklist."
+    },
+    {
+      "id": "claim_historic_tenant_scope",
+      "text": "Historic clause 36.01 limits occupancy evidence alternatives to specified non-commercial installations.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_tenant"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Current authenticated acceptance is unknown."
+    },
+    {
+      "id": "claim_historic_transfer_obligations",
+      "text": "Historic clause 36.01 records no-arrears, indemnity, fresh-agreement, and deposit conditions for transfer; its published schedule also records LT and HT transfer charges.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_transfer_obligations"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Atomicity exception noted: these are one historic conditions cluster used solely to model a decision node. Current amounts and applicability are unverified."
+    },
+    {
+      "id": "claim_ekhata_final_guidance",
+      "text": "The public e-Aasthi guidance distinguishes Draft e-Khata from Final e-Khata and lists registered deed, eKYC, SAS property-tax application number, property photo, and A-Khata material among Final e-Khata inputs.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "nodeIds": [
+        "node_sale_deed",
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_eaasthi_login"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-6 and IND-8; it does not prove BESCOM acceptance."
+    },
+    {
+      "id": "claim_ekhata_search_recovery",
+      "text": "Public e-Aasthi search supports EPID/property lookup and offers a Do Not Find My Property route when a property cannot be found.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_eaasthi_search"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-6 and IND-8 duplicate observations."
+    },
+    {
+      "id": "claim_ekhata_status",
+      "text": "The public e-Khata Application Status page accepts an EPID for status lookup.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_eaasthi_status"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "It does not document BESCOM mapping."
+    },
+    {
+      "id": "claim_mutation_fields",
+      "text": "The public e-Aasthi Pending Mutation Report displays registered-deed or mutation date, property EPID, seller, purchaser, and pending-owner fields.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_previous_consumer_deceased"
+      ],
+      "nodeIds": [
+        "node_sale_deed",
+        "node_mutation",
+        "node_epid"
+      ],
+      "sourceIds": [
+        "source_eaasthi_mutation"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The visible report does not establish a completed buyer-facing record."
+    },
+    {
+      "id": "claim_helpline_channels",
+      "text": "Current public pages publish BESCOM 1912 and GBA e-Khata/New Khata support channels.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_bescom_mapping"
+      ],
+      "sourceIds": [
+        "source_bescom_home",
+        "source_gba_directory"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Channels are observable; their case-resolution scope is not."
+    },
+    {
+      "id": "claim_epid_mapping_unknown",
+      "text": "No inspected public official material establishes EPID-to-BESCOM-account eligibility rules, failure messages, repair owner, or recovery sequence.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4, IND-6, and IND-8 Unknown records. No private/authenticated evidence was accessed."
+    },
+    {
+      "id": "claim_citizen_mapping_failure",
+      "text": "One citizen account identifies a possible failure matching a BESCOM Account ID to an EPID even when an e-Khata record exists.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_bescom_mapping"
+      ],
+      "sourceIds": [
+        "source_citizen_transfer"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Single public account, retained as a failure signal rather than a universal rule."
+    },
+    {
+      "id": "claim_citizen_missing_draft_epid",
+      "text": "One citizen reported a property found by tax identifier with neither linked Draft e-Khata nor EPID, and no movement on a non-availability request after 45 days.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_epid"
+      ],
+      "sourceIds": [
+        "source_citizen_missing_epid"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One public account; it does not establish cause or service level."
+    },
+    {
+      "id": "claim_citizen_owner_correction",
+      "text": "One citizen reported a final e-Khata displaying a previous owner's name and an Unauthorized Activity Has Been Detected message during a correction attempt.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_citizen_owner_error"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One public account; no root cause is established."
+    },
+    {
+      "id": "claim_citizen_old_owner_recovery",
+      "text": "One citizen reported resolving a draft e-Khata showing the old owner after invalidating and reapplying with ARO guidance.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_mutation"
+      ],
+      "sourceIds": [
+        "source_citizen_old_owner_recovery"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A candidate recovery, not a general procedure."
+    },
+    {
+      "id": "claim_citizen_bescom_stalls",
+      "text": "Citizen accounts report EPID-entry, login/reset, unseen-open-application, and upload-stall failures in BESCOM flows.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_citizen_transfer",
+        "source_citizen_login_payment"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Reports identify failure modes only; no backend cause, support outcome, or general workaround is established."
+    },
+    {
+      "id": "claim_citizen_old_noc",
+      "text": "An older offline-process citizen account reported needing a previous-owner or builder NOC for BESCOM name change.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_citizen_noc"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_citizen_no_builder_noc"
+      ],
+      "notes": "Older account; conflicting evidence is retained, not resolved by chronology alone."
+    },
+    {
+      "id": "claim_citizen_no_builder_noc",
+      "text": "One 2026 citizen account reported completing an online BESCOM name change after e-Khata update without a builder NOC.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_citizen_login_payment"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_citizen_old_noc"
+      ],
+      "notes": "One current citizen account; it does not establish an exception rule."
+    },
+    {
+      "id": "claim_ind32_birth_act_reporting_persons",
+      "text": "Section 8 of the Registration of Births and Deaths Act assigns reporting responsibility according to the place and circumstances of the event, including the medical officer or authorised person for an institutional birth and the head of the house or household for a domiciliary birth.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_delayed_or_missing"
+      ],
+      "nodeIds": [
+        "node_event_jurisdiction"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_rbd_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Statutory allocation; not a current BBMP counter or portal instruction."
+    },
+    {
+      "id": "claim_ind32_birth_act_certificate",
+      "text": "Section 12 provides for a certificate of registration, and section 17 allows a person, subject to state rules and fees, to request a register search and obtain a birth certificate electronically or otherwise.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_authenticity"
+      ],
+      "nodeIds": [
+        "node_record_search",
+        "node_certificate_issue"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_rbd_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Legal framework; delivery channel and fee remain implementation-dependent."
+    },
+    {
+      "id": "claim_ind32_birth_act_delayed_registration",
+      "text": "Section 13 distinguishes late information within thirty days, after thirty days but within one year, and after one year; the latter two categories require additional permission or order and prescribed fee under the Act and applicable rules.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_delayed_or_missing"
+      ],
+      "nodeIds": [
+        "node_delayed_registration"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_rbd_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The section does not identify the current Karnataka officer, form, fee, or evidence checklist."
+    },
+    {
+      "id": "claim_ind32_birth_act_name_inclusion",
+      "text": "Section 14 provides that when a birth was registered without a child's name, the parent or guardian gives the name to the Registrar orally or in writing within the prescribed period, after which the Registrar enters and initials/dates it.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_name_inclusion"
+      ],
+      "nodeIds": [
+        "node_name_inclusion"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_rbd_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The current BBMP form, fee, supporting documents, and online availability are not established."
+    },
+    {
+      "id": "claim_ind32_birth_act_correction",
+      "text": "Section 15 permits the Registrar, on satisfaction that an entry is erroneous in form or substance or was fraudulently/improperly made, to correct or cancel it by a marginal entry without altering the original entry, with signature and date.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_record_correction"
+      ],
+      "nodeIds": [
+        "node_record_correction"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_rbd_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Statutory correction mechanism; present BBMP evidence threshold is not established."
+    },
+    {
+      "id": "claim_ind32_birth_act_search_electronic",
+      "text": "Section 17 states that, subject to state rules on fees and postal charges, any person may cause a register search and obtain a birth certificate electronically or otherwise; the certificate is certified by the Registrar or authorised officer.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_authenticity"
+      ],
+      "nodeIds": [
+        "node_record_search",
+        "node_certificate_issue",
+        "node_authenticity"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_rbd_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Does not prove every historical BBMP record is searchable online."
+    },
+    {
+      "id": "claim_ind32_birth_model_rule_21_days",
+      "text": "Rule 5 of the official Model Registration of Births and Deaths Rules says prescribed-form information is to be given within twenty-one days from the birth, death, or still birth.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_delayed_or_missing"
+      ],
+      "nodeIds": [
+        "node_event_jurisdiction",
+        "node_delayed_registration"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_model_rules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Model rules are not asserted here as a complete current Karnataka rulebook."
+    },
+    {
+      "id": "claim_ind32_birth_bbmp_index_services",
+      "text": "The BBMP Citizen Services page lists Online Birth Certificate Request Form and Authenticity Of Certificates under the Birth & Death Certificate service group.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_authenticity"
+      ],
+      "nodeIds": [
+        "node_public_entry",
+        "node_authenticity"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_bbmp_citizen_services"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Official service index; live form target, fields, validation, payment, and status were not observed."
+    },
+    {
+      "id": "claim_ind32_birth_gba_service_listing",
+      "text": "The current Greater Bengaluru Authority public home lists Birth & Death Certificate among its e-Services.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_name_inclusion",
+        "scenario_birth_record_correction"
+      ],
+      "nodeIds": [
+        "node_public_entry"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_gba_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Directory listing only."
+    },
+    {
+      "id": "claim_ind32_birth_rural_boundary",
+      "text": "The Bengaluru Urban District Birth Certificate page says its eJanMa description covers births, deaths, and still births electronically registered in Rural Karnataka and directs rural name inclusion, additional copies, and corrections to rural registration personnel.",
+      "jurisdiction": "Bengaluru Urban District, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_name_inclusion",
+        "scenario_birth_record_correction",
+        "scenario_birth_delayed_or_missing"
+      ],
+      "nodeIds": [
+        "node_event_jurisdiction"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_district_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Do not infer a Nada Kacheri route for a BBMP municipal event."
+    },
+    {
+      "id": "claim_ind32_birth_bbmp_designated_officers",
+      "text": "A BBMP administrative-reforms report describes the Medical Officer/Deputy MO/Superintendent in large hospitals and Assistant Statistical Officer as designated officers in the reviewed process, and reports a Sakala limit of three days where online data is available and seven days where it is not.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_delayed_or_missing"
+      ],
+      "nodeIds": [
+        "node_certificate_issue"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_bbmp_reforms"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "2023 report observation, not a current service-level promise; report also records no status tracking."
+    },
+    {
+      "id": "claim_ind32_birth_channels_legacy",
+      "text": "BBMP's IT Department description says birth/death registration was delivered through web, mobile, IVRS, and citizen service centres such as Bangalore One.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_registered_copy"
+      ],
+      "nodeIds": [
+        "node_public_entry",
+        "node_certificate_issue"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_bbmp_it"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Legacy/undated channel description; current availability is unknown."
+    },
+    {
+      "id": "claim_ind32_birth_current_case_unknown",
+      "text": "No official public source reviewed establishes whether a particular Bengaluru birth record exists, which Registrar or office owns it, what documents or fee a particular correction/name-inclusion case needs, whether an online request is accepted, or whether a certificate has issued.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_name_inclusion",
+        "scenario_birth_record_correction",
+        "scenario_birth_delayed_or_missing",
+        "scenario_birth_authenticity"
+      ],
+      "nodeIds": [
+        "node_record_search",
+        "node_name_inclusion",
+        "node_record_correction",
+        "node_delayed_registration",
+        "node_certificate_issue",
+        "node_authenticity"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No login, identifier lookup, upload, payment, submission, or case-status request was performed."
+    },
+    {
+      "id": "claim_ind32_birth_workflow_public_entry",
+      "text": "BBMP's public Citizen Services index exposes an Online Birth Certificate Request Form and an Authenticity Of Certificates entry under Birth & Death Certificate; the current GBA home also lists Birth & Death Certificate as an e-Service.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_name_workflow",
+        "scenario_ind32_birth_correction_workflow",
+        "scenario_ind32_birth_delayed_workflow",
+        "scenario_ind32_birth_verify_workflow"
+      ],
+      "nodeIds": [
+        "node_birth_public_entry"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_workflow_bbmp_index",
+        "source_ind32_birth_workflow_gba_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Directory/index evidence only; no live target, input fields, login requirement, or submission behavior was observed."
+    },
+    {
+      "id": "claim_ind32_birth_workflow_place_reporting",
+      "text": "The Act's reporting rules allocate institutional birth information to the medical officer/person authorised by the institution and domiciliary birth information to the head of the house/household or specified fallback person.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_delayed_workflow"
+      ],
+      "nodeIds": [
+        "node_event_jurisdiction"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_workflow_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Statutory responsibility; it does not establish the current BBMP office or portal screen."
+    },
+    {
+      "id": "claim_ind32_birth_workflow_certificate",
+      "text": "Sections 12 and 17 provide for a certificate of registration and for a person, subject to state rules and fees, to request a register search and obtain a birth certificate electronically or otherwise.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_verify_workflow"
+      ],
+      "nodeIds": [
+        "node_record_lookup",
+        "node_certificate_output",
+        "node_authenticity"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_workflow_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The current public lookup fields, fee, and certificate-download route remain unknown."
+    },
+    {
+      "id": "claim_ind32_birth_workflow_name",
+      "text": "Section 14 provides the legal name-inclusion step: a parent or guardian gives the name of a child whose birth was registered without a name, orally or in writing within the prescribed period, and the Registrar enters it with initials and date.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_name_workflow"
+      ],
+      "nodeIds": [
+        "node_name_inclusion"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_workflow_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The current BBMP form, supporting documents, fee, and online availability were not established."
+    },
+    {
+      "id": "claim_ind32_birth_workflow_correction",
+      "text": "Section 15 permits the Registrar, after being satisfied that an entry is erroneous or fraudulently/improperly made, to correct or cancel it by a signed and dated marginal entry without altering the original entry.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_correction_workflow"
+      ],
+      "nodeIds": [
+        "node_correction"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_workflow_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Current BBMP evidentiary and intake requirements are unknown."
+    },
+    {
+      "id": "claim_ind32_birth_workflow_delayed",
+      "text": "Section 13 has separate late-reporting bands: after the prescribed period but within thirty days, after thirty days but within one year, and after one year; later bands require the additional permission/order and fee specified by the Act and applicable rules.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_delayed_workflow"
+      ],
+      "nodeIds": [
+        "node_delayed_registration"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_workflow_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The current Karnataka authority, form, evidence, and fee were not determined."
+    },
+    {
+      "id": "claim_ind32_birth_workflow_rural_boundary",
+      "text": "The District Bengaluru Urban page states that its eJanMa description covers Rural Karnataka and directs rural name inclusion, additional copies, and corrections to rural registration personnel; it does not provide a BBMP municipal workflow.",
+      "jurisdiction": "Bengaluru Urban District, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_name_workflow",
+        "scenario_ind32_birth_correction_workflow",
+        "scenario_ind32_birth_delayed_workflow"
+      ],
+      "nodeIds": [
+        "node_event_jurisdiction"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_workflow_district"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Do not route a BBMP municipal event to a Nada Kacheri solely from this page."
+    },
+    {
+      "id": "claim_ind32_birth_workflow_timing_caveat",
+      "text": "A BBMP administrative-reforms report describes a reviewed Sakala limit of three days where online data is available and seven days where it is not, and records SMS rejection notification in the observed process.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_delayed_workflow"
+      ],
+      "nodeIds": [
+        "node_certificate_output"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_workflow_bbmp_reforms"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Report observation from 2023, not a current service guarantee. The report also noted no status log in the observed system."
+    },
+    {
+      "id": "claim_ind32_birth_workflow_end_to_end_unknown",
+      "text": "No reviewed public page establishes a complete current sequence from BBMP public entry through jurisdiction selection, record lookup, request submission, payment (if any), Registrar review, certificate output, authenticity result, or status tracking.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_name_workflow",
+        "scenario_ind32_birth_correction_workflow",
+        "scenario_ind32_birth_delayed_workflow",
+        "scenario_ind32_birth_verify_workflow"
+      ],
+      "nodeIds": [
+        "node_birth_public_entry",
+        "node_event_jurisdiction",
+        "node_record_lookup",
+        "node_name_inclusion",
+        "node_correction",
+        "node_delayed_registration",
+        "node_certificate_output",
+        "node_authenticity"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No login, identifier lookup, upload, payment, submission, or case-status request was performed."
+    },
+    {
+      "id": "claim_ind32_birth_name_addition_delay",
+      "text": "One citizen reported that a child-name addition to a Bengaluru birth certificate remained unfinished after repeated visits over roughly two months, with explanations including an unavailable staff member and a reported server problem.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_name_addition"
+      ],
+      "nodeIds": [
+        "node_birth_name_addition"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_name_addition_delay"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [
+        "claim_ind32_birth_name_correction_direct_success"
+      ],
+      "notes": "One locality-specific experience. It does not establish that a system outage occurred or that name addition normally requires repeated office visits."
+    },
+    {
+      "id": "claim_ind32_birth_registered_office_assertion",
+      "text": "The same citizen reported being told that the office where the birth certificate was registered was the only office that could update the child's name.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_name_addition"
+      ],
+      "nodeIds": [
+        "node_birth_name_addition"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_name_addition_delay"
+      ],
+      "evidenceGrade": "F",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [],
+      "notes": "This preserves a reported office assertion as a case-specific routing lead. It is not corroborated and must not be presented as jurisdiction or venue policy."
+    },
+    {
+      "id": "claim_ind32_birth_ledger_copy_mismatch",
+      "text": "One citizen reported that a newly issued copy reproduced a spelling from the underlying record that differed from an older copy of the same birth certificate.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_record_correction"
+      ],
+      "nodeIds": [
+        "node_birth_certificate_copy",
+        "node_birth_record_correction"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_record_correction_error"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single claimed record/certificate discrepancy. The explanation attributed to the office was not independently verified."
+    },
+    {
+      "id": "claim_ind32_birth_correction_introduced_error",
+      "text": "The same citizen reported that, after requesting corrections to more than one spelling field, a reissued certificate fixed one requested field but contained an error in another field.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_record_correction"
+      ],
+      "nodeIds": [
+        "node_birth_record_correction"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_record_correction_error"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One reported correction-quality failure; it does not establish a general defect rate or a review requirement."
+    },
+    {
+      "id": "claim_ind32_birth_name_correction_direct_success",
+      "text": "One citizen reported completing a child's name correction by submitting a form in person at a Bengaluru BBMP office and collecting the updated certificate a few days later.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_name_addition",
+        "scenario_birth_record_correction"
+      ],
+      "nodeIds": [
+        "node_birth_name_addition",
+        "node_birth_record_correction",
+        "node_birth_certificate_copy"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_name_correction_direct_success"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [
+        "claim_ind32_birth_name_addition_delay"
+      ],
+      "notes": "A single reported success that conflicts with the delayed case only as to practical experience, not as to an official rule. It does not prove that in-person filing is universally available or that the stated timing applies elsewhere."
+    },
+    {
+      "id": "claim_ind32_birth_qr_version_rejection",
+      "text": "One citizen reported that a different enrollment service rejected an older-format birth certificate and directed the family to obtain a QR-code version from a website.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_birth_certificate_copy"
+      ],
+      "nodeIds": [
+        "node_birth_certificate_copy"
+      ],
+      "sourceIds": [
+        "source_ind32_birth_qr_copy_dependency"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A reported downstream acceptance issue, not a legal or administrative requirement for certificate issuance or a statement about all relying services."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_sale_deed",
+      "label": "Sale deed",
+      "kind": "document",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Registered property-transfer document referenced by municipal and historic transfer material.",
+      "requiredState": "Available only where the applicable municipal or exception route asks for it.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_previous_consumer_deceased"
+      ],
+      "claimIds": [
+        "claim_ekhata_final_guidance",
+        "claim_historic_alternative_evidence"
+      ],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_mutation",
+      "label": "Mutation",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Publicly visible municipal mutation report state; not proof of completed buyer-facing ownership.",
+      "requiredState": "A municipal report may be inspected without assuming its downstream acceptance.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_previous_consumer_deceased"
+      ],
+      "claimIds": [
+        "claim_mutation_fields"
+      ],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_final_e_khata",
+      "label": "Final e-Khata",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Municipal final-record state with public input guidance and reported citizen failure modes.",
+      "requiredState": "Finality and holder state need case-specific verification; Draft is not treated as final proof.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_final_guidance",
+        "claim_ekhata_status",
+        "claim_citizen_missing_draft_epid",
+        "claim_citizen_owner_correction",
+        "claim_citizen_old_owner_recovery"
+      ],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_epid",
+      "label": "EPID",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Property identifier exposed in public search and status routes.",
+      "requiredState": "An EPID may be located or its absence recovered through official municipal channels; BESCOM mapping is separate and unknown.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_search_recovery",
+        "claim_ekhata_status",
+        "claim_epid_mapping_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_transfer_evidence",
+      "label": "Exception transfer evidence",
+      "kind": "document",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Historic consent, ownership, succession, or scope-limited occupancy evidence branch.",
+      "requiredState": "Current acceptance must be confirmed; historical text is not presented as a current checklist.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_consent_rule",
+        "claim_historic_alternative_evidence",
+        "claim_historic_tenant_scope"
+      ],
+      "status": "partial",
+      "displayOrder": 45
+    },
+    {
+      "id": "node_bescom_mapping",
+      "label": "BESCOM mapping",
+      "kind": "system",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Unpublished relationship between a property EPID and a BESCOM account.",
+      "requiredState": "No evidence-backed state, validation rule, repair owner, or recovery sequence is known.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_epid_route_visible",
+        "claim_epid_mapping_unknown",
+        "claim_citizen_mapping_failure",
+        "claim_citizen_bescom_stalls"
+      ],
+      "status": "unknown",
+      "displayOrder": 50
+    },
+    {
+      "id": "node_transfer_obligations",
+      "label": "Transfer obligations",
+      "kind": "decision",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Historic transfer conditions such as arrears, indemnity, agreement, deposit, and charges.",
+      "requiredState": "Obtain current case-specific confirmation; historic values and applicability are partial.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_transfer_obligations"
+      ],
+      "status": "partial",
+      "displayOrder": 55
+    },
+    {
+      "id": "node_name_transfer",
+      "label": "BESCOM name transfer",
+      "kind": "service",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Current public FAQ exposes an authenticated standard route and the homepage exposes an EPID-labelled entry.",
+      "requiredState": "Use an authorized route; exact authenticated validation and EPID behaviour remain Unknown.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_epid_route_visible",
+        "claim_epid_mapping_unknown",
+        "claim_citizen_bescom_stalls",
+        "claim_citizen_old_noc",
+        "claim_citizen_no_builder_noc"
+      ],
+      "status": "partial",
+      "displayOrder": 60
+    },
+    {
+      "id": "node_request_tracking",
+      "label": "Request tracking",
+      "kind": "record",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Public name-change tracking keyed by an SMS request ID.",
+      "requiredState": "Retain a request ID after successful submission; outcome timing is not established.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_request_tracker"
+      ],
+      "status": "verified",
+      "displayOrder": 70
+    },
+    {
+      "id": "node_event_jurisdiction",
+      "label": "Event place and Registrar jurisdiction",
+      "kind": "service",
+      "ownerAgencyId": "agency_bbmp_birth_workflow_ind32",
+      "summary": "Determine the authority for the place where the birth occurred before using a form or record route.",
+      "requiredState": "Event place, urban/rural status, and responsible Registrar are case-specific and unknown.",
+      "checks": [
+        {
+          "id": "check_ind32_birth_workflow_rural_boundary",
+          "label": "Rural page boundary",
+          "description": "The district page expressly describes rural Karnataka eJanMa guidance; no BBMP office lookup was performed.",
+          "url": "https://bengaluruurban.nic.in/en/service/birth-certificate/",
+          "claimIds": [
+            "claim_ind32_birth_workflow_rural_boundary"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind32_birth_workflow_reporting",
+          "label": "Statutory reporting allocation",
+          "description": "Section 8 allocates reporting by institutional/domiciliary place and circumstances.",
+          "url": "https://www.indiacode.nic.in/handle/123456789/1682?locale=en",
+          "claimIds": [
+            "claim_ind32_birth_workflow_place_reporting"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_birth_workflow_wrong_authority",
+          "label": "Wrong authority risk",
+          "description": "Using rural eJanMa/Nada Kacheri instructions for a BBMP municipal event may misroute the request.",
+          "claimIds": [
+            "claim_ind32_birth_workflow_rural_boundary"
+          ],
+          "status": "verified"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_name_workflow",
+        "scenario_ind32_birth_correction_workflow",
+        "scenario_ind32_birth_delayed_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_place_reporting",
+        "claim_ind32_birth_workflow_rural_boundary",
+        "claim_ind32_birth_workflow_end_to_end_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_public_entry",
+      "label": "Public BBMP birth/death entry",
+      "kind": "service",
+      "ownerAgencyId": "agency_bbmp_birth_ind32",
+      "summary": "Official public service-directory entry for an online birth-certificate request and authenticity link.",
+      "requiredState": "Live target, fields, and session state are unknown because no form was opened or submitted.",
+      "checks": [
+        {
+          "id": "check_ind32_birth_bbmp_index",
+          "label": "Birth service index labels",
+          "description": "BBMP Citizen Services lists Online Birth Certificate Request Form and Authenticity Of Certificates.",
+          "url": "https://site.bbmp.gov.in/citizenservice.html",
+          "claimIds": [
+            "claim_ind32_birth_bbmp_index_services"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "check_ind32_birth_gba_service",
+          "label": "Current GBA directory label",
+          "description": "GBA lists Birth & Death Certificate as an e-Service.",
+          "url": "https://bbmp.gov.in/",
+          "claimIds": [
+            "claim_ind32_birth_gba_service_listing"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_authenticity"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_bbmp_index_services",
+        "claim_ind32_birth_gba_service_listing",
+        "claim_ind32_birth_channels_legacy",
+        "claim_ind32_birth_current_case_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_record_search",
+      "label": "Register search and record lookup",
+      "kind": "record",
+      "ownerAgencyId": "agency_karnataka_crs_ind32",
+      "summary": "Search the relevant birth register or use the public record/certificate route.",
+      "requiredState": "Registration number, date, and other identifying details would be needed; none were entered.",
+      "checks": [
+        {
+          "id": "check_ind32_birth_act_search",
+          "label": "Statutory search right",
+          "description": "Section 17 provides for register search and electronic or other certificate subject to state rules.",
+          "url": "https://www.indiacode.nic.in/handle/123456789/1682?locale=en",
+          "claimIds": [
+            "claim_ind32_birth_act_search_electronic"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_birth_record_missing_unknown",
+          "label": "Record availability unknown",
+          "description": "No registration number or birth details were used, so found/not-found behavior was not observed.",
+          "claimIds": [
+            "claim_ind32_birth_current_case_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_delayed_or_missing"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_act_certificate",
+        "claim_ind32_birth_act_search_electronic",
+        "claim_ind32_birth_current_case_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_certificate_issue",
+      "label": "Certificate or certified copy",
+      "kind": "record",
+      "ownerAgencyId": "agency_bbmp_birth_ind32",
+      "summary": "Issue or obtain a certificate after the birth entry is found or registered.",
+      "requiredState": "Certificate outcome, fee, format, and delivery channel are unknown for any particular case.",
+      "checks": [
+        {
+          "id": "check_ind32_birth_certificate_right",
+          "label": "Certificate provision",
+          "description": "The Act provides for certificate access from the register.",
+          "url": "https://www.indiacode.nic.in/handle/123456789/1682?locale=en",
+          "claimIds": [
+            "claim_ind32_birth_act_certificate",
+            "claim_ind32_birth_act_search_electronic"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind32_birth_bbmp_timing",
+          "label": "Reported BBMP processing timing",
+          "description": "A BBMP reform report records a three/seven-day Sakala observation but not a current guarantee.",
+          "url": "https://bbmp.gov.in/ucc_file/KarnatakaAdministrativeReforms.pdf",
+          "claimIds": [
+            "claim_ind32_birth_bbmp_designated_officers"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_birth_certificate_outcome_unknown",
+          "label": "Issuance outcome unknown",
+          "description": "No request, payment, or case status was submitted or observed.",
+          "claimIds": [
+            "claim_ind32_birth_current_case_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_name_inclusion",
+        "scenario_birth_record_correction",
+        "scenario_birth_delayed_or_missing"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_act_certificate",
+        "claim_ind32_birth_bbmp_designated_officers",
+        "claim_ind32_birth_current_case_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_name_inclusion",
+      "label": "Child name inclusion",
+      "kind": "record",
+      "ownerAgencyId": "agency_bbmp_birth_workflow_ind32",
+      "summary": "Provide a child's name to the Registrar when the birth was registered without a name.",
+      "requiredState": "Prescribed period, current form, fee, documents, and online/in-person route are unknown.",
+      "checks": [
+        {
+          "id": "check_ind32_birth_workflow_name",
+          "label": "Name inclusion statute",
+          "description": "Section 14 provides parent/guardian name information and Registrar entry.",
+          "url": "https://www.indiacode.nic.in/handle/123456789/1682?locale=en",
+          "claimIds": [
+            "claim_ind32_birth_workflow_name"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_birth_workflow_name_route",
+          "label": "Name route unknown",
+          "description": "No live BBMP name-inclusion form, upload list, or acknowledgement behavior was observed.",
+          "claimIds": [
+            "claim_ind32_birth_workflow_end_to_end_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_birth_name_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_name",
+        "claim_ind32_birth_workflow_end_to_end_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_record_correction",
+      "label": "Correction or cancellation",
+      "kind": "record",
+      "ownerAgencyId": "agency_bbmp_birth_ind32",
+      "summary": "Seek Registrar correction/cancellation of an erroneous or improperly made birth entry.",
+      "requiredState": "Proof, declaration, form, fee, and decision are case-specific and not established here.",
+      "checks": [
+        {
+          "id": "check_ind32_birth_correction_act",
+          "label": "Correction legal basis",
+          "description": "Section 15 specifies marginal correction/cancellation without altering the original entry.",
+          "url": "https://www.indiacode.nic.in/handle/123456789/1682?locale=en",
+          "claimIds": [
+            "claim_ind32_birth_act_correction"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_birth_correction_acceptance_unknown",
+          "label": "Evidence and acceptance unknown",
+          "description": "No correction request or supporting documents were examined.",
+          "claimIds": [
+            "claim_ind32_birth_current_case_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_birth_record_correction"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_act_correction",
+        "claim_ind32_birth_current_case_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 60
+    },
+    {
+      "id": "node_delayed_registration",
+      "label": "Delayed or missing registration",
+      "kind": "service",
+      "ownerAgencyId": "agency_bbmp_birth_workflow_ind32",
+      "summary": "Apply the correct statutory late-registration tier or establish a non-availability/search route.",
+      "requiredState": "Event age, authority, order/permission, fee, evidence, and current form are unknown.",
+      "checks": [
+        {
+          "id": "check_ind32_birth_workflow_delayed",
+          "label": "Delayed-registration bands",
+          "description": "Section 13 distinguishes late reporting up to thirty days, up to one year, and after one year.",
+          "url": "https://www.indiacode.nic.in/handle/123456789/1682?locale=en",
+          "claimIds": [
+            "claim_ind32_birth_workflow_delayed"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_birth_workflow_nonavailability",
+          "label": "Non-availability route unknown",
+          "description": "No record search or non-availability request was made.",
+          "claimIds": [
+            "claim_ind32_birth_workflow_end_to_end_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_birth_delayed_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_delayed",
+        "claim_ind32_birth_workflow_end_to_end_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 60
+    },
+    {
+      "id": "node_authenticity",
+      "label": "Authenticity verification",
+      "kind": "record",
+      "ownerAgencyId": "agency_bbmp_birth_workflow_ind32",
+      "summary": "Use the official authenticity entry listed by BBMP after confirming the live target and required identifier.",
+      "requiredState": "Required identifier, verification result, and error handling are unknown; no identifier was entered.",
+      "checks": [
+        {
+          "id": "check_ind32_birth_workflow_auth",
+          "label": "Public authenticity entry",
+          "description": "BBMP's public index lists Authenticity Of Certificates.",
+          "url": "https://site.bbmp.gov.in/citizenservice.html",
+          "claimIds": [
+            "claim_ind32_birth_workflow_public_entry"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_birth_workflow_auth_result",
+          "label": "Authenticity result unknown",
+          "description": "No certificate number or authenticity request was submitted.",
+          "claimIds": [
+            "claim_ind32_birth_workflow_end_to_end_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_birth_verify_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_public_entry",
+        "claim_ind32_birth_workflow_end_to_end_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 80
+    },
+    {
+      "id": "node_birth_public_entry",
+      "label": "Public Birth & Death entry",
+      "kind": "service",
+      "ownerAgencyId": "agency_bbmp_birth_workflow_ind32",
+      "summary": "Start from the official BBMP/GBA public Birth & Death Certificate directory entry.",
+      "requiredState": "A live request or authenticity target and any login requirement are unknown; no link target was opened.",
+      "checks": [
+        {
+          "id": "check_ind32_birth_public_entry",
+          "label": "Public directory labels",
+          "description": "BBMP lists Online Birth Certificate Request Form and Authenticity Of Certificates; GBA lists Birth & Death Certificate as an e-Service.",
+          "url": "https://site.bbmp.gov.in/citizenservice.html",
+          "claimIds": [
+            "claim_ind32_birth_workflow_public_entry"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_birth_entry_target_unknown",
+          "label": "Live target unknown",
+          "description": "The public index does not expose the target fields or transition in the reviewed observation.",
+          "claimIds": [
+            "claim_ind32_birth_workflow_end_to_end_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_name_workflow",
+        "scenario_ind32_birth_correction_workflow",
+        "scenario_ind32_birth_delayed_workflow",
+        "scenario_ind32_birth_verify_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_public_entry",
+        "claim_ind32_birth_workflow_end_to_end_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_record_lookup",
+      "label": "Record search / existing entry",
+      "kind": "record",
+      "ownerAgencyId": "agency_karnataka_crs_workflow_ind32",
+      "summary": "Search the relevant birth register or use the authorised certificate route after identifying the Registrar.",
+      "requiredState": "Registration number/date/record data would be needed; no identifier was entered.",
+      "checks": [
+        {
+          "id": "check_ind32_birth_workflow_search",
+          "label": "Statutory register search",
+          "description": "Section 17 provides for register search and certificate access, subject to state rules.",
+          "url": "https://www.indiacode.nic.in/handle/123456789/1682?locale=en",
+          "claimIds": [
+            "claim_ind32_birth_workflow_certificate"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_birth_workflow_record_not_found",
+          "label": "Record availability unknown",
+          "description": "No search was performed, so no-record, duplicate, or lookup-error behavior is unknown.",
+          "claimIds": [
+            "claim_ind32_birth_workflow_end_to_end_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_delayed_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_certificate",
+        "claim_ind32_birth_workflow_end_to_end_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_correction",
+      "label": "Registrar correction or cancellation",
+      "kind": "record",
+      "ownerAgencyId": "agency_bbmp_birth_workflow_ind32",
+      "summary": "Request correction/cancellation of an erroneous or improperly made entry through the Registrar.",
+      "requiredState": "Evidence, declaration, form, fee, and decision outcome are unknown.",
+      "checks": [
+        {
+          "id": "check_ind32_birth_workflow_correction",
+          "label": "Correction statute",
+          "description": "Section 15 sets the marginal-entry correction/cancellation mechanism.",
+          "url": "https://www.indiacode.nic.in/handle/123456789/1682?locale=en",
+          "claimIds": [
+            "claim_ind32_birth_workflow_correction"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_birth_workflow_correction_route",
+          "label": "Correction route unknown",
+          "description": "No current BBMP correction form or document checklist was observed.",
+          "claimIds": [
+            "claim_ind32_birth_workflow_end_to_end_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_birth_correction_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_correction",
+        "claim_ind32_birth_workflow_end_to_end_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 50
+    },
+    {
+      "id": "node_certificate_output",
+      "label": "Certificate output and status",
+      "kind": "record",
+      "ownerAgencyId": "agency_bbmp_birth_workflow_ind32",
+      "summary": "Receive or download the certificate after registration/record action, if the current route supports it.",
+      "requiredState": "Certificate format, fee, delivery, acknowledgement, status, and issuance outcome are unknown.",
+      "checks": [
+        {
+          "id": "check_ind32_birth_workflow_output",
+          "label": "Certificate legal output",
+          "description": "Sections 12 and 17 provide for certificate access from the register.",
+          "url": "https://www.indiacode.nic.in/handle/123456789/1682?locale=en",
+          "claimIds": [
+            "claim_ind32_birth_workflow_certificate"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind32_birth_workflow_timing",
+          "label": "Timing caveat",
+          "description": "A BBMP report records three/seven-day Sakala timing as a reviewed-process observation, not a current guarantee.",
+          "url": "https://bbmp.gov.in/ucc_file/KarnatakaAdministrativeReforms.pdf",
+          "claimIds": [
+            "claim_ind32_birth_workflow_timing_caveat"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind32_birth_workflow_output",
+          "label": "Output/status unknown",
+          "description": "No request, payment, certificate retrieval, or status query was performed.",
+          "claimIds": [
+            "claim_ind32_birth_workflow_end_to_end_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_name_workflow",
+        "scenario_ind32_birth_correction_workflow",
+        "scenario_ind32_birth_delayed_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_certificate",
+        "claim_ind32_birth_workflow_timing_caveat",
+        "claim_ind32_birth_workflow_end_to_end_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 70
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_sale_to_mutation",
+      "fromNodeId": "node_sale_deed",
+      "toNodeId": "node_mutation",
+      "relationship": "produces",
+      "label": "Municipal report displays deed/mutation fields; universal automatic completion is not established.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "claimIds": [
+        "claim_mutation_fields"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_mutation_to_final",
+      "fromNodeId": "node_mutation",
+      "toNodeId": "node_final_e_khata",
+      "relationship": "requires",
+      "label": "A buyer-facing final record is a prudent clean-sale hypothesis, not a published universal rule.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "claimIds": [
+        "claim_mutation_fields",
+        "claim_ekhata_final_guidance"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_final_to_epid",
+      "fromNodeId": "node_final_e_khata",
+      "toNodeId": "node_epid",
+      "relationship": "produces",
+      "label": "Public sources support EPID lookup/status but do not establish its exact production from finalisation.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_search_recovery",
+        "claim_ekhata_status"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_epid_to_mapping",
+      "fromNodeId": "node_epid",
+      "toNodeId": "node_bescom_mapping",
+      "relationship": "maps_to",
+      "label": "An EPID route is visible, but its cross-system mapping contract is Unknown.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_epid_route_visible",
+        "claim_epid_mapping_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_mapping_to_transfer",
+      "fromNodeId": "node_bescom_mapping",
+      "toNodeId": "node_name_transfer",
+      "relationship": "requires",
+      "label": "Mapping success is inferred only for the EPID route; a separate standard route is publicly documented.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_epid_mapping_unknown"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_evidence_to_obligations",
+      "fromNodeId": "node_transfer_evidence",
+      "toNodeId": "node_transfer_obligations",
+      "relationship": "requires",
+      "label": "Historical exception evidence does not remove historical obligations.",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_consent_rule",
+        "claim_historic_alternative_evidence",
+        "claim_historic_tenant_scope",
+        "claim_historic_transfer_obligations"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_obligations_to_transfer",
+      "fromNodeId": "node_transfer_obligations",
+      "toNodeId": "node_name_transfer",
+      "relationship": "requires",
+      "label": "Historic conditions cluster feeds transfer; current implementation remains partial.",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_transfer_obligations",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_transfer_to_tracking",
+      "fromNodeId": "node_name_transfer",
+      "toNodeId": "node_request_tracking",
+      "relationship": "produces",
+      "label": "The documented standard workflow returns a request ID after successful submission.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_request_tracker"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "edge_ind32_birth_jurisdiction_search",
+      "fromNodeId": "node_event_jurisdiction",
+      "toNodeId": "node_record_search",
+      "relationship": "requires",
+      "label": "Event location determines the relevant registration authority and register to search; the rural district page must not be substituted for BBMP municipal routing.",
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_delayed_or_missing"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_act_reporting_persons",
+        "claim_ind32_birth_rural_boundary"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_birth_search_certificate",
+      "fromNodeId": "node_record_search",
+      "toNodeId": "node_certificate_issue",
+      "relationship": "produces",
+      "label": "A found/registered entry supports certificate access under sections 12 and 17; current delivery route was not tested.",
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_delayed_or_missing"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_act_certificate",
+        "claim_ind32_birth_act_search_electronic"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_birth_name_certificate",
+      "fromNodeId": "node_name_inclusion",
+      "toNodeId": "node_certificate_issue",
+      "relationship": "requires",
+      "label": "Statutory name entry can precede a certificate reflecting the entered name; no current BBMP transition was observed.",
+      "scenarioIds": [
+        "scenario_birth_name_inclusion"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_act_name_inclusion"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_birth_correction_certificate",
+      "fromNodeId": "node_record_correction",
+      "toNodeId": "node_certificate_issue",
+      "relationship": "requires",
+      "label": "A Registrar correction/cancellation decision can change the register and subsequent certificate; acceptance and issuance were not observed.",
+      "scenarioIds": [
+        "scenario_birth_record_correction"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_act_correction"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_birth_delayed_search",
+      "fromNodeId": "node_delayed_registration",
+      "toNodeId": "node_record_search",
+      "relationship": "requires",
+      "label": "Late-registration authority and evidence may be needed before a searchable entry/certificate exists; case path is unknown.",
+      "scenarioIds": [
+        "scenario_birth_delayed_or_missing"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_act_delayed_registration"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_birth_public_authenticity",
+      "fromNodeId": "node_public_entry",
+      "toNodeId": "node_authenticity",
+      "relationship": "requires",
+      "label": "BBMP public index exposes an authenticity link, but the target and verification result were not tested.",
+      "scenarioIds": [
+        "scenario_birth_authenticity"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_bbmp_index_services"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_birth_public_jurisdiction",
+      "fromNodeId": "node_birth_public_entry",
+      "toNodeId": "node_event_jurisdiction",
+      "relationship": "requires",
+      "label": "The public directory points to the service family; the live transition and jurisdiction selector were not observed.",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_name_workflow",
+        "scenario_ind32_birth_correction_workflow",
+        "scenario_ind32_birth_delayed_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_public_entry",
+        "claim_ind32_birth_workflow_end_to_end_unknown"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_birth_jurisdiction_lookup",
+      "fromNodeId": "node_event_jurisdiction",
+      "toNodeId": "node_record_lookup",
+      "relationship": "requires",
+      "label": "The relevant place/Registrar must be identified before register search or certificate retrieval; current UI was not tested.",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_delayed_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_place_reporting",
+        "claim_ind32_birth_workflow_rural_boundary"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_birth_lookup_output",
+      "fromNodeId": "node_record_lookup",
+      "toNodeId": "node_certificate_output",
+      "relationship": "produces",
+      "label": "A found/registered entry supports certificate access under sections 12 and 17; current output route remains unknown.",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_delayed_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_certificate"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_birth_name_output",
+      "fromNodeId": "node_name_inclusion",
+      "toNodeId": "node_certificate_output",
+      "relationship": "requires",
+      "label": "A Registrar name-entry decision can precede a certificate reflecting the name; no live transition was observed.",
+      "scenarioIds": [
+        "scenario_ind32_birth_name_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_name"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_birth_correction_output",
+      "fromNodeId": "node_correction",
+      "toNodeId": "node_certificate_output",
+      "relationship": "requires",
+      "label": "A Registrar correction/cancellation decision can affect later certificate output; current acceptance is unknown.",
+      "scenarioIds": [
+        "scenario_ind32_birth_correction_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_correction"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_birth_delayed_lookup",
+      "fromNodeId": "node_delayed_registration",
+      "toNodeId": "node_record_lookup",
+      "relationship": "requires",
+      "label": "A late-registration authority/order or valid record route may be required before certificate output; exact current path is unknown.",
+      "scenarioIds": [
+        "scenario_ind32_birth_delayed_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_delayed"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_birth_public_auth",
+      "fromNodeId": "node_birth_public_entry",
+      "toNodeId": "node_authenticity",
+      "relationship": "requires",
+      "label": "The BBMP public index exposes an authenticity entry; target fields and result were not tested.",
+      "scenarioIds": [
+        "scenario_ind32_birth_verify_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_public_entry"
+      ],
+      "status": "partial"
+    }
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_draft_not_final",
+      "title": "Draft e-Khata is not a verified final buyer record",
+      "category": "documentation",
+      "symptom": "The property has Draft e-Khata but finality or holder state is unresolved.",
+      "likelyCause": "Public guidance distinguishes Draft and Final, but no public evidence connects Draft to BESCOM acceptance.",
+      "recovery": "Use official Final e-Khata guidance and status/search channels; do not treat Draft as transfer approval.",
+      "ownerAgencyIds": [
+        "agency_gba"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_epid"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "claimIds": [
+        "claim_ekhata_final_guidance",
+        "claim_ekhata_status"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_property_missing",
+      "title": "Property cannot be found in public e-Khata search",
+      "category": "process",
+      "symptom": "Available public lookup paths do not find the property.",
+      "likelyCause": "The public interface exposes a missing-property state without a property-specific cause.",
+      "recovery": "Use the official Do Not Find My Property route for corporation review.",
+      "ownerAgencyIds": [
+        "agency_gba"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_epid"
+      ],
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_search_recovery"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "roadblock_owner_correction",
+      "title": "e-Khata holder is wrong or correction fails",
+      "category": "process",
+      "symptom": "Citizen accounts describe a prior holder in e-Khata or correction failure.",
+      "likelyCause": "Unknown; citizen reports do not establish a data, identity, or workflow cause.",
+      "recovery": "Use official municipal support; a reported reapplication is not a general procedure.",
+      "ownerAgencyIds": [
+        "agency_gba"
+      ],
+      "nodeIds": [
+        "node_final_e_khata"
+      ],
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_citizen_owner_correction",
+        "claim_citizen_old_owner_recovery"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_epid_mapping",
+      "title": "EPID does not resolve to the intended BESCOM account",
+      "category": "infrastructure",
+      "symptom": "An EPID route is visible but the intended account relationship cannot be established.",
+      "likelyCause": "Cross-system mapping rules, errors, repair owner, and SLA are Unknown; one citizen report identifies a possible failure.",
+      "recovery": "Do not repeatedly submit; use published support channels and obtain official case-specific guidance.",
+      "ownerAgencyIds": [
+        "agency_gba",
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_epid_mapping_unknown",
+        "claim_citizen_mapping_failure",
+        "claim_helpline_channels"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_bescom_stalls",
+      "title": "BESCOM login or application flow stalls",
+      "category": "infrastructure",
+      "symptom": "Citizen accounts describe login/reset, unseen-open-application, EPID-entry, and upload-stall failures.",
+      "likelyCause": "Unknown; no public evidence establishes backend cause or remedy.",
+      "recovery": "Use authorized BESCOM support without placing account or identity data in the ledger.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_citizen_bescom_stalls",
+        "claim_helpline_channels"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_tenant_scope",
+      "title": "Tenant route outside stated historical scope",
+      "category": "documentation",
+      "symptom": "An occupier seeks transfer for an installation that may not fit the historic non-commercial scope.",
+      "likelyCause": "The historic occupancy alternative is limited and current authenticated eligibility is undisclosed.",
+      "recovery": "Confirm current eligibility and installation category through authorized BESCOM channels.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_tenant"
+      ],
+      "claimIds": [
+        "claim_historic_tenant_scope",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_successor_evidence",
+      "title": "Successor evidence cannot be confirmed in the current form",
+      "category": "documentation",
+      "symptom": "Prior consumer is deceased and consent is unavailable.",
+      "likelyCause": "Historic text lists successor evidence but the current public FAQ omits its authenticated document list.",
+      "recovery": "Use historical evidence only as a lead; confirm current acceptance in authorized channels.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_previous_consumer_deceased"
+      ],
+      "claimIds": [
+        "claim_historic_alternative_evidence",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_consent_deposit",
+      "title": "Consent unavailable and deposit treatment unresolved",
+      "category": "documentation",
+      "symptom": "Applicant cannot furnish consent to transfer the installation and deposit.",
+      "likelyCause": "Historic text describes alternatives and a fresh-deposit consequence, but current demand treatment is unverified.",
+      "recovery": "Obtain case-specific current demand; do not use historic amounts as current amounts.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations"
+      ],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_consent_rule",
+        "claim_historic_transfer_obligations"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_arrears_recovery",
+      "title": "Arrears may block transfer but public clearing path is not documented",
+      "category": "process",
+      "symptom": "An outstanding balance may prevent transfer.",
+      "likelyCause": "Historic text states no arrears; no current public remediation sequence was found.",
+      "recovery": "Resolve billing through an authorized BESCOM path before retrying; exact sequence remains unknown.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_obligations",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_transfer_obligations",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_document_checklist",
+      "title": "Current authenticated document checklist is not public",
+      "category": "process",
+      "symptom": "Public FAQ directs uploads but does not enumerate them before login.",
+      "likelyCause": "Authenticated/back-end requirements were not inspected and are Unknown.",
+      "recovery": "Use the authorized route and retain the request ID if submission succeeds; do not infer or bypass requirements.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_epid_mapping_unknown",
+        "claim_request_tracker"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_noc_conflict",
+      "title": "NOC requirement differs across citizen accounts",
+      "category": "documentation",
+      "symptom": "An older account reports needing an NOC while a 2026 account reports completion without builder NOC.",
+      "likelyCause": "The route may have changed or conditions differed; desk evidence cannot resolve it.",
+      "recovery": "Do not assume NOC is or is not required; verify current case-specific requirements through authorized sources.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_citizen_old_noc",
+        "claim_citizen_no_builder_noc"
+      ],
+      "status": "contested"
+    },
+    {
+      "id": "roadblock_ind32_birth_wrong_jurisdiction",
+      "title": "Rural eJanMa guidance may be mistaken for BBMP procedure",
+      "category": "documentation",
+      "symptom": "A Bengaluru Urban page describes rural Nada Kacheri/eJanMa handling while the requester needs a BBMP municipal route.",
+      "likelyCause": "The district page is rural-focused and the event's place-of-occurrence authority was not established.",
+      "recovery": "Confirm place of birth and responsible Registrar before using a form, office, fee, or document checklist. Do not infer BBMP procedure from the rural page.",
+      "ownerAgencyIds": [
+        "agency_bbmp_birth_ind32",
+        "agency_karnataka_crs_ind32"
+      ],
+      "nodeIds": [
+        "node_event_jurisdiction"
+      ],
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_name_inclusion",
+        "scenario_birth_record_correction",
+        "scenario_birth_delayed_or_missing"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_rural_boundary"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "roadblock_ind32_birth_record_or_route_unknown",
+      "title": "Public index does not expose the live case route",
+      "category": "documentation",
+      "symptom": "BBMP lists an online request and authenticity service, but the live target, fields, login requirement, fee, and status behavior were not visible in this pass.",
+      "likelyCause": "The citizen-services page is an index and no identifier or form session was used.",
+      "recovery": "Use the official BBMP/GBA entry and confirm the live target and responsible Registrar before entering personal data; preserve any later acknowledgement.",
+      "ownerAgencyIds": [
+        "agency_bbmp_birth_ind32"
+      ],
+      "nodeIds": [
+        "node_public_entry",
+        "node_record_search",
+        "node_authenticity"
+      ],
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_authenticity"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_bbmp_index_services",
+        "claim_ind32_birth_current_case_unknown"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_birth_legacy_timing",
+      "title": "Historical timing may be mistaken for a guarantee",
+      "category": "documentation",
+      "symptom": "A BBMP reform report records three/seven-day Sakala timing, while public pages do not provide a current case timer.",
+      "likelyCause": "The report is a 2023 audit/recommendation document and not a current citizen charter.",
+      "recovery": "Treat timing as a reported process observation only; seek the current acknowledgement/service standard for the specific request.",
+      "ownerAgencyIds": [
+        "agency_bbmp_health_ind32"
+      ],
+      "nodeIds": [
+        "node_certificate_issue"
+      ],
+      "scenarioIds": [
+        "scenario_birth_registered_copy",
+        "scenario_birth_delayed_or_missing"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_bbmp_designated_officers"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_birth_workflow_live_target",
+      "title": "Directory entry does not expose live workflow",
+      "category": "documentation",
+      "symptom": "The official index names request and authenticity entries but does not show their current target, fields, login, fee, status, or output behavior.",
+      "likelyCause": "The public page is a directory and no form session or identifier was used.",
+      "recovery": "Open only the official BBMP/GBA entry, confirm the live target and Registrar route, and preserve any acknowledgement if a user later submits a request.",
+      "ownerAgencyIds": [
+        "agency_bbmp_birth_workflow_ind32"
+      ],
+      "nodeIds": [
+        "node_birth_public_entry",
+        "node_authenticity"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_verify_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_public_entry",
+        "claim_ind32_birth_workflow_end_to_end_unknown"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_birth_workflow_wrong_jurisdiction",
+      "title": "Rural eJanMa directions may misroute a BBMP case",
+      "category": "documentation",
+      "symptom": "The district page is a current official page but explicitly describes rural Karnataka and Nada Kacheri personnel.",
+      "likelyCause": "Rural guidance and BBMP municipal service-directory labels are easy to conflate.",
+      "recovery": "Confirm the place of occurrence and responsible Registrar before entering data or relying on eJanMa instructions.",
+      "ownerAgencyIds": [
+        "agency_bbmp_birth_workflow_ind32",
+        "agency_karnataka_crs_workflow_ind32"
+      ],
+      "nodeIds": [
+        "node_event_jurisdiction"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_name_workflow",
+        "scenario_ind32_birth_correction_workflow",
+        "scenario_ind32_birth_delayed_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_rural_boundary"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "roadblock_ind32_birth_workflow_status_unknown",
+      "title": "Status and output are not publicly established",
+      "category": "documentation",
+      "symptom": "No public source reviewed shows a current acknowledgement, status tracker, certificate download, rejection message, or authenticity result for a case.",
+      "likelyCause": "No identifier, login, or submission was used and the BBMP index is not a workflow manual.",
+      "recovery": "Keep status, fee, turnaround, and output format as Unknown until confirmed on the official live route for the case.",
+      "ownerAgencyIds": [
+        "agency_bbmp_birth_workflow_ind32",
+        "agency_bbmp_health_workflow_ind32"
+      ],
+      "nodeIds": [
+        "node_record_lookup",
+        "node_certificate_output",
+        "node_authenticity"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_name_workflow",
+        "scenario_ind32_birth_correction_workflow",
+        "scenario_ind32_birth_delayed_workflow",
+        "scenario_ind32_birth_verify_workflow"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_workflow_end_to_end_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind32_birth_name_addition_stalled",
+      "title": "Name addition reportedly stalls after office submission",
+      "category": "infrastructure",
+      "symptom": "A citizen reports repeated visits with no completed name addition and staff explanations that included a server problem or unavailable staff member.",
+      "likelyCause": "Unknown; the account cannot distinguish an interface outage, staffing issue, queue, missing information, or case-specific record problem.",
+      "recovery": "Use this only as a prompt to seek authorised case-specific status and the reason for any pending action. Do not rely on reported agents, fees, or informal escalation suggestions as an official route.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_birth_name_addition"
+      ],
+      "scenarioIds": [
+        "scenario_birth_name_addition"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_name_addition_delay",
+        "claim_ind32_birth_registered_office_assertion"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_birth_reissued_copy_differs",
+      "title": "Reissued or corrected copy reportedly differs from expectations",
+      "category": "documentation",
+      "symptom": "Citizen accounts report a newly issued copy reflecting an unexpected spelling and a subsequent correction that introduced another field error.",
+      "likelyCause": "Unknown. The reported case suggests that the record and prior certificate may differ, but does not establish why.",
+      "recovery": "Treat the account as a quality-check lead: compare every field in the issued copy with the intended correction and seek authorised, case-specific correction guidance when they differ.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_birth_certificate_copy",
+        "node_birth_record_correction"
+      ],
+      "scenarioIds": [
+        "scenario_birth_record_correction"
+      ],
+      "claimIds": [
+        "claim_ind32_birth_ledger_copy_mismatch",
+        "claim_ind32_birth_correction_introduced_error"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_audit_birth_certificate",
+      "title": "Independent audit limitations",
+      "category": "documentation",
+      "symptom": "**Scope.** One independent, read-only audit of `ledger/birth-certificate.json` against `ledger/schema.json` and `ledger/AGENT_PROTOCOL.md`, completed 2026-08-28. This is an audit report, not a ledger change. **Result.** The document passes the JSON Schema, and its 21 edges have claim references. Preserve the evidence-backed graph: 19 `partial`, one `unknown`, and one `verified` edge. In particular, the partial/unknown birth-workflow edges appropriately retain the stated limitation that the current BBMP transition, required fields, submission, payment, result, and tracking were not publicly observed. The statutory claims support the legal relationships, not a completed current municipal journey. ## Material findings 1. **Broken reference integrity in the legacy citizen-evidence branch.** Seventeen references resolve to neither a current scenario nor node. This leaves seven claims and two ",
+      "likelyCause": "Evidence and schema boundaries identified by the single independent audit.",
+      "recovery": "Read the cited evidence and retain Unknown or partial status where the public record stops.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_sale_deed"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "claimIds": [],
+      "status": "unknown"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_clean_sale",
+      "title": "Clean sale",
+      "scenarioId": "scenario_clean_sale",
+      "context": "Partial chain: municipal public routes and BESCOM public entry points are verified, but their end-to-end dependency is not.",
+      "steps": [
+        {
+          "id": "step_clean_municipal",
+          "label": "Inspect municipal state",
+          "nodeId": "node_final_e_khata",
+          "action": "Use public e-Aasthi guidance, search, and status routes.",
+          "expectedResult": "A visible municipal state or a published recovery route, not a BESCOM approval.",
+          "claimIds": [
+            "claim_ekhata_final_guidance",
+            "claim_ekhata_search_recovery",
+            "claim_ekhata_status"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_clean_transfer",
+          "label": "Use authorized BESCOM route",
+          "nodeId": "node_name_transfer",
+          "action": "Use the documented standard route or the visible EPID entry as applicable.",
+          "expectedResult": "Request flow is documented; EPID mapping and outcome are unknown.",
+          "claimIds": [
+            "claim_standard_authenticated_route",
+            "claim_epid_route_visible",
+            "claim_epid_mapping_unknown"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_clean_epid_mapping",
+          "fromNodeId": "node_epid",
+          "toNodeId": "node_bescom_mapping",
+          "description": "Cross-system mapping is not publicly specified.",
+          "claimIds": [
+            "claim_epid_mapping_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_draft_not_final",
+        "roadblock_property_missing",
+        "roadblock_epid_mapping",
+        "roadblock_bescom_stalls"
+      ],
+      "recoveryNotes": [
+        "Use municipal routes before assuming a BESCOM-only fault.",
+        "Standard transfer is not proof that the EPID route is identical."
+      ],
+      "documentationQualityNotes": [
+        "Current public interfaces are Grade B.",
+        "Authenticated and backend behaviour remains Unknown."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_draft_ekhata",
+      "title": "Draft or pending e-Khata",
+      "scenarioId": "scenario_draft_e_khata",
+      "context": "Draft availability and public status routes are observable; a final buyer state and BESCOM acceptance are not verified.",
+      "steps": [
+        {
+          "id": "step_draft_finalise",
+          "label": "Resolve municipal record",
+          "nodeId": "node_final_e_khata",
+          "action": "Follow official Final e-Khata guidance and use status/search routes.",
+          "expectedResult": "Record state or published municipal recovery route.",
+          "claimIds": [
+            "claim_ekhata_final_guidance",
+            "claim_ekhata_search_recovery",
+            "claim_ekhata_status"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_draft_track",
+          "label": "Retain request tracking identifier",
+          "nodeId": "node_request_tracking",
+          "action": "If submission succeeds through an authorized BESCOM route, retain the SMS request ID.",
+          "expectedResult": "Trackable request, not verified approval.",
+          "claimIds": [
+            "claim_request_tracker"
+          ],
+          "status": "verified"
+        }
+      ],
+      "dependencies": [],
+      "failureRoadblockIds": [
+        "roadblock_draft_not_final",
+        "roadblock_property_missing",
+        "roadblock_owner_correction",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Do not treat Draft as final proof.",
+        "No personal records belong in this ledger."
+      ],
+      "documentationQualityNotes": [
+        "Municipal inputs are public; utility-side acceptance remains unverified."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_epid_failure",
+      "title": "EPID mapping failure",
+      "scenarioId": "scenario_epid_mapping_failure",
+      "context": "Public municipal lookup and BESCOM EPID entry coexist, but mapping behaviour is Unknown.",
+      "steps": [
+        {
+          "id": "step_epid_check",
+          "label": "Check EPID municipal state",
+          "nodeId": "node_epid",
+          "action": "Use public search/status or missing-property route.",
+          "expectedResult": "Publicly visible status or municipal recovery channel.",
+          "claimIds": [
+            "claim_ekhata_search_recovery",
+            "claim_ekhata_status"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "step_epid_escalate",
+          "label": "Escalate without repeated submissions",
+          "nodeId": "node_bescom_mapping",
+          "action": "Use published support channels for case-specific guidance.",
+          "expectedResult": "No promised repair owner or SLA.",
+          "claimIds": [
+            "claim_epid_mapping_unknown",
+            "claim_helpline_channels"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_epid_mapping",
+          "fromNodeId": "node_epid",
+          "toNodeId": "node_bescom_mapping",
+          "description": "The relationship is unverified.",
+          "claimIds": [
+            "claim_epid_mapping_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_epid_mapping",
+        "roadblock_bescom_stalls",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Preserve only non-sensitive error wording outside this ledger if needed for support."
+      ],
+      "documentationQualityNotes": [
+        "Public endpoints are verified; their contract is not."
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "journey_tenant",
+      "title": "Tenant or occupier",
+      "scenarioId": "scenario_tenant",
+      "context": "Historic occupancy evidence is scope-limited; current eligibility is not public.",
+      "steps": [
+        {
+          "id": "step_tenant_scope",
+          "label": "Assess historic scope",
+          "nodeId": "node_transfer_evidence",
+          "action": "Distinguish specified non-commercial occupancy from other cases.",
+          "expectedResult": "An explicit eligibility unknown where scope does not fit.",
+          "claimIds": [
+            "claim_historic_tenant_scope"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_tenant_obligations",
+          "label": "Confirm current conditions",
+          "nodeId": "node_transfer_obligations",
+          "action": "Confirm arrears, agreement, indemnity, deposit, and charges through authorized channels.",
+          "expectedResult": "Current treatment is confirmed case-specifically, not inferred from historic text.",
+          "claimIds": [
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_tenant_conditions",
+          "fromNodeId": "node_transfer_evidence",
+          "toNodeId": "node_transfer_obligations",
+          "description": "Historical evidence branch does not remove historical conditions.",
+          "claimIds": [
+            "claim_historic_tenant_scope",
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_tenant_scope",
+        "roadblock_arrears_recovery",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Do not present historic occupancy evidence as a universal entitlement."
+      ],
+      "documentationQualityNotes": [
+        "Historic text is Grade A but partial for current use."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_deceased",
+      "title": "Previous consumer deceased",
+      "scenarioId": "scenario_previous_consumer_deceased",
+      "context": "Historic successor evidence is an evidence lead; current form fields are not public.",
+      "steps": [
+        {
+          "id": "step_deceased_evidence",
+          "label": "Choose successor evidence",
+          "nodeId": "node_transfer_evidence",
+          "action": "Use the historic successor-evidence list only as a lead.",
+          "expectedResult": "Case-specific current acceptance remains necessary.",
+          "claimIds": [
+            "claim_historic_alternative_evidence"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_deceased_request",
+          "label": "Use documented request and tracking route",
+          "nodeId": "node_request_tracking",
+          "action": "If the authorized route permits submission, retain request ID.",
+          "expectedResult": "Tracked request, not automatic acceptance.",
+          "claimIds": [
+            "claim_standard_authenticated_route",
+            "claim_request_tracker"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_deceased_conditions",
+          "fromNodeId": "node_transfer_evidence",
+          "toNodeId": "node_transfer_obligations",
+          "description": "Alternative ownership evidence does not remove historical obligations.",
+          "claimIds": [
+            "claim_historic_alternative_evidence",
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_successor_evidence",
+        "roadblock_consent_deposit",
+        "roadblock_arrears_recovery",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Municipal record work may be separate; no verified rule links it to exception acceptance."
+      ],
+      "documentationQualityNotes": [
+        "No current public deceased-consumer checklist was found."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_consent",
+      "title": "Consent unavailable",
+      "scenarioId": "scenario_consent_unavailable",
+      "context": "Historic rule offers alternatives and conditions, while current authenticated requirements remain unknown.",
+      "steps": [
+        {
+          "id": "step_consent_alternative",
+          "label": "Classify evidence branch",
+          "nodeId": "node_transfer_evidence",
+          "action": "Separate ownership alternatives from scope-limited occupancy alternatives.",
+          "expectedResult": "No assumed workaround.",
+          "claimIds": [
+            "claim_historic_consent_rule",
+            "claim_historic_alternative_evidence",
+            "claim_historic_tenant_scope"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_consent_verify",
+          "label": "Verify current submission conditions",
+          "nodeId": "node_name_transfer",
+          "action": "Use authorized current route and do not infer NOC, deposit, or document requirements.",
+          "expectedResult": "Current case-specific answer or explicit unresolved state.",
+          "claimIds": [
+            "claim_standard_authenticated_route",
+            "claim_citizen_old_noc",
+            "claim_citizen_no_builder_noc"
+          ],
+          "status": "contested"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_consent_conditions",
+          "fromNodeId": "node_transfer_evidence",
+          "toNodeId": "node_transfer_obligations",
+          "description": "Absent consent may change historic evidence and deposit treatment.",
+          "claimIds": [
+            "claim_historic_consent_rule",
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_consent_deposit",
+        "roadblock_noc_conflict",
+        "roadblock_arrears_recovery",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Do not manufacture consent or rely on historic amounts as current."
+      ],
+      "documentationQualityNotes": [
+        "The NOC evidence conflict is preserved as contested citizen evidence."
+      ],
+      "status": "partial"
+    }
+  ]
+}

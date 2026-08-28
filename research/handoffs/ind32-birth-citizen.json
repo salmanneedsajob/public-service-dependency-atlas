@@ -1,0 +1,163 @@
+{
+  "_handoff": {
+    "issue": "IND-32",
+    "generatedAt": "2026-08-28",
+    "status": "in_review",
+    "scope": "Public first-person accounts about Bengaluru birth-certificate retrieval, name addition, and correction only. They identify possible failure modes, local terminology, and recovery leads; they are not official procedure, a fee schedule, or a service-level commitment. Usernames, names, family details, exact addresses, application identifiers, and contact information are intentionally omitted."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind32_birth_name_addition_delay",
+      "title": "BBMP Bommanahalli open corruption - very sad state",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1rqyxwl/bbmp_bommanahalli_open_corruption_very_sad_state/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-03-11",
+      "type": "citizen_evidence",
+      "notes": "First-person account of a delayed child-name addition. It reports the applicant's experience and what they were told at one office; it does not establish an office-jurisdiction rule, online eligibility, an official fee, or cause of delay."
+    },
+    {
+      "id": "source_ind32_birth_record_correction_error",
+      "title": "My Birth Certificate Has Had More Character Development Than Me",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1twx57y/my_birth_certificate_has_had_more_character/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-06-04",
+      "type": "citizen_evidence",
+      "notes": "First-person account of correcting spelling fields on a birth certificate. The account is retained for potential record-versus-certificate mismatch and correction quality issues only; reported identity-document requests, letters, fees, and office handling are not verified requirements."
+    },
+    {
+      "id": "source_ind32_birth_name_correction_direct_success",
+      "title": "Bengaluru govt office works without BRIBE !",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1v43td3/bengaluru_govt_office_works_without_bribe/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-07-23",
+      "type": "citizen_evidence",
+      "notes": "A first-person comment reports a successful in-person child-name correction at a BBMP office, involving a form submission and later collection. It does not establish a general channel, turnaround standard, or payment rule."
+    },
+    {
+      "id": "source_ind32_birth_qr_copy_dependency",
+      "title": "My Birth Certificate Has Had More Character Development Than Me",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1twx57y/my_birth_certificate_has_had_more_character/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-06-04",
+      "type": "citizen_evidence",
+      "notes": "A commenter reports that another service rejected an older-format birth certificate and directed the family to obtain a QR-code version from the website. This is an unverified downstream compatibility report, not proof of a BBMP issuance requirement."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind32_birth_name_addition_delay",
+      "text": "One citizen reported that a child-name addition to a Bengaluru birth certificate remained unfinished after repeated visits over roughly two months, with explanations including an unavailable staff member and a reported server problem.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_birth_name_addition"],
+      "nodeIds": ["node_birth_name_addition"],
+      "sourceIds": ["source_ind32_birth_name_addition_delay"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": ["claim_ind32_birth_name_correction_direct_success"],
+      "notes": "One locality-specific experience. It does not establish that a system outage occurred or that name addition normally requires repeated office visits."
+    },
+    {
+      "id": "claim_ind32_birth_registered_office_assertion",
+      "text": "The same citizen reported being told that the office where the birth certificate was registered was the only office that could update the child's name.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_birth_name_addition"],
+      "nodeIds": ["node_birth_name_addition"],
+      "sourceIds": ["source_ind32_birth_name_addition_delay"],
+      "evidenceGrade": "F",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [],
+      "notes": "This preserves a reported office assertion as a case-specific routing lead. It is not corroborated and must not be presented as jurisdiction or venue policy."
+    },
+    {
+      "id": "claim_ind32_birth_ledger_copy_mismatch",
+      "text": "One citizen reported that a newly issued copy reproduced a spelling from the underlying record that differed from an older copy of the same birth certificate.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_birth_record_correction"],
+      "nodeIds": ["node_birth_certificate_copy", "node_birth_record_correction"],
+      "sourceIds": ["source_ind32_birth_record_correction_error"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single claimed record/certificate discrepancy. The explanation attributed to the office was not independently verified."
+    },
+    {
+      "id": "claim_ind32_birth_correction_introduced_error",
+      "text": "The same citizen reported that, after requesting corrections to more than one spelling field, a reissued certificate fixed one requested field but contained an error in another field.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_birth_record_correction"],
+      "nodeIds": ["node_birth_record_correction"],
+      "sourceIds": ["source_ind32_birth_record_correction_error"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One reported correction-quality failure; it does not establish a general defect rate or a review requirement."
+    },
+    {
+      "id": "claim_ind32_birth_name_correction_direct_success",
+      "text": "One citizen reported completing a child's name correction by submitting a form in person at a Bengaluru BBMP office and collecting the updated certificate a few days later.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_birth_name_addition", "scenario_birth_record_correction"],
+      "nodeIds": ["node_birth_name_addition", "node_birth_record_correction", "node_birth_certificate_copy"],
+      "sourceIds": ["source_ind32_birth_name_correction_direct_success"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": ["claim_ind32_birth_name_addition_delay"],
+      "notes": "A single reported success that conflicts with the delayed case only as to practical experience, not as to an official rule. It does not prove that in-person filing is universally available or that the stated timing applies elsewhere."
+    },
+    {
+      "id": "claim_ind32_birth_qr_version_rejection",
+      "text": "One citizen reported that a different enrollment service rejected an older-format birth certificate and directed the family to obtain a QR-code version from a website.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_birth_certificate_copy"],
+      "nodeIds": ["node_birth_certificate_copy"],
+      "sourceIds": ["source_ind32_birth_qr_copy_dependency"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A reported downstream acceptance issue, not a legal or administrative requirement for certificate issuance or a statement about all relying services."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind32_birth_name_addition_stalled",
+      "title": "Name addition reportedly stalls after office submission",
+      "category": "infrastructure",
+      "symptom": "A citizen reports repeated visits with no completed name addition and staff explanations that included a server problem or unavailable staff member.",
+      "likelyCause": "Unknown; the account cannot distinguish an interface outage, staffing issue, queue, missing information, or case-specific record problem.",
+      "recovery": "Use this only as a prompt to seek authorised case-specific status and the reason for any pending action. Do not rely on reported agents, fees, or informal escalation suggestions as an official route.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_birth_name_addition"],
+      "scenarioIds": ["scenario_birth_name_addition"],
+      "claimIds": ["claim_ind32_birth_name_addition_delay", "claim_ind32_birth_registered_office_assertion"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_birth_reissued_copy_differs",
+      "title": "Reissued or corrected copy reportedly differs from expectations",
+      "category": "documentation",
+      "symptom": "Citizen accounts report a newly issued copy reflecting an unexpected spelling and a subsequent correction that introduced another field error.",
+      "likelyCause": "Unknown. The reported case suggests that the record and prior certificate may differ, but does not establish why.",
+      "recovery": "Treat the account as a quality-check lead: compare every field in the issued copy with the intended correction and seek authorised, case-specific correction guidance when they differ.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_birth_certificate_copy", "node_birth_record_correction"],
+      "scenarioIds": ["scenario_birth_record_correction"],
+      "claimIds": ["claim_ind32_birth_ledger_copy_mismatch", "claim_ind32_birth_correction_introduced_error"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

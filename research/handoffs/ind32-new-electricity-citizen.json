@@ -1,0 +1,114 @@
+{
+  "_handoff": {
+    "issue": "IND-32",
+    "generatedAt": "2026-08-28",
+    "status": "in_review",
+    "scope": "Public first-person accounts about seeking or receiving a new/permanent BESCOM electricity connection in Bengaluru only. These reports are case evidence, not official eligibility, document, route, price, deadline, or service-level evidence. Usernames, names, property identifiers, locations, account/RR numbers, contact details, and other personal data are omitted."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind32_new_electricity_citizen_pending_permanent",
+      "title": "Bescom permanent connection",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1rctnu4/bescom_permanent_connection/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-02-23",
+      "type": "citizen_evidence",
+      "notes": "The original poster reports having applied and paid for a permanent connection before a stated policy date, but still waiting. The post presents the poster's understanding of an occupancy-certificate issue; it is not an official rule or a verified account record."
+    },
+    {
+      "id": "source_ind32_new_electricity_citizen_premise_barrier",
+      "title": "Permanent electricity connection issue- need advice",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1reb8xd/permanent_electricity_connection_issue_need_advice/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-02-25",
+      "type": "citizen_evidence",
+      "notes": "The original poster reports being told their constructed house would not be approved for a permanent connection because of its site size. The stated threshold and reason are unverified and must not be used as eligibility guidance."
+    },
+    {
+      "id": "source_ind32_new_electricity_citizen_new_account_sync",
+      "title": "Gruha Jyoti: Step by Step application",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/14dkp4a",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2023-06-19",
+      "type": "citizen_evidence",
+      "notes": "A commenter reports a message that an account was a new connection and later says the issue resolved after the second billing cycle. This is a historic downstream-system experience, not evidence of new-connection completion timing or benefit eligibility."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind32_new_electricity_citizen_pending_permanent",
+      "text": "One citizen reported remaining without a permanent electricity connection after applying and paying, while attributing the delay to a perceived occupancy-certificate-policy issue.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_normal", "scenario_ind32_electricity_document"],
+      "nodeIds": ["node_electricity_eligibility", "node_electricity_demand", "node_electricity_tracking"],
+      "sourceIds": ["source_ind32_new_electricity_citizen_pending_permanent"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One self-report. It does not establish application completeness, payment type, inspection status, policy applicability, or a BESCOM delay."
+    },
+    {
+      "id": "claim_ind32_new_electricity_citizen_premise_barrier",
+      "text": "One citizen reported being told that their newly constructed home would not receive a permanent connection because of a stated premises-size condition.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_normal", "scenario_ind32_electricity_document"],
+      "nodeIds": ["node_electricity_eligibility", "node_electricity_tracking"],
+      "sourceIds": ["source_ind32_new_electricity_citizen_premise_barrier"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This preserves the reported barrier, not the threshold or its legal/technical basis. A case-specific eligibility decision remains unknown."
+    },
+    {
+      "id": "claim_ind32_new_electricity_citizen_new_account_sync",
+      "text": "One citizen reported that a downstream service treated their BESCOM account as a new connection and that the reported recognition issue resolved only after a later billing cycle.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_jvs", "scenario_ind32_electricity_normal"],
+      "nodeIds": ["node_electricity_tracking"],
+      "sourceIds": ["source_ind32_new_electricity_citizen_new_account_sync"],
+      "evidenceGrade": "F",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A historic commenter account about a separate downstream service. It does not establish meter activation, billing-cycle timing, data synchronisation behaviour, or any scheme entitlement."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind32_new_electricity_citizen_permanent_pending",
+      "title": "Reported pending permanent-connection case",
+      "category": "process",
+      "symptom": "A citizen reports a paid application that did not result in a permanent connection.",
+      "likelyCause": "Unknown; the report cannot distinguish eligibility, documents, inspection, network work, payment posting, policy, or third-party factors.",
+      "recovery": "Use the authorised application reference and BESCOM channel to obtain the current case status and missing-condition reason; do not rely on the poster's policy interpretation.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_electricity_eligibility", "node_electricity_demand", "node_electricity_tracking"],
+      "scenarioIds": ["scenario_ind32_electricity_normal", "scenario_ind32_electricity_document"],
+      "claimIds": ["claim_ind32_new_electricity_citizen_pending_permanent"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_new_electricity_citizen_premise_condition",
+      "title": "Reported premise-based refusal explanation",
+      "category": "eligibility",
+      "symptom": "A citizen reports being told a permanent connection could not be approved due to a site-size condition.",
+      "likelyCause": "Unknown; no BESCOM decision, rule text, or technical assessment accompanies the account.",
+      "recovery": "Confirm the premises-specific reason, applicable category, and any rectification path through BESCOM; do not treat the reported threshold as a rule.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_electricity_eligibility", "node_electricity_tracking"],
+      "scenarioIds": ["scenario_ind32_electricity_normal", "scenario_ind32_electricity_document"],
+      "claimIds": ["claim_ind32_new_electricity_citizen_premise_barrier"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

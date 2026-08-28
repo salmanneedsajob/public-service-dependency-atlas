@@ -1,0 +1,694 @@
+{
+  "_handoff": {
+    "issue": "IND-32",
+    "generatedAt": "2026-08-28",
+    "status": "in_review",
+    "scope": "Public-workflow pass for a new BWSSB water-supply and underground-drainage connection in Bengaluru. Only unauthenticated public BWSSB pages and publicly accessible BWSSB-hosted manual content were inspected. No mobile number, OTP, application number, property identifier, document, payment data, grievance, or live submission was entered.",
+    "observationNote": "Direct current public-interface observations are Grade B. The current Jaladhare page exposes entry/status controls and high-level stages, while the official manual describes post-login screens. A visible route is not proof of eligibility, a populated case, a fee total, a completed inspection, or a completed connection. The FAQ's older email/password SAJALA instructions are retained as a currentness limitation."
+  },
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru BWSSB new water and underground-drainage connection public workflow",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-28",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice. It records public BWSSB interface and manual observations and preserves unobserved, login-gated, property-specific, and currentness-dependent steps as Unknown."
+  },
+  "agencies": [
+    {
+      "id": "agency_bwssb_ind32_water",
+      "name": "Bangalore Water Supply and Sewerage Board",
+      "shortName": "BWSSB",
+      "officialUrl": "https://bwssb.gov.in/"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind32_water_residential",
+      "label": "New residential water and UGD connection",
+      "summary": "A Bengaluru property owner seeks a new water-supply and underground-drainage connection through the public Jaladhare entry.",
+      "tags": ["new-connection", "residential", "water", "underground-drainage"],
+      "pathNodeIds": ["node_mobile_otp", "node_buy_application", "node_consumer_details", "node_site_details", "node_building_plumber", "node_documents_review", "node_inspection_review", "node_demand_payment", "node_rr_status"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_ind32_water_commercial_highrise",
+      "label": "Commercial or high-rise connection",
+      "summary": "A commercial or high-rise applicant uses the same public entry but may encounter different parameters, charges, review, and displayed target label.",
+      "tags": ["new-connection", "commercial", "high-rise"],
+      "pathNodeIds": ["node_mobile_otp", "node_buy_application", "node_consumer_details", "node_site_details", "node_building_plumber", "node_documents_review", "node_inspection_review", "node_demand_payment", "node_rr_status"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_ind32_water_existing_rr",
+      "label": "Premises with existing BWSSB RR number",
+      "summary": "A new-connection application is for a premise where the form asks whether an existing BWSSB connection/RR number is present.",
+      "tags": ["new-connection", "existing-connection", "rr-number", "arrears"],
+      "pathNodeIds": ["node_mobile_otp", "node_buy_application", "node_consumer_details", "node_site_details", "node_documents_review", "node_inspection_review", "node_demand_payment", "node_rr_status"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_ind32_water_conditional_docs",
+      "label": "Conditional OC, RWH, STP, or NOC requirements",
+      "summary": "A property whose application or demand note triggers conditional occupancy, rainwater-harvesting, sewage-treatment, KSPCB, or NOC requirements.",
+      "tags": ["rwh", "stp", "oc", "noc", "conditional-documents"],
+      "pathNodeIds": ["node_site_details", "node_building_plumber", "node_documents_review", "node_demand_payment", "node_rr_status"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_ind32_water_payment_or_grievance",
+      "label": "Demand-note payment or unresolved application",
+      "summary": "The applicant receives a demand note, needs to pay, or needs to use the public grievance/status path after an unresolved step.",
+      "tags": ["demand-note", "payment", "status", "grievance", "recovery"],
+      "pathNodeIds": ["node_demand_payment", "node_rr_status", "node_grievance"],
+      "status": "unknown"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind32_water_public_entry",
+      "title": "BWSSB Jaladhare consumer public entry",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Direct current public observation: mobile-number OTP entry, application-number status lookup, Show All Application link, high-level instructions, document/charge links, and status table."
+    },
+    {
+      "id": "source_ind32_water_legacy_entry",
+      "title": "BWSSB OWC/Jaladhare public login",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Direct current public observation: mobile number, Generate OTP, Login, manual links, More Information, Important Docs, and application-status entry. No OTP or status query was attempted."
+    },
+    {
+      "id": "source_ind32_water_consumer_manual",
+      "title": "BWSSB Consumer User Manual — Jaladhare 3.0",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "official_manual",
+      "notes": "Public official manual used for the five-step screen sequence, fields, upload limits, review charge tables, demand-note conditions, and Cashfree/PayU receipt flow. It is not a live application."
+    },
+    {
+      "id": "source_ind32_water_faq",
+      "title": "BWSSB Jaladhare Frequently Asked Questions",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/member/faq",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Public FAQ describes draft/status/routing/inspection/plumber/demand-note behavior, but its registered-email/password SAJALA route differs from the mobile-OTP public consumer entry."
+    },
+    {
+      "id": "source_ind32_water_grievance",
+      "title": "BWSSB public grievance form",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/member/grievance-form",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Direct current public observation of grievance fields, 1916, and page-level email. No grievance was submitted."
+    },
+    {
+      "id": "source_ind32_water_more_info",
+      "title": "BWSSB More Information — Documents Required",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/more-info",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Direct public observation of base document classes and conditional OC/RWH/STP photo items."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind32_water_public_entry_controls",
+      "text": "The current public Jaladhare page exposes a mobile-number OTP entry, an application-number status lookup, and a Show All Application link; it says to use the same mobile number to know application status.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr", "scenario_ind32_water_payment_or_grievance"],
+      "nodeIds": ["node_mobile_otp", "node_rr_status"],
+      "sourceIds": ["source_ind32_water_public_entry", "source_ind32_water_legacy_entry"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Only controls and labels were inspected. No phone number, OTP, application number, or property data was entered."
+    },
+    {
+      "id": "claim_ind32_water_public_high_level_path",
+      "text": "The current public Jaladhare page summarizes the route as mobile login, payment to buy the application form, filling details and uploading documents, followed by status tracking; it labels the service as permission for a new or additional water-supply and underground-drainage connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise"],
+      "nodeIds": ["node_mobile_otp", "node_buy_application", "node_documents_review", "node_rr_status"],
+      "sourceIds": ["source_ind32_water_public_entry"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "High-level public wording only; it does not prove the exact current post-login transition or eligibility."
+    },
+    {
+      "id": "claim_ind32_water_public_targets",
+      "text": "On 2026-08-28 the public Jaladhare status section displayed headings of 14 days for residential connections and 42 days for commercial and high-rise connections.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise"],
+      "nodeIds": ["node_rr_status"],
+      "sourceIds": ["source_ind32_water_public_entry"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Displayed target headings are not treated as a guaranteed service level. The public metrics were blank and the clock-start event is not stated."
+    },
+    {
+      "id": "claim_ind32_water_manual_screen_sequence",
+      "text": "The official consumer manual describes a five-screen sequence: Consumer Details, Site Details, Building Details, Documents, and Review.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr"],
+      "nodeIds": ["node_consumer_details", "node_site_details", "node_building_plumber", "node_documents_review"],
+      "sourceIds": ["source_ind32_water_consumer_manual"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Official manual sequence; post-login screens were not opened in a live account."
+    },
+    {
+      "id": "claim_ind32_water_manual_consumer_site",
+      "text": "The manual describes applicant/communication fields and connection-address routing fields, an existing BWSSB connection/RR number, BESCOM account verification, and site fields for PID/khata, construction date, purpose, flat/toilet counts where applicable, sital/built-up area, and NOC/RWH/OC information.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr", "scenario_ind32_water_conditional_docs"],
+      "nodeIds": ["node_consumer_details", "node_site_details"],
+      "sourceIds": ["source_ind32_water_consumer_manual"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Manual-described fields; no property-specific validation, PID lookup, RR verification, or BESCOM request was run."
+    },
+    {
+      "id": "claim_ind32_water_manual_building_plumber",
+      "text": "The manual describes floor-by-floor building rows with purpose/type and amenity or parking details and a plumber-selection section; it says that if RWH is marked yes, plumber selection and a mutual agreement are mandatory.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_conditional_docs"],
+      "nodeIds": ["node_building_plumber"],
+      "sourceIds": ["source_ind32_water_consumer_manual"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Manual-described behavior; live plumber eligibility and current RWH enforcement were not tested."
+    },
+    {
+      "id": "claim_ind32_water_manual_uploads",
+      "text": "The manual describes document uploads for building plan, building photograph with owner, lease-cum-sale deed, and khata; it lists road-cutting endorsement when applicable and says up to five documents per type may be uploaded with a five-MB limit per file.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_conditional_docs"],
+      "nodeIds": ["node_documents_review"],
+      "sourceIds": ["source_ind32_water_consumer_manual", "source_ind32_water_more_info"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No file was selected, uploaded, or transmitted. The separate More Information page additionally lists OC/RWH/STP photos conditionally; the current property-specific checklist remains Unknown."
+    },
+    {
+      "id": "claim_ind32_water_manual_review_charges",
+      "text": "The manual describes a Review screen with tentative charges based on entered inputs, prorata, standard, and GBWASP/BCC tables, a total-payable display, and a declaration that incorrect information may lead to rejection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise"],
+      "nodeIds": ["node_documents_review"],
+      "sourceIds": ["source_ind32_water_consumer_manual"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The manual's examples do not establish a current amount or fee formula for a particular property."
+    },
+    {
+      "id": "claim_ind32_water_faq_routing_inspection",
+      "text": "BWSSB's FAQ says status can show the application's stage and designation, ward/service-area selection routes it to the concerned sub-division AEE, engineers may contact the registered number, and the engineer should pre-inform the applicant of an inspection visit.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr"],
+      "nodeIds": ["node_inspection_review", "node_rr_status"],
+      "sourceIds": ["source_ind32_water_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Official FAQ guidance, not a case observation; its email/password route differs from the current mobile-OTP entry."
+    },
+    {
+      "id": "claim_ind32_water_faq_demand_payment",
+      "text": "BWSSB's FAQ says that after AE/JE inspection, charges such as prorata and GBWASP are calculated and a demand note is raised; after AEE approval the applicant is notified and can pay through the payment-history tab, with an e-receipt after successful payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_payment_or_grievance"],
+      "nodeIds": ["node_inspection_review", "node_demand_payment"],
+      "sourceIds": ["source_ind32_water_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published FAQ route; no inspection, demand note, payment, or receipt was observed."
+    },
+    {
+      "id": "claim_ind32_water_manual_demand_conditions",
+      "text": "The manual's demand-note wording describes RWH, and where applicable STP/dual piping, KSPCB consent, and additional billing until OC as conditions before service; it states a 90-day demand-note validity period and a Cashfree or PayU online payment/receipt flow.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_conditional_docs", "scenario_ind32_water_payment_or_grievance"],
+      "nodeIds": ["node_demand_payment"],
+      "sourceIds": ["source_ind32_water_consumer_manual"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Manual/demand-note wording, not a case-specific obligation or approval."
+    },
+    {
+      "id": "claim_ind32_water_faq_plumber",
+      "text": "BWSSB's FAQ says the plumber should be BWSSB-registered, plumber details may be changed before final payment, and a scanned consumer/registered-plumber agreement should be attached before final payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_conditional_docs"],
+      "nodeIds": ["node_building_plumber", "node_demand_payment"],
+      "sourceIds": ["source_ind32_water_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published FAQ guidance; no plumber was selected and no agreement was uploaded."
+    },
+    {
+      "id": "claim_ind32_water_grievance_fields",
+      "text": "The public BWSSB grievance page exposes fields for consumer/mobile, subject, application number/name, address, plumber name, and remarks, with 1916 and an email contact displayed on the page.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_payment_or_grievance"],
+      "nodeIds": ["node_grievance"],
+      "sourceIds": ["source_ind32_water_grievance"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Only the blank public form was inspected; no personal details or grievance were submitted."
+    },
+    {
+      "id": "claim_ind32_water_unobserved_case_state",
+      "text": "The public pass did not establish whether a particular property is eligible, whether its PID/RR/BESCOM details verify, whether documents are accepted, whether inspection occurred, or whether a demand note/RR number exists.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr", "scenario_ind32_water_conditional_docs", "scenario_ind32_water_payment_or_grievance"],
+      "nodeIds": ["node_consumer_details", "node_site_details", "node_documents_review", "node_inspection_review", "node_demand_payment", "node_rr_status"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No login, OTP, property lookup, upload, submission, inspection, payment, or case-status lookup was performed."
+    },
+    {
+      "id": "claim_ind32_water_end_to_end_unknown",
+      "text": "No reviewed public page establishes a complete current sequence from mobile OTP and application purchase through review, field inspection, demand-note approval, payment verification, RR-number generation, and physical water/UGD connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_payment_or_grievance"],
+      "nodeIds": ["node_mobile_otp", "node_buy_application", "node_consumer_details", "node_site_details", "node_building_plumber", "node_documents_review", "node_inspection_review", "node_demand_payment", "node_rr_status"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The public page and manual describe parts of a route, but no authenticated case transition was observed."
+    },
+    {
+      "id": "claim_ind32_water_route_currentness_unknown",
+      "text": "The currentness and relationship of the public mobile-OTP Jaladhare page to the FAQ's older registered-email/password SAJALA flow are unresolved by this pass.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise"],
+      "nodeIds": ["node_mobile_otp", "node_buy_application"],
+      "sourceIds": ["source_ind32_water_public_entry", "source_ind32_water_faq", "source_ind32_water_legacy_entry"],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The surfaces may represent versions or separate paths; do not merge their credentials or fee instructions without current BWSSB confirmation."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_mobile_otp",
+      "label": "Mobile OTP entry",
+      "kind": "service",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Public Jaladhare entry for mobile-number OTP access.",
+      "requiredState": "A mobile number and OTP would be required to proceed, but no login was attempted.",
+      "checks": [
+        {"id":"check_ind32_water_mobile_entry","label":"Mobile OTP controls","description":"The public page exposes a Mobile Number field, OTP action, and OTP submit control.","url":"https://owcv2.bwssb.gov.in/consumer","claimIds":["claim_ind32_water_public_entry_controls"],"status":"verified"}
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr"],
+      "claimIds": ["claim_ind32_water_public_entry_controls", "claim_ind32_water_public_high_level_path", "claim_ind32_water_route_currentness_unknown"],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_buy_application",
+      "label": "Buy application form",
+      "kind": "service",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Application-form purchase step described by the public Jaladhare entry and FAQ.",
+      "requiredState": "The current page says payment is made to buy the application form; amount and active payment route were not checked in a session.",
+      "checks": [
+        {"id":"check_ind32_water_buy_application","label":"Application-form purchase label","description":"The public page says applicants make payment to buy the application form.","url":"https://owcv2.bwssb.gov.in/consumer","claimIds":["claim_ind32_water_public_high_level_path"],"status":"verified"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind32_water_buy_payment_unknown","label":"Purchase payment outcome unknown","description":"No account or payment gateway was opened, so transaction failure/refund behavior for this current route was not observed.","claimIds":["claim_ind32_water_unobserved_case_state"],"status":"unknown"}
+      ],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr"],
+      "claimIds": ["claim_ind32_water_public_high_level_path", "claim_ind32_water_route_currentness_unknown"],
+      "status": "unknown",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_consumer_details",
+      "label": "Consumer and connection details",
+      "kind": "form",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Manual-described applicant, communication, and connection-address form stage.",
+      "requiredState": "Manual describes mandatory fields and, where applicable, existing RR/BESCOM verification; no live form was opened.",
+      "checks": [
+        {"id":"check_ind32_water_consumer_stage","label":"Consumer Details stage","description":"The manual lists Consumer Details as the first application stage and describes address/routing fields.","url":"https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf","claimIds":["claim_ind32_water_manual_screen_sequence","claim_ind32_water_manual_consumer_site"],"status":"partial"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind32_water_rr_or_bescom_unknown","label":"Existing RR/BESCOM validation unknown","description":"The manual describes RR and BESCOM checks but no identifier was entered or verified.","claimIds":["claim_ind32_water_manual_consumer_site","claim_ind32_water_unobserved_case_state"],"status":"unknown"}
+      ],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr"],
+      "claimIds": ["claim_ind32_water_manual_screen_sequence", "claim_ind32_water_manual_consumer_site", "claim_ind32_water_unobserved_case_state"],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_site_details",
+      "label": "Site details",
+      "kind": "form",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Manual-described property, construction, purpose, area, and conditional NOC/RWH/OC stage.",
+      "requiredState": "Property-specific PID/khata, construction, purpose, area, and conditional-document state are Unknown because no form was completed.",
+      "checks": [
+        {"id":"check_ind32_water_site_stage","label":"Site Details stage","description":"The manual describes PID/khata, construction date, purpose, counts, area, and NOC/RWH/OC fields.","url":"https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf","claimIds":["claim_ind32_water_manual_screen_sequence","claim_ind32_water_manual_consumer_site"],"status":"partial"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind32_water_conditional_site_docs","label":"Conditional site documents unknown","description":"Public More Information and manual material mention conditional OC/RWH/STP/NOC information without establishing the case-specific checklist.","url":"https://owc.bwssb.gov.in/more-info","claimIds":["claim_ind32_water_manual_uploads","claim_ind32_water_unobserved_case_state"],"status":"unknown"}
+      ],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr", "scenario_ind32_water_conditional_docs"],
+      "claimIds": ["claim_ind32_water_manual_screen_sequence", "claim_ind32_water_manual_consumer_site", "claim_ind32_water_unobserved_case_state"],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_building_plumber",
+      "label": "Building and plumber details",
+      "kind": "form",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Manual-described floor/purpose area rows and registered-plumber selection/agreement path.",
+      "requiredState": "Building rows and plumber state are Unknown for an individual property; no plumber was selected.",
+      "checks": [
+        {"id":"check_ind32_water_building_fields","label":"Building/plumber stage","description":"The manual describes floor-by-floor area rows and plumber selection, with RWH-linked mutual-agreement wording.","url":"https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf","claimIds":["claim_ind32_water_manual_building_plumber"],"status":"partial"},
+        {"id":"check_ind32_water_registered_plumber_guidance","label":"Registered plumber guidance","description":"The FAQ says the plumber should be BWSSB-registered and agreement evidence is needed before final payment.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind32_water_faq_plumber"],"status":"partial"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind32_water_plumber_state_unknown","label":"Plumber selection/acceptance unknown","description":"The public pass did not determine the currently eligible plumber list, selection validation, or agreement acceptance.","claimIds":["claim_ind32_water_faq_plumber","claim_ind32_water_unobserved_case_state"],"status":"unknown"}
+      ],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_conditional_docs"],
+      "claimIds": ["claim_ind32_water_manual_building_plumber", "claim_ind32_water_faq_plumber", "claim_ind32_water_unobserved_case_state"],
+      "status": "partial",
+      "displayOrder": 50
+    },
+    {
+      "id": "node_documents_review",
+      "label": "Document upload and review",
+      "kind": "form",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Manual-described document upload followed by tentative charge review and declaration.",
+      "requiredState": "Listed document classes and limits are known from the manual; actual acceptance and conditional requirements are Unknown.",
+      "checks": [
+        {"id":"check_ind32_water_documents","label":"Document classes and limits","description":"The manual lists building plan/photo, deed, khata, conditional road-cutting endorsement, up-to-five files per type, and 5 MB per file.","url":"https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf","claimIds":["claim_ind32_water_manual_uploads"],"status":"partial"},
+        {"id":"check_ind32_water_review","label":"Tentative charge review","description":"The manual describes prorata, standard, GBWASP/BCC, total-payable, and declaration content in Review.","url":"https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf","claimIds":["claim_ind32_water_manual_review_charges"],"status":"partial"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind32_water_document_rejection_unknown","label":"Document rejection/validation unknown","description":"No upload or submission was made, so rejection messages and resubmission behavior are unknown.","claimIds":["claim_ind32_water_manual_uploads","claim_ind32_water_unobserved_case_state"],"status":"unknown"}
+      ],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr", "scenario_ind32_water_conditional_docs"],
+      "claimIds": ["claim_ind32_water_manual_uploads", "claim_ind32_water_manual_review_charges", "claim_ind32_water_unobserved_case_state"],
+      "status": "partial",
+      "displayOrder": 60
+    },
+    {
+      "id": "node_inspection_review",
+      "label": "BWSSB review and inspection",
+      "kind": "service",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "FAQ-described stage/designation routing and AE/JE inspection before demand-note calculation.",
+      "requiredState": "Application routing, inspection date, measurements, and findings are Unknown for a particular case.",
+      "checks": [
+        {"id":"check_ind32_water_routing_inspection","label":"Routing and inspection guidance","description":"The FAQ describes ward/service-area routing, stage/designation status, and pre-informed inspection contact.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind32_water_faq_routing_inspection"],"status":"partial"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind32_water_review_outcome_unknown","label":"Review outcome unknown","description":"No case was submitted or reviewed, so correction, rejection, or inspection outcomes are unknown.","claimIds":["claim_ind32_water_faq_routing_inspection","claim_ind32_water_unobserved_case_state"],"status":"unknown"}
+      ],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr"],
+      "claimIds": ["claim_ind32_water_faq_routing_inspection", "claim_ind32_water_unobserved_case_state"],
+      "status": "unknown",
+      "displayOrder": 70
+    },
+    {
+      "id": "node_demand_payment",
+      "label": "Demand note and final payment",
+      "kind": "payment",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Demand-note, conditional service requirements, and online payment/receipt stage.",
+      "requiredState": "A property-specific demand note, amount, validity, payment state, and receipt are Unknown.",
+      "checks": [
+        {"id":"check_ind32_water_demand_note","label":"Demand-note sequence","description":"FAQ/manual describe inspection-based calculation, AEE approval, online payment, and receipt generation.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind32_water_faq_demand_payment","claim_ind32_water_manual_demand_conditions"],"status":"partial"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind32_water_payment_or_expiry","label":"Payment/expiry state unknown","description":"The manual says a demand note is valid for 90 days, but no demand note or payment gateway was opened.","url":"https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf","claimIds":["claim_ind32_water_manual_demand_conditions","claim_ind32_water_unobserved_case_state"],"status":"unknown"}
+      ],
+      "recoveries": [
+        {"id":"recovery_ind32_water_grievance","label":"Public grievance form","description":"BWSSB exposes a grievance form for application and plumber details, but response/routing was not observed.","url":"https://owcv2.bwssb.gov.in/member/grievance-form","claimIds":["claim_ind32_water_grievance_fields"],"status":"partial"}
+      ],
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_conditional_docs", "scenario_ind32_water_payment_or_grievance"],
+      "claimIds": ["claim_ind32_water_faq_demand_payment", "claim_ind32_water_manual_demand_conditions", "claim_ind32_water_unobserved_case_state"],
+      "status": "unknown",
+      "displayOrder": 80
+    },
+    {
+      "id": "node_rr_status",
+      "label": "Application status and RR number",
+      "kind": "record",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Public application-number status lookup and FAQ/manual-described generated RR-number outcome.",
+      "requiredState": "Application number, current stage, and generated RR number are Unknown for an individual case.",
+      "checks": [
+        {"id":"check_ind32_water_status_lookup","label":"Public status lookup","description":"The current public page exposes application-number status input and shows a status-table section.","url":"https://owcv2.bwssb.gov.in/consumer","claimIds":["claim_ind32_water_public_entry_controls"],"status":"verified"},
+        {"id":"check_ind32_water_time_labels","label":"Displayed time labels","description":"The status section displays 14-day residential and 42-day commercial/high-rise headings.","url":"https://owcv2.bwssb.gov.in/consumer","claimIds":["claim_ind32_water_public_targets"],"status":"partial"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind32_water_case_status_unknown","label":"Case status not checked","description":"No application number was entered; no case-specific stage, error, or RR number was observed.","claimIds":["claim_ind32_water_unobserved_case_state"],"status":"unknown"}
+      ],
+      "recoveries": [
+        {"id":"recovery_ind32_water_grievance_status","label":"Grievance route","description":"The public grievance form can carry an application number, but no grievance was filed.","url":"https://owcv2.bwssb.gov.in/member/grievance-form","claimIds":["claim_ind32_water_grievance_fields"],"status":"partial"}
+      ],
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr", "scenario_ind32_water_payment_or_grievance"],
+      "claimIds": ["claim_ind32_water_public_entry_controls", "claim_ind32_water_public_targets", "claim_ind32_water_unobserved_case_state", "claim_ind32_water_end_to_end_unknown"],
+      "status": "partial",
+      "displayOrder": 90
+    },
+    {
+      "id": "node_grievance",
+      "label": "Public grievance form",
+      "kind": "service",
+      "ownerAgencyId": "agency_bwssb_ind32_water",
+      "summary": "Unauthenticated BWSSB grievance form for an application or connection issue.",
+      "requiredState": "Form fields are visible; submission, acknowledgement, owner, and response time are Unknown.",
+      "checks": [
+        {"id":"check_ind32_water_grievance","label":"Grievance fields","description":"Public form exposes consumer/mobile, subject, application, address, plumber, and remarks fields.","url":"https://owcv2.bwssb.gov.in/member/grievance-form","claimIds":["claim_ind32_water_grievance_fields"],"status":"verified"}
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind32_water_payment_or_grievance"],
+      "claimIds": ["claim_ind32_water_grievance_fields", "claim_ind32_water_unobserved_case_state"],
+      "status": "partial",
+      "displayOrder": 100
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_ind32_water_entry_to_application",
+      "fromNodeId": "node_mobile_otp",
+      "toNodeId": "node_buy_application",
+      "relationship": "enables",
+      "label": "The current public page describes mobile login followed by payment to buy the application form; the live transition was not tested.",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr"],
+      "claimIds": ["claim_ind32_water_public_high_level_path", "claim_ind32_water_route_currentness_unknown"],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_water_application_to_forms",
+      "fromNodeId": "node_buy_application",
+      "toNodeId": "node_consumer_details",
+      "relationship": "produces",
+      "label": "The public page says payment buys the application form; the manual then describes Consumer Details as the first form stage.",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr"],
+      "claimIds": ["claim_ind32_water_public_high_level_path", "claim_ind32_water_manual_screen_sequence"],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_water_forms_to_review",
+      "fromNodeId": "node_consumer_details",
+      "toNodeId": "node_documents_review",
+      "relationship": "produces",
+      "label": "The manual presents Consumer Details, Site Details, Building Details, Documents, and Review as successive stages; no live form was completed.",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr", "scenario_ind32_water_conditional_docs"],
+      "claimIds": ["claim_ind32_water_manual_screen_sequence", "claim_ind32_water_manual_consumer_site", "claim_ind32_water_manual_building_plumber", "claim_ind32_water_manual_uploads"],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_water_review_to_inspection",
+      "fromNodeId": "node_documents_review",
+      "toNodeId": "node_inspection_review",
+      "relationship": "submits_to",
+      "label": "FAQ guidance describes status/routing and inspection after application information is submitted; the live handoff and owner are not observed.",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr"],
+      "claimIds": ["claim_ind32_water_faq_routing_inspection", "claim_ind32_water_end_to_end_unknown"],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_ind32_water_inspection_to_demand",
+      "fromNodeId": "node_inspection_review",
+      "toNodeId": "node_demand_payment",
+      "relationship": "produces",
+      "label": "FAQ/manual wording says inspection and review precede demand-note calculation/approval and online payment; no demand note was observed.",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_conditional_docs", "scenario_ind32_water_payment_or_grievance"],
+      "claimIds": ["claim_ind32_water_faq_demand_payment", "claim_ind32_water_manual_demand_conditions", "claim_ind32_water_end_to_end_unknown"],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind32_water_payment_to_rr",
+      "fromNodeId": "node_demand_payment",
+      "toNodeId": "node_rr_status",
+      "relationship": "produces",
+      "label": "The public entry advertises a generated RR-number outcome and status controls, but the payment-to-RR transition was not verified in a case.",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr", "scenario_ind32_water_payment_or_grievance"],
+      "claimIds": ["claim_ind32_water_public_entry_controls", "claim_ind32_water_faq_demand_payment", "claim_ind32_water_end_to_end_unknown"],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_ind32_water_status_to_grievance",
+      "fromNodeId": "node_rr_status",
+      "toNodeId": "node_grievance",
+      "relationship": "recovers",
+      "label": "The public grievance form accepts application details as a support route; no acknowledgement or resolution was observed.",
+      "scenarioIds": ["scenario_ind32_water_payment_or_grievance"],
+      "claimIds": ["claim_ind32_water_grievance_fields", "claim_ind32_water_unobserved_case_state"],
+      "status": "partial"
+    }
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind32_water_property_case_unknown",
+      "title": "Property-specific verification is login-gated",
+      "category": "eligibility",
+      "symptom": "Public pages show forms and lookup controls but no property-specific PID, RR, BESCOM, document, inspection, or demand result.",
+      "likelyCause": "The relevant fields and records are behind OTP/authenticated workflow and require applicant/property data.",
+      "recovery": "Use the official portal with the applicant's own details and retain the application number; this research pass did not transmit any data.",
+      "ownerAgencyIds": ["agency_bwssb_ind32_water"],
+      "nodeIds": ["node_consumer_details", "node_site_details", "node_documents_review", "node_rr_status"],
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_existing_rr"],
+      "claimIds": ["claim_ind32_water_unobserved_case_state"],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind32_water_conditional_checklist",
+      "title": "Conditional OC/RWH/STP/NOC requirements are not resolved",
+      "category": "documentation",
+      "symptom": "Current public summary and separate official manual/More Information page describe overlapping but not identical conditional document classes.",
+      "likelyCause": "Connection type, premises size, applicable rules, or portal version may alter the checklist.",
+      "recovery": "Treat the live application checklist and BWSSB demand note as authoritative for the specific case; do not infer universal requirements from the generic list.",
+      "ownerAgencyIds": ["agency_bwssb_ind32_water"],
+      "nodeIds": ["node_site_details", "node_documents_review", "node_demand_payment"],
+      "scenarioIds": ["scenario_ind32_water_conditional_docs", "scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise"],
+      "claimIds": ["claim_ind32_water_manual_uploads", "claim_ind32_water_manual_demand_conditions"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_water_route_version",
+      "title": "Jaladhare mobile-OTP and FAQ SAJALA routes differ",
+      "category": "infrastructure",
+      "symptom": "The current public entry uses mobile OTP while the FAQ describes registered email/password and a Rs 100 buy-application flow.",
+      "likelyCause": "Different portal versions or documentation paths; current relationship is not stated on-page.",
+      "recovery": "Do not merge credentials, fee amounts, or step assumptions across the two surfaces without current BWSSB confirmation.",
+      "ownerAgencyIds": ["agency_bwssb_ind32_water"],
+      "nodeIds": ["node_mobile_otp", "node_buy_application"],
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise"],
+      "claimIds": ["claim_ind32_water_route_currentness_unknown"],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind32_water_status_metrics",
+      "title": "Displayed target labels are not a case SLA",
+      "category": "status",
+      "symptom": "Public status section shows 14-day residential and 42-day commercial/high-rise headings but no populated metrics or case-specific clock.",
+      "likelyCause": "The page is a general dashboard/target display rather than a submitted application record.",
+      "recovery": "Retain the application number and use the authenticated status route; escalate through the public grievance form if needed, without assuming a guaranteed date.",
+      "ownerAgencyIds": ["agency_bwssb_ind32_water"],
+      "nodeIds": ["node_rr_status"],
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_payment_or_grievance"],
+      "claimIds": ["claim_ind32_water_public_targets", "claim_ind32_water_grievance_fields"],
+      "status": "partial"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_ind32_water_new_connection",
+      "title": "New BWSSB water/UGD connection — public route",
+      "scenarioId": "scenario_ind32_water_residential",
+      "context": "Unauthenticated inspection of the public Jaladhare entry, official manual, and FAQ for a new residential water-supply and underground-drainage connection. No applicant, property, document, OTP, or payment data was used.",
+      "steps": [
+        {"id":"step_ind32_water_open_entry","label":"Open public Jaladhare entry","nodeId":"node_mobile_otp","action":"Open the public BWSSB consumer entry and inspect its mobile-OTP and status controls.","expectedResult":"Mobile OTP, application-number status, and high-level new-connection labels are visible; no case is created.","claimIds":["claim_ind32_water_public_entry_controls","claim_ind32_water_public_high_level_path"],"status":"verified"},
+        {"id":"step_ind32_water_review_application","label":"Review application-form route","nodeId":"node_buy_application","action":"Read the public instruction that payment is used to buy the application form; do not open a payment gateway.","expectedResult":"An application purchase step is documented, but fee amount and transaction outcome remain Unknown for the current mobile-OTP route.","claimIds":["claim_ind32_water_public_high_level_path","claim_ind32_water_route_currentness_unknown"],"status":"partial"},
+        {"id":"step_ind32_water_review_form_stages","label":"Review form stages","nodeId":"node_consumer_details","action":"Use the official manual to inspect Consumer Details, Site Details, Building Details, Documents, and Review descriptions.","expectedResult":"The five-stage form sequence and listed field classes are visible in the manual; no live form validation is known.","claimIds":["claim_ind32_water_manual_screen_sequence","claim_ind32_water_manual_consumer_site","claim_ind32_water_manual_building_plumber"],"status":"partial"},
+        {"id":"step_ind32_water_review_documents","label":"Review document boundary","nodeId":"node_documents_review","action":"Read the public document summary and manual upload instructions without selecting or transmitting files.","expectedResult":"Listed document classes and upload limits are visible; case-specific acceptance and conditional documents remain Unknown.","claimIds":["claim_ind32_water_manual_uploads","claim_ind32_water_manual_review_charges"],"status":"partial"},
+        {"id":"step_ind32_water_review_inspection","label":"Recognize inspection boundary","nodeId":"node_inspection_review","action":"Use FAQ wording to identify routing, stage/designation status, and prior inspection contact as published guidance.","expectedResult":"Inspection and review are described, but no case-specific owner, date, measurement, or outcome is known.","claimIds":["claim_ind32_water_faq_routing_inspection","claim_ind32_water_unobserved_case_state"],"status":"unknown"},
+        {"id":"step_ind32_water_review_demand","label":"Recognize demand/payment boundary","nodeId":"node_demand_payment","action":"Read FAQ/manual demand-note and payment wording without opening a case or gateway.","expectedResult":"Inspection-based demand, conditional requirements, online payment, validity, and receipt wording are visible; no demand amount or receipt exists in this pass.","claimIds":["claim_ind32_water_faq_demand_payment","claim_ind32_water_manual_demand_conditions"],"status":"partial"},
+        {"id":"step_ind32_water_status_boundary","label":"Check public status boundary","nodeId":"node_rr_status","action":"Inspect the application-number status input and general status table without entering an application number.","expectedResult":"Status controls and displayed 14/42-day headings are visible; no case stage or RR number is known.","claimIds":["claim_ind32_water_public_entry_controls","claim_ind32_water_public_targets","claim_ind32_water_unobserved_case_state"],"status":"partial"}
+      ],
+      "dependencies": [
+        {"id":"dep_ind32_water_form_to_inspection","fromNodeId":"node_documents_review","toNodeId":"node_inspection_review","description":"FAQ describes routing and inspection after application details are submitted, but the live handoff is not observed.","claimIds":["claim_ind32_water_faq_routing_inspection","claim_ind32_water_end_to_end_unknown"],"status":"unknown"},
+        {"id":"dep_ind32_water_inspection_to_payment","fromNodeId":"node_inspection_review","toNodeId":"node_demand_payment","description":"FAQ/manual describe inspection and review before demand-note calculation/payment; no case transition was observed.","claimIds":["claim_ind32_water_faq_demand_payment","claim_ind32_water_manual_demand_conditions"],"status":"partial"}
+      ],
+      "failureRoadblockIds": ["roadblock_ind32_water_property_case_unknown","roadblock_ind32_water_conditional_checklist","roadblock_ind32_water_route_version","roadblock_ind32_water_status_metrics"],
+      "recoveryNotes": ["No identifiers, contact details, files, OTPs, grievance data, or payment data were entered.","Use the public grievance route only for a real case and retain its application number; this pass did not submit one."],
+      "documentationQualityNotes": ["Current public page exposes entry/status controls and summary labels; post-login behavior remains Unknown.","The consumer manual describes screens and payment wording but is not a property-specific transaction.","FAQ instructions use an older email/password SAJALA flow and are not merged with the current mobile-OTP route."],
+      "status": "unknown"
+    },
+    {
+      "id": "journey_ind32_water_support_boundary",
+      "title": "BWSSB application status or grievance support",
+      "scenarioId": "scenario_ind32_water_payment_or_grievance",
+      "context": "Unauthenticated inspection of the public application-status and grievance entry points. No application number, consumer details, or grievance was entered.",
+      "steps": [
+        {"id":"step_ind32_water_support_status","label":"Open public status controls","nodeId":"node_rr_status","action":"Inspect the application-number input and public status headings without entering an identifier.","expectedResult":"The status route is visible; case-specific stage, demand, payment, and RR number remain Unknown.","claimIds":["claim_ind32_water_public_entry_controls","claim_ind32_water_public_targets"],"status":"partial"},
+        {"id":"step_ind32_water_support_grievance","label":"Inspect grievance route","nodeId":"node_grievance","action":"Open the blank BWSSB grievance form and read its fields/contact display without submitting.","expectedResult":"Application and plumber-related fields plus 1916/email are visible; acknowledgement, owner, and response remain Unknown.","claimIds":["claim_ind32_water_grievance_fields"],"status":"verified"}
+      ],
+      "dependencies": [],
+      "failureRoadblockIds": ["roadblock_ind32_water_property_case_unknown","roadblock_ind32_water_status_metrics"],
+      "recoveryNotes": ["The grievance form is a visible handoff only; no ticket or response was created."],
+      "documentationQualityNotes": ["Support surfaces are directly observed but do not establish response timing or resolution."],
+      "status": "partial"
+    }
+  ]
+}

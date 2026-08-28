@@ -1,0 +1,152 @@
+{
+  "_handoff": {
+    "issue": "IND-32",
+    "generatedAt": "2026-08-28",
+    "status": "in_review",
+    "scopeNote": "Official-source pass for transferring or changing the recorded account holder/name on an existing BWSSB water or underground-drainage account in Bengaluru. Only public BWSSB, India Code, and Government of Karnataka pages were inspected. No RR number, applicant identity, OTP, login, document, payment, complaint, or application was entered. The public material establishes Board authority and adjacent consumer channels, but does not establish a current transfer form, fee, document checklist, eligibility rule, or turnaround time."
+  },
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru BWSSB water-account transfer/name-change official-source pass",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-28",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice. Do not treat the new-connection material as a transfer procedure. Confirm the current RR-specific route with BWSSB before sending personal or property documents."
+  },
+  "agencies": [
+    {"id": "agency_bwssb_ind32_water_account", "name": "Bangalore Water Supply and Sewerage Board", "shortName": "BWSSB", "officialUrl": "https://bwssb.gov.in/"}
+  ],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind32_water_account_act",
+      "title": "Bangalore Water Supply and Sewerage Act, 1964",
+      "publisher": "Government of Karnataka / India Code",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/7908/1/36_of_1964%28e%29.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "law",
+      "notes": "Official India Code text, amended through the amendments shown in the compilation. Sections 61 and 61A authorize regulations/by-laws about water connections, meters, and related administration; the text inspected does not itself publish a current consumer-account transfer workflow."
+    },
+    {
+      "id": "source_ind32_water_account_consumer",
+      "title": "BWSSB Jaladhare consumer public entry",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Current unauthenticated page observed with mobile OTP entry, application-number status lookup, and new/additional water/UGD connection information. No account-transfer or name-change control was exposed in the public view."
+    },
+    {
+      "id": "source_ind32_water_account_faq",
+      "title": "BWSSB Jaladhare Frequently Asked Questions",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/member/faq",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "The FAQ describes the new-connection registration, application, inspection, demand-note, and payment flow and gives owcenquiry@bwssb.org and 080 22238888 for queries. It does not enumerate an existing-account transfer/name-change flow."
+    },
+    {
+      "id": "source_ind32_water_account_bwssb_contact",
+      "title": "BWSSB official home and consumer complaints contact",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://bwssb.gov.in/home",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Official public site lists the 24x7 helpline 1916 and consumer complaint channels. Contact availability is not proof that a transfer request can be filed online or that a complaint will amend account ownership."
+    },
+    {
+      "id": "source_ind32_water_account_district_directory",
+      "title": "Bangalore Water Supply and Sewerage Board directory",
+      "publisher": "Bengaluru Urban District Administration / Government of Karnataka",
+      "url": "https://bengaluruurban.nic.in/en/department/bangalore-water-supply-and-sewerage-board/",
+      "accessedAt": "2026-08-28",
+      "type": "government_directory",
+      "notes": "Government directory identifies BWSSB and its Cauvery Bhavan address/contact. It does not describe transfer documents, fees, or processing."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind32_water_account_board_authority",
+      "text": "The Bangalore Water Supply and Sewerage Act authorizes BWSSB to make regulations and by-laws concerning water connections, meters, and related water-supply administration.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [],
+      "nodeIds": [],
+      "sourceIds": ["source_ind32_water_account_act"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Sections 61 and 61A provide enabling authority; they are not a current name-transfer checklist."
+    },
+    {
+      "id": "claim_ind32_water_account_public_adjacent_only",
+      "text": "The current public Jaladhare consumer entry exposes mobile-OTP access, application-number status lookup, and information for new or additional water/underground-drainage connections, but the inspected unauthenticated view does not expose a water-account transfer or name-change control.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [],
+      "nodeIds": [],
+      "sourceIds": ["source_ind32_water_account_consumer"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Absence from the public view is not proof that an authenticated, office, or unindexed route does not exist."
+    },
+    {
+      "id": "claim_ind32_water_account_faq_scope",
+      "text": "BWSSB's public FAQ documents a new-connection route and publishes enquiry contacts, but does not state the documents, fee, venue, or timeline for transferring an existing water/UGD account to a new name.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [],
+      "nodeIds": [],
+      "sourceIds": ["source_ind32_water_account_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ's older email/password SAJALA instructions are not merged with the current mobile-OTP page."
+    },
+    {
+      "id": "claim_ind32_water_account_contact_route",
+      "text": "BWSSB's official public site provides 1916 as a 24x7 helpline, and the Jaladhare FAQ gives an enquiry email and telephone number for questions.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [],
+      "nodeIds": [],
+      "sourceIds": ["source_ind32_water_account_bwssb_contact", "source_ind32_water_account_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "These are published contact leads only; no call, email, complaint, or case escalation was made."
+    },
+    {
+      "id": "claim_ind32_water_account_transfer_unknown",
+      "text": "The inspected official public material does not establish whether a sale, inheritance, tenancy, death of the recorded holder, or simple spelling correction uses the same transfer route, nor does it establish accepted documents, arrears handling, security-deposit treatment, fee, or service standard.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [],
+      "nodeIds": [],
+      "sourceIds": ["source_ind32_water_account_consumer", "source_ind32_water_account_faq", "source_ind32_water_account_act"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "This is an explicit research boundary, not a claim that no such policy exists."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind32_water_account_route_unknown",
+      "title": "Current transfer route not published in inspected public view",
+      "category": "process",
+      "symptom": "Public Jaladhare material shows new connections and status controls, not a transfer/name-change form.",
+      "likelyCause": "Transfer may be authenticated, office-based, a separate legacy route, or not indexed by the public entry.",
+      "recovery": "Ask BWSSB through its published contact channels which current RR-specific transfer route and documents apply; do not send personal documents until confirmed.",
+      "ownerAgencyIds": ["agency_bwssb_ind32_water_account"],
+      "nodeIds": [],
+      "scenarioIds": [],
+      "claimIds": ["claim_ind32_water_account_public_adjacent_only", "claim_ind32_water_account_transfer_unknown"],
+      "status": "unknown"
+    }
+  ],
+  "journeys": []
+}

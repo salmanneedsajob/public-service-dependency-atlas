@@ -1,0 +1,3909 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru property tax evidence ledger — partially mapped v1",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-28",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Public sources and known gaps are shown together; do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_bescom",
+      "name": "Bangalore Electricity Supply Company Limited",
+      "shortName": "BESCOM",
+      "officialUrl": "https://bescom.co.in/"
+    },
+    {
+      "id": "agency_gba",
+      "name": "Greater Bengaluru Authority / Bengaluru City Corporations",
+      "shortName": "GBA",
+      "officialUrl": "https://www.bbmp.gov.in/"
+    },
+    {
+      "id": "agency_kerc",
+      "name": "Karnataka Electricity Regulatory Commission",
+      "shortName": "KERC",
+      "officialUrl": "https://kerc.karnataka.gov.in/"
+    },
+    {
+      "id": "agency_bbmp_revenue_ind32_property",
+      "name": "Bruhat Bengaluru Mahanagara Palike / Bengaluru City Corporations Revenue Department",
+      "shortName": "BBMP Revenue",
+      "officialUrl": "https://site.bbmp.gov.in/departmentwebsites/revenue/"
+    },
+    {
+      "id": "agency_gba_eaasthi_ind32_property",
+      "name": "Greater Bengaluru Authority / Bengaluru City Corporations e-Aasthi",
+      "shortName": "GBA e-Aasthi",
+      "officialUrl": "https://bbmpeaasthi.karnataka.gov.in/"
+    },
+    {
+      "id": "agency_gba_eaasthi_workflow_ind32",
+      "name": "Greater Bengaluru Authority / Bengaluru City Corporations e-Aasthi",
+      "shortName": "GBA e-Aasthi",
+      "officialUrl": "https://bbmpeaasthi.karnataka.gov.in/"
+    },
+    {
+      "id": "agency_bbmp_tax_workflow_ind32",
+      "name": "BBMP Property Tax System / Revenue Department",
+      "shortName": "BBMP Property Tax",
+      "officialUrl": "https://bbmptax.karnataka.gov.in/"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_clean_sale",
+      "label": "Clean sale",
+      "summary": "Registered sale with no known municipal-record issue.",
+      "tags": [
+        "sale"
+      ],
+      "pathNodeIds": [
+        "node_sale_deed",
+        "node_mutation",
+        "node_final_e_khata",
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_draft_e_khata",
+      "label": "Draft or pending e-Khata",
+      "summary": "Property information exists but finality or buyer-name state is unresolved.",
+      "tags": [
+        "sale",
+        "e-khata",
+        "pending"
+      ],
+      "pathNodeIds": [
+        "node_final_e_khata",
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_epid_mapping_failure",
+      "label": "EPID mapping failure",
+      "summary": "An EPID or property record exists but the BESCOM-account relationship cannot be established.",
+      "tags": [
+        "epid",
+        "mapping"
+      ],
+      "pathNodeIds": [
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_tenant",
+      "label": "Tenant",
+      "summary": "An occupier seeks a bill-name change without owning the property.",
+      "tags": [
+        "tenant",
+        "consent"
+      ],
+      "pathNodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_previous_consumer_deceased",
+      "label": "Previous consumer deceased",
+      "summary": "The recorded consumer has died and a successor seeks transfer.",
+      "tags": [
+        "death",
+        "succession"
+      ],
+      "pathNodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_consent_unavailable",
+      "label": "Consent unavailable",
+      "summary": "The previous consumer cannot or will not provide consent.",
+      "tags": [
+        "consent",
+        "exception"
+      ],
+      "pathNodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_property_sale_ind32",
+      "label": "Registered sale",
+      "summary": "A buyer seeks to put a municipal property-tax/khata record in the transferee's name after a sale.",
+      "tags": [
+        "property-tax",
+        "khata-transfer",
+        "sale"
+      ],
+      "pathNodeIds": [
+        "node_property_title_notice_ind32",
+        "node_property_mutation_intake_ind32",
+        "node_property_transfer_documents_ind32",
+        "node_property_final_record_ind32"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_property_successor_ind32",
+      "label": "Death or succession",
+      "summary": "A successor seeks mutation after the recorded owner or occupier dies.",
+      "tags": [
+        "property-tax",
+        "mutation",
+        "succession"
+      ],
+      "pathNodeIds": [
+        "node_property_title_notice_ind32",
+        "node_property_mutation_intake_ind32",
+        "node_property_transfer_documents_ind32",
+        "node_property_objection_ind32",
+        "node_property_final_record_ind32"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_property_missing_or_wrong_ind32",
+      "label": "Missing or incorrect property record",
+      "summary": "The public property record cannot be found or the recorded name is disputed or incorrect.",
+      "tags": [
+        "property-tax",
+        "record-correction",
+        "recovery"
+      ],
+      "pathNodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_objection_ind32",
+        "node_property_aro_recovery_ind32"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_property_public_lookup_ind32",
+      "label": "Public property lookup",
+      "summary": "A person wants to locate a Bengaluru property-tax/e-Khata record before seeking a name transfer.",
+      "tags": [
+        "property-tax",
+        "lookup",
+        "e-khata"
+      ],
+      "pathNodeIds": [
+        "node_public_property_lookup_ind32",
+        "node_public_property_status_ind32"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_property_automatic_mutation_ind32",
+      "label": "Automatic mutation or pending mutation",
+      "summary": "A person checks the public automatic-mutation report for a registered deed or succession entry.",
+      "tags": [
+        "property-tax",
+        "mutation",
+        "pending"
+      ],
+      "pathNodeIds": [
+        "node_public_property_lookup_ind32",
+        "node_public_mutation_report_ind32",
+        "node_public_property_status_ind32"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_property_missing_record_ind32",
+      "label": "Property not found",
+      "summary": "The public e-Aasthi search does not locate the property.",
+      "tags": [
+        "property-tax",
+        "missing-property",
+        "recovery"
+      ],
+      "pathNodeIds": [
+        "node_public_property_lookup_ind32",
+        "node_public_missing_property_ind32"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_property_payment_or_correction_ind32",
+      "label": "Payment or name discrepancy",
+      "summary": "A public payment/correction surface is visible, but a property-specific demand or name correction is unresolved.",
+      "tags": [
+        "property-tax",
+        "payment",
+        "name-correction"
+      ],
+      "pathNodeIds": [
+        "node_public_payment_ind32",
+        "node_public_aro_recovery_ind32"
+      ],
+      "status": "unknown"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_kerc_conditions_supply",
+      "title": "Conditions of Supply of Electricity with first and second amendments",
+      "publisher": "KERC / BESCOM",
+      "url": "https://www.bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
+      "accessedAt": "2026-08-27",
+      "type": "regulation",
+      "notes": "Canonical source for IND-4 source_kerc_conditions_supply and IND-8 source_kerc_cos_consolidated. Historic consolidated text: Grade A claims are partial until current applicability is confirmed."
+    },
+    {
+      "id": "source_bescom_home",
+      "title": "BESCOM public homepage and service directory",
+      "publisher": "BESCOM",
+      "url": "https://bescom.co.in/",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-4 source_bescom_current_home and IND-6 source_bescom_home; direct current public-interface observation."
+    },
+    {
+      "id": "source_bescom_faq",
+      "title": "BESCOM FAQ — How To Change Name?",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/main/faq",
+      "accessedAt": "2026-08-27",
+      "type": "official_guidance",
+      "notes": "Canonical source for IND-4 source_bescom_name_change_faq, IND-6 source_bescom_faq, and IND-8 source_bescom_jvs_faq_ind8. Public guidance only; authenticated fields were not inspected."
+    },
+    {
+      "id": "source_bescom_tracker",
+      "title": "Track Name Change",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/main/track-name-change",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-4 source_bescom_track_name_change and IND-8 source_bescom_namechange_tracker."
+    },
+    {
+      "id": "source_bescom_jvs",
+      "title": "Janasnehi Vidhyuth Sevegalu — Name Change",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/dashboard/consumer-dashboard/janasnehi-vidhyuth-sevagalu/name-change-form",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Current public page; timing wording does not establish start point or exception applicability."
+    },
+    {
+      "id": "source_bescom_legacy",
+      "title": "BESCOM current public homepage and service directory",
+      "publisher": "BESCOM",
+      "url": "https://bescom.co.in/",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "The formerly cited legacy portal endpoint was unreachable during the Stage 0 link check. No current public route taxonomy was verified; retain the historical lead only as an Unknown gap."
+    },
+    {
+      "id": "source_eaasthi_login",
+      "title": "e-Aasthi citizen login and Final e-Khata instructions",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-6 source_eaasthi_login and IND-8 source_ekhata_citizen_login_ind8."
+    },
+    {
+      "id": "source_eaasthi_search",
+      "title": "e-Aasthi public e-Khata search",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-6 source_eaasthi_search and IND-8 source_ekhata_public_search_ind8."
+    },
+    {
+      "id": "source_eaasthi_status",
+      "title": "e-Khata Application Status",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-6 source_eaasthi_status and IND-8 source_ekhata_epid_status_ind8."
+    },
+    {
+      "id": "source_eaasthi_mutation",
+      "title": "e-Aasthi Pending Mutation Report",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/office/frmPendingMutationReport.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Public observation only; it does not establish a completed buyer-facing record."
+    },
+    {
+      "id": "source_gba_directory",
+      "title": "GBA service directory",
+      "publisher": "Greater Bengaluru Authority",
+      "url": "https://www.bbmp.gov.in/",
+      "accessedAt": "2026-08-27",
+      "type": "official_guidance",
+      "notes": "Current public helpline listing."
+    },
+    {
+      "id": "source_citizen_transfer",
+      "title": "Bescom name transfer can be done fully online if you have ekhata",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1vceniq/bescom_name_transfer_can_be_done_fully_online_if/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-08-01",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person evidence; not procedure proof."
+    },
+    {
+      "id": "source_citizen_login_payment",
+      "title": "Updated 2026 e-Khata BESCOM name-change account",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1vlfrnl/dont_pay_brokers_5k_for_bescom_name_changes_here/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-08-11",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person evidence; personal details are intentionally omitted."
+    },
+    {
+      "id": "source_citizen_missing_epid",
+      "title": "Non Availability of EPID/Draft E-Khata in E-Swathi portal",
+      "publisher": "r/BangaloreRealEstates (Reddit)",
+      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1r3hhqt/non_availability_of_epiddraft_ekhata_in_eswathi/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-02-13",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person missing draft/EPID account."
+    },
+    {
+      "id": "source_citizen_owner_error",
+      "title": "E-Khata Name Correction",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1oqksj1/ekhata_name_correction/",
+      "accessedAt": "2026-08-27",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person prior-owner and correction-error account."
+    },
+    {
+      "id": "source_citizen_missing_draft",
+      "title": "Non Availability of Draft E-khata",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1ikojje/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2025-02-08",
+      "type": "citizen_evidence",
+      "notes": "IND-7 public reports of absent draft e-Khata and delayed self-service request."
+    },
+    {
+      "id": "source_citizen_old_owner_recovery",
+      "title": "Finally I got Ekhata yesterday, costed 125₹",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1k4xnji/",
+      "accessedAt": "2026-08-27",
+      "type": "citizen_evidence",
+      "notes": "IND-7 citizen recovery account; not a standard instruction."
+    },
+    {
+      "id": "source_citizen_noc",
+      "title": "Bescom bill name change",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1bx2oer/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2024-04-06",
+      "type": "citizen_evidence",
+      "notes": "Older offline-process account retained as one side of the NOC contradiction."
+    },
+    {
+      "id": "source_ind32_property_bbmp_act",
+      "title": "Bruhat Bengaluru Mahanagara Palike Act, 2020 (official BBMP copy, as amended by Act 12 of 2023)",
+      "publisher": "Government of Karnataka / BBMP",
+      "url": "https://site.bbmp.gov.in/PDF/53of2020%28E%2912of2023.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "law",
+      "notes": "Sections 149-150 are the relevant transfer-of-title and review provisions. The BBMP index also lists later amendments, including a 2025 amendment; this copy is not asserted to be a complete current compilation."
+    },
+    {
+      "id": "source_ind32_property_rules_2024",
+      "title": "BBMP Property Tax Assessment, Recovery and Management Rules, 2024",
+      "publisher": "Government of Karnataka / BBMP",
+      "url": "https://site.bbmp.gov.in/PDF/53of2020BBMP%28PropertyTaxassessmentRecoveryandManagement%29Rules%2C2024_watermark.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "regulation",
+      "notes": "Rule 10 and Forms 18-24 provide the published mutation intake, notice, objection, and order structure."
+    },
+    {
+      "id": "source_ind32_property_rules_sop",
+      "title": "Property tax Rules-2024 (SOP)",
+      "publisher": "BBMP Revenue Department",
+      "url": "https://site.bbmp.gov.in/PDF/Gazette%20copy%20of%20Property%20tax%20Rules-2024%20%28SOP%29%20dated%2012-08-2024.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Official SOP/specimen-form publication. It repeats Form 22's request to enter names from a registered deed when the Sub-Registrar intimation has not reached BBMP."
+    },
+    {
+      "id": "source_ind32_property_documents",
+      "title": "Revenue Department — Documents Required for Khatha Services",
+      "publisher": "BBMP Revenue Department",
+      "url": "https://site.bbmp.gov.in/departmentwebsites/Revenue/kathaservice.html",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Undated official checklist with sale, inheritance, gift, court-decree, and partition/release branches. It should be reconciled with current e-Aasthi implementation."
+    },
+    {
+      "id": "source_ind32_property_faq",
+      "title": "Revenue Department — Frequently Asked Questions",
+      "publisher": "BBMP Revenue Department",
+      "url": "https://site.bbmp.gov.in/departmentwebsites/revenue/faq.html",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Undated/legacy FAQ describing prescribed-form filing with the ARO, current-tax proof, timing, and transfer fee. It cites the 1976 Act and is retained with a currentness limitation."
+    },
+    {
+      "id": "source_ind32_property_fee",
+      "title": "Katha Services Fee Details",
+      "publisher": "BBMP Revenue Department",
+      "url": "https://site.bbmp.gov.in/departmentwebsites/Revenue/kathaservicefeedetails.html",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Official fee page; it states 2% administrative mutation charge on stamp duty and a minimum of Rs.500, plus separate registration improvement charges."
+    },
+    {
+      "id": "source_ind32_property_act_index",
+      "title": "BBMP Acts, Rules and Circulars index",
+      "publisher": "BBMP",
+      "url": "https://site.bbmp.gov.in/actandbyelaws.html",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Current index observed to list the 2024 property-tax rules, 2024 amendments, and a BBMP Revenue Act amendment dated 10-01-2025."
+    },
+    {
+      "id": "source_ind32_property_tax_portal",
+      "title": "BBMP Property Tax System — help and correction routes",
+      "publisher": "BBMP / GBA",
+      "url": "https://bbmptax.karnataka.gov.in/forms/helplinkDetails.aspx",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Current public page exposes name-change correction capabilities, ARO search, payment/status support, and Revenue contact details; it also labels the feature list as last updated 27-06-2017."
+    },
+    {
+      "id": "source_ind32_property_workflow_citizen_home",
+      "title": "e-Aasthi Citizen public entry and e-Khata search",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Public page observed to expose Ward/SAS/ePID search, a missing-property eKhata route, and the faceless/contactless service description. No search value was entered."
+    },
+    {
+      "id": "source_ind32_property_workflow_search",
+      "title": "e-Aasthi public e-Khata search",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Public controls/instructions observed: Ward Name or Number, Property ePID, SAS Property Tax ID, and Do Not Find My Property eKhata route. No property-specific result was requested."
+    },
+    {
+      "id": "source_ind32_property_workflow_login",
+      "title": "e-Aasthi Citizen Login — Draft and Final eKhata instructions",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Public page exposes mobile/OTP login wording for draft eKhata, Automatic Mutations, Final eKhata upload labels, and an objection entry. Login and upload were not used."
+    },
+    {
+      "id": "source_ind32_property_workflow_pending",
+      "title": "e-Aasthi Pending Mutation Report",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/PendingMutationReport",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Public report observed with registered deed/mutation date, mutation basis, EPID, transfer parties, public-notice date, pending-with-whom, and File Objection columns; the unfiltered page displayed No Data Available."
+    },
+    {
+      "id": "source_ind32_property_workflow_status",
+      "title": "e-Khata Application Status",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Public page observed to accept an EPID and expose stage/routing/timestamp/status/remarks columns, waiting-list wording, and helpline 9480683695. No EPID was entered."
+    },
+    {
+      "id": "source_ind32_property_workflow_payment",
+      "title": "e-Aasthi — Online payment for Khatha Transfer",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://www.bbmpeaasthi.karnataka.gov.in/office/frmKhathaTransferPayOnline.aspx?id=BTqOdaLv1WZFXnr4ei0KIQ%3D%3D",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Public payment surface observed with ward/property/mutation fields, applicant fields, total amount, cards/UPI/net banking, convenience-charge text, and bank/ARO failure handoffs. No token, applicant data, or payment was used."
+    },
+    {
+      "id": "source_ind32_property_workflow_tax_portal",
+      "title": "BBMP Property Tax System — correction and support page",
+      "publisher": "BBMP / GBA",
+      "url": "https://bbmptax.karnataka.gov.in/forms/helplinkDetails.aspx",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Public page observed to list Name Change under property corrections, Find Your ARO, payment-status help, Revenue contacts, and business hours. Feature list says last updated 27-06-2017."
+    },
+    {
+      "id": "source_ind32_property_workflow_aro",
+      "title": "e-Aasthi Find ARO details by ward",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/office/PublicReports/frmAROContactDetails.aspx",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Public ward-to-ARO lookup entry observed; no ward was selected and no contact record was retrieved."
+    },
+    {
+      "id": "source_ind32_property_citizen_online_completion",
+      "title": "Khata Transfer and BESCOM bureaucracy post property registration!",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1d2kr9q",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2024-05-28",
+      "type": "citizen_evidence",
+      "notes": "A commenter gives a first-person account of applying online, uploading documents, and later collecting a khata certificate. It does not establish a current channel, document checklist, turnaround standard, or collection requirement."
+    },
+    {
+      "id": "source_ind32_property_citizen_tax_khata_mismatch",
+      "title": "Help to clear confusion if flat Khata transfer is done or not",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1qhvq3u/help_to_clear_confusion_if_flat_khata_transfer_is/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-01-20",
+      "type": "citizen_evidence",
+      "notes": "A first-person post reports a property-tax receipt showing the poster's name while an e-Aasthi payment page sought a mutation charge. Replies are intentionally not treated as evidence of rules or remedies."
+    },
+    {
+      "id": "source_ind32_property_citizen_sakala_status",
+      "title": "Katha Transfer using Sakala Portal",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/14asgw0",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2023-06-16",
+      "type": "citizen_evidence",
+      "notes": "A commenter reports a self-filed online khata transfer whose status appeared inactive until a burst of updates at the end, followed by issuance. It is a single historic account and does not establish any current portal behaviour or timeline."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_epid_route_visible",
+      "text": "BESCOM's current public homepage exposes a service labelled Name Change with EPID.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_bescom_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4 and IND-6 duplicate observations; this does not verify eligibility or a mapping contract."
+    },
+    {
+      "id": "claim_standard_authenticated_route",
+      "text": "BESCOM's public FAQ directs a name-change applicant to authenticate, select an account ID, complete mandatory fields, upload required documents, submit, retain a request ID, and pay applicable charges.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "sourceIds": [
+        "source_bescom_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4, IND-6, and IND-8 duplicate FAQ claims. The public FAQ does not enumerate the current document checklist."
+    },
+    {
+      "id": "claim_request_tracker",
+      "text": "BESCOM's public tracker requests the request ID sent by SMS.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_request_tracking"
+      ],
+      "sourceIds": [
+        "source_bescom_tracker"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4 and IND-8 duplicate tracker claims."
+    },
+    {
+      "id": "claim_jvs_timeline_wording",
+      "text": "BESCOM's current Janasnehi page states that Name Change and some related services are within 24 hours.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_bescom_jvs"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The start point and exception applicability are not specified; it is not a verified end-to-end service-level promise."
+    },
+    {
+      "id": "claim_legacy_route_taxonomy",
+      "text": "No current public official route taxonomy for fast-track, regular, and HT name-change paths was verified in the Stage 0 link check.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_tenant"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_bescom_legacy"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The previous legacy endpoint was unreachable. This replaces an unverified historic route claim with an explicit current documentation gap."
+    },
+    {
+      "id": "claim_historic_consent_rule",
+      "text": "Historic KERC Conditions clause 36.01 says the registered consumer furnishes consent for transfer of the installation and deposits.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Historic binding text; current applicability is not established."
+    },
+    {
+      "id": "claim_historic_alternative_evidence",
+      "text": "Historic clause 36.01 lists ownership evidence, including registered sale deed, khata, succession or heirship certificate, and will, where consent is absent.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_sale_deed",
+        "node_transfer_evidence"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Historic binding text; it is an evidence lead, not a verified current checklist."
+    },
+    {
+      "id": "claim_historic_tenant_scope",
+      "text": "Historic clause 36.01 limits occupancy evidence alternatives to specified non-commercial installations.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_tenant"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Current authenticated acceptance is unknown."
+    },
+    {
+      "id": "claim_historic_transfer_obligations",
+      "text": "Historic clause 36.01 records no-arrears, indemnity, fresh-agreement, and deposit conditions for transfer; its published schedule also records LT and HT transfer charges.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_transfer_obligations"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Atomicity exception noted: these are one historic conditions cluster used solely to model a decision node. Current amounts and applicability are unverified."
+    },
+    {
+      "id": "claim_ekhata_final_guidance",
+      "text": "The public e-Aasthi guidance distinguishes Draft e-Khata from Final e-Khata and lists registered deed, eKYC, SAS property-tax application number, property photo, and A-Khata material among Final e-Khata inputs.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "nodeIds": [
+        "node_sale_deed",
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_eaasthi_login"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-6 and IND-8; it does not prove BESCOM acceptance."
+    },
+    {
+      "id": "claim_ekhata_search_recovery",
+      "text": "Public e-Aasthi search supports EPID/property lookup and offers a Do Not Find My Property route when a property cannot be found.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_eaasthi_search"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-6 and IND-8 duplicate observations."
+    },
+    {
+      "id": "claim_ekhata_status",
+      "text": "The public e-Khata Application Status page accepts an EPID for status lookup.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_eaasthi_status"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "It does not document BESCOM mapping."
+    },
+    {
+      "id": "claim_mutation_fields",
+      "text": "The public e-Aasthi Pending Mutation Report displays registered-deed or mutation date, property EPID, seller, purchaser, and pending-owner fields.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_previous_consumer_deceased"
+      ],
+      "nodeIds": [
+        "node_sale_deed",
+        "node_mutation",
+        "node_epid"
+      ],
+      "sourceIds": [
+        "source_eaasthi_mutation"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The visible report does not establish a completed buyer-facing record."
+    },
+    {
+      "id": "claim_helpline_channels",
+      "text": "Current public pages publish BESCOM 1912 and GBA e-Khata/New Khata support channels.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_bescom_mapping"
+      ],
+      "sourceIds": [
+        "source_bescom_home",
+        "source_gba_directory"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Channels are observable; their case-resolution scope is not."
+    },
+    {
+      "id": "claim_epid_mapping_unknown",
+      "text": "No inspected public official material establishes EPID-to-BESCOM-account eligibility rules, failure messages, repair owner, or recovery sequence.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4, IND-6, and IND-8 Unknown records. No private/authenticated evidence was accessed."
+    },
+    {
+      "id": "claim_citizen_mapping_failure",
+      "text": "One citizen account identifies a possible failure matching a BESCOM Account ID to an EPID even when an e-Khata record exists.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_bescom_mapping"
+      ],
+      "sourceIds": [
+        "source_citizen_transfer"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Single public account, retained as a failure signal rather than a universal rule."
+    },
+    {
+      "id": "claim_citizen_missing_draft_epid",
+      "text": "One citizen reported a property found by tax identifier with neither linked Draft e-Khata nor EPID, and no movement on a non-availability request after 45 days.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_epid"
+      ],
+      "sourceIds": [
+        "source_citizen_missing_epid"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One public account; it does not establish cause or service level."
+    },
+    {
+      "id": "claim_citizen_owner_correction",
+      "text": "One citizen reported a final e-Khata displaying a previous owner's name and an Unauthorized Activity Has Been Detected message during a correction attempt.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_citizen_owner_error"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One public account; no root cause is established."
+    },
+    {
+      "id": "claim_citizen_old_owner_recovery",
+      "text": "One citizen reported resolving a draft e-Khata showing the old owner after invalidating and reapplying with ARO guidance.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_mutation"
+      ],
+      "sourceIds": [
+        "source_citizen_old_owner_recovery"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A candidate recovery, not a general procedure."
+    },
+    {
+      "id": "claim_citizen_bescom_stalls",
+      "text": "Citizen accounts report EPID-entry, login/reset, unseen-open-application, and upload-stall failures in BESCOM flows.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_citizen_transfer",
+        "source_citizen_login_payment"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Reports identify failure modes only; no backend cause, support outcome, or general workaround is established."
+    },
+    {
+      "id": "claim_citizen_old_noc",
+      "text": "An older offline-process citizen account reported needing a previous-owner or builder NOC for BESCOM name change.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_citizen_noc"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_citizen_no_builder_noc"
+      ],
+      "notes": "Older account; conflicting evidence is retained, not resolved by chronology alone."
+    },
+    {
+      "id": "claim_citizen_no_builder_noc",
+      "text": "One 2026 citizen account reported completing an online BESCOM name change after e-Khata update without a builder NOC.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_citizen_login_payment"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_citizen_old_noc"
+      ],
+      "notes": "One current citizen account; it does not establish an exception rule."
+    },
+    {
+      "id": "claim_ind32_property_act_notice_three_months",
+      "text": "Section 149(1) of the published BBMP Act text states that the transferor and transferee must give notice of transfer of title within three months after execution, registration, or the transfer being effected, as applicable.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "nodeIds": [
+        "node_property_title_notice_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_bbmp_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Binding-text claim, but the accessed copy is as amended by Act 12 of 2023 and the official index lists later amendments."
+    },
+    {
+      "id": "claim_ind32_property_act_successor_one_year",
+      "text": "Section 149(2) of the published BBMP Act text states that a person receiving title as heir or otherwise after the death of the person primarily liable must give notice within one year from the death.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_successor_ind32"
+      ],
+      "nodeIds": [
+        "node_property_title_notice_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_bbmp_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Statutory timing only; it does not establish the current form or accepted successor evidence."
+    },
+    {
+      "id": "claim_ind32_property_act_register_entry",
+      "text": "Section 149(3) of the published BBMP Act text states that when a transfer comes to the Chief Commissioner's or authorised officer's knowledge through notice or otherwise, the transferee's name is to be entered in the property-tax register.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32"
+      ],
+      "nodeIds": [
+        "node_property_final_record_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_bbmp_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Describes the statutory register outcome, not a property-specific update."
+    },
+    {
+      "id": "claim_ind32_property_rule10_intake",
+      "text": "Rule 10 of the 2024 BBMP property-tax rules provides mutation information from a Sub-Registrar Form 18 intimation slip, an authorised-officer or court order, or information supplied by an interested person, with the information recorded in the prescribed mutation registers.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32",
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_rules_2024"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published rule routes; it does not establish which route a specific property will expose."
+    },
+    {
+      "id": "claim_ind32_property_rule10_forms21_22",
+      "text": "Rule 10 prescribes Form 21 for an inheritor, survivor, or successor after death, and Form 22 for a registered deed where the Sub-Registrar intimation slip has not reached BBMP; Form 22 calls for a certified copy of the registered deed.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_transfer_documents_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_rules_2024",
+        "source_ind32_property_rules_sop"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Prescribed legal forms; no current blank submission screen was inspected."
+    },
+    {
+      "id": "claim_ind32_property_rule10_notice_objection",
+      "text": "Rule 10 and Form 23 provide for publication and individual notice concerning a mutation entry, with at least fifteen days to submit an objection in writing or online.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32",
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "nodeIds": [
+        "node_property_objection_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_rules_2024"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published objection opportunity; no particular notice or objection was observed."
+    },
+    {
+      "id": "claim_ind32_property_rule10_form24",
+      "text": "Rule 10 and Form 24 state that when no objection is received within the notice period, the authorised officer may certify the mutation and issue an e-Khata order recording the transferred name in property-tax records.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32"
+      ],
+      "nodeIds": [
+        "node_property_objection_ind32",
+        "node_property_final_record_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_rules_2024"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Conditional legal sequence, not an approval promise or service-level time."
+    },
+    {
+      "id": "claim_ind32_property_sale_documents",
+      "text": "The BBMP Revenue checklist lists a sale deed, current-year property-tax receipt, and Form 15 encumbrance certificate from the sale-deed date to the current date for khatha transfer through sale deed.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_sale_ind32"
+      ],
+      "nodeIds": [
+        "node_property_transfer_documents_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Undated published checklist; current e-Aasthi validation and whether every listed item is mandatory are not established."
+    },
+    {
+      "id": "claim_ind32_property_successor_documents",
+      "text": "The BBMP Revenue checklist publishes separate inheritance-with-will and inheritance-without-will branches, including prior title/possession evidence, current tax receipt, death evidence, family-tree/NOC material in stated cases, and an encumbrance certificate.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_successor_ind32"
+      ],
+      "nodeIds": [
+        "node_property_transfer_documents_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The checklist is scenario-specific and undated; do not generalise it to all succession cases."
+    },
+    {
+      "id": "claim_ind32_property_faq_aro_and_fee",
+      "text": "The BBMP Revenue FAQ says a title holder may apply in the prescribed form to the concerned Assistant Revenue Officer, should include proof of up-to-date property-tax payment for change of khatha, and describes a 2% transfer fee on the sale deed's stamp-duty value.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32"
+      ],
+      "nodeIds": [
+        "node_property_transfer_documents_ind32",
+        "node_property_aro_recovery_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_faq",
+        "source_ind32_property_fee"
+      ],
+      "evidenceGrade": "C",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The filing/fee statements are direct official guidance but undated/legacy and not reconciled on-page with the 2024 rules or current e-Aasthi route."
+    },
+    {
+      "id": "claim_ind32_property_correction_aro",
+      "text": "The public BBMP Property Tax System page lists name/address change among property corrections and directs users with name or receipt discrepancies to Find Your ARO, while publishing Revenue contact details.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "nodeIds": [
+        "node_property_aro_recovery_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_tax_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The page also identifies its feature list as last updated 27-06-2017; current eligibility and response are not established."
+    },
+    {
+      "id": "claim_ind32_property_workflow_search_inputs",
+      "text": "The public e-Aasthi search exposes Ward Name or Ward Number, Property ePID, and SAS Property Tax ID as lookup options, and the page notes that a ward can be found on the property-tax receipt.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_public_lookup_ind32",
+        "scenario_property_missing_record_ind32"
+      ],
+      "nodeIds": [
+        "node_public_property_lookup_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_citizen_home",
+        "source_ind32_property_workflow_search"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Controls and instructions only; no property lookup was run."
+    },
+    {
+      "id": "claim_ind32_property_workflow_missing_route",
+      "text": "The public e-Aasthi page says that if the property is not found in the available searches, a person can select Do Not Find My Property eKhata for Bengaluru City Corporation to check and revert.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_record_ind32"
+      ],
+      "nodeIds": [
+        "node_public_missing_property_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_citizen_home",
+        "source_ind32_property_workflow_search"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The entry is visible; no details were entered and no request was submitted."
+    },
+    {
+      "id": "claim_ind32_property_workflow_mutation_entry",
+      "text": "The public e-Aasthi citizen page exposes an entry labelled eKhata Automatic Mutations - Get Your Mutation.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_automatic_mutation_ind32"
+      ],
+      "nodeIds": [
+        "node_public_mutation_report_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_login"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A visible entry does not establish that mutation is automatic or available for a particular property."
+    },
+    {
+      "id": "claim_ind32_property_workflow_final_e_khata_labels",
+      "text": "The public e-Aasthi citizen instructions say mobile/OTP login is used to see or download Draft eKhata and list registered deed, Aadhaar eKYC, SAS Property Tax Application Number, property photo, A-Khata proof, and a conditional encumbrance certificate as additional Final eKhata information.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_public_lookup_ind32",
+        "scenario_property_automatic_mutation_ind32"
+      ],
+      "nodeIds": [
+        "node_public_property_status_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_login"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published labels are not proof of universal requirements or upload acceptance; no login/upload occurred."
+    },
+    {
+      "id": "claim_ind32_property_workflow_pending_fields",
+      "text": "The public Pending Mutation Report exposes fields for registered-deed or mutation-application date, mutation basis, property EPID, giving and receiving parties, public-notice date, pending-with-whom state, and File Objection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_automatic_mutation_ind32"
+      ],
+      "nodeIds": [
+        "node_public_mutation_report_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_pending"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The unfiltered public table displayed No Data Available; columns do not establish a row, eligibility, or outcome."
+    },
+    {
+      "id": "claim_ind32_property_workflow_status_route",
+      "text": "The public e-Khata Application Status page accepts an EPID, exposes stage/from/received/sent/sent-to/status/remarks columns, says status can be watched online under a waiting-list disposition, and publishes helpline 9480683695.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_public_lookup_ind32",
+        "scenario_property_automatic_mutation_ind32"
+      ],
+      "nodeIds": [
+        "node_public_property_status_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_status"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No EPID was entered, so no property-specific status/error was observed."
+    },
+    {
+      "id": "claim_ind32_property_workflow_payment_surface",
+      "text": "The public e-Aasthi payment page labelled Online payment for Khatha Transfer exposes ward/property/mutation fields, applicant name/mobile/email, total amount, card/UPI/net-banking modes, and convenience-charge text.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "nodeIds": [
+        "node_public_payment_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_payment"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The generated page was viewed without a property context; amount, applicability, and payment completion are Unknown."
+    },
+    {
+      "id": "claim_ind32_property_workflow_payment_recovery",
+      "text": "The public payment notice directs a user to their bank for online-payment failure or auto-refund and to the ARO when money is deducted but not updated in e-Aasthi.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "nodeIds": [
+        "node_public_payment_ind32",
+        "node_public_aro_recovery_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_payment"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Recovery handoffs are visible; refund timing and evidence requirements are not."
+    },
+    {
+      "id": "claim_ind32_property_workflow_tax_correction",
+      "text": "The public BBMP Property Tax System page lists Name and Address change under property corrections and directs name/receipt discrepancy users to Find Your ARO, with Revenue contact details and business hours.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "nodeIds": [
+        "node_public_aro_recovery_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_tax_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The page marks its feature list as last updated 27-06-2017; current correction eligibility and outcome are not established."
+    },
+    {
+      "id": "claim_ind32_property_workflow_aro_lookup",
+      "text": "The public e-Aasthi system exposes a Find ARO details by Ward Name entry.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_record_ind32",
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "nodeIds": [
+        "node_public_aro_recovery_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_aro"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No ward was selected; the jurisdiction-specific office result remains unobserved."
+    },
+    {
+      "id": "claim_ind32_property_workflow_post_login_unknown",
+      "text": "The unauthenticated pass does not establish post-login fields, document validation, rejection messages, objection form fields, or upload-to-status handoff for a particular property.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_public_lookup_ind32",
+        "scenario_property_automatic_mutation_ind32",
+        "scenario_property_missing_record_ind32"
+      ],
+      "nodeIds": [
+        "node_public_property_status_ind32",
+        "node_public_mutation_report_ind32"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No login, upload, search, mutation, objection, or property-specific status action was performed."
+    },
+    {
+      "id": "claim_ind32_property_workflow_sequence_unknown",
+      "text": "No reviewed unauthenticated page establishes a complete current sequence from property-tax record or registered deed through mutation, notice, payment, final e-Khata, and updated property-tax register, or a service-level time for that sequence.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_public_lookup_ind32",
+        "scenario_property_automatic_mutation_ind32"
+      ],
+      "nodeIds": [
+        "node_public_property_lookup_ind32",
+        "node_public_mutation_report_ind32",
+        "node_public_property_status_ind32",
+        "node_public_payment_ind32"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Separate public entry points were observed, but their relationship and outcome were not verified."
+    },
+    {
+      "id": "claim_ind32_property_citizen_online_completion",
+      "text": "One citizen reported completing a khata transfer after applying online, uploading documents, and later visiting an office to collect a khata certificate.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_sale_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_final_record_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_citizen_online_completion"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One reported completion. It must not be generalised to the current e-Aasthi route, accepted uploads, timing, or need for in-person collection."
+    },
+    {
+      "id": "claim_ind32_property_citizen_tax_khata_mismatch",
+      "text": "One citizen reported a property-tax receipt in their name while an e-Aasthi payment page appeared to request a mutation charge for the same flat.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_final_record_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_citizen_tax_khata_mismatch"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single report of apparently inconsistent surfaces. It does not prove that the tax record and khata register are independently maintained or that a charge was due."
+    },
+    {
+      "id": "claim_ind32_property_citizen_delayed_status_updates",
+      "text": "One citizen reported that their self-filed online khata-transfer application showed no movement until late in the reported process, when multiple status updates appeared and a khata was issued.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_sale_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_final_record_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_citizen_sakala_status"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A historic, one-person account. It does not show that an inactive status means approval, delay, or any current-system state."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_sale_deed",
+      "label": "Sale deed",
+      "kind": "document",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Registered property-transfer document referenced by municipal and historic transfer material.",
+      "requiredState": "Available only where the applicable municipal or exception route asks for it.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_previous_consumer_deceased"
+      ],
+      "claimIds": [
+        "claim_ekhata_final_guidance",
+        "claim_historic_alternative_evidence"
+      ],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_mutation",
+      "label": "Mutation",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Publicly visible municipal mutation report state; not proof of completed buyer-facing ownership.",
+      "requiredState": "A municipal report may be inspected without assuming its downstream acceptance.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_previous_consumer_deceased"
+      ],
+      "claimIds": [
+        "claim_mutation_fields"
+      ],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_final_e_khata",
+      "label": "Final e-Khata",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Municipal final-record state with public input guidance and reported citizen failure modes.",
+      "requiredState": "Finality and holder state need case-specific verification; Draft is not treated as final proof.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_final_guidance",
+        "claim_ekhata_status",
+        "claim_citizen_missing_draft_epid",
+        "claim_citizen_owner_correction",
+        "claim_citizen_old_owner_recovery"
+      ],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_epid",
+      "label": "EPID",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Property identifier exposed in public search and status routes.",
+      "requiredState": "An EPID may be located or its absence recovered through official municipal channels; BESCOM mapping is separate and unknown.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_search_recovery",
+        "claim_ekhata_status",
+        "claim_epid_mapping_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_transfer_evidence",
+      "label": "Exception transfer evidence",
+      "kind": "document",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Historic consent, ownership, succession, or scope-limited occupancy evidence branch.",
+      "requiredState": "Current acceptance must be confirmed; historical text is not presented as a current checklist.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_consent_rule",
+        "claim_historic_alternative_evidence",
+        "claim_historic_tenant_scope"
+      ],
+      "status": "partial",
+      "displayOrder": 45
+    },
+    {
+      "id": "node_bescom_mapping",
+      "label": "BESCOM mapping",
+      "kind": "system",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Unpublished relationship between a property EPID and a BESCOM account.",
+      "requiredState": "No evidence-backed state, validation rule, repair owner, or recovery sequence is known.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_epid_route_visible",
+        "claim_epid_mapping_unknown",
+        "claim_citizen_mapping_failure",
+        "claim_citizen_bescom_stalls"
+      ],
+      "status": "unknown",
+      "displayOrder": 50
+    },
+    {
+      "id": "node_transfer_obligations",
+      "label": "Transfer obligations",
+      "kind": "decision",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Historic transfer conditions such as arrears, indemnity, agreement, deposit, and charges.",
+      "requiredState": "Obtain current case-specific confirmation; historic values and applicability are partial.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_transfer_obligations"
+      ],
+      "status": "partial",
+      "displayOrder": 55
+    },
+    {
+      "id": "node_name_transfer",
+      "label": "BESCOM name transfer",
+      "kind": "service",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Current public FAQ exposes an authenticated standard route and the homepage exposes an EPID-labelled entry.",
+      "requiredState": "Use an authorized route; exact authenticated validation and EPID behaviour remain Unknown.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_epid_route_visible",
+        "claim_epid_mapping_unknown",
+        "claim_citizen_bescom_stalls",
+        "claim_citizen_old_noc",
+        "claim_citizen_no_builder_noc"
+      ],
+      "status": "partial",
+      "displayOrder": 60
+    },
+    {
+      "id": "node_request_tracking",
+      "label": "Request tracking",
+      "kind": "record",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Public name-change tracking keyed by an SMS request ID.",
+      "requiredState": "Retain a request ID after successful submission; outcome timing is not established.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_request_tracker"
+      ],
+      "status": "verified",
+      "displayOrder": 70
+    },
+    {
+      "id": "node_property_title_notice_ind32",
+      "label": "Title-transfer notice",
+      "kind": "decision",
+      "ownerAgencyId": "agency_bbmp_revenue_ind32_property",
+      "summary": "Statutory notice timing for transfer or succession of the person primarily liable for property tax.",
+      "requiredState": "Transfer or succession exists, but current application channel is not established by the Act alone.",
+      "checks": [
+        {
+          "id": "check_property_notice_sale",
+          "label": "Three-month sale notice",
+          "description": "Published section 149(1) text states a three-month notice period.",
+          "url": "https://site.bbmp.gov.in/PDF/53of2020%28E%2912of2023.pdf",
+          "claimIds": [
+            "claim_ind32_property_act_notice_three_months"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "check_property_notice_successor",
+          "label": "One-year succession notice",
+          "description": "Published section 149(2) text states a one-year notice period after death.",
+          "url": "https://site.bbmp.gov.in/PDF/53of2020%28E%2912of2023.pdf",
+          "claimIds": [
+            "claim_ind32_property_act_successor_one_year"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_act_notice_three_months",
+        "claim_ind32_property_act_successor_one_year"
+      ],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_property_mutation_intake_ind32",
+      "label": "Mutation intake",
+      "kind": "service",
+      "ownerAgencyId": "agency_bbmp_revenue_ind32_property",
+      "summary": "Rule-based intake from Sub-Registrar intimation, order, or interested-person information.",
+      "requiredState": "A legally recognised intake basis exists; the live route for a property is Unknown.",
+      "checks": [
+        {
+          "id": "check_property_rule_intake",
+          "label": "Published intake routes",
+          "description": "Rule 10 names Form 18, authorised/court order, and interested-person information routes.",
+          "url": "https://site.bbmp.gov.in/PDF/53of2020BBMP%28PropertyTaxassessmentRecoveryandManagement%29Rules%2C2024_watermark.pdf",
+          "claimIds": [
+            "claim_ind32_property_rule10_intake"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_property_form21_22",
+          "label": "Forms 21 and 22",
+          "description": "Rule 10 distinguishes successor and registered-deed mutation forms.",
+          "url": "https://site.bbmp.gov.in/PDF/53of2020BBMP%28PropertyTaxassessmentRecoveryandManagement%29Rules%2C2024_watermark.pdf",
+          "claimIds": [
+            "claim_ind32_property_rule10_forms21_22"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32",
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_rule10_intake",
+        "claim_ind32_property_rule10_forms21_22"
+      ],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_property_transfer_documents_ind32",
+      "label": "Transfer evidence",
+      "kind": "document",
+      "ownerAgencyId": "agency_bbmp_revenue_ind32_property",
+      "summary": "Official checklist evidence for sale and succession branches.",
+      "requiredState": "Checklist requirements are published but current validation and acceptance are Unknown.",
+      "checks": [
+        {
+          "id": "check_property_sale_docs",
+          "label": "Sale branch",
+          "description": "Sale deed, current tax receipt, and Form 15 EC are listed.",
+          "url": "https://site.bbmp.gov.in/departmentwebsites/Revenue/kathaservice.html",
+          "claimIds": [
+            "claim_ind32_property_sale_documents"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "check_property_successor_docs",
+          "label": "Succession branches",
+          "description": "Will/no-will branches and stated supporting evidence are listed.",
+          "url": "https://site.bbmp.gov.in/departmentwebsites/Revenue/kathaservice.html",
+          "claimIds": [
+            "claim_ind32_property_successor_documents"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_sale_documents",
+        "claim_ind32_property_successor_documents",
+        "claim_ind32_property_faq_aro_and_fee"
+      ],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_property_objection_ind32",
+      "label": "Notice and objection",
+      "kind": "service",
+      "ownerAgencyId": "agency_bbmp_revenue_ind32_property",
+      "summary": "Published mutation-notice and objection opportunity before conditional certification.",
+      "requiredState": "Notice and objection handling for an individual record is Unknown.",
+      "checks": [
+        {
+          "id": "check_property_form23",
+          "label": "Fifteen-day objection window",
+          "description": "Form 23 provides written or online objection within fifteen days.",
+          "url": "https://site.bbmp.gov.in/PDF/53of2020BBMP%28PropertyTaxassessmentRecoveryandManagement%29Rules%2C2024_watermark.pdf",
+          "claimIds": [
+            "claim_ind32_property_rule10_notice_objection"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32",
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_rule10_notice_objection",
+        "claim_ind32_property_rule10_form24"
+      ],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_property_final_record_ind32",
+      "label": "Property-tax register record",
+      "kind": "record",
+      "ownerAgencyId": "agency_bbmp_revenue_ind32_property",
+      "summary": "The statutory/register outcome of recording the transferee name and, conditionally, issuing an e-Khata order.",
+      "requiredState": "No property-specific register update or order was checked.",
+      "checks": [
+        {
+          "id": "check_property_register_entry",
+          "label": "Transferee register entry",
+          "description": "Section 149(3) describes entering the transferee name when transfer is known.",
+          "url": "https://site.bbmp.gov.in/PDF/53of2020%28E%2912of2023.pdf",
+          "claimIds": [
+            "claim_ind32_property_act_register_entry"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "check_property_form24",
+          "label": "Conditional Form 24 order",
+          "description": "Form 24 describes certification and e-Khata order after the notice condition.",
+          "url": "https://site.bbmp.gov.in/PDF/53of2020BBMP%28PropertyTaxassessmentRecoveryandManagement%29Rules%2C2024_watermark.pdf",
+          "claimIds": [
+            "claim_ind32_property_rule10_form24"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_act_register_entry",
+        "claim_ind32_property_rule10_form24"
+      ],
+      "status": "unknown",
+      "displayOrder": 50
+    },
+    {
+      "id": "node_property_aro_recovery_ind32",
+      "label": "ARO correction/recovery",
+      "kind": "service",
+      "ownerAgencyId": "agency_bbmp_revenue_ind32_property",
+      "summary": "Published ARO contact and correction route for name or receipt discrepancies.",
+      "requiredState": "The jurisdictional ARO and current remedy for a case are not established without property details.",
+      "checks": [
+        {
+          "id": "check_property_aro_route",
+          "label": "Find Your ARO",
+          "description": "The property-tax portal directs name/receipt discrepancy users to Find Your ARO.",
+          "url": "https://bbmptax.karnataka.gov.in/forms/helplinkDetails.aspx",
+          "claimIds": [
+            "claim_ind32_property_correction_aro"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_correction_aro",
+        "claim_ind32_property_faq_aro_and_fee"
+      ],
+      "status": "partial",
+      "displayOrder": 60
+    },
+    {
+      "id": "node_public_property_lookup_ind32",
+      "label": "Public property lookup",
+      "kind": "service",
+      "ownerAgencyId": "agency_gba_eaasthi_workflow_ind32",
+      "summary": "Unauthenticated e-Aasthi lookup by ward, ePID, or SAS property-tax ID.",
+      "requiredState": "A usable lookup key is required for a property-specific result; none was entered.",
+      "checks": [
+        {
+          "id": "check_workflow_search_inputs",
+          "label": "Ward/SAS/ePID controls",
+          "description": "Public e-Aasthi pages expose ward, property ePID, and SAS property-tax ID search options.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
+          "claimIds": [
+            "claim_ind32_property_workflow_search_inputs"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_workflow_missing_property",
+          "label": "Property not found route",
+          "description": "The public page anticipates a property not found in search.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/",
+          "claimIds": [
+            "claim_ind32_property_workflow_missing_route"
+          ],
+          "status": "verified"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_workflow_missing_property",
+          "label": "Do Not Find My Property eKhata",
+          "description": "The public page offers a corporation-check route; no request was started.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
+          "claimIds": [
+            "claim_ind32_property_workflow_missing_route"
+          ],
+          "status": "verified"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_property_public_lookup_ind32",
+        "scenario_property_automatic_mutation_ind32",
+        "scenario_property_missing_record_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_search_inputs",
+        "claim_ind32_property_workflow_missing_route"
+      ],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_public_missing_property_ind32",
+      "label": "Missing-property recovery",
+      "kind": "service",
+      "ownerAgencyId": "agency_gba_eaasthi_workflow_ind32",
+      "summary": "Visible public fallback when the e-Aasthi property search does not find a record.",
+      "requiredState": "The route is visible; fields, response, review owner, and timing were not checked.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [
+        {
+          "id": "recovery_workflow_missing_property_route",
+          "label": "Corporation check and revert",
+          "description": "The public instruction states Bengaluru City Corporation will check and revert.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/",
+          "claimIds": [
+            "claim_ind32_property_workflow_missing_route"
+          ],
+          "status": "verified"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_property_missing_record_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_missing_route",
+        "claim_ind32_property_workflow_post_login_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_public_mutation_report_ind32",
+      "label": "Automatic mutation report",
+      "kind": "service",
+      "ownerAgencyId": "agency_gba_eaasthi_workflow_ind32",
+      "summary": "Public automatic-mutation entry and pending report showing mutation metadata and objection label.",
+      "requiredState": "A property-specific row and eligibility are Unknown; the unfiltered report showed No Data Available.",
+      "checks": [
+        {
+          "id": "check_workflow_mutation_entry",
+          "label": "Automatic Mutation entry",
+          "description": "The public citizen page exposes eKhata Automatic Mutations - Get Your Mutation.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx",
+          "claimIds": [
+            "claim_ind32_property_workflow_mutation_entry"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_workflow_pending_fields",
+          "label": "Pending report fields",
+          "description": "The public report exposes transfer dates, basis, EPID, parties, notice date, pending-with-whom, and File Objection.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/PendingMutationReport",
+          "claimIds": [
+            "claim_ind32_property_workflow_pending_fields"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_workflow_no_data",
+          "label": "No Data Available",
+          "description": "The unfiltered public report displayed No Data Available; no property-specific row was sought.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/PendingMutationReport",
+          "claimIds": [
+            "claim_ind32_property_workflow_pending_fields"
+          ],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_workflow_file_objection",
+          "label": "File Objection label",
+          "description": "The public report exposes a File Objection label, but filing and review were not inspected.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/PendingMutationReport",
+          "claimIds": [
+            "claim_ind32_property_workflow_pending_fields",
+            "claim_ind32_property_workflow_post_login_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_property_automatic_mutation_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_mutation_entry",
+        "claim_ind32_property_workflow_pending_fields",
+        "claim_ind32_property_workflow_post_login_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_public_property_status_ind32",
+      "label": "Public e-Khata status",
+      "kind": "service",
+      "ownerAgencyId": "agency_gba_eaasthi_workflow_ind32",
+      "summary": "EPID-based e-Khata status lookup with routing and remarks columns.",
+      "requiredState": "An EPID is required for a case result; none was entered.",
+      "checks": [
+        {
+          "id": "check_workflow_status_route",
+          "label": "EPID status route",
+          "description": "The public page accepts an EPID and exposes stage, routing, timestamps, status, and remarks.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
+          "claimIds": [
+            "claim_ind32_property_workflow_status_route"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_workflow_final_labels",
+          "label": "Final eKhata labels",
+          "description": "The public citizen instructions expose draft/final guidance and listed upload labels.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx",
+          "claimIds": [
+            "claim_ind32_property_workflow_final_e_khata_labels"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_workflow_case_status_unknown",
+          "label": "Case status not checked",
+          "description": "No EPID was entered, so no case status or error was observed.",
+          "claimIds": [
+            "claim_ind32_property_workflow_post_login_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_workflow_ekhata_helpline",
+          "label": "eKhata helpline",
+          "description": "The page publishes 9480683695; no case-specific support response was obtained.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
+          "claimIds": [
+            "claim_ind32_property_workflow_status_route"
+          ],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_property_public_lookup_ind32",
+        "scenario_property_automatic_mutation_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_status_route",
+        "claim_ind32_property_workflow_final_e_khata_labels",
+        "claim_ind32_property_workflow_post_login_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_public_payment_ind32",
+      "label": "Khatha transfer payment",
+      "kind": "service",
+      "ownerAgencyId": "agency_gba_eaasthi_workflow_ind32",
+      "summary": "Public payment surface for a property-specific khatha transfer context.",
+      "requiredState": "Property context, demand, applicability, and payment outcome are Unknown; no payment was attempted.",
+      "checks": [
+        {
+          "id": "check_workflow_payment_surface",
+          "label": "Payment fields",
+          "description": "The public page exposes property, applicant, total-amount, and payment-mode labels.",
+          "url": "https://www.bbmpeaasthi.karnataka.gov.in/office/frmKhathaTransferPayOnline.aspx?id=BTqOdaLv1WZFXnr4ei0KIQ%3D%3D",
+          "claimIds": [
+            "claim_ind32_property_workflow_payment_surface"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_workflow_payment_issue",
+          "label": "Payment not updated/failure",
+          "description": "The public notice names bank and ARO handoffs for payment failures or deducted-but-not-updated payments.",
+          "url": "https://www.bbmpeaasthi.karnataka.gov.in/office/frmKhathaTransferPayOnline.aspx?id=BTqOdaLv1WZFXnr4ei0KIQ%3D%3D",
+          "claimIds": [
+            "claim_ind32_property_workflow_payment_recovery"
+          ],
+          "status": "verified"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_workflow_bank",
+          "label": "Contact bank",
+          "description": "The public notice directs online-payment failure/auto-refund issues to the bank.",
+          "url": "https://www.bbmpeaasthi.karnataka.gov.in/office/frmKhathaTransferPayOnline.aspx?id=BTqOdaLv1WZFXnr4ei0KIQ%3D%3D",
+          "claimIds": [
+            "claim_ind32_property_workflow_payment_recovery"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "recovery_workflow_aro_payment",
+          "label": "Contact ARO",
+          "description": "The public notice directs deducted-but-not-updated users to the ARO with details.",
+          "url": "https://www.bbmpeaasthi.karnataka.gov.in/office/frmKhathaTransferPayOnline.aspx?id=BTqOdaLv1WZFXnr4ei0KIQ%3D%3D",
+          "claimIds": [
+            "claim_ind32_property_workflow_payment_recovery"
+          ],
+          "status": "verified"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_payment_surface",
+        "claim_ind32_property_workflow_payment_recovery",
+        "claim_ind32_property_workflow_sequence_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 50
+    },
+    {
+      "id": "node_public_aro_recovery_ind32",
+      "label": "ARO correction and recovery",
+      "kind": "service",
+      "ownerAgencyId": "agency_bbmp_tax_workflow_ind32",
+      "summary": "Public correction/support entries for name or receipt discrepancies and ward-based ARO lookup.",
+      "requiredState": "A ward-specific office, current eligibility, and response are Unknown.",
+      "checks": [
+        {
+          "id": "check_workflow_name_correction",
+          "label": "Name correction entry",
+          "description": "The property-tax page lists Name and Address change and Find Your ARO.",
+          "url": "https://bbmptax.karnataka.gov.in/forms/helplinkDetails.aspx",
+          "claimIds": [
+            "claim_ind32_property_workflow_tax_correction"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "check_workflow_aro_lookup",
+          "label": "Find ARO by ward",
+          "description": "The e-Aasthi system exposes a ward-based ARO-details entry.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/office/PublicReports/frmAROContactDetails.aspx",
+          "claimIds": [
+            "claim_ind32_property_workflow_aro_lookup"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [
+        {
+          "id": "recovery_workflow_aro_contact",
+          "label": "Use published ARO route",
+          "description": "Use the public ward-based ARO lookup or Revenue contact route; no ward or personal data was supplied.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/office/PublicReports/frmAROContactDetails.aspx",
+          "claimIds": [
+            "claim_ind32_property_workflow_aro_lookup",
+            "claim_ind32_property_workflow_tax_correction"
+          ],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_property_missing_record_ind32",
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_tax_correction",
+        "claim_ind32_property_workflow_aro_lookup"
+      ],
+      "status": "partial",
+      "displayOrder": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_sale_to_mutation",
+      "fromNodeId": "node_sale_deed",
+      "toNodeId": "node_mutation",
+      "relationship": "produces",
+      "label": "Municipal report displays deed/mutation fields; universal automatic completion is not established.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "claimIds": [
+        "claim_mutation_fields"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_mutation_to_final",
+      "fromNodeId": "node_mutation",
+      "toNodeId": "node_final_e_khata",
+      "relationship": "requires",
+      "label": "A buyer-facing final record is a prudent clean-sale hypothesis, not a published universal rule.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "claimIds": [
+        "claim_mutation_fields",
+        "claim_ekhata_final_guidance"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_final_to_epid",
+      "fromNodeId": "node_final_e_khata",
+      "toNodeId": "node_epid",
+      "relationship": "produces",
+      "label": "Public sources support EPID lookup/status but do not establish its exact production from finalisation.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_search_recovery",
+        "claim_ekhata_status"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_epid_to_mapping",
+      "fromNodeId": "node_epid",
+      "toNodeId": "node_bescom_mapping",
+      "relationship": "maps_to",
+      "label": "An EPID route is visible, but its cross-system mapping contract is Unknown.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_epid_route_visible",
+        "claim_epid_mapping_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_mapping_to_transfer",
+      "fromNodeId": "node_bescom_mapping",
+      "toNodeId": "node_name_transfer",
+      "relationship": "requires",
+      "label": "Mapping success is inferred only for the EPID route; a separate standard route is publicly documented.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_epid_mapping_unknown"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_evidence_to_obligations",
+      "fromNodeId": "node_transfer_evidence",
+      "toNodeId": "node_transfer_obligations",
+      "relationship": "requires",
+      "label": "Historical exception evidence does not remove historical obligations.",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_consent_rule",
+        "claim_historic_alternative_evidence",
+        "claim_historic_tenant_scope",
+        "claim_historic_transfer_obligations"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_obligations_to_transfer",
+      "fromNodeId": "node_transfer_obligations",
+      "toNodeId": "node_name_transfer",
+      "relationship": "requires",
+      "label": "Historic conditions cluster feeds transfer; current implementation remains partial.",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_transfer_obligations",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_transfer_to_tracking",
+      "fromNodeId": "node_name_transfer",
+      "toNodeId": "node_request_tracking",
+      "relationship": "produces",
+      "label": "The documented standard workflow returns a request ID after successful submission.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_request_tracker"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "edge_property_notice_to_intake_ind32",
+      "fromNodeId": "node_property_title_notice_ind32",
+      "toNodeId": "node_property_mutation_intake_ind32",
+      "relationship": "requires",
+      "label": "Notice timing feeds the mutation intake, but the current channel is not established by statute alone.",
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_act_notice_three_months",
+        "claim_ind32_property_act_successor_one_year",
+        "claim_ind32_property_rule10_intake"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_property_documents_to_intake_ind32",
+      "fromNodeId": "node_property_transfer_documents_ind32",
+      "toNodeId": "node_property_mutation_intake_ind32",
+      "relationship": "requires",
+      "label": "Checklist evidence supports an intake branch; current validation remains unverified.",
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_sale_documents",
+        "claim_ind32_property_successor_documents",
+        "claim_ind32_property_rule10_forms21_22"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_property_intake_to_objection_ind32",
+      "fromNodeId": "node_property_mutation_intake_ind32",
+      "toNodeId": "node_property_objection_ind32",
+      "relationship": "produces",
+      "label": "Rule 10/Form 23 describes notice and an objection window after mutation information is recorded.",
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32",
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_rule10_notice_objection"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "edge_property_objection_to_record_ind32",
+      "fromNodeId": "node_property_objection_ind32",
+      "toNodeId": "node_property_final_record_ind32",
+      "relationship": "produces",
+      "label": "No objection is a condition in the published Form 24 certification sequence; individual outcome is unverified.",
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_rule10_form24",
+        "claim_ind32_property_act_register_entry"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_property_record_to_aro_ind32",
+      "fromNodeId": "node_property_final_record_ind32",
+      "toNodeId": "node_property_aro_recovery_ind32",
+      "relationship": "alternative",
+      "label": "Name/receipt discrepancy has a published ARO contact route, not a proven correction outcome.",
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_correction_aro"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_workflow_lookup_to_status_ind32",
+      "fromNodeId": "node_public_property_lookup_ind32",
+      "toNodeId": "node_public_property_status_ind32",
+      "relationship": "produces",
+      "label": "A public lookup can lead to an EPID/status entry, but no property-specific handoff was tested.",
+      "scenarioIds": [
+        "scenario_property_public_lookup_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_search_inputs",
+        "claim_ind32_property_workflow_status_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_workflow_lookup_to_mutation_ind32",
+      "fromNodeId": "node_public_property_lookup_ind32",
+      "toNodeId": "node_public_mutation_report_ind32",
+      "relationship": "alternative",
+      "label": "The public mutation report is a separate entry; its relationship to a particular lookup is not established.",
+      "scenarioIds": [
+        "scenario_property_automatic_mutation_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_mutation_entry",
+        "claim_ind32_property_workflow_pending_fields"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_workflow_mutation_to_status_ind32",
+      "fromNodeId": "node_public_mutation_report_ind32",
+      "toNodeId": "node_public_property_status_ind32",
+      "relationship": "produces",
+      "label": "Mutation metadata and EPID status are separate public surfaces; case-level linkage is unverified.",
+      "scenarioIds": [
+        "scenario_property_automatic_mutation_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_pending_fields",
+        "claim_ind32_property_workflow_status_route",
+        "claim_ind32_property_workflow_sequence_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_workflow_payment_to_aro_ind32",
+      "fromNodeId": "node_public_payment_ind32",
+      "toNodeId": "node_public_aro_recovery_ind32",
+      "relationship": "alternative",
+      "label": "The payment notice names the ARO as a recovery contact when a deducted payment is not updated.",
+      "scenarioIds": [
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_payment_recovery",
+        "claim_ind32_property_workflow_tax_correction"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_workflow_missing_to_aro_ind32",
+      "fromNodeId": "node_public_missing_property_ind32",
+      "toNodeId": "node_public_aro_recovery_ind32",
+      "relationship": "alternative",
+      "label": "Missing-property fallback and ARO lookup are both visible, but the page does not prove they are one sequence.",
+      "scenarioIds": [
+        "scenario_property_missing_record_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_missing_route",
+        "claim_ind32_property_workflow_aro_lookup"
+      ],
+      "status": "unknown"
+    }
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_draft_not_final",
+      "title": "Draft e-Khata is not a verified final buyer record",
+      "category": "documentation",
+      "symptom": "The property has Draft e-Khata but finality or holder state is unresolved.",
+      "likelyCause": "Public guidance distinguishes Draft and Final, but no public evidence connects Draft to BESCOM acceptance.",
+      "recovery": "Use official Final e-Khata guidance and status/search channels; do not treat Draft as transfer approval.",
+      "ownerAgencyIds": [
+        "agency_gba"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_epid"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "claimIds": [
+        "claim_ekhata_final_guidance",
+        "claim_ekhata_status"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_property_missing",
+      "title": "Property cannot be found in public e-Khata search",
+      "category": "process",
+      "symptom": "Available public lookup paths do not find the property.",
+      "likelyCause": "The public interface exposes a missing-property state without a property-specific cause.",
+      "recovery": "Use the official Do Not Find My Property route for corporation review.",
+      "ownerAgencyIds": [
+        "agency_gba"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_epid"
+      ],
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_search_recovery"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "roadblock_owner_correction",
+      "title": "e-Khata holder is wrong or correction fails",
+      "category": "process",
+      "symptom": "Citizen accounts describe a prior holder in e-Khata or correction failure.",
+      "likelyCause": "Unknown; citizen reports do not establish a data, identity, or workflow cause.",
+      "recovery": "Use official municipal support; a reported reapplication is not a general procedure.",
+      "ownerAgencyIds": [
+        "agency_gba"
+      ],
+      "nodeIds": [
+        "node_final_e_khata"
+      ],
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_citizen_owner_correction",
+        "claim_citizen_old_owner_recovery"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_epid_mapping",
+      "title": "EPID does not resolve to the intended BESCOM account",
+      "category": "infrastructure",
+      "symptom": "An EPID route is visible but the intended account relationship cannot be established.",
+      "likelyCause": "Cross-system mapping rules, errors, repair owner, and SLA are Unknown; one citizen report identifies a possible failure.",
+      "recovery": "Do not repeatedly submit; use published support channels and obtain official case-specific guidance.",
+      "ownerAgencyIds": [
+        "agency_gba",
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_epid_mapping_unknown",
+        "claim_citizen_mapping_failure",
+        "claim_helpline_channels"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_bescom_stalls",
+      "title": "BESCOM login or application flow stalls",
+      "category": "infrastructure",
+      "symptom": "Citizen accounts describe login/reset, unseen-open-application, EPID-entry, and upload-stall failures.",
+      "likelyCause": "Unknown; no public evidence establishes backend cause or remedy.",
+      "recovery": "Use authorized BESCOM support without placing account or identity data in the ledger.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_citizen_bescom_stalls",
+        "claim_helpline_channels"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_tenant_scope",
+      "title": "Tenant route outside stated historical scope",
+      "category": "documentation",
+      "symptom": "An occupier seeks transfer for an installation that may not fit the historic non-commercial scope.",
+      "likelyCause": "The historic occupancy alternative is limited and current authenticated eligibility is undisclosed.",
+      "recovery": "Confirm current eligibility and installation category through authorized BESCOM channels.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_tenant"
+      ],
+      "claimIds": [
+        "claim_historic_tenant_scope",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_successor_evidence",
+      "title": "Successor evidence cannot be confirmed in the current form",
+      "category": "documentation",
+      "symptom": "Prior consumer is deceased and consent is unavailable.",
+      "likelyCause": "Historic text lists successor evidence but the current public FAQ omits its authenticated document list.",
+      "recovery": "Use historical evidence only as a lead; confirm current acceptance in authorized channels.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_previous_consumer_deceased"
+      ],
+      "claimIds": [
+        "claim_historic_alternative_evidence",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_consent_deposit",
+      "title": "Consent unavailable and deposit treatment unresolved",
+      "category": "documentation",
+      "symptom": "Applicant cannot furnish consent to transfer the installation and deposit.",
+      "likelyCause": "Historic text describes alternatives and a fresh-deposit consequence, but current demand treatment is unverified.",
+      "recovery": "Obtain case-specific current demand; do not use historic amounts as current amounts.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations"
+      ],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_consent_rule",
+        "claim_historic_transfer_obligations"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_arrears_recovery",
+      "title": "Arrears may block transfer but public clearing path is not documented",
+      "category": "process",
+      "symptom": "An outstanding balance may prevent transfer.",
+      "likelyCause": "Historic text states no arrears; no current public remediation sequence was found.",
+      "recovery": "Resolve billing through an authorized BESCOM path before retrying; exact sequence remains unknown.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_obligations",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_transfer_obligations",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_document_checklist",
+      "title": "Current authenticated document checklist is not public",
+      "category": "process",
+      "symptom": "Public FAQ directs uploads but does not enumerate them before login.",
+      "likelyCause": "Authenticated/back-end requirements were not inspected and are Unknown.",
+      "recovery": "Use the authorized route and retain the request ID if submission succeeds; do not infer or bypass requirements.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_epid_mapping_unknown",
+        "claim_request_tracker"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_noc_conflict",
+      "title": "NOC requirement differs across citizen accounts",
+      "category": "documentation",
+      "symptom": "An older account reports needing an NOC while a 2026 account reports completion without builder NOC.",
+      "likelyCause": "The route may have changed or conditions differed; desk evidence cannot resolve it.",
+      "recovery": "Do not assume NOC is or is not required; verify current case-specific requirements through authorized sources.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_citizen_old_noc",
+        "claim_citizen_no_builder_noc"
+      ],
+      "status": "contested"
+    },
+    {
+      "id": "roadblock_property_current_law_compilation_ind32",
+      "title": "Current consolidated law is not established",
+      "category": "documentation",
+      "symptom": "Published Act text and current BBMP index show different amendment dates.",
+      "likelyCause": "The accessed Act copy is not a full current compilation.",
+      "recovery": "Check the latest official amendment before relying on statutory timing.",
+      "ownerAgencyIds": [
+        "agency_bbmp_revenue_ind32_property"
+      ],
+      "nodeIds": [
+        "node_property_title_notice_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_act_notice_three_months",
+        "claim_ind32_property_act_successor_one_year"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_property_route_unknown_ind32",
+      "title": "Published forms are not a confirmed live route",
+      "category": "process",
+      "symptom": "Rules prescribe Forms 18-24 but no current property-specific submission screen was inspected.",
+      "likelyCause": "The relationship between statutory forms, e-Aasthi, and ARO intake is not fully published.",
+      "recovery": "Confirm the current authorised route with BBMP Revenue/ARO; do not infer an end-to-end sequence.",
+      "ownerAgencyIds": [
+        "agency_bbmp_revenue_ind32_property",
+        "agency_gba_eaasthi_ind32_property"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_transfer_documents_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_rule10_intake",
+        "claim_ind32_property_rule10_forms21_22",
+        "claim_ind32_property_faq_aro_and_fee"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_property_objection_handling_ind32",
+      "title": "Objection handling is not documented end to end",
+      "category": "process",
+      "symptom": "A 15-day objection opportunity is published, but case-specific filing fields and review outcome are not.",
+      "likelyCause": "Only the rule/template was reviewed; no live notice or objection was opened.",
+      "recovery": "Treat the rule as a published opportunity, not proof of a specific notice or result.",
+      "ownerAgencyIds": [
+        "agency_bbmp_revenue_ind32_property"
+      ],
+      "nodeIds": [
+        "node_property_objection_ind32",
+        "node_property_final_record_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_successor_ind32",
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_rule10_notice_objection",
+        "claim_ind32_property_rule10_form24"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_property_record_correction_ind32",
+      "title": "Name correction recovery is only a contact handoff",
+      "category": "process",
+      "symptom": "The tax portal lists name correction and Find Your ARO, but not current acceptance or completion criteria.",
+      "likelyCause": "The page's correction feature list is legacy/undated.",
+      "recovery": "Use the jurisdictional ARO route for case-specific instructions; do not store property or identity data in this ledger.",
+      "ownerAgencyIds": [
+        "agency_bbmp_revenue_ind32_property"
+      ],
+      "nodeIds": [
+        "node_property_aro_recovery_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_correction_aro"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_workflow_property_missing_ind32",
+      "title": "Property not found in public search",
+      "category": "process",
+      "symptom": "A public search may not locate the property.",
+      "likelyCause": "The interface exposes the missing-property state but not a property-specific cause.",
+      "recovery": "Use the visible Do Not Find My Property eKhata route; no request was submitted.",
+      "ownerAgencyIds": [
+        "agency_gba_eaasthi_workflow_ind32"
+      ],
+      "nodeIds": [
+        "node_public_property_lookup_ind32",
+        "node_public_missing_property_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_missing_record_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_missing_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_workflow_mutation_unknown_ind32",
+      "title": "Automatic mutation eligibility and status unknown",
+      "category": "process",
+      "symptom": "Mutation and status entries are visible but no property-specific row or outcome is known.",
+      "likelyCause": "No property key/EPID was entered and the pages do not publish the complete eligibility contract.",
+      "recovery": "Treat the visible report/status surfaces as lookup options only; do not infer approval or completion.",
+      "ownerAgencyIds": [
+        "agency_gba_eaasthi_workflow_ind32"
+      ],
+      "nodeIds": [
+        "node_public_mutation_report_ind32",
+        "node_public_property_status_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_automatic_mutation_ind32",
+        "scenario_property_public_lookup_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_pending_fields",
+        "claim_ind32_property_workflow_status_route",
+        "claim_ind32_property_workflow_post_login_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_workflow_post_login_unknown_ind32",
+      "title": "Authenticated form and objection handling unobserved",
+      "category": "process",
+      "symptom": "Draft/Final eKhata, upload, and objection labels are public but their forms and validation are not visible unauthenticated.",
+      "likelyCause": "The pass did not authenticate or submit any data.",
+      "recovery": "Use only the authorised public/login route when ready; current fields and rejection recovery remain Unknown.",
+      "ownerAgencyIds": [
+        "agency_gba_eaasthi_workflow_ind32"
+      ],
+      "nodeIds": [
+        "node_public_property_status_ind32",
+        "node_public_mutation_report_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_public_lookup_ind32",
+        "scenario_property_automatic_mutation_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_final_e_khata_labels",
+        "claim_ind32_property_workflow_post_login_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_workflow_payment_or_name_correction_ind32",
+      "title": "Payment or name correction needs an ARO/bank handoff",
+      "category": "process",
+      "symptom": "The public pages show a payment surface and name-correction route without a property-specific demand or completion state.",
+      "likelyCause": "The generated payment context and legacy correction feature list do not expose current case rules.",
+      "recovery": "For a payment failure use the stated bank/ARO handoff; for a name discrepancy use the ward-based ARO route.",
+      "ownerAgencyIds": [
+        "agency_gba_eaasthi_workflow_ind32",
+        "agency_bbmp_tax_workflow_ind32"
+      ],
+      "nodeIds": [
+        "node_public_payment_ind32",
+        "node_public_aro_recovery_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_payment_recovery",
+        "claim_ind32_property_workflow_tax_correction",
+        "claim_ind32_property_workflow_aro_lookup"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_property_citizen_record_mismatch",
+      "title": "Tax receipt and transfer surface reportedly do not align",
+      "category": "documentation",
+      "symptom": "A citizen reports a property-tax receipt in their name while a transfer-payment surface appeared to request mutation charges.",
+      "likelyCause": "Unknown; the account does not establish the status of any register, historical mutation, or payment demand.",
+      "recovery": "Treat this only as a prompt to obtain authorised, property-specific clarification of the tax record, khata/e-Khata record, and any demand before paying or resubmitting.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_final_record_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_sale_ind32",
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_citizen_tax_khata_mismatch"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_property_citizen_status_quiet",
+      "title": "Reported online status remains quiet before completion",
+      "category": "infrastructure",
+      "symptom": "A citizen reports little visible movement in an online transfer application until late status updates.",
+      "likelyCause": "Unknown; this individual account cannot distinguish queueing, interface visibility, manual review, or a historic portal design.",
+      "recovery": "Do not infer completion or rejection from this report. Use the authorised current status and case-specific support route if a real application needs follow-up.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_final_record_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_sale_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_citizen_delayed_status_updates"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_audit_property_tax",
+      "title": "Independent audit limitations",
+      "category": "documentation",
+      "symptom": "## Result The IND-32 property-tax records parse cleanly and the audited claims, nested details, journey steps, dependencies, and top-level edges resolve to existing IDs. The reusable journey dependency from the pending-mutation report to application status is now retained as `edge_workflow_mutation_to_status_ind32`, with the same `unknown` status and claim linkage. ## Stated limitations 1. **Unknown-edge marker is not machine-readable.** `edge_workflow_lookup_to_mutation_ind32` and `edge_workflow_mutation_to_status_ind32` preserve uncertainty in their prose and `unknown` status, but neither label uses the IND-32 edge-policy marker `reported-undocumented`. Consumers that depend on that marker cannot distinguish these unknown relationships from ordinary narrative labels without parsing text. 2. **End-to-end public workflow remains deliberately unproven.** The ledger correctly retains `clai",
+      "likelyCause": "Evidence and schema boundaries identified by the single independent audit.",
+      "recovery": "Read the cited evidence and retain Unknown or partial status where the public record stops.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_sale_deed"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "claimIds": [],
+      "status": "unknown"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_clean_sale",
+      "title": "Clean sale",
+      "scenarioId": "scenario_clean_sale",
+      "context": "Partial chain: municipal public routes and BESCOM public entry points are verified, but their end-to-end dependency is not.",
+      "steps": [
+        {
+          "id": "step_clean_municipal",
+          "label": "Inspect municipal state",
+          "nodeId": "node_final_e_khata",
+          "action": "Use public e-Aasthi guidance, search, and status routes.",
+          "expectedResult": "A visible municipal state or a published recovery route, not a BESCOM approval.",
+          "claimIds": [
+            "claim_ekhata_final_guidance",
+            "claim_ekhata_search_recovery",
+            "claim_ekhata_status"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_clean_transfer",
+          "label": "Use authorized BESCOM route",
+          "nodeId": "node_name_transfer",
+          "action": "Use the documented standard route or the visible EPID entry as applicable.",
+          "expectedResult": "Request flow is documented; EPID mapping and outcome are unknown.",
+          "claimIds": [
+            "claim_standard_authenticated_route",
+            "claim_epid_route_visible",
+            "claim_epid_mapping_unknown"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_clean_epid_mapping",
+          "fromNodeId": "node_epid",
+          "toNodeId": "node_bescom_mapping",
+          "description": "Cross-system mapping is not publicly specified.",
+          "claimIds": [
+            "claim_epid_mapping_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_draft_not_final",
+        "roadblock_property_missing",
+        "roadblock_epid_mapping",
+        "roadblock_bescom_stalls"
+      ],
+      "recoveryNotes": [
+        "Use municipal routes before assuming a BESCOM-only fault.",
+        "Standard transfer is not proof that the EPID route is identical."
+      ],
+      "documentationQualityNotes": [
+        "Current public interfaces are Grade B.",
+        "Authenticated and backend behaviour remains Unknown."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_draft_ekhata",
+      "title": "Draft or pending e-Khata",
+      "scenarioId": "scenario_draft_e_khata",
+      "context": "Draft availability and public status routes are observable; a final buyer state and BESCOM acceptance are not verified.",
+      "steps": [
+        {
+          "id": "step_draft_finalise",
+          "label": "Resolve municipal record",
+          "nodeId": "node_final_e_khata",
+          "action": "Follow official Final e-Khata guidance and use status/search routes.",
+          "expectedResult": "Record state or published municipal recovery route.",
+          "claimIds": [
+            "claim_ekhata_final_guidance",
+            "claim_ekhata_search_recovery",
+            "claim_ekhata_status"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_draft_track",
+          "label": "Retain request tracking identifier",
+          "nodeId": "node_request_tracking",
+          "action": "If submission succeeds through an authorized BESCOM route, retain the SMS request ID.",
+          "expectedResult": "Trackable request, not verified approval.",
+          "claimIds": [
+            "claim_request_tracker"
+          ],
+          "status": "verified"
+        }
+      ],
+      "dependencies": [],
+      "failureRoadblockIds": [
+        "roadblock_draft_not_final",
+        "roadblock_property_missing",
+        "roadblock_owner_correction",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Do not treat Draft as final proof.",
+        "No personal records belong in this ledger."
+      ],
+      "documentationQualityNotes": [
+        "Municipal inputs are public; utility-side acceptance remains unverified."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_epid_failure",
+      "title": "EPID mapping failure",
+      "scenarioId": "scenario_epid_mapping_failure",
+      "context": "Public municipal lookup and BESCOM EPID entry coexist, but mapping behaviour is Unknown.",
+      "steps": [
+        {
+          "id": "step_epid_check",
+          "label": "Check EPID municipal state",
+          "nodeId": "node_epid",
+          "action": "Use public search/status or missing-property route.",
+          "expectedResult": "Publicly visible status or municipal recovery channel.",
+          "claimIds": [
+            "claim_ekhata_search_recovery",
+            "claim_ekhata_status"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "step_epid_escalate",
+          "label": "Escalate without repeated submissions",
+          "nodeId": "node_bescom_mapping",
+          "action": "Use published support channels for case-specific guidance.",
+          "expectedResult": "No promised repair owner or SLA.",
+          "claimIds": [
+            "claim_epid_mapping_unknown",
+            "claim_helpline_channels"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_epid_mapping",
+          "fromNodeId": "node_epid",
+          "toNodeId": "node_bescom_mapping",
+          "description": "The relationship is unverified.",
+          "claimIds": [
+            "claim_epid_mapping_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_epid_mapping",
+        "roadblock_bescom_stalls",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Preserve only non-sensitive error wording outside this ledger if needed for support."
+      ],
+      "documentationQualityNotes": [
+        "Public endpoints are verified; their contract is not."
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "journey_tenant",
+      "title": "Tenant or occupier",
+      "scenarioId": "scenario_tenant",
+      "context": "Historic occupancy evidence is scope-limited; current eligibility is not public.",
+      "steps": [
+        {
+          "id": "step_tenant_scope",
+          "label": "Assess historic scope",
+          "nodeId": "node_transfer_evidence",
+          "action": "Distinguish specified non-commercial occupancy from other cases.",
+          "expectedResult": "An explicit eligibility unknown where scope does not fit.",
+          "claimIds": [
+            "claim_historic_tenant_scope"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_tenant_obligations",
+          "label": "Confirm current conditions",
+          "nodeId": "node_transfer_obligations",
+          "action": "Confirm arrears, agreement, indemnity, deposit, and charges through authorized channels.",
+          "expectedResult": "Current treatment is confirmed case-specifically, not inferred from historic text.",
+          "claimIds": [
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_tenant_conditions",
+          "fromNodeId": "node_transfer_evidence",
+          "toNodeId": "node_transfer_obligations",
+          "description": "Historical evidence branch does not remove historical conditions.",
+          "claimIds": [
+            "claim_historic_tenant_scope",
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_tenant_scope",
+        "roadblock_arrears_recovery",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Do not present historic occupancy evidence as a universal entitlement."
+      ],
+      "documentationQualityNotes": [
+        "Historic text is Grade A but partial for current use."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_deceased",
+      "title": "Previous consumer deceased",
+      "scenarioId": "scenario_previous_consumer_deceased",
+      "context": "Historic successor evidence is an evidence lead; current form fields are not public.",
+      "steps": [
+        {
+          "id": "step_deceased_evidence",
+          "label": "Choose successor evidence",
+          "nodeId": "node_transfer_evidence",
+          "action": "Use the historic successor-evidence list only as a lead.",
+          "expectedResult": "Case-specific current acceptance remains necessary.",
+          "claimIds": [
+            "claim_historic_alternative_evidence"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_deceased_request",
+          "label": "Use documented request and tracking route",
+          "nodeId": "node_request_tracking",
+          "action": "If the authorized route permits submission, retain request ID.",
+          "expectedResult": "Tracked request, not automatic acceptance.",
+          "claimIds": [
+            "claim_standard_authenticated_route",
+            "claim_request_tracker"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_deceased_conditions",
+          "fromNodeId": "node_transfer_evidence",
+          "toNodeId": "node_transfer_obligations",
+          "description": "Alternative ownership evidence does not remove historical obligations.",
+          "claimIds": [
+            "claim_historic_alternative_evidence",
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_successor_evidence",
+        "roadblock_consent_deposit",
+        "roadblock_arrears_recovery",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Municipal record work may be separate; no verified rule links it to exception acceptance."
+      ],
+      "documentationQualityNotes": [
+        "No current public deceased-consumer checklist was found."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_consent",
+      "title": "Consent unavailable",
+      "scenarioId": "scenario_consent_unavailable",
+      "context": "Historic rule offers alternatives and conditions, while current authenticated requirements remain unknown.",
+      "steps": [
+        {
+          "id": "step_consent_alternative",
+          "label": "Classify evidence branch",
+          "nodeId": "node_transfer_evidence",
+          "action": "Separate ownership alternatives from scope-limited occupancy alternatives.",
+          "expectedResult": "No assumed workaround.",
+          "claimIds": [
+            "claim_historic_consent_rule",
+            "claim_historic_alternative_evidence",
+            "claim_historic_tenant_scope"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_consent_verify",
+          "label": "Verify current submission conditions",
+          "nodeId": "node_name_transfer",
+          "action": "Use authorized current route and do not infer NOC, deposit, or document requirements.",
+          "expectedResult": "Current case-specific answer or explicit unresolved state.",
+          "claimIds": [
+            "claim_standard_authenticated_route",
+            "claim_citizen_old_noc",
+            "claim_citizen_no_builder_noc"
+          ],
+          "status": "contested"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_consent_conditions",
+          "fromNodeId": "node_transfer_evidence",
+          "toNodeId": "node_transfer_obligations",
+          "description": "Absent consent may change historic evidence and deposit treatment.",
+          "claimIds": [
+            "claim_historic_consent_rule",
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_consent_deposit",
+        "roadblock_noc_conflict",
+        "roadblock_arrears_recovery",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Do not manufacture consent or rely on historic amounts as current."
+      ],
+      "documentationQualityNotes": [
+        "The NOC evidence conflict is preserved as contested citizen evidence."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_property_sale_ind32",
+      "title": "Registered sale",
+      "scenarioId": "scenario_property_sale_ind32",
+      "context": "Official sources provide statutory timing, rule-based intake, checklist evidence, and a conditional record outcome; they do not prove a live end-to-end route.",
+      "steps": [
+        {
+          "id": "step_property_sale_notice_ind32",
+          "label": "Classify transfer",
+          "nodeId": "node_property_title_notice_ind32",
+          "action": "Check the applicable published title-transfer timing and amendment caveat.",
+          "expectedResult": "A statutory timing lead, not a case-specific acceptance decision.",
+          "claimIds": [
+            "claim_ind32_property_act_notice_three_months"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_property_sale_documents_ind32",
+          "label": "Assemble published evidence",
+          "nodeId": "node_property_transfer_documents_ind32",
+          "action": "Use the official sale-deed checklist as a document lead.",
+          "expectedResult": "Sale deed/current tax receipt/Form 15 EC are listed; current validation remains Unknown.",
+          "claimIds": [
+            "claim_ind32_property_sale_documents"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_property_sale_mutation_ind32",
+          "label": "Use authorised mutation intake",
+          "nodeId": "node_property_mutation_intake_ind32",
+          "action": "Confirm the current Form 18/22 or other authorised route with BBMP Revenue.",
+          "expectedResult": "A current route must be confirmed; no submission was made.",
+          "claimIds": [
+            "claim_ind32_property_rule10_intake",
+            "claim_ind32_property_rule10_forms21_22"
+          ],
+          "status": "unknown"
+        },
+        {
+          "id": "step_property_sale_record_ind32",
+          "label": "Await notice and record decision",
+          "nodeId": "node_property_objection_ind32",
+          "action": "Account for the published Form 23 notice/opportunity before any conditional Form 24 outcome.",
+          "expectedResult": "A conditional certification path, not guaranteed transfer.",
+          "claimIds": [
+            "claim_ind32_property_rule10_notice_objection",
+            "claim_ind32_property_rule10_form24"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [],
+      "failureRoadblockIds": [
+        "roadblock_property_current_law_compilation_ind32",
+        "roadblock_property_route_unknown_ind32",
+        "roadblock_property_objection_handling_ind32"
+      ],
+      "recoveryNotes": [
+        "Do not treat an official checklist or Form 24 template as proof of a specific property update."
+      ],
+      "documentationQualityNotes": [
+        "Binding rules are stronger than undated FAQ/checklists; live implementation remains partial."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_property_successor_ind32",
+      "title": "Death or succession",
+      "scenarioId": "scenario_property_successor_ind32",
+      "context": "The Act, 2024 rules, and Revenue checklist expose separate succession timing, forms, and evidence branches; current handling is not fully observable publicly.",
+      "steps": [
+        {
+          "id": "step_property_successor_notice_ind32",
+          "label": "Classify succession",
+          "nodeId": "node_property_title_notice_ind32",
+          "action": "Check the published one-year notice rule and currentness caveat.",
+          "expectedResult": "A statutory timing lead only.",
+          "claimIds": [
+            "claim_ind32_property_act_successor_one_year"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_property_successor_documents_ind32",
+          "label": "Choose evidence branch",
+          "nodeId": "node_property_transfer_documents_ind32",
+          "action": "Use the will/no-will checklist as a lead and confirm current acceptance.",
+          "expectedResult": "Scenario-specific evidence list, not universal requirements.",
+          "claimIds": [
+            "claim_ind32_property_successor_documents",
+            "claim_ind32_property_rule10_forms21_22"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_property_successor_objection_ind32",
+          "label": "Account for notice",
+          "nodeId": "node_property_objection_ind32",
+          "action": "Allow for published notice and objection period before a conditional order.",
+          "expectedResult": "No property-specific notice or decision is known.",
+          "claimIds": [
+            "claim_ind32_property_rule10_notice_objection",
+            "claim_ind32_property_rule10_form24"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [],
+      "failureRoadblockIds": [
+        "roadblock_property_current_law_compilation_ind32",
+        "roadblock_property_route_unknown_ind32",
+        "roadblock_property_objection_handling_ind32"
+      ],
+      "recoveryNotes": [
+        "Do not infer that an heirship document, NOC, or family-tree item is accepted without current case confirmation."
+      ],
+      "documentationQualityNotes": [
+        "The checklist is official but undated; the rules provide stronger process evidence."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_property_record_correction_ind32",
+      "title": "Missing or incorrect record",
+      "scenarioId": "scenario_property_missing_or_wrong_ind32",
+      "context": "Official sources publish an ARO/correction contact route and a mutation/objection framework, but not a current case-specific remedy.",
+      "steps": [
+        {
+          "id": "step_property_correction_route_ind32",
+          "label": "Identify correction route",
+          "nodeId": "node_property_aro_recovery_ind32",
+          "action": "Use the public Find Your ARO route for name or receipt discrepancies.",
+          "expectedResult": "A jurisdictional contact route, not a confirmed correction.",
+          "claimIds": [
+            "claim_ind32_property_correction_aro"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_property_correction_mutation_ind32",
+          "label": "Check mutation basis",
+          "nodeId": "node_property_mutation_intake_ind32",
+          "action": "Determine whether the issue fits a published mutation-intake basis.",
+          "expectedResult": "A possible rule route; the live process remains Unknown.",
+          "claimIds": [
+            "claim_ind32_property_rule10_intake"
+          ],
+          "status": "unknown"
+        },
+        {
+          "id": "step_property_correction_objection_ind32",
+          "label": "Do not assume objection outcome",
+          "nodeId": "node_property_objection_ind32",
+          "action": "Treat the published objection window as conditional and case-specific.",
+          "expectedResult": "No verified notice, filing, or resolution.",
+          "claimIds": [
+            "claim_ind32_property_rule10_notice_objection",
+            "claim_ind32_property_rule10_form24"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "dependencies": [],
+      "failureRoadblockIds": [
+        "roadblock_property_record_correction_ind32",
+        "roadblock_property_objection_handling_ind32"
+      ],
+      "recoveryNotes": [
+        "No personal/property identifiers were entered or stored."
+      ],
+      "documentationQualityNotes": [
+        "Current tax portal is publicly reachable, but its correction feature list is marked legacy/undated."
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "journey_property_public_lookup_ind32",
+      "title": "Public lookup",
+      "scenarioId": "scenario_property_public_lookup_ind32",
+      "context": "A person can inspect public lookup and status entry points without login; a property-specific result was intentionally not requested.",
+      "steps": [
+        {
+          "id": "step_workflow_lookup_ind32",
+          "label": "Choose a public key",
+          "nodeId": "node_public_property_lookup_ind32",
+          "action": "Use ward, property ePID, or SAS property-tax ID as an available lookup key.",
+          "expectedResult": "A public search result may be available; no result was tested.",
+          "claimIds": [
+            "claim_ind32_property_workflow_search_inputs"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_workflow_status_ind32",
+          "label": "Check public status route",
+          "nodeId": "node_public_property_status_ind32",
+          "action": "If an authorised EPID is available, the public page presents an EPID status lookup.",
+          "expectedResult": "Status columns/remarks may be shown; case status remains Unknown here.",
+          "claimIds": [
+            "claim_ind32_property_workflow_status_route"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [],
+      "failureRoadblockIds": [
+        "roadblock_workflow_mutation_unknown_ind32",
+        "roadblock_workflow_post_login_unknown_ind32"
+      ],
+      "recoveryNotes": [
+        "No identifiers or contact details were entered."
+      ],
+      "documentationQualityNotes": [
+        "Public controls are directly observed; property-specific output and authenticated validation remain Unknown."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_property_automatic_mutation_ind32",
+      "title": "Automatic or pending mutation",
+      "scenarioId": "scenario_property_automatic_mutation_ind32",
+      "context": "The public citizen page and pending report expose mutation entry points and fields, but not the property-level sequence or eligibility.",
+      "steps": [
+        {
+          "id": "step_workflow_mutation_entry_ind32",
+          "label": "Open mutation entry",
+          "nodeId": "node_public_mutation_report_ind32",
+          "action": "Inspect the public Automatic Mutations entry and pending report labels.",
+          "expectedResult": "Mutation basis, parties, notice, pending owner, and objection columns are visible; no row is guaranteed.",
+          "claimIds": [
+            "claim_ind32_property_workflow_mutation_entry",
+            "claim_ind32_property_workflow_pending_fields"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_workflow_mutation_status_ind32",
+          "label": "Use EPID status if authorised",
+          "nodeId": "node_public_property_status_ind32",
+          "action": "Use the public status page only with a legitimately held EPID.",
+          "expectedResult": "A status display may appear; upload/rejection/approval remains unverified.",
+          "claimIds": [
+            "claim_ind32_property_workflow_status_route",
+            "claim_ind32_property_workflow_post_login_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_workflow_mutation_epid_ind32",
+          "fromNodeId": "node_public_mutation_report_ind32",
+          "toNodeId": "node_public_property_status_ind32",
+          "description": "The public pages expose both mutation and EPID status surfaces but do not establish their case-level linkage.",
+          "claimIds": [
+            "claim_ind32_property_workflow_pending_fields",
+            "claim_ind32_property_workflow_status_route",
+            "claim_ind32_property_workflow_sequence_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_workflow_mutation_unknown_ind32",
+        "roadblock_workflow_post_login_unknown_ind32"
+      ],
+      "recoveryNotes": [
+        "A File Objection label is not a verified objection workflow; do not submit an objection during research."
+      ],
+      "documentationQualityNotes": [
+        "Direct interface labels are Grade B; authenticated steps are intentionally unobserved."
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "journey_property_missing_record_ind32",
+      "title": "Property not found",
+      "scenarioId": "scenario_property_missing_record_ind32",
+      "context": "The public search provides a missing-property eKhata fallback. Its fields, review, and response are not observed.",
+      "steps": [
+        {
+          "id": "step_workflow_missing_search_ind32",
+          "label": "Recognise missing result",
+          "nodeId": "node_public_property_lookup_ind32",
+          "action": "If public lookup does not locate the record, use the page's stated missing-property branch.",
+          "expectedResult": "A visible fallback route, not a resolved record.",
+          "claimIds": [
+            "claim_ind32_property_workflow_search_inputs",
+            "claim_ind32_property_workflow_missing_route"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "step_workflow_missing_recovery_ind32",
+          "label": "Use fallback entry",
+          "nodeId": "node_public_missing_property_ind32",
+          "action": "Open Do Not Find My Property eKhata only when ready to provide authorised details; no request was started here.",
+          "expectedResult": "The corporation-check/revert instruction is visible; response timing is Unknown.",
+          "claimIds": [
+            "claim_ind32_property_workflow_missing_route",
+            "claim_ind32_property_workflow_post_login_unknown"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [],
+      "failureRoadblockIds": [
+        "roadblock_workflow_property_missing_ind32",
+        "roadblock_workflow_post_login_unknown_ind32"
+      ],
+      "recoveryNotes": [
+        "No property or identity data was entered."
+      ],
+      "documentationQualityNotes": [
+        "Fallback existence is directly observed; outcome and review owner are not."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_property_payment_correction_ind32",
+      "title": "Payment or name discrepancy",
+      "scenarioId": "scenario_property_payment_or_correction_ind32",
+      "context": "Public pages expose payment failure and name-correction handoffs without proving a live demand, correction eligibility, or completion.",
+      "steps": [
+        {
+          "id": "step_workflow_payment_surface_ind32",
+          "label": "Inspect payment context",
+          "nodeId": "node_public_payment_ind32",
+          "action": "Use a legitimate property-specific payment URL only when supplied by the authorised system; this pass viewed labels only.",
+          "expectedResult": "Payment fields and modes may be shown; amount and applicability remain Unknown.",
+          "claimIds": [
+            "claim_ind32_property_workflow_payment_surface"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_workflow_payment_recovery_ind32",
+          "label": "Follow stated failure handoff",
+          "nodeId": "node_public_payment_ind32",
+          "action": "For a real payment failure, follow the page's bank or ARO direction without repeating payment blindly.",
+          "expectedResult": "A published recovery contact, not a verified refund/update.",
+          "claimIds": [
+            "claim_ind32_property_workflow_payment_recovery"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "step_workflow_name_recovery_ind32",
+          "label": "Find jurisdictional ARO",
+          "nodeId": "node_public_aro_recovery_ind32",
+          "action": "Use the ward-based ARO lookup for a name or receipt discrepancy.",
+          "expectedResult": "A public contact route; current correction outcome remains Unknown.",
+          "claimIds": [
+            "claim_ind32_property_workflow_tax_correction",
+            "claim_ind32_property_workflow_aro_lookup"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [],
+      "failureRoadblockIds": [
+        "roadblock_workflow_payment_or_name_correction_ind32"
+      ],
+      "recoveryNotes": [
+        "Do not enter personal, property, or payment details into research tooling."
+      ],
+      "documentationQualityNotes": [
+        "Payment surface is current public observation; name-correction list is explicitly legacy/undated."
+      ],
+      "status": "partial"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "_handoff": {
+    "issue": "IND-32",
+    "generatedAt": "2026-08-28",
+    "status": "in_review",
+    "scope": "Public first-person accounts about Bengaluru municipal property-tax/khata name transfer only. These accounts identify possible record mismatches and delays; they are not official procedure, required documents, fees, or service-level commitments. Usernames, names, property identifiers, locations, application numbers, contact details, and other personal data are omitted."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind32_property_citizen_online_completion",
+      "title": "Khata Transfer and BESCOM bureaucracy post property registration!",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1d2kr9q",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2024-05-28",
+      "type": "citizen_evidence",
+      "notes": "A commenter gives a first-person account of applying online, uploading documents, and later collecting a khata certificate. It does not establish a current channel, document checklist, turnaround standard, or collection requirement."
+    },
+    {
+      "id": "source_ind32_property_citizen_tax_khata_mismatch",
+      "title": "Help to clear confusion if flat Khata transfer is done or not",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1qhvq3u/help_to_clear_confusion_if_flat_khata_transfer_is/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-01-20",
+      "type": "citizen_evidence",
+      "notes": "A first-person post reports a property-tax receipt showing the poster's name while an e-Aasthi payment page sought a mutation charge. Replies are intentionally not treated as evidence of rules or remedies."
+    },
+    {
+      "id": "source_ind32_property_citizen_sakala_status",
+      "title": "Katha Transfer using Sakala Portal",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/14asgw0",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2023-06-16",
+      "type": "citizen_evidence",
+      "notes": "A commenter reports a self-filed online khata transfer whose status appeared inactive until a burst of updates at the end, followed by issuance. It is a single historic account and does not establish any current portal behaviour or timeline."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind32_property_citizen_online_completion",
+      "text": "One citizen reported completing a khata transfer after applying online, uploading documents, and later visiting an office to collect a khata certificate.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_property_sale_ind32"],
+      "nodeIds": ["node_property_mutation_intake_ind32", "node_property_final_record_ind32"],
+      "sourceIds": ["source_ind32_property_citizen_online_completion"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One reported completion. It must not be generalised to the current e-Aasthi route, accepted uploads, timing, or need for in-person collection."
+    },
+    {
+      "id": "claim_ind32_property_citizen_tax_khata_mismatch",
+      "text": "One citizen reported a property-tax receipt in their name while an e-Aasthi payment page appeared to request a mutation charge for the same flat.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_property_sale_ind32", "scenario_property_missing_or_wrong_ind32"],
+      "nodeIds": ["node_property_mutation_intake_ind32", "node_property_final_record_ind32"],
+      "sourceIds": ["source_ind32_property_citizen_tax_khata_mismatch"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single report of apparently inconsistent surfaces. It does not prove that the tax record and khata register are independently maintained or that a charge was due."
+    },
+    {
+      "id": "claim_ind32_property_citizen_delayed_status_updates",
+      "text": "One citizen reported that their self-filed online khata-transfer application showed no movement until late in the reported process, when multiple status updates appeared and a khata was issued.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_property_sale_ind32"],
+      "nodeIds": ["node_property_mutation_intake_ind32", "node_property_final_record_ind32"],
+      "sourceIds": ["source_ind32_property_citizen_sakala_status"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A historic, one-person account. It does not show that an inactive status means approval, delay, or any current-system state."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind32_property_citizen_record_mismatch",
+      "title": "Tax receipt and transfer surface reportedly do not align",
+      "category": "documentation",
+      "symptom": "A citizen reports a property-tax receipt in their name while a transfer-payment surface appeared to request mutation charges.",
+      "likelyCause": "Unknown; the account does not establish the status of any register, historical mutation, or payment demand.",
+      "recovery": "Treat this only as a prompt to obtain authorised, property-specific clarification of the tax record, khata/e-Khata record, and any demand before paying or resubmitting.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_property_mutation_intake_ind32", "node_property_final_record_ind32"],
+      "scenarioIds": ["scenario_property_sale_ind32", "scenario_property_missing_or_wrong_ind32"],
+      "claimIds": ["claim_ind32_property_citizen_tax_khata_mismatch"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_property_citizen_status_quiet",
+      "title": "Reported online status remains quiet before completion",
+      "category": "infrastructure",
+      "symptom": "A citizen reports little visible movement in an online transfer application until late status updates.",
+      "likelyCause": "Unknown; this individual account cannot distinguish queueing, interface visibility, manual review, or a historic portal design.",
+      "recovery": "Do not infer completion or rejection from this report. Use the authorised current status and case-specific support route if a real application needs follow-up.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_property_mutation_intake_ind32", "node_property_final_record_ind32"],
+      "scenarioIds": ["scenario_property_sale_ind32"],
+      "claimIds": ["claim_ind32_property_citizen_delayed_status_updates"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

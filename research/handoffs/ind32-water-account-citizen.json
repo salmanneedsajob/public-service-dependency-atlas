@@ -1,0 +1,91 @@
+{
+  "_handoff": {
+    "issue": "IND-32",
+    "generatedAt": "2026-08-28",
+    "status": "in_review",
+    "scope": "Public first-person accounts about changing the account holder/name on an existing Bengaluru BWSSB water account only. These reports are case evidence, not official process, document, charge, entitlement, or service-level evidence. Usernames, names, property identifiers, locations, account/RR numbers, contact details, and other personal data are omitted."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind32_water_account_citizen_name_change_quote",
+      "title": "BWSSB charges",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1s7u3c6/bwssb_charges/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-03-30",
+      "type": "citizen_evidence",
+      "notes": "The original poster reports visiting a BWSSB office to change the name on an existing water bill and being given a premise-area-based amount. It is a single account and does not establish a lawful fee, a transfer rule, or why the amount was stated."
+    },
+    {
+      "id": "source_ind32_water_account_citizen_old_owner_unavailable",
+      "title": "BWSSB connection transfer: A How-To",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1ioeeuh",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2025-02-13",
+      "type": "citizen_evidence",
+      "notes": "A commenter reports being unable to trace a prior owner after an old family purchase and says BWSSB refused to proceed. This is an unverified comment about one inheritance/old-owner context, not evidence of a BWSSB requirement."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind32_water_account_citizen_office_quote",
+      "text": "One citizen reported visiting a BWSSB office to seek a name change on an existing water bill and receiving an unexplained amount tied to the premises' area.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_account_sale", "scenario_ind32_water_account_correction"],
+      "nodeIds": ["node_water_account_route_check", "node_water_account_case_documents"],
+      "sourceIds": ["source_ind32_water_account_citizen_name_change_quote"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One applicant's reported office interaction. It does not establish a charge calculation, whether any arrears/regularisation issue existed, or that a similar case will be handled in person."
+    },
+    {
+      "id": "claim_ind32_water_account_citizen_prior_holder_barrier",
+      "text": "One citizen reported that BWSSB would not act in their case when the prior account holder could not be located.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_account_inheritance", "scenario_ind32_water_account_unresolved"],
+      "nodeIds": ["node_water_account_route_check", "node_water_account_case_documents", "node_water_account_support"],
+      "sourceIds": ["source_ind32_water_account_citizen_old_owner_unavailable"],
+      "evidenceGrade": "F",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single unverified commenter account. It does not prove that prior-holder participation is required or identify any succession, ownership, identity, or affidavit evidence BWSSB would accept."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind32_water_account_citizen_unexplained_amount",
+      "title": "Reported unexplained amount at name-change enquiry",
+      "category": "payment",
+      "symptom": "A citizen reports receiving an area-linked amount while asking for a bill-name change.",
+      "likelyCause": "Unknown; the report does not distinguish transfer fees, arrears, regularisation, deposit adjustment, or an unofficial statement.",
+      "recovery": "Do not treat the reported amount as a fee. Obtain an authorised RR-specific route and written demand/breakdown before paying or submitting documents.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_water_account_route_check", "node_water_account_case_documents"],
+      "scenarioIds": ["scenario_ind32_water_account_sale", "scenario_ind32_water_account_correction"],
+      "claimIds": ["claim_ind32_water_account_citizen_office_quote"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_water_account_citizen_prior_holder_unavailable",
+      "title": "Reported stalled case where prior holder could not be found",
+      "category": "documentation",
+      "symptom": "A commenter reports BWSSB would not proceed in an old-owner context.",
+      "likelyCause": "Unknown; no authoritative reason, case record, or evidence review is visible in the account.",
+      "recovery": "Ask BWSSB through an authorised channel which RR-specific succession or ownership evidence is currently required; do not infer a universal prior-holder requirement from this report.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_water_account_route_check", "node_water_account_case_documents", "node_water_account_support"],
+      "scenarioIds": ["scenario_ind32_water_account_inheritance", "scenario_ind32_water_account_unresolved"],
+      "claimIds": ["claim_ind32_water_account_citizen_prior_holder_barrier"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

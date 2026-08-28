@@ -1,0 +1,2848 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru death certificate evidence ledger — partially mapped v1",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-28",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Public sources and known gaps are shown together; do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_bescom",
+      "name": "Bangalore Electricity Supply Company Limited",
+      "shortName": "BESCOM",
+      "officialUrl": "https://bescom.co.in/"
+    },
+    {
+      "id": "agency_gba",
+      "name": "Greater Bengaluru Authority / Bengaluru City Corporations",
+      "shortName": "GBA",
+      "officialUrl": "https://www.bbmp.gov.in/"
+    },
+    {
+      "id": "agency_kerc",
+      "name": "Karnataka Electricity Regulatory Commission",
+      "shortName": "KERC",
+      "officialUrl": "https://kerc.karnataka.gov.in/"
+    },
+    {
+      "id": "agency_gba_bbmp_ind32_death",
+      "name": "Greater Bengaluru Authority / Bengaluru City Corporations",
+      "shortName": "GBA / Bengaluru City Corporations",
+      "officialUrl": "https://bbmp.gov.in/"
+    },
+    {
+      "id": "agency_karnataka_cr_ind32_death",
+      "name": "Office of the Chief Registrar of Births and Deaths, Karnataka",
+      "shortName": "Karnataka Chief Registrar / e-JanMa",
+      "officialUrl": "https://ejanma.karnataka.gov.in/"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_clean_sale",
+      "label": "Clean sale",
+      "summary": "Registered sale with no known municipal-record issue.",
+      "tags": [
+        "sale"
+      ],
+      "pathNodeIds": [
+        "node_sale_deed",
+        "node_mutation",
+        "node_final_e_khata",
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_draft_e_khata",
+      "label": "Draft or pending e-Khata",
+      "summary": "Property information exists but finality or buyer-name state is unresolved.",
+      "tags": [
+        "sale",
+        "e-khata",
+        "pending"
+      ],
+      "pathNodeIds": [
+        "node_final_e_khata",
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_epid_mapping_failure",
+      "label": "EPID mapping failure",
+      "summary": "An EPID or property record exists but the BESCOM-account relationship cannot be established.",
+      "tags": [
+        "epid",
+        "mapping"
+      ],
+      "pathNodeIds": [
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_tenant",
+      "label": "Tenant",
+      "summary": "An occupier seeks a bill-name change without owning the property.",
+      "tags": [
+        "tenant",
+        "consent"
+      ],
+      "pathNodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_previous_consumer_deceased",
+      "label": "Previous consumer deceased",
+      "summary": "The recorded consumer has died and a successor seeks transfer.",
+      "tags": [
+        "death",
+        "succession"
+      ],
+      "pathNodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_consent_unavailable",
+      "label": "Consent unavailable",
+      "summary": "The previous consumer cannot or will not provide consent.",
+      "tags": [
+        "consent",
+        "exception"
+      ],
+      "pathNodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations",
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_ind32_death_copy",
+      "label": "Obtain copy of existing record",
+      "summary": "A person seeks a certificate copy for a death already registered in Bengaluru.",
+      "tags": [
+        "death",
+        "certificate",
+        "download",
+        "duplicate"
+      ],
+      "pathNodeIds": [
+        "node_death_service_entry",
+        "node_death_classify_record",
+        "node_death_public_tools",
+        "node_death_outcome"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_ind32_death_hospital",
+      "label": "Institutional/private-hospital death",
+      "summary": "A hospital or family needs the death event reported/registered and certificate issued.",
+      "tags": [
+        "death",
+        "hospital",
+        "registration",
+        "e-janma"
+      ],
+      "pathNodeIds": [
+        "node_death_service_entry",
+        "node_death_classify_record",
+        "node_death_registrar",
+        "node_death_outcome"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_ind32_death_home",
+      "label": "Home or non-institutional death",
+      "summary": "A death outside an institution needs reporting to the competent registrar.",
+      "tags": [
+        "death",
+        "home",
+        "non-institutional",
+        "registration"
+      ],
+      "pathNodeIds": [
+        "node_death_service_entry",
+        "node_death_classify_record",
+        "node_death_registrar",
+        "node_death_outcome"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_ind32_death_correction",
+      "label": "Correction or additional copy",
+      "summary": "A registered record needs correction or an additional certificate copy.",
+      "tags": [
+        "death",
+        "correction",
+        "additional-copy"
+      ],
+      "pathNodeIds": [
+        "node_death_service_entry",
+        "node_death_classify_record",
+        "node_death_public_tools",
+        "node_death_registrar",
+        "node_death_outcome"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_ind32_death_delayed",
+      "label": "Delayed or unavailable registration",
+      "summary": "The event is not found or was not registered within the ordinary reporting window.",
+      "tags": [
+        "death",
+        "delayed-registration",
+        "non-availability"
+      ],
+      "pathNodeIds": [
+        "node_death_classify_record",
+        "node_death_registrar",
+        "node_death_outcome"
+      ],
+      "status": "unknown"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_kerc_conditions_supply",
+      "title": "Conditions of Supply of Electricity with first and second amendments",
+      "publisher": "KERC / BESCOM",
+      "url": "https://www.bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
+      "accessedAt": "2026-08-27",
+      "type": "regulation",
+      "notes": "Canonical source for IND-4 source_kerc_conditions_supply and IND-8 source_kerc_cos_consolidated. Historic consolidated text: Grade A claims are partial until current applicability is confirmed."
+    },
+    {
+      "id": "source_bescom_home",
+      "title": "BESCOM public homepage and service directory",
+      "publisher": "BESCOM",
+      "url": "https://bescom.co.in/",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-4 source_bescom_current_home and IND-6 source_bescom_home; direct current public-interface observation."
+    },
+    {
+      "id": "source_bescom_faq",
+      "title": "BESCOM FAQ — How To Change Name?",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/main/faq",
+      "accessedAt": "2026-08-27",
+      "type": "official_guidance",
+      "notes": "Canonical source for IND-4 source_bescom_name_change_faq, IND-6 source_bescom_faq, and IND-8 source_bescom_jvs_faq_ind8. Public guidance only; authenticated fields were not inspected."
+    },
+    {
+      "id": "source_bescom_tracker",
+      "title": "Track Name Change",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/main/track-name-change",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-4 source_bescom_track_name_change and IND-8 source_bescom_namechange_tracker."
+    },
+    {
+      "id": "source_bescom_jvs",
+      "title": "Janasnehi Vidhyuth Sevegalu — Name Change",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/dashboard/consumer-dashboard/janasnehi-vidhyuth-sevagalu/name-change-form",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Current public page; timing wording does not establish start point or exception applicability."
+    },
+    {
+      "id": "source_bescom_legacy",
+      "title": "BESCOM current public homepage and service directory",
+      "publisher": "BESCOM",
+      "url": "https://bescom.co.in/",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "The formerly cited legacy portal endpoint was unreachable during the Stage 0 link check. No current public route taxonomy was verified; retain the historical lead only as an Unknown gap."
+    },
+    {
+      "id": "source_eaasthi_login",
+      "title": "e-Aasthi citizen login and Final e-Khata instructions",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-6 source_eaasthi_login and IND-8 source_ekhata_citizen_login_ind8."
+    },
+    {
+      "id": "source_eaasthi_search",
+      "title": "e-Aasthi public e-Khata search",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-6 source_eaasthi_search and IND-8 source_ekhata_public_search_ind8."
+    },
+    {
+      "id": "source_eaasthi_status",
+      "title": "e-Khata Application Status",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Canonical source for IND-6 source_eaasthi_status and IND-8 source_ekhata_epid_status_ind8."
+    },
+    {
+      "id": "source_eaasthi_mutation",
+      "title": "e-Aasthi Pending Mutation Report",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/office/frmPendingMutationReport.aspx",
+      "accessedAt": "2026-08-27",
+      "type": "official_portal",
+      "notes": "Public observation only; it does not establish a completed buyer-facing record."
+    },
+    {
+      "id": "source_gba_directory",
+      "title": "GBA service directory",
+      "publisher": "Greater Bengaluru Authority",
+      "url": "https://www.bbmp.gov.in/",
+      "accessedAt": "2026-08-27",
+      "type": "official_guidance",
+      "notes": "Current public helpline listing."
+    },
+    {
+      "id": "source_citizen_transfer",
+      "title": "Bescom name transfer can be done fully online if you have ekhata",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1vceniq/bescom_name_transfer_can_be_done_fully_online_if/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-08-01",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person evidence; not procedure proof."
+    },
+    {
+      "id": "source_citizen_login_payment",
+      "title": "Updated 2026 e-Khata BESCOM name-change account",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1vlfrnl/dont_pay_brokers_5k_for_bescom_name_changes_here/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-08-11",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person evidence; personal details are intentionally omitted."
+    },
+    {
+      "id": "source_citizen_missing_epid",
+      "title": "Non Availability of EPID/Draft E-Khata in E-Swathi portal",
+      "publisher": "r/BangaloreRealEstates (Reddit)",
+      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1r3hhqt/non_availability_of_epiddraft_ekhata_in_eswathi/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2026-02-13",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person missing draft/EPID account."
+    },
+    {
+      "id": "source_citizen_owner_error",
+      "title": "E-Khata Name Correction",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1oqksj1/ekhata_name_correction/",
+      "accessedAt": "2026-08-27",
+      "type": "citizen_evidence",
+      "notes": "IND-7 first-person prior-owner and correction-error account."
+    },
+    {
+      "id": "source_citizen_missing_draft",
+      "title": "Non Availability of Draft E-khata",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1ikojje/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2025-02-08",
+      "type": "citizen_evidence",
+      "notes": "IND-7 public reports of absent draft e-Khata and delayed self-service request."
+    },
+    {
+      "id": "source_citizen_old_owner_recovery",
+      "title": "Finally I got Ekhata yesterday, costed 125₹",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1k4xnji/",
+      "accessedAt": "2026-08-27",
+      "type": "citizen_evidence",
+      "notes": "IND-7 citizen recovery account; not a standard instruction."
+    },
+    {
+      "id": "source_citizen_noc",
+      "title": "Bescom bill name change",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1bx2oer/",
+      "accessedAt": "2026-08-27",
+      "publishedAt": "2024-04-06",
+      "type": "citizen_evidence",
+      "notes": "Older offline-process account retained as one side of the NOC contradiction."
+    },
+    {
+      "id": "source_ind32_death_gba_home",
+      "title": "Greater Bengaluru Authority official home",
+      "publisher": "Greater Bengaluru Authority / Government of Karnataka",
+      "url": "https://bbmp.gov.in/",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Current public home page lists Birth & Death Certificate as an e-service and publishes helpline 1533. The page does not expose a case form in the unauthenticated text view."
+    },
+    {
+      "id": "source_ind32_death_bbmp_services",
+      "title": "BBMP citizen services directory",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/citizenservice.html",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Official directory lists Online Birth Certificate Request Form and Authenticity of Certificates under Birth & Death Certificate. It does not show the current case-specific death form fields in the public directory text."
+    },
+    {
+      "id": "source_ind32_death_ejanma_official",
+      "title": "Births and Deaths — Office of the Chief Registrar of Births and Deaths, Karnataka",
+      "publisher": "Government of Karnataka / Directorate of Economics and Statistics",
+      "url": "https://www.amrut.mohua.gov.in/uploads/reform/ulb/BIRTHS-AND-DEATHS--OFFICE-OF-THE-CHIEF-REGISTRAR-OF-BIRTHS-AND-DEATHSpdf11.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Government-hosted official page snapshot identifies e-JanMa, urban/BBMP registration by Health Officers/Health Inspectors, private-hospital reporting, certificate download, verification, application-status, additional-copy/correction contacts, and the e-JanMa URL."
+    },
+    {
+      "id": "source_ind32_death_bbmp_manual",
+      "title": "Training Manual for Civil Registration — Birth and Death",
+      "publisher": "BBMP / Government of Karnataka",
+      "url": "https://site.bbmp.gov.in/citizenservisfaq/Birthanddeath.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "2012 manual. It describes Form 6 for deaths, the first extract/certificate under section 12, and registration reporting within 21 days; its age means current digital route and fees must be confirmed."
+    },
+    {
+      "id": "source_ind32_death_rbd_act",
+      "title": "Registration of Births and Deaths Act, 1969",
+      "publisher": "Government of India / India Code",
+      "url": "https://www.indiacode.nic.in/handle/123456789/1682?locale=en",
+      "accessedAt": "2026-08-28",
+      "type": "law",
+      "notes": "India Code public Act record. Sections 8, 10, 12, and 13 provide the statutory framework for persons responsible to report, medical cause information, certificate of registration, and delayed registration; verify current amendments/rules."
+    },
+    {
+      "id": "source_ind32_death_sakala_audit",
+      "title": "Karnataka Administrative Reforms — BBMP Birth/Death service audit",
+      "publisher": "Government of Karnataka / BBMP",
+      "url": "https://bbmp.gov.in/ucc_file/KarnatakaAdministrativeReforms.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "2023 administrative-reforms report says designated officers include Medical Officer/Deputy MO/Superintendent in large hospitals/Assistant Statistical Officer and records a Sakala target of 3 days where online data is available and 7 days where it is not. It also records process-audit observations; this is not treated as a universal current guarantee."
+    },
+    {
+      "id": "source_ind32_death_workflow_gba",
+      "title": "Greater Bengaluru Authority official home",
+      "publisher": "Greater Bengaluru Authority / Government of Karnataka",
+      "url": "https://bbmp.gov.in/",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Public Birth & Death Certificate service label and helpline 1533; no data was entered."
+    },
+    {
+      "id": "source_ind32_death_workflow_bbmp",
+      "title": "BBMP citizen services directory",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/citizenservice.html",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Public directory labels online certificate request and authenticity routes."
+    },
+    {
+      "id": "source_ind32_death_workflow_ejanma",
+      "title": "Births and Deaths — Office of the Chief Registrar of Births and Deaths, Karnataka",
+      "publisher": "Government of Karnataka / Directorate of Economics and Statistics",
+      "url": "https://www.amrut.mohua.gov.in/uploads/reform/ulb/BIRTHS-AND-DEATHS--OFFICE-OF-THE-CHIEF-REGISTRAR-OF-BIRTHS-AND-DEATHSpdf11.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Public official material describing e-JanMa registration units, private-hospital reporting, download, verification, status, and correction/additional-copy leads."
+    },
+    {
+      "id": "source_ind32_death_workflow_manual",
+      "title": "Training Manual for Civil Registration — Birth and Death",
+      "publisher": "BBMP / Government of Karnataka",
+      "url": "https://site.bbmp.gov.in/citizenservisfaq/Birthanddeath.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Historic manual used only for Form 6/section 12 and 21-day timing context."
+    },
+    {
+      "id": "source_ind32_death_workflow_sakala",
+      "title": "Karnataka Administrative Reforms — BBMP Birth/Death service audit",
+      "publisher": "Government of Karnataka / BBMP",
+      "url": "https://bbmp.gov.in/ucc_file/KarnatakaAdministrativeReforms.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Report records designated officers and 3/7-day Sakala target wording with process-audit caveats."
+    },
+    {
+      "id": "source_ind32_death_citizen_offline_application",
+      "title": "How to apply for death certificate?",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1n7lwbo",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2025-09-03",
+      "type": "citizen_evidence",
+      "notes": "A commenter reports obtaining a certificate offline through a BBMP office and describes documents they personally said they were asked for. The same discussion includes other unverified accounts; no document list, office routing, charge, or timing is retained as a rule."
+    },
+    {
+      "id": "source_ind32_death_citizen_portal_registration_unit",
+      "title": "How to obtain death certificate in Bengaluru?",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1rcdzi3/how_to_obtain_death_certificate_in_bengaluru/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-02-23",
+      "type": "citizen_evidence",
+      "notes": "The original poster reports that the e-JanMa registration-unit selector had no available option during an attempted death-certificate process. It is one unverified portal observation, not proof of an outage or a universal remote-application limitation."
+    },
+    {
+      "id": "source_ind32_death_citizen_certificate_error",
+      "title": "Bangalore parents: Please don’t edit government certificates using PDF editors — sharing a real case we recently saw",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1rqrehs/bangalore_parents_please_dont_edit_government/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-03-11",
+      "type": "citizen_evidence",
+      "notes": "A commenter reports encountering a spelling error when seeking a death certificate and submitting a correction request. It is a single, unverified account and does not establish correction procedure or outcome."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_epid_route_visible",
+      "text": "BESCOM's current public homepage exposes a service labelled Name Change with EPID.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_bescom_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4 and IND-6 duplicate observations; this does not verify eligibility or a mapping contract."
+    },
+    {
+      "id": "claim_standard_authenticated_route",
+      "text": "BESCOM's public FAQ directs a name-change applicant to authenticate, select an account ID, complete mandatory fields, upload required documents, submit, retain a request ID, and pay applicable charges.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "sourceIds": [
+        "source_bescom_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4, IND-6, and IND-8 duplicate FAQ claims. The public FAQ does not enumerate the current document checklist."
+    },
+    {
+      "id": "claim_request_tracker",
+      "text": "BESCOM's public tracker requests the request ID sent by SMS.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_request_tracking"
+      ],
+      "sourceIds": [
+        "source_bescom_tracker"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4 and IND-8 duplicate tracker claims."
+    },
+    {
+      "id": "claim_jvs_timeline_wording",
+      "text": "BESCOM's current Janasnehi page states that Name Change and some related services are within 24 hours.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_bescom_jvs"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The start point and exception applicability are not specified; it is not a verified end-to-end service-level promise."
+    },
+    {
+      "id": "claim_legacy_route_taxonomy",
+      "text": "No current public official route taxonomy for fast-track, regular, and HT name-change paths was verified in the Stage 0 link check.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_tenant"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_bescom_legacy"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The previous legacy endpoint was unreachable. This replaces an unverified historic route claim with an explicit current documentation gap."
+    },
+    {
+      "id": "claim_historic_consent_rule",
+      "text": "Historic KERC Conditions clause 36.01 says the registered consumer furnishes consent for transfer of the installation and deposits.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Historic binding text; current applicability is not established."
+    },
+    {
+      "id": "claim_historic_alternative_evidence",
+      "text": "Historic clause 36.01 lists ownership evidence, including registered sale deed, khata, succession or heirship certificate, and will, where consent is absent.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_sale_deed",
+        "node_transfer_evidence"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Historic binding text; it is an evidence lead, not a verified current checklist."
+    },
+    {
+      "id": "claim_historic_tenant_scope",
+      "text": "Historic clause 36.01 limits occupancy evidence alternatives to specified non-commercial installations.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_tenant"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Current authenticated acceptance is unknown."
+    },
+    {
+      "id": "claim_historic_transfer_obligations",
+      "text": "Historic clause 36.01 records no-arrears, indemnity, fresh-agreement, and deposit conditions for transfer; its published schedule also records LT and HT transfer charges.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_transfer_obligations"
+      ],
+      "sourceIds": [
+        "source_kerc_conditions_supply"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Atomicity exception noted: these are one historic conditions cluster used solely to model a decision node. Current amounts and applicability are unverified."
+    },
+    {
+      "id": "claim_ekhata_final_guidance",
+      "text": "The public e-Aasthi guidance distinguishes Draft e-Khata from Final e-Khata and lists registered deed, eKYC, SAS property-tax application number, property photo, and A-Khata material among Final e-Khata inputs.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "nodeIds": [
+        "node_sale_deed",
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_eaasthi_login"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-6 and IND-8; it does not prove BESCOM acceptance."
+    },
+    {
+      "id": "claim_ekhata_search_recovery",
+      "text": "Public e-Aasthi search supports EPID/property lookup and offers a Do Not Find My Property route when a property cannot be found.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_eaasthi_search"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-6 and IND-8 duplicate observations."
+    },
+    {
+      "id": "claim_ekhata_status",
+      "text": "The public e-Khata Application Status page accepts an EPID for status lookup.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_eaasthi_status"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "It does not document BESCOM mapping."
+    },
+    {
+      "id": "claim_mutation_fields",
+      "text": "The public e-Aasthi Pending Mutation Report displays registered-deed or mutation date, property EPID, seller, purchaser, and pending-owner fields.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_previous_consumer_deceased"
+      ],
+      "nodeIds": [
+        "node_sale_deed",
+        "node_mutation",
+        "node_epid"
+      ],
+      "sourceIds": [
+        "source_eaasthi_mutation"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The visible report does not establish a completed buyer-facing record."
+    },
+    {
+      "id": "claim_helpline_channels",
+      "text": "Current public pages publish BESCOM 1912 and GBA e-Khata/New Khata support channels.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_bescom_mapping"
+      ],
+      "sourceIds": [
+        "source_bescom_home",
+        "source_gba_directory"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Channels are observable; their case-resolution scope is not."
+    },
+    {
+      "id": "claim_epid_mapping_unknown",
+      "text": "No inspected public official material establishes EPID-to-BESCOM-account eligibility rules, failure messages, repair owner, or recovery sequence.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Reconciles IND-4, IND-6, and IND-8 Unknown records. No private/authenticated evidence was accessed."
+    },
+    {
+      "id": "claim_citizen_mapping_failure",
+      "text": "One citizen account identifies a possible failure matching a BESCOM Account ID to an EPID even when an e-Khata record exists.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_bescom_mapping"
+      ],
+      "sourceIds": [
+        "source_citizen_transfer"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Single public account, retained as a failure signal rather than a universal rule."
+    },
+    {
+      "id": "claim_citizen_missing_draft_epid",
+      "text": "One citizen reported a property found by tax identifier with neither linked Draft e-Khata nor EPID, and no movement on a non-availability request after 45 days.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_epid"
+      ],
+      "sourceIds": [
+        "source_citizen_missing_epid"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One public account; it does not establish cause or service level."
+    },
+    {
+      "id": "claim_citizen_owner_correction",
+      "text": "One citizen reported a final e-Khata displaying a previous owner's name and an Unauthorized Activity Has Been Detected message during a correction attempt.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_final_e_khata"
+      ],
+      "sourceIds": [
+        "source_citizen_owner_error"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One public account; no root cause is established."
+    },
+    {
+      "id": "claim_citizen_old_owner_recovery",
+      "text": "One citizen reported resolving a draft e-Khata showing the old owner after invalidating and reapplying with ARO guidance.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_mutation"
+      ],
+      "sourceIds": [
+        "source_citizen_old_owner_recovery"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A candidate recovery, not a general procedure."
+    },
+    {
+      "id": "claim_citizen_bescom_stalls",
+      "text": "Citizen accounts report EPID-entry, login/reset, unseen-open-application, and upload-stall failures in BESCOM flows.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_citizen_transfer",
+        "source_citizen_login_payment"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Reports identify failure modes only; no backend cause, support outcome, or general workaround is established."
+    },
+    {
+      "id": "claim_citizen_old_noc",
+      "text": "An older offline-process citizen account reported needing a previous-owner or builder NOC for BESCOM name change.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_citizen_noc"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_citizen_no_builder_noc"
+      ],
+      "notes": "Older account; conflicting evidence is retained, not resolved by chronology alone."
+    },
+    {
+      "id": "claim_citizen_no_builder_noc",
+      "text": "One 2026 citizen account reported completing an online BESCOM name change after e-Khata update without a builder NOC.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_consent_unavailable"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_citizen_login_payment"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_citizen_old_noc"
+      ],
+      "notes": "One current citizen account; it does not establish an exception rule."
+    },
+    {
+      "id": "claim_ind32_death_current_service",
+      "text": "The current Greater Bengaluru Authority public home lists Birth & Death Certificate as an e-service and publishes helpline 1533.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_death_gba_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The public page does not disclose a death-specific form or case result."
+    },
+    {
+      "id": "claim_ind32_death_bbmp_directory",
+      "text": "The BBMP citizen-services directory lists an Online Birth Certificate Request Form and an Authenticity Of Certificates route under Birth & Death Certificate.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_death_bbmp_services"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The legacy directory does not prove the current death-certificate form URL, required fields, or that every death use case is online."
+    },
+    {
+      "id": "claim_ind32_death_ejanma_routing",
+      "text": "Karnataka's official Chief Registrar/e-JanMa material states that deaths in urban local-body and BBMP areas are registered in e-JanMa by Health Officers and Health Inspectors, while deaths in private hospitals are reported by the concerned private hospital to the respective Registrar.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_death_ejanma_official"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Official page snapshot is public guidance; exact current registrar assignment is event/locality-specific."
+    },
+    {
+      "id": "claim_ind32_death_ejanma_public_tools",
+      "text": "The official Karnataka e-JanMa material publishes public tools for certificate download, birth/death verification, application status, and registration details, and directs additional copies or corrections to the concerned Nadakacheri/data-entry operator and registration centre.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_death_ejanma_official"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The public material does not establish which input fields or records a particular Bengaluru event will require."
+    },
+    {
+      "id": "claim_ind32_death_form6_timing",
+      "text": "The BBMP civil-registration manual identifies Form 6 as the death-report form and says information reported within 21 days is eligible for a free first extract under section 12; the manual is from 2012 and current fees/route are not inferred.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_death_bbmp_manual"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Historic official manual; current law/rules and portal implementation may differ."
+    },
+    {
+      "id": "claim_ind32_death_sakala_target",
+      "text": "A BBMP/Karnataka administrative-reforms report records a Sakala time limit of 3 days where online data is available and 7 days where it is not for issue of birth, still-birth, and death certificates.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_death_sakala_audit"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Report wording is not treated as a current unconditional SLA; it also records process-audit observations."
+    },
+    {
+      "id": "claim_ind32_death_statutory_boundary",
+      "text": "The Registration of Births and Deaths Act provides the statutory framework for reporting deaths, issuing a registration extract/certificate, and delayed registration, but the Act alone does not identify the current Bengaluru portal route or case-specific document checklist.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind32_death_rbd_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Check current amendments and Karnataka rules before giving legal/procedural advice."
+    },
+    {
+      "id": "claim_ind32_death_workflow_entry",
+      "text": "The current GBA public home exposes a Birth & Death Certificate e-service label and helpline 1533, while the BBMP citizen-services directory lists online certificate request and authenticity routes.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_correction"
+      ],
+      "nodeIds": [
+        "node_death_service_entry"
+      ],
+      "sourceIds": [
+        "source_ind32_death_workflow_gba",
+        "source_ind32_death_workflow_bbmp"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No current case form URL or value was entered."
+    },
+    {
+      "id": "claim_ind32_death_workflow_ejanma_route",
+      "text": "Official Karnataka e-JanMa material says BBMP/urban deaths are registered by Health Officers and Health Inspectors and private hospitals report deaths to the respective Registrar.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home"
+      ],
+      "nodeIds": [
+        "node_death_registrar"
+      ],
+      "sourceIds": [
+        "source_ind32_death_workflow_ejanma"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Exact registrar and current routing depend on event place and local jurisdiction."
+    },
+    {
+      "id": "claim_ind32_death_workflow_tools",
+      "text": "Official e-JanMa material publishes public tool labels for certificate download, birth/death verification, application status, and registration details; it directs additional copies and corrections to the concerned data-entry operator/registration centre.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_correction"
+      ],
+      "nodeIds": [
+        "node_death_public_tools"
+      ],
+      "sourceIds": [
+        "source_ind32_death_workflow_ejanma"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No search or certificate download was performed."
+    },
+    {
+      "id": "claim_ind32_death_workflow_timing",
+      "text": "The historic BBMP manual describes Form 6 and a free first extract for information reported within 21 days, and a BBMP/Karnataka report records a 3-day online-data/7-day non-online-data Sakala target; current applicability is not established.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_delayed"
+      ],
+      "nodeIds": [
+        "node_death_outcome"
+      ],
+      "sourceIds": [
+        "source_ind32_death_workflow_manual",
+        "source_ind32_death_workflow_sakala"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Do not present these older statements as a guaranteed current SLA or fee schedule."
+    },
+    {
+      "id": "claim_ind32_death_workflow_state_unknown",
+      "text": "No public-only inspection can determine whether a specific death is registered, digitized, downloadable, correction-eligible, delayed, or assigned to a particular registrar without event-specific information and/or a case lookup.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_correction",
+        "scenario_ind32_death_delayed"
+      ],
+      "nodeIds": [
+        "node_death_classify_record",
+        "node_death_outcome"
+      ],
+      "sourceIds": [
+        "source_ind32_death_workflow_gba",
+        "source_ind32_death_workflow_ejanma"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No deceased-person data or record identifier was supplied."
+    },
+    {
+      "id": "claim_ind32_death_citizen_offline_case",
+      "text": "One citizen reported completing an offline death-certificate request through a BBMP office and being asked for several supporting records in that case.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_hospital"
+      ],
+      "nodeIds": [
+        "node_death_classify_record",
+        "node_death_registrar",
+        "node_death_outcome"
+      ],
+      "sourceIds": [
+        "source_ind32_death_citizen_offline_application"
+      ],
+      "evidenceGrade": "F",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A commenter account about one offline interaction. It does not establish the right office, necessary documents, record state, payment, or whether the event was registered before the visit."
+    },
+    {
+      "id": "claim_ind32_death_citizen_registration_unit_blank",
+      "text": "One citizen reported that the e-JanMa registration-unit selector showed no options while they were trying to start a Bengaluru death-certificate process.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_delayed"
+      ],
+      "nodeIds": [
+        "node_death_service_entry",
+        "node_death_classify_record",
+        "node_death_registrar"
+      ],
+      "sourceIds": [
+        "source_ind32_death_citizen_portal_registration_unit"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One attempted use. It does not prove a portal fault, determine the appropriate registrar, or show whether event facts, device state, availability, or authentication affected the selector."
+    },
+    {
+      "id": "claim_ind32_death_citizen_error_correction",
+      "text": "One citizen reported finding a spelling error in a death certificate and submitting a correction request during the same office interaction.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_death_correction"
+      ],
+      "nodeIds": [
+        "node_death_public_tools",
+        "node_death_registrar",
+        "node_death_outcome"
+      ],
+      "sourceIds": [
+        "source_ind32_death_citizen_certificate_error"
+      ],
+      "evidenceGrade": "F",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single commenter account. It does not establish how corrections must be requested, whether a correction was accepted, or the time to issue a corrected certificate."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_sale_deed",
+      "label": "Sale deed",
+      "kind": "document",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Registered property-transfer document referenced by municipal and historic transfer material.",
+      "requiredState": "Available only where the applicable municipal or exception route asks for it.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_previous_consumer_deceased"
+      ],
+      "claimIds": [
+        "claim_ekhata_final_guidance",
+        "claim_historic_alternative_evidence"
+      ],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_mutation",
+      "label": "Mutation",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Publicly visible municipal mutation report state; not proof of completed buyer-facing ownership.",
+      "requiredState": "A municipal report may be inspected without assuming its downstream acceptance.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_previous_consumer_deceased"
+      ],
+      "claimIds": [
+        "claim_mutation_fields"
+      ],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_final_e_khata",
+      "label": "Final e-Khata",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Municipal final-record state with public input guidance and reported citizen failure modes.",
+      "requiredState": "Finality and holder state need case-specific verification; Draft is not treated as final proof.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_final_guidance",
+        "claim_ekhata_status",
+        "claim_citizen_missing_draft_epid",
+        "claim_citizen_owner_correction",
+        "claim_citizen_old_owner_recovery"
+      ],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_epid",
+      "label": "EPID",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Property identifier exposed in public search and status routes.",
+      "requiredState": "An EPID may be located or its absence recovered through official municipal channels; BESCOM mapping is separate and unknown.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_search_recovery",
+        "claim_ekhata_status",
+        "claim_epid_mapping_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_transfer_evidence",
+      "label": "Exception transfer evidence",
+      "kind": "document",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Historic consent, ownership, succession, or scope-limited occupancy evidence branch.",
+      "requiredState": "Current acceptance must be confirmed; historical text is not presented as a current checklist.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_consent_rule",
+        "claim_historic_alternative_evidence",
+        "claim_historic_tenant_scope"
+      ],
+      "status": "partial",
+      "displayOrder": 45
+    },
+    {
+      "id": "node_bescom_mapping",
+      "label": "BESCOM mapping",
+      "kind": "system",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Unpublished relationship between a property EPID and a BESCOM account.",
+      "requiredState": "No evidence-backed state, validation rule, repair owner, or recovery sequence is known.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_epid_route_visible",
+        "claim_epid_mapping_unknown",
+        "claim_citizen_mapping_failure",
+        "claim_citizen_bescom_stalls"
+      ],
+      "status": "unknown",
+      "displayOrder": 50
+    },
+    {
+      "id": "node_transfer_obligations",
+      "label": "Transfer obligations",
+      "kind": "decision",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Historic transfer conditions such as arrears, indemnity, agreement, deposit, and charges.",
+      "requiredState": "Obtain current case-specific confirmation; historic values and applicability are partial.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_transfer_obligations"
+      ],
+      "status": "partial",
+      "displayOrder": 55
+    },
+    {
+      "id": "node_name_transfer",
+      "label": "BESCOM name transfer",
+      "kind": "service",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Current public FAQ exposes an authenticated standard route and the homepage exposes an EPID-labelled entry.",
+      "requiredState": "Use an authorized route; exact authenticated validation and EPID behaviour remain Unknown.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_epid_route_visible",
+        "claim_epid_mapping_unknown",
+        "claim_citizen_bescom_stalls",
+        "claim_citizen_old_noc",
+        "claim_citizen_no_builder_noc"
+      ],
+      "status": "partial",
+      "displayOrder": 60
+    },
+    {
+      "id": "node_request_tracking",
+      "label": "Request tracking",
+      "kind": "record",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Public name-change tracking keyed by an SMS request ID.",
+      "requiredState": "Retain a request ID after successful submission; outcome timing is not established.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_request_tracker"
+      ],
+      "status": "verified",
+      "displayOrder": 70
+    },
+    {
+      "id": "node_death_service_entry",
+      "label": "Open public Birth & Death entry",
+      "kind": "service",
+      "ownerAgencyId": "agency_gba_bbmp_ind32_death",
+      "summary": "Current GBA/BBMP public service directory entry and helpline.",
+      "requiredState": "No personal data is needed to inspect service labels; no case action was taken.",
+      "checks": [
+        {
+          "id": "check_death_service_entry",
+          "label": "Birth & Death service label",
+          "description": "GBA home lists Birth & Death Certificate and publishes helpline 1533; BBMP directory lists request/authenticity links.",
+          "url": "https://bbmp.gov.in/",
+          "claimIds": [
+            "claim_ind32_death_workflow_entry"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_correction"
+      ],
+      "claimIds": [
+        "claim_ind32_death_workflow_entry"
+      ],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_death_classify_record",
+      "label": "Classify record state",
+      "kind": "decision",
+      "ownerAgencyId": "agency_karnataka_cr_ind32_death",
+      "summary": "Distinguish existing registered copy, first registration, correction, additional copy, delayed registration, or unavailable record.",
+      "requiredState": "Event date/place and record details would be needed; none were entered.",
+      "checks": [],
+      "failureSignals": [
+        {
+          "id": "failure_death_record_state_unknown",
+          "label": "Record state unknown",
+          "description": "No public-only step can classify a specific event without an identifier or event details.",
+          "url": "https://ejanma.karnataka.gov.in/",
+          "claimIds": [
+            "claim_ind32_death_workflow_state_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_death_choose_tool",
+          "label": "Select authorised e-JanMa tool",
+          "description": "Use the public download/verification/status labels only after confirming the event and registrar; no lookup was run.",
+          "url": "https://ejanma.karnataka.gov.in/",
+          "claimIds": [
+            "claim_ind32_death_workflow_tools"
+          ],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_correction",
+        "scenario_ind32_death_delayed"
+      ],
+      "claimIds": [
+        "claim_ind32_death_workflow_state_unknown"
+      ],
+      "status": "unknown",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_death_public_tools",
+      "label": "Public e-JanMa tools",
+      "kind": "service",
+      "ownerAgencyId": "agency_karnataka_cr_ind32_death",
+      "summary": "Public labels for certificate download, verification, application status, and registration details.",
+      "requiredState": "An authorised record key and event details may be required; none were supplied.",
+      "checks": [
+        {
+          "id": "check_death_public_tools",
+          "label": "Download/verification/status labels",
+          "description": "Official Karnataka material publishes these public tool routes.",
+          "url": "https://ejanma.karnataka.gov.in/",
+          "claimIds": [
+            "claim_ind32_death_workflow_tools"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_death_no_record",
+          "label": "Record not found or not digitized",
+          "description": "A case may require registrar/data-entry-operator handling; exact result is unobserved.",
+          "url": "https://ejanma.karnataka.gov.in/",
+          "claimIds": [
+            "claim_ind32_death_workflow_state_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_death_correction_copy",
+          "label": "Contact registration centre for correction/additional copy",
+          "description": "Official material directs additional copies/corrections to the concerned operator/registration centre; no request was made.",
+          "url": "https://ejanma.karnataka.gov.in/",
+          "claimIds": [
+            "claim_ind32_death_workflow_tools"
+          ],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_correction"
+      ],
+      "claimIds": [
+        "claim_ind32_death_workflow_tools"
+      ],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_death_registrar",
+      "label": "Registrar and reporting route",
+      "kind": "decision",
+      "ownerAgencyId": "agency_karnataka_cr_ind32_death",
+      "summary": "Route institutional/private-hospital or non-institutional death to the competent urban/BBMP registrar.",
+      "requiredState": "Event place and institutional status are required; no event details were supplied.",
+      "checks": [
+        {
+          "id": "check_death_registrar_routing",
+          "label": "e-JanMa urban/private-hospital routing",
+          "description": "Official material describes urban/BBMP Health Officer/Health Inspector registration and private-hospital reporting.",
+          "url": "https://www.amrut.mohua.gov.in/uploads/reform/ulb/BIRTHS-AND-DEATHS--OFFICE-OF-THE-CHIEF-REGISTRAR-OF-BIRTHS-AND-DEATHSpdf11.pdf",
+          "claimIds": [
+            "claim_ind32_death_workflow_ejanma_route"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_death_delayed_or_unregistered",
+          "label": "Delayed/unregistered event",
+          "description": "The ordinary certificate-copy path may not apply when no record exists or registration is delayed.",
+          "url": "https://ejanma.karnataka.gov.in/",
+          "claimIds": [
+            "claim_ind32_death_workflow_state_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_delayed",
+        "scenario_ind32_death_correction"
+      ],
+      "claimIds": [
+        "claim_ind32_death_workflow_ejanma_route",
+        "claim_ind32_death_workflow_state_unknown"
+      ],
+      "status": "unknown",
+      "displayOrder": 25
+    },
+    {
+      "id": "node_death_outcome",
+      "label": "Certificate or registration outcome",
+      "kind": "outcome",
+      "ownerAgencyId": "agency_gba_bbmp_ind32_death",
+      "summary": "Downloaded/issued certificate, correction, status, delayed-registration decision, or unresolved case.",
+      "requiredState": "A real event lookup or submission would be required; none exists in this research.",
+      "checks": [
+        {
+          "id": "check_death_timing_boundary",
+          "label": "Historic timing leads",
+          "description": "Manual/report publish 21-day first-extract and 3/7-day Sakala wording with currentness caveat.",
+          "url": "https://site.bbmp.gov.in/citizenservisfaq/Birthanddeath.pdf",
+          "claimIds": [
+            "claim_ind32_death_workflow_timing"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_correction",
+        "scenario_ind32_death_delayed"
+      ],
+      "claimIds": [
+        "claim_ind32_death_workflow_timing",
+        "claim_ind32_death_workflow_state_unknown"
+      ],
+      "status": "unknown",
+      "displayOrder": 40
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_sale_to_mutation",
+      "fromNodeId": "node_sale_deed",
+      "toNodeId": "node_mutation",
+      "relationship": "produces",
+      "label": "Municipal report displays deed/mutation fields; universal automatic completion is not established.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "claimIds": [
+        "claim_mutation_fields"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_mutation_to_final",
+      "fromNodeId": "node_mutation",
+      "toNodeId": "node_final_e_khata",
+      "relationship": "requires",
+      "label": "A buyer-facing final record is a prudent clean-sale hypothesis, not a published universal rule.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "claimIds": [
+        "claim_mutation_fields",
+        "claim_ekhata_final_guidance"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_final_to_epid",
+      "fromNodeId": "node_final_e_khata",
+      "toNodeId": "node_epid",
+      "relationship": "produces",
+      "label": "Public sources support EPID lookup/status but do not establish its exact production from finalisation.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_search_recovery",
+        "claim_ekhata_status"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_epid_to_mapping",
+      "fromNodeId": "node_epid",
+      "toNodeId": "node_bescom_mapping",
+      "relationship": "maps_to",
+      "label": "An EPID route is visible, but its cross-system mapping contract is Unknown.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_epid_route_visible",
+        "claim_epid_mapping_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_mapping_to_transfer",
+      "fromNodeId": "node_bescom_mapping",
+      "toNodeId": "node_name_transfer",
+      "relationship": "requires",
+      "label": "Mapping success is inferred only for the EPID route; a separate standard route is publicly documented.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_epid_mapping_unknown"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_evidence_to_obligations",
+      "fromNodeId": "node_transfer_evidence",
+      "toNodeId": "node_transfer_obligations",
+      "relationship": "requires",
+      "label": "Historical exception evidence does not remove historical obligations.",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_consent_rule",
+        "claim_historic_alternative_evidence",
+        "claim_historic_tenant_scope",
+        "claim_historic_transfer_obligations"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_obligations_to_transfer",
+      "fromNodeId": "node_transfer_obligations",
+      "toNodeId": "node_name_transfer",
+      "relationship": "requires",
+      "label": "Historic conditions cluster feeds transfer; current implementation remains partial.",
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_transfer_obligations",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_transfer_to_tracking",
+      "fromNodeId": "node_name_transfer",
+      "toNodeId": "node_request_tracking",
+      "relationship": "produces",
+      "label": "The documented standard workflow returns a request ID after successful submission.",
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_request_tracker"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "edge_death_entry_classify",
+      "fromNodeId": "node_death_service_entry",
+      "toNodeId": "node_death_classify_record",
+      "relationship": "requires",
+      "label": "Public service entry precedes classifying copy, registration, correction, or delayed-registration need.",
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_correction",
+        "scenario_ind32_death_delayed"
+      ],
+      "claimIds": [
+        "claim_ind32_death_workflow_entry",
+        "claim_ind32_death_workflow_state_unknown"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_death_classify_tools",
+      "fromNodeId": "node_death_classify_record",
+      "toNodeId": "node_death_public_tools",
+      "relationship": "requires",
+      "label": "A known registered record may lead to public download/verification/status tools; no case lookup was performed.",
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_correction"
+      ],
+      "claimIds": [
+        "claim_ind32_death_workflow_tools"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_death_classify_registrar",
+      "fromNodeId": "node_death_classify_record",
+      "toNodeId": "node_death_registrar",
+      "relationship": "requires",
+      "label": "Unregistered, institutional, home, delayed, or correction cases require competent registrar classification.",
+      "scenarioIds": [
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_correction",
+        "scenario_ind32_death_delayed"
+      ],
+      "claimIds": [
+        "claim_ind32_death_workflow_ejanma_route",
+        "claim_ind32_death_workflow_state_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_death_tools_outcome",
+      "fromNodeId": "node_death_public_tools",
+      "toNodeId": "node_death_outcome",
+      "relationship": "produces",
+      "label": "A valid public lookup may produce a certificate/status; no record key or output was requested.",
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_correction"
+      ],
+      "claimIds": [
+        "claim_ind32_death_workflow_tools",
+        "claim_ind32_death_workflow_state_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_death_registrar_outcome",
+      "fromNodeId": "node_death_registrar",
+      "toNodeId": "node_death_outcome",
+      "relationship": "produces",
+      "label": "Registrar processing may produce registration/certificate/correction or a delayed-registration decision; no case was filed.",
+      "scenarioIds": [
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_correction",
+        "scenario_ind32_death_delayed"
+      ],
+      "claimIds": [
+        "claim_ind32_death_workflow_ejanma_route",
+        "claim_ind32_death_workflow_timing",
+        "claim_ind32_death_workflow_state_unknown"
+      ],
+      "status": "unknown"
+    }
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_draft_not_final",
+      "title": "Draft e-Khata is not a verified final buyer record",
+      "category": "documentation",
+      "symptom": "The property has Draft e-Khata but finality or holder state is unresolved.",
+      "likelyCause": "Public guidance distinguishes Draft and Final, but no public evidence connects Draft to BESCOM acceptance.",
+      "recovery": "Use official Final e-Khata guidance and status/search channels; do not treat Draft as transfer approval.",
+      "ownerAgencyIds": [
+        "agency_gba"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_epid"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "claimIds": [
+        "claim_ekhata_final_guidance",
+        "claim_ekhata_status"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_property_missing",
+      "title": "Property cannot be found in public e-Khata search",
+      "category": "process",
+      "symptom": "Available public lookup paths do not find the property.",
+      "likelyCause": "The public interface exposes a missing-property state without a property-specific cause.",
+      "recovery": "Use the official Do Not Find My Property route for corporation review.",
+      "ownerAgencyIds": [
+        "agency_gba"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_epid"
+      ],
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_ekhata_search_recovery"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "roadblock_owner_correction",
+      "title": "e-Khata holder is wrong or correction fails",
+      "category": "process",
+      "symptom": "Citizen accounts describe a prior holder in e-Khata or correction failure.",
+      "likelyCause": "Unknown; citizen reports do not establish a data, identity, or workflow cause.",
+      "recovery": "Use official municipal support; a reported reapplication is not a general procedure.",
+      "ownerAgencyIds": [
+        "agency_gba"
+      ],
+      "nodeIds": [
+        "node_final_e_khata"
+      ],
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_citizen_owner_correction",
+        "claim_citizen_old_owner_recovery"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_epid_mapping",
+      "title": "EPID does not resolve to the intended BESCOM account",
+      "category": "infrastructure",
+      "symptom": "An EPID route is visible but the intended account relationship cannot be established.",
+      "likelyCause": "Cross-system mapping rules, errors, repair owner, and SLA are Unknown; one citizen report identifies a possible failure.",
+      "recovery": "Do not repeatedly submit; use published support channels and obtain official case-specific guidance.",
+      "ownerAgencyIds": [
+        "agency_gba",
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_epid",
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_epid_mapping_unknown",
+        "claim_citizen_mapping_failure",
+        "claim_helpline_channels"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_bescom_stalls",
+      "title": "BESCOM login or application flow stalls",
+      "category": "infrastructure",
+      "symptom": "Citizen accounts describe login/reset, unseen-open-application, EPID-entry, and upload-stall failures.",
+      "likelyCause": "Unknown; no public evidence establishes backend cause or remedy.",
+      "recovery": "Use authorized BESCOM support without placing account or identity data in the ledger.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_epid_mapping_failure"
+      ],
+      "claimIds": [
+        "claim_citizen_bescom_stalls",
+        "claim_helpline_channels"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_tenant_scope",
+      "title": "Tenant route outside stated historical scope",
+      "category": "documentation",
+      "symptom": "An occupier seeks transfer for an installation that may not fit the historic non-commercial scope.",
+      "likelyCause": "The historic occupancy alternative is limited and current authenticated eligibility is undisclosed.",
+      "recovery": "Confirm current eligibility and installation category through authorized BESCOM channels.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_tenant"
+      ],
+      "claimIds": [
+        "claim_historic_tenant_scope",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_successor_evidence",
+      "title": "Successor evidence cannot be confirmed in the current form",
+      "category": "documentation",
+      "symptom": "Prior consumer is deceased and consent is unavailable.",
+      "likelyCause": "Historic text lists successor evidence but the current public FAQ omits its authenticated document list.",
+      "recovery": "Use historical evidence only as a lead; confirm current acceptance in authorized channels.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_previous_consumer_deceased"
+      ],
+      "claimIds": [
+        "claim_historic_alternative_evidence",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_consent_deposit",
+      "title": "Consent unavailable and deposit treatment unresolved",
+      "category": "documentation",
+      "symptom": "Applicant cannot furnish consent to transfer the installation and deposit.",
+      "likelyCause": "Historic text describes alternatives and a fresh-deposit consequence, but current demand treatment is unverified.",
+      "recovery": "Obtain case-specific current demand; do not use historic amounts as current amounts.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_evidence",
+        "node_transfer_obligations"
+      ],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_consent_rule",
+        "claim_historic_transfer_obligations"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_arrears_recovery",
+      "title": "Arrears may block transfer but public clearing path is not documented",
+      "category": "process",
+      "symptom": "An outstanding balance may prevent transfer.",
+      "likelyCause": "Historic text states no arrears; no current public remediation sequence was found.",
+      "recovery": "Resolve billing through an authorized BESCOM path before retrying; exact sequence remains unknown.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_transfer_obligations",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_historic_transfer_obligations",
+        "claim_standard_authenticated_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_document_checklist",
+      "title": "Current authenticated document checklist is not public",
+      "category": "process",
+      "symptom": "Public FAQ directs uploads but does not enumerate them before login.",
+      "likelyCause": "Authenticated/back-end requirements were not inspected and are Unknown.",
+      "recovery": "Use the authorized route and retain the request ID if submission succeeds; do not infer or bypass requirements.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "scenarioIds": [
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure",
+        "scenario_tenant",
+        "scenario_previous_consumer_deceased",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_standard_authenticated_route",
+        "claim_epid_mapping_unknown",
+        "claim_request_tracker"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_noc_conflict",
+      "title": "NOC requirement differs across citizen accounts",
+      "category": "documentation",
+      "symptom": "An older account reports needing an NOC while a 2026 account reports completion without builder NOC.",
+      "likelyCause": "The route may have changed or conditions differed; desk evidence cannot resolve it.",
+      "recovery": "Do not assume NOC is or is not required; verify current case-specific requirements through authorized sources.",
+      "ownerAgencyIds": [
+        "agency_bescom"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_citizen_old_noc",
+        "claim_citizen_no_builder_noc"
+      ],
+      "status": "contested"
+    },
+    {
+      "id": "roadblock_ind32_death_current_portal",
+      "title": "Current death-certificate portal route not fully exposed",
+      "category": "process",
+      "symptom": "Current GBA/BBMP pages list Birth & Death service links but public text does not show the current death form fields or event-specific route.",
+      "likelyCause": "Legacy directory, JavaScript service link, and e-JanMa/local registrar channels have different public surfaces.",
+      "recovery": "Start from the current GBA/BBMP Birth & Death service link or Karnataka e-JanMa public tools and confirm the event's registrar before entering data.",
+      "ownerAgencyIds": [
+        "agency_gba_bbmp_ind32_death",
+        "agency_karnataka_cr_ind32_death"
+      ],
+      "nodeIds": [
+        "node_sale_deed"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "claimIds": [
+        "claim_ind32_death_current_service",
+        "claim_ind32_death_bbmp_directory",
+        "claim_ind32_death_ejanma_routing"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_death_record_state",
+      "title": "Registered versus unregistered event",
+      "category": "documentation",
+      "symptom": "Public pages cannot tell whether a death record exists, is digitized, or needs first registration, delayed registration, correction, or a duplicate copy.",
+      "likelyCause": "Requires event date/place and registrar record lookup.",
+      "recovery": "Classify the case first; do not use a certificate-download route as a substitute for registration or delayed-registration permission.",
+      "ownerAgencyIds": [
+        "agency_karnataka_cr_ind32_death",
+        "agency_gba_bbmp_ind32_death"
+      ],
+      "nodeIds": [
+        "node_sale_deed"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "claimIds": [
+        "claim_ind32_death_ejanma_public_tools",
+        "claim_ind32_death_statutory_boundary"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind32_death_currentness",
+      "title": "Legacy manual and report caveats",
+      "category": "documentation",
+      "symptom": "The Form 6/21-day manual and Sakala 3/7-day report are older publications than the current GBA/e-JanMa presentation.",
+      "likelyCause": "Rules, portal ownership, and service implementation update on different cycles.",
+      "recovery": "Treat timing/fee statements as leads and verify the current registrar, rules, and service page before submission.",
+      "ownerAgencyIds": [
+        "agency_gba_bbmp_ind32_death",
+        "agency_karnataka_cr_ind32_death"
+      ],
+      "nodeIds": [
+        "node_sale_deed"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "claimIds": [
+        "claim_ind32_death_form6_timing",
+        "claim_ind32_death_sakala_target"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_death_workflow_route",
+      "title": "Current route and form fields not fully visible",
+      "category": "process",
+      "symptom": "GBA/BBMP service labels and e-JanMa tool labels are public, but no current event-specific form was opened.",
+      "likelyCause": "Service directory, e-JanMa, and registrar channels are separate public surfaces.",
+      "recovery": "Start from official GBA/BBMP and e-JanMa links, classify the event, and confirm the competent registrar before entering data.",
+      "ownerAgencyIds": [
+        "agency_gba_bbmp_ind32_death",
+        "agency_karnataka_cr_ind32_death"
+      ],
+      "nodeIds": [
+        "node_death_service_entry",
+        "node_death_classify_record"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_correction",
+        "scenario_ind32_death_delayed"
+      ],
+      "claimIds": [
+        "claim_ind32_death_workflow_entry",
+        "claim_ind32_death_workflow_state_unknown"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_death_workflow_record",
+      "title": "Record state and registrar unknown",
+      "category": "documentation",
+      "symptom": "No event details were supplied, so registration, digitization, download, correction, delayed-registration, and jurisdiction cannot be determined.",
+      "likelyCause": "Requires date/place and record-specific lookup or registrar review.",
+      "recovery": "Do not submit a duplicate or delayed-registration request until the record state is confirmed.",
+      "ownerAgencyIds": [
+        "agency_karnataka_cr_ind32_death",
+        "agency_gba_bbmp_ind32_death"
+      ],
+      "nodeIds": [
+        "node_death_classify_record",
+        "node_death_registrar",
+        "node_death_outcome"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_correction",
+        "scenario_ind32_death_delayed"
+      ],
+      "claimIds": [
+        "claim_ind32_death_workflow_state_unknown",
+        "claim_ind32_death_workflow_ejanma_route"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind32_death_workflow_currentness",
+      "title": "Timing and fee currentness caveat",
+      "category": "documentation",
+      "symptom": "Form 6/21-day and 3/7-day statements come from older manual/report material.",
+      "likelyCause": "Current portal and service rules may have changed.",
+      "recovery": "Use those statements as leads only and confirm the current service page/registrar.",
+      "ownerAgencyIds": [
+        "agency_gba_bbmp_ind32_death",
+        "agency_karnataka_cr_ind32_death"
+      ],
+      "nodeIds": [
+        "node_death_outcome"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_delayed"
+      ],
+      "claimIds": [
+        "claim_ind32_death_workflow_timing"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_death_citizen_registration_selector",
+      "title": "Reported empty registration-unit selector",
+      "category": "infrastructure",
+      "symptom": "A citizen reports that an e-JanMa registration-unit selector did not offer a choice during an attempted process.",
+      "likelyCause": "Unknown; the account does not establish portal status, required prior inputs, jurisdiction, or user/session conditions.",
+      "recovery": "Do not infer an outage or choose a registrar from the report. Confirm the event's competent registrar and current official route before entering personal/deceased-person data.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_death_service_entry",
+        "node_death_classify_record",
+        "node_death_registrar"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_delayed"
+      ],
+      "claimIds": [
+        "claim_ind32_death_citizen_registration_unit_blank"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_death_citizen_certificate_error",
+      "title": "Reported certificate spelling error",
+      "category": "documentation",
+      "symptom": "A commenter reports finding an error in a death certificate and seeking a correction.",
+      "likelyCause": "Unknown; the account does not identify whether the error began in the event report, underlying register, certificate generation, or later transcription.",
+      "recovery": "Treat the report as a reason to check the issued certificate carefully and use the competent registration centre's authorised correction process for a real case.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_death_public_tools",
+        "node_death_registrar",
+        "node_death_outcome"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_death_correction"
+      ],
+      "claimIds": [
+        "claim_ind32_death_citizen_error_correction"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_audit_death_certificate",
+      "title": "Independent audit limitations",
+      "category": "documentation",
+      "symptom": "Date: 2026-08-28   Scope: `ledger/death-certificate.json`, `ledger/schema.json`, `ledger/AGENT_PROTOCOL.md`, and the supplied edge-status policy. This was a read-only audit; it did not open sources, search for a record, or alter ledger data. ## Result The ledger passes JSON-schema validation and all checked cross-record references resolve. The public journey consistently keeps individual record state, registrar, fee, timing, correction eligibility, and certificate outcome unknown. The observations below are visible documentation limitations, not release blockers. ## Findings ### DC-1 — Three death-service roadblocks are connected to a property-sale node and scenario `roadblock_ind32_death_current_portal`, `roadblock_ind32_death_record_state`, and `roadblock_ind32_death_currentness` use `node_sale_deed` and `scenario_clean_sale`. Their supporting claims (`claim_ind32_death_current_service",
+      "likelyCause": "Evidence and schema boundaries identified by the single independent audit.",
+      "recovery": "Read the cited evidence and retain Unknown or partial status where the public record stops.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_sale_deed"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "claimIds": [],
+      "status": "unknown"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_clean_sale",
+      "title": "Clean sale",
+      "scenarioId": "scenario_clean_sale",
+      "context": "Partial chain: municipal public routes and BESCOM public entry points are verified, but their end-to-end dependency is not.",
+      "steps": [
+        {
+          "id": "step_clean_municipal",
+          "label": "Inspect municipal state",
+          "nodeId": "node_final_e_khata",
+          "action": "Use public e-Aasthi guidance, search, and status routes.",
+          "expectedResult": "A visible municipal state or a published recovery route, not a BESCOM approval.",
+          "claimIds": [
+            "claim_ekhata_final_guidance",
+            "claim_ekhata_search_recovery",
+            "claim_ekhata_status"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_clean_transfer",
+          "label": "Use authorized BESCOM route",
+          "nodeId": "node_name_transfer",
+          "action": "Use the documented standard route or the visible EPID entry as applicable.",
+          "expectedResult": "Request flow is documented; EPID mapping and outcome are unknown.",
+          "claimIds": [
+            "claim_standard_authenticated_route",
+            "claim_epid_route_visible",
+            "claim_epid_mapping_unknown"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_clean_epid_mapping",
+          "fromNodeId": "node_epid",
+          "toNodeId": "node_bescom_mapping",
+          "description": "Cross-system mapping is not publicly specified.",
+          "claimIds": [
+            "claim_epid_mapping_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_draft_not_final",
+        "roadblock_property_missing",
+        "roadblock_epid_mapping",
+        "roadblock_bescom_stalls"
+      ],
+      "recoveryNotes": [
+        "Use municipal routes before assuming a BESCOM-only fault.",
+        "Standard transfer is not proof that the EPID route is identical."
+      ],
+      "documentationQualityNotes": [
+        "Current public interfaces are Grade B.",
+        "Authenticated and backend behaviour remains Unknown."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_draft_ekhata",
+      "title": "Draft or pending e-Khata",
+      "scenarioId": "scenario_draft_e_khata",
+      "context": "Draft availability and public status routes are observable; a final buyer state and BESCOM acceptance are not verified.",
+      "steps": [
+        {
+          "id": "step_draft_finalise",
+          "label": "Resolve municipal record",
+          "nodeId": "node_final_e_khata",
+          "action": "Follow official Final e-Khata guidance and use status/search routes.",
+          "expectedResult": "Record state or published municipal recovery route.",
+          "claimIds": [
+            "claim_ekhata_final_guidance",
+            "claim_ekhata_search_recovery",
+            "claim_ekhata_status"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_draft_track",
+          "label": "Retain request tracking identifier",
+          "nodeId": "node_request_tracking",
+          "action": "If submission succeeds through an authorized BESCOM route, retain the SMS request ID.",
+          "expectedResult": "Trackable request, not verified approval.",
+          "claimIds": [
+            "claim_request_tracker"
+          ],
+          "status": "verified"
+        }
+      ],
+      "dependencies": [],
+      "failureRoadblockIds": [
+        "roadblock_draft_not_final",
+        "roadblock_property_missing",
+        "roadblock_owner_correction",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Do not treat Draft as final proof.",
+        "No personal records belong in this ledger."
+      ],
+      "documentationQualityNotes": [
+        "Municipal inputs are public; utility-side acceptance remains unverified."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_epid_failure",
+      "title": "EPID mapping failure",
+      "scenarioId": "scenario_epid_mapping_failure",
+      "context": "Public municipal lookup and BESCOM EPID entry coexist, but mapping behaviour is Unknown.",
+      "steps": [
+        {
+          "id": "step_epid_check",
+          "label": "Check EPID municipal state",
+          "nodeId": "node_epid",
+          "action": "Use public search/status or missing-property route.",
+          "expectedResult": "Publicly visible status or municipal recovery channel.",
+          "claimIds": [
+            "claim_ekhata_search_recovery",
+            "claim_ekhata_status"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "step_epid_escalate",
+          "label": "Escalate without repeated submissions",
+          "nodeId": "node_bescom_mapping",
+          "action": "Use published support channels for case-specific guidance.",
+          "expectedResult": "No promised repair owner or SLA.",
+          "claimIds": [
+            "claim_epid_mapping_unknown",
+            "claim_helpline_channels"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_epid_mapping",
+          "fromNodeId": "node_epid",
+          "toNodeId": "node_bescom_mapping",
+          "description": "The relationship is unverified.",
+          "claimIds": [
+            "claim_epid_mapping_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_epid_mapping",
+        "roadblock_bescom_stalls",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Preserve only non-sensitive error wording outside this ledger if needed for support."
+      ],
+      "documentationQualityNotes": [
+        "Public endpoints are verified; their contract is not."
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "journey_tenant",
+      "title": "Tenant or occupier",
+      "scenarioId": "scenario_tenant",
+      "context": "Historic occupancy evidence is scope-limited; current eligibility is not public.",
+      "steps": [
+        {
+          "id": "step_tenant_scope",
+          "label": "Assess historic scope",
+          "nodeId": "node_transfer_evidence",
+          "action": "Distinguish specified non-commercial occupancy from other cases.",
+          "expectedResult": "An explicit eligibility unknown where scope does not fit.",
+          "claimIds": [
+            "claim_historic_tenant_scope"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_tenant_obligations",
+          "label": "Confirm current conditions",
+          "nodeId": "node_transfer_obligations",
+          "action": "Confirm arrears, agreement, indemnity, deposit, and charges through authorized channels.",
+          "expectedResult": "Current treatment is confirmed case-specifically, not inferred from historic text.",
+          "claimIds": [
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_tenant_conditions",
+          "fromNodeId": "node_transfer_evidence",
+          "toNodeId": "node_transfer_obligations",
+          "description": "Historical evidence branch does not remove historical conditions.",
+          "claimIds": [
+            "claim_historic_tenant_scope",
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_tenant_scope",
+        "roadblock_arrears_recovery",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Do not present historic occupancy evidence as a universal entitlement."
+      ],
+      "documentationQualityNotes": [
+        "Historic text is Grade A but partial for current use."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_deceased",
+      "title": "Previous consumer deceased",
+      "scenarioId": "scenario_previous_consumer_deceased",
+      "context": "Historic successor evidence is an evidence lead; current form fields are not public.",
+      "steps": [
+        {
+          "id": "step_deceased_evidence",
+          "label": "Choose successor evidence",
+          "nodeId": "node_transfer_evidence",
+          "action": "Use the historic successor-evidence list only as a lead.",
+          "expectedResult": "Case-specific current acceptance remains necessary.",
+          "claimIds": [
+            "claim_historic_alternative_evidence"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_deceased_request",
+          "label": "Use documented request and tracking route",
+          "nodeId": "node_request_tracking",
+          "action": "If the authorized route permits submission, retain request ID.",
+          "expectedResult": "Tracked request, not automatic acceptance.",
+          "claimIds": [
+            "claim_standard_authenticated_route",
+            "claim_request_tracker"
+          ],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_deceased_conditions",
+          "fromNodeId": "node_transfer_evidence",
+          "toNodeId": "node_transfer_obligations",
+          "description": "Alternative ownership evidence does not remove historical obligations.",
+          "claimIds": [
+            "claim_historic_alternative_evidence",
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_successor_evidence",
+        "roadblock_consent_deposit",
+        "roadblock_arrears_recovery",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Municipal record work may be separate; no verified rule links it to exception acceptance."
+      ],
+      "documentationQualityNotes": [
+        "No current public deceased-consumer checklist was found."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_consent",
+      "title": "Consent unavailable",
+      "scenarioId": "scenario_consent_unavailable",
+      "context": "Historic rule offers alternatives and conditions, while current authenticated requirements remain unknown.",
+      "steps": [
+        {
+          "id": "step_consent_alternative",
+          "label": "Classify evidence branch",
+          "nodeId": "node_transfer_evidence",
+          "action": "Separate ownership alternatives from scope-limited occupancy alternatives.",
+          "expectedResult": "No assumed workaround.",
+          "claimIds": [
+            "claim_historic_consent_rule",
+            "claim_historic_alternative_evidence",
+            "claim_historic_tenant_scope"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_consent_verify",
+          "label": "Verify current submission conditions",
+          "nodeId": "node_name_transfer",
+          "action": "Use authorized current route and do not infer NOC, deposit, or document requirements.",
+          "expectedResult": "Current case-specific answer or explicit unresolved state.",
+          "claimIds": [
+            "claim_standard_authenticated_route",
+            "claim_citizen_old_noc",
+            "claim_citizen_no_builder_noc"
+          ],
+          "status": "contested"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_consent_conditions",
+          "fromNodeId": "node_transfer_evidence",
+          "toNodeId": "node_transfer_obligations",
+          "description": "Absent consent may change historic evidence and deposit treatment.",
+          "claimIds": [
+            "claim_historic_consent_rule",
+            "claim_historic_transfer_obligations"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_consent_deposit",
+        "roadblock_noc_conflict",
+        "roadblock_arrears_recovery",
+        "roadblock_document_checklist"
+      ],
+      "recoveryNotes": [
+        "Do not manufacture consent or rely on historic amounts as current."
+      ],
+      "documentationQualityNotes": [
+        "The NOC evidence conflict is preserved as contested citizen evidence."
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "journey_ind32_death_public",
+      "title": "Bengaluru death certificate — public workflow boundary",
+      "scenarioId": "scenario_ind32_death_copy",
+      "context": "Inspect official service entry and e-JanMa tool labels, then preserve the boundary where event-specific state and registrar are unknown.",
+      "steps": [
+        {
+          "id": "step_death_entry",
+          "label": "Open public service entry",
+          "nodeId": "node_death_service_entry",
+          "action": "Inspect current GBA/BBMP Birth & Death service labels without entering data.",
+          "expectedResult": "Public service label and support lead are visible; no case is created.",
+          "claimIds": [
+            "claim_ind32_death_workflow_entry"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_death_classify",
+          "label": "Classify the intended action",
+          "nodeId": "node_death_classify_record",
+          "action": "Determine whether the need is an existing copy, first registration, correction, additional copy, or delayed/unavailable record using event facts that were not supplied here.",
+          "expectedResult": "Classification remains Unknown in this public-only pass.",
+          "claimIds": [
+            "claim_ind32_death_workflow_state_unknown"
+          ],
+          "status": "unknown"
+        },
+        {
+          "id": "step_death_tools",
+          "label": "Review public e-JanMa tools",
+          "nodeId": "node_death_public_tools",
+          "action": "Read official labels for download, verification, status, registration details, and correction/additional-copy contacts; perform no lookup.",
+          "expectedResult": "Tool categories are documented; no certificate or status is produced.",
+          "claimIds": [
+            "claim_ind32_death_workflow_tools"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_death_outcome",
+          "label": "Preserve registrar/outcome boundary",
+          "nodeId": "node_death_outcome",
+          "action": "Do not submit or upload; retain timing as historic/conditional context only.",
+          "expectedResult": "Registrar, record state, fee, timing, and certificate outcome remain Unknown.",
+          "claimIds": [
+            "claim_ind32_death_workflow_timing",
+            "claim_ind32_death_workflow_state_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dep_ind32_death_record_to_route",
+          "fromNodeId": "node_death_classify_record",
+          "toNodeId": "node_death_registrar",
+          "description": "The correct registrar/tool depends on whether the event is registered, institutional, home/non-institutional, corrected, or delayed.",
+          "claimIds": [
+            "claim_ind32_death_workflow_ejanma_route",
+            "claim_ind32_death_workflow_state_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_ind32_death_workflow_route",
+        "roadblock_ind32_death_workflow_record",
+        "roadblock_ind32_death_workflow_currentness"
+      ],
+      "recoveryNotes": [
+        "No deceased-person data, login, search, download, upload, payment, or submission was made.",
+        "Confirm current jurisdiction and registrar before choosing a route."
+      ],
+      "documentationQualityNotes": [
+        "Current GBA/BBMP labels and official Karnataka e-JanMa descriptions are public observations.",
+        "Historic manual/report timing and fee statements are partial and require current confirmation."
+      ],
+      "status": "unknown"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "_handoff": {
+    "issue": "IND-32",
+    "generatedAt": "2026-08-28",
+    "status": "in_review",
+    "scope": "Public first-person accounts about Bengaluru BWSSB new water-supply and underground-drainage connections only. These accounts identify possible feasibility, pricing, and post-connection gaps; they are not official eligibility rules, document requirements, charges, or service-level commitments. Usernames, names, property identifiers, locations, application numbers, phone numbers, and other personal data are omitted."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind32_water_citizen_unavailable_connection",
+      "title": "Need help regarding the Cauvery water connection (BWSSB)",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/nxaw3d",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2021-06-11",
+      "type": "citizen_evidence",
+      "notes": "A first-person post reports an on-site quotation for a planned connection and a stated future supply estimate. It did not report a completed application or connection, so pricing, timing, and eligibility are not retained as facts."
+    },
+    {
+      "id": "source_ind32_water_citizen_new_connection_costs",
+      "title": "How much does new BWSSB connection would cost?",
+      "publisher": "r/BangaloreRealEstates (Reddit)",
+      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1rz16nm/how_much_does_new_bwssb_connection_would_cost/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-03-20",
+      "type": "citizen_evidence",
+      "notes": "The original poster reports a building without a permanent water-and-sewer connection and an agent quote amid a plan-deviation issue. It is one account; reported notice, quotation, construction history, and outcomes are not official evidence."
+    },
+    {
+      "id": "source_ind32_water_citizen_connection_supply_gap",
+      "title": "Bengaluru Cauvery Water: Government mandates Cauvery water connection for all Bengaluru apartments",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1icoflv/bengaluru_cauvery_water_government_mandates/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2025-01-29",
+      "type": "citizen_evidence",
+      "notes": "A commenter gives a first-person account of having a connection but still using supplementary water, and states that underground drainage was not obtained because a contractor found it infeasible for the lane. This is not a BWSSB capacity, supply, or technical-feasibility determination."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind32_water_citizen_connection_not_completed",
+      "text": "One citizen seeking a connection reported receiving an on-site quotation and being told a future supply estimate, but did not report a completed application or connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_site_details", "node_inspection_review", "node_rr_status"],
+      "sourceIds": ["source_ind32_water_citizen_unavailable_connection"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This only records a citizen's reported pre-application experience; it establishes no agency commitment, connection availability, inspection rule, or wait time."
+    },
+    {
+      "id": "claim_ind32_water_citizen_plan_feasibility_concern",
+      "text": "One citizen reported that a building without a permanent water-and-sewer connection faced uncertainty about obtaining one while its construction differed from the approved plan.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_commercial_highrise", "scenario_ind32_water_conditional_docs"],
+      "nodeIds": ["node_site_details", "node_documents_review", "node_inspection_review"],
+      "sourceIds": ["source_ind32_water_citizen_new_connection_costs"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One applicant's uncertainty, not proof that plan variation, occupancy documentation, or any specific condition controls BWSSB eligibility."
+    },
+    {
+      "id": "claim_ind32_water_citizen_connection_supply_gap",
+      "text": "One citizen reported having a water connection while continuing to use supplementary water, and reported that underground-drainage connection was not obtained in that case.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_conditional_docs"],
+      "nodeIds": ["node_rr_status", "node_inspection_review"],
+      "sourceIds": ["source_ind32_water_citizen_connection_supply_gap"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single post-connection account. It does not prove service quantity, an entitlement, drainage feasibility criteria, or that the same outcome applies elsewhere."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind32_water_citizen_uncertain_feasibility",
+      "title": "Reported uncertainty about whether a connection can be completed",
+      "category": "process",
+      "symptom": "Citizen accounts describe a quotation or an unresolved building context without a completed new connection.",
+      "likelyCause": "Unknown; the accounts do not distinguish network availability, documentation, inspection, demand-note, construction, or third-party issues.",
+      "recovery": "Use the reports only to prompt authorised, premise-specific confirmation of service availability and application status. Do not treat reported quotations or explanations as official determinations.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_site_details", "node_documents_review", "node_inspection_review"],
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_commercial_highrise", "scenario_ind32_water_conditional_docs"],
+      "claimIds": ["claim_ind32_water_citizen_connection_not_completed", "claim_ind32_water_citizen_plan_feasibility_concern"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_water_citizen_supply_or_drainage_gap",
+      "title": "Connection reportedly does not resolve every water or drainage need",
+      "category": "infrastructure",
+      "symptom": "A citizen reports a water connection alongside supplementary-water use and no underground-drainage connection in that case.",
+      "likelyCause": "Unknown; the account does not establish supply capacity, drainage-network feasibility, design standards, or agency action.",
+      "recovery": "Treat this as a case-specific planning lead only. Ask BWSSB through authorised channels for property-specific connection and drainage information.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_rr_status", "node_inspection_review"],
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_conditional_docs"],
+      "claimIds": ["claim_ind32_water_citizen_connection_supply_gap"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

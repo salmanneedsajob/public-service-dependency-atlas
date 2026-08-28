@@ -1,8 +1,14 @@
 # Public Service Dependency Atlas
 
-A Bengaluru-first, evidence-led atlas of the dependencies between public services. Government services are digitized as separate departments, while citizens experience connected life events. When the links are undocumented, the citizen becomes the integration layer; this project makes those links, and the gaps around them, legible.
+A Bengaluru-first, evidence-led atlas and public documentation-debt register. Government services are digitized as separate departments, while citizens experience connected life events. When the links are undocumented, the citizen becomes the integration layer; this project makes those links, and the gaps around them, legible.
 
 Each entry is a static route rendered entirely from its own JSON evidence ledger. It shows published documentation alongside reported roadblocks, source dates, evidence grades, explicit Unknowns, contradictions, and stated audit limitations. It is independent research, never official guidance.
+
+## Documentation-debt register
+
+The site’s front door is a register of 47 curated gaps: specific missing procedures or handoffs that prevent a public-service journey from being understandable. Every record is Open, names an owning public authority, links back to its atlas evidence, states the next documented route where one exists, and describes the exact document or procedure that would close the gap.
+
+A gap closes when the responsible authority publishes the missing procedure, the atlas verifies it, and the record links to that published source with a date. The agency-facing page turns the same records into a publish-this checklist: publish a document, close a gap.
 
 ## Method
 
@@ -16,13 +22,14 @@ For each service, the project uses three evidence-collection passes:
 
 A separate audit pass checks atomicity, citations, dates, grades, references, contradictions, and unknowns. Each service has one audit; remaining findings are preserved as visible stated limitations rather than silently edited away. A dependency edge may be officially documented, partially evidenced, or reported by citizens but undocumented; it is only removed when no evidence supports it.
 
-## Map a service
+## Map a service or close a gap
 
 1. Start with a bounded Bengaluru journey and its real-life trigger.
 2. Add only sourced, dated claims to a service ledger; use `Unknown` where the public record stops.
 3. Keep incompatible accounts as cross-linked contradictions rather than choosing a winner.
 4. Run the schema checks and one independent audit.
 5. Publish the route as Mapped or Partially mapped, with its documentation shelf and limitations visible.
+6. Where an existing curated gap is resolved by a published procedure, verify the source and close its register record with the source date.
 
 Do not submit applications, authenticate to government systems, collect personal data, or imply that a public form completes an end-to-end journey.
 

@@ -1,42 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import type { Ledger } from '@/lib/ledger-types';
+import { atlasServices, registerOpenedOn } from '@/lib/atlas-data';
+import { buildGapRegister } from '@/lib/gap-register';
 import { collectUndocumentedQuestions } from '@/lib/undocumented';
-import bescomLedger from '@/ledger/research.json';
-import birthCertificateLedger from '@/ledger/birth-certificate.json';
-import buildingPlanLedger from '@/ledger/building-plan.json';
-import deathCertificateLedger from '@/ledger/death-certificate.json';
-import khataLedger from '@/ledger/khata.json';
-import lpgLedger from '@/ledger/lpg.json';
-import marriageLedger from '@/ledger/marriage.json';
-import newElectricityLedger from '@/ledger/new-electricity.json';
-import propertyTaxLedger from '@/ledger/property-tax.json';
-import tradeLicenseLedger from '@/ledger/trade-license.json';
-import waterAccountLedger from '@/ledger/water-account.json';
-import waterConnectionLedger from '@/ledger/water-connection.json';
-
-type Service = {
-  title: string;
-  category: string;
-  status: 'Mapped' | 'Partially mapped';
-  href: string;
-  ledger: Ledger;
-};
-
-const services: Service[] = [
-  { title: 'Electricity name transfer', category: 'Utility account', status: 'Mapped', href: '/bescom', ledger: bescomLedger as Ledger },
-  { title: 'Birth certificate', category: 'Civil record', status: 'Partially mapped', href: '/birth-certificate', ledger: birthCertificateLedger as Ledger },
-  { title: 'Death certificate', category: 'Civil record', status: 'Partially mapped', href: '/death-certificate', ledger: deathCertificateLedger as Ledger },
-  { title: 'New water / sewer connection', category: 'BWSSB utility', status: 'Partially mapped', href: '/water-connection', ledger: waterConnectionLedger as Ledger },
-  { title: 'Water account name transfer', category: 'BWSSB utility', status: 'Partially mapped', href: '/water-account', ledger: waterAccountLedger as Ledger },
-  { title: 'New electricity connection', category: 'Electricity utility', status: 'Partially mapped', href: '/new-electricity', ledger: newElectricityLedger as Ledger },
-  { title: 'Property tax name transfer', category: 'Municipal property', status: 'Partially mapped', href: '/property-tax', ledger: propertyTaxLedger as Ledger },
-  { title: 'Khata transfer / mutation', category: 'Municipal property', status: 'Mapped', href: '/khata', ledger: khataLedger as Ledger },
-  { title: 'Trade licence', category: 'Municipal business', status: 'Partially mapped', href: '/trade-license', ledger: tradeLicenseLedger as Ledger },
-  { title: 'Building plan approval', category: 'Municipal planning', status: 'Partially mapped', href: '/building-plan', ledger: buildingPlanLedger as Ledger },
-  { title: 'Marriage registration', category: 'Civil record', status: 'Partially mapped', href: '/marriage-registration', ledger: marriageLedger as Ledger },
-  { title: 'LPG connection transfer', category: 'Household utility', status: 'Partially mapped', href: '/lpg', ledger: lpgLedger as Ledger },
-];
 
 export const metadata: Metadata = {
   title: 'Public Service Dependency Atlas',
@@ -44,8 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default function AtlasHome() {
-  const serviceGaps = services.map((service) => ({ service, gaps: collectUndocumentedQuestions(service.ledger) }));
-  const undocumentedStepCount = serviceGaps.reduce((count, item) => count + item.gaps.length, 0);
+  const serviceGaps = atlasServices.map((service) => ({ service, gaps: collectUndocumentedQuestions(service.ledger) }));
+  const register = buildGapRegister();
+  const undocumentedStepCount = register.length;
   const headlineGaps = serviceGaps
     .filter((item) => item.gaps.length)
     .map((item) => ({ service: item.service, gap: item.gaps[0] }))
@@ -57,7 +24,7 @@ export default function AtlasHome() {
       <header className="site-header">
         <a className="wordmark" href="#top">Public service dependency atlas</a>
         <nav aria-label="Page navigation">
-          <a href="#gaps">What is missing</a>
+          <a href="#register">Gap register</a>
           <a href="#directory">Service directory</a>
           <a href="#method">Contribute</a>
         </nav>
@@ -65,24 +32,29 @@ export default function AtlasHome() {
       </header>
 
       <section className="atlas-hero" id="top">
-        <p className="eyebrow">Utilities & municipal services</p>
-        <h1>Public Service<br />Dependency Atlas</h1>
-        <p className="atlas-lede">A birth, a marriage, a death in the family, a move, a new home, a new business — every life event comes with paperwork. The record you need is often blocked by another record, held by another department, that nobody told you about.</p>
+        <p className="eyebrow">Documentation-debt register · Bengaluru</p>
+        <h1>{register.length} open gaps<br />in public-service documentation.</h1>
+        <p className="atlas-lede">A birth, a marriage, a death in the family, a move, a new home, a new business — every life event comes with paperwork. This register records the missing procedures that leave people carrying answers between departments.</p>
         <p className="atlas-thesis">Government services are digitized as separate departments, but citizens live connected events. When the links between systems are undocumented, the citizen becomes the integration layer. This atlas documents those links.</p>
-        <a className="primary-link" href="#directory">Explore the directory <span>↓</span></a>
+        <a className="primary-link" href="#register">Open the gap register <span>↓</span></a>
       </section>
 
-      <section className="atlas-gap-rollup" id="gaps" aria-labelledby="atlas-gap-heading">
+      <section className="atlas-gap-rollup" id="register" aria-labelledby="atlas-gap-heading">
         <div>
-          <p className="step-label">The headline finding</p>
+          <p className="step-label">Documentation-debt register · opened {registerOpenedOn}</p>
           <p className="atlas-gap-count">{undocumentedStepCount}</p>
-          <h2 id="atlas-gap-heading">public-service gaps still have no published explanation.</h2>
+          <h2 id="atlas-gap-heading">public-service gaps are open for a simple fix: publish the missing procedure.</h2>
         </div>
         <div>
-          <p>Each item below comes from an Unknown handoff or a roadblock whose cause or recovery is not established. Empty fields, verified records, and internal research artifacts are not counted.</p>
+          <p>This is a day-zero public register of documentation debt. Under Section 4(1)(b) of the RTI Act 2005, public authorities are already expected to proactively publish their procedures.</p>
+          <p>A gap closes when the responsible authority publishes the missing document or procedure, we verify it, and the closed record links to that source with a date.</p>
           <ul>
-            {headlineGaps.map(({ service, gap }) => <li key={`${service.href}:${gap.id}`}><Link href={service.href}>{service.title}</Link><strong>{gap.situation}</strong><span>{gap.missing}</span></li>)}
+            {headlineGaps.map(({ service, gap }) => {
+              const record = register.find((item) => item.service.id === service.id && item.id === gap.id);
+              return <li key={`${service.href}:${gap.id}`}><Link href={record ? `/register/${record.slug}` : service.href}>{service.title}</Link><strong>{gap.situation}</strong><span>{gap.missing}</span></li>;
+            })}
           </ul>
+          <Link className="register-link" href="/register">View all {register.length} open gaps →</Link>
         </div>
       </section>
 

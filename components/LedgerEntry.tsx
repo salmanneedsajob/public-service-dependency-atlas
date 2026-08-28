@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import type { Detail, EvidenceGrade, Ledger, RecordStatus } from '@/lib/ledger-types';
+import { gapRegisterSlug } from '@/lib/gap-slug';
 import { collectUndocumentedQuestions, publicNodeLabel } from '@/lib/undocumented';
 
 const statusCopy: Record<RecordStatus, string> = {
@@ -276,13 +277,13 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
           <p>These are the Unknown handoffs and unresolved roadblocks that can leave a citizen stuck. Routine empty fields and research artifacts are not counted.</p>
         </div>
         <ol className="gap-list">
-          {topGaps.map((gap) => <li key={gap.id}><strong>{gap.situation}</strong><span>{gap.missing}</span></li>)}
+          {topGaps.map((gap) => <li key={gap.id}><strong>{gap.situation}</strong><span>{gap.missing}</span><Link className="gap-record-link" href={`/register/${gapRegisterSlug(service, gap.id)}`}>Open gap record →</Link></li>)}
         </ol>
         {remainingGaps.length > 0 && (
           <details className="gap-more">
             <summary>Show all {gaps.length} gaps</summary>
             <ol className="gap-list" style={{ counterReset: `gap ${topGaps.length}` }}>
-              {remainingGaps.map((gap) => <li key={gap.id}><strong>{gap.situation}</strong><span>{gap.missing}</span></li>)}
+              {remainingGaps.map((gap) => <li key={gap.id}><strong>{gap.situation}</strong><span>{gap.missing}</span><Link className="gap-record-link" href={`/register/${gapRegisterSlug(service, gap.id)}`}>Open gap record →</Link></li>)}
             </ol>
           </details>
         )}
@@ -363,6 +364,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
             return (
               <div className="chain-item" key={node.id} role="listitem">
                 <button
+                  id={node.id}
                   className={`node status-border-${node.status} ${selectedNode?.id === node.id ? 'focused' : ''}`}
                   onClick={() => setSelectedNodeId(node.id)}
                   aria-pressed={selectedNode?.id === node.id}

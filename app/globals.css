@@ -357,12 +357,15 @@ h1 {
 .relationship.status-border-partial { border-top-color: var(--yellow); }
 .relationship.status-border-contested { border-top-color: var(--orange); }
 .relationship.status-border-unknown { border-top-color: #aab5b1; }
+.relationship.relationship-undocumented { border-style: dashed; background: #19352e; }
+.relationship.relationship-undocumented { border-top-style: solid; }
 .relationship-topline { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
 .relationship-topline > span:first-child { color: var(--yellow); text-transform: uppercase; letter-spacing: .08em; font-size: 8px; font-weight: 850; }
 .relationship-nodes { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 8px; align-items: center; margin: 15px 0 10px; }
 .relationship-nodes b { font-family: Georgia, serif; font-size: 17px; font-weight: 500; line-height: 1.1; }
 .relationship-nodes span { color: var(--yellow); }
 .relationship > p { min-height: 38px; margin: 0 0 12px; color: #b7c5c0; font-size: 10px; line-height: 1.45; }
+.edge-evidence-note { display: block; margin: -4px 0 10px; color: #f3cd74; font-size: 9px; line-height: 1.35; }
 .relationship-grades { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
 .relationship-grades .evidence-badge { width: auto; min-height: 25px; padding: 3px 6px 3px 4px; color: var(--ink); }
 .relationship-grades .evidence-badge b { min-width: 18px; height: 18px; font-size: 9px; }

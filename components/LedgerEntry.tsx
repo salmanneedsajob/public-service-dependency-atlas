@@ -401,9 +401,11 @@ export default function LedgerEntry({ service }: { service: string }) {
               const grades = [...new Set(edge.claimIds
                 .map((claimId) => ledger.claims.find((claim) => claim.id === claimId)?.evidenceGrade)
                 .filter((grade): grade is EvidenceGrade => Boolean(grade)))];
+              const onlyCitizenEvidence = grades.length > 0 && grades.every((grade) => grade === 'E' || grade === 'F');
+              const undocumentedEdge = edge.status === 'unknown' || onlyCitizenEvidence;
 
               return (
-                <article className={`relationship status-border-${edge.status}`} key={edge.id}>
+                <article className={`relationship status-border-${edge.status} ${undocumentedEdge ? 'relationship-undocumented' : ''}`} key={edge.id}>
                   <div className="relationship-topline">
                     <span>{edge.relationship.replaceAll('_', ' ')}</span>
                     <StatusBadge status={edge.status} compact />
@@ -414,6 +416,7 @@ export default function LedgerEntry({ service }: { service: string }) {
                     <b>{toNode?.label ?? edge.toNodeId}</b>
                   </div>
                   <p>{edge.label}</p>
+                  {undocumentedEdge && <small className="edge-evidence-note">{onlyCitizenEvidence ? 'Reported by citizens; not officially documented.' : 'Not officially documented in the evidence held.'}</small>}
                   <div className="relationship-grades" aria-label="Evidence grades for this relationship">
                     {grades.length
                       ? grades.map((grade) => <EvidenceBadge grade={grade} key={grade} />)

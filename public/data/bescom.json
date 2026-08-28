@@ -3,7 +3,7 @@
     "schemaVersion": "1.0.0",
     "title": "BESCOM name-transfer evidence ledger — audited canonical v1",
     "jurisdiction": "Bengaluru, Karnataka, India",
-    "asOf": "2026-08-27",
+    "asOf": "2026-08-28",
     "dataKind": "research",
     "disclaimer": "Research aid, not official advice. It records public evidence and uncertainty; do not submit personal data through this ledger."
   },
@@ -18,7 +18,7 @@
       "id": "agency_gba",
       "name": "Greater Bengaluru Authority / Bengaluru City Corporations",
       "shortName": "GBA",
-      "officialUrl": "https://www.bbmp.gov.in/"
+      "officialUrl": "https://bbmp.gov.in/"
     },
     {
       "id": "agency_kerc",
@@ -224,10 +224,10 @@
       "id": "source_gba_directory",
       "title": "GBA service directory",
       "publisher": "Greater Bengaluru Authority",
-      "url": "https://www.bbmp.gov.in/",
+      "url": "https://bbmp.gov.in/",
       "accessedAt": "2026-08-27",
       "type": "official_guidance",
-      "notes": "Current public helpline listing."
+      "notes": "Current public helpline listing. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail."
     },
     {
       "id": "source_citizen_transfer",
@@ -593,11 +593,11 @@
         "source_bescom_home",
         "source_gba_directory"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
-      "status": "verified",
+      "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Channels are observable; their case-resolution scope is not."
+      "notes": "Channels are observable; their case-resolution scope is not. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_epid_mapping_unknown",
@@ -1389,6 +1389,33 @@
         "claim_citizen_no_builder_noc"
       ],
       "status": "contested"
+    },
+    {
+      "id": "roadblock_audit_bescom",
+      "title": "Independent audit limitations",
+      "category": "documentation",
+      "symptom": "The completed independent audit retains these high-impact gaps: the EPID-to-account eligibility and repair contract, safe public error and escalation paths, current authenticated fields and document requirements, the current applicability of historic transfer conditions, and the present NOC/consent rule are not established by the public evidence held.",
+      "likelyCause": "The public documentation and unauthenticated interfaces do not expose the cross-system contract or authenticated decision rules.",
+      "recovery": "Retain Unknown, Partial, and Contested states; verify a current case through authorized channels rather than treating desk research as an approval path.",
+      "ownerAgencyIds": [
+        "agency_bescom",
+        "agency_gba"
+      ],
+      "nodeIds": [
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_epid_mapping_failure",
+        "scenario_consent_unavailable"
+      ],
+      "claimIds": [
+        "claim_epid_mapping_unknown",
+        "claim_citizen_old_noc",
+        "claim_citizen_no_builder_noc"
+      ],
+      "status": "unknown"
     }
   ],
   "journeys": [

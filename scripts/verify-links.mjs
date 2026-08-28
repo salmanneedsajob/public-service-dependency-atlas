@@ -12,15 +12,21 @@ const text = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).jo
 const urls = [...new Set(text.match(/https?:\/\/[^"'\s,)]+/g) ?? [])]
   .filter((url) => !url.includes('example.') && !url.includes('buildwhatmovesindia.example'));
 
-const failures = [];
-for (const url of urls) {
+const check = async (url) => {
   try {
     const { stdout } = await execFileAsync('curl', ['-sS', '-L', '--connect-timeout', '10', '--max-time', '30', '-A', 'Public-Service-Dependency-Atlas link checker', '-o', '/dev/null', '-w', '%{http_code}', url]);
     const status = Number(stdout.trim());
-    if (status < 200 || status >= 400) failures.push(`${status || 'no status'} ${url}`);
+    return status >= 200 && status < 400 ? null : `${status || 'no status'} ${url}`;
   } catch (error) {
-    failures.push(`${error instanceof Error ? error.message : String(error)} ${url}`);
+    return `${error instanceof Error ? error.message : String(error)} ${url}`;
   }
+};
+
+const concurrency = 64;
+const failures = [];
+for (let index = 0; index < urls.length; index += concurrency) {
+  const batch = await Promise.all(urls.slice(index, index + concurrency).map(check));
+  failures.push(...batch.filter(Boolean));
 }
 if (failures.length) throw new Error(`External citation check failed:\n${failures.join('\n')}`);
 console.log(`External citation check passed: ${urls.length} URLs.`);

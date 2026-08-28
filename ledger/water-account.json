@@ -18,7 +18,7 @@
       "id": "agency_gba",
       "name": "Greater Bengaluru Authority / Bengaluru City Corporations",
       "shortName": "GBA",
-      "officialUrl": "https://www.bbmp.gov.in/"
+      "officialUrl": "https://bbmp.gov.in/"
     },
     {
       "id": "agency_kerc",
@@ -30,7 +30,7 @@
       "id": "agency_bwssb_ind32_water_account",
       "name": "Bangalore Water Supply and Sewerage Board",
       "shortName": "BWSSB",
-      "officialUrl": "https://bwssb.gov.in/"
+      "officialUrl": "https://owcv2.bwssb.gov.in/consumer"
     }
   ],
   "scenarios": [
@@ -300,10 +300,10 @@
       "id": "source_gba_directory",
       "title": "GBA service directory",
       "publisher": "Greater Bengaluru Authority",
-      "url": "https://www.bbmp.gov.in/",
+      "url": "https://bbmp.gov.in/",
       "accessedAt": "2026-08-27",
       "type": "official_guidance",
-      "notes": "Current public helpline listing."
+      "notes": "Current public helpline listing. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail."
     },
     {
       "id": "source_citizen_transfer",
@@ -377,10 +377,10 @@
       "id": "source_ind32_water_account_act",
       "title": "Bangalore Water Supply and Sewerage Act, 1964",
       "publisher": "Government of Karnataka / India Code",
-      "url": "https://www.indiacode.nic.in/bitstream/123456789/7908/1/36_of_1964%28e%29.pdf",
+      "url": "https://www.indiacode.nic.in/",
       "accessedAt": "2026-08-28",
-      "type": "law",
-      "notes": "Official India Code text, amended through the amendments shown in the compilation. Sections 61 and 61A authorize regulations/by-laws about water connections, meters, and related administration; the text inspected does not itself publish a current consumer-account transfer workflow."
+      "type": "official_guidance",
+      "notes": "Official India Code text, amended through the amendments shown in the compilation. Sections 61 and 61A authorize regulations/by-laws about water connections, meters, and related administration; the text inspected does not itself publish a current consumer-account transfer workflow. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail."
     },
     {
       "id": "source_ind32_water_account_consumer",
@@ -404,10 +404,10 @@
       "id": "source_ind32_water_account_bwssb_contact",
       "title": "BWSSB official home and consumer complaints contact",
       "publisher": "Bangalore Water Supply and Sewerage Board",
-      "url": "https://bwssb.gov.in/home",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
       "accessedAt": "2026-08-28",
       "type": "official_guidance",
-      "notes": "Official public site lists the 24x7 helpline 1916 and consumer complaint channels. Contact availability is not proof that a transfer request can be filed online or that a complaint will amend account ownership."
+      "notes": "Official public site lists the 24x7 helpline 1916 and consumer complaint channels. Contact availability is not proof that a transfer request can be filed online or that a complaint will amend account ownership. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail."
     },
     {
       "id": "source_ind32_water_account_district_directory",
@@ -440,10 +440,10 @@
       "id": "source_ind32_water_account_workflow_home",
       "title": "BWSSB official home",
       "publisher": "Bangalore Water Supply and Sewerage Board",
-      "url": "https://bwssb.gov.in/home",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
       "accessedAt": "2026-08-28",
       "type": "official_guidance",
-      "notes": "Public site lists 1916 and complaint channels; no complaint was lodged."
+      "notes": "Public site lists 1916 and complaint channels; no complaint was lodged. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail."
     },
     {
       "id": "source_ind32_water_account_citizen_name_change_quote",
@@ -761,11 +761,11 @@
         "source_bescom_home",
         "source_gba_directory"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
-      "status": "verified",
+      "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Channels are observable; their case-resolution scope is not."
+      "notes": "Channels are observable; their case-resolution scope is not. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_epid_mapping_unknown",
@@ -945,11 +945,11 @@
       "sourceIds": [
         "source_ind32_water_account_act"
       ],
-      "evidenceGrade": "A",
+      "evidenceGrade": "C",
       "basis": "observation",
-      "status": "verified",
+      "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Sections 61 and 61A provide enabling authority; they are not a current name-transfer checklist."
+      "notes": "Sections 61 and 61A provide enabling authority; they are not a current name-transfer checklist. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_account_public_adjacent_only",
@@ -997,11 +997,11 @@
         "source_ind32_water_account_bwssb_contact",
         "source_ind32_water_account_faq"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
-      "status": "verified",
+      "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "These are published contact leads only; no call, email, complaint, or case escalation was made."
+      "notes": "These are published contact leads only; no call, email, complaint, or case escalation was made. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_account_transfer_unknown",
@@ -1016,11 +1016,11 @@
         "source_ind32_water_account_faq",
         "source_ind32_water_account_act"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
       "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "This is an explicit research boundary, not a claim that no such policy exists."
+      "notes": "This is an explicit research boundary, not a claim that no such policy exists. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_account_workflow_entry",
@@ -1079,11 +1079,11 @@
         "source_ind32_water_account_workflow_faq",
         "source_ind32_water_account_workflow_home"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
-      "status": "verified",
+      "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "No call, email, or grievance was made."
+      "notes": "No call, email, or grievance was made. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_account_workflow_case_unknown",
@@ -1434,7 +1434,7 @@
           "id": "recovery_water_account_contact",
           "label": "Ask BWSSB for authorised route",
           "description": "Use published BWSSB contacts to confirm the current RR-specific route before sending documents.",
-          "url": "https://bwssb.gov.in/home",
+          "url": "https://owcv2.bwssb.gov.in/consumer",
           "claimIds": [
             "claim_ind32_water_account_workflow_support"
           ],
@@ -1509,7 +1509,7 @@
           "id": "check_water_account_support",
           "label": "1916 and enquiry contact",
           "description": "BWSSB pages publish 1916 and an enquiry contact.",
-          "url": "https://bwssb.gov.in/home",
+          "url": "https://owcv2.bwssb.gov.in/consumer",
           "claimIds": [
             "claim_ind32_water_account_workflow_support"
           ],

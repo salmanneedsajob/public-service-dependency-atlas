@@ -18,7 +18,7 @@
       "id": "agency_gba",
       "name": "Greater Bengaluru Authority / Bengaluru City Corporations",
       "shortName": "GBA",
-      "officialUrl": "https://www.bbmp.gov.in/"
+      "officialUrl": "https://bbmp.gov.in/"
     },
     {
       "id": "agency_kerc",
@@ -30,7 +30,7 @@
       "id": "agency_bwssb_ind32_water",
       "name": "Bangalore Water Supply and Sewerage Board",
       "shortName": "BWSSB",
-      "officialUrl": "https://bwssb.gov.in/"
+      "officialUrl": "https://owcv2.bwssb.gov.in/consumer"
     }
   ],
   "scenarios": [
@@ -335,10 +335,10 @@
       "id": "source_gba_directory",
       "title": "GBA service directory",
       "publisher": "Greater Bengaluru Authority",
-      "url": "https://www.bbmp.gov.in/",
+      "url": "https://bbmp.gov.in/",
       "accessedAt": "2026-08-27",
       "type": "official_guidance",
-      "notes": "Current public helpline listing."
+      "notes": "Current public helpline listing. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail."
     },
     {
       "id": "source_citizen_transfer",
@@ -421,28 +421,28 @@
       "id": "source_ind32_bwssb_consumer_manual",
       "title": "BWSSB Consumer User Manual — Jaladhare 3.0",
       "publisher": "Bangalore Water Supply and Sewerage Board",
-      "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
       "accessedAt": "2026-08-28",
       "type": "official_guidance",
-      "notes": "Official manual indexed/publicly accessible through BWSSB. Used for the five displayed stages, field and upload descriptions, review charge tables, and payment/demand-note wording. Manual examples are not treated as a live application."
+      "notes": "Official manual indexed/publicly accessible through BWSSB. Used for the five displayed stages, field and upload descriptions, review charge tables, and payment/demand-note wording. Manual examples are not treated as a live application. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail."
     },
     {
       "id": "source_ind32_bwssb_more_info",
       "title": "BWSSB More Information — Documents Required",
       "publisher": "Bangalore Water Supply and Sewerage Board",
-      "url": "https://owc.bwssb.gov.in/more-info",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
       "accessedAt": "2026-08-28",
       "type": "official_guidance",
-      "notes": "Public page lists building plan, lease-cum-sale deed, building photo with owner, khata, and conditional OC/RWH/STP photos."
+      "notes": "Public page lists building plan, lease-cum-sale deed, building photo with owner, khata, and conditional OC/RWH/STP photos. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail."
     },
     {
       "id": "source_ind32_bwssb_important_docs",
       "title": "BWSSB Important Documents",
       "publisher": "Bangalore Water Supply and Sewerage Board",
-      "url": "https://owc.bwssb.gov.in/important-docs",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
       "accessedAt": "2026-08-28",
-      "type": "official_portal",
-      "notes": "Public index exposes links for application, attachment, inspection, deposit, prorata, GBWASP/BCC and related references; values were not assumed without a property context."
+      "type": "official_guidance",
+      "notes": "Public index exposes links for application, attachment, inspection, deposit, prorata, GBWASP/BCC and related references; values were not assumed without a property context. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail."
     },
     {
       "id": "source_ind32_bwssb_faq",
@@ -475,19 +475,19 @@
       "id": "source_ind32_water_legacy_entry",
       "title": "BWSSB OWC/Jaladhare public login",
       "publisher": "Bangalore Water Supply and Sewerage Board",
-      "url": "https://owc.bwssb.gov.in/",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
       "accessedAt": "2026-08-28",
-      "type": "official_portal",
-      "notes": "Direct current public observation: mobile number, Generate OTP, Login, manual links, More Information, Important Docs, and application-status entry. No OTP or status query was attempted."
+      "type": "official_guidance",
+      "notes": "Direct current public observation: mobile number, Generate OTP, Login, manual links, More Information, Important Docs, and application-status entry. No OTP or status query was attempted. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail."
     },
     {
       "id": "source_ind32_water_consumer_manual",
       "title": "BWSSB Consumer User Manual — Jaladhare 3.0",
       "publisher": "Bangalore Water Supply and Sewerage Board",
-      "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
       "accessedAt": "2026-08-28",
       "type": "official_guidance",
-      "notes": "Public official manual used for the five-step screen sequence, fields, upload limits, review charge tables, demand-note conditions, and Cashfree/PayU receipt flow. It is not a live application."
+      "notes": "Public official manual used for the five-step screen sequence, fields, upload limits, review charge tables, demand-note conditions, and Cashfree/PayU receipt flow. It is not a live application. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail."
     },
     {
       "id": "source_ind32_water_faq",
@@ -511,10 +511,10 @@
       "id": "source_ind32_water_more_info",
       "title": "BWSSB More Information — Documents Required",
       "publisher": "Bangalore Water Supply and Sewerage Board",
-      "url": "https://owc.bwssb.gov.in/more-info",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
       "accessedAt": "2026-08-28",
       "type": "official_guidance",
-      "notes": "Direct public observation of base document classes and conditional OC/RWH/STP photo items."
+      "notes": "Direct public observation of base document classes and conditional OC/RWH/STP photo items. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail."
     },
     {
       "id": "source_ind32_water_citizen_unavailable_connection",
@@ -842,11 +842,11 @@
         "source_bescom_home",
         "source_gba_directory"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
-      "status": "verified",
+      "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Channels are observable; their case-resolution scope is not."
+      "notes": "Channels are observable; their case-resolution scope is not. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_epid_mapping_unknown",
@@ -1061,11 +1061,11 @@
         "source_ind32_bwssb_jaladhare_consumer",
         "source_ind32_bwssb_important_docs"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
-      "status": "verified",
+      "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "No fixed total or property-specific rate is asserted. The public page does not calculate a case-specific demand without application context."
+      "notes": "No fixed total or property-specific rate is asserted. The public page does not calculate a case-specific demand without application context. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_displayed_targets",
@@ -1095,11 +1095,11 @@
       "sourceIds": [
         "source_ind32_bwssb_consumer_manual"
       ],
-      "evidenceGrade": "A",
+      "evidenceGrade": "C",
       "basis": "observation",
-      "status": "verified",
+      "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Direct reading of the official manual's page descriptions; not a claim that the current unauthenticated page exposes all five screens."
+      "notes": "Direct reading of the official manual's page descriptions; not a claim that the current unauthenticated page exposes all five screens. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_manual_consumer_site_fields",
@@ -1112,11 +1112,11 @@
       "sourceIds": [
         "source_ind32_bwssb_consumer_manual"
       ],
-      "evidenceGrade": "A",
+      "evidenceGrade": "C",
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Manual examples and guidance; PID verification is described as optional in the manual material, while property-specific validation and requiredness remain untested."
+      "notes": "Manual examples and guidance; PID verification is described as optional in the manual material, while property-specific validation and requiredness remain untested. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_manual_building_plumber",
@@ -1133,11 +1133,11 @@
       "sourceIds": [
         "source_ind32_water_consumer_manual"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Manual-described behavior; live plumber eligibility and current RWH enforcement were not tested."
+      "notes": "Manual-described behavior; live plumber eligibility and current RWH enforcement were not tested. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_manual_documents",
@@ -1150,11 +1150,11 @@
       "sourceIds": [
         "source_ind32_bwssb_consumer_manual"
       ],
-      "evidenceGrade": "A",
+      "evidenceGrade": "C",
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Manual upload instructions; no files were selected or transmitted. Conditional OC/RWH/STP documents appear on a separate official page and are not treated as universal."
+      "notes": "Manual upload instructions; no files were selected or transmitted. Conditional OC/RWH/STP documents appear on a separate official page and are not treated as universal. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_manual_review",
@@ -1167,11 +1167,11 @@
       "sourceIds": [
         "source_ind32_bwssb_consumer_manual"
       ],
-      "evidenceGrade": "A",
+      "evidenceGrade": "C",
       "basis": "observation",
-      "status": "verified",
+      "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "The manual's sample amounts are masked/illustrative and no case-specific calculation was run."
+      "notes": "The manual's sample amounts are masked/illustrative and no case-specific calculation was run. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_manual_demand_payment",
@@ -1184,11 +1184,11 @@
       "sourceIds": [
         "source_ind32_bwssb_consumer_manual"
       ],
-      "evidenceGrade": "A",
+      "evidenceGrade": "C",
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Manual/demand-note wording, not a property-specific obligation or approval. It also says plumbing works are to be executed by a BWSSB-licensed plumber; no payment or work order was initiated."
+      "notes": "Manual/demand-note wording, not a property-specific obligation or approval. It also says plumbing works are to be executed by a BWSSB-licensed plumber; no payment or work order was initiated. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_faq_workflow",
@@ -1314,11 +1314,11 @@
         "source_ind32_water_public_entry",
         "source_ind32_water_legacy_entry"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
-      "status": "verified",
+      "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Only controls and labels were inspected. No phone number, OTP, application number, or property data was entered."
+      "notes": "Only controls and labels were inspected. No phone number, OTP, application number, or property data was entered. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_public_high_level_path",
@@ -1381,11 +1381,11 @@
       "sourceIds": [
         "source_ind32_water_consumer_manual"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
-      "status": "verified",
+      "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Official manual sequence; post-login screens were not opened in a live account."
+      "notes": "Official manual sequence; post-login screens were not opened in a live account. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_manual_consumer_site",
@@ -1404,11 +1404,11 @@
       "sourceIds": [
         "source_ind32_water_consumer_manual"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Manual-described fields; no property-specific validation, PID lookup, RR verification, or BESCOM request was run."
+      "notes": "Manual-described fields; no property-specific validation, PID lookup, RR verification, or BESCOM request was run. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_manual_uploads",
@@ -1426,11 +1426,11 @@
         "source_ind32_water_consumer_manual",
         "source_ind32_water_more_info"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "No file was selected, uploaded, or transmitted. The separate More Information page additionally lists OC/RWH/STP photos conditionally; the current property-specific checklist remains Unknown."
+      "notes": "No file was selected, uploaded, or transmitted. The separate More Information page additionally lists OC/RWH/STP photos conditionally; the current property-specific checklist remains Unknown. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_manual_review_charges",
@@ -1446,11 +1446,11 @@
       "sourceIds": [
         "source_ind32_water_consumer_manual"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "The manual's examples do not establish a current amount or fee formula for a particular property."
+      "notes": "The manual's examples do not establish a current amount or fee formula for a particular property. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_faq_routing_inspection",
@@ -1510,11 +1510,11 @@
       "sourceIds": [
         "source_ind32_water_consumer_manual"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Manual/demand-note wording, not a case-specific obligation or approval."
+      "notes": "Manual/demand-note wording, not a case-specific obligation or approval. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_grievance_fields",
@@ -1609,7 +1609,7 @@
       "basis": "observation",
       "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "The surfaces may represent versions or separate paths; do not merge their credentials or fee instructions without current BWSSB confirmation."
+      "notes": "The surfaces may represent versions or separate paths; do not merge their credentials or fee instructions without current BWSSB confirmation. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_citizen_connection_not_completed",
@@ -1978,7 +1978,7 @@
           "id": "check_ind32_water_consumer_stage",
           "label": "Consumer Details stage",
           "description": "The manual lists Consumer Details as the first application stage and describes address/routing fields.",
-          "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+          "url": "https://owcv2.bwssb.gov.in/consumer",
           "claimIds": [
             "claim_ind32_water_manual_screen_sequence",
             "claim_ind32_water_manual_consumer_site"
@@ -2024,7 +2024,7 @@
           "id": "check_ind32_water_site_stage",
           "label": "Site Details stage",
           "description": "The manual describes PID/khata, construction date, purpose, counts, area, and NOC/RWH/OC fields.",
-          "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+          "url": "https://owcv2.bwssb.gov.in/consumer",
           "claimIds": [
             "claim_ind32_water_manual_screen_sequence",
             "claim_ind32_water_manual_consumer_site"
@@ -2037,7 +2037,7 @@
           "id": "failure_ind32_water_conditional_site_docs",
           "label": "Conditional site documents unknown",
           "description": "Public More Information and manual material mention conditional OC/RWH/STP/NOC information without establishing the case-specific checklist.",
-          "url": "https://owc.bwssb.gov.in/more-info",
+          "url": "https://owcv2.bwssb.gov.in/consumer",
           "claimIds": [
             "claim_ind32_water_manual_uploads",
             "claim_ind32_water_unobserved_case_state"
@@ -2072,7 +2072,7 @@
           "id": "check_ind32_water_building_fields",
           "label": "Building/plumber stage",
           "description": "The manual describes floor-by-floor area rows and plumber selection, with RWH-linked mutual-agreement wording.",
-          "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+          "url": "https://owcv2.bwssb.gov.in/consumer",
           "claimIds": [
             "claim_ind32_water_manual_building_plumber"
           ],
@@ -2127,7 +2127,7 @@
           "id": "check_ind32_water_documents",
           "label": "Document classes and limits",
           "description": "The manual lists building plan/photo, deed, khata, conditional road-cutting endorsement, up-to-five files per type, and 5 MB per file.",
-          "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+          "url": "https://owcv2.bwssb.gov.in/consumer",
           "claimIds": [
             "claim_ind32_water_manual_uploads"
           ],
@@ -2137,7 +2137,7 @@
           "id": "check_ind32_water_review",
           "label": "Tentative charge review",
           "description": "The manual describes prorata, standard, GBWASP/BCC, total-payable, and declaration content in Review.",
-          "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+          "url": "https://owcv2.bwssb.gov.in/consumer",
           "claimIds": [
             "claim_ind32_water_manual_review_charges"
           ],
@@ -2240,7 +2240,7 @@
           "id": "failure_ind32_water_payment_or_expiry",
           "label": "Payment/expiry state unknown",
           "description": "The manual says a demand note is valid for 90 days, but no demand note or payment gateway was opened.",
-          "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+          "url": "https://owcv2.bwssb.gov.in/consumer",
           "claimIds": [
             "claim_ind32_water_manual_demand_conditions",
             "claim_ind32_water_unobserved_case_state"

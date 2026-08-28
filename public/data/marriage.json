@@ -9,24 +9,6 @@
   },
   "agencies": [
     {
-      "id": "agency_bescom",
-      "name": "Bangalore Electricity Supply Company Limited",
-      "shortName": "BESCOM",
-      "officialUrl": "https://bescom.co.in/"
-    },
-    {
-      "id": "agency_gba",
-      "name": "Greater Bengaluru Authority / Bengaluru City Corporations",
-      "shortName": "GBA",
-      "officialUrl": "https://bbmp.gov.in/"
-    },
-    {
-      "id": "agency_kerc",
-      "name": "Karnataka Electricity Regulatory Commission",
-      "shortName": "KERC",
-      "officialUrl": "https://kerc.karnataka.gov.in/"
-    },
-    {
       "id": "agency_kar_stamps_ind32_marriage",
       "name": "Department of Stamps and Registration, Government of Karnataka",
       "shortName": "Karnataka Stamps & Registration",
@@ -52,153 +34,6 @@
     }
   ],
   "scenarios": [
-    {
-      "id": "scenario_clean_sale",
-      "label": "Clean sale",
-      "summary": "Registered sale with no known municipal-record issue.",
-      "tags": [
-        "sale"
-      ],
-      "pathNodeIds": [
-        "node_sale_deed",
-        "node_mutation",
-        "node_final_e_khata",
-        "node_epid",
-        "node_bescom_mapping",
-        "node_name_transfer",
-        "node_request_tracking"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "scenario_draft_e_khata",
-      "label": "Draft or pending e-Khata",
-      "summary": "Property information exists but finality or buyer-name state is unresolved.",
-      "tags": [
-        "sale",
-        "e-khata",
-        "pending"
-      ],
-      "pathNodeIds": [
-        "node_final_e_khata",
-        "node_epid",
-        "node_bescom_mapping",
-        "node_name_transfer",
-        "node_request_tracking"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "scenario_epid_mapping_failure",
-      "label": "EPID mapping failure",
-      "summary": "An EPID or property record exists but the BESCOM-account relationship cannot be established.",
-      "tags": [
-        "epid",
-        "mapping"
-      ],
-      "pathNodeIds": [
-        "node_epid",
-        "node_bescom_mapping",
-        "node_name_transfer",
-        "node_request_tracking"
-      ],
-      "status": "unknown"
-    },
-    {
-      "id": "scenario_tenant",
-      "label": "Tenant",
-      "summary": "An occupier seeks a bill-name change without owning the property.",
-      "tags": [
-        "tenant",
-        "consent"
-      ],
-      "pathNodeIds": [
-        "node_transfer_evidence",
-        "node_transfer_obligations",
-        "node_name_transfer",
-        "node_request_tracking"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "scenario_previous_consumer_deceased",
-      "label": "Previous consumer deceased",
-      "summary": "The recorded consumer has died and a successor seeks transfer.",
-      "tags": [
-        "death",
-        "succession"
-      ],
-      "pathNodeIds": [
-        "node_transfer_evidence",
-        "node_transfer_obligations",
-        "node_name_transfer",
-        "node_request_tracking"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "scenario_consent_unavailable",
-      "label": "Consent unavailable",
-      "summary": "The previous consumer cannot or will not provide consent.",
-      "tags": [
-        "consent",
-        "exception"
-      ],
-      "pathNodeIds": [
-        "node_transfer_evidence",
-        "node_transfer_obligations",
-        "node_name_transfer",
-        "node_request_tracking"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "scenario_marriage_hindu",
-      "label": "Registration of a Hindu marriage",
-      "summary": "Register particulars of an already solemnized Hindu marriage under the Hindu Marriage Act and Karnataka rules/process.",
-      "tags": [
-        "marriage",
-        "hindu-marriage-act",
-        "kaveri"
-      ],
-      "pathNodeIds": [
-        "node_marriage_route",
-        "node_marriage_hma",
-        "node_marriage_sro_certificate"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "scenario_marriage_special_solemnization",
-      "label": "Special Marriage Act solemnization",
-      "summary": "Give statutory notice and proceed through the Marriage Officer route for a civil marriage.",
-      "tags": [
-        "marriage",
-        "special-marriage-act",
-        "notice"
-      ],
-      "pathNodeIds": [
-        "node_marriage_route",
-        "node_marriage_sma_notice",
-        "node_marriage_sma_solemnization"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "scenario_marriage_special_registration",
-      "label": "Registration of marriage celebrated in another form",
-      "summary": "Use the Special Marriage Act chapter III registration path where applicable, subject to statutory conditions.",
-      "tags": [
-        "marriage",
-        "registration"
-      ],
-      "pathNodeIds": [
-        "node_marriage_route",
-        "node_marriage_sma_registration",
-        "node_marriage_sro_certificate"
-      ],
-      "status": "partial"
-    },
     {
       "id": "scenario_marriage_w_hma",
       "label": "HMA registration lead",
@@ -235,173 +70,6 @@
     }
   ],
   "sources": [
-    {
-      "id": "source_kerc_conditions_supply",
-      "title": "Conditions of Supply of Electricity with first and second amendments",
-      "publisher": "KERC / BESCOM",
-      "url": "https://www.bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
-      "accessedAt": "2026-08-27",
-      "type": "regulation",
-      "notes": "Canonical source for IND-4 source_kerc_conditions_supply and IND-8 source_kerc_cos_consolidated. Historic consolidated text: Grade A claims are partial until current applicability is confirmed."
-    },
-    {
-      "id": "source_bescom_home",
-      "title": "BESCOM public homepage and service directory",
-      "publisher": "BESCOM",
-      "url": "https://bescom.co.in/",
-      "accessedAt": "2026-08-27",
-      "type": "official_portal",
-      "notes": "Canonical source for IND-4 source_bescom_current_home and IND-6 source_bescom_home; direct current public-interface observation."
-    },
-    {
-      "id": "source_bescom_faq",
-      "title": "BESCOM FAQ — How To Change Name?",
-      "publisher": "BESCOM",
-      "url": "https://www.bescom.co.in/bescom/main/faq",
-      "accessedAt": "2026-08-27",
-      "type": "official_guidance",
-      "notes": "Canonical source for IND-4 source_bescom_name_change_faq, IND-6 source_bescom_faq, and IND-8 source_bescom_jvs_faq_ind8. Public guidance only; authenticated fields were not inspected."
-    },
-    {
-      "id": "source_bescom_tracker",
-      "title": "Track Name Change",
-      "publisher": "BESCOM",
-      "url": "https://www.bescom.co.in/bescom/main/track-name-change",
-      "accessedAt": "2026-08-27",
-      "type": "official_portal",
-      "notes": "Canonical source for IND-4 source_bescom_track_name_change and IND-8 source_bescom_namechange_tracker."
-    },
-    {
-      "id": "source_bescom_jvs",
-      "title": "Janasnehi Vidhyuth Sevegalu — Name Change",
-      "publisher": "BESCOM",
-      "url": "https://www.bescom.co.in/bescom/dashboard/consumer-dashboard/janasnehi-vidhyuth-sevagalu/name-change-form",
-      "accessedAt": "2026-08-27",
-      "type": "official_portal",
-      "notes": "Current public page; timing wording does not establish start point or exception applicability."
-    },
-    {
-      "id": "source_bescom_legacy",
-      "title": "BESCOM current public homepage and service directory",
-      "publisher": "BESCOM",
-      "url": "https://bescom.co.in/",
-      "accessedAt": "2026-08-28",
-      "type": "official_portal",
-      "notes": "The formerly cited legacy portal endpoint was unreachable during the Stage 0 link check. No current public route taxonomy was verified; retain the historical lead only as an Unknown gap."
-    },
-    {
-      "id": "source_eaasthi_login",
-      "title": "e-Aasthi citizen login and Final e-Khata instructions",
-      "publisher": "Bengaluru City Corporations",
-      "url": "https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx",
-      "accessedAt": "2026-08-27",
-      "type": "official_portal",
-      "notes": "Canonical source for IND-6 source_eaasthi_login and IND-8 source_ekhata_citizen_login_ind8."
-    },
-    {
-      "id": "source_eaasthi_search",
-      "title": "e-Aasthi public e-Khata search",
-      "publisher": "Bengaluru City Corporations",
-      "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
-      "accessedAt": "2026-08-27",
-      "type": "official_portal",
-      "notes": "Canonical source for IND-6 source_eaasthi_search and IND-8 source_ekhata_public_search_ind8."
-    },
-    {
-      "id": "source_eaasthi_status",
-      "title": "e-Khata Application Status",
-      "publisher": "Bengaluru City Corporations",
-      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
-      "accessedAt": "2026-08-27",
-      "type": "official_portal",
-      "notes": "Canonical source for IND-6 source_eaasthi_status and IND-8 source_ekhata_epid_status_ind8."
-    },
-    {
-      "id": "source_eaasthi_mutation",
-      "title": "e-Aasthi Pending Mutation Report",
-      "publisher": "Bengaluru City Corporations",
-      "url": "https://bbmpeaasthi.karnataka.gov.in/office/frmPendingMutationReport.aspx",
-      "accessedAt": "2026-08-27",
-      "type": "official_portal",
-      "notes": "Public observation only; it does not establish a completed buyer-facing record."
-    },
-    {
-      "id": "source_gba_directory",
-      "title": "GBA service directory",
-      "publisher": "Greater Bengaluru Authority",
-      "url": "https://bbmp.gov.in/",
-      "accessedAt": "2026-08-27",
-      "type": "official_guidance",
-      "notes": "Current public helpline listing. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail."
-    },
-    {
-      "id": "source_citizen_transfer",
-      "title": "Bescom name transfer can be done fully online if you have ekhata",
-      "publisher": "r/bangalore (Reddit)",
-      "url": "https://www.reddit.com/r/bangalore/comments/1vceniq/bescom_name_transfer_can_be_done_fully_online_if/",
-      "accessedAt": "2026-08-27",
-      "publishedAt": "2026-08-01",
-      "type": "citizen_evidence",
-      "notes": "IND-7 first-person evidence; not procedure proof."
-    },
-    {
-      "id": "source_citizen_login_payment",
-      "title": "Updated 2026 e-Khata BESCOM name-change account",
-      "publisher": "r/bangalore (Reddit)",
-      "url": "https://www.reddit.com/r/bangalore/comments/1vlfrnl/dont_pay_brokers_5k_for_bescom_name_changes_here/",
-      "accessedAt": "2026-08-27",
-      "publishedAt": "2026-08-11",
-      "type": "citizen_evidence",
-      "notes": "IND-7 first-person evidence; personal details are intentionally omitted."
-    },
-    {
-      "id": "source_citizen_missing_epid",
-      "title": "Non Availability of EPID/Draft E-Khata in E-Swathi portal",
-      "publisher": "r/BangaloreRealEstates (Reddit)",
-      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1r3hhqt/non_availability_of_epiddraft_ekhata_in_eswathi/",
-      "accessedAt": "2026-08-27",
-      "publishedAt": "2026-02-13",
-      "type": "citizen_evidence",
-      "notes": "IND-7 first-person missing draft/EPID account."
-    },
-    {
-      "id": "source_citizen_owner_error",
-      "title": "E-Khata Name Correction",
-      "publisher": "r/Bengaluru (Reddit)",
-      "url": "https://www.reddit.com/r/Bengaluru/comments/1oqksj1/ekhata_name_correction/",
-      "accessedAt": "2026-08-27",
-      "type": "citizen_evidence",
-      "notes": "IND-7 first-person prior-owner and correction-error account."
-    },
-    {
-      "id": "source_citizen_missing_draft",
-      "title": "Non Availability of Draft E-khata",
-      "publisher": "r/bangalore (Reddit)",
-      "url": "https://www.reddit.com/r/bangalore/comments/1ikojje/",
-      "accessedAt": "2026-08-27",
-      "publishedAt": "2025-02-08",
-      "type": "citizen_evidence",
-      "notes": "IND-7 public reports of absent draft e-Khata and delayed self-service request."
-    },
-    {
-      "id": "source_citizen_old_owner_recovery",
-      "title": "Finally I got Ekhata yesterday, costed 125₹",
-      "publisher": "r/bangalore (Reddit)",
-      "url": "https://www.reddit.com/r/bangalore/comments/1k4xnji/",
-      "accessedAt": "2026-08-27",
-      "type": "citizen_evidence",
-      "notes": "IND-7 citizen recovery account; not a standard instruction."
-    },
-    {
-      "id": "source_citizen_noc",
-      "title": "Bescom bill name change",
-      "publisher": "r/bangalore (Reddit)",
-      "url": "https://www.reddit.com/r/bangalore/comments/1bx2oer/",
-      "accessedAt": "2026-08-27",
-      "publishedAt": "2024-04-06",
-      "type": "citizen_evidence",
-      "notes": "Older offline-process account retained as one side of the NOC contradiction."
-    },
     {
       "id": "source_marriage_kar_act",
       "title": "Karnataka Marriages (Registration and Miscellaneous Provisions) Act, 1976",
@@ -496,480 +164,12 @@
   ],
   "claims": [
     {
-      "id": "claim_epid_route_visible",
-      "text": "BESCOM's current public homepage exposes a service labelled Name Change with EPID.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure"
-      ],
-      "nodeIds": [
-        "node_epid",
-        "node_name_transfer"
-      ],
-      "sourceIds": [
-        "source_bescom_home"
-      ],
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "status": "verified",
-      "contradictsClaimIds": [],
-      "notes": "Reconciles IND-4 and IND-6 duplicate observations; this does not verify eligibility or a mapping contract."
-    },
-    {
-      "id": "claim_standard_authenticated_route",
-      "text": "BESCOM's public FAQ directs a name-change applicant to authenticate, select an account ID, complete mandatory fields, upload required documents, submit, retain a request ID, and pay applicable charges.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_tenant",
-        "scenario_previous_consumer_deceased",
-        "scenario_consent_unavailable"
-      ],
-      "nodeIds": [
-        "node_name_transfer",
-        "node_request_tracking"
-      ],
-      "sourceIds": [
-        "source_bescom_faq"
-      ],
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "status": "verified",
-      "contradictsClaimIds": [],
-      "notes": "Reconciles IND-4, IND-6, and IND-8 duplicate FAQ claims. The public FAQ does not enumerate the current document checklist."
-    },
-    {
-      "id": "claim_request_tracker",
-      "text": "BESCOM's public tracker requests the request ID sent by SMS.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure",
-        "scenario_tenant",
-        "scenario_previous_consumer_deceased",
-        "scenario_consent_unavailable"
-      ],
-      "nodeIds": [
-        "node_request_tracking"
-      ],
-      "sourceIds": [
-        "source_bescom_tracker"
-      ],
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "status": "verified",
-      "contradictsClaimIds": [],
-      "notes": "Reconciles IND-4 and IND-8 duplicate tracker claims."
-    },
-    {
-      "id": "claim_jvs_timeline_wording",
-      "text": "BESCOM's current Janasnehi page states that Name Change and some related services are within 24 hours.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_clean_sale"
-      ],
-      "nodeIds": [
-        "node_name_transfer"
-      ],
-      "sourceIds": [
-        "source_bescom_jvs"
-      ],
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "status": "partial",
-      "contradictsClaimIds": [],
-      "notes": "The start point and exception applicability are not specified; it is not a verified end-to-end service-level promise."
-    },
-    {
-      "id": "claim_legacy_route_taxonomy",
-      "text": "No current public official route taxonomy for fast-track, regular, and HT name-change paths was verified in the Stage 0 link check.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_tenant"
-      ],
-      "nodeIds": [
-        "node_name_transfer"
-      ],
-      "sourceIds": [
-        "source_bescom_legacy"
-      ],
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "status": "unknown",
-      "contradictsClaimIds": [],
-      "notes": "The previous legacy endpoint was unreachable. This replaces an unverified historic route claim with an explicit current documentation gap."
-    },
-    {
-      "id": "claim_historic_consent_rule",
-      "text": "Historic KERC Conditions clause 36.01 says the registered consumer furnishes consent for transfer of the installation and deposits.",
-      "jurisdiction": "Karnataka, India",
-      "scenarioIds": [
-        "scenario_tenant",
-        "scenario_previous_consumer_deceased",
-        "scenario_consent_unavailable"
-      ],
-      "nodeIds": [
-        "node_transfer_evidence"
-      ],
-      "sourceIds": [
-        "source_kerc_conditions_supply"
-      ],
-      "evidenceGrade": "A",
-      "basis": "observation",
-      "status": "partial",
-      "contradictsClaimIds": [],
-      "notes": "Historic binding text; current applicability is not established."
-    },
-    {
-      "id": "claim_historic_alternative_evidence",
-      "text": "Historic clause 36.01 lists ownership evidence, including registered sale deed, khata, succession or heirship certificate, and will, where consent is absent.",
-      "jurisdiction": "Karnataka, India",
-      "scenarioIds": [
-        "scenario_previous_consumer_deceased",
-        "scenario_consent_unavailable"
-      ],
-      "nodeIds": [
-        "node_sale_deed",
-        "node_transfer_evidence"
-      ],
-      "sourceIds": [
-        "source_kerc_conditions_supply"
-      ],
-      "evidenceGrade": "A",
-      "basis": "observation",
-      "status": "partial",
-      "contradictsClaimIds": [],
-      "notes": "Historic binding text; it is an evidence lead, not a verified current checklist."
-    },
-    {
-      "id": "claim_historic_tenant_scope",
-      "text": "Historic clause 36.01 limits occupancy evidence alternatives to specified non-commercial installations.",
-      "jurisdiction": "Karnataka, India",
-      "scenarioIds": [
-        "scenario_tenant"
-      ],
-      "nodeIds": [
-        "node_transfer_evidence"
-      ],
-      "sourceIds": [
-        "source_kerc_conditions_supply"
-      ],
-      "evidenceGrade": "A",
-      "basis": "observation",
-      "status": "partial",
-      "contradictsClaimIds": [],
-      "notes": "Current authenticated acceptance is unknown."
-    },
-    {
-      "id": "claim_historic_transfer_obligations",
-      "text": "Historic clause 36.01 records no-arrears, indemnity, fresh-agreement, and deposit conditions for transfer; its published schedule also records LT and HT transfer charges.",
-      "jurisdiction": "Karnataka, India",
-      "scenarioIds": [
-        "scenario_tenant",
-        "scenario_previous_consumer_deceased",
-        "scenario_consent_unavailable"
-      ],
-      "nodeIds": [
-        "node_transfer_obligations"
-      ],
-      "sourceIds": [
-        "source_kerc_conditions_supply"
-      ],
-      "evidenceGrade": "A",
-      "basis": "observation",
-      "status": "partial",
-      "contradictsClaimIds": [],
-      "notes": "Atomicity exception noted: these are one historic conditions cluster used solely to model a decision node. Current amounts and applicability are unverified."
-    },
-    {
-      "id": "claim_ekhata_final_guidance",
-      "text": "The public e-Aasthi guidance distinguishes Draft e-Khata from Final e-Khata and lists registered deed, eKYC, SAS property-tax application number, property photo, and A-Khata material among Final e-Khata inputs.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata"
-      ],
-      "nodeIds": [
-        "node_sale_deed",
-        "node_final_e_khata"
-      ],
-      "sourceIds": [
-        "source_eaasthi_login"
-      ],
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "status": "verified",
-      "contradictsClaimIds": [],
-      "notes": "Reconciles IND-6 and IND-8; it does not prove BESCOM acceptance."
-    },
-    {
-      "id": "claim_ekhata_search_recovery",
-      "text": "Public e-Aasthi search supports EPID/property lookup and offers a Do Not Find My Property route when a property cannot be found.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure"
-      ],
-      "nodeIds": [
-        "node_epid",
-        "node_final_e_khata"
-      ],
-      "sourceIds": [
-        "source_eaasthi_search"
-      ],
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "status": "verified",
-      "contradictsClaimIds": [],
-      "notes": "Reconciles IND-6 and IND-8 duplicate observations."
-    },
-    {
-      "id": "claim_ekhata_status",
-      "text": "The public e-Khata Application Status page accepts an EPID for status lookup.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure"
-      ],
-      "nodeIds": [
-        "node_epid",
-        "node_final_e_khata"
-      ],
-      "sourceIds": [
-        "source_eaasthi_status"
-      ],
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "status": "verified",
-      "contradictsClaimIds": [],
-      "notes": "It does not document BESCOM mapping."
-    },
-    {
-      "id": "claim_mutation_fields",
-      "text": "The public e-Aasthi Pending Mutation Report displays registered-deed or mutation date, property EPID, seller, purchaser, and pending-owner fields.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_previous_consumer_deceased"
-      ],
-      "nodeIds": [
-        "node_sale_deed",
-        "node_mutation",
-        "node_epid"
-      ],
-      "sourceIds": [
-        "source_eaasthi_mutation"
-      ],
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "status": "verified",
-      "contradictsClaimIds": [],
-      "notes": "The visible report does not establish a completed buyer-facing record."
-    },
-    {
-      "id": "claim_helpline_channels",
-      "text": "Current public pages publish BESCOM 1912 and GBA e-Khata/New Khata support channels.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure"
-      ],
-      "nodeIds": [
-        "node_final_e_khata",
-        "node_bescom_mapping"
-      ],
-      "sourceIds": [
-        "source_bescom_home",
-        "source_gba_directory"
-      ],
-      "evidenceGrade": "C",
-      "basis": "observation",
-      "status": "partial",
-      "contradictsClaimIds": [],
-      "notes": "Channels are observable; their case-resolution scope is not. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
-    },
-    {
-      "id": "claim_epid_mapping_unknown",
-      "text": "No inspected public official material establishes EPID-to-BESCOM-account eligibility rules, failure messages, repair owner, or recovery sequence.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure"
-      ],
-      "nodeIds": [
-        "node_epid",
-        "node_bescom_mapping",
-        "node_name_transfer"
-      ],
-      "sourceIds": [],
-      "evidenceGrade": "Unknown",
-      "basis": "observation",
-      "status": "unknown",
-      "contradictsClaimIds": [],
-      "notes": "Reconciles IND-4, IND-6, and IND-8 Unknown records. No private/authenticated evidence was accessed."
-    },
-    {
-      "id": "claim_citizen_mapping_failure",
-      "text": "One citizen account identifies a possible failure matching a BESCOM Account ID to an EPID even when an e-Khata record exists.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_epid_mapping_failure"
-      ],
-      "nodeIds": [
-        "node_bescom_mapping"
-      ],
-      "sourceIds": [
-        "source_citizen_transfer"
-      ],
-      "evidenceGrade": "E",
-      "basis": "observation",
-      "status": "partial",
-      "contradictsClaimIds": [],
-      "notes": "Single public account, retained as a failure signal rather than a universal rule."
-    },
-    {
-      "id": "claim_citizen_missing_draft_epid",
-      "text": "One citizen reported a property found by tax identifier with neither linked Draft e-Khata nor EPID, and no movement on a non-availability request after 45 days.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure"
-      ],
-      "nodeIds": [
-        "node_final_e_khata",
-        "node_epid"
-      ],
-      "sourceIds": [
-        "source_citizen_missing_epid"
-      ],
-      "evidenceGrade": "E",
-      "basis": "observation",
-      "status": "partial",
-      "contradictsClaimIds": [],
-      "notes": "One public account; it does not establish cause or service level."
-    },
-    {
-      "id": "claim_citizen_owner_correction",
-      "text": "One citizen reported a final e-Khata displaying a previous owner's name and an Unauthorized Activity Has Been Detected message during a correction attempt.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure"
-      ],
-      "nodeIds": [
-        "node_final_e_khata"
-      ],
-      "sourceIds": [
-        "source_citizen_owner_error"
-      ],
-      "evidenceGrade": "E",
-      "basis": "observation",
-      "status": "partial",
-      "contradictsClaimIds": [],
-      "notes": "One public account; no root cause is established."
-    },
-    {
-      "id": "claim_citizen_old_owner_recovery",
-      "text": "One citizen reported resolving a draft e-Khata showing the old owner after invalidating and reapplying with ARO guidance.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_draft_e_khata"
-      ],
-      "nodeIds": [
-        "node_final_e_khata",
-        "node_mutation"
-      ],
-      "sourceIds": [
-        "source_citizen_old_owner_recovery"
-      ],
-      "evidenceGrade": "E",
-      "basis": "observation",
-      "status": "partial",
-      "contradictsClaimIds": [],
-      "notes": "A candidate recovery, not a general procedure."
-    },
-    {
-      "id": "claim_citizen_bescom_stalls",
-      "text": "Citizen accounts report EPID-entry, login/reset, unseen-open-application, and upload-stall failures in BESCOM flows.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_epid_mapping_failure"
-      ],
-      "nodeIds": [
-        "node_bescom_mapping",
-        "node_name_transfer"
-      ],
-      "sourceIds": [
-        "source_citizen_transfer",
-        "source_citizen_login_payment"
-      ],
-      "evidenceGrade": "E",
-      "basis": "observation",
-      "status": "partial",
-      "contradictsClaimIds": [],
-      "notes": "Reports identify failure modes only; no backend cause, support outcome, or general workaround is established."
-    },
-    {
-      "id": "claim_citizen_old_noc",
-      "text": "An older offline-process citizen account reported needing a previous-owner or builder NOC for BESCOM name change.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_consent_unavailable"
-      ],
-      "nodeIds": [
-        "node_name_transfer"
-      ],
-      "sourceIds": [
-        "source_citizen_noc"
-      ],
-      "evidenceGrade": "E",
-      "basis": "observation",
-      "status": "contested",
-      "contradictsClaimIds": [
-        "claim_citizen_no_builder_noc"
-      ],
-      "notes": "Older account; conflicting evidence is retained, not resolved by chronology alone."
-    },
-    {
-      "id": "claim_citizen_no_builder_noc",
-      "text": "One 2026 citizen account reported completing an online BESCOM name change after e-Khata update without a builder NOC.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_consent_unavailable"
-      ],
-      "nodeIds": [
-        "node_final_e_khata",
-        "node_name_transfer"
-      ],
-      "sourceIds": [
-        "source_citizen_login_payment"
-      ],
-      "evidenceGrade": "E",
-      "basis": "observation",
-      "status": "contested",
-      "contradictsClaimIds": [
-        "claim_citizen_old_noc"
-      ],
-      "notes": "One current citizen account; it does not establish an exception rule."
-    },
-    {
       "id": "claim_marriage_kar_compulsory",
       "text": "The official India Code result for the Karnataka Marriages (Registration and Miscellaneous Provisions) Act, 1976 describes it as an Act providing uniform law for registration of marriages in Karnataka and states its purpose includes compulsory registration of marriages.",
       "jurisdiction": "Karnataka, India",
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_solemnization",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "nodeIds": [
         "node_marriage_route"
@@ -988,9 +188,8 @@
       "text": "The Karnataka Stamps and Registration Department's 2023–24 annual report states that the department registers marriages under the Hindu Marriage Act and the Special Marriage Act, and that Kaveri-2.0 was implemented across the department's sub-registrar offices.",
       "jurisdiction": "Karnataka, India",
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_solemnization",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "nodeIds": [
         "node_marriage_route",
@@ -1010,7 +209,7 @@
       "text": "Section 8 of the Hindu Marriage Act provides for entering particulars of a Hindu marriage in a Hindu Marriage Register under prescribed state rules and conditions; a state may make such entry compulsory in all or specified cases.",
       "jurisdiction": "India; Karnataka implementation by state rules",
       "scenarioIds": [
-        "scenario_marriage_hindu"
+        "scenario_marriage_w_hma"
       ],
       "nodeIds": [
         "node_marriage_hma"
@@ -1029,7 +228,7 @@
       "text": "Under section 5 of the Special Marriage Act, parties intending solemnization give written notice to the Marriage Officer of the district where at least one party has resided for at least thirty days immediately before the notice; sections 6–7 provide for entry/publication and objections.",
       "jurisdiction": "India; Karnataka implementation by Marriage Officer/SRO",
       "scenarioIds": [
-        "scenario_marriage_special_solemnization"
+        "scenario_marriage_w_sma"
       ],
       "nodeIds": [
         "node_marriage_sma_notice"
@@ -1048,8 +247,7 @@
       "text": "The Special Marriage Act provides statutory declaration/solemnization and certificate steps after the notice/objection stage, and a separate chapter for registration of marriages celebrated in other forms.",
       "jurisdiction": "India; Karnataka implementation by Marriage Officer/SRO",
       "scenarioIds": [
-        "scenario_marriage_special_solemnization",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_sma"
       ],
       "nodeIds": [
         "node_marriage_sma_solemnization",
@@ -1070,9 +268,8 @@
       "text": "Kaveri 2.0 is the official public entry point identified by the Registration Department's current digital program; this pass records the landing URL only and does not establish that a particular Bengaluru SRO, marriage category or certificate action is available without login.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_solemnization",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "nodeIds": [
         "node_marriage_kaveri"
@@ -1092,9 +289,8 @@
       "text": "No reviewed official public source establishes the current Bengaluru SRO for a supplied couple, current fee, document/original checklist, appointment availability, processing time, objection outcome or certificate issuance.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_solemnization",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "nodeIds": [
         "node_marriage_route",
@@ -1213,8 +409,8 @@
       "text": "One citizen reported receiving a digitally signed marriage certificate through the Kaveri portal without describing an in-person visit.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "nodeIds": [
         "node_marriage_kaveri",
@@ -1236,8 +432,8 @@
       "text": "One citizen reported that an objection after submission required the couple and witnesses to repeat Aadhaar-based verification and e-sign steps.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "nodeIds": [
         "node_marriage_kaveri",
@@ -1259,8 +455,8 @@
       "text": "A commenter reported receiving a failed-payment acknowledgement but later receiving an SMS that the marriage certificate was ready.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "nodeIds": [
         "node_marriage_kaveri",
@@ -1280,9 +476,8 @@
       "text": "The citizen accounts do not establish which legal route, SRO, document set, verification sequence, payment amount, or certificate outcome applies to a particular marriage-registration case.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_solemnization",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "nodeIds": [
         "node_marriage_route",
@@ -1298,218 +493,6 @@
     }
   ],
   "nodes": [
-    {
-      "id": "node_sale_deed",
-      "label": "Sale deed",
-      "kind": "document",
-      "ownerAgencyId": "agency_gba",
-      "summary": "Registered property-transfer document referenced by municipal and historic transfer material.",
-      "requiredState": "Available only where the applicable municipal or exception route asks for it.",
-      "checks": [],
-      "failureSignals": [],
-      "recoveries": [],
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_previous_consumer_deceased"
-      ],
-      "claimIds": [
-        "claim_ekhata_final_guidance",
-        "claim_historic_alternative_evidence"
-      ],
-      "status": "partial",
-      "displayOrder": 10
-    },
-    {
-      "id": "node_mutation",
-      "label": "Mutation",
-      "kind": "record",
-      "ownerAgencyId": "agency_gba",
-      "summary": "Publicly visible municipal mutation report state; not proof of completed buyer-facing ownership.",
-      "requiredState": "A municipal report may be inspected without assuming its downstream acceptance.",
-      "checks": [],
-      "failureSignals": [],
-      "recoveries": [],
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_previous_consumer_deceased"
-      ],
-      "claimIds": [
-        "claim_mutation_fields"
-      ],
-      "status": "partial",
-      "displayOrder": 20
-    },
-    {
-      "id": "node_final_e_khata",
-      "label": "Final e-Khata",
-      "kind": "record",
-      "ownerAgencyId": "agency_gba",
-      "summary": "Municipal final-record state with public input guidance and reported citizen failure modes.",
-      "requiredState": "Finality and holder state need case-specific verification; Draft is not treated as final proof.",
-      "checks": [],
-      "failureSignals": [],
-      "recoveries": [],
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure"
-      ],
-      "claimIds": [
-        "claim_ekhata_final_guidance",
-        "claim_ekhata_status",
-        "claim_citizen_missing_draft_epid",
-        "claim_citizen_owner_correction",
-        "claim_citizen_old_owner_recovery"
-      ],
-      "status": "partial",
-      "displayOrder": 30
-    },
-    {
-      "id": "node_epid",
-      "label": "EPID",
-      "kind": "record",
-      "ownerAgencyId": "agency_gba",
-      "summary": "Property identifier exposed in public search and status routes.",
-      "requiredState": "An EPID may be located or its absence recovered through official municipal channels; BESCOM mapping is separate and unknown.",
-      "checks": [],
-      "failureSignals": [],
-      "recoveries": [],
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure"
-      ],
-      "claimIds": [
-        "claim_ekhata_search_recovery",
-        "claim_ekhata_status",
-        "claim_epid_mapping_unknown"
-      ],
-      "status": "partial",
-      "displayOrder": 40
-    },
-    {
-      "id": "node_transfer_evidence",
-      "label": "Exception transfer evidence",
-      "kind": "document",
-      "ownerAgencyId": "agency_bescom",
-      "summary": "Historic consent, ownership, succession, or scope-limited occupancy evidence branch.",
-      "requiredState": "Current acceptance must be confirmed; historical text is not presented as a current checklist.",
-      "checks": [],
-      "failureSignals": [],
-      "recoveries": [],
-      "scenarioIds": [
-        "scenario_tenant",
-        "scenario_previous_consumer_deceased",
-        "scenario_consent_unavailable"
-      ],
-      "claimIds": [
-        "claim_historic_consent_rule",
-        "claim_historic_alternative_evidence",
-        "claim_historic_tenant_scope"
-      ],
-      "status": "partial",
-      "displayOrder": 45
-    },
-    {
-      "id": "node_bescom_mapping",
-      "label": "BESCOM mapping",
-      "kind": "system",
-      "ownerAgencyId": "agency_bescom",
-      "summary": "Unpublished relationship between a property EPID and a BESCOM account.",
-      "requiredState": "No evidence-backed state, validation rule, repair owner, or recovery sequence is known.",
-      "checks": [],
-      "failureSignals": [],
-      "recoveries": [],
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure"
-      ],
-      "claimIds": [
-        "claim_epid_route_visible",
-        "claim_epid_mapping_unknown",
-        "claim_citizen_mapping_failure",
-        "claim_citizen_bescom_stalls"
-      ],
-      "status": "unknown",
-      "displayOrder": 50
-    },
-    {
-      "id": "node_transfer_obligations",
-      "label": "Transfer obligations",
-      "kind": "decision",
-      "ownerAgencyId": "agency_bescom",
-      "summary": "Historic transfer conditions such as arrears, indemnity, agreement, deposit, and charges.",
-      "requiredState": "Obtain current case-specific confirmation; historic values and applicability are partial.",
-      "checks": [],
-      "failureSignals": [],
-      "recoveries": [],
-      "scenarioIds": [
-        "scenario_tenant",
-        "scenario_previous_consumer_deceased",
-        "scenario_consent_unavailable"
-      ],
-      "claimIds": [
-        "claim_historic_transfer_obligations"
-      ],
-      "status": "partial",
-      "displayOrder": 55
-    },
-    {
-      "id": "node_name_transfer",
-      "label": "BESCOM name transfer",
-      "kind": "service",
-      "ownerAgencyId": "agency_bescom",
-      "summary": "Current public FAQ exposes an authenticated standard route and the homepage exposes an EPID-labelled entry.",
-      "requiredState": "Use an authorized route; exact authenticated validation and EPID behaviour remain Unknown.",
-      "checks": [],
-      "failureSignals": [],
-      "recoveries": [],
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure",
-        "scenario_tenant",
-        "scenario_previous_consumer_deceased",
-        "scenario_consent_unavailable"
-      ],
-      "claimIds": [
-        "claim_standard_authenticated_route",
-        "claim_epid_route_visible",
-        "claim_epid_mapping_unknown",
-        "claim_citizen_bescom_stalls",
-        "claim_citizen_old_noc",
-        "claim_citizen_no_builder_noc"
-      ],
-      "status": "partial",
-      "displayOrder": 60
-    },
-    {
-      "id": "node_request_tracking",
-      "label": "Request tracking",
-      "kind": "record",
-      "ownerAgencyId": "agency_bescom",
-      "summary": "Public name-change tracking keyed by an SMS request ID.",
-      "requiredState": "Retain a request ID after successful submission; outcome timing is not established.",
-      "checks": [],
-      "failureSignals": [],
-      "recoveries": [],
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure",
-        "scenario_tenant",
-        "scenario_previous_consumer_deceased",
-        "scenario_consent_unavailable"
-      ],
-      "claimIds": [
-        "claim_request_tracker"
-      ],
-      "status": "verified",
-      "displayOrder": 70
-    },
     {
       "id": "node_marriage_route",
       "label": "Select legal route",
@@ -1543,9 +526,8 @@
         }
       ],
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_solemnization",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "claimIds": [
         "claim_marriage_kar_compulsory",
@@ -1577,7 +559,7 @@
       "failureSignals": [],
       "recoveries": [],
       "scenarioIds": [
-        "scenario_marriage_hindu"
+        "scenario_marriage_w_hma"
       ],
       "claimIds": [
         "claim_marriage_hma_section8"
@@ -1619,7 +601,7 @@
       ],
       "recoveries": [],
       "scenarioIds": [
-        "scenario_marriage_special_solemnization"
+        "scenario_marriage_w_sma"
       ],
       "claimIds": [
         "claim_marriage_sma_notice"
@@ -1638,7 +620,7 @@
       "failureSignals": [],
       "recoveries": [],
       "scenarioIds": [
-        "scenario_marriage_special_solemnization"
+        "scenario_marriage_w_sma"
       ],
       "claimIds": [
         "claim_marriage_sma_certificate",
@@ -1669,7 +651,7 @@
       "failureSignals": [],
       "recoveries": [],
       "scenarioIds": [
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_sma"
       ],
       "claimIds": [
         "claim_marriage_sma_certificate",
@@ -1700,9 +682,8 @@
       "failureSignals": [],
       "recoveries": [],
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_solemnization",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "claimIds": [
         "claim_marriage_public_kaveri_boundary"
@@ -1721,9 +702,8 @@
       "failureSignals": [],
       "recoveries": [],
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_solemnization",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "claimIds": [
         "claim_marriage_unknown_case",
@@ -1910,152 +890,14 @@
   ],
   "edges": [
     {
-      "id": "edge_sale_to_mutation",
-      "fromNodeId": "node_sale_deed",
-      "toNodeId": "node_mutation",
-      "relationship": "produces",
-      "label": "Municipal report displays deed/mutation fields; universal automatic completion is not established.",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata"
-      ],
-      "claimIds": [
-        "claim_mutation_fields"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "edge_mutation_to_final",
-      "fromNodeId": "node_mutation",
-      "toNodeId": "node_final_e_khata",
-      "relationship": "requires",
-      "label": "A buyer-facing final record is a prudent clean-sale hypothesis, not a published universal rule.",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata"
-      ],
-      "claimIds": [
-        "claim_mutation_fields",
-        "claim_ekhata_final_guidance"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "edge_final_to_epid",
-      "fromNodeId": "node_final_e_khata",
-      "toNodeId": "node_epid",
-      "relationship": "produces",
-      "label": "Public sources support EPID lookup/status but do not establish its exact production from finalisation.",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure"
-      ],
-      "claimIds": [
-        "claim_ekhata_search_recovery",
-        "claim_ekhata_status"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "edge_epid_to_mapping",
-      "fromNodeId": "node_epid",
-      "toNodeId": "node_bescom_mapping",
-      "relationship": "maps_to",
-      "label": "An EPID route is visible, but its cross-system mapping contract is Unknown.",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure"
-      ],
-      "claimIds": [
-        "claim_epid_route_visible",
-        "claim_epid_mapping_unknown"
-      ],
-      "status": "unknown"
-    },
-    {
-      "id": "edge_mapping_to_transfer",
-      "fromNodeId": "node_bescom_mapping",
-      "toNodeId": "node_name_transfer",
-      "relationship": "requires",
-      "label": "Mapping success is inferred only for the EPID route; a separate standard route is publicly documented.",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_epid_mapping_failure"
-      ],
-      "claimIds": [
-        "claim_standard_authenticated_route",
-        "claim_epid_mapping_unknown"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "edge_evidence_to_obligations",
-      "fromNodeId": "node_transfer_evidence",
-      "toNodeId": "node_transfer_obligations",
-      "relationship": "requires",
-      "label": "Historical exception evidence does not remove historical obligations.",
-      "scenarioIds": [
-        "scenario_tenant",
-        "scenario_previous_consumer_deceased",
-        "scenario_consent_unavailable"
-      ],
-      "claimIds": [
-        "claim_historic_consent_rule",
-        "claim_historic_alternative_evidence",
-        "claim_historic_tenant_scope",
-        "claim_historic_transfer_obligations"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "edge_obligations_to_transfer",
-      "fromNodeId": "node_transfer_obligations",
-      "toNodeId": "node_name_transfer",
-      "relationship": "requires",
-      "label": "Historic conditions cluster feeds transfer; current implementation remains partial.",
-      "scenarioIds": [
-        "scenario_tenant",
-        "scenario_previous_consumer_deceased",
-        "scenario_consent_unavailable"
-      ],
-      "claimIds": [
-        "claim_historic_transfer_obligations",
-        "claim_standard_authenticated_route"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "edge_transfer_to_tracking",
-      "fromNodeId": "node_name_transfer",
-      "toNodeId": "node_request_tracking",
-      "relationship": "produces",
-      "label": "The documented standard workflow returns a request ID after successful submission.",
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure",
-        "scenario_tenant",
-        "scenario_previous_consumer_deceased",
-        "scenario_consent_unavailable"
-      ],
-      "claimIds": [
-        "claim_standard_authenticated_route",
-        "claim_request_tracker"
-      ],
-      "status": "verified"
-    },
-    {
       "id": "edge_marriage_route_kaveri",
       "fromNodeId": "node_marriage_route",
       "toNodeId": "node_marriage_kaveri",
       "relationship": "requires",
       "label": "The department's digital program identifies Kaveri 2.0 as the public entry lead; live category/SRO flow is unverified.",
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_solemnization",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "claimIds": [
         "claim_marriage_department_mandate",
@@ -2070,7 +912,7 @@
       "relationship": "produces",
       "label": "HMA register entry/certificate would require current Karnataka procedure and Registrar action; none was requested.",
       "scenarioIds": [
-        "scenario_marriage_hindu"
+        "scenario_marriage_w_hma"
       ],
       "claimIds": [
         "claim_marriage_hma_section8",
@@ -2085,7 +927,7 @@
       "relationship": "requires",
       "label": "SMA statutory notice/publication/objection stage precedes declaration and solemnization.",
       "scenarioIds": [
-        "scenario_marriage_special_solemnization"
+        "scenario_marriage_w_sma"
       ],
       "claimIds": [
         "claim_marriage_sma_notice",
@@ -2100,7 +942,7 @@
       "relationship": "produces",
       "label": "SMA registration procedure may lead to certificate after statutory conditions and Registrar action; no case was filed.",
       "scenarioIds": [
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_sma"
       ],
       "claimIds": [
         "claim_marriage_sma_certificate",
@@ -2171,275 +1013,6 @@
   ],
   "roadblocks": [
     {
-      "id": "roadblock_draft_not_final",
-      "title": "Draft e-Khata is not a verified final buyer record",
-      "category": "documentation",
-      "symptom": "The property has Draft e-Khata but finality or holder state is unresolved.",
-      "likelyCause": "Public guidance distinguishes Draft and Final, but no public evidence connects Draft to BESCOM acceptance.",
-      "recovery": "Use official Final e-Khata guidance and status/search channels; do not treat Draft as transfer approval.",
-      "ownerAgencyIds": [
-        "agency_gba"
-      ],
-      "nodeIds": [
-        "node_final_e_khata",
-        "node_epid"
-      ],
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata"
-      ],
-      "claimIds": [
-        "claim_ekhata_final_guidance",
-        "claim_ekhata_status"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "roadblock_property_missing",
-      "title": "Property cannot be found in public e-Khata search",
-      "category": "process",
-      "symptom": "Available public lookup paths do not find the property.",
-      "likelyCause": "The public interface exposes a missing-property state without a property-specific cause.",
-      "recovery": "Use the official Do Not Find My Property route for corporation review.",
-      "ownerAgencyIds": [
-        "agency_gba"
-      ],
-      "nodeIds": [
-        "node_final_e_khata",
-        "node_epid"
-      ],
-      "scenarioIds": [
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure"
-      ],
-      "claimIds": [
-        "claim_ekhata_search_recovery"
-      ],
-      "status": "verified"
-    },
-    {
-      "id": "roadblock_owner_correction",
-      "title": "e-Khata holder is wrong or correction fails",
-      "category": "process",
-      "symptom": "Citizen accounts describe a prior holder in e-Khata or correction failure.",
-      "likelyCause": "Unknown; citizen reports do not establish a data, identity, or workflow cause.",
-      "recovery": "Use official municipal support; a reported reapplication is not a general procedure.",
-      "ownerAgencyIds": [
-        "agency_gba"
-      ],
-      "nodeIds": [
-        "node_final_e_khata"
-      ],
-      "scenarioIds": [
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure"
-      ],
-      "claimIds": [
-        "claim_citizen_owner_correction",
-        "claim_citizen_old_owner_recovery"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "roadblock_epid_mapping",
-      "title": "EPID does not resolve to the intended BESCOM account",
-      "category": "infrastructure",
-      "symptom": "An EPID route is visible but the intended account relationship cannot be established.",
-      "likelyCause": "Cross-system mapping rules, errors, repair owner, and SLA are Unknown; one citizen report identifies a possible failure.",
-      "recovery": "Do not repeatedly submit; use published support channels and obtain official case-specific guidance.",
-      "ownerAgencyIds": [
-        "agency_gba",
-        "agency_bescom"
-      ],
-      "nodeIds": [
-        "node_epid",
-        "node_bescom_mapping",
-        "node_name_transfer"
-      ],
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure"
-      ],
-      "claimIds": [
-        "claim_epid_mapping_unknown",
-        "claim_citizen_mapping_failure",
-        "claim_helpline_channels"
-      ],
-      "status": "unknown"
-    },
-    {
-      "id": "roadblock_bescom_stalls",
-      "title": "BESCOM login or application flow stalls",
-      "category": "infrastructure",
-      "symptom": "Citizen accounts describe login/reset, unseen-open-application, EPID-entry, and upload-stall failures.",
-      "likelyCause": "Unknown; no public evidence establishes backend cause or remedy.",
-      "recovery": "Use authorized BESCOM support without placing account or identity data in the ledger.",
-      "ownerAgencyIds": [
-        "agency_bescom"
-      ],
-      "nodeIds": [
-        "node_bescom_mapping",
-        "node_name_transfer"
-      ],
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_epid_mapping_failure"
-      ],
-      "claimIds": [
-        "claim_citizen_bescom_stalls",
-        "claim_helpline_channels"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "roadblock_tenant_scope",
-      "title": "Tenant route outside stated historical scope",
-      "category": "documentation",
-      "symptom": "An occupier seeks transfer for an installation that may not fit the historic non-commercial scope.",
-      "likelyCause": "The historic occupancy alternative is limited and current authenticated eligibility is undisclosed.",
-      "recovery": "Confirm current eligibility and installation category through authorized BESCOM channels.",
-      "ownerAgencyIds": [
-        "agency_bescom"
-      ],
-      "nodeIds": [
-        "node_transfer_evidence",
-        "node_name_transfer"
-      ],
-      "scenarioIds": [
-        "scenario_tenant"
-      ],
-      "claimIds": [
-        "claim_historic_tenant_scope",
-        "claim_standard_authenticated_route"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "roadblock_successor_evidence",
-      "title": "Successor evidence cannot be confirmed in the current form",
-      "category": "documentation",
-      "symptom": "Prior consumer is deceased and consent is unavailable.",
-      "likelyCause": "Historic text lists successor evidence but the current public FAQ omits its authenticated document list.",
-      "recovery": "Use historical evidence only as a lead; confirm current acceptance in authorized channels.",
-      "ownerAgencyIds": [
-        "agency_bescom"
-      ],
-      "nodeIds": [
-        "node_transfer_evidence",
-        "node_name_transfer"
-      ],
-      "scenarioIds": [
-        "scenario_previous_consumer_deceased"
-      ],
-      "claimIds": [
-        "claim_historic_alternative_evidence",
-        "claim_standard_authenticated_route"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "roadblock_consent_deposit",
-      "title": "Consent unavailable and deposit treatment unresolved",
-      "category": "documentation",
-      "symptom": "Applicant cannot furnish consent to transfer the installation and deposit.",
-      "likelyCause": "Historic text describes alternatives and a fresh-deposit consequence, but current demand treatment is unverified.",
-      "recovery": "Obtain case-specific current demand; do not use historic amounts as current amounts.",
-      "ownerAgencyIds": [
-        "agency_bescom"
-      ],
-      "nodeIds": [
-        "node_transfer_evidence",
-        "node_transfer_obligations"
-      ],
-      "scenarioIds": [
-        "scenario_tenant",
-        "scenario_previous_consumer_deceased",
-        "scenario_consent_unavailable"
-      ],
-      "claimIds": [
-        "claim_historic_consent_rule",
-        "claim_historic_transfer_obligations"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "roadblock_arrears_recovery",
-      "title": "Arrears may block transfer but public clearing path is not documented",
-      "category": "process",
-      "symptom": "An outstanding balance may prevent transfer.",
-      "likelyCause": "Historic text states no arrears; no current public remediation sequence was found.",
-      "recovery": "Resolve billing through an authorized BESCOM path before retrying; exact sequence remains unknown.",
-      "ownerAgencyIds": [
-        "agency_bescom"
-      ],
-      "nodeIds": [
-        "node_transfer_obligations",
-        "node_name_transfer"
-      ],
-      "scenarioIds": [
-        "scenario_tenant",
-        "scenario_previous_consumer_deceased",
-        "scenario_consent_unavailable"
-      ],
-      "claimIds": [
-        "claim_historic_transfer_obligations",
-        "claim_standard_authenticated_route"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "roadblock_document_checklist",
-      "title": "Current authenticated document checklist is not public",
-      "category": "process",
-      "symptom": "Public FAQ directs uploads but does not enumerate them before login.",
-      "likelyCause": "Authenticated/back-end requirements were not inspected and are Unknown.",
-      "recovery": "Use the authorized route and retain the request ID if submission succeeds; do not infer or bypass requirements.",
-      "ownerAgencyIds": [
-        "agency_bescom"
-      ],
-      "nodeIds": [
-        "node_name_transfer",
-        "node_request_tracking"
-      ],
-      "scenarioIds": [
-        "scenario_draft_e_khata",
-        "scenario_epid_mapping_failure",
-        "scenario_tenant",
-        "scenario_previous_consumer_deceased",
-        "scenario_consent_unavailable"
-      ],
-      "claimIds": [
-        "claim_standard_authenticated_route",
-        "claim_epid_mapping_unknown",
-        "claim_request_tracker"
-      ],
-      "status": "unknown"
-    },
-    {
-      "id": "roadblock_noc_conflict",
-      "title": "NOC requirement differs across citizen accounts",
-      "category": "documentation",
-      "symptom": "An older account reports needing an NOC while a 2026 account reports completion without builder NOC.",
-      "likelyCause": "The route may have changed or conditions differed; desk evidence cannot resolve it.",
-      "recovery": "Do not assume NOC is or is not required; verify current case-specific requirements through authorized sources.",
-      "ownerAgencyIds": [
-        "agency_bescom"
-      ],
-      "nodeIds": [
-        "node_name_transfer"
-      ],
-      "scenarioIds": [
-        "scenario_clean_sale",
-        "scenario_consent_unavailable"
-      ],
-      "claimIds": [
-        "claim_citizen_old_noc",
-        "claim_citizen_no_builder_noc"
-      ],
-      "status": "contested"
-    },
-    {
       "id": "roadblock_marriage_route",
       "title": "Act/category and jurisdiction selection",
       "category": "documentation",
@@ -2456,9 +1029,8 @@
         "node_marriage_sma_registration"
       ],
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_solemnization",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "claimIds": [
         "claim_marriage_department_mandate",
@@ -2482,9 +1054,8 @@
         "node_marriage_sro_certificate"
       ],
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_solemnization",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "claimIds": [
         "claim_marriage_public_kaveri_boundary",
@@ -2555,8 +1126,8 @@
         "node_marriage_sro_certificate"
       ],
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "claimIds": [
         "claim_ind32_marriage_citizen_objection_reset",
@@ -2577,8 +1148,8 @@
         "node_marriage_sro_certificate"
       ],
       "scenarioIds": [
-        "scenario_marriage_hindu",
-        "scenario_marriage_special_registration"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
       "claimIds": [
         "claim_ind32_marriage_citizen_payment_status_mismatch",
@@ -2595,352 +1166,16 @@
       "recovery": "Read the cited evidence and retain Unknown or partial status where the public record stops.",
       "ownerAgencyIds": [],
       "nodeIds": [
-        "node_sale_deed"
+        "node_marriage_route"
       ],
       "scenarioIds": [
-        "scenario_clean_sale"
+        "scenario_marriage_w_hma"
       ],
       "claimIds": [],
       "status": "unknown"
     }
   ],
   "journeys": [
-    {
-      "id": "journey_clean_sale",
-      "title": "Clean sale",
-      "scenarioId": "scenario_clean_sale",
-      "context": "Partial chain: municipal public routes and BESCOM public entry points are verified, but their end-to-end dependency is not.",
-      "steps": [
-        {
-          "id": "step_clean_municipal",
-          "label": "Inspect municipal state",
-          "nodeId": "node_final_e_khata",
-          "action": "Use public e-Aasthi guidance, search, and status routes.",
-          "expectedResult": "A visible municipal state or a published recovery route, not a BESCOM approval.",
-          "claimIds": [
-            "claim_ekhata_final_guidance",
-            "claim_ekhata_search_recovery",
-            "claim_ekhata_status"
-          ],
-          "status": "partial"
-        },
-        {
-          "id": "step_clean_transfer",
-          "label": "Use authorized BESCOM route",
-          "nodeId": "node_name_transfer",
-          "action": "Use the documented standard route or the visible EPID entry as applicable.",
-          "expectedResult": "Request flow is documented; EPID mapping and outcome are unknown.",
-          "claimIds": [
-            "claim_standard_authenticated_route",
-            "claim_epid_route_visible",
-            "claim_epid_mapping_unknown"
-          ],
-          "status": "partial"
-        }
-      ],
-      "dependencies": [
-        {
-          "id": "dependency_clean_epid_mapping",
-          "fromNodeId": "node_epid",
-          "toNodeId": "node_bescom_mapping",
-          "description": "Cross-system mapping is not publicly specified.",
-          "claimIds": [
-            "claim_epid_mapping_unknown"
-          ],
-          "status": "unknown"
-        }
-      ],
-      "failureRoadblockIds": [
-        "roadblock_draft_not_final",
-        "roadblock_property_missing",
-        "roadblock_epid_mapping",
-        "roadblock_bescom_stalls"
-      ],
-      "recoveryNotes": [
-        "Use municipal routes before assuming a BESCOM-only fault.",
-        "Standard transfer is not proof that the EPID route is identical."
-      ],
-      "documentationQualityNotes": [
-        "Current public interfaces are Grade B.",
-        "Authenticated and backend behaviour remains Unknown."
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "journey_draft_ekhata",
-      "title": "Draft or pending e-Khata",
-      "scenarioId": "scenario_draft_e_khata",
-      "context": "Draft availability and public status routes are observable; a final buyer state and BESCOM acceptance are not verified.",
-      "steps": [
-        {
-          "id": "step_draft_finalise",
-          "label": "Resolve municipal record",
-          "nodeId": "node_final_e_khata",
-          "action": "Follow official Final e-Khata guidance and use status/search routes.",
-          "expectedResult": "Record state or published municipal recovery route.",
-          "claimIds": [
-            "claim_ekhata_final_guidance",
-            "claim_ekhata_search_recovery",
-            "claim_ekhata_status"
-          ],
-          "status": "partial"
-        },
-        {
-          "id": "step_draft_track",
-          "label": "Retain request tracking identifier",
-          "nodeId": "node_request_tracking",
-          "action": "If submission succeeds through an authorized BESCOM route, retain the SMS request ID.",
-          "expectedResult": "Trackable request, not verified approval.",
-          "claimIds": [
-            "claim_request_tracker"
-          ],
-          "status": "verified"
-        }
-      ],
-      "dependencies": [],
-      "failureRoadblockIds": [
-        "roadblock_draft_not_final",
-        "roadblock_property_missing",
-        "roadblock_owner_correction",
-        "roadblock_document_checklist"
-      ],
-      "recoveryNotes": [
-        "Do not treat Draft as final proof.",
-        "No personal records belong in this ledger."
-      ],
-      "documentationQualityNotes": [
-        "Municipal inputs are public; utility-side acceptance remains unverified."
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "journey_epid_failure",
-      "title": "EPID mapping failure",
-      "scenarioId": "scenario_epid_mapping_failure",
-      "context": "Public municipal lookup and BESCOM EPID entry coexist, but mapping behaviour is Unknown.",
-      "steps": [
-        {
-          "id": "step_epid_check",
-          "label": "Check EPID municipal state",
-          "nodeId": "node_epid",
-          "action": "Use public search/status or missing-property route.",
-          "expectedResult": "Publicly visible status or municipal recovery channel.",
-          "claimIds": [
-            "claim_ekhata_search_recovery",
-            "claim_ekhata_status"
-          ],
-          "status": "verified"
-        },
-        {
-          "id": "step_epid_escalate",
-          "label": "Escalate without repeated submissions",
-          "nodeId": "node_bescom_mapping",
-          "action": "Use published support channels for case-specific guidance.",
-          "expectedResult": "No promised repair owner or SLA.",
-          "claimIds": [
-            "claim_epid_mapping_unknown",
-            "claim_helpline_channels"
-          ],
-          "status": "unknown"
-        }
-      ],
-      "dependencies": [
-        {
-          "id": "dependency_epid_mapping",
-          "fromNodeId": "node_epid",
-          "toNodeId": "node_bescom_mapping",
-          "description": "The relationship is unverified.",
-          "claimIds": [
-            "claim_epid_mapping_unknown"
-          ],
-          "status": "unknown"
-        }
-      ],
-      "failureRoadblockIds": [
-        "roadblock_epid_mapping",
-        "roadblock_bescom_stalls",
-        "roadblock_document_checklist"
-      ],
-      "recoveryNotes": [
-        "Preserve only non-sensitive error wording outside this ledger if needed for support."
-      ],
-      "documentationQualityNotes": [
-        "Public endpoints are verified; their contract is not."
-      ],
-      "status": "unknown"
-    },
-    {
-      "id": "journey_tenant",
-      "title": "Tenant or occupier",
-      "scenarioId": "scenario_tenant",
-      "context": "Historic occupancy evidence is scope-limited; current eligibility is not public.",
-      "steps": [
-        {
-          "id": "step_tenant_scope",
-          "label": "Assess historic scope",
-          "nodeId": "node_transfer_evidence",
-          "action": "Distinguish specified non-commercial occupancy from other cases.",
-          "expectedResult": "An explicit eligibility unknown where scope does not fit.",
-          "claimIds": [
-            "claim_historic_tenant_scope"
-          ],
-          "status": "partial"
-        },
-        {
-          "id": "step_tenant_obligations",
-          "label": "Confirm current conditions",
-          "nodeId": "node_transfer_obligations",
-          "action": "Confirm arrears, agreement, indemnity, deposit, and charges through authorized channels.",
-          "expectedResult": "Current treatment is confirmed case-specifically, not inferred from historic text.",
-          "claimIds": [
-            "claim_historic_transfer_obligations"
-          ],
-          "status": "partial"
-        }
-      ],
-      "dependencies": [
-        {
-          "id": "dependency_tenant_conditions",
-          "fromNodeId": "node_transfer_evidence",
-          "toNodeId": "node_transfer_obligations",
-          "description": "Historical evidence branch does not remove historical conditions.",
-          "claimIds": [
-            "claim_historic_tenant_scope",
-            "claim_historic_transfer_obligations"
-          ],
-          "status": "partial"
-        }
-      ],
-      "failureRoadblockIds": [
-        "roadblock_tenant_scope",
-        "roadblock_arrears_recovery",
-        "roadblock_document_checklist"
-      ],
-      "recoveryNotes": [
-        "Do not present historic occupancy evidence as a universal entitlement."
-      ],
-      "documentationQualityNotes": [
-        "Historic text is Grade A but partial for current use."
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "journey_deceased",
-      "title": "Previous consumer deceased",
-      "scenarioId": "scenario_previous_consumer_deceased",
-      "context": "Historic successor evidence is an evidence lead; current form fields are not public.",
-      "steps": [
-        {
-          "id": "step_deceased_evidence",
-          "label": "Choose successor evidence",
-          "nodeId": "node_transfer_evidence",
-          "action": "Use the historic successor-evidence list only as a lead.",
-          "expectedResult": "Case-specific current acceptance remains necessary.",
-          "claimIds": [
-            "claim_historic_alternative_evidence"
-          ],
-          "status": "partial"
-        },
-        {
-          "id": "step_deceased_request",
-          "label": "Use documented request and tracking route",
-          "nodeId": "node_request_tracking",
-          "action": "If the authorized route permits submission, retain request ID.",
-          "expectedResult": "Tracked request, not automatic acceptance.",
-          "claimIds": [
-            "claim_standard_authenticated_route",
-            "claim_request_tracker"
-          ],
-          "status": "partial"
-        }
-      ],
-      "dependencies": [
-        {
-          "id": "dependency_deceased_conditions",
-          "fromNodeId": "node_transfer_evidence",
-          "toNodeId": "node_transfer_obligations",
-          "description": "Alternative ownership evidence does not remove historical obligations.",
-          "claimIds": [
-            "claim_historic_alternative_evidence",
-            "claim_historic_transfer_obligations"
-          ],
-          "status": "partial"
-        }
-      ],
-      "failureRoadblockIds": [
-        "roadblock_successor_evidence",
-        "roadblock_consent_deposit",
-        "roadblock_arrears_recovery",
-        "roadblock_document_checklist"
-      ],
-      "recoveryNotes": [
-        "Municipal record work may be separate; no verified rule links it to exception acceptance."
-      ],
-      "documentationQualityNotes": [
-        "No current public deceased-consumer checklist was found."
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "journey_consent",
-      "title": "Consent unavailable",
-      "scenarioId": "scenario_consent_unavailable",
-      "context": "Historic rule offers alternatives and conditions, while current authenticated requirements remain unknown.",
-      "steps": [
-        {
-          "id": "step_consent_alternative",
-          "label": "Classify evidence branch",
-          "nodeId": "node_transfer_evidence",
-          "action": "Separate ownership alternatives from scope-limited occupancy alternatives.",
-          "expectedResult": "No assumed workaround.",
-          "claimIds": [
-            "claim_historic_consent_rule",
-            "claim_historic_alternative_evidence",
-            "claim_historic_tenant_scope"
-          ],
-          "status": "partial"
-        },
-        {
-          "id": "step_consent_verify",
-          "label": "Verify current submission conditions",
-          "nodeId": "node_name_transfer",
-          "action": "Use authorized current route and do not infer NOC, deposit, or document requirements.",
-          "expectedResult": "Current case-specific answer or explicit unresolved state.",
-          "claimIds": [
-            "claim_standard_authenticated_route",
-            "claim_citizen_old_noc",
-            "claim_citizen_no_builder_noc"
-          ],
-          "status": "contested"
-        }
-      ],
-      "dependencies": [
-        {
-          "id": "dependency_consent_conditions",
-          "fromNodeId": "node_transfer_evidence",
-          "toNodeId": "node_transfer_obligations",
-          "description": "Absent consent may change historic evidence and deposit treatment.",
-          "claimIds": [
-            "claim_historic_consent_rule",
-            "claim_historic_transfer_obligations"
-          ],
-          "status": "partial"
-        }
-      ],
-      "failureRoadblockIds": [
-        "roadblock_consent_deposit",
-        "roadblock_noc_conflict",
-        "roadblock_arrears_recovery",
-        "roadblock_document_checklist"
-      ],
-      "recoveryNotes": [
-        "Do not manufacture consent or rely on historic amounts as current."
-      ],
-      "documentationQualityNotes": [
-        "The NOC evidence conflict is preserved as contested citizen evidence."
-      ],
-      "status": "partial"
-    },
     {
       "id": "journey_marriage_w_public",
       "title": "Marriage registration legal-route and Kaveri boundary",

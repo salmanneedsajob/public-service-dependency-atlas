@@ -28,7 +28,7 @@ const services: Service[] = [
   { title: 'Khata transfer / mutation', category: 'Municipal property', status: 'Mapped', href: '/khata' },
   { title: 'Trade licence', category: 'Municipal business', status: 'Partially mapped', href: '/trade-license' },
   { title: 'Building plan approval', category: 'Municipal planning', status: 'Partially mapped', href: '/building-plan' },
-  { title: 'Marriage registration', category: 'Civil record', status: 'Partially mapped', href: '/marriage' },
+  { title: 'Marriage registration', category: 'Civil record', status: 'Partially mapped', href: '/marriage-registration' },
   { title: 'LPG connection transfer', category: 'Household utility', status: 'Partially mapped', href: '/lpg' },
 ];
 

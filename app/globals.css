@@ -133,6 +133,7 @@ h1 {
 .atlas-gap-rollup ul { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .atlas-gap-rollup li { display: grid; gap: 5px; border-top: 1px solid rgba(53, 26, 18, .25); padding-top: 13px; }
 .atlas-gap-rollup li a { width: max-content; color: var(--ink); font-size: 11px; font-weight: 850; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.atlas-gap-rollup li strong { font-family: Georgia, serif; font-size: 17px; font-weight: 500; line-height: 1.3; }
 .atlas-gap-rollup li span { color: #403713; font-size: 13px; line-height: 1.45; }
 .failure-layers, .atlas-directory { padding: clamp(60px, 8vw, 108px) clamp(20px, 6vw, 92px); }
 .failure-layers { background: var(--ink); color: #fffdf7; }
@@ -227,8 +228,13 @@ h1 {
 .gap-section h2 { margin: 11px 0; font-family: Georgia, serif; font-size: clamp(38px, 5vw, 64px); font-weight: 500; line-height: .98; letter-spacing: -.05em; }
 .gap-section > div > p:last-child { max-width: 420px; margin: 0; color: #56491c; font-size: 14px; line-height: 1.55; }
 .gap-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: gap; }
-.gap-list li { counter-increment: gap; position: relative; border-top: 1px solid rgba(53, 26, 18, .25); padding: 13px 0 0 34px; color: #403713; font-size: 14px; line-height: 1.45; }
+.gap-list li { counter-increment: gap; position: relative; display: grid; gap: 5px; border-top: 1px solid rgba(53, 26, 18, .25); padding: 13px 0 0 34px; color: #403713; font-size: 14px; line-height: 1.45; }
 .gap-list li::before { content: counter(gap, decimal-leading-zero); position: absolute; left: 0; top: 14px; color: #776421; font-size: 9px; font-weight: 850; letter-spacing: .08em; }
+.gap-list li strong { font-family: Georgia, serif; font-size: 18px; font-weight: 500; line-height: 1.3; }
+.gap-list li span { color: #5f5222; font-size: 13px; }
+.gap-more { grid-column: 2; }
+.gap-more > summary { width: max-content; cursor: pointer; border-bottom: 2px solid currentColor; padding: 8px 0; font-size: 12px; font-weight: 850; }
+.gap-more[open] > summary { margin-bottom: 16px; }
 
 .section { padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 72px); }
 .section-heading { margin-bottom: 42px; }
@@ -608,6 +614,7 @@ h1 {
   .hero-aside .fixture-flag { grid-column: 1 / -1; margin: 0; }
   .hero-aside > p { margin: 0; }
   .gap-section, .atlas-gap-rollup { grid-template-columns: 1fr; }
+  .gap-more { grid-column: 1; }
   .blocker-callout { grid-template-columns: 1fr; }
   .scenario-grid { grid-template-columns: repeat(2, 1fr); }
   .detail-columns { grid-template-columns: 1fr; }

@@ -49,7 +49,8 @@ export default function AtlasHome() {
   const headlineGaps = serviceGaps
     .filter((item) => item.gaps.length)
     .map((item) => ({ service: item.service, gap: item.gaps[0] }))
-    .sort((a, b) => a.gap.priority - b.gap.priority || a.service.title.localeCompare(b.service.title));
+    .sort((a, b) => a.gap.priority - b.gap.priority || a.service.title.localeCompare(b.service.title))
+    .slice(0, 5);
 
   return (
     <main className="atlas-page">
@@ -75,12 +76,12 @@ export default function AtlasHome() {
         <div>
           <p className="step-label">The headline finding</p>
           <p className="atlas-gap-count">{undocumentedStepCount}</p>
-          <h2 id="atlas-gap-heading">documented questions are still missing from these public journeys.</h2>
+          <h2 id="atlas-gap-heading">public-service gaps still have no published explanation.</h2>
         </div>
         <div>
-          <p>Each question below is generated from an Unknown record or a missing check, failure, or recovery step in the dated service ledgers. It is a gap in what is publicly documented, not a guess about what will happen to a particular application.</p>
+          <p>Each item below comes from an Unknown handoff or a roadblock whose cause or recovery is not established. Empty fields, verified records, and internal research artifacts are not counted.</p>
           <ul>
-            {headlineGaps.map(({ service, gap }) => <li key={`${service.href}:${gap.id}`}><Link href={service.href}>{service.title}</Link><span>{gap.question}</span></li>)}
+            {headlineGaps.map(({ service, gap }) => <li key={`${service.href}:${gap.id}`}><Link href={service.href}>{service.title}</Link><strong>{gap.situation}</strong><span>{gap.missing}</span></li>)}
           </ul>
         </div>
       </section>
@@ -123,7 +124,7 @@ export default function AtlasHome() {
             const firstGap = gaps[0];
             const cardCopy = service.status === 'Mapped'
               ? `Published route with ${gaps.length} documented gaps kept visible.`
-              : `${gaps.length} documented gaps, including: ${firstGap?.question ?? 'the remaining public record has not been fully mapped.'}`;
+              : `${gaps.length} documented gaps, including: ${firstGap?.situation ?? 'the remaining public record has not been fully mapped.'}`;
             return <a className="service-card mapped-service" href={service.href} key={service.title}><span className="service-category">{service.category}</span><div className={`service-status service-${service.status.toLowerCase().replaceAll(' ', '-')}`}>{service.status}</div><h3>{service.title}</h3><p>{cardCopy}</p><span className="service-cta">Open this entry →</span></a>;
           })}
         </div>

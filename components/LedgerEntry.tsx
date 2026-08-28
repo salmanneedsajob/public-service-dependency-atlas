@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import type { Detail, EvidenceGrade, Ledger, RecordStatus } from '@/lib/ledger-types';
-import { collectUndocumentedQuestions } from '@/lib/undocumented';
+import { collectUndocumentedQuestions, publicNodeLabel } from '@/lib/undocumented';
 
 const statusCopy: Record<RecordStatus, string> = {
   verified: 'Supported by evidence at the stated grade',
@@ -220,13 +220,15 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
   const entryName = entryNames[service] ?? 'public-service journey';
   const isBescom = service === 'bescom';
   const gaps = collectUndocumentedQuestions(ledger);
+  const topGaps = gaps.slice(0, 5);
+  const remainingGaps = gaps.slice(5);
   const statusRank: Record<RecordStatus, number> = { verified: 0, partial: 1, contested: 2, unknown: 3 };
   const worstPathNode = selectedPathNodes.reduce<Ledger['nodes'][number] | undefined>(
     (worst, node) => !worst || statusRank[node.status] > statusRank[worst.status] ? node : worst,
     undefined,
   );
   const verdict = worstPathNode && worstPathNode.status !== 'verified'
-    ? `The clearest documented gap on this route is ${worstPathNode.label}: it is marked ${worstPathNode.status}. That is where this journey can stall.`
+    ? `The clearest documented gap on this route is ${publicNodeLabel(worstPathNode.label)}: it is marked ${worstPathNode.status}. That is where this journey can stall.`
     : 'The records on this route are supported by the evidence held. Check the sources below for limits and case-specific requirements.';
   const recordType = selectedNode?.kind ? selectedNode.kind.toLowerCase().replaceAll('_', ' ') : 'record';
   const ownerName = agency?.shortName ?? 'an agency not named in the evidence held';
@@ -271,11 +273,19 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
         <div>
           <p className="step-label">The atlas’s central finding</p>
           <h2 id="gap-heading">What nobody has documented</h2>
-          <p>These are not assumptions or missing form fields. They are questions the published evidence for this service does not answer.</p>
+          <p>These are the Unknown handoffs and unresolved roadblocks that can leave a citizen stuck. Routine empty fields and research artifacts are not counted.</p>
         </div>
         <ol className="gap-list">
-          {gaps.map((gap) => <li key={gap.id}>{gap.question}</li>)}
+          {topGaps.map((gap) => <li key={gap.id}><strong>{gap.situation}</strong><span>{gap.missing}</span></li>)}
         </ol>
+        {remainingGaps.length > 0 && (
+          <details className="gap-more">
+            <summary>Show all {gaps.length} gaps</summary>
+            <ol className="gap-list" style={{ counterReset: `gap ${topGaps.length}` }}>
+              {remainingGaps.map((gap) => <li key={gap.id}><strong>{gap.situation}</strong><span>{gap.missing}</span></li>)}
+            </ol>
+          </details>
+        )}
       </section>
 
       <section className="reading-key" aria-label="How to read this map">
@@ -339,7 +349,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
 
         {worstPathNode && worstPathNode.status !== 'verified' && (
           <aside className={`blocker-callout status-border-${worstPathNode.status}`}>
-            <div><p className="eyebrow">The first place to investigate</p><h3>{worstPathNode.label}</h3></div>
+            <div><p className="eyebrow">The first place to investigate</p><h3>{publicNodeLabel(worstPathNode.label)}</h3></div>
             <p>{worstPathNode.summary} This record is marked <StatusBadge status={worstPathNode.status} compact />.</p>
           </aside>
         )}
@@ -361,7 +371,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
                     <span>{String(index + 1).padStart(2, '0')}</span>
                     <StatusBadge status={node.status} compact />
                   </span>
-                  <strong>{node.label}</strong>
+                  <strong>{publicNodeLabel(node.label)}</strong>
                   <small>{node.kind}</small>
                 </button>
                 {nextNode && (
@@ -400,9 +410,9 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
                     <StatusBadge status={edge.status} compact />
                   </div>
                   <div className="relationship-nodes">
-                    <b>{fromNode?.label ?? edge.fromNodeId}</b>
+                    <b>{fromNode ? publicNodeLabel(fromNode.label) : edge.fromNodeId}</b>
                     <span aria-hidden="true">→</span>
-                    <b>{toNode?.label ?? edge.toNodeId}</b>
+                    <b>{toNode ? publicNodeLabel(toNode.label) : edge.toNodeId}</b>
                   </div>
                   <p>{edge.label}</p>
                   {undocumentedEdge && <small className="edge-evidence-note">{onlyCitizenEvidence ? 'Reported by citizens; not officially documented.' : 'Not officially documented in the evidence held.'}</small>}
@@ -421,8 +431,8 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
           <article className="node-detail" aria-live="polite">
             <header className="node-detail-header">
               <div>
-                <p className="eyebrow">You’re looking at: {selectedNode.label} — a {recordType} held by {ownerName}</p>
-                <h3>{selectedNode.label}</h3>
+                <p className="eyebrow">You’re looking at: {publicNodeLabel(selectedNode.label)} — a {recordType} held by {ownerName}</p>
+                <h3>{publicNodeLabel(selectedNode.label)}</h3>
                 <p>{selectedNode.summary}</p>
               </div>
               <div className="owner-card">
@@ -483,7 +493,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
                 <li key={step.id}>
                   <span className="journey-number">{String(index + 1).padStart(2, '0')}</span>
                   <div>
-                    <span className="journey-node">{node?.label ?? 'Unknown node'}</span>
+                    <span className="journey-node">{node ? publicNodeLabel(node.label) : 'Unknown record'}</span>
                     <h3>{step.label}</h3>
                     <p>{step.action}</p>
                     <div className="expected-result"><span>Expected result</span>{step.expectedResult}</div>
@@ -503,7 +513,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
                   return (
                     <div key={dependency.id}>
                       <div>
-                        <b>{fromNode?.label ?? dependency.fromNodeId} → {toNode?.label ?? dependency.toNodeId}</b>
+                        <b>{fromNode ? publicNodeLabel(fromNode.label) : dependency.fromNodeId} → {toNode ? publicNodeLabel(toNode.label) : dependency.toNodeId}</b>
                         <StatusBadge status={dependency.status} compact />
                       </div>
                       <p>{dependency.description}</p>

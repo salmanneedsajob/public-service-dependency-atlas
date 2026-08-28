@@ -1,40 +1,50 @@
-# Why is my BESCOM transfer blocked?
+# Public Service Dependency Atlas
 
-A static, single-page renderer for BESCOM transfer evidence ledgers using schema v1.0.0. The interface is driven entirely by ledger data: scenarios select dependency paths; nodes expose checks, failure signals, and recoveries; claims resolve to evidence grades and sources; roadblocks and journeys are rendered without hard-coded case logic.
+A Bengaluru-first, evidence-led atlas of the dependencies between public services. Government services are digitized as separate departments, while citizens experience connected life events. When the links are undocumented, the citizen becomes the integration layer; this project makes those links, and the gaps around them, legible.
 
-The default data file is `ledger/research.json`: the audited, dated BESCOM micro-study. It is independent research rather than official advice, and its claim-level grades, source dates, Unknown states, and contradictions must remain visible.
+Each entry is a static route rendered entirely from its own JSON evidence ledger. It shows published documentation alongside reported roadblocks, source dates, evidence grades, explicit Unknowns, contradictions, and stated audit limitations. It is independent research, never official guidance.
 
-`ledger/demo.synthetic.json` remains a deliberately rich test fixture. It exists to exercise every interface state, not to make claims about BESCOM, and must not be published as guidance.
+## Method
 
-## Run locally
+The ledger schema is the data contract: [`ledger/schema.json`](ledger/schema.json). The research protocol is [`ledger/AGENT_PROTOCOL.md`](ledger/AGENT_PROTOCOL.md).
+
+For each service, the project uses three evidence-collection passes:
+
+- official sources and public forms/portals;
+- unauthenticated public-workflow observation;
+- redacted first-person citizen evidence.
+
+A separate audit pass checks atomicity, citations, dates, grades, references, contradictions, and unknowns. Each service has one audit; remaining findings are preserved as visible stated limitations rather than silently edited away. A dependency edge may be officially documented, partially evidenced, or reported by citizens but undocumented; it is only removed when no evidence supports it.
+
+## Map a service
+
+1. Start with a bounded Bengaluru journey and its real-life trigger.
+2. Add only sourced, dated claims to a service ledger; use `Unknown` where the public record stops.
+3. Keep incompatible accounts as cross-linked contradictions rather than choosing a winner.
+4. Run the schema checks and one independent audit.
+5. Publish the route as Mapped or Partially mapped, with its documentation shelf and limitations visible.
+
+Do not submit applications, authenticate to government systems, collect personal data, or imply that a public form completes an end-to-end journey.
+
+## Develop and verify
 
 ```sh
 npm install
 npm run dev
-```
-
-## Choose a ledger
-
-JSON is canonical. Set `LEDGER_PATH` to any JSON, YAML, or YML document that satisfies `ledger/schema.json`; the prepare step validates and compiles it to the exact JSON shape used by the browser.
-
-```sh
-LEDGER_PATH=ledger/example.json npm run dev
-LEDGER_PATH=/absolute/path/to/research-ledger.yaml npm run build
-```
-
-Swapping the ledger requires no renderer change. Invalid documents fail before the site starts or builds.
-
-## Verify and deploy
-
-```sh
 npm test
 npm run lint
 npm run typecheck
 npm run build
 ```
 
-`npm run build` produces the Cloudflare Worker-compatible `dist` artifact consumed by the one-step Sites publishing workflow. The repository contains no backend, account system, live submissions, or private API calls.
+`npm test` validates the synthetic fixture and research ledger and checks every external citation in published ledger files. `npm run prepare:ledger` validates every service ledger and generates the browser-readable files in `public/data`.
 
-For a connected Cloudflare account, `npm run deploy` performs the build and Worker deployment in one command. It is intentionally not run by the test suite.
+## Deploy
 
-Set `NEXT_PUBLIC_SITE_ORIGIN` to the trusted production origin during a hosted build so social-preview metadata resolves `public/og.png` to the deployed site. Local builds intentionally use `http://localhost:3000`.
+The project is deployed as the standalone Vercel project `bescom-atlas`:
+
+```sh
+npm run deploy
+```
+
+The deployed atlas is [bescom-atlas.vercel.app](https://bescom-atlas.vercel.app). Verify routes anonymously with `curl` after deployment. No backend, account system, live submission, or private API is part of this repository.

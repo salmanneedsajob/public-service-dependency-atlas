@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 type Survey = {
   outcome: string;
@@ -25,10 +26,10 @@ const services: Service[] = [
   { title: 'New electricity connection', category: 'Electricity utility', status: 'Partially mapped', href: '/new-electricity' },
   { title: 'Property tax name transfer', category: 'Municipal property', status: 'Partially mapped', href: '/property-tax' },
   { title: 'Khata transfer / mutation', category: 'Municipal property', status: 'Mapped', href: '/khata' },
-  { title: 'Trade licence', category: 'Municipal business', status: 'Unmapped' },
-  { title: 'Building plan approval', category: 'Municipal planning', status: 'Unmapped' },
-  { title: 'Marriage registration', category: 'Civil record', status: 'Unmapped' },
-  { title: 'LPG connection transfer', category: 'Household utility', status: 'Unmapped' },
+  { title: 'Trade licence', category: 'Municipal business', status: 'Partially mapped', href: '/trade-license' },
+  { title: 'Building plan approval', category: 'Municipal planning', status: 'Partially mapped', href: '/building-plan' },
+  { title: 'Marriage registration', category: 'Civil record', status: 'Partially mapped', href: '/marriage' },
+  { title: 'LPG connection transfer', category: 'Household utility', status: 'Partially mapped', href: '/lpg' },
 ];
 
 export const metadata: Metadata = {
@@ -54,6 +55,19 @@ export default function AtlasHome() {
         <p className="atlas-lede">A change in your life should not become a scavenger hunt across government websites. But when you buy, inherit, rent, build, or register something, the service you need often depends on records held somewhere else.</p>
         <p className="atlas-thesis">Government services are digitized as separate departments, but citizens live connected events. When the links between systems are undocumented, the citizen becomes the integration layer. This atlas documents those links.</p>
         <a className="primary-link" href="#directory">Explore the directory <span>↓</span></a>
+      </section>
+
+      <section className="failure-layers synthesis" aria-labelledby="synthesis-heading">
+        <div className="section-heading">
+          <p className="step-label">Cross-service synthesis</p>
+          <h2 id="synthesis-heading">The recurring handoffs</h2>
+        </div>
+        <div className="layer-grid">
+          <article><span>01</span><h3>Property identity</h3><p><Link href="/khata">Khata and property-record changes</Link> surface the record that later utility and tax journeys can depend on. The entries distinguish published requirements from reported handoffs.</p></article>
+          <article><span>02</span><h3>Proof moves, records do not</h3><p>Across <Link href="/property-tax">property tax</Link>, <Link href="/water-account">water</Link>, and <Link href="/bescom">electricity</Link>, a citizen is repeatedly asked to carry evidence between separate records.</p></article>
+          <article><span>03</span><h3>A visible form is not a complete path</h3><p>Published forms and portals exist for services such as <Link href="/lpg">LPG</Link> and <Link href="/trade-license">trade licences</Link>; their case-specific routing, decisions, and recovery paths often remain partial or unknown.</p></article>
+        </div>
+        <p className="atlas-thesis">The pattern is a finding, not an assumption: individual ledgers retain the source, access date, grade, and status behind each statement. Where the sources stop, the atlas says so.</p>
       </section>
 
       <section className="failure-layers" aria-labelledby="layers-heading">
@@ -91,7 +105,7 @@ export default function AtlasHome() {
         </div>
         <div>
           <p>Every unmapped card is a bounded public-research task. Use the common ledger schema and agent protocol to record evidence, uncertainty, contradictions, dates, and sources without turning a gap into a guess.</p>
-          <div className="contribution-links"><a href="/data/ledger-schema-v1.0.0.json">Ledger schema v1.0.0 ↗</a><a href="/data/AGENT_PROTOCOL.md">Agent protocol ↗</a></div>
+          <div className="contribution-links"><a href="https://github.com/salmanneedsajob/public-service-dependency-atlas/blob/main/ledger/schema.json" target="_blank" rel="noreferrer">Ledger schema v1.0.0 ↗</a><a href="https://github.com/salmanneedsajob/public-service-dependency-atlas/blob/main/ledger/AGENT_PROTOCOL.md" target="_blank" rel="noreferrer">Agent protocol ↗</a><a href="https://github.com/salmanneedsajob/public-service-dependency-atlas" target="_blank" rel="noreferrer">Open-source atlas ↗</a></div>
         </div>
       </section>
 

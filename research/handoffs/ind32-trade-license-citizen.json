@@ -1,0 +1,44 @@
+{
+  "_handoff": {
+    "issue": "IND-32",
+    "generatedAt": "2026-08-28",
+    "status": "in_review",
+    "scope": "Citizen-evidence pass for Bengaluru municipal trade-licence new and renewal routes. Searches did not identify a sufficiently specific, public first-person application account that could be retained without promoting consultant marketing, anonymous allegations, or non-citizen reporting to evidence. No personal data was collected."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [],
+  "claims": [
+    {
+      "id": "claim_ind32_trade_citizen_evidence_gap",
+      "text": "No usable public first-person account was identified in this pass that establishes a Bengaluru municipal trade-licence application, renewal, inspection, payment, or issue outcome.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_trade_new", "scenario_trade_renewal"],
+      "nodeIds": ["node_trade_public_entry", "node_trade_documents", "node_trade_payment", "node_trade_inspection", "node_trade_issue"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Only public, first-person evidence was in scope. Consultant pages, generic forum assertions and reporting without a usable first-person account were excluded."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind32_trade_citizen_evidence_gap",
+      "title": "No retained citizen application account",
+      "category": "documentation",
+      "symptom": "Citizen evidence does not currently substantiate a lived trade-licence route or failure mode.",
+      "likelyCause": "Unknown; absence from this pass is not evidence that the public workflow is easy, difficult, available, or unavailable.",
+      "recovery": "Use the official and public-workflow handoffs for verified process leads; add a redacted, attributable first-person account only if one is later found.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_trade_public_entry", "node_trade_documents", "node_trade_payment", "node_trade_inspection", "node_trade_issue"],
+      "scenarioIds": ["scenario_trade_new", "scenario_trade_renewal"],
+      "claimIds": ["claim_ind32_trade_citizen_evidence_gap"],
+      "status": "unknown"
+    }
+  ],
+  "journeys": []
+}

@@ -1,10 +1,13 @@
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 
 const execFileAsync = promisify(execFile);
 
-const files = ['app/page.tsx', 'ledger/research.json'];
+const ledgerFiles = (await readdir('ledger'))
+  .filter((file) => file.endsWith('.json') && !['schema.json', 'example.json', 'demo.synthetic.json'].includes(file))
+  .map((file) => `ledger/${file}`);
+const files = ['app/page.tsx', ...ledgerFiles];
 const text = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n');
 const urls = [...new Set(text.match(/https?:\/\/[^"'\s,)]+/g) ?? [])]
   .filter((url) => !url.includes('example.') && !url.includes('buildwhatmovesindia.example'));

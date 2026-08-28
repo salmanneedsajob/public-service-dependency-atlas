@@ -245,6 +245,15 @@ export default function LedgerEntry({ service }: { service: string }) {
   );
   const datasetNotice = datasetCopy[ledger.meta.dataKind];
   const officialSources = ledger.sources.filter((source) => source.type !== 'citizen_evidence');
+  const entryNames: Record<string, string> = {
+    bescom: 'BESCOM transfer', khata: 'khata transfer', 'property-tax': 'property-tax transfer',
+    'water-connection': 'water / sewer connection', 'birth-certificate': 'birth certificate',
+    'water-account': 'water-account transfer', 'new-electricity': 'new electricity connection',
+    'death-certificate': 'death certificate', lpg: 'LPG connection transfer', marriage: 'marriage registration',
+    'trade-license': 'trade licence', 'building-plan': 'building plan approval',
+  };
+  const entryName = entryNames[service] ?? 'public-service journey';
+  const isBescom = service === 'bescom';
 
   function selectScenario(id: string) {
     const scenario = ledger!.scenarios.find((item) => item.id === id);
@@ -269,10 +278,10 @@ export default function LedgerEntry({ service }: { service: string }) {
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="eyebrow">Bengaluru · Evidence-led pathfinder</p>
-          <h1>Why is my BESCOM transfer blocked?</h1>
+          <h1>{isBescom ? 'Why is my BESCOM transfer blocked?' : `Map: ${entryName}`}</h1>
           <p className="ledger-subtitle">{ledger.meta.title}</p>
-          <p className="lede">A fully mapped atlas entry for the BESCOM electricity name-transfer journey: follow the evidence, dependencies, roadblocks, and honest gaps.</p>
-          <p className="term-glossary"><b>Key terms:</b> EPID (Electronic Property Identification number) · e-Khata (Bengaluru’s digital property record) · mutation (the municipal update that records a property transfer) · NOC (No Objection Certificate)</p>
+          <p className="lede">{isBescom ? 'A fully mapped atlas entry for the BESCOM electricity name-transfer journey: follow the evidence, dependencies, roadblocks, and honest gaps.' : `A partially mapped entry for the ${entryName} journey: follow published evidence, reported dependencies, roadblocks, and explicit unknowns.`}</p>
+          {isBescom && <p className="term-glossary"><b>Key terms:</b> EPID (Electronic Property Identification number) · e-Khata (Bengaluru’s digital property record) · mutation (the municipal update that records a property transfer) · NOC (No Objection Certificate)</p>}
           <a className="primary-link" href="#scenarios">Find my path <span>↓</span></a>
         </div>
         <aside className="hero-aside" aria-label="Dataset notice">

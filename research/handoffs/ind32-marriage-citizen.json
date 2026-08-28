@@ -1,0 +1,107 @@
+{
+  "_handoff": {
+    "issue": "IND-32",
+    "generatedAt": "2026-08-28",
+    "status": "in_review",
+    "scope": "Public first-person accounts about Karnataka Kaveri marriage registration used from Bengaluru only. They expose possible portal and review friction; they are not statutory eligibility, current SRO policy, document requirements, fees, or service-level commitments. Names, usernames, relationship details, addresses, application identifiers, contact information, and other personal data are intentionally omitted."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind32_marriage_citizen_kaveri_success_and_objections",
+      "title": "Marriage Certificate at Kaveri Portal - My Experience",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1m3ygld/marriage_certificate_at_kaveri_portal_my/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2025-07-19",
+      "type": "citizen_evidence",
+      "notes": "The post and comments contain several first-person Kaveri experiences, including a reported digitally signed certificate, objections, repeated e-sign/OTP activity and a payment-status anomaly. Each is anecdotal; no stated format, payment, route, timing or SRO practice is retained as a general requirement."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind32_marriage_citizen_online_success",
+      "text": "One citizen reported receiving a digitally signed marriage certificate through the Kaveri portal without describing an in-person visit.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_marriage_hindu", "scenario_marriage_special_registration"],
+      "nodeIds": ["node_marriage_kaveri", "node_marriage_sro_certificate"],
+      "sourceIds": ["source_ind32_marriage_citizen_kaveri_success_and_objections"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": ["claim_ind32_marriage_citizen_objection_reset"],
+      "notes": "One reported success. It does not establish eligibility, legal route, online availability for every SRO, or a completion time."
+    },
+    {
+      "id": "claim_ind32_marriage_citizen_objection_reset",
+      "text": "One citizen reported that an objection after submission required the couple and witnesses to repeat Aadhaar-based verification and e-sign steps.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_marriage_hindu", "scenario_marriage_special_registration"],
+      "nodeIds": ["node_marriage_kaveri", "node_marriage_sro_certificate"],
+      "sourceIds": ["source_ind32_marriage_citizen_kaveri_success_and_objections"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": ["claim_ind32_marriage_citizen_online_success"],
+      "notes": "A single report of a post-objection workflow outcome. It does not prove that all objections reset verification or identify the cause of an objection."
+    },
+    {
+      "id": "claim_ind32_marriage_citizen_payment_status_mismatch",
+      "text": "A commenter reported receiving a failed-payment acknowledgement but later receiving an SMS that the marriage certificate was ready.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_marriage_hindu", "scenario_marriage_special_registration"],
+      "nodeIds": ["node_marriage_kaveri", "node_marriage_sro_certificate"],
+      "sourceIds": ["source_ind32_marriage_citizen_kaveri_success_and_objections"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One reported interface/status discrepancy, not proof that a payment failed, that a certificate was valid, or that waiting resolves another case."
+    },
+    {
+      "id": "claim_ind32_marriage_citizen_current_sro_route_unknown",
+      "text": "The citizen accounts do not establish which legal route, SRO, document set, verification sequence, payment amount, or certificate outcome applies to a particular marriage-registration case.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_marriage_hindu", "scenario_marriage_special_solemnization", "scenario_marriage_special_registration"],
+      "nodeIds": ["node_marriage_route", "node_marriage_kaveri", "node_marriage_sro_certificate"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No login, OTP, form, upload, payment, appointment or submission was attempted."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind32_marriage_citizen_post_objection_repeat",
+      "title": "Reported objection may require repeated participation",
+      "category": "verification",
+      "symptom": "A citizen reports having to repeat verification and e-sign activity after an objection.",
+      "likelyCause": "Unknown; the account does not verify the objection reason or whether the reset is universal.",
+      "recovery": "Treat this as a coordination risk only: obtain the authorised case-specific objection reason and follow the portal/SRO's current instructions rather than relying on anecdotal steps.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_marriage_kaveri", "node_marriage_sro_certificate"],
+      "scenarioIds": ["scenario_marriage_hindu", "scenario_marriage_special_registration"],
+      "claimIds": ["claim_ind32_marriage_citizen_objection_reset", "claim_ind32_marriage_citizen_current_sro_route_unknown"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_marriage_citizen_status_ambiguity",
+      "title": "Reported portal payment/status ambiguity",
+      "category": "infrastructure",
+      "symptom": "A commenter describes a payment acknowledgement that appeared unsuccessful followed by a readiness message.",
+      "likelyCause": "Unknown; no transaction or case state was independently inspected.",
+      "recovery": "Keep authorised transaction and case references, and use the current official portal or SRO support route to reconcile a real discrepancy. Do not repeat a payment solely on this anecdote.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_marriage_kaveri", "node_marriage_sro_certificate"],
+      "scenarioIds": ["scenario_marriage_hindu", "scenario_marriage_special_registration"],
+      "claimIds": ["claim_ind32_marriage_citizen_payment_status_mismatch", "claim_ind32_marriage_citizen_current_sro_route_unknown"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

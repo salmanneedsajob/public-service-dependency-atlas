@@ -1,0 +1,91 @@
+{
+  "_handoff": {
+    "issue": "IND-32",
+    "generatedAt": "2026-08-28",
+    "status": "in_review",
+    "scope": "Public first-person accounts about moving or transferring an LPG connection in Bengaluru only. They identify possible channel and paperwork friction; they are not current OMC policy, proof requirements, fees, or delivery commitments. Names, usernames, exact addresses, consumer numbers, contact information, and other personal data are intentionally omitted."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind32_lpg_citizen_intra_city_online_transfer",
+      "title": "Transfer My Indane Gas Connection Online Within City",
+      "publisher": "Society views (personal blog)",
+      "url": "https://transferindanegas.blogspot.com/2016/08/transfer-my-indane-gas-connection.html",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2016-08-13",
+      "type": "citizen_evidence",
+      "notes": "A first-person account describes an intra-city Bengaluru Indane distributor transfer completed online. It is old, carrier-specific, and does not establish any current portal, document, equipment, charge, subsidy, or service-area rule."
+    },
+    {
+      "id": "source_ind32_lpg_citizen_bharatgas_move_friction",
+      "title": "BharatGas (BPCL) – Is someone listening?",
+      "publisher": "Leaders Worth Following (personal blog)",
+      "url": "https://rmukeshgupta.com/bharatgas-bpcl-is-someone-listening/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2011-04-19",
+      "type": "citizen_evidence",
+      "notes": "A first-person account of moving within Bengaluru calls the transfer experience difficult and describes an in-person franchisee interaction. It is retained only as a historical friction report, not as present BPCL procedure."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind32_lpg_citizen_intra_city_online_success",
+      "text": "One citizen reported completing an online Indane transfer between distributors after moving within Bengaluru.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_lpg_same_town"],
+      "nodeIds": ["node_lpg_route", "node_lpg_old_distributor", "node_lpg_new_distributor", "node_lpg_record_update"],
+      "sourceIds": ["source_ind32_lpg_citizen_intra_city_online_transfer"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single 2016 account. It does not show that the channel still exists, that another OMC uses it, or that any current transfer can complete online."
+    },
+    {
+      "id": "claim_ind32_lpg_citizen_move_friction",
+      "text": "One citizen moving within Bengaluru reported that changing a Bharatgas connection was a difficult experience involving the franchisee.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_lpg_same_area", "scenario_lpg_same_town"],
+      "nodeIds": ["node_lpg_route", "node_lpg_old_distributor"],
+      "sourceIds": ["source_ind32_lpg_citizen_bharatgas_move_friction"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": ["claim_ind32_lpg_citizen_intra_city_online_success"],
+      "notes": "A single 2011 report of friction. It conflicts with the reported online success only as to lived experience, not as to a universal rule or current service level."
+    },
+    {
+      "id": "claim_ind32_lpg_citizen_current_route_unknown",
+      "text": "The citizen accounts do not establish the current OMC-specific transfer route, service-area determination, accepted proof variants, charge, timing, or delivery result for a Bengaluru connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_lpg_same_area", "scenario_lpg_same_town", "scenario_lpg_family_or_death"],
+      "nodeIds": ["node_lpg_route", "node_lpg_address_proof", "node_lpg_document_check", "node_lpg_record_update"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The available accounts are historical and case-specific; no login, transfer, lookup, payment, or personal data was used in this pass."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind32_lpg_citizen_channel_variation",
+      "title": "Reported transfer channel varies by case",
+      "category": "process",
+      "symptom": "One historical account reports an online intra-city transfer, while another reports a difficult franchisee interaction.",
+      "likelyCause": "Unknown; the accounts differ by OMC, date, distributor and possibly service-area facts.",
+      "recovery": "Use the reports only to confirm the assigned OMC/distributor's current authorised route before relying on a channel or historical experience.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_lpg_route", "node_lpg_old_distributor", "node_lpg_new_distributor"],
+      "scenarioIds": ["scenario_lpg_same_area", "scenario_lpg_same_town"],
+      "claimIds": ["claim_ind32_lpg_citizen_intra_city_online_success", "claim_ind32_lpg_citizen_move_friction", "claim_ind32_lpg_citizen_current_route_unknown"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

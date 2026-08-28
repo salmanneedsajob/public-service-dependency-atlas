@@ -1,0 +1,103 @@
+{
+  "_handoff": {
+    "issue": "IND-32",
+    "generatedAt": "2026-08-28",
+    "status": "in_review",
+    "scope": "Public first-person accounts about Bengaluru/BBMP building-plan approval only. They expose possible uncertainty and delay; they are not current zoning rules, approval criteria, professional requirements, fees, or a basis to pay an unofficial intermediary. Names, usernames, plot details, addresses, application identifiers, contact information, and other personal data are intentionally omitted."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind32_building_citizen_stuck_gplus2",
+      "title": "Has BBMP slowed down or stopped building plan approvals?",
+      "publisher": "r/indianrealestate (Reddit)",
+      "url": "https://www.reddit.com/r/indianrealestate/comments/1m4jpy9/has_bbmp_slowed_down_or_stopped_building_plan/",
+      "accessedAt": "2026-08-28",
+      "type": "citizen_evidence",
+      "notes": "A citizen reports having applied for a small residential plan and perceiving the approval as stuck. The post does not establish the application date, jurisdiction, completeness, scrutiny state, cause, or current BBMP approval volume."
+    },
+    {
+      "id": "source_ind32_building_citizen_road_classification_dispute",
+      "title": "Asked to pay bribe for construction permission...Again! :D",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1u9rvhp/asked_to_pay_bribe_for_construction/",
+      "accessedAt": "2026-08-28",
+      "publishedAt": "2026-06-19",
+      "type": "citizen_evidence",
+      "notes": "A citizen constructing a commercial building reports being told that treatment of a nearby road could affect the apparent proposal and reports an unofficial payment demand. The account is unverified and does not establish any road-classification rule, permission entitlement, official fee, or misconduct finding."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind32_building_citizen_approval_reported_stuck",
+      "text": "One citizen reported that a residential building-plan application appeared stuck after submission.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_building_suvarna", "scenario_building_general"],
+      "nodeIds": ["node_building_public_entry", "node_building_scrutiny"],
+      "sourceIds": ["source_ind32_building_citizen_stuck_gplus2"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One applicant's reported status, not proof of a systemwide slowdown, a statutory delay, or the cause of the case state."
+    },
+    {
+      "id": "claim_ind32_building_citizen_road_classification_uncertainty",
+      "text": "One citizen reported being told that how a road adjacent to a commercial proposal was treated could affect the apparent floor and parking options, alongside an alleged unofficial payment demand.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_building_suvarna", "scenario_building_general"],
+      "nodeIds": ["node_building_jurisdiction", "node_building_professional", "node_building_scrutiny", "node_building_fee"],
+      "sourceIds": ["source_ind32_building_citizen_road_classification_dispute"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single unverified account. It is not evidence of a rule, entitlement, approved design, official charge, or misconduct determination."
+    },
+    {
+      "id": "claim_ind32_building_citizen_current_outcome_unknown",
+      "text": "The citizen accounts do not establish the competent authority, applicable rules, required professional, document set, scrutiny outcome, fee, inspection, licence, or timeline for a particular Bengaluru building-plan case.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_building_suvarna", "scenario_building_general", "scenario_building_manual_sakala"],
+      "nodeIds": ["node_building_jurisdiction", "node_building_documents", "node_building_scrutiny", "node_building_inspection", "node_building_fee", "node_building_license"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No application, upload, payment, inspection request, or case lookup was performed."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind32_building_citizen_unexplained_pending",
+      "title": "Reported plan application appears pending without a verified cause",
+      "category": "process",
+      "symptom": "A citizen reports a submitted residential plan appearing stuck.",
+      "likelyCause": "Unknown; the account cannot distinguish jurisdiction, completeness, scrutiny, objection, workflow, or case-specific conditions.",
+      "recovery": "Obtain an authorised case-specific status and written reason through the relevant authority's current route. Do not infer a general approval halt from this account.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_building_public_entry", "node_building_scrutiny"],
+      "scenarioIds": ["scenario_building_suvarna", "scenario_building_general"],
+      "claimIds": ["claim_ind32_building_citizen_approval_reported_stuck", "claim_ind32_building_citizen_current_outcome_unknown"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind32_building_citizen_design_classification_dispute",
+      "title": "Reported uncertainty about proposal treatment and road classification",
+      "category": "routing",
+      "symptom": "A citizen reports conflicting practical expectations around road treatment, floor count and parking for a commercial proposal.",
+      "likelyCause": "Unknown; the report does not validate road status, applicable rules, proposal details, authority or advice received.",
+      "recovery": "Seek written, authorised clarification from the competent planning authority or a properly qualified professional. Do not use or pay an unofficial route based on this account.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_building_jurisdiction", "node_building_professional", "node_building_scrutiny", "node_building_fee"],
+      "scenarioIds": ["scenario_building_suvarna", "scenario_building_general"],
+      "claimIds": ["claim_ind32_building_citizen_road_classification_uncertainty", "claim_ind32_building_citizen_current_outcome_unknown"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

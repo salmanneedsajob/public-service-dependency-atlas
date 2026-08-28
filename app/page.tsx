@@ -47,11 +47,9 @@ export default function AtlasHome() {
           <p className="step-label">Working register · opened {registerOpenedOn}</p>
           <h2 id="atlas-gap-heading">The documentation-debt register</h2>
           <p className="register-tally">{register.length} so far, from {atlasServices.length} services in one city — a lower bound, from desk research against public sources.</p>
+          <p className="landing-register-note">A gap here means we found no published procedure. If one exists, point us to it and the gap closes.</p>
         </div>
         <div>
-          <p>This is a day-zero public register of documentation debt. Under Section 4(1)(b) of the RTI Act 2005, public authorities are already expected to proactively publish their procedures.</p>
-          <p className="falsifiability-line">A gap means our research found no published procedure. If one of these is documented somewhere public, show us — we verify and close it. Closure is the system working.</p>
-          <p>A gap closes when the responsible authority publishes the missing document or procedure, we verify it, and the closed record links to that source with a date.</p>
           <ul>
             {headlineGaps.map(({ service, gap }) => {
               const record = register.find((item) => item.service.id === service.id && item.id === gap.id);

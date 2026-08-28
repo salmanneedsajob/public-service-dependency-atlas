@@ -65,12 +65,13 @@ export default function AtlasHome() {
       <section className="failure-layers synthesis" aria-labelledby="synthesis-heading">
         <div className="section-heading">
           <p className="step-label">Cross-service synthesis</p>
-          <h2 id="synthesis-heading">The recurring handoffs</h2>
+          <h2 id="synthesis-heading">One property record, three services</h2>
+          <p className="section-intro">Your property record follows you into electricity, water, and tax — three journeys, one record, and you carry it between them.</p>
         </div>
         <div className="layer-grid">
-          <article><span>01</span><h3>Property identity</h3><p><Link href="/khata">Khata and property-record changes</Link> surface the record that later utility and tax journeys can depend on. The entries distinguish published requirements from reported handoffs.</p></article>
-          <article><span>02</span><h3>Proof moves, records do not</h3><p>Across <Link href="/property-tax">property tax</Link>, <Link href="/water-account">water</Link>, and <Link href="/bescom">electricity</Link>, a citizen is repeatedly asked to carry evidence between separate records.</p></article>
-          <article><span>03</span><h3>A visible form is not a complete path</h3><p>Published forms and portals exist for services such as <Link href="/lpg">LPG</Link> and <Link href="/trade-license">trade licences</Link>; their case-specific routing, decisions, and recovery paths often remain partial or unknown.</p></article>
+          <article><span>01</span><h3>Electricity</h3><p>For an <Link href="/bescom">electricity name transfer</Link>, BESCOM needs to match your property ID (EPID) to your account. The public record does not say who repairs that match when it fails.</p></article>
+          <article><span>02</span><h3>Water</h3><p>For a <Link href="/water-account">water-account transfer</Link>, BWSSB’s public page shows new-connection controls, not an existing-account name-transfer control. The next step is not published.</p></article>
+          <article><span>03</span><h3>Property tax</h3><p><Link href="/property-tax">Property-tax</Link> pages list name correction and an ARO contact path, but not what the office will accept or what a completed correction looks like.</p></article>
         </div>
         <p className="atlas-thesis">The pattern is a finding, not an assumption: individual entries retain the source, access date, grade, and status behind each statement. Where the sources stop, the atlas says so.</p>
       </section>
@@ -81,9 +82,9 @@ export default function AtlasHome() {
           <h2 id="layers-heading">Three layers of failure</h2>
         </div>
         <div className="layer-grid">
-          <article><span>01</span><h3>Documentation</h3><p>The actual handoff between agencies is not described in one public, usable place.</p></article>
-          <article><span>02</span><h3>Process</h3><p>A form or portal exists, but its prerequisites, exceptions, and recovery routes are unclear.</p></article>
-          <article><span>03</span><h3>Infrastructure</h3><p>Systems hold related records, yet no public contract explains how they connect or who can repair a failed link.</p></article>
+          <article><span>01</span><h3>Documentation</h3><p>An older BESCOM account says it needed a builder NOC; a 2026 account says it did not. No public document explains when that NOC is required.</p></article>
+          <article><span>02</span><h3>Process</h3><p>You need to move a BWSSB water account into your name, but the public portal shows only new or additional connections — not the transfer route.</p></article>
+          <article><span>03</span><h3>Infrastructure</h3><p>BESCOM’s system can’t match your property ID (EPID) to your account — and no public document says who repairs that.</p></article>
         </div>
       </section>
 
@@ -91,9 +92,9 @@ export default function AtlasHome() {
         <div className="section-heading split-heading">
           <div>
             <p className="step-label">Bengaluru-first directory</p>
-            <h2 id="directory-heading">Which journey needs a map?</h2>
+            <h2 id="directory-heading">Which service are you stuck on?</h2>
           </div>
-          <p>Every card is a published, evidence-led entry. “Partially mapped” means the available record still leaves important questions unanswered; those questions are listed in the entry.</p>
+          <p>Each entry traces the records the service depends on, what can block it, and the evidence behind every statement.</p>
         </div>
         <div className="service-grid">
           {serviceGaps.map(({ service, gaps }) => {

@@ -144,6 +144,7 @@ h1 {
 .failure-layers { background: var(--ink); color: #fffdf7; }
 .failure-layers .step-label { color: var(--yellow); }
 .failure-layers h2, .atlas-directory h2, .contribution h2 { margin: 15px 0 0; font-family: Georgia, serif; font-size: clamp(40px, 5vw, 72px); font-weight: 500; letter-spacing: -.055em; line-height: .95; }
+.section-intro { max-width: 760px; margin: 20px 0 0; color: rgba(255, 253, 247, .78); font-size: clamp(17px, 2vw, 23px); line-height: 1.45; letter-spacing: -.02em; }
 .layer-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 52px; border-top: 1px solid rgba(255,255,255,.25); }
 .layer-grid article { min-height: 260px; padding: 26px clamp(20px, 3vw, 48px) 8px; border-right: 1px solid rgba(255,255,255,.25); }
 .layer-grid article:first-child { padding-left: 0; }

@@ -1,48 +1,62 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-
-type Survey = {
-  outcome: string;
-  systems: string[];
-  officialJourney: string;
-  sources: Array<{ label: string; url: string; grade: 'B' | 'E'; accessedAt: string }>;
-  citizenPain: { text: string; url: string; accessedAt: string } | 'none found';
-};
+import type { Ledger } from '@/lib/ledger-types';
+import { collectUndocumentedQuestions } from '@/lib/undocumented';
+import bescomLedger from '@/ledger/research.json';
+import birthCertificateLedger from '@/ledger/birth-certificate.json';
+import buildingPlanLedger from '@/ledger/building-plan.json';
+import deathCertificateLedger from '@/ledger/death-certificate.json';
+import khataLedger from '@/ledger/khata.json';
+import lpgLedger from '@/ledger/lpg.json';
+import marriageLedger from '@/ledger/marriage.json';
+import newElectricityLedger from '@/ledger/new-electricity.json';
+import propertyTaxLedger from '@/ledger/property-tax.json';
+import tradeLicenseLedger from '@/ledger/trade-license.json';
+import waterAccountLedger from '@/ledger/water-account.json';
+import waterConnectionLedger from '@/ledger/water-connection.json';
 
 type Service = {
   title: string;
   category: string;
-  status: 'Mapped' | 'Partially mapped' | 'Unmapped';
-  href?: string;
-  survey?: Survey;
+  status: 'Mapped' | 'Partially mapped';
+  href: string;
+  ledger: Ledger;
 };
 
 const services: Service[] = [
-  { title: 'Electricity name transfer', category: 'Utility account', status: 'Mapped', href: '/bescom' },
-  { title: 'Birth certificate', category: 'Civil record', status: 'Partially mapped', href: '/birth-certificate' },
-  { title: 'Death certificate', category: 'Civil record', status: 'Partially mapped', href: '/death-certificate' },
-  { title: 'New water / sewer connection', category: 'BWSSB utility', status: 'Partially mapped', href: '/water-connection' },
-  { title: 'Water account name transfer', category: 'BWSSB utility', status: 'Partially mapped', href: '/water-account' },
-  { title: 'New electricity connection', category: 'Electricity utility', status: 'Partially mapped', href: '/new-electricity' },
-  { title: 'Property tax name transfer', category: 'Municipal property', status: 'Partially mapped', href: '/property-tax' },
-  { title: 'Khata transfer / mutation', category: 'Municipal property', status: 'Mapped', href: '/khata' },
-  { title: 'Trade licence', category: 'Municipal business', status: 'Partially mapped', href: '/trade-license' },
-  { title: 'Building plan approval', category: 'Municipal planning', status: 'Partially mapped', href: '/building-plan' },
-  { title: 'Marriage registration', category: 'Civil record', status: 'Partially mapped', href: '/marriage-registration' },
-  { title: 'LPG connection transfer', category: 'Household utility', status: 'Partially mapped', href: '/lpg' },
+  { title: 'Electricity name transfer', category: 'Utility account', status: 'Mapped', href: '/bescom', ledger: bescomLedger as Ledger },
+  { title: 'Birth certificate', category: 'Civil record', status: 'Partially mapped', href: '/birth-certificate', ledger: birthCertificateLedger as Ledger },
+  { title: 'Death certificate', category: 'Civil record', status: 'Partially mapped', href: '/death-certificate', ledger: deathCertificateLedger as Ledger },
+  { title: 'New water / sewer connection', category: 'BWSSB utility', status: 'Partially mapped', href: '/water-connection', ledger: waterConnectionLedger as Ledger },
+  { title: 'Water account name transfer', category: 'BWSSB utility', status: 'Partially mapped', href: '/water-account', ledger: waterAccountLedger as Ledger },
+  { title: 'New electricity connection', category: 'Electricity utility', status: 'Partially mapped', href: '/new-electricity', ledger: newElectricityLedger as Ledger },
+  { title: 'Property tax name transfer', category: 'Municipal property', status: 'Partially mapped', href: '/property-tax', ledger: propertyTaxLedger as Ledger },
+  { title: 'Khata transfer / mutation', category: 'Municipal property', status: 'Mapped', href: '/khata', ledger: khataLedger as Ledger },
+  { title: 'Trade licence', category: 'Municipal business', status: 'Partially mapped', href: '/trade-license', ledger: tradeLicenseLedger as Ledger },
+  { title: 'Building plan approval', category: 'Municipal planning', status: 'Partially mapped', href: '/building-plan', ledger: buildingPlanLedger as Ledger },
+  { title: 'Marriage registration', category: 'Civil record', status: 'Partially mapped', href: '/marriage-registration', ledger: marriageLedger as Ledger },
+  { title: 'LPG connection transfer', category: 'Household utility', status: 'Partially mapped', href: '/lpg', ledger: lpgLedger as Ledger },
 ];
 
 export const metadata: Metadata = {
   title: 'Public Service Dependency Atlas',
-  description: 'A Bengaluru-first atlas of the undocumented dependencies between public services.',
+  description: 'A Bengaluru-first atlas of the undocumented handoffs between public services.',
 };
 
 export default function AtlasHome() {
+  const serviceGaps = services.map((service) => ({ service, gaps: collectUndocumentedQuestions(service.ledger) }));
+  const undocumentedStepCount = serviceGaps.reduce((count, item) => count + item.gaps.length, 0);
+  const headlineGaps = serviceGaps
+    .filter((item) => item.gaps.length)
+    .map((item) => ({ service: item.service, gap: item.gaps[0] }))
+    .sort((a, b) => a.gap.priority - b.gap.priority || a.service.title.localeCompare(b.service.title));
+
   return (
     <main className="atlas-page">
       <header className="site-header">
         <a className="wordmark" href="#top">Public service dependency atlas</a>
         <nav aria-label="Page navigation">
+          <a href="#gaps">What is missing</a>
           <a href="#directory">Service directory</a>
           <a href="#method">Contribute</a>
         </nav>
@@ -52,9 +66,23 @@ export default function AtlasHome() {
       <section className="atlas-hero" id="top">
         <p className="eyebrow">Utilities & municipal services</p>
         <h1>Public Service<br />Dependency Atlas</h1>
-        <p className="atlas-lede">A change in your life should not become a scavenger hunt across government websites. But when you buy, inherit, rent, build, or register something, the service you need often depends on records held somewhere else.</p>
+        <p className="atlas-lede">A birth, a marriage, a death in the family, a move, a new home, a new business — every life event comes with paperwork. The record you need is often blocked by another record, held by another department, that nobody told you about.</p>
         <p className="atlas-thesis">Government services are digitized as separate departments, but citizens live connected events. When the links between systems are undocumented, the citizen becomes the integration layer. This atlas documents those links.</p>
         <a className="primary-link" href="#directory">Explore the directory <span>↓</span></a>
+      </section>
+
+      <section className="atlas-gap-rollup" id="gaps" aria-labelledby="atlas-gap-heading">
+        <div>
+          <p className="step-label">The headline finding</p>
+          <p className="atlas-gap-count">{undocumentedStepCount}</p>
+          <h2 id="atlas-gap-heading">documented questions are still missing from these public journeys.</h2>
+        </div>
+        <div>
+          <p>Each question below is generated from an Unknown record or a missing check, failure, or recovery step in the dated service ledgers. It is a gap in what is publicly documented, not a guess about what will happen to a particular application.</p>
+          <ul>
+            {headlineGaps.map(({ service, gap }) => <li key={`${service.href}:${gap.id}`}><Link href={service.href}>{service.title}</Link><span>{gap.question}</span></li>)}
+          </ul>
+        </div>
       </section>
 
       <section className="failure-layers synthesis" aria-labelledby="synthesis-heading">
@@ -67,7 +95,7 @@ export default function AtlasHome() {
           <article><span>02</span><h3>Proof moves, records do not</h3><p>Across <Link href="/property-tax">property tax</Link>, <Link href="/water-account">water</Link>, and <Link href="/bescom">electricity</Link>, a citizen is repeatedly asked to carry evidence between separate records.</p></article>
           <article><span>03</span><h3>A visible form is not a complete path</h3><p>Published forms and portals exist for services such as <Link href="/lpg">LPG</Link> and <Link href="/trade-license">trade licences</Link>; their case-specific routing, decisions, and recovery paths often remain partial or unknown.</p></article>
         </div>
-        <p className="atlas-thesis">The pattern is a finding, not an assumption: individual ledgers retain the source, access date, grade, and status behind each statement. Where the sources stop, the atlas says so.</p>
+        <p className="atlas-thesis">The pattern is a finding, not an assumption: individual entries retain the source, access date, grade, and status behind each statement. Where the sources stop, the atlas says so.</p>
       </section>
 
       <section className="failure-layers" aria-labelledby="layers-heading">
@@ -88,12 +116,15 @@ export default function AtlasHome() {
             <p className="step-label">Bengaluru-first directory</p>
             <h2 id="directory-heading">Which journey needs a map?</h2>
           </div>
-          <p>“Unmapped” is not an empty state. It means no verified public map of this journey’s dependencies exists — the documentation gap this project is here to show.</p>
+          <p>Every card is a published, evidence-led entry. “Partially mapped” means the available record still leaves important questions unanswered; those questions are listed in the entry.</p>
         </div>
         <div className="service-grid">
-          {services.map((service) => {
-            const content = <><span className="service-category">{service.category}</span><div className={`service-status service-${service.status.toLowerCase().replaceAll(' ', '-')}`}>{service.status}</div><h3>{service.title}</h3><p>{service.status !== 'Unmapped' ? 'Evidence-led entry with public documentation, reported roadblocks, and stated limitations.' : service.survey ? 'Unmapped — what we know so far.' : 'No verified public map of this journey exists; that absence is the documentation gap this project documents.'}</p>{service.status !== 'Unmapped' && <span className="service-cta">Open the {service.title} entry →</span>}</>;
-            return service.href ? <a className="service-card mapped-service" href={service.href} key={service.title}>{content}</a> : <article className="service-card" key={service.title}>{content}</article>;
+          {serviceGaps.map(({ service, gaps }) => {
+            const firstGap = gaps[0];
+            const cardCopy = service.status === 'Mapped'
+              ? `Published route with ${gaps.length} documented gaps kept visible.`
+              : `${gaps.length} documented gaps, including: ${firstGap?.question ?? 'the remaining public record has not been fully mapped.'}`;
+            return <a className="service-card mapped-service" href={service.href} key={service.title}><span className="service-category">{service.category}</span><div className={`service-status service-${service.status.toLowerCase().replaceAll(' ', '-')}`}>{service.status}</div><h3>{service.title}</h3><p>{cardCopy}</p><span className="service-cta">Open this entry →</span></a>;
           })}
         </div>
       </section>
@@ -101,17 +132,17 @@ export default function AtlasHome() {
       <section className="contribution" id="method" aria-labelledby="contribution-heading">
         <div>
           <p className="step-label">Open contribution format</p>
-          <h2 id="contribution-heading">Want to map one?</h2>
+          <h2 id="contribution-heading">Want to strengthen a map?</h2>
         </div>
         <div>
-          <p>Every unmapped card is a bounded public-research task. Use the common ledger schema and agent protocol to record evidence, uncertainty, contradictions, dates, and sources without turning a gap into a guess.</p>
-          <div className="contribution-links"><a href="https://github.com/salmanneedsajob/public-service-dependency-atlas/blob/main/ledger/schema.json" target="_blank" rel="noreferrer">Ledger schema v1.0.0 ↗</a><a href="https://github.com/salmanneedsajob/public-service-dependency-atlas/blob/main/ledger/AGENT_PROTOCOL.md" target="_blank" rel="noreferrer">Agent protocol ↗</a><a href="https://github.com/salmanneedsajob/public-service-dependency-atlas" target="_blank" rel="noreferrer">Open-source atlas ↗</a></div>
+          <p>Use the shared research format to add a source, record a gap, or show a contradiction without turning uncertainty into a guess. The existing entries are a starting point, not a claim that every public journey is fully documented.</p>
+          <div className="contribution-links"><a href="https://github.com/salmanneedsajob/public-service-dependency-atlas/blob/main/ledger/schema.json" target="_blank" rel="noreferrer">Research format ↗</a><a href="https://github.com/salmanneedsajob/public-service-dependency-atlas/blob/main/ledger/AGENT_PROTOCOL.md" target="_blank" rel="noreferrer">Research protocol ↗</a><a href="https://github.com/salmanneedsajob/public-service-dependency-atlas" target="_blank" rel="noreferrer">Open-source atlas ↗</a></div>
         </div>
       </section>
 
       <footer className="footer atlas-footer">
         <div className="footer-title"><span>Scope & limits</span><h2>Map the links.<br />Keep the gaps.</h2></div>
-        <div className="footer-copy"><p>This atlas is independent research, not official government guidance. A mapped entry makes its evidence and uncertainty visible; an unmapped card makes the lack of a verified public map visible.</p><div className="footer-meta"><span>Not official advice. Verify current requirements with the responsible agency and do not submit personal data through this site.</span></div><small>Atlas snapshot 2026-08-28 · Bengaluru, Karnataka, India</small></div>
+        <div className="footer-copy"><p>This atlas is independent research, not official government guidance. Each entry shows the evidence held, the questions that remain, and the date the material was checked.</p><div className="footer-meta"><span>Not official advice. Verify current requirements with the responsible agency and do not submit personal data through this site.</span></div><small>Atlas snapshot 2026-08-28 · Bengaluru, Karnataka, India</small></div>
       </footer>
     </main>
   );

@@ -126,10 +126,15 @@ h1 {
 .atlas-hero h1 { max-width: 900px; margin-bottom: 34px; }
 .atlas-lede { max-width: 790px; margin: 0 0 24px; color: var(--muted); font-size: clamp(20px, 2.4vw, 30px); line-height: 1.38; letter-spacing: -.025em; }
 .atlas-thesis { max-width: 860px; margin: 0 0 36px; border-left: 3px solid var(--orange); padding: 5px 0 5px 17px; color: var(--ink-soft); font-size: 16px; line-height: 1.6; }
+.prototype-note { max-width: 760px; margin: 0 0 28px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
+.secondary-link { border-bottom: 1px solid currentColor; padding: 10px 0; color: var(--ink); font-size: 14px; font-weight: 800; text-decoration: none; }
 .atlas-gap-rollup { display: grid; grid-template-columns: minmax(260px, .75fr) minmax(0, 1.25fr); gap: clamp(32px, 8vw, 130px); padding: clamp(60px, 8vw, 110px) clamp(20px, 7vw, 110px); background: var(--yellow); }
 .atlas-gap-count { margin: 12px 0 0; color: var(--orange); font-family: Georgia, serif; font-size: clamp(74px, 11vw, 156px); font-weight: 500; line-height: .78; letter-spacing: -.08em; }
 .atlas-gap-rollup h2 { max-width: 540px; margin: 18px 0 0; font-family: Georgia, serif; font-size: clamp(34px, 4vw, 58px); font-weight: 500; line-height: .98; letter-spacing: -.05em; }
+.register-tally { max-width: 550px; margin: 25px 0 0; color: #403713; font-family: Georgia, serif; font-size: clamp(27px, 3.2vw, 47px); font-weight: 500; line-height: 1.08; letter-spacing: -.04em; }
 .atlas-gap-rollup > div:last-child > p { max-width: 650px; margin: 0 0 26px; color: #56491c; font-size: 14px; line-height: 1.55; }
+.atlas-gap-rollup > div:last-child > .falsifiability-line { border-left: 3px solid var(--orange); padding-left: 15px; color: var(--ink); font-family: Georgia, serif; font-size: 18px; line-height: 1.45; }
 .atlas-gap-rollup ul { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .atlas-gap-rollup li { display: grid; gap: 5px; border-top: 1px solid rgba(53, 26, 18, .25); padding-top: 13px; }
 .atlas-gap-rollup li a { width: max-content; color: var(--ink); font-size: 11px; font-weight: 850; text-decoration-thickness: 2px; text-underline-offset: 3px; }

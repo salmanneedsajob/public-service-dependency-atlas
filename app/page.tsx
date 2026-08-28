@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 export default function AtlasHome() {
   const serviceGaps = atlasServices.map((service) => ({ service, gaps: collectUndocumentedQuestions(service.ledger) }));
   const register = buildGapRegister();
-  const undocumentedStepCount = register.length;
   const headlineGaps = serviceGaps
     .filter((item) => item.gaps.length)
     .map((item) => ({ service: item.service, gap: item.gaps[0] }))
@@ -32,21 +31,26 @@ export default function AtlasHome() {
       </header>
 
       <section className="atlas-hero" id="top">
-        <p className="eyebrow">Documentation-debt register · Bengaluru</p>
-        <h1>{register.length} open gaps<br />in public-service documentation.</h1>
-        <p className="atlas-lede">A birth, a marriage, a death in the family, a move, a new home, a new business — every life event comes with paperwork. This register records the missing procedures that leave people carrying answers between departments.</p>
+        <p className="eyebrow">Bengaluru utilities &amp; municipal services</p>
+        <h1>Public Service<br />Dependency Atlas</h1>
+        <p className="atlas-lede">A birth, a marriage, a death in the family, a move, a new home, a new business — every life event comes with paperwork. The record you need is often blocked by another record, held by another department, that nobody told you about.</p>
         <p className="atlas-thesis">Government services are digitized as separate departments, but citizens live connected events. When the links between systems are undocumented, the citizen becomes the integration layer. This atlas documents those links.</p>
-        <a className="primary-link" href="#register">Open the gap register <span>↓</span></a>
+        <p className="prototype-note">This is a working prototype of a method for mapping documentation gaps across government services, demonstrated on Bengaluru utilities and municipal services.</p>
+        <div className="hero-actions">
+          <a className="primary-link" href="#directory">Explore the directory <span>↓</span></a>
+          <a className="secondary-link" href="#register">Open the gap register →</a>
+        </div>
       </section>
 
       <section className="atlas-gap-rollup" id="register" aria-labelledby="atlas-gap-heading">
         <div>
-          <p className="step-label">Documentation-debt register · opened {registerOpenedOn}</p>
-          <p className="atlas-gap-count">{undocumentedStepCount}</p>
-          <h2 id="atlas-gap-heading">public-service gaps are open for a simple fix: publish the missing procedure.</h2>
+          <p className="step-label">Working register · opened {registerOpenedOn}</p>
+          <h2 id="atlas-gap-heading">The documentation-debt register</h2>
+          <p className="register-tally">{register.length} so far, from {atlasServices.length} services in one city — a lower bound, from desk research against public sources.</p>
         </div>
         <div>
           <p>This is a day-zero public register of documentation debt. Under Section 4(1)(b) of the RTI Act 2005, public authorities are already expected to proactively publish their procedures.</p>
+          <p className="falsifiability-line">A gap means our research found no published procedure. If one of these is documented somewhere public, show us — we verify and close it. Closure is the system working.</p>
           <p>A gap closes when the responsible authority publishes the missing document or procedure, we verify it, and the closed record links to that source with a date.</p>
           <ul>
             {headlineGaps.map(({ service, gap }) => {

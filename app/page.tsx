@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { atlasServices } from '@/lib/atlas-data';
 import { collectUndocumentedQuestions } from '@/lib/undocumented';
-import { ModeToggle, RestoreExplorerPreference } from '@/components/ModeToggle';
+import { ModeToggle } from '@/components/ModeToggle';
 
 export const metadata: Metadata = {
   title: 'Public Service Dependency Atlas',
@@ -20,7 +20,6 @@ export default function AtlasHome() {
 
   return (
     <main className="atlas-page">
-      <RestoreExplorerPreference />
       <header className="site-header">
         <a className="wordmark" href="#top">Public service dependency atlas</a>
         <nav aria-label="Page navigation">

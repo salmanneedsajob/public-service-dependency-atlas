@@ -4,14 +4,42 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { ModeToggle } from '@/components/ModeToggle';
 import type { ExplorerDocument, ExplorerFolder, ExplorerMissingFile } from '@/lib/explorer-data';
+import { sourceGroupSummary, type SourceGroupKind } from '@/lib/source-groups';
 
-function FileIcon({ missing = false }: { missing?: boolean }) {
-  return <span className={`file-icon${missing ? ' file-icon-missing' : ''}`} aria-hidden="true">{missing ? '⌧' : '▤'}</span>;
+function FileIcon({ kind = 'specific', missing = false }: { kind?: SourceGroupKind; missing?: boolean }) {
+  const icon = missing ? '⌧' : kind === 'general' ? '⌂' : kind === 'citizen' ? '◌' : '▤';
+  return <span className={`file-icon file-icon-${kind}${missing ? ' file-icon-missing' : ''}`} aria-hidden="true">{icon}</span>;
+}
+
+function folderDocuments(folder: ExplorerFolder) {
+  return [...folder.specificDocuments, ...folder.generalReferences, ...folder.citizenAccounts];
+}
+
+function sourceLabel(document: ExplorerDocument) {
+  if (document.kind === 'general') return 'general reference · not specific to a step';
+  if (document.kind === 'citizen') return `reported experience · Grade ${document.evidenceGrade}`;
+  return `specific document · Grade ${document.evidenceGrade}`;
+}
+
+function SourceFileGroup({ id, title, sources, kind, onSelect, selectedId }: {
+  id: string;
+  title: string;
+  sources: ExplorerDocument[];
+  kind: SourceGroupKind;
+  onSelect: (source: ExplorerDocument) => void;
+  selectedId?: string;
+}) {
+  return (
+    <section aria-labelledby={id}>
+      <div className="file-group-heading"><h3 id={id}>{title}</h3><span>{sources.length}</span></div>
+      {sources.length ? <div className="file-grid">{sources.map((document) => <a key={document.id} className={`file-card file-card-${kind} ${selectedId === document.id ? 'selected' : ''}`} href={document.url} target="_blank" rel="noreferrer" onClick={() => onSelect(document)}><FileIcon kind={kind} /><b>{document.title}</b><small>{sourceLabel(document)} ↗</small></a>)}</div> : <p className="file-group-empty">None recorded for this service.</p>}
+    </section>
+  );
 }
 
 export default function ExplorerMode({ folders }: { folders: ExplorerFolder[] }) {
   const [selectedFolderId, setSelectedFolderId] = useState(folders[0]?.id ?? '');
-  const [selectedDocument, setSelectedDocument] = useState<ExplorerDocument | null>(folders[0]?.documents[0] ?? null);
+  const [selectedDocument, setSelectedDocument] = useState<ExplorerDocument | null>(folders[0] ? folderDocuments(folders[0])[0] ?? null : null);
   const [missingFile, setMissingFile] = useState<{ folder: ExplorerFolder; file: ExplorerMissingFile } | null>(null);
   const selectedFolder = useMemo(() => folders.find((folder) => folder.id === selectedFolderId) ?? folders[0], [folders, selectedFolderId]);
 
@@ -24,7 +52,7 @@ export default function ExplorerMode({ folders }: { folders: ExplorerFolder[] })
 
   function chooseFolder(folder: ExplorerFolder) {
     setSelectedFolderId(folder.id);
-    setSelectedDocument(folder.documents[0] ?? null);
+    setSelectedDocument(folderDocuments(folder)[0] ?? null);
   }
 
   if (!selectedFolder) return null;
@@ -46,21 +74,24 @@ export default function ExplorerMode({ folders }: { folders: ExplorerFolder[] })
         <aside className="folder-pane" id="folders">
           <div className="explorer-pane-heading"><span>Service folders</span><b>{folders.length}</b></div>
           <div className="folder-list">
-            {folders.map((folder) => <button key={folder.id} className={folder.id === selectedFolder.id ? 'folder-row selected' : 'folder-row'} onClick={() => chooseFolder(folder)}><span className="folder-icon" aria-hidden="true">▰</span><span><b>{folder.title}</b><small>{folder.documents.length} documents · {folder.missingFiles.length} missing</small></span></button>)}
+            {folders.map((folder) => <button key={folder.id} className={folder.id === selectedFolder.id ? 'folder-row selected' : 'folder-row'} onClick={() => chooseFolder(folder)}><span className="folder-icon" aria-hidden="true">▰</span><span><b>{folder.title}</b><small>{sourceGroupSummary({ specificDocuments: folder.specificDocuments, generalReferences: folder.generalReferences, citizenAccounts: folder.citizenAccounts }, folder.missingFiles.length)}</small></span></button>)}
           </div>
         </aside>
 
         <section className="file-pane" id="files" aria-labelledby="folder-title">
           <div className="file-pane-heading"><div><p className="eyebrow">{selectedFolder.category}</p><h2 id="folder-title">{selectedFolder.title}</h2></div><Link href={selectedFolder.href}>Open service entry →</Link></div>
           <div className="file-groups">
-            <section aria-labelledby="official-files-heading"><div className="file-group-heading"><h3 id="official-files-heading">Published documents</h3><span>{selectedFolder.documents.length}</span></div><div className="file-grid">{selectedFolder.documents.map((document) => <a key={document.id} className={selectedDocument?.id === document.id ? 'file-card selected' : 'file-card'} href={document.url} target="_blank" rel="noreferrer" onClick={() => setSelectedDocument(document)}><FileIcon /><b>{document.title}</b><small>{document.type} · opens source ↗</small></a>)}</div></section>
+            <p className="source-group-intro">Files are grouped by how specific the source is. Each URL appears once; general references are starting points, and citizen accounts are reported experience.</p>
+            <SourceFileGroup id="specific-files-heading" title="Specific documents" sources={selectedFolder.specificDocuments} kind="specific" onSelect={setSelectedDocument} selectedId={selectedDocument?.id} />
+            <SourceFileGroup id="general-files-heading" title="General references" sources={selectedFolder.generalReferences} kind="general" onSelect={setSelectedDocument} selectedId={selectedDocument?.id} />
+            <SourceFileGroup id="citizen-files-heading" title="Citizen accounts" sources={selectedFolder.citizenAccounts} kind="citizen" onSelect={setSelectedDocument} selectedId={selectedDocument?.id} />
             <section aria-labelledby="missing-files-heading"><div className="file-group-heading"><h3 id="missing-files-heading">Missing procedures</h3><span>{selectedFolder.missingFiles.length}</span></div><div className="file-grid">{selectedFolder.missingFiles.map((file) => <button key={file.id} className="file-card missing-file" onClick={() => setMissingFile({ folder: selectedFolder, file })}><FileIcon missing /><b>{file.name}</b><small>not published</small></button>)}</div></section>
           </div>
         </section>
 
         <aside className="properties-pane" aria-live="polite">
           <div className="explorer-pane-heading"><span>Properties</span></div>
-          {selectedDocument ? <div className="properties-content"><FileIcon /><h2>{selectedDocument.title}</h2><dl><div><dt>Publisher</dt><dd>{selectedDocument.publisher}</dd></div><div><dt>Accessed</dt><dd>{selectedDocument.accessedAt}</dd></div><div><dt>Evidence grade</dt><dd>Grade {selectedDocument.evidenceGrade}</dd></div><div><dt>Type</dt><dd>{selectedDocument.type}</dd></div></dl><a href={selectedDocument.url} target="_blank" rel="noreferrer">Open published source ↗</a></div> : <p className="properties-empty">Choose a published document to inspect its source details.</p>}
+          {selectedDocument ? <div className="properties-content"><FileIcon kind={selectedDocument.kind} /><h2>{selectedDocument.title}</h2><dl><div><dt>Publisher</dt><dd>{selectedDocument.publisher}</dd></div><div><dt>Accessed</dt><dd>{selectedDocument.accessedAt}</dd></div><div><dt>Evidence grade</dt><dd>Grade {selectedDocument.evidenceGrade}</dd></div><div><dt>Type</dt><dd>{sourceLabel(selectedDocument)}</dd></div>{selectedDocument.citedFor.length > 0 && <div><dt>Cited for</dt><dd>{selectedDocument.citedFor.slice(0, 2).join(' · ')}{selectedDocument.citedFor.length > 2 ? ` · +${selectedDocument.citedFor.length - 2} more` : ''}</dd></div>}</dl><a href={selectedDocument.url} target="_blank" rel="noreferrer">Open source ↗</a></div> : <p className="properties-empty">Choose a source to inspect its details.</p>}
         </aside>
       </section>
 

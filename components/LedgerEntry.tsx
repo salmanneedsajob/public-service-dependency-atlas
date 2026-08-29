@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import type { Detail, EvidenceGrade, Ledger, RecordStatus } from '@/lib/ledger-types';
+import { buildSourceGroups, sourceGroupSummary, type DisplaySource, type SourceGroupKind } from '@/lib/source-groups';
 import { collectUndocumentedQuestions, publicNodeLabel } from '@/lib/undocumented';
 import { serviceGuides } from '@/lib/service-copy';
 
@@ -125,7 +126,8 @@ function ClaimCards({ claimIds, ledger }: { claimIds: string[]; ledger: Ledger }
       {claims.map((claim) => {
         const sources = claim.sourceIds
           .map((sourceId) => ledger.sources.find((source) => source.id === sourceId))
-          .filter((source): source is Ledger['sources'][number] => Boolean(source));
+          .filter((source): source is Ledger['sources'][number] => Boolean(source))
+          .filter((source, index, allSources) => allSources.findIndex((candidate) => candidate.url === source.url) === index);
         const contradictions = claim.contradictsClaimIds
           .map((claimId) => ledger.claims.find((item) => item.id === claimId))
           .filter((item): item is Ledger['claims'][number] => Boolean(item));
@@ -164,6 +166,25 @@ function ClaimCards({ claimIds, ledger }: { claimIds: string[]; ledger: Ledger }
         );
       })}
     </div>
+  );
+}
+
+function SourceShelfGroup({ title, kind, sources }: { title: string; kind: SourceGroupKind; sources: DisplaySource[] }) {
+  return (
+    <section className={`official-source-group official-source-group-${kind}`} aria-label={title}>
+      <div className="official-source-group-heading"><span aria-hidden="true">{kind === 'specific' ? '▤' : kind === 'general' ? '⌂' : '◌'}</span><h3>{title}</h3><b>{sources.length}</b></div>
+      {sources.length ? <div className="official-source-grid">{sources.map((source) => (
+        <article key={source.id}>
+          <a href={source.url} rel="noreferrer" target="_blank">{source.title} ↗</a>
+          <small>{source.publisher} · accessed {source.accessedAt} · Grade {source.evidenceGrade}</small>
+          {kind === 'general' && <p><b>General reference:</b> This is a starting point, not a source specific to one step.</p>}
+          {kind === 'citizen' && <p><b>Reported experience:</b> This is a public first-person account, not an official document.</p>}
+          {kind === 'specific' && <p><b>What it covers:</b> A specific public document or page used to support this entry.</p>}
+          {source.citedFor.length > 0 && <p><b>Cited for:</b> {publicCopy(source.citedFor.slice(0, 2).join(' · '))}{source.citedFor.length > 2 ? ` · +${source.citedFor.length - 2} more statements` : ''}</p>}
+          <p><b>Where it stops:</b> {publicCopy(publicNote(source.notes)) || 'The public source does not show how this step connects to the other systems in the journey.'}</p>
+        </article>
+      ))}</div> : <p className="empty-note">None recorded for this service.</p>}
+    </section>
   );
 }
 
@@ -252,7 +273,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
     { verified: 0, partial: 0, contested: 0, unknown: 0 } as Record<RecordStatus, number>,
   );
   const datasetNotice = datasetCopy[ledger.meta.dataKind];
-  const officialSources = ledger.sources.filter((source) => source.type !== 'citizen_evidence');
+  const sourceGroups = buildSourceGroups(ledger);
   const entryNames: Record<string, string> = {
     bescom: 'BESCOM transfer', khata: 'khata transfer', 'property-tax': 'property-tax transfer',
     'water-connection': 'water / sewer connection', 'birth-certificate': 'birth certificate',
@@ -699,19 +720,14 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
             <p className="step-label">What official documentation exists — and where it stops</p>
             <h2 id="official-shelf-heading">What official documentation exists — and where it stops</h2>
           </div>
-          <p>These documents and public routes support individual steps; they do not prove that the steps form one complete journey. The gap is shown against what is actually published.</p>
+          <p>{sourceGroupSummary(sourceGroups, gaps.length)}. Sources are grouped by specificity: each URL appears once; general references are starting points, and citizen accounts are reported experience.</p>
         </div>
         <details className="source-details">
           <summary>Show the sources</summary>
-          <div className="official-source-grid">
-            {officialSources.map((source) => (
-              <article key={source.id}>
-                <a href={source.url} rel="noreferrer" target="_blank">{source.title} ↗</a>
-                <small>{source.publisher} · accessed {source.accessedAt}</small>
-                <p><b>What it covers:</b> A published {source.type.replaceAll('_', ' ')} used to support this entry.</p>
-                <p><b>Where it stops:</b> {publicCopy(publicNote(source.notes)) || 'The public source does not show how this step connects to the other systems in the journey.'}</p>
-              </article>
-            ))}
+          <div className="official-source-groups">
+            <SourceShelfGroup title="Specific documents" kind="specific" sources={sourceGroups.specificDocuments} />
+            <SourceShelfGroup title="General references" kind="general" sources={sourceGroups.generalReferences} />
+            <SourceShelfGroup title="Citizen accounts" kind="citizen" sources={sourceGroups.citizenAccounts} />
           </div>
         </details>
       </section>

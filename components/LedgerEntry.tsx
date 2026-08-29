@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import type { Detail, EvidenceGrade, Ledger, RecordStatus } from '@/lib/ledger-types';
 import { collectUndocumentedQuestions, publicNodeLabel } from '@/lib/undocumented';
+import { serviceGuides } from '@/lib/service-copy';
 
 const statusCopy: Record<RecordStatus, string> = {
   verified: 'Supported by evidence at the stated grade',
@@ -26,19 +27,41 @@ const datasetCopy = {
   synthetic: {
     label: 'Synthetic data',
     summary: 'This preview tests the interface, not the real BESCOM process.',
-    footer: 'This ledger is a deliberately synthetic fixture for interface testing. Its publishers, links, claims, errors, and recovery routes are invented placeholders; they are not BESCOM instructions or findings about Bengaluru.',
+    footer: 'This is deliberately synthetic material for interface testing. Its publishers, links, statements, errors, and recovery routes are invented placeholders; they are not BESCOM instructions or findings about Bengaluru.',
   },
   template: {
     label: 'Research template',
-    summary: 'This ledger is incomplete. Unknowns show where audited research still needs to land.',
-    footer: 'This ledger is a research template, not a completed finding. Empty and Unknown records are intentionally visible so missing evidence cannot be mistaken for a clear path.',
+    summary: 'This research is incomplete. Unknowns show where more checked sources are still needed.',
+    footer: 'This is a research template, not a completed finding. Empty and Unknown records are intentionally visible so missing evidence cannot be mistaken for a clear path.',
   },
   research: {
     label: 'Independent research',
-    summary: 'This view renders the dated evidence ledger below. Check each claim’s source and status before acting.',
-    footer: 'This ledger contains independent, dated research rather than official guidance. Use the claim-level source, access date, evidence grade, and status to judge each step, and verify current requirements with the responsible agency.',
+    summary: 'This page uses dated public-source research. Check each statement’s source and status before acting.',
+    footer: 'This page contains independent, dated research rather than official guidance. Use each statement’s source, access date, source grade, and status to judge the steps, and verify current requirements with the responsible agency.',
   },
 } as const;
+
+const basisCopy: Record<Ledger['claims'][number]['basis'], string> = {
+  observation: 'Read directly in a source',
+  inference: 'Interpretation from sources',
+  mixed: 'Direct source plus interpretation',
+};
+
+const relationshipCopy: Record<string, string> = {
+  alternative: 'another possible route',
+  maps_to: 'must match',
+  produces: 'leads to',
+  requires: 'needs',
+};
+
+const nodeKindCopy: Record<string, string> = {
+  decision: 'choice',
+  document: 'document',
+  outcome: 'result',
+  record: 'official record',
+  service: 'service step',
+  system: 'system step',
+};
 
 function publicNote(note = '') {
   return note
@@ -46,6 +69,25 @@ function publicNote(note = '') {
     .replace(/Reconciles IND-[0-9]+(?:, IND-[0-9]+)*(?: duplicate [^.]+)?\.\s*/g, 'Cross-verified across independent research passes. ')
     .replace(/IND-[0-9]+ /g, '')
     .trim();
+}
+
+function publicCopy(text = '') {
+  return text
+    .replace(/evidence-backed state/gi, 'publicly supported condition')
+    .replace(/validation rule/gi, 'published check')
+    .replace(/end-to-end dependency/gi, 'complete connection between steps')
+    .replace(/\bdependencies\b/gi, 'links between steps')
+    .replace(/\bdependency\b/gi, 'link between steps')
+    .replace(/\bhandoffs\b/gi, 'next steps')
+    .replace(/\bhandoff\b/gi, 'next step')
+    .replace(/\brelationships\b/gi, 'connections')
+    .replace(/\brelationship\b/gi, 'connection')
+    .replace(/\*\*/g, '')
+    .replace(/`([^`]+)`/g, '$1');
+}
+
+function isInternalResearchArtifact(roadblock: Ledger['roadblocks'][number]) {
+  return /audit|independent review limitations/i.test(`${roadblock.id} ${roadblock.title}`);
 }
 
 type RoadblockCategory = 'documentation' | 'process' | 'infrastructure';
@@ -94,16 +136,16 @@ function ClaimCards({ claimIds, ledger }: { claimIds: string[]; ledger: Ledger }
               <EvidenceBadge grade={claim.evidenceGrade} />
               <StatusBadge status={claim.status} compact />
             </div>
-            <p className="claim-text">{claim.text}</p>
+            <p className="claim-text">{publicCopy(claim.text)}</p>
             <div className="claim-meta">
-              <span>{claim.basis} basis</span>
+              <span>{basisCopy[claim.basis]}</span>
               <span>{claim.jurisdiction}</span>
             </div>
-            {claim.notes && <p className="claim-note">{publicNote(claim.notes)}</p>}
+            {claim.notes && <p className="claim-note">{publicCopy(publicNote(claim.notes))}</p>}
             {contradictions.length > 0 && (
               <div className="contradiction-note">
                 <b>Contested evidence</b>
-                <span>Conflicts with {contradictions.map((item) => item.text).join(' · ')}</span>
+                <span>Conflicts with {contradictions.map((item) => publicCopy(item.text)).join(' · ')}</span>
               </div>
             )}
             <div className="source-list">
@@ -147,12 +189,12 @@ function DetailGroup({
           details.map((detail) => (
             <article className="detail-item" key={detail.id}>
               <div className="detail-title-row">
-                <h5>{detail.label}</h5>
+                <h5>{publicCopy(detail.label)}</h5>
                 <StatusBadge status={detail.status} compact />
               </div>
-              <p>{detail.description}</p>
+              <p>{publicCopy(detail.description)}</p>
               {detail.actualError && (
-                <p className="error-example"><span>Failure signal</span> “{detail.actualError}”</p>
+                <p className="error-example"><span>Failure signal</span> “{publicCopy(detail.actualError)}”</p>
               )}
               {detail.url && (
                 <a className="text-link" href={detail.url} rel="noreferrer" target="_blank">
@@ -195,10 +237,11 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
   const selectedJourney = ledger.journeys.find((journey) => journey.scenarioId === selectedScenario.id);
   const selectedJourneyRoadblocks = selectedJourney?.failureRoadblockIds
     .map((roadblockId) => ledger.roadblocks.find((roadblock) => roadblock.id === roadblockId))
-    .filter((roadblock): roadblock is Ledger['roadblocks'][number] => Boolean(roadblock)) ?? [];
+    .filter((roadblock): roadblock is Ledger['roadblocks'][number] => roadblock !== undefined && !isInternalResearchArtifact(roadblock)) ?? [];
   const scenarioClaims = ledger.claims.filter((claim) => claim.scenarioIds.includes(selectedScenario.id));
-  const scenarioRoadblocks = ledger.roadblocks.filter((roadblock) => roadblock.scenarioIds.includes(selectedScenario.id));
+  const scenarioRoadblocks = ledger.roadblocks.filter((roadblock) => roadblock.scenarioIds.includes(selectedScenario.id) && !isInternalResearchArtifact(roadblock));
   const roadblocks = ledger.roadblocks.filter((roadblock) => {
+    if (isInternalResearchArtifact(roadblock)) return false;
     const categoryMatch = roadblockCategory === 'all' || roadblock.category === roadblockCategory;
     const scenarioMatch = showAllRoadblocks || roadblock.scenarioIds.includes(selectedScenario.id);
     return categoryMatch && scenarioMatch;
@@ -219,6 +262,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
   };
   const entryName = entryNames[service] ?? 'public-service journey';
   const isBescom = service === 'bescom';
+  const guide = serviceGuides[service];
   const gaps = collectUndocumentedQuestions(ledger);
   const topGaps = gaps.slice(0, 5);
   const remainingGaps = gaps.slice(5);
@@ -230,7 +274,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
   const verdict = worstPathNode && worstPathNode.status !== 'verified'
     ? `The clearest documented gap on this route is ${publicNodeLabel(worstPathNode.label)}: it is marked ${worstPathNode.status}. That is where this journey can stall.`
     : 'The records on this route are supported by the evidence held. Check the sources below for limits and case-specific requirements.';
-  const recordType = selectedNode?.kind ? selectedNode.kind.toLowerCase().replaceAll('_', ' ') : 'record';
+  const recordType = selectedNode?.kind ? nodeKindCopy[selectedNode.kind] ?? 'record' : 'record';
   const ownerName = agency?.shortName ?? 'an agency not named in the evidence held';
 
   function selectScenario(id: string) {
@@ -247,24 +291,32 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
         <Link className="wordmark" href="/">Public service dependency atlas</Link>
         <nav aria-label="Page navigation">
           <a href="#scenarios">Find my path</a>
-          <a href="#map">Find where it breaks</a>
+          <a href="#map">Trace the records</a>
           <a href="#roadblocks">What goes wrong</a>
         </nav>
-        <span className="schema-pill">Evidence-led research</span>
+        <span className="schema-pill">Sources shown</span>
       </header>
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">Bengaluru · Evidence-led pathfinder</p>
+          <p className="eyebrow">Bengaluru · Independent public-source guide</p>
           <h1>{isBescom ? 'Why is my BESCOM transfer blocked?' : `Your ${entryName} journey`}</h1>
-          <p className="ledger-subtitle">{ledger.meta.title}</p>
+          <p className="ledger-subtitle">Independent research snapshot · checked {ledger.meta.asOf}</p>
           <p className="lede">{isBescom ? 'Follow the records that affect an electricity name transfer, the places the route can stall, and the gaps no public source currently explains.' : `Follow the published route for ${entryName}, the places it can stall, and the questions the available public record does not answer.`}</p>
-          {isBescom && <p className="term-glossary"><b>Key terms:</b> EPID (Electronic Property Identification number) · e-Khata (Bengaluru’s digital property record) · mutation (the municipal update that records a property transfer) · NOC (No Objection Certificate)</p>}
+          {guide && (
+            <div className="key-terms" aria-label={`Key terms for ${entryName}`}>
+              <b>Key terms</b>
+              <dl>
+                {guide.terms.map(({ term, definition }) => <div key={term}><dt>{term}</dt><dd>{definition}</dd></div>)}
+              </dl>
+            </div>
+          )}
+          {guide && <div className="process-summary"><b>How this usually works</b><p>{guide.processSummary}</p></div>}
           <a className="primary-link" href="#scenarios">Find my path <span>↓</span></a>
         </div>
         <aside className="hero-aside" aria-label="Route verdict">
           <div className={`fixture-flag fixture-${ledger.meta.dataKind}`}>{datasetNotice.label}</div>
-          <p className="verdict-label">For “{selectedScenario.label}”</p>
+          <p className="verdict-label">For “{publicCopy(selectedScenario.label)}”</p>
           <p className="route-verdict">{verdict}</p>
         </aside>
       </section>
@@ -273,7 +325,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
         <div>
           <p className="step-label">The atlas’s central finding</p>
           <h2 id="gap-heading">What nobody has documented</h2>
-          <p>These are the Unknown handoffs and unresolved roadblocks that can leave a citizen stuck. Routine empty fields and research artifacts are not counted.</p>
+          <p>These are unresolved steps and problems that can leave a citizen stuck because no usable public procedure was found. Routine empty fields and internal research notes are not counted.</p>
         </div>
         <ol className="gap-list">
           {topGaps.map((gap) => <li key={gap.id}><strong>{gap.situation}</strong><span>{gap.missing}</span></li>)}
@@ -288,8 +340,8 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
         )}
       </section>
 
-      <section className="reading-key" aria-label="How to read this map">
-        <div className="reading-key-intro"><b>How to read this map</b><span>A status tells you how complete a record is. A letter tells you what kind of source supports it.</span></div>
+      <section className="reading-key" aria-label="How to read this page">
+        <div className="reading-key-intro"><b>How to read this page</b><span>A status tells you how much of a step is publicly supported. A letter tells you what kind of source supports it.</span></div>
         <div className="uncertainty-strip" aria-label="Status key">
         {(Object.keys(statusCounts) as RecordStatus[]).map((status) => (
           <div key={status}>
@@ -321,8 +373,8 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
               aria-checked={scenario.id === selectedScenario.id}
             >
               <span className="scenario-number">{String(index + 1).padStart(2, '0')}</span>
-              <strong>{scenario.label}</strong>
-              <span className="scenario-summary">{scenario.summary}</span>
+              <strong>{publicCopy(scenario.label)}</strong>
+              <span className="scenario-summary">{publicCopy(scenario.summary)}</span>
               <span className="tag-row">{scenario.tags.map((tag) => <small key={tag}>{tag}</small>)}</span>
               <StatusBadge status={scenario.status} compact />
             </button>
@@ -331,8 +383,8 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
         <div className={`selection-summary selection-${selectedScenario.status}`}>
           <div>
             <p className="eyebrow">Selected path</p>
-            <h3>{selectedScenario.label}</h3>
-            <p>{selectedScenario.summary}</p>
+            <h3>{publicCopy(selectedScenario.label)}</h3>
+            <p>{publicCopy(selectedScenario.summary)}</p>
           </div>
           <StatusBadge status={selectedScenario.status} />
         </div>
@@ -341,16 +393,16 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
       <section className="section map-section" id="map" aria-labelledby="map-heading">
         <div className="section-heading split-heading light-heading">
           <div>
-            <p className="step-label">02 · Find where it breaks</p>
-            <h2 id="map-heading">The records your {entryName} depends on</h2>
+            <p className="step-label">02 · Trace the records</p>
+            <h2 id="map-heading">The records that need to line up for your {entryName}</h2>
           </div>
-          <p>Tap a record to see what it needs to say, how to check it, what failure looks like, and where this information comes from.</p>
+          <p>Choose a record to see what it must show, how you can check it, what can go wrong, and which public sources support the explanation.</p>
         </div>
 
         {worstPathNode && worstPathNode.status !== 'verified' && (
           <aside className={`blocker-callout status-border-${worstPathNode.status}`}>
             <div><p className="eyebrow">The first place to investigate</p><h3>{publicNodeLabel(worstPathNode.label)}</h3></div>
-            <p>{worstPathNode.summary} This record is marked <StatusBadge status={worstPathNode.status} compact />.</p>
+            <p>{publicCopy(worstPathNode.summary)} This record is marked <StatusBadge status={worstPathNode.status} compact />.</p>
           </aside>
         )}
 
@@ -373,12 +425,12 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
                     <StatusBadge status={node.status} compact />
                   </span>
                   <strong>{publicNodeLabel(node.label)}</strong>
-                  <small>{node.kind}</small>
+                  <small>{nodeKindCopy[node.kind] ?? 'record'}</small>
                 </button>
                 {nextNode && (
                   <div className="edge" aria-label={edge?.label ?? 'The next record'}>
                     <span aria-hidden="true">→</span>
-                    <small>{edge?.relationship.replace('_', ' ') ?? 'then'}</small>
+                    <small>{edge ? relationshipCopy[edge.relationship] ?? 'then' : 'then'}</small>
                   </div>
                 )}
               </div>
@@ -389,10 +441,10 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
         <section className="relationship-chain" aria-labelledby="relationship-heading">
           <div className="relationship-heading">
             <div>
-              <p className="eyebrow">How the records connect</p>
-              <h3 id="relationship-heading">How these records depend on each other</h3>
+              <p className="eyebrow">How one step leads to the next</p>
+              <h3 id="relationship-heading">What has to happen before the next step</h3>
             </div>
-            <p>These links show the handoffs held in the evidence for this situation. A dashed card is reported by citizens or not officially documented.</p>
+            <p>These links show how the available sources connect the records for this situation. A dashed card means the link comes from citizen reports or has no published official procedure.</p>
           </div>
           <div className="relationship-list">
             {activeEdges.map((edge) => {
@@ -407,7 +459,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
               return (
                 <article className={`relationship status-border-${edge.status} ${undocumentedEdge ? 'relationship-undocumented' : ''}`} key={edge.id}>
                   <div className="relationship-topline">
-                    <span>{edge.relationship.replaceAll('_', ' ')}</span>
+                    <span>{relationshipCopy[edge.relationship] ?? 'next step'}</span>
                     <StatusBadge status={edge.status} compact />
                   </div>
                   <div className="relationship-nodes">
@@ -415,8 +467,8 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
                     <span aria-hidden="true">→</span>
                     <b>{toNode ? publicNodeLabel(toNode.label) : edge.toNodeId}</b>
                   </div>
-                  <p>{edge.label}</p>
-                  {undocumentedEdge && <small className="edge-evidence-note">{onlyCitizenEvidence ? 'Reported by citizens; not officially documented.' : 'Not officially documented in the evidence held.'}</small>}
+                  <p>{publicCopy(edge.label)}</p>
+                  {undocumentedEdge && <small className="edge-evidence-note">{onlyCitizenEvidence ? 'Reported by citizens; no official procedure found.' : 'No official procedure found in the public sources checked.'}</small>}
                   <div className="relationship-grades" aria-label="Source strength for this link">
                     {grades.length
                       ? grades.map((grade) => <EvidenceBadge grade={grade} key={grade} />)
@@ -434,7 +486,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
               <div>
                 <p className="eyebrow">You’re looking at: {publicNodeLabel(selectedNode.label)} — a {recordType} held by {ownerName}</p>
                 <h3>{publicNodeLabel(selectedNode.label)}</h3>
-                <p>{selectedNode.summary}</p>
+                <p>{publicCopy(selectedNode.summary)}</p>
               </div>
               <div className="owner-card">
                 <span>Record owner</span>
@@ -452,7 +504,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
 
             <div className="required-state">
               <span>What this must say before your next step can work</span>
-              <p>{selectedNode.requiredState}</p>
+              <p>{publicCopy(selectedNode.requiredState)}</p>
             </div>
 
             <div className="detail-columns">
@@ -480,11 +532,11 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
           <div className="section-heading split-heading">
             <div>
               <p className="step-label">03 · The steps, as far as the evidence goes</p>
-              <h2 id="journey-heading">{selectedJourney.title}</h2>
+              <h2 id="journey-heading">{publicCopy(selectedJourney.title)}</h2>
             </div>
             <div>
               <StatusBadge status={selectedJourney.status} />
-              <p>{selectedJourney.context}</p>
+              <p>{publicCopy(selectedJourney.context)}</p>
             </div>
           </div>
           <ol className="journey-steps">
@@ -495,9 +547,9 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
                   <span className="journey-number">{String(index + 1).padStart(2, '0')}</span>
                   <div>
                     <span className="journey-node">{node ? publicNodeLabel(node.label) : 'Unknown record'}</span>
-                    <h3>{step.label}</h3>
-                    <p>{step.action}</p>
-                    <div className="expected-result"><span>Expected result</span>{step.expectedResult}</div>
+                    <h3>{publicCopy(step.label)}</h3>
+                    <p>{publicCopy(step.action)}</p>
+                    <div className="expected-result"><span>Expected result</span>{publicCopy(step.expectedResult)}</div>
                     <StatusBadge status={step.status} compact />
                   </div>
                 </li>
@@ -506,7 +558,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
           </ol>
           <div className="journey-support">
             <article>
-              <span>Recorded handoffs</span>
+              <span>Where one step passes into another</span>
               <div className="journey-dependency-list">
                 {selectedJourney.dependencies.map((dependency) => {
                   const fromNode = ledger.nodes.find((node) => node.id === dependency.fromNodeId);
@@ -517,20 +569,20 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
                         <b>{fromNode ? publicNodeLabel(fromNode.label) : dependency.fromNodeId} → {toNode ? publicNodeLabel(toNode.label) : dependency.toNodeId}</b>
                         <StatusBadge status={dependency.status} compact />
                       </div>
-                      <p>{dependency.description}</p>
+                      <p>{publicCopy(dependency.description)}</p>
                     </div>
                   );
                 })}
               </div>
             </article>
             <article>
-              <span>Failure roadblocks on this journey</span>
+              <span>Problems linked to this route</span>
               <div className="journey-roadblock-list">
                 {selectedJourneyRoadblocks.map((roadblock) => (
                   <a href={`#${roadblock.id}`} key={roadblock.id}>
                     <span className={`category category-${roadblock.category}`}>{roadblock.category}</span>
-                    <b>{roadblock.title}</b>
-                    <small>{roadblock.symptom}</small>
+                    <b>{publicCopy(roadblock.title)}</b>
+                    <small>{publicCopy(roadblock.symptom)}</small>
                   </a>
                 ))}
               </div>
@@ -539,11 +591,11 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
           <div className="journey-notes">
             <article>
               <span>Recovery notes</span>
-              <ul>{selectedJourney.recoveryNotes.map((note) => <li key={note}>{note}</li>)}</ul>
+              <ul>{selectedJourney.recoveryNotes.map((note) => <li key={note}>{publicCopy(note)}</li>)}</ul>
             </article>
             <article>
-              <span>Documentation quality</span>
-              <ul>{selectedJourney.documentationQualityNotes.map((note) => <li key={note}>{note}</li>)}</ul>
+              <span>What the public instructions leave unclear</span>
+              <ul>{selectedJourney.documentationQualityNotes.map((note) => <li key={note}>{publicCopy(note)}</li>)}</ul>
             </article>
           </div>
         </section>
@@ -553,9 +605,9 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
         <div className="section-heading split-heading">
           <div>
             <p className="step-label">04 · What goes wrong, and why</p>
-              <h2 id="roadblock-heading">Recorded roadblocks</h2>
+              <h2 id="roadblock-heading">Problems found in the public route</h2>
           </div>
-            <p>{scenarioRoadblocks.length} recorded problems are linked to this path. Conflicting accounts stay visible so a generic error can be traced back to the record that may be causing it.</p>
+            <p>{scenarioRoadblocks.length} researched problems are linked to this path. Conflicting accounts stay visible so a generic error can be traced back to the record that may be causing it.</p>
         </div>
         {nocConflict && (
           <aside className="contradiction-callout" aria-labelledby="noc-conflict-heading">
@@ -565,11 +617,11 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
                 <span className="category category-documentation">documentation</span>
                 <StatusBadge status="contested" compact />
               </div>
-              <h3 id="noc-conflict-heading">{nocConflict.title}</h3>
-              <p>{nocConflict.symptom}</p>
+              <h3 id="noc-conflict-heading">{publicCopy(nocConflict.title)}</h3>
+              <p>{publicCopy(nocConflict.symptom)}</p>
             </div>
             <div className="contradiction-copy">
-              <p><code>claim_citizen_old_noc</code> ↔ <code>claim_citizen_no_builder_noc</code></p>
+              <p><b>One citizen account says an older case needed a builder NOC. Another says a 2026 case did not.</b></p>
               <p>These are conflicting citizen accounts, not a checklist. Do not infer that an NOC is either required or unnecessary.</p>
               <a href={`#${nocConflict.id}`}>Open both sources and recovery guidance ↓</a>
             </div>
@@ -606,12 +658,12 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
                     <span className={`category category-${roadblock.category}`}>{roadblock.category}</span>
                     <StatusBadge status={roadblock.status} compact />
                   </div>
-                  <h3>{roadblock.title}</h3>
-                  <p className="roadblock-symptom">{roadblock.symptom}</p>
+                  <h3>{publicCopy(roadblock.title)}</h3>
+                  <p className="roadblock-symptom">{publicCopy(roadblock.symptom)}</p>
                 </div>
                 <dl className="roadblock-resolution">
-                  <div><dt>Likely cause</dt><dd>{roadblock.likelyCause}</dd></div>
-                  <div><dt>Recovery</dt><dd>{roadblock.recovery}</dd></div>
+                  <div><dt>Likely cause</dt><dd>{publicCopy(roadblock.likelyCause)}</dd></div>
+                  <div><dt>What you can try next</dt><dd>{publicCopy(roadblock.recovery)}</dd></div>
                 </dl>
                 <details className="roadblock-evidence">
                   <summary>See evidence</summary>
@@ -629,7 +681,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
         <div className="section-heading split-heading light-heading">
           <div>
             <p className="step-label">05 · Check our sources</p>
-            <h2 id="evidence-heading">Sources for {selectedScenario.label}</h2>
+            <h2 id="evidence-heading">Sources for {publicCopy(selectedScenario.label)}</h2>
           </div>
           <p>The letter shows source strength, not whether a statement will apply to every case.</p>
         </div>
@@ -645,7 +697,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
             <p className="step-label">What official documentation exists — and where it stops</p>
             <h2 id="official-shelf-heading">What official documentation exists — and where it stops</h2>
           </div>
-          <p>These documents and public routes are evidence, not a promise that their handoffs form a complete journey. The gap is shown against what is actually published.</p>
+          <p>These documents and public routes support individual steps; they do not prove that the steps form one complete journey. The gap is shown against what is actually published.</p>
         </div>
         <details className="source-details">
           <summary>Show the sources</summary>
@@ -654,8 +706,8 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
               <article key={source.id}>
                 <a href={source.url} rel="noreferrer" target="_blank">{source.title} ↗</a>
                 <small>{source.publisher} · accessed {source.accessedAt}</small>
-                <p><b>What it covers:</b> A published {source.type.replaceAll('_', ' ')} used in this entry’s evidence ledger.</p>
-                <p><b>Where it stops:</b> {publicNote(source.notes) || 'Its relationship to the other systems in this journey is not established here.'}</p>
+                <p><b>What it covers:</b> A published {source.type.replaceAll('_', ' ')} used to support this entry.</p>
+                <p><b>Where it stops:</b> {publicCopy(publicNote(source.notes)) || 'The public source does not show how this step connects to the other systems in the journey.'}</p>
               </article>
             ))}
           </div>
@@ -676,7 +728,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
           <div className="footer-meta">
             <span>{ledger.meta.disclaimer}</span>
           </div>
-          <small>Snapshot {ledger.meta.asOf} · {ledger.meta.jurisdiction} · Schema {ledger.meta.schemaVersion}</small>
+          <small>Snapshot {ledger.meta.asOf} · {ledger.meta.jurisdiction} · Research format {ledger.meta.schemaVersion}</small>
         </div>
       </footer>
     </main>

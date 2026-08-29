@@ -6,7 +6,7 @@ import { ModeToggle, RestoreExplorerPreference } from '@/components/ModeToggle';
 
 export const metadata: Metadata = {
   title: 'Public Service Dependency Atlas',
-  description: 'A Bengaluru-first atlas of the undocumented handoffs between public services.',
+  description: 'A Bengaluru-first atlas showing where one public service relies on records held by another.',
 };
 
 export default function AtlasHome() {
@@ -34,11 +34,26 @@ export default function AtlasHome() {
         <p className="eyebrow">Bengaluru utilities &amp; municipal services</p>
         <h1>Public Service<br />Dependency Atlas</h1>
         <p className="atlas-lede">A birth, a marriage, a death in the family, a move, a new home, a new business — every life event comes with paperwork. The record you need is often blocked by another record, held by another department, that nobody told you about.</p>
-        <p className="atlas-thesis">Government services are digitized as separate departments, but citizens live connected events. When the links between systems are undocumented, the citizen becomes the integration layer. This atlas documents those links.</p>
+        <p className="atlas-thesis">Government services are digitized as separate departments, but citizens live connected events. When the links between systems are undocumented, the citizen becomes the integration layer. In plain terms: when two government systems cannot talk to each other, you become the messenger — carrying documents between departments that should have shared them.</p>
         <p className="prototype-note">This is a working prototype of a method for mapping documentation gaps across government services, demonstrated on Bengaluru utilities and municipal services.</p>
         <div className="hero-actions">
           <a className="primary-link" href="#directory">Explore the directory <span>↓</span></a>
         </div>
+      </section>
+
+      <section className="failure-layers synthesis" aria-labelledby="synthesis-heading">
+        <div className="section-heading">
+          <p className="step-label">Cross-service synthesis</p>
+          <h2 id="synthesis-heading">One <strong className="synthesis-subject">property record</strong>, three services</h2>
+          <p className="synthesis-scope">A pattern across the 12 services in this atlas — not one case</p>
+          <p className="section-intro">Your <strong>property record</strong> follows you into electricity, water, and tax — three journeys, one record, and you carry it between them.</p>
+        </div>
+        <div className="layer-grid">
+          <article><span>01</span><h3>Electricity</h3><p>For an <Link href="/bescom">electricity name transfer</Link>, BESCOM needs to match your property ID (EPID) to your account. The public record does not say who repairs that match when it fails.</p></article>
+          <article><span>02</span><h3>Water</h3><p>For a <Link href="/water-account">water-account transfer</Link>, BWSSB’s public page shows new-connection controls, not an existing-account name-transfer control. The next step is not published.</p></article>
+          <article><span>03</span><h3>Property tax</h3><p><Link href="/property-tax">Property-tax</Link> pages list name correction and an ARO contact path, but not what the office will accept or what a completed correction looks like.</p></article>
+        </div>
+        <p className="atlas-thesis">The pattern is a finding, not an assumption: individual entries retain the source, access date, grade, and status behind each statement. Where the sources stop, the atlas says so.</p>
       </section>
 
       <section className="atlas-missing" id="missing" aria-labelledby="missing-heading">
@@ -47,23 +62,11 @@ export default function AtlasHome() {
           <h2 id="missing-heading">What&apos;s missing</h2>
           <p>{documentedGapCount} gaps so far, from {atlasServices.length} services in one city — a lower bound from desk research against public sources.</p>
         </div>
+        <p className="missing-explainer">Examples of steps where our research found no published procedure — {exampleGaps.length} of {documentedGapCount} across {atlasServices.length} services.</p>
         <ol className="missing-example-list">
           {exampleGaps.map(({ service, gap }) => <li key={`${service.href}:${gap.id}`}><strong>{gap.situation}</strong><span>{gap.missing}</span><Link href={`${service.href}#what-nobody-has-documented`}>See this in {service.title} →</Link></li>)}
         </ol>
-      </section>
-
-      <section className="failure-layers synthesis" aria-labelledby="synthesis-heading">
-        <div className="section-heading">
-          <p className="step-label">Cross-service synthesis</p>
-          <h2 id="synthesis-heading">One property record, three services</h2>
-          <p className="section-intro">Your property record follows you into electricity, water, and tax — three journeys, one record, and you carry it between them.</p>
-        </div>
-        <div className="layer-grid">
-          <article><span>01</span><h3>Electricity</h3><p>For an <Link href="/bescom">electricity name transfer</Link>, BESCOM needs to match your property ID (EPID) to your account. The public record does not say who repairs that match when it fails.</p></article>
-          <article><span>02</span><h3>Water</h3><p>For a <Link href="/water-account">water-account transfer</Link>, BWSSB’s public page shows new-connection controls, not an existing-account name-transfer control. The next step is not published.</p></article>
-          <article><span>03</span><h3>Property tax</h3><p><Link href="/property-tax">Property-tax</Link> pages list name correction and an ARO contact path, but not what the office will accept or what a completed correction looks like.</p></article>
-        </div>
-        <p className="atlas-thesis">The pattern is a finding, not an assumption: individual entries retain the source, access date, grade, and status behind each statement. Where the sources stop, the atlas says so.</p>
+        <a className="missing-directory-link" href="#directory">See every researched service in the directory →</a>
       </section>
 
       <section className="failure-layers" aria-labelledby="layers-heading">
@@ -86,13 +89,17 @@ export default function AtlasHome() {
           </div>
           <p>Each entry traces the records the service depends on, what can block it, and the evidence behind every statement.</p>
         </div>
+        <p className="directory-status-key"><b>Mapped</b> = we traced the full published route and its gaps. <b>Partially mapped</b> = the public record stops before the journey does. Both are researched; neither means the service is complete or incomplete.</p>
         <div className="service-grid">
           {serviceGaps.map(({ service, gaps }) => {
             const firstGap = gaps[0];
             const cardCopy = service.status === 'Mapped'
-              ? `Published route with ${gaps.length} documented gaps kept visible.`
-              : `${gaps.length} documented gaps, including: ${firstGap?.situation ?? 'the remaining public record has not been fully mapped.'}`;
-            return <a className="service-card mapped-service" href={service.href} key={service.title}><span className="service-category">{service.category}</span><div className={`service-status service-${service.status.toLowerCase().replaceAll(' ', '-')}`}>{service.status}</div><h3>{service.title}</h3><p>{cardCopy}</p><span className="service-cta">Open this entry →</span></a>;
+              ? `Published route with ${gaps.length} ${gaps.length === 1 ? 'place' : 'places'} where the public procedure stops, kept visible.`
+              : `${gaps.length === 1 ? 'One place' : `${gaps.length} places`} where the public record stops, including: ${firstGap?.situation ?? 'the remaining route has not been fully traced.'}`;
+            const statusDefinition = service.status === 'Mapped'
+              ? 'Mapped: we traced the full published route and its gaps.'
+              : 'Partially mapped: the public record stops before the journey does.';
+            return <a className="service-card mapped-service" href={service.href} key={service.title}><span className="service-category">{service.category}</span><div className={`service-status service-${service.status.toLowerCase().replaceAll(' ', '-')}`} title={statusDefinition} aria-label={`${service.status}. ${statusDefinition}`}>{service.status}</div><h3>{service.title}</h3><p>{cardCopy}</p><span className="service-cta">Open this entry →</span></a>;
           })}
         </div>
       </section>

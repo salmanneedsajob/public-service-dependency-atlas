@@ -394,7 +394,8 @@ h1 {
   transition: transform .2s ease, background .2s ease;
 }
 .node:hover { transform: translateY(-3px); background: #2a5147; }
-.node.focused { background: #315c50; outline: 3px solid var(--yellow); outline-offset: 4px; }
+.node.focused { border-color: #fff7bf; background: #3a6b5c; box-shadow: 0 0 0 3px var(--yellow), 0 0 0 7px rgba(243, 205, 116, .32); transform: translateY(-4px); }
+.node:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
 .node.status-border-verified { border-top-color: #68d09c; }
 .node.status-border-partial { border-top-color: var(--yellow); }
 .node.status-border-contested { border-top-color: var(--orange); }
@@ -418,6 +419,9 @@ h1 {
 .relationship.status-border-unknown { border-top-color: #aab5b1; }
 .relationship.relationship-undocumented { border-style: dashed; background: #19352e; }
 .relationship.relationship-undocumented { border-top-style: solid; }
+.relationship { transition: opacity .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.relationship-muted { opacity: .4; }
+.relationship-active { border-color: var(--yellow); box-shadow: 0 0 0 2px rgba(243, 205, 116, .28); transform: translateY(-2px); }
 
 .explorer-page { min-height: 100vh; background: #e8ece9; color: #18231f; }
 .explorer-header { border-bottom: 1px solid #b6c0ba; background: #f8faf8; }.explorer-header nav a { color: #3e5048; }

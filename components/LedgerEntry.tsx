@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import type { Detail, EvidenceGrade, Ledger, RecordStatus } from '@/lib/ledger-types';
 import { buildSourceGroups, sourceGroupSummary, type DisplaySource, type SourceGroupKind } from '@/lib/source-groups';
@@ -238,6 +238,28 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
   const [selectedNodeId, setSelectedNodeId] = useState(ledger.scenarios[0]?.pathNodeIds[0] ?? '');
   const [roadblockCategory, setRoadblockCategory] = useState<'all' | RoadblockCategory>('all');
   const [showAllRoadblocks, setShowAllRoadblocks] = useState(false);
+  const nodeDetailRef = useRef<HTMLElement>(null);
+  const shouldRevealSelectedNode = useRef(false);
+
+  useEffect(() => {
+    if (!shouldRevealSelectedNode.current) return;
+    shouldRevealSelectedNode.current = false;
+
+    const frame = window.requestAnimationFrame(() => {
+      const detail = nodeDetailRef.current;
+      if (!detail) return;
+
+      const { top, bottom } = detail.getBoundingClientRect();
+      if (top >= 0 && bottom <= window.innerHeight) return;
+
+      detail.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start',
+      });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [selectedNodeId]);
 
   const selectedScenario = useMemo(
     () => ledger.scenarios.find((scenario) => scenario.id === selectedScenarioId),
@@ -304,6 +326,11 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
     setSelectedScenarioId(id);
     setSelectedNodeId(scenario.pathNodeIds[0] ?? '');
     setShowAllRoadblocks(false);
+  }
+
+  function selectNode(id: string) {
+    shouldRevealSelectedNode.current = true;
+    setSelectedNodeId(id);
   }
 
   return (
@@ -440,7 +467,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
                 <button
                   id={node.id}
                   className={`node status-border-${node.status} ${selectedNode?.id === node.id ? 'focused' : ''}`}
-                  onClick={() => setSelectedNodeId(node.id)}
+                  onClick={() => selectNode(node.id)}
                   aria-pressed={selectedNode?.id === node.id}
                 >
                   <span className="node-topline">
@@ -461,50 +488,8 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
           })}
         </div>
 
-        <section className="relationship-chain" aria-labelledby="relationship-heading">
-          <div className="relationship-heading">
-            <div>
-              <p className="eyebrow">How one step leads to the next</p>
-              <h3 id="relationship-heading">What has to happen before the next step</h3>
-            </div>
-            <p>These links show how the available sources connect the records for this situation. A dashed card means the link comes from citizen reports or has no published official procedure.</p>
-          </div>
-          <div className="relationship-list">
-            {activeEdges.map((edge) => {
-              const fromNode = ledger.nodes.find((node) => node.id === edge.fromNodeId);
-              const toNode = ledger.nodes.find((node) => node.id === edge.toNodeId);
-              const grades = [...new Set(edge.claimIds
-                .map((claimId) => ledger.claims.find((claim) => claim.id === claimId)?.evidenceGrade)
-                .filter((grade): grade is EvidenceGrade => Boolean(grade)))];
-              const onlyCitizenEvidence = grades.length > 0 && grades.every((grade) => grade === 'E' || grade === 'F');
-              const undocumentedEdge = edge.status === 'unknown' || onlyCitizenEvidence;
-
-              return (
-                <article className={`relationship status-border-${edge.status} ${undocumentedEdge ? 'relationship-undocumented' : ''}`} key={edge.id}>
-                  <div className="relationship-topline">
-                    <span>{relationshipCopy[edge.relationship] ?? 'next step'}</span>
-                    <StatusBadge status={edge.status} compact />
-                  </div>
-                  <div className="relationship-nodes">
-                    <b>{fromNode ? publicNodeLabel(fromNode.label) : edge.fromNodeId}</b>
-                    <span aria-hidden="true">→</span>
-                    <b>{toNode ? publicNodeLabel(toNode.label) : edge.toNodeId}</b>
-                  </div>
-                  <p>{publicCopy(edge.label)}</p>
-                  {undocumentedEdge && <small className="edge-evidence-note">{onlyCitizenEvidence ? 'Reported by citizens; no official procedure found.' : 'No official procedure found in the public sources checked.'}</small>}
-                  <div className="relationship-grades" aria-label="Source strength for this link">
-                    {grades.length
-                      ? grades.map((grade) => <EvidenceBadge grade={grade} key={grade} />)
-                      : <span>No source record linked yet</span>}
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </section>
-
         {selectedNode && (
-          <article className="node-detail" aria-live="polite">
+          <article className="node-detail" aria-live="polite" ref={nodeDetailRef}>
             <header className="node-detail-header">
               <div>
                 <p className="eyebrow">You’re looking at: {publicNodeLabel(selectedNode.label)} — a {recordType} held by {ownerName}</p>
@@ -548,6 +533,49 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
             </section>
           </article>
         )}
+
+        <section className="relationship-chain" aria-labelledby="relationship-heading">
+          <div className="relationship-heading">
+            <div>
+              <p className="eyebrow">How one step leads to the next</p>
+              <h3 id="relationship-heading">What has to happen before the next step</h3>
+            </div>
+            <p>These links show how the available sources connect the records for this situation. A dashed card means the link comes from citizen reports or has no published official procedure.</p>
+          </div>
+          <div className="relationship-list">
+            {activeEdges.map((edge) => {
+              const fromNode = ledger.nodes.find((node) => node.id === edge.fromNodeId);
+              const toNode = ledger.nodes.find((node) => node.id === edge.toNodeId);
+              const grades = [...new Set(edge.claimIds
+                .map((claimId) => ledger.claims.find((claim) => claim.id === claimId)?.evidenceGrade)
+                .filter((grade): grade is EvidenceGrade => Boolean(grade)))];
+              const onlyCitizenEvidence = grades.length > 0 && grades.every((grade) => grade === 'E' || grade === 'F');
+              const undocumentedEdge = edge.status === 'unknown' || onlyCitizenEvidence;
+              const involvesSelectedNode = selectedNode && (edge.fromNodeId === selectedNode.id || edge.toNodeId === selectedNode.id);
+
+              return (
+                <article className={`relationship status-border-${edge.status} ${undocumentedEdge ? 'relationship-undocumented' : ''} ${involvesSelectedNode ? 'relationship-active' : 'relationship-muted'}`} key={edge.id}>
+                  <div className="relationship-topline">
+                    <span>{relationshipCopy[edge.relationship] ?? 'next step'}</span>
+                    <StatusBadge status={edge.status} compact />
+                  </div>
+                  <div className="relationship-nodes">
+                    <b>{fromNode ? publicNodeLabel(fromNode.label) : edge.fromNodeId}</b>
+                    <span aria-hidden="true">→</span>
+                    <b>{toNode ? publicNodeLabel(toNode.label) : edge.toNodeId}</b>
+                  </div>
+                  <p>{publicCopy(edge.label)}</p>
+                  {undocumentedEdge && <small className="edge-evidence-note">{onlyCitizenEvidence ? 'Reported by citizens; no official procedure found.' : 'No official procedure found in the public sources checked.'}</small>}
+                  <div className="relationship-grades" aria-label="Source strength for this link">
+                    {grades.length
+                      ? grades.map((grade) => <EvidenceBadge grade={grade} key={grade} />)
+                      : <span>No source record linked yet</span>}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
       </section>
 
       {selectedJourney && (

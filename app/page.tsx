@@ -23,7 +23,7 @@ export default function AtlasHome() {
       <header className="site-header">
         <Link className="wordmark" href="/"><span className="wordmark-accent">BLR</span><span>Public Service Dependency Atlas</span></Link>
         <nav aria-label="Page navigation">
-          <a href="#directory">Service directory</a>
+          <a className="primary-nav-link" href="#directory">Service directory</a>
           <a href="#method">Contribute</a>
         </nav>
         <ModeToggle mode="normal" />
@@ -52,6 +52,7 @@ export default function AtlasHome() {
           <article><span>03</span><h3>Property tax</h3><p><Link href="/property-tax">Property-tax</Link> pages list name correction and an ARO contact path, but not what the office will accept or what a completed correction looks like.</p></article>
         </div>
         <p className="atlas-thesis">The pattern is a finding, not an assumption: individual entries retain the source, access date, grade, and status behind each statement. Where the sources stop, the atlas says so.</p>
+        <a className="section-onward-link" href="#directory">See how this plays out service by service →</a>
       </section>
 
       <section className="atlas-missing" id="missing" aria-labelledby="missing-heading">
@@ -79,6 +80,7 @@ export default function AtlasHome() {
           <article><span>02</span><h3>Process</h3><p>You need to move a BWSSB water account into your name, but the public portal shows only new or additional connections — not the transfer route.</p></article>
           <article><span>03</span><h3>Infrastructure</h3><p>BESCOM’s system can’t match your property ID (EPID) to your account — and no public document says who repairs that.</p></article>
         </div>
+        <a className="section-onward-link" href="#directory">Find your service in the directory →</a>
       </section>
 
       <section className="atlas-directory" id="directory" aria-labelledby="directory-heading">

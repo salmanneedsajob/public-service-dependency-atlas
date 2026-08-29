@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-const siteOrigin = new URL(process.env.NEXT_PUBLIC_SITE_ORIGIN ?? 'https://public-service-atlas.vercel.app');
+const siteOrigin = new URL('https://public-service-atlas.vercel.app');
 
 export const metadata: Metadata = {
   metadataBase: siteOrigin,

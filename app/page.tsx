@@ -39,22 +39,6 @@ export default function AtlasHome() {
         </div>
       </section>
 
-      <section className="failure-layers synthesis" aria-labelledby="synthesis-heading">
-        <div className="section-heading">
-          <p className="step-label">Cross-service synthesis</p>
-          <h2 id="synthesis-heading">One <strong className="synthesis-subject">property record</strong>, three services</h2>
-          <p className="synthesis-scope">A pattern across the 12 services in this atlas — not one case</p>
-          <p className="section-intro">Your <strong>property record</strong> follows you into electricity, water, and tax — three journeys, one record, and you carry it between them.</p>
-        </div>
-        <div className="layer-grid">
-          <article><span>01</span><h3>Electricity</h3><p>For an <Link href="/bescom">electricity name transfer</Link>, BESCOM needs to match your property ID (EPID) to your account. The public record does not say who repairs that match when it fails.</p></article>
-          <article><span>02</span><h3>Water</h3><p>For a <Link href="/water-account">water-account transfer</Link>, BWSSB’s public page shows new-connection controls, not an existing-account name-transfer control. The next step is not published.</p></article>
-          <article><span>03</span><h3>Property tax</h3><p><Link href="/property-tax">Property-tax</Link> pages list name correction and an ARO contact path, but not what the office will accept or what a completed correction looks like.</p></article>
-        </div>
-        <p className="atlas-thesis">The pattern is a finding, not an assumption: individual entries retain the source, access date, grade, and status behind each statement. Where the sources stop, the atlas says so.</p>
-        <a className="section-onward-link" href="#directory">See how this plays out service by service →</a>
-      </section>
-
       <section className="atlas-missing" id="missing" aria-labelledby="missing-heading">
         <div className="atlas-missing-intro">
           <p className="step-label">What the public record leaves out</p>
@@ -76,7 +60,7 @@ export default function AtlasHome() {
           <h2 id="layers-heading">Three layers of failure</h2>
         </div>
         <div className="layer-grid">
-          <article><span>01</span><h3>Documentation</h3><p>An older BESCOM account says it needed a builder NOC; a 2026 account says it did not. No public document explains when that NOC is required.</p></article>
+          <article><span>01</span><h3>Documentation</h3><p>An older BESCOM account says it needed a builder NOC; a 2026 account says it did not. No public document explains when that NOC is required. Property-tax pages list name correction and an ARO contact path, but do not say what the office will accept or what a completed correction looks like.</p></article>
           <article><span>02</span><h3>Process</h3><p>You need to move a BWSSB water account into your name, but the public portal shows only new or additional connections — not the transfer route.</p></article>
           <article><span>03</span><h3>Infrastructure</h3><p>BESCOM’s system can’t match your property ID (EPID) to your account — and no public document says who repairs that.</p></article>
         </div>

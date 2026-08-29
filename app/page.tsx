@@ -57,16 +57,18 @@ export default function AtlasHome() {
       </section>
 
       <section className="atlas-missing" id="missing" aria-labelledby="missing-heading">
-        <div>
+        <div className="atlas-missing-intro">
           <p className="step-label">What the public record leaves out</p>
           <h2 id="missing-heading">What&apos;s missing</h2>
           <p>{documentedGapCount} gaps so far, from {atlasServices.length} services in one city — a lower bound from desk research against public sources.</p>
+          <p className="missing-explainer">Examples of steps where our research found no published procedure — {exampleGaps.length} of {documentedGapCount} across {atlasServices.length} services.</p>
         </div>
-        <p className="missing-explainer">Examples of steps where our research found no published procedure — {exampleGaps.length} of {documentedGapCount} across {atlasServices.length} services.</p>
-        <ol className="missing-example-list">
-          {exampleGaps.map(({ service, gap }) => <li key={`${service.href}:${gap.id}`}><strong>{gap.situation}</strong><span>{gap.missing}</span><Link href={`${service.href}#what-nobody-has-documented`}>See this in {service.title} →</Link></li>)}
-        </ol>
-        <a className="missing-directory-link" href="#directory">See every researched service in the directory →</a>
+        <div className="missing-list-area">
+          <ol className="missing-example-list">
+            {exampleGaps.map(({ service, gap }) => <li key={`${service.href}:${gap.id}`}><strong>{gap.situation}</strong><span>{gap.missing}</span><Link href={`${service.href}#what-nobody-has-documented`}>See this in {service.title} →</Link></li>)}
+          </ol>
+          <a className="missing-directory-link" href="#directory">See every researched service in the directory →</a>
+        </div>
       </section>
 
       <section className="failure-layers" aria-labelledby="layers-heading">

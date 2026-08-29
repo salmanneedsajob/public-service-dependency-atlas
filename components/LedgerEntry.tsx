@@ -322,22 +322,24 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
       </section>
 
       <section className="gap-section" id="what-nobody-has-documented" aria-labelledby="gap-heading">
-        <div>
+        <div className="gap-intro">
           <p className="step-label">The atlas’s central finding</p>
           <h2 id="gap-heading">What nobody has documented</h2>
           <p>These are unresolved steps and problems that can leave a citizen stuck because no usable public procedure was found. Routine empty fields and internal research notes are not counted.</p>
         </div>
-        <ol className="gap-list">
-          {topGaps.map((gap) => <li key={gap.id}><strong>{gap.situation}</strong><span>{gap.missing}</span></li>)}
-        </ol>
-        {remainingGaps.length > 0 && (
-          <details className="gap-more">
-            <summary>Show all {gaps.length} gaps</summary>
-            <ol className="gap-list" style={{ counterReset: `gap ${topGaps.length}` }}>
-              {remainingGaps.map((gap) => <li key={gap.id}><strong>{gap.situation}</strong><span>{gap.missing}</span></li>)}
-            </ol>
-          </details>
-        )}
+        <div className="gap-list-area">
+          <ol className="gap-list">
+            {topGaps.map((gap) => <li key={gap.id}><strong>{gap.situation}</strong><span>{gap.missing}</span></li>)}
+          </ol>
+          {remainingGaps.length > 0 && (
+            <details className="gap-more">
+              <summary>Show all {gaps.length} gaps</summary>
+              <ol className="gap-list" style={{ counterReset: `gap ${topGaps.length}` }}>
+                {remainingGaps.map((gap) => <li key={gap.id}><strong>{gap.situation}</strong><span>{gap.missing}</span></li>)}
+              </ol>
+            </details>
+          )}
+        </div>
       </section>
 
       <section className="reading-key" aria-label="How to read this page">

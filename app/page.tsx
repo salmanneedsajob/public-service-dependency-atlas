@@ -33,8 +33,7 @@ export default function AtlasHome() {
         <p className="eyebrow">Bengaluru utilities &amp; municipal services</p>
         <h1>Public Service<br />Dependency Atlas</h1>
         <p className="atlas-lede">A birth, a marriage, a death in the family, a move, a new home, a new business — every life event comes with paperwork. The record you need is often blocked by another record, held by another department, that nobody told you about.</p>
-        <p className="atlas-thesis">Government services are digitized as separate departments, but citizens live connected events. When the links between systems are undocumented, the citizen becomes the integration layer. In plain terms: when two government systems cannot talk to each other, you become the messenger — carrying documents between departments that should have shared them.</p>
-        <p className="prototype-note">This is a working prototype of a method for mapping documentation gaps across government services, demonstrated on Bengaluru utilities and municipal services.</p>
+        <p className="atlas-thesis">Government services are built department by department, but nobody lives their life one department at a time. When the links between systems go undocumented, you become the messenger — carrying records between departments that should have shared them.</p>
         <div className="hero-actions">
           <a className="primary-link" href="#directory">Explore the directory <span>↓</span></a>
         </div>
@@ -112,6 +111,7 @@ export default function AtlasHome() {
         </div>
         <div>
           <p>Use the shared research format to add a source, record a gap, or show a contradiction without turning uncertainty into a guess. The existing entries are a starting point, not a claim that every public journey is fully documented.</p>
+          <p className="prototype-note contribution-prototype">This is a working prototype of a method for mapping documentation gaps across government services, demonstrated on Bengaluru utilities and municipal services.</p>
           <div className="contribution-links"><a href="https://github.com/salmanneedsajob/public-service-dependency-atlas/blob/main/ledger/schema.json" target="_blank" rel="noreferrer">Research format ↗</a><a href="https://github.com/salmanneedsajob/public-service-dependency-atlas/blob/main/ledger/AGENT_PROTOCOL.md" target="_blank" rel="noreferrer">Research protocol ↗</a><a href="https://github.com/salmanneedsajob/public-service-dependency-atlas" target="_blank" rel="noreferrer">Open-source atlas ↗</a></div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { atlasServices } from '@/lib/atlas-data';
 import { buildSourceGroups, type DisplaySource } from '@/lib/source-groups';
 import { collectUndocumentedQuestions } from '@/lib/undocumented';
+import type { ServiceMappingStatus } from '@/lib/service-status';
 
 export type ExplorerDocument = DisplaySource;
 
@@ -15,6 +16,7 @@ export type ExplorerFolder = {
   id: string;
   title: string;
   category: string;
+  status: ServiceMappingStatus;
   href: string;
   specificDocuments: ExplorerDocument[];
   generalReferences: ExplorerDocument[];
@@ -30,6 +32,7 @@ export function buildExplorerFolders(): ExplorerFolder[] {
       id: service.id,
       title: service.title,
       category: service.category,
+      status: service.status,
       href: service.href,
       ...groups,
       missingFiles: collectUndocumentedQuestions(service.ledger).map((gap) => ({

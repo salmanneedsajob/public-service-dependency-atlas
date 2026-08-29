@@ -75,12 +75,12 @@ export default function ExplorerMode({ folders }: { folders: ExplorerFolder[] })
         <aside className="folder-pane" id="folders">
           <div className="explorer-pane-heading"><span>Service folders</span><b>{folders.length}</b></div>
           <div className="folder-list">
-            {folders.map((folder) => <button key={folder.id} className={folder.id === selectedFolder.id ? 'folder-row selected' : 'folder-row'} onClick={() => chooseFolder(folder)}><span className="folder-icon" aria-hidden="true">▰</span><span><b>{folder.title}</b><small>{sourceGroupSummary({ specificDocuments: folder.specificDocuments, generalReferences: folder.generalReferences, citizenAccounts: folder.citizenAccounts }, folder.missingFiles.length)}</small></span></button>)}
+            {folders.map((folder) => <button key={folder.id} className={folder.id === selectedFolder.id ? 'folder-row selected' : 'folder-row'} onClick={() => chooseFolder(folder)}><span className="folder-icon" aria-hidden="true">▰</span><span><b>{folder.title}</b><small>{folder.status} · {sourceGroupSummary({ specificDocuments: folder.specificDocuments, generalReferences: folder.generalReferences, citizenAccounts: folder.citizenAccounts }, folder.missingFiles.length)}</small></span></button>)}
           </div>
         </aside>
 
         <section className="file-pane" id="files" aria-labelledby="folder-title">
-          <div className="file-pane-heading"><div><p className="eyebrow">{selectedFolder.category}</p><h2 id="folder-title">{selectedFolder.title}</h2></div><Link href={selectedFolder.href}>Open service entry →</Link></div>
+          <div className="file-pane-heading"><div><p className="eyebrow">{selectedFolder.category} · {selectedFolder.status}</p><h2 id="folder-title">{selectedFolder.title}</h2></div><Link href={selectedFolder.href}>Open service entry →</Link></div>
           <div className="file-groups">
             <p className="source-group-intro">Files are grouped by how specific the source is. Each URL appears once; general references are starting points, and citizen accounts are reported experience.</p>
             <SourceFileGroup id="specific-files-heading" title="Specific documents" sources={selectedFolder.specificDocuments} kind="specific" onSelect={setSelectedDocument} selectedId={selectedDocument?.id} />

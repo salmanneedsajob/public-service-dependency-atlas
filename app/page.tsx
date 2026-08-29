@@ -75,6 +75,7 @@ export default function AtlasHome() {
           <p>Each entry traces the records the service depends on, what can block it, and the evidence behind every statement.</p>
         </div>
         <p className="directory-status-key"><b>Mapped</b> = we traced the full published route and its gaps. <b>Partially mapped</b> = the public record stops before the journey does. Both are researched; neither means the service is complete or incomplete.</p>
+        <p className="directory-status-rule">Mapped means every record on the main route has a way to check it, a known failure state, and a recovery route, and every handoff is sourced.</p>
         <div className="service-grid">
           {serviceGaps.map(({ service, gaps }) => {
             const firstGap = gaps[0];

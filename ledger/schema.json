@@ -126,6 +126,12 @@
         "checks": { "type": "array", "items": { "$ref": "#/$defs/detail" } },
         "failureSignals": { "type": "array", "items": { "$ref": "#/$defs/detail" } },
         "recoveries": { "type": "array", "items": { "$ref": "#/$defs/detail" } },
+        "researchedNoSourceFound": {
+          "type": "array",
+          "description": "Empty node-detail fields that were searched in this research pass and had no public source. An omitted field is not yet researched.",
+          "uniqueItems": true,
+          "items": { "enum": ["checks", "failureSignals", "recoveries"] }
+        },
         "scenarioIds": { "$ref": "#/$defs/refList" },
         "claimIds": { "$ref": "#/$defs/refList" },
         "status": { "$ref": "#/$defs/recordStatus" },

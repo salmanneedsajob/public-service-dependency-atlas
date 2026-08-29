@@ -86,6 +86,13 @@ export default function ExplorerMode({ folders }: { folders: ExplorerFolder[] })
             <SourceFileGroup id="specific-files-heading" title="Specific documents" sources={selectedFolder.specificDocuments} kind="specific" onSelect={setSelectedDocument} selectedId={selectedDocument?.id} />
             <SourceFileGroup id="general-files-heading" title="General references" sources={selectedFolder.generalReferences} kind="general" onSelect={setSelectedDocument} selectedId={selectedDocument?.id} />
             <SourceFileGroup id="citizen-files-heading" title="Citizen accounts" sources={selectedFolder.citizenAccounts} kind="citizen" onSelect={setSelectedDocument} selectedId={selectedDocument?.id} />
+            <section className="research-coverage" aria-labelledby="research-coverage-heading">
+              <div className="file-group-heading"><h3 id="research-coverage-heading">Empty file research</h3></div>
+              <div className="research-coverage-states">
+                <p className="researched-silent"><b>{selectedFolder.researchCoverage.researchedSilent}</b> No public source explains this — we looked.</p>
+                <p className="not-yet-researched"><b>{selectedFolder.researchCoverage.notYetResearched}</b> Not yet researched.</p>
+              </div>
+            </section>
             <section aria-labelledby="missing-files-heading"><div className="file-group-heading"><h3 id="missing-files-heading">Missing procedures</h3><span>{selectedFolder.missingFiles.length}</span></div><div className="file-grid">{selectedFolder.missingFiles.map((file) => <button key={file.id} className="file-card missing-file" onClick={() => setMissingFile({ folder: selectedFolder, file })}><FileIcon missing /><b>{file.name}</b><small>not published</small></button>)}</div></section>
           </div>
         </section>

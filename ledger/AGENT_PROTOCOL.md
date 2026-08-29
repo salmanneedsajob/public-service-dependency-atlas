@@ -26,6 +26,8 @@ Find primary law, regulation, official pages, forms, circulars, portals, and hel
 
 Trace what an unauthenticated member of the public can see across official interfaces. Record steps, system handoffs, visible error text, prerequisites, and recovery routes. Grade direct current observation of a public official interface **B**, not E; reserve E for genuine citizen accounts. Never submit a live application or bypass access controls. Mark anything that requires login or cannot be checked as `unknown`.
 
+For each node field (`checks`, `failureSignals`, `recoveries`) that is empty after this pass, add that field name to the node's optional `researchedNoSourceFound` array **only** when the pass actually searched the relevant public route and found no public source. The omitted marker means `not yet researched`; it is a gap in our work, not evidence of a government documentation gap. Never infer the marker from an empty array, a login boundary, or another agent's notes.
+
 ### Citizen-evidence agent
 
 Collect public first-person accounts only to expose failure modes, undocumented dependencies, terminology, and possible recovery paths. Remove personal details, grade these claims E or F as appropriate, and never treat one account as a universal rule. Link contradictions instead of resolving them by intuition.
@@ -33,6 +35,8 @@ Collect public first-person accounts only to expose failure modes, undocumented 
 ### Auditor agent
 
 Check atomicity, source linkage, dates, jurisdiction, scenario tags, reference integrity, evidence grade, observation-versus-inference, and contradiction links. Split compound claims. Downgrade or mark `contested` when evidence does not support the wording. Preserve unknowns.
+
+For every `researchedNoSourceFound` marker, verify that the public-workflow evidence records an actual search of that field's relevant public route. Remove a marker that rests only on assumption, a login boundary, or an unsearched route. Empty fields without this marker must remain visibly `not yet researched` in the renderer.
 
 ## Merge rules
 

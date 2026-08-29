@@ -67,6 +67,7 @@ for (const journey of ledger.journeys) journey.scenarioId = canonicalScenario(jo
 const nodeKinds = new Set(['record', 'document', 'service', 'decision', 'system', 'outcome']);
 const relationships = new Set(['requires', 'produces', 'maps_to', 'blocks', 'alternative']);
 const sourceTypes = new Set(['law', 'regulation', 'order', 'official_guidance', 'official_form', 'official_portal', 'secondary', 'citizen_evidence', 'firsthand_observation']);
+const researchedDetailFields = new Set(['checks', 'failureSignals', 'recoveries']);
 for (const node of ledger.nodes) if (!nodeKinds.has(node.kind)) node.kind = 'record';
 for (const edge of ledger.edges) if (!relationships.has(edge.relationship)) edge.relationship = 'requires';
 for (const roadblock of ledger.roadblocks) if (!['documentation', 'process', 'infrastructure'].includes(roadblock.category)) roadblock.category = 'documentation';
@@ -92,6 +93,10 @@ for (const claim of ledger.claims) {
 for (const node of ledger.nodes) {
   node.scenarioIds = onlyKnown(node.scenarioIds, scenarioIds);
   node.claimIds = onlyKnown(node.claimIds, claimIds);
+  if (node.researchedNoSourceFound) {
+    node.researchedNoSourceFound = onlyKnown(node.researchedNoSourceFound, researchedDetailFields);
+    if (!node.researchedNoSourceFound.length) delete node.researchedNoSourceFound;
+  }
   if (node.ownerAgencyId && !agencyIds.has(node.ownerAgencyId)) delete node.ownerAgencyId;
   for (const details of [node.checks, node.failureSignals, node.recoveries]) for (const detail of details) detail.claimIds = onlyKnown(detail.claimIds, claimIds);
 }

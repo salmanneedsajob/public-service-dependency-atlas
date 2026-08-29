@@ -49,4 +49,16 @@ assert(nocRoadblock?.claimIds.includes('claim_citizen_old_noc') && nocRoadblock.
 assert(oldNoc?.contradictsClaimIds.includes('claim_citizen_no_builder_noc'), 'Old-NOC claim must reference its contradiction.');
 assert(noBuilderNoc?.contradictsClaimIds.includes('claim_citizen_old_noc'), 'No-builder-NOC claim must reference its contradiction.');
 
-console.log('Research ledger verified: six scenarios, dated disclaimer, and contested NOC evidence.');
+const detailFields = new Set(['checks', 'failureSignals', 'recoveries']);
+for (const node of ledger.nodes) {
+  for (const field of node.researchedNoSourceFound ?? []) {
+    assert(detailFields.has(field), `${node.id} has an invalid researched-silent field: ${field}.`);
+    assert(node[field].length === 0, `${node.id}.${field} cannot be marked researched-silent when evidence is present.`);
+  }
+}
+const saleDeed = ledger.nodes.find((node) => node.id === 'node_sale_deed');
+const bescomMapping = ledger.nodes.find((node) => node.id === 'node_bescom_mapping');
+assert(saleDeed?.researchedNoSourceFound?.includes('failureSignals') && saleDeed.researchedNoSourceFound.includes('recoveries'), 'Sale deed must distinguish searched-silent failure and recovery fields.');
+assert(bescomMapping?.researchedNoSourceFound?.includes('checks') && bescomMapping.researchedNoSourceFound.includes('recoveries'), 'BESCOM mapping must distinguish searched-silent check and recovery fields.');
+
+console.log('Research ledger verified: six scenarios, dated disclaimer, contested NOC evidence, and researched-silent markers.');

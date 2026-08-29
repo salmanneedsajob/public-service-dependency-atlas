@@ -194,11 +194,13 @@ function DetailGroup({
   eyebrow,
   title,
   details,
+  researchedNoSourceFound,
   ledger,
 }: {
   eyebrow: string;
   title: string;
   details: Detail[];
+  researchedNoSourceFound: boolean;
   ledger: Ledger;
 }) {
   return (
@@ -228,7 +230,11 @@ function DetailGroup({
             </article>
           ))
         ) : (
-          <p className="empty-note">Nothing recorded yet — absence is not evidence that no step exists.</p>
+          <p className={`empty-note ${researchedNoSourceFound ? 'researched-silent' : 'not-yet-researched'}`}>
+            {researchedNoSourceFound
+              ? 'No public source explains this — we looked.'
+              : 'Not yet researched.'}
+          </p>
         )}
       </div>
     </section>
@@ -514,9 +520,9 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
             </div>
 
             <div className="detail-columns">
-              <DetailGroup eyebrow="Check" title="How can I check it?" details={selectedNode.checks} ledger={ledger} />
-              <DetailGroup eyebrow="Failure" title="What does failure look like?" details={selectedNode.failureSignals} ledger={ledger} />
-              <DetailGroup eyebrow="Recovery" title="What can I do next?" details={selectedNode.recoveries} ledger={ledger} />
+              <DetailGroup eyebrow="Check" title="How can I check it?" details={selectedNode.checks} researchedNoSourceFound={selectedNode.researchedNoSourceFound?.includes('checks') ?? false} ledger={ledger} />
+              <DetailGroup eyebrow="Failure" title="What does failure look like?" details={selectedNode.failureSignals} researchedNoSourceFound={selectedNode.researchedNoSourceFound?.includes('failureSignals') ?? false} ledger={ledger} />
+              <DetailGroup eyebrow="Recovery" title="What can I do next?" details={selectedNode.recoveries} researchedNoSourceFound={selectedNode.researchedNoSourceFound?.includes('recoveries') ?? false} ledger={ledger} />
             </div>
 
             <section className="node-claims">

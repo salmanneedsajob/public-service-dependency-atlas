@@ -32,6 +32,8 @@ for (const [service, file] of Object.entries(services)) {
   }
   if (guide.terms.length < 3) errors.push(`${service}: expected at least three defined terms.`);
   if (!guide.processSummary || guide.processSummary.length < 180) errors.push(`${service}: process summary is missing or too thin.`);
+  const sentenceCount = guide.processSummary.split(/(?<=[.!?])\s+/).filter(Boolean).length;
+  if (sentenceCount < 2 || sentenceCount > 3) errors.push(`${service}: process summary must contain two or three sentences; found ${sentenceCount}.`);
   if (internalJargon.test(guide.processSummary)) errors.push(`${service}: process summary contains internal research jargon.`);
 
   const ledgerText = normalize(await readFile(`ledger/${file}`, 'utf8'));

@@ -11,6 +11,20 @@ const files = ['app/page.tsx', ...ledgerFiles];
 const text = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n');
 const urls = [...new Set(text.match(/https?:\/\/[^"'\s,)]+/g) ?? [])]
   .filter((url) => !url.includes('example.') && !url.includes('buildwhatmovesindia.example'));
+const ledgers = await Promise.all(ledgerFiles.map(async (file) => JSON.parse(await readFile(file, 'utf8'))));
+
+const isBareOrigin = (url) => {
+  const parsed = new URL(url);
+  return parsed.pathname === '/' && !parsed.search && !parsed.hash;
+};
+
+// Agency homepages are allowed as directory metadata and journey starting
+// points. They are not allowed to be ledger *sources*, which are citations.
+const sourceUrls = ledgers.flatMap((ledger) => (ledger.sources ?? []).map((source) => source.url));
+const bareOrigins = [...new Set(sourceUrls.filter(isBareOrigin))];
+if (bareOrigins.length) {
+  throw new Error(`Bare-origin citations are not allowed; use a verified document or explicitly marked general-site reference instead:\n${bareOrigins.join('\n')}`);
+}
 
 const check = async (url) => {
   try {

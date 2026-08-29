@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { atlasServices } from '@/lib/atlas-data';
 import { collectUndocumentedQuestions } from '@/lib/undocumented';
 import { ModeToggle } from '@/components/ModeToggle';
+import { SlopfolioBadge } from '@/components/SlopfolioBadge';
 
 export const metadata: Metadata = {
   title: 'Public Service Dependency Atlas',
@@ -111,7 +112,7 @@ export default function AtlasHome() {
 
       <footer className="footer atlas-footer">
         <div className="footer-title"><span>Scope & limits</span><h2>Map the links.<br />Keep the gaps.</h2></div>
-        <div className="footer-copy"><p>This atlas is independent research, not official government guidance. Each entry shows the evidence held, the questions that remain, and the date the material was checked.</p><div className="footer-meta"><span>Not official advice. Verify current requirements with the responsible agency and do not submit personal data through this site.</span></div><small>Atlas snapshot 2026-08-28 · Bengaluru, Karnataka, India</small></div>
+        <div className="footer-copy"><p>This atlas is independent research, not official government guidance. Each entry shows the evidence held, the questions that remain, and the date the material was checked.</p><div className="footer-meta"><span>Not official advice. Verify current requirements with the responsible agency and do not submit personal data through this site.</span></div><small>Atlas snapshot 2026-08-28 · Bengaluru, Karnataka, India</small><SlopfolioBadge /></div>
       </footer>
     </main>
   );

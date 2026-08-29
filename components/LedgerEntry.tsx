@@ -6,6 +6,7 @@ import type { Detail, EvidenceGrade, Ledger, RecordStatus } from '@/lib/ledger-t
 import { buildSourceGroups, sourceGroupSummary, type DisplaySource, type SourceGroupKind } from '@/lib/source-groups';
 import { collectUndocumentedQuestions, publicNodeLabel } from '@/lib/undocumented';
 import { serviceGuides } from '@/lib/service-copy';
+import { SlopfolioBadge } from '@/components/SlopfolioBadge';
 
 const statusCopy: Record<RecordStatus, string> = {
   verified: 'Supported by evidence at the stated grade',
@@ -767,6 +768,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
             <span>{ledger.meta.disclaimer}</span>
           </div>
           <small>Snapshot {ledger.meta.asOf} · {ledger.meta.jurisdiction} · Research format {ledger.meta.schemaVersion}</small>
+          <SlopfolioBadge />
         </div>
       </footer>
     </main>

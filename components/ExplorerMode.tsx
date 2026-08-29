@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { ModeToggle } from '@/components/ModeToggle';
+import { SlopfolioBadge } from '@/components/SlopfolioBadge';
 import type { ExplorerDocument, ExplorerFolder, ExplorerMissingFile } from '@/lib/explorer-data';
 import { sourceGroupSummary, type SourceGroupKind } from '@/lib/source-groups';
 
@@ -95,7 +96,7 @@ export default function ExplorerMode({ folders }: { folders: ExplorerFolder[] })
         </aside>
       </section>
 
-      <footer className="explorer-footer"><p><b>Independent research, not official government guidance.</b> This explorer renders dated evidence held in the atlas; verify current requirements with the responsible agency.</p><span>Atlas snapshot 2026-08-28 · Bengaluru, Karnataka, India</span></footer>
+      <footer className="explorer-footer"><p><b>Independent research, not official government guidance.</b> This explorer renders dated evidence held in the atlas; verify current requirements with the responsible agency.</p><div className="explorer-footer-meta"><span>Atlas snapshot 2026-08-28 · Bengaluru, Karnataka, India</span><SlopfolioBadge /></div></footer>
 
       {missingFile && <div className="missing-dialog-backdrop" role="presentation" onMouseDown={() => setMissingFile(null)}><section className="missing-dialog" role="dialog" aria-modal="true" aria-labelledby="missing-dialog-title" onMouseDown={(event) => event.stopPropagation()}><button className="dialog-close" onClick={() => setMissingFile(null)} aria-label="Close">×</button><FileIcon missing /><p className="eyebrow">No such document exists</p><h2 id="missing-dialog-title">{missingFile.file.situation}</h2><p>{missingFile.file.missing}</p><Link className="primary-link" href={`${missingFile.folder.href}#what-nobody-has-documented`} onClick={() => setMissingFile(null)}>See what nobody has documented <span>→</span></Link></section></div>}
     </main>

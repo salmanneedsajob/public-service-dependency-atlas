@@ -21,7 +21,7 @@ export default function AtlasHome() {
   return (
     <main className="atlas-page">
       <header className="site-header">
-        <a className="wordmark" href="#top">Public service dependency atlas</a>
+        <Link className="wordmark" href="/"><span className="wordmark-accent">BLR</span><span>Public Service Dependency Atlas</span></Link>
         <nav aria-label="Page navigation">
           <a href="#directory">Service directory</a>
           <a href="#method">Contribute</a>

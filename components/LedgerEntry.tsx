@@ -309,7 +309,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
   return (
     <main>
       <header className="site-header">
-        <Link className="wordmark" href="/">Public service dependency atlas</Link>
+        <Link className="wordmark" href="/"><span className="wordmark-accent">BLR</span><span>Public Service Dependency Atlas</span></Link>
         <nav aria-label="Page navigation">
           <a href="#scenarios">Find my path</a>
           <a href="#map">Trace the records</a>

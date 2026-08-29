@@ -46,10 +46,10 @@ npm run build
 
 ## Deploy
 
-The project is deployed as the standalone Vercel project `bescom-atlas`:
+The project is deployed as the standalone Vercel project `public-service-atlas`:
 
 ```sh
 npm run deploy
 ```
 
-The deployed atlas is [bescom-atlas.vercel.app](https://bescom-atlas.vercel.app). Verify routes anonymously with `curl` after deployment. No backend, account system, live submission, or private API is part of this repository.
+The deployed atlas is [public-service-atlas.vercel.app](https://public-service-atlas.vercel.app). Verify routes anonymously with `curl` after deployment. No backend, account system, live submission, or private API is part of this repository.

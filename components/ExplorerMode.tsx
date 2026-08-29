@@ -60,7 +60,7 @@ export default function ExplorerMode({ folders }: { folders: ExplorerFolder[] })
   return (
     <main className="explorer-page">
       <header className="site-header explorer-header">
-        <Link className="wordmark" href="/">Public service dependency atlas</Link>
+        <Link className="wordmark" href="/"><span className="wordmark-accent">BLR</span><span>Public Service Dependency Atlas</span></Link>
         <nav aria-label="Explorer navigation"><a href="#folders">Services</a><a href="#files">Files</a></nav>
         <ModeToggle mode="explorer" />
       </header>

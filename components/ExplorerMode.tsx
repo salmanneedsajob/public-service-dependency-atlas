@@ -66,7 +66,7 @@ export default function ExplorerMode({ folders }: { folders: ExplorerFolder[] })
       </header>
 
       <section className="explorer-intro">
-        <div><p className="eyebrow">Explorer mode · Bengaluru-first</p><h1>The public filing cabinet</h1></div>
+        <div><p className="eyebrow">Filing cabinet · Bengaluru-first</p><h1>The public filing cabinet</h1></div>
         <p>Open a service folder to see the public documents that exist — and the grey files where a procedure should be, but is not published.</p>
       </section>
 

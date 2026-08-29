@@ -94,7 +94,7 @@ export default function AtlasHome() {
           <h2 id="explorer-strip-heading">The same services, as a filing cabinet</h2>
           <p>Every service is a folder of the public documents that exist — and the grey files are procedures that should be there and aren&apos;t.</p>
         </div>
-        <Link className="explorer-strip-link" href="/explorer">Open explorer mode →</Link>
+        <Link className="explorer-strip-link" href="/explorer">Open the filing cabinet →</Link>
       </section>
 
       <section className="contribution" id="method" aria-labelledby="contribution-heading">

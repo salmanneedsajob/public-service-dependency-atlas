@@ -8,5 +8,5 @@ export function ModeToggle({ mode }: { mode: 'normal' | 'explorer' }) {
   const nextMode = mode === 'normal' ? 'explorer' : 'normal';
   const href = nextMode === 'explorer' ? '/explorer' : '/';
 
-  return <Link className="mode-toggle" href={href} onClick={() => window.localStorage.setItem(modeKey, nextMode)}>{nextMode === 'explorer' ? 'Explorer mode' : 'Normal site'}</Link>;
+  return <Link className="mode-toggle" href={href} onClick={() => window.localStorage.setItem(modeKey, nextMode)}>{nextMode === 'explorer' ? 'Filing cabinet' : 'Normal site'}</Link>;
 }

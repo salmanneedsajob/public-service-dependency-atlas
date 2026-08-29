@@ -1,5 +1,5 @@
 import type { Ledger } from '@/lib/ledger-types';
-import { deriveServiceStatus, type ServiceMappingStatus } from '@/lib/service-status';
+import { deriveServiceMappingSummary, type ServiceMappingSummary, type ServiceMappingStatus } from '@/lib/service-status';
 import bescomLedger from '@/ledger/research.json';
 import birthCertificateLedger from '@/ledger/birth-certificate.json';
 import buildingPlanLedger from '@/ledger/building-plan.json';
@@ -18,11 +18,12 @@ export type AtlasService = {
   title: string;
   category: string;
   status: ServiceMappingStatus;
+  mappingSummary: ServiceMappingSummary;
   href: string;
   ledger: Ledger;
 };
 
-const serviceDefinitions: Array<Omit<AtlasService, 'status'>> = [
+const serviceDefinitions: Array<Omit<AtlasService, 'status' | 'mappingSummary'>> = [
   { id: 'bescom', title: 'Electricity name transfer', category: 'Utility account', href: '/bescom', ledger: bescomLedger as Ledger },
   { id: 'birth-certificate', title: 'Birth certificate', category: 'Civil record', href: '/birth-certificate', ledger: birthCertificateLedger as Ledger },
   { id: 'death-certificate', title: 'Death certificate', category: 'Civil record', href: '/death-certificate', ledger: deathCertificateLedger as Ledger },
@@ -37,7 +38,7 @@ const serviceDefinitions: Array<Omit<AtlasService, 'status'>> = [
   { id: 'lpg', title: 'LPG connection transfer', category: 'Household utility', href: '/lpg', ledger: lpgLedger as Ledger },
 ];
 
-export const atlasServices: AtlasService[] = serviceDefinitions.map((service) => ({
-  ...service,
-  status: deriveServiceStatus(service.ledger),
-}));
+export const atlasServices: AtlasService[] = serviceDefinitions.map((service) => {
+  const mappingSummary = deriveServiceMappingSummary(service.ledger);
+  return { ...service, status: mappingSummary.status, mappingSummary };
+});

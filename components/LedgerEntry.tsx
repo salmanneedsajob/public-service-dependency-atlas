@@ -7,7 +7,7 @@ import { buildSourceGroups, sourceGroupSummary, type DisplaySource, type SourceG
 import { collectUndocumentedQuestions, publicNodeLabel } from '@/lib/undocumented';
 import { serviceGuides } from '@/lib/service-copy';
 import { SlopfolioBadge } from '@/components/SlopfolioBadge';
-import { deriveServiceStatus } from '@/lib/service-status';
+import { deriveServiceMappingSummary } from '@/lib/service-status';
 
 const statusCopy: Record<RecordStatus, string> = {
   verified: 'Supported by evidence at the stated grade',
@@ -297,7 +297,10 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
     { verified: 0, partial: 0, contested: 0, unknown: 0 } as Record<RecordStatus, number>,
   );
   const datasetNotice = datasetCopy[ledger.meta.dataKind];
-  const serviceStatus = deriveServiceStatus(ledger);
+  const mappingSummary = deriveServiceMappingSummary(ledger);
+  const serviceStatus = mappingSummary.status;
+  const completeness = `${mappingSummary.fullyDocumentedRecords} of ${mappingSummary.totalRecords} records fully documented`;
+  const unknownCopy = mappingSummary.unknownRecords > 0 ? ` · ${mappingSummary.unknownRecords} ${mappingSummary.unknownRecords === 1 ? 'record' : 'records'} unknown` : '';
   const sourceGroups = buildSourceGroups(ledger);
   const entryNames: Record<string, string> = {
     bescom: 'BESCOM transfer', khata: 'khata transfer', 'property-tax': 'property-tax transfer',
@@ -352,7 +355,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
         <div className="hero-copy">
           <p className="eyebrow">Bengaluru · Independent public-source guide</p>
           <h1>{isBescom ? 'Why is my BESCOM transfer blocked?' : `Your ${entryName} journey`}</h1>
-          <p className="ledger-subtitle">Independent research snapshot · checked {ledger.meta.asOf} · <span className={`service-map-status service-${serviceStatus.toLowerCase().replaceAll(' ', '-')}`}>Map status: {serviceStatus}</span></p>
+          <p className="ledger-subtitle">Independent research snapshot · checked {ledger.meta.asOf} · <span className={`service-map-status service-${serviceStatus.toLowerCase().replaceAll(' ', '-')}`}>Map status: {serviceStatus} · {completeness}{unknownCopy}</span></p>
           <p className="lede">{isBescom ? 'Follow the records that affect an electricity name transfer, the places the route can stall, and the gaps no public source currently explains.' : `Follow the published route for ${entryName}, the places it can stall, and the questions the available public record does not answer.`}</p>
           {guide && (
             <div className="key-terms" aria-label={`Key terms for ${entryName}`}>

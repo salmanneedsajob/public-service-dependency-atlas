@@ -85,7 +85,10 @@ export default function AtlasHome() {
             const statusDefinition = service.status === 'Mapped'
               ? 'Mapped: we traced the full published route and its gaps.'
               : 'Partially mapped: the public record stops before the journey does.';
-            return <a className="service-card mapped-service" href={service.href} key={service.title}><span className="service-category">{service.category}</span><div className={`service-status service-${service.status.toLowerCase().replaceAll(' ', '-')}`} title={statusDefinition} aria-label={`${service.status}. ${statusDefinition}`}>{service.status}</div><h3>{service.title}</h3><p>{cardCopy}</p><span className="service-cta">Open this entry →</span></a>;
+            const { fullyDocumentedRecords, totalRecords, unknownRecords } = service.mappingSummary;
+            const completeness = `${fullyDocumentedRecords} of ${totalRecords} records fully documented`;
+            const unknownCopy = unknownRecords > 0 ? ` · ${unknownRecords} ${unknownRecords === 1 ? 'record' : 'records'} unknown` : '';
+            return <a className="service-card mapped-service" href={service.href} key={service.title}><span className="service-category">{service.category}</span><div className={`service-status service-${service.status.toLowerCase().replaceAll(' ', '-')}`} title={statusDefinition} aria-label={`${service.status}. ${completeness}${unknownCopy}`}>{service.status} · {completeness}{unknownCopy}</div><h3>{service.title}</h3><p>{cardCopy}</p><span className="service-cta">Open this entry →</span></a>;
           })}
         </div>
       </section>

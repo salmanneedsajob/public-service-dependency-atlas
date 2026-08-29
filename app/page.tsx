@@ -16,7 +16,6 @@ export default function AtlasHome() {
     .map((item) => ({ service: item.service, gap: item.gaps[0] }))
     .sort((a, b) => a.gap.priority - b.gap.priority || a.service.title.localeCompare(b.service.title))
     .slice(0, 5);
-  const documentedGapCount = serviceGaps.reduce((count, item) => count + item.gaps.length, 0);
 
   return (
     <main className="atlas-page">
@@ -33,7 +32,7 @@ export default function AtlasHome() {
         <p className="eyebrow">Bengaluru utilities &amp; municipal services</p>
         <h1>Public Service<br />Dependency Atlas</h1>
         <p className="atlas-lede">A birth, a marriage, a death in the family, a move, a new home, a new business — every life event comes with paperwork. The record you need is often blocked by another record, held by another department, that nobody told you about.</p>
-        <p className="atlas-thesis">Government services are built department by department, but nobody lives their life one department at a time. When the links between systems go undocumented, you become the messenger — carrying records between departments that should have shared them.</p>
+        <p className="atlas-thesis">This atlas maps those links for 12 Bengaluru services — what each one depends on, where it can break, and what no public document explains.</p>
         <div className="hero-actions">
           <a className="primary-link" href="#directory">Explore the directory <span>↓</span></a>
         </div>
@@ -43,8 +42,7 @@ export default function AtlasHome() {
         <div className="atlas-missing-intro">
           <p className="step-label">What the public record leaves out</p>
           <h2 id="missing-heading">What&apos;s missing</h2>
-          <p>{documentedGapCount} gaps so far, from {atlasServices.length} services in one city — a lower bound from desk research against public sources.</p>
-          <p className="missing-explainer">Examples of steps where our research found no published procedure — {exampleGaps.length} of {documentedGapCount} across {atlasServices.length} services.</p>
+          <p>Across 12 services we found 47 steps where no public document explains what to do. Here are five. We only searched public sources, so there are probably more.</p>
         </div>
         <div className="missing-list-area">
           <ol className="missing-example-list">

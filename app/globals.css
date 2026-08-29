@@ -145,7 +145,6 @@ h1 {
 .atlas-missing { display: grid; gap: 30px; padding: clamp(60px, 8vw, 110px) clamp(20px, 7vw, 110px); background: var(--yellow); }
 .atlas-missing h2 { max-width: 540px; margin: 18px 0 0; font-family: Georgia, serif; font-size: clamp(34px, 4vw, 58px); font-weight: 500; line-height: .98; letter-spacing: -.05em; }
 .atlas-missing-intro > p:nth-of-type(2) { max-width: 540px; margin: 24px 0 0; color: #56491c; font-size: 15px; line-height: 1.55; }
-.missing-explainer { max-width: 680px; margin: 12px 0 0; color: #403713; font-size: 13px; line-height: 1.5; }
 .missing-list-area { display: grid; gap: 18px; width: min(100%, 1040px); }
 .missing-example-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .missing-example-list li { display: grid; gap: 5px; border-top: 1px solid rgba(53, 26, 18, .25); padding-top: 13px; }
@@ -307,35 +306,6 @@ h1 {
 .tag-row { display: flex; flex-wrap: wrap; gap: 5px; }
 .tag-row small { border-radius: 99px; padding: 4px 7px; background: rgba(24, 50, 45, .08); font-size: 9px; }
 .selected .tag-row small { background: rgba(255, 255, 255, .12); }
-.selection-summary {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) auto;
-  gap: 28px;
-  align-items: stretch;
-  margin-top: 18px;
-  border: 1px solid var(--line);
-  border-left: 5px solid var(--muted);
-  border-radius: 8px 20px 20px 8px;
-  padding: 28px;
-  background: var(--card);
-}
-.selection-verified { border-left-color: #2f9e71; }
-.selection-partial { border-left-color: #c5a229; }
-.selection-contested { border-left-color: var(--orange); }
-.selection-unknown { border-left-color: #7c8883; }
-.selection-summary h3 { margin: 7px 0; font-family: Georgia, serif; font-size: 34px; font-weight: 500; letter-spacing: -.035em; }
-.selection-summary p:last-child { margin: 0; color: var(--muted); line-height: 1.5; }
-.selection-metric {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-left: 1px solid var(--line);
-  padding-left: 28px;
-}
-.selection-metric b { font-family: Georgia, serif; font-size: 52px; font-weight: 500; }
-.selection-metric span { max-width: 150px; color: var(--muted); font-size: 11px; line-height: 1.4; }
-.warning-metric b { color: var(--orange); }
-
 .status-badge {
   width: max-content;
   display: inline-flex;
@@ -691,10 +661,6 @@ h1 {
   .split-heading { grid-template-columns: 1fr; align-items: start; }
   .scenario-grid { grid-template-columns: 1fr; }
   .scenario-card { min-height: 194px; }
-  .selection-summary { grid-template-columns: 1fr 1fr; padding: 21px; }
-  .selection-summary > div:first-child { grid-column: 1 / -1; }
-  .selection-metric { border-left: 0; border-top: 1px solid var(--line); padding: 15px 0 0; }
-  .selection-metric b { font-size: 42px; }
   .chain { flex-direction: column; overflow: visible; margin: 0; padding: 0 0 26px; }
   .chain-item { flex-direction: column; align-items: stretch; }
   .node { width: 100%; min-height: 128px; }

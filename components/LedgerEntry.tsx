@@ -430,14 +430,6 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
             </button>
           ))}
         </div>
-        <div className={`selection-summary selection-${selectedScenario.status}`}>
-          <div>
-            <p className="eyebrow">Selected path</p>
-            <h3>{publicCopy(selectedScenario.label)}</h3>
-            <p>{publicCopy(selectedScenario.summary)}</p>
-          </div>
-          <StatusBadge status={selectedScenario.status} />
-        </div>
       </section>
 
       <section className="section map-section" id="map" aria-labelledby="map-heading">

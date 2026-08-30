@@ -1,0 +1,1134 @@
+{
+  "_handoff": {
+    "issue": "IND-44",
+    "generatedAt": "2026-08-30",
+    "status": "ready_for_audit",
+    "scope": "Unauthenticated public-workflow pass for the default Bengaluru BESCOM new-electricity-connection route. Public JVS and normal-route forms, tracker, FAQ and eligibility text were read only.",
+    "observationNote": "No login, identifier, personal/property value, document upload, payment, CAPTCHA, lookup, or application submission was attempted. The JVS disclaimer checkbox, OK, Single, Skip and public tab controls were used only to reveal blank stages. Post-login, field-validation, Submit, demand generation, payment, request processing, and supply outcomes remain Unknown."
+  },
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru BESCOM new electricity connection — public workflow pass",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-30",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Only public controls, visible published failure/recovery wording, and unknown boundaries are recorded; do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_bescom_ind44_new_electricity",
+      "name": "Bangalore Electricity Supply Company Limited",
+      "shortName": "BESCOM",
+      "officialUrl": "https://www.bescom.co.in/"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind44_new_electricity_default",
+      "label": "Public new electricity connection — default route boundary",
+      "summary": "An unauthenticated visitor follows BESCOM's public JVS New Connection entry and records the normal New Connection alternative, stopping before case data or submission.",
+      "tags": [
+        "electricity",
+        "new-connection",
+        "public-interface",
+        "jvs",
+        "normal-route",
+        "submission-boundary"
+      ],
+      "pathNodeIds": [
+        "node_ind44_public_route",
+        "node_ind44_jvs_eligibility",
+        "node_ind44_jvs_form",
+        "node_ind44_jvs_documents",
+        "node_ind44_demand_payment",
+        "node_ind44_tracking"
+      ],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind44_bescom_home_live",
+      "title": "BESCOM official home — public service directory",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/main/home",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated observation of JVS New Connection, Track New Connection, Demand Calculator, EODB New Connection, normal New Connection and displayed timing labels. No case was submitted."
+    },
+    {
+      "id": "source_ind44_bescom_faq_live",
+      "title": "BESCOM Frequently Asked Questions",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/main/faq",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Public FAQ sections expanded for JVS, normal New Connection, documents, FTNC time, payment acknowledgement, Bill Desk failure, refund and online-payment instructions. No identifier or payment was used."
+    },
+    {
+      "id": "source_ind44_bescom_eligibility_live",
+      "title": "BESCOM Eligibility for New Connection",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/main/eligibility",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Public JVS scope, exclusions, document/original-verification, rejection/refund text and disclaimer controls observed. Checkbox/OK only opened the blank form."
+    },
+    {
+      "id": "source_ind44_bescom_jvs_form_live",
+      "title": "BESCOM JVS New Connection public form",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/main/new-connection-forms",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Blank public form observed. Stage tabs, controls, document rows, accepted extensions and 4 MB total upload label recorded. No values or files were entered."
+    },
+    {
+      "id": "source_ind44_bescom_normal_form_live",
+      "title": "BESCOM normal New Connection public form",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/auth/forms",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Blank public form observed directly from the public home service link. LT, HT/EHT and MC/MSB controls and ten stages visible; no value, upload, payment or submission used."
+    },
+    {
+      "id": "source_ind44_bescom_tracker_live",
+      "title": "BESCOM New Connection Tracker",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/main/track-connection",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated tracker showed Request ID*, OR, Account ID* and Submit. No identifier was entered and Submit was not activated."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind44_public_route_controls",
+      "text": "The public BESCOM home exposes JVS Fast Track Services with New Connection and Track New Connection links, a separate EODB New Connection label, a normal Other Services New Connection link, and a public Help label calling 1912.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_public_route"
+      ],
+      "sourceIds": [
+        "source_ind44_bescom_home_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Observed on 2026-08-30 without login or case data."
+    },
+    {
+      "id": "claim_ind44_jvs_eligibility_controls",
+      "text": "The public JVS eligibility page states that JVS covers LT1 Domestic and LT3 commercial tariff loads up to 18KW excluding 18KW for new single or multiple connections and exposes the exact controls `I have read and agree to the Terms and Conditions for Account Registration*`, `OK`, and `Cancel`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_jvs_eligibility"
+      ],
+      "sourceIds": [
+        "source_ind44_bescom_eligibility_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Checkbox/OK only opened the blank form; no case eligibility was decided."
+    },
+    {
+      "id": "claim_ind44_jvs_exclusions",
+      "text": "The public JVS eligibility page lists as not eligible: premises attracting line extension or electrical-network modification; buildings over 15 metres and over 500 sqmt total plinth area; premises requiring an Occupancy Certificate; buildings attracting Clause 9 Conditions of Power Supply; unauthorised, revenue or abandoned layouts; HT category; and incomplete wiring, meter board or service-main cable.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_jvs_eligibility"
+      ],
+      "sourceIds": [
+        "source_ind44_bescom_eligibility_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published list only; no property-specific determination."
+    },
+    {
+      "id": "claim_ind44_jvs_stage_controls",
+      "text": "The public JVS form exposes eight tabs: `Application type`, `Provide Temporary Account Id`, `Personal Details`, `Power Supply Required at (AD.)`, `Correspondence Address`, `Location Details`, `Miscellaneous Details`, and `Document Upload`; the initial panel exposes `Single` and `Multiple Connection`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_jvs_form"
+      ],
+      "sourceIds": [
+        "source_ind44_bescom_jvs_form_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Blank form only; Single was selected to reveal the next stage."
+    },
+    {
+      "id": "claim_ind44_jvs_detail_controls",
+      "text": "The blank JVS form exposes Temporary Account Id with `Get Details` and `Skip`; Personal Details with Business/Personal, Applicant Name*, Gender (Select/Male/Female/Others), Email ID*, Joint, Phone Type* (Select/Mobile/LandLine), Phone Number*, ID Type* (Driving License Number/PAN/PASSPORT/TAN/UID/Aadhar Number/Voter’s ID), ID Number*, check-icon and Save & Continue; address/correspondence with address line 1*, address line 2, City*, disabled State Karnataka, disabled Country India, Pincode*, and Copy Address Same As Above; Location Details with Latitude*, Longitude*, Area of Site (Sqft)*, Stilt Floor Available* (Select/Yes/No), Total No of Floors (Including Stilt floor)*, Total built up area(m²)* and Save & Continue.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_jvs_form"
+      ],
+      "sourceIds": [
+        "source_ind44_bescom_jvs_form_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No account, personal, contact, identity, address, location or building value was entered."
+    },
+    {
+      "id": "claim_ind44_jvs_misc_controls",
+      "text": "The blank JVS Miscellaneous Details stage exposes Power Supply required for* (Select/Domestic-LT1/Commercial-LT3/EVC-Station-LT6C), Postpaid/Prepaid radios with Postpaid initially checked, Premise Location* (BBMP/BDA/Rural Local Body or Village or Gram Panchayat/Urban Local Body or CMC or TMC), Sub Division Office*, Section Office*, Nature of Business*, Required Load* from 240W through 17.5KW, Required Phase* (Single Phase/Three Phase), AEH / Non AEH Phase, Required Voltage* (230 V/440 V), Type Of Power* (Motive/Lighting/Light & Heat) and Save & Continue.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_jvs_form"
+      ],
+      "sourceIds": [
+        "source_ind44_bescom_jvs_form_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Visible options are not a case-specific allowable-load decision."
+    },
+    {
+      "id": "claim_ind44_jvs_document_controls",
+      "text": "The blank JVS Document Upload stage shows `Upload Documents - Please upload any one of the document for mandatory (*) category`, accepted extensions `.JPEG, .JPG, .BMP, .TIF, .TIFF, .JPE, .JFIF, .PDF, .GIF`, `Max Total Upload Size : 4 MB`, DigiLocker file and Document Status columns, Choose File for Identity Proof*, Proof of Ownership*, Geo-Tagged building photo* and Completion Certificate, a Get Aadhaar from Digilocker link, and a final Submit.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_jvs_documents"
+      ],
+      "sourceIds": [
+        "source_ind44_bescom_jvs_form_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No chooser, DigiLocker action or Submit was activated."
+    },
+    {
+      "id": "claim_ind44_jvs_document_text",
+      "text": "The JVS document table labels Identity Proof* with `Photo copy of PAN Card/Driving License/Passport/Aadhar Card/Voter ID*`, Proof of Ownership* with `Photo copy of the Sales deed, Khata certificate, Tax paid certificate.`, Geo-Tagged building photo* with `Upload full building photo along with LAT LONG`, and Completion Certificate with `Completion-cum test report along with wiring diagram`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_jvs_documents"
+      ],
+      "sourceIds": [
+        "source_ind44_bescom_jvs_form_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Labels were read without selecting a document."
+    },
+    {
+      "id": "claim_ind44_normal_form_controls",
+      "text": "The public normal New Connection form exposes ten tabs: Application type, Temporary / Permanent, Personal Details, Power Supply Required at (AD.), Correspondence Address, Miscellaneous Details, Location Details, LEC Details, Miscellaneous Details 2 and Document Upload; its application panel exposes LT, HT/EHT and MC/MSB, while Temporary / Permanent initially checks Permanent and exposes Temporary Account Id, Get Details and Skip.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_normal_form"
+      ],
+      "sourceIds": [
+        "source_ind44_bescom_normal_form_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No application type, personal data, account identifier, upload, payment or submission was used."
+    },
+    {
+      "id": "claim_ind44_normal_faq_route",
+      "text": "BESCOM's public FAQ says the normal New Connection route is under Other Services, needs no customer login for direct application, and covers LT, HT/EHT and MC/MSB; it describes personal/address, miscellaneous/load, optional LEC details, confirmation and charge-breakdown stages.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_normal_form",
+        "node_ind44_demand_payment"
+      ],
+      "sourceIds": [
+        "source_ind44_bescom_faq_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "FAQ route description is not a case eligibility or completion decision."
+    },
+    {
+      "id": "claim_ind44_normal_payment_boundary",
+      "text": "BESCOM's public FAQ says that for normal new connection only the application fee can be paid online and remaining additional charges need to be paid by visiting the SDO office.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_demand_payment"
+      ],
+      "sourceIds": [
+        "source_ind44_bescom_faq_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No fee, charge, demand, payment or receipt was generated."
+    },
+    {
+      "id": "claim_ind44_published_rejection_recovery",
+      "text": "The public JVS eligibility page says that if an application is rejected for non-compliance with eligibility criteria or requested Load, Tariff or Name modification, registration and GST are excepted, MSD/AISD deposits and SLC/ASLC non-revenue charges are refunded, and all other charges are forfeited; it separately says that where an applicant does not desire power supply and has not executed the agreement, amounts are refunded after deducting 10% of the total amount under Clause 4.03 Note of KERC.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_jvs_eligibility",
+        "node_ind44_demand_payment"
+      ],
+      "sourceIds": [
+        "source_ind44_bescom_eligibility_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published wording only; no rejection or refund was observed."
+    },
+    {
+      "id": "claim_ind44_payment_error_recovery",
+      "text": "BESCOM's public FAQ says that if money is debited but payment acknowledgement is not generated, the user should not pay again for the same bill, should wait 24 hours for Bill Desk to confirm with the bank and update payment, and may contact Bill Desk at `@billdesk.com` or `080-25586664`; the FAQ also says online-payment doubts may be directed to Customer Care `1912`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_demand_payment"
+      ],
+      "sourceIds": [
+        "source_ind44_bescom_faq_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published recovery text; no payment was attempted."
+    },
+    {
+      "id": "claim_ind44_public_timing_text",
+      "text": "BESCOM's public home displays power supply within 24 hours after requisite-fee payment for domestic LT-1 and commercial LT-3 consumers with total load <=17.5 KW and no line extension, and an EODB New Connection label for stated Bengaluru LT 50–150 KW and HT 25–200 KVA applications within 7 days without RoW or 15 days with RoW; the FAQ separately displays `3 working days (24 hours) after registration and payment made.` for FTNC.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_demand_payment",
+        "node_ind44_tracking"
+      ],
+      "sourceIds": [
+        "source_ind44_bescom_home_live",
+        "source_ind44_bescom_faq_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Displayed conditional labels with differing wording; no case clock or supply outcome."
+    },
+    {
+      "id": "claim_ind44_tracker_controls",
+      "text": "The public BESCOM New Connection Tracker exposes `Request ID*`, an `OR` separator, `Account ID*` and a `Submit` button.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_tracking"
+      ],
+      "sourceIds": [
+        "source_ind44_bescom_tracker_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No identifier was entered and Submit was not activated."
+    },
+    {
+      "id": "claim_ind44_post_boundary_unknown",
+      "text": "The unauthenticated pass does not establish whether login, OTP, CAPTCHA, field-level validation, application acknowledgement, demand generation, payment result, document rejection, tracker result, inspection, meter installation or supply completion follows any public control.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "nodeIds": [
+        "node_ind44_jvs_form",
+        "node_ind44_jvs_documents",
+        "node_ind44_normal_form",
+        "node_ind44_demand_payment",
+        "node_ind44_tracking"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Pass stopped before identifiers, personal data, files, payment and Submit. Unknown is a research boundary, not evidence of absence."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_ind44_public_route",
+      "label": "Public new-connection route choice",
+      "kind": "decision",
+      "ownerAgencyId": "agency_bescom_ind44_new_electricity",
+      "summary": "Identify public JVS, normal and EODB entry labels before choosing a case route.",
+      "requiredState": "No load, tariff, premises or network facts were supplied; only public route labels were inspected.",
+      "checks": [
+        {
+          "id": "check_ind44_public_route",
+          "label": "Public route controls",
+          "description": "Home exposes JVS New Connection, normal New Connection, EODB New Connection and Track New Connection labels.",
+          "url": "https://www.bescom.co.in/bescom/main/home",
+          "claimIds": [
+            "claim_ind44_public_route_controls"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind44_route_case_unknown",
+          "label": "Case route not determined",
+          "description": "Public labels do not determine which route applies to a particular load, tariff, property or network condition.",
+          "claimIds": [
+            "claim_ind44_post_boundary_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind44_route_help",
+          "label": "BESCOM Customer Care",
+          "description": "Public FAQ exposes 1912 as a help/customer-care contact; case routing was not requested.",
+          "url": "https://www.bescom.co.in/bescom/main/faq",
+          "claimIds": [
+            "claim_ind44_public_route_controls",
+            "claim_ind44_payment_error_recovery"
+          ],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_public_route_controls"
+      ],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_ind44_jvs_eligibility",
+      "label": "JVS eligibility and disclaimer boundary",
+      "kind": "decision",
+      "ownerAgencyId": "agency_bescom_ind44_new_electricity",
+      "summary": "Read JVS scope/exclusions and public disclaimer controls before opening the blank form.",
+      "requiredState": "Eligibility page is reachable; property-specific load, premises, network and document facts remain absent.",
+      "checks": [
+        {
+          "id": "check_ind44_jvs_scope",
+          "label": "JVS scope and disclaimer",
+          "description": "Public page states JVS scope and exposes terms checkbox with OK and Cancel.",
+          "url": "https://www.bescom.co.in/bescom/main/eligibility",
+          "claimIds": [
+            "claim_ind44_jvs_eligibility_controls",
+            "claim_ind44_jvs_exclusions"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind44_jvs_rejection_text",
+          "label": "Published JVS rejection wording",
+          "description": "Page publishes rejection consequences for non-compliance, including refund and forfeiture wording.",
+          "url": "https://www.bescom.co.in/bescom/main/eligibility",
+          "claimIds": [
+            "claim_ind44_published_rejection_recovery"
+          ],
+          "status": "verified"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind44_jvs_rejection_refund",
+          "label": "Published refund wording",
+          "description": "Eligibility page publishes refund/forfeiture wording for specified rejection and non-executed-agreement conditions; no case refund was observed.",
+          "url": "https://www.bescom.co.in/bescom/main/eligibility",
+          "claimIds": [
+            "claim_ind44_published_rejection_recovery"
+          ],
+          "status": "verified"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_jvs_eligibility_controls",
+        "claim_ind44_jvs_exclusions",
+        "claim_ind44_published_rejection_recovery"
+      ],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_ind44_jvs_form",
+      "label": "Blank JVS application stages",
+      "kind": "service",
+      "ownerAgencyId": "agency_bescom_ind44_new_electricity",
+      "summary": "Inspect public JVS stage tabs and blank controls without entering case data.",
+      "requiredState": "Blank form open; no applicant, contact, identity, address, location, load or account value was entered.",
+      "checks": [
+        {
+          "id": "check_ind44_jvs_stages",
+          "label": "JVS stage tabs",
+          "description": "Eight public stage tabs and Single/Multiple Connection controls are visible.",
+          "url": "https://www.bescom.co.in/bescom/main/new-connection-forms",
+          "claimIds": [
+            "claim_ind44_jvs_stage_controls"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind44_jvs_details",
+          "label": "JVS detail controls",
+          "description": "Blank temporary-account, personal, address, location and miscellaneous controls are visible.",
+          "url": "https://www.bescom.co.in/bescom/main/new-connection-forms",
+          "claimIds": [
+            "claim_ind44_jvs_detail_controls",
+            "claim_ind44_jvs_misc_controls"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind44_jvs_validation_unknown",
+          "label": "Validation and post-save boundary",
+          "description": "Save & Continue was not activated on empty fields, so required-field errors, save behavior, login/OTP and post-save transitions are Unknown.",
+          "url": "https://www.bescom.co.in/bescom/main/new-connection-forms",
+          "claimIds": [
+            "claim_ind44_post_boundary_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind44_jvs_return_route",
+          "label": "Return to route guidance",
+          "description": "Use public eligibility or FAQ pages to reread route conditions; no draft or case recovery was observed.",
+          "url": "https://www.bescom.co.in/bescom/main/eligibility",
+          "claimIds": [
+            "claim_ind44_jvs_eligibility_controls",
+            "claim_ind44_post_boundary_unknown"
+          ],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_jvs_stage_controls",
+        "claim_ind44_jvs_detail_controls",
+        "claim_ind44_jvs_misc_controls",
+        "claim_ind44_post_boundary_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_ind44_jvs_documents",
+      "label": "JVS document-upload boundary",
+      "kind": "record",
+      "ownerAgencyId": "agency_bescom_ind44_new_electricity",
+      "summary": "Read public document rows and file controls while selecting no file.",
+      "requiredState": "No identity, ownership, building-photo, completion certificate or other file was selected.",
+      "checks": [
+        {
+          "id": "check_ind44_jvs_document_controls",
+          "label": "Document controls and limits",
+          "description": "Public table exposes mandatory rows, Choose File, DigiLocker, accepted extensions, 4 MB total label and Submit.",
+          "url": "https://www.bescom.co.in/bescom/main/new-connection-forms",
+          "claimIds": [
+            "claim_ind44_jvs_document_controls",
+            "claim_ind44_jvs_document_text"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind44_jvs_upload_validation_unknown",
+          "label": "Upload validation unobserved",
+          "description": "File-type, size, document-status, missing-document and Submit validation was not activated.",
+          "url": "https://www.bescom.co.in/bescom/main/new-connection-forms",
+          "claimIds": [
+            "claim_ind44_post_boundary_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind44_jvs_document_guidance",
+          "label": "Published document guidance",
+          "description": "Use public FAQ and eligibility document classes as leads; case-specific checklist and validation remain Unknown.",
+          "url": "https://www.bescom.co.in/bescom/main/faq",
+          "claimIds": [
+            "claim_ind44_jvs_document_text",
+            "claim_ind44_post_boundary_unknown"
+          ],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_jvs_document_controls",
+        "claim_ind44_jvs_document_text",
+        "claim_ind44_post_boundary_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_ind44_normal_form",
+      "label": "Blank normal New Connection form",
+      "kind": "service",
+      "ownerAgencyId": "agency_bescom_ind44_new_electricity",
+      "summary": "Inspect public normal LT/HT/EHT/MC/MSB form as alternative to JVS.",
+      "requiredState": "Unauthenticated normal form open; no application type, personal data, account identifier, upload or payment was used.",
+      "checks": [
+        {
+          "id": "check_ind44_normal_form",
+          "label": "Normal route stages",
+          "description": "Public normal form exposes LT, HT/EHT, MC/MSB and ten stage tabs, with Temporary/Permanent and temporary-account controls.",
+          "url": "https://www.bescom.co.in/bescom/auth/forms",
+          "claimIds": [
+            "claim_ind44_normal_form_controls",
+            "claim_ind44_normal_faq_route"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind44_normal_validation_unknown",
+          "label": "Normal form validation unobserved",
+          "description": "No normal-route validation, login/OTP, save transition or post-submit response was activated.",
+          "url": "https://www.bescom.co.in/bescom/auth/forms",
+          "claimIds": [
+            "claim_ind44_post_boundary_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind44_normal_faq",
+          "label": "Normal route FAQ",
+          "description": "Public FAQ is observed guidance for normal LT/HT/EHT/MC/MSB steps; no case recovery result.",
+          "url": "https://www.bescom.co.in/bescom/main/faq",
+          "claimIds": [
+            "claim_ind44_normal_faq_route",
+            "claim_ind44_normal_payment_boundary"
+          ],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_normal_form_controls",
+        "claim_ind44_normal_faq_route",
+        "claim_ind44_normal_payment_boundary",
+        "claim_ind44_post_boundary_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 35
+    },
+    {
+      "id": "node_ind44_demand_payment",
+      "label": "Demand and payment boundary",
+      "kind": "record",
+      "ownerAgencyId": "agency_bescom_ind44_new_electricity",
+      "summary": "Record public charge-breakdown, payment boundary, timing and payment-failure recovery wording without generating a demand.",
+      "requiredState": "No application, demand, amount, receipt or payment exists in this pass.",
+      "checks": [
+        {
+          "id": "check_ind44_demand_text",
+          "label": "Published demand/payment wording",
+          "description": "FAQ describes confirmation charge breakdown, normal-route fee/SDO split and timing text.",
+          "url": "https://www.bescom.co.in/bescom/main/faq",
+          "claimIds": [
+            "claim_ind44_normal_payment_boundary",
+            "claim_ind44_public_timing_text"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind44_billdesk_text",
+          "label": "Published Bill Desk payment failure",
+          "description": "FAQ publishes exact recovery for money debited without acknowledgement: do not pay again, wait 24 hours, contact Bill Desk.",
+          "url": "https://www.bescom.co.in/bescom/main/faq",
+          "claimIds": [
+            "claim_ind44_payment_error_recovery"
+          ],
+          "status": "verified"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind44_billdesk",
+          "label": "Bill Desk recovery",
+          "description": "Follow published no-repeat-payment, 24-hour wait and Bill Desk contact direction; no failure was reproduced.",
+          "url": "https://www.bescom.co.in/bescom/main/faq",
+          "claimIds": [
+            "claim_ind44_payment_error_recovery"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "recovery_ind44_customer_care",
+          "label": "Customer Care 1912",
+          "description": "FAQ says online-payment doubts may be directed to Customer Care 1912.",
+          "url": "https://www.bescom.co.in/bescom/main/faq",
+          "claimIds": [
+            "claim_ind44_payment_error_recovery"
+          ],
+          "status": "verified"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_normal_payment_boundary",
+        "claim_ind44_published_rejection_recovery",
+        "claim_ind44_payment_error_recovery",
+        "claim_ind44_public_timing_text",
+        "claim_ind44_post_boundary_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 50
+    },
+    {
+      "id": "node_ind44_tracking",
+      "label": "Request tracking boundary",
+      "kind": "outcome",
+      "ownerAgencyId": "agency_bescom_ind44_new_electricity",
+      "summary": "Inspect public tracker fields and stop before entering a request or account identifier.",
+      "requiredState": "Request ID or Account ID would be needed; neither was supplied.",
+      "checks": [
+        {
+          "id": "check_ind44_tracker",
+          "label": "Tracker identifiers",
+          "description": "Public tracker exposes Request ID*, OR, Account ID* and Submit.",
+          "url": "https://www.bescom.co.in/bescom/main/track-connection",
+          "claimIds": [
+            "claim_ind44_tracker_controls"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind44_tracker_result_unknown",
+          "label": "Tracker result unobserved",
+          "description": "No no-match text, validation error, status result or recovery after Submit was observed because no identifier was entered.",
+          "url": "https://www.bescom.co.in/bescom/main/track-connection",
+          "claimIds": [
+            "claim_ind44_post_boundary_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind44_tracker_help",
+          "label": "Public help boundary",
+          "description": "BESCOM publishes Customer Care 1912; no tracker-specific no-match recovery was established.",
+          "url": "https://www.bescom.co.in/bescom/main/faq",
+          "claimIds": [
+            "claim_ind44_payment_error_recovery",
+            "claim_ind44_post_boundary_unknown"
+          ],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_tracker_controls",
+        "claim_ind44_public_timing_text",
+        "claim_ind44_post_boundary_unknown"
+      ],
+      "status": "unknown",
+      "displayOrder": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_ind44_route_jvs",
+      "fromNodeId": "node_ind44_public_route",
+      "toNodeId": "node_ind44_jvs_eligibility",
+      "relationship": "requires",
+      "label": "Public JVS New Connection leads to eligibility/disclaimer text before blank JVS form.",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_public_route_controls",
+        "claim_ind44_jvs_eligibility_controls"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind44_route_normal",
+      "fromNodeId": "node_ind44_public_route",
+      "toNodeId": "node_ind44_normal_form",
+      "relationship": "alternative",
+      "label": "Public Other Services New Connection exposes normal LT/HT/EHT/MC/MSB form as an alternative.",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_public_route_controls",
+        "claim_ind44_normal_form_controls",
+        "claim_ind44_normal_faq_route"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "edge_ind44_jvs_form",
+      "fromNodeId": "node_ind44_jvs_eligibility",
+      "toNodeId": "node_ind44_jvs_form",
+      "relationship": "requires",
+      "label": "Public JVS terms checkbox and OK opened blank JVS stages; no case data was entered.",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_jvs_eligibility_controls",
+        "claim_ind44_jvs_stage_controls",
+        "claim_ind44_jvs_detail_controls"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind44_form_documents",
+      "fromNodeId": "node_ind44_jvs_form",
+      "toNodeId": "node_ind44_jvs_documents",
+      "relationship": "requires",
+      "label": "Blank JVS stage sequence exposes document controls; no file or validation was used.",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_jvs_stage_controls",
+        "claim_ind44_jvs_document_controls"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind44_documents_demand",
+      "fromNodeId": "node_ind44_jvs_documents",
+      "toNodeId": "node_ind44_demand_payment",
+      "relationship": "produces",
+      "label": "FAQ describes charge breakdown/demand after submission, but no demand or payment was generated.",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_normal_payment_boundary",
+        "claim_ind44_post_boundary_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_ind44_demand_tracking",
+      "fromNodeId": "node_ind44_demand_payment",
+      "toNodeId": "node_ind44_tracking",
+      "relationship": "requires",
+      "label": "A real request/account identifier would be needed to test tracking; tracker was inspected without one.",
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_tracker_controls",
+        "claim_ind44_post_boundary_unknown"
+      ],
+      "status": "unknown"
+    }
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind44_route_case_unknown",
+      "title": "Route and property eligibility remain case-specific",
+      "category": "process",
+      "symptom": "Public JVS and normal/EODB labels expose different routes and thresholds, but no applicant load, tariff, premises or network facts were supplied.",
+      "likelyCause": "Pages publish route conditions and exclusions rather than a case decision.",
+      "recovery": "Read eligibility/FAQ guidance and contact BESCOM Customer Care 1912 for case routing; do not treat public labels as approval.",
+      "ownerAgencyIds": [
+        "agency_bescom_ind44_new_electricity"
+      ],
+      "nodeIds": [
+        "node_ind44_public_route",
+        "node_ind44_jvs_eligibility"
+      ],
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_public_route_controls",
+        "claim_ind44_jvs_exclusions",
+        "claim_ind44_post_boundary_unknown"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind44_form_submission_boundary",
+      "title": "Blank form stops before case data and submission",
+      "category": "process",
+      "symptom": "Public forms expose applicant, address, identity, load, upload and Submit controls, but no values, files or Submit action were used.",
+      "likelyCause": "Public-only pass cannot establish validation or post-submit behavior without crossing identifier/personal-data/submission boundary.",
+      "recovery": "Keep login/OTP, validation, acknowledgement, demand, payment, tracker result and supply outcome Unknown until authorised applicant independently continues; use public FAQ/eligibility meanwhile.",
+      "ownerAgencyIds": [
+        "agency_bescom_ind44_new_electricity"
+      ],
+      "nodeIds": [
+        "node_ind44_jvs_form",
+        "node_ind44_jvs_documents",
+        "node_ind44_normal_form",
+        "node_ind44_tracking"
+      ],
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_post_boundary_unknown",
+        "claim_ind44_tracker_controls"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind44_published_payment_failure",
+      "title": "Payment acknowledgement failure recovery is published but untested",
+      "category": "infrastructure",
+      "symptom": "FAQ describes money-debited/no-acknowledgement condition and Bill Desk recovery, but no payment was attempted.",
+      "likelyCause": "Unknown in this pass; no live transaction or receipt exists.",
+      "recovery": "Do not pay the same bill again; wait 24 hours for Bill Desk confirmation/update, then use published Bill Desk contact or Customer Care 1912.",
+      "ownerAgencyIds": [
+        "agency_bescom_ind44_new_electricity"
+      ],
+      "nodeIds": [
+        "node_ind44_demand_payment"
+      ],
+      "scenarioIds": [
+        "scenario_ind44_new_electricity_default"
+      ],
+      "claimIds": [
+        "claim_ind44_payment_error_recovery"
+      ],
+      "status": "verified"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_ind44_new_electricity_public_default",
+      "title": "Public BESCOM new electricity connection — JVS default path",
+      "scenarioId": "scenario_ind44_new_electricity_default",
+      "context": "Unauthenticated observer on 2026-08-30. Public BESCOM home, eligibility, JVS blank form, normal blank form, tracker and FAQ were inspected. No login, personal data, identifier, upload, payment or submission was used.",
+      "steps": [
+        {
+          "id": "step_ind44_open_route",
+          "label": "Open public route directory",
+          "nodeId": "node_ind44_public_route",
+          "action": "Read public BESCOM home labels for JVS New Connection, normal New Connection, EODB New Connection and Track New Connection.",
+          "expectedResult": "Public route controls are visible; route applicability remains case-specific.",
+          "claimIds": [
+            "claim_ind44_public_route_controls"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "step_ind44_read_eligibility",
+          "label": "Read JVS eligibility boundary",
+          "nodeId": "node_ind44_jvs_eligibility",
+          "action": "Open eligibility and inspect JVS scope, exclusions, terms checkbox, OK and Cancel.",
+          "expectedResult": "Published JVS conditions and rejection/refund wording are visible; no property decision is made.",
+          "claimIds": [
+            "claim_ind44_jvs_eligibility_controls",
+            "claim_ind44_jvs_exclusions",
+            "claim_ind44_published_rejection_recovery"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind44_reveal_jvs_form",
+          "label": "Reveal blank JVS stages",
+          "nodeId": "node_ind44_jvs_form",
+          "action": "Use only terms checkbox/OK, select Single, select Skip for the empty Temporary Account Id stage, and inspect tabs without entering data.",
+          "expectedResult": "JVS stage tabs and blank controls are visible; no application is created.",
+          "claimIds": [
+            "claim_ind44_jvs_stage_controls",
+            "claim_ind44_jvs_detail_controls",
+            "claim_ind44_jvs_misc_controls"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind44_inspect_documents",
+          "label": "Inspect document controls",
+          "nodeId": "node_ind44_jvs_documents",
+          "action": "Read document rows, accepted extensions, 4 MB label, DigiLocker link and Submit without opening chooser or activating Submit.",
+          "expectedResult": "Document controls are recorded; validation and post-submit behavior remain Unknown.",
+          "claimIds": [
+            "claim_ind44_jvs_document_controls",
+            "claim_ind44_jvs_document_text",
+            "claim_ind44_post_boundary_unknown"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind44_compare_normal",
+          "label": "Inspect normal-route alternative",
+          "nodeId": "node_ind44_normal_form",
+          "action": "Open normal New Connection URL and read LT/HT/EHT/MC/MSB and Temporary/Permanent controls without selecting or saving a route.",
+          "expectedResult": "Normal public stage sequence is visible; eligibility and completion remain Unknown.",
+          "claimIds": [
+            "claim_ind44_normal_form_controls",
+            "claim_ind44_normal_faq_route",
+            "claim_ind44_normal_payment_boundary"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind44_preserve_demand",
+          "label": "Preserve demand/payment boundary",
+          "nodeId": "node_ind44_demand_payment",
+          "action": "Read FAQ charge, timing, rejection/refund and Bill Desk recovery wording; do not submit, pay or generate a demand.",
+          "expectedResult": "Published wording is recorded; no charge amount, receipt or payment outcome exists.",
+          "claimIds": [
+            "claim_ind44_published_rejection_recovery",
+            "claim_ind44_payment_error_recovery",
+            "claim_ind44_public_timing_text",
+            "claim_ind44_post_boundary_unknown"
+          ],
+          "status": "unknown"
+        },
+        {
+          "id": "step_ind44_inspect_tracker",
+          "label": "Stop at tracker identifiers",
+          "nodeId": "node_ind44_tracking",
+          "action": "Open New Connection Tracker and inspect Request ID*, OR, Account ID* and Submit without entering an identifier.",
+          "expectedResult": "Tracker controls are visible; no status, no-match error or recovery after Submit is observed.",
+          "claimIds": [
+            "claim_ind44_tracker_controls",
+            "claim_ind44_post_boundary_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_ind44_jvs_data_to_submit",
+          "fromNodeId": "node_ind44_jvs_form",
+          "toNodeId": "node_ind44_jvs_documents",
+          "description": "Blank JVS tabs show applicant, address, location, load and document controls precede Submit; requiredness and validation were not activated.",
+          "claimIds": [
+            "claim_ind44_jvs_stage_controls",
+            "claim_ind44_jvs_document_controls",
+            "claim_ind44_post_boundary_unknown"
+          ],
+          "status": "unknown"
+        },
+        {
+          "id": "dependency_ind44_request_identifier_to_tracking",
+          "fromNodeId": "node_ind44_demand_payment",
+          "toNodeId": "node_ind44_tracking",
+          "description": "A real request or account identifier would be needed to attempt tracker Submit; neither was supplied.",
+          "claimIds": [
+            "claim_ind44_tracker_controls",
+            "claim_ind44_post_boundary_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_ind44_route_case_unknown",
+        "roadblock_ind44_form_submission_boundary",
+        "roadblock_ind44_published_payment_failure"
+      ],
+      "recoveryNotes": [
+        "Eligibility page publishes JVS rejection/refund wording; this is not a live refund result.",
+        "For published money-debited/no-acknowledgement condition, BESCOM says not to pay again, wait 24 hours for Bill Desk confirmation/update, and use listed Bill Desk contact; FAQ also publishes Customer Care 1912.",
+        "No tracker-specific no-match recovery, login/OTP behavior, validation error, demand, receipt, inspection or supply outcome was established before the identifier/submission boundary."
+      ],
+      "documentationQualityNotes": [
+        "JVS eligibility, form controls, normal form controls and tracker controls were directly observed on 2026-08-30 as public official interfaces.",
+        "Published FAQ timing and home-page timing use differing conditional wording; neither was treated as a case guarantee.",
+        "Unknown fields preserve the boundary created by not entering personal/case data or activating Submit."
+      ],
+      "status": "partial"
+    }
+  ]
+}

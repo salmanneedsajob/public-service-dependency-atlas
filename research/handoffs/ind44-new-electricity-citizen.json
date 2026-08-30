@@ -1,0 +1,89 @@
+{
+  "_handoff": {
+    "issue": "IND-44",
+    "generatedAt": "2026-08-30",
+    "status": "ready_for_merge",
+    "scope": "Additive public first-person Bengaluru accounts relevant to failures or recovery gaps in seeking a BESCOM new or permanent electricity connection. These are case evidence only, not official eligibility, building-rule, fee, route, deadline, complaint, or service-level evidence. Usernames, names, precise locations, property characteristics, account/request numbers, contact details, and amounts are intentionally omitted. Differing accounts are retained without resolving them."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind44_electricity_citizen_permanent_meter_denial",
+      "title": "Need advice: Stuck without permanent electricity due to G+3 rule enforcement in Bangalore",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1ssigk3/need_advice_stuck_without_permanent_electricity/",
+      "accessedAt": "2026-08-30",
+      "type": "citizen_evidence",
+      "notes": "The author describes their own completed building, reports having had a temporary BESCOM connection during construction, and says permanent meters were denied. They attribute the outcome to a stated building-rule enforcement issue and report no clear path forward; neither attribution nor policy is verified."
+    },
+    {
+      "id": "source_ind44_electricity_citizen_new_meter_pending",
+      "title": "BESCOM New connection with meter",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1rpr6mi/bescom_new_connection_with_meter/",
+      "accessedAt": "2026-08-30",
+      "type": "citizen_evidence",
+      "notes": "A commenter describes their own newly constructed building and reports it remained without electricity after completion, while linking the difficulty to a building-height deviation. The post does not establish the application route, actual decision-maker, violation, charge, or outcome."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind44_electricity_citizen_permanent_meter_denial",
+      "text": "One citizen reported having temporary BESCOM supply during construction but being unable to obtain permanent meters after construction completion.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_normal", "scenario_ind32_electricity_document"],
+      "nodeIds": ["node_electricity_eligibility", "node_electricity_tracking"],
+      "sourceIds": ["source_ind44_electricity_citizen_permanent_meter_denial"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One self-report. It does not establish that a permanent-connection application was complete, that temporary supply confers a right to permanent supply, the cited reason, or a BESCOM policy or delay. No recovery outcome was reported."
+    },
+    {
+      "id": "claim_ind44_electricity_citizen_new_meter_pending",
+      "text": "One citizen reported that their completed newly constructed building still lacked electricity while they were seeking a new connection and meter.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_normal", "scenario_ind32_electricity_document"],
+      "nodeIds": ["node_electricity_eligibility", "node_electricity_tracking"],
+      "sourceIds": ["source_ind44_electricity_citizen_new_meter_pending"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One commenter self-report. The commenter associates the problem with a building condition, but the case does not establish any requirement, payment, application status, assessment, or completion outcome."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind44_electricity_citizen_permanent_meter_pending",
+      "title": "Reported permanent-meter outcome gap after temporary supply",
+      "category": "process",
+      "symptom": "A citizen reports that permanent meters were not obtained after construction despite earlier temporary supply.",
+      "likelyCause": "Unknown; the account cannot establish the route, application completeness, building condition, utility decision, inspection state, or policy applicability.",
+      "recovery": "No recovery outcome was reported. Use an authorised application reference to request the current case status and a case-specific missing-condition reason; do not rely on the poster's rule interpretation.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_electricity_eligibility", "node_electricity_tracking"],
+      "scenarioIds": ["scenario_ind32_electricity_normal", "scenario_ind32_electricity_document"],
+      "claimIds": ["claim_ind44_electricity_citizen_permanent_meter_denial"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind44_electricity_citizen_new_meter_pending",
+      "title": "Reported new-meter outcome gap for completed building",
+      "category": "process",
+      "symptom": "A citizen reports a completed new building still lacked electricity while they sought a new connection and meter.",
+      "likelyCause": "Unknown; the account does not distinguish application route, documents, inspection, building condition, network work, payment, or any decision.",
+      "recovery": "No recovery outcome was reported. Confirm the case-specific status and any deficiency through an authorised BESCOM channel; do not infer a general building-condition rule from the account.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_electricity_eligibility", "node_electricity_tracking"],
+      "scenarioIds": ["scenario_ind32_electricity_normal", "scenario_ind32_electricity_document"],
+      "claimIds": ["claim_ind44_electricity_citizen_new_meter_pending"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

@@ -1,0 +1,750 @@
+{
+  "_handoff": {
+    "issue": "IND-44",
+    "generatedAt": "2026-08-30",
+    "status": "ready_for_merge",
+    "pass": "official-source",
+    "scopeNote": "Official-source pass for the default Bengaluru new-electricity path: first check BESCOM Janasnehi Vidyuth Sevegalu (JVS) fast-track eligibility, inspect the public new-connection form and document requirements, then preserve demand, tracking, and supply as case-specific. Existing BESCOM FAQ, JVS form, and eligibility source IDs are reused. Current BESCOM normal-form, tracker, demand-calculator, KERC 2022 consumer-rights regulation, KERC 2025 Distribution Code, KERC 2025 recovery order, and KERC regulation-index pages were inspected without login, OTP, identifier, upload, payment, or submission.",
+    "defaultScenarioId": "scenario_ind32_electricity_jvs",
+    "defaultPathNodeIds": [
+      "node_electricity_route",
+      "node_electricity_public_form",
+      "node_electricity_documents",
+      "node_electricity_demand",
+      "node_electricity_tracking"
+    ],
+    "observationNote": "BESCOM's public pages expose JVS and normal routes, blank controls, mandatory document classes, a demand calculator, and request/account tracking fields. KERC's current-published regulations supply statutory timing and escalation boundaries. No source establishes a property-specific eligibility decision, case demand, inspection, payment receipt, meter installation, or final energisation."
+  },
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru BESCOM new electricity connection official-source pass — IND-44",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-30",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice. Official pages, dated regulatory material, and unresolved case-specific gaps are shown together; do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_bescom_ind32_new_electricity",
+      "name": "Bangalore Electricity Supply Company Limited",
+      "shortName": "BESCOM",
+      "officialUrl": "https://www.bescom.co.in/"
+    },
+    {
+      "id": "agency_kerc_ind32_new_electricity",
+      "name": "Karnataka Electricity Regulatory Commission",
+      "shortName": "KERC",
+      "officialUrl": "https://kerc.karnataka.gov.in/"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind32_electricity_jvs",
+      "label": "Janasnehi fast-track new connection",
+      "summary": "A Bengaluru domestic or commercial applicant checks whether a new connection fits the public JVS path.",
+      "tags": ["electricity", "new-connection", "jvs", "fast-track", "default-path"],
+      "pathNodeIds": [
+        "node_electricity_route",
+        "node_electricity_public_form",
+        "node_electricity_documents",
+        "node_electricity_demand",
+        "node_electricity_tracking"
+      ],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind32_new_electricity_faq",
+      "title": "BESCOM Frequently Asked Questions",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/main/faq",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Reused verified BESCOM source. The FAQ describes JVS and normal new-connection routes, visible steps, documents, payment boundaries, and 1912 help. Rechecked as an official public page on 2026-08-30; no value was entered."
+    },
+    {
+      "id": "source_ind32_new_electricity_form",
+      "title": "BESCOM New Connection public form",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/main/new-connection-forms",
+      "accessedAt": "2026-08-28",
+      "type": "official_portal",
+      "notes": "Reused verified BESCOM public JVS form source. It exposes blank application, location/load, and document controls. Rechecked as an official public page on 2026-08-30; no value or file was entered."
+    },
+    {
+      "id": "source_ind32_new_electricity_eligibility",
+      "title": "BESCOM Eligibility for New Connection",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/main/eligibility",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "Reused verified BESCOM eligibility source. It describes JVS tariff/load scope, exclusions, document verification, surrender of temporary connection, arrears, and applicable deposits/charges. Rechecked as an official public page on 2026-08-30."
+    },
+    {
+      "id": "source_ind44_bescom_normal_form",
+      "title": "BESCOM New Connection normal-route public form",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/auth/forms",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Direct public observation. The blank form exposes LT/HT-EHT/MC-MSB application types, temporary/permanent choice, personal and address fields, miscellaneous/load/location/LEC stages, mandatory identity/ownership/geo-tagged-photo categories, completion-cum-test-report category, accepted file extensions, and a 4 MB total upload-size label. No value, file, login, or submission was used."
+    },
+    {
+      "id": "source_ind44_bescom_tracker",
+      "title": "BESCOM New Connection Tracker",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/main/track-connection",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Direct public observation. The blank page exposes required Request ID or Account ID controls and a Submit button, plus a 1912 help label. No identifier was entered."
+    },
+    {
+      "id": "source_ind44_bescom_demand_calculator",
+      "title": "BESCOM New Connection Demand Charges Calculator",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/main/ftnc-demand-charges",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Direct public observation. The calculator says displayed charges are per connection and exposes LT/HT, power-supply purpose, location, requested load in KW/HP, phases, and Get Charges controls. No value was entered and no amount was calculated."
+    },
+    {
+      "id": "source_ind44_kerc_regulations_index",
+      "title": "KERC current regulations index",
+      "publisher": "Karnataka Electricity Regulatory Commission",
+      "url": "https://kerc.karnataka.gov.in/27/regulations/en",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Current official index observed 2026-08-30. It lists the KERC Rights of Consumers Relating to Supply of Electricity, Standards of Performance and allied matters Regulations, 2022; KERC (Karnataka Electricity Distribution Code) Regulations, 2025; and the recovery-of-expenditure amendments through 2025."
+    },
+    {
+      "id": "source_ind44_kerc_consumer_rights_2022",
+      "title": "KERC (Rights of Consumers Relating to Supply of Electricity, Standards of Performance and allied matters) Regulations, 2022",
+      "publisher": "Karnataka Electricity Regulatory Commission",
+      "url": "https://kerc.karnataka.gov.in/uploads/media_to_upload1720004194.pdf",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2022-10-07",
+      "type": "regulation",
+      "notes": "Official Gazette regulation PDF linked from KERC's current regulations page. Relevant provisions include application/acknowledgement, documents up to 150 kW, supply timelines, network-extension cases, default compensation, call-centre/status/escalation, and repeal of older 2004 consumer-service regulations."
+    },
+    {
+      "id": "source_ind44_kerc_distribution_code_2025",
+      "title": "KERC (Karnataka Electricity Distribution Code) Regulations, 2025",
+      "publisher": "Karnataka Electricity Regulatory Commission",
+      "url": "https://kerc.karnataka.gov.in/uploads/media_to_upload1753187455.pdf",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2025-07-17",
+      "type": "regulation",
+      "notes": "Official Gazette notification PDF linked from KERC's current regulations page. It applies to distribution licensees and users connected to or seeking connection, and states that users/licensees must also comply with Conditions of Supply and other applicable regulations."
+    },
+    {
+      "id": "source_ind44_kerc_recovery_order_2025",
+      "title": "KERC order dated 28 August 2025 — development/infrastructure charges and reactivation",
+      "publisher": "Karnataka Electricity Regulatory Commission",
+      "url": "https://kerc.karnataka.gov.in/uploads/media_to_upload1756446346.pdf",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2025-08-28",
+      "type": "order",
+      "notes": "Official KERC order. For network/layout charge methodology it says development infrastructure charges use assessed load and service-line cost applies to requisitioned load beyond assessed load; this is a regulatory boundary, not a case calculation."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind44_electricity_jvs_default_route",
+      "text": "BESCOM's public FAQ describes a JVS New Connection entry that can be opened without customer-portal login, followed by a disclaimer, single/multiple choice, optional temporary-account-ID lookup, personal/address/location/load details, document upload, submission, and a confirmation charge breakdown or demand-letter download.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "nodeIds": ["node_electricity_route", "node_electricity_public_form"],
+      "sourceIds": ["source_ind32_new_electricity_faq", "source_ind32_new_electricity_form"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Official public guidance/form rechecked 2026-08-30; no application, payment, or demand was created."
+    },
+    {
+      "id": "claim_ind44_electricity_normal_form_fields",
+      "text": "BESCOM's public normal New Connection form exposes LT, HT/EHT, and MC/MSB application types; temporary/permanent choice; personal, supply-address, correspondence-address, miscellaneous/load, location, LEC, and second-miscellaneous stages; and a document-upload stage.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "nodeIds": ["node_electricity_route", "node_electricity_public_form"],
+      "sourceIds": ["source_ind44_bescom_normal_form"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The form is public and blank; this records controls, not a successful transition or requiredness of every field. Observed 2026-08-30."
+    },
+    {
+      "id": "claim_ind44_electricity_document_upload_boundary",
+      "text": "BESCOM's public normal-form document stage marks identity proof, proof of ownership, and geo-tagged building photo as mandatory categories, displays completion-cum-test report as another category, lists accepted image/PDF extensions, and displays a 4 MB total upload-size label.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "nodeIds": ["node_electricity_documents", "node_electricity_public_form"],
+      "sourceIds": ["source_ind44_bescom_normal_form"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": ["claim_ind44_kerc_two_documents_150kw"],
+      "notes": "The page's labels do not establish which route/category requires completion-cum-test report or whether an individual upload will pass validation. No file was selected. Observed 2026-08-30."
+    },
+    {
+      "id": "claim_ind44_electricity_jvs_scope_reusable",
+      "text": "BESCOM's public eligibility guidance limits JVS fast-track to LT-1 domestic and LT-3 commercial services up to 18 kW excluding 18 kW, including new connections, and lists line-extension/modification, specified tall/large premises, occupancy-certificate premises, Clause 9 cases, unauthorised/revenue/abandoned layouts, HT category, and incomplete wiring/meter-board/service cable as exclusions or barriers.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "nodeIds": ["node_electricity_route"],
+      "sourceIds": ["source_ind32_new_electricity_eligibility"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is page-level eligibility guidance, not a property-specific decision. The FAQ separately uses a 17.5 kW ceiling; the difference remains unresolved and is preserved as a route-confirmation blocker."
+    },
+    {
+      "id": "claim_ind44_electricity_tracker_inputs",
+      "text": "BESCOM's public New Connection Tracker exposes a required Request ID or Account ID input and a Submit control; the same public page displays a 1912 help label.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "nodeIds": ["node_electricity_tracking"],
+      "sourceIds": ["source_ind44_bescom_tracker"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Only blank controls were inspected; no request/account identifier was entered and no status result is asserted. Observed 2026-08-30."
+    },
+    {
+      "id": "claim_ind44_electricity_demand_calculator_inputs",
+      "text": "BESCOM's public New Connection Demand Charges Calculator says displayed charges are per connection and asks for LT/HT, power-supply purpose, location, requested load in KW/HP, and phases before Get Charges.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "nodeIds": ["node_electricity_demand"],
+      "sourceIds": ["source_ind44_bescom_demand_calculator"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No inputs were entered and no charge amount was calculated. Observed 2026-08-30."
+    },
+    {
+      "id": "claim_ind44_kerc_application_ack",
+      "text": "KERC's 2022 consumer-rights regulation says an owner or occupier files the electricity-supply application with prescribed fee/charges, and an online submission through the licensee's web portal or mobile app must generate an acknowledgement with a registration number; a complete application is deemed received on that acknowledgement date.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "nodeIds": ["node_electricity_public_form", "node_electricity_tracking"],
+      "sourceIds": ["source_ind44_kerc_consumer_rights_2022"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Regulation clauses 3(1)(a)-(b) and 3(2), official PDF accessed 2026-08-30. This legal acknowledgement rule does not prove that BESCOM's blank form was submitted or that a specific case is complete."
+    },
+    {
+      "id": "claim_ind44_kerc_two_documents_150kw",
+      "text": "KERC's 2022 consumer-rights regulation provides that, for sanction of power up to 150 kW, the application form is accompanied by only two mandatory documents: applicant identity proof and proof of ownership, possession, or occupancy of the premises; a licence must also be submitted wherever a licence is required.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "nodeIds": ["node_electricity_documents"],
+      "sourceIds": ["source_ind44_kerc_consumer_rights_2022"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": ["claim_ind44_electricity_document_upload_boundary"],
+      "notes": "Regulation clause 3(3), official PDF accessed 2026-08-30. The apparent tension is preserved: the BESCOM form displays additional category labels, while the regulation states the two mandatory documents for sanction up to 150 kW, with licence qualification. Applicability to every JVS category and later field/technical evidence remains to be confirmed."
+    },
+    {
+      "id": "claim_ind44_kerc_existing_network_timing",
+      "text": "KERC's 2022 consumer-rights regulation sets release of supply where service is feasible from the existing network at 7 days in metro cities, 15 days in other municipal areas, and 30 days in rural areas, measured from receipt of the application.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "nodeIds": ["node_electricity_tracking"],
+      "sourceIds": ["source_ind44_kerc_consumer_rights_2022"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Regulation clause 3(4) and Schedule-I item 8, official PDF accessed 2026-08-30. This is not a guarantee that an unclassified property qualifies as existing-network service or that the portal's JVS promise uses the same clock."
+    },
+    {
+      "id": "claim_ind44_kerc_network_extension_timing",
+      "text": "KERC's 2022 consumer-rights regulation specifies, where distribution-main extension or a new substation is required, 45 days for LT, 60 days for 11 kV HT, 90 days for 33 kV HT, and 180 days for EHT from application receipt; if the applicant self-executes a distribution-main extension, supply is due within 7 days of readiness intimation.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "nodeIds": ["node_electricity_route", "node_electricity_tracking"],
+      "sourceIds": ["source_ind44_kerc_consumer_rights_2022"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Regulation clauses 3(5)(a), 3(5)(c), and Schedule-I item 8, official PDF accessed 2026-08-30. New-substation completion can instead follow approved DPR/estimate timing; no property/network assessment was made."
+    },
+    {
+      "id": "claim_ind44_kerc_default_escalation",
+      "text": "KERC's 2022 consumer-rights regulation provides a penalty/compensation boundary for supply-time defaults, requires a centralised 24x7 toll-free call centre for new connections and related services, and describes complaint registration, next-higher-authority escalation, online status tracking, notifications, and auto-escalation facilities.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "nodeIds": ["node_electricity_tracking"],
+      "sourceIds": ["source_ind44_kerc_consumer_rights_2022", "source_ind44_bescom_tracker"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Regulation clauses 3(8), 7(1), 7(8), and 9, official PDF accessed 2026-08-30. The public BESCOM tracker exposes only blank Request ID/Account ID controls; actual BESCOM auto-escalation, case complaint number, and compensation payment were not observed."
+    },
+    {
+      "id": "claim_ind44_kerc_current_code_boundary",
+      "text": "KERC's current regulations index lists the 2025 Karnataka Electricity Distribution Code and the 2022 consumer-rights regulation; the 2025 Distribution Code applies to distribution licensees and users connected to or seeking connection and requires compliance with Conditions of Supply and other applicable regulations.",
+      "jurisdiction": "Karnataka, India; applied here to BESCOM service in Bengaluru",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "nodeIds": ["node_electricity_route", "node_electricity_tracking"],
+      "sourceIds": ["source_ind44_kerc_regulations_index", "source_ind44_kerc_distribution_code_2025"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Index and Gazette notification were accessed 2026-08-30. This establishes the current regulatory shelf, not a complete portal workflow or property-specific supply decision."
+    },
+    {
+      "id": "claim_ind44_kerc_assessed_load_charges",
+      "text": "KERC's 28 August 2025 order states that development-infrastructure charges are levied on assessed load where the applicant/developer has not laid the electric line or plant to the point of connection, and service-line cost applies to requisitioned load beyond assessed load; if requisitioned load equals assessed load, service-line charges are not applicable under the order's stated conditions.",
+      "jurisdiction": "Karnataka, India; applied here to BESCOM service in Bengaluru",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "nodeIds": ["node_electricity_demand"],
+      "sourceIds": ["source_ind44_kerc_recovery_order_2025"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Official KERC order accessed 2026-08-30. It is not a calculator output and does not determine a particular applicant's assessed load, layout status, or demand."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_electricity_route",
+      "label": "Choose public route",
+      "kind": "decision",
+      "ownerAgencyId": "agency_bescom_ind32_new_electricity",
+      "summary": "Check JVS fast-track scope first; move to BESCOM's normal new-connection route when load, tariff, premise, wiring, or network facts do not fit JVS.",
+      "requiredState": "Applicant would need proposed load/tariff and premise/network facts; none were supplied.",
+      "checks": [
+        {
+          "id": "check_ind44_electricity_jvs_scope",
+          "label": "JVS scope and exclusions",
+          "description": "BESCOM eligibility guidance lists JVS tariff/load scope and published exclusions.",
+          "url": "https://www.bescom.co.in/bescom/main/eligibility",
+          "claimIds": ["claim_ind44_electricity_jvs_scope_reusable"],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind44_electricity_jvs_mismatch",
+          "label": "Published JVS exclusion or threshold mismatch",
+          "description": "Line extension/modification, HT category, listed premise/layout conditions, incomplete wiring, or unresolved 17.5-versus-18-kW wording can prevent confident JVS selection.",
+          "url": "https://www.bescom.co.in/bescom/main/eligibility",
+          "claimIds": ["claim_ind44_electricity_jvs_scope_reusable"],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind44_electricity_normal_route",
+          "label": "Inspect normal new-connection route",
+          "description": "If JVS scope does not fit, use BESCOM's documented normal New Connection route for LT, HT/EHT, or MC/MSB; no application was started in this pass.",
+          "url": "https://www.bescom.co.in/bescom/main/faq",
+          "claimIds": ["claim_ind44_electricity_jvs_default_route", "claim_ind44_electricity_normal_form_fields"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "claimIds": ["claim_ind44_electricity_jvs_scope_reusable", "claim_ind44_electricity_jvs_default_route", "claim_ind44_electricity_normal_form_fields"],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_electricity_public_form",
+      "label": "Review blank application stages",
+      "kind": "service",
+      "ownerAgencyId": "agency_bescom_ind32_new_electricity",
+      "summary": "Public JVS and normal-form stages for applicant, address, location, load/miscellaneous data, LEC where applicable, and documents.",
+      "requiredState": "Actual applicant/property values and uploads would be required to proceed; none were entered.",
+      "checks": [
+        {
+          "id": "check_ind44_electricity_form_stages",
+          "label": "Public route controls",
+          "description": "The JVS and normal public forms display application-type, address, load/location, and document stages.",
+          "url": "https://www.bescom.co.in/bescom/auth/forms",
+          "claimIds": ["claim_ind44_electricity_jvs_default_route", "claim_ind44_electricity_normal_form_fields"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind44_electricity_mandatory_form",
+          "label": "Mandatory control or document category",
+          "description": "The normal public form marks several controls and identity/ownership/geo-tagged-photo categories with an asterisk; the page does not expose a case-specific validation message.",
+          "url": "https://www.bescom.co.in/bescom/auth/forms",
+          "claimIds": ["claim_ind44_electricity_document_upload_boundary"],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind44_electricity_form_route",
+          "label": "Use the route-specific blank form",
+          "description": "Choose the route/category that matches confirmed load and premise facts and review its blank stages before any authorised submission; no values were entered here.",
+          "url": "https://www.bescom.co.in/bescom/main/new-connection-forms",
+          "claimIds": ["claim_ind44_electricity_jvs_default_route", "claim_ind44_electricity_normal_form_fields"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "claimIds": ["claim_ind44_electricity_jvs_default_route", "claim_ind44_electricity_normal_form_fields", "claim_ind44_electricity_document_upload_boundary"],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_electricity_documents",
+      "label": "Documents and technical readiness",
+      "kind": "record",
+      "ownerAgencyId": "agency_bescom_ind32_new_electricity",
+      "summary": "Confirm the route-specific identity, ownership/occupancy, photo, agreement, wiring, and technical evidence boundary before submission.",
+      "requiredState": "The exact category checklist, original-verification route, and property-specific technical requirements remain unconfirmed; no file was selected.",
+      "checks": [
+        {
+          "id": "check_ind44_electricity_documents_regulation",
+          "label": "KERC document baseline",
+          "description": "For sanction up to 150 kW, KERC's 2022 regulation identifies identity proof and ownership/possession/occupancy proof as two mandatory documents, with a licence wherever required.",
+          "url": "https://kerc.karnataka.gov.in/uploads/media_to_upload1720004194.pdf",
+          "claimIds": ["claim_ind44_kerc_two_documents_150kw"],
+          "status": "partial"
+        },
+        {
+          "id": "check_ind44_electricity_documents_form",
+          "label": "BESCOM upload categories",
+          "description": "BESCOM's public form displays identity, ownership, geo-tagged building-photo, and completion-cum-test-report categories plus a 4 MB total upload-size label.",
+          "url": "https://www.bescom.co.in/bescom/auth/forms",
+          "claimIds": ["claim_ind44_electricity_document_upload_boundary"],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind44_electricity_document_mismatch",
+          "label": "Document or technical evidence mismatch",
+          "description": "A route/category may expose mandatory identity, ownership, geo-tagged-photo, wiring, or completion/test-report evidence; public pages do not reveal the case-specific rejection text or validation outcome.",
+          "url": "https://www.bescom.co.in/bescom/auth/forms",
+          "claimIds": ["claim_ind44_electricity_document_upload_boundary", "claim_ind44_kerc_two_documents_150kw"],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [],
+      "researchedNoSourceFound": ["recoveries"],
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "claimIds": ["claim_ind44_electricity_document_upload_boundary", "claim_ind44_kerc_two_documents_150kw"],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_electricity_demand",
+      "label": "Demand and payment",
+      "kind": "record",
+      "ownerAgencyId": "agency_bescom_ind32_new_electricity",
+      "summary": "Review the public per-connection demand calculator and preserve any actual demand/payment as case-specific.",
+      "requiredState": "A route, load, location, phase, and submitted case calculation would be needed; none was entered or generated.",
+      "checks": [
+        {
+          "id": "check_ind44_electricity_demand_calculator",
+          "label": "Per-connection calculator inputs",
+          "description": "BESCOM's public calculator exposes LT/HT, purpose, location, load, and phase inputs and says charges are per connection.",
+          "url": "https://www.bescom.co.in/bescom/main/ftnc-demand-charges",
+          "claimIds": ["claim_ind44_electricity_demand_calculator_inputs"],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind44_electricity_charge_rule",
+          "label": "Regulatory assessed-load boundary",
+          "description": "KERC's 2025 order gives an assessed-load/service-line-cost methodology for stated network/layout conditions.",
+          "url": "https://kerc.karnataka.gov.in/uploads/media_to_upload1756446346.pdf",
+          "claimIds": ["claim_ind44_kerc_assessed_load_charges"],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind44_electricity_demand_unknown",
+          "label": "No case-specific demand available",
+          "description": "The public calculator and regulation expose inputs/rules but no applicant-specific amount, demand letter, fee posting, or payment result exists in this pass.",
+          "url": "https://www.bescom.co.in/bescom/main/ftnc-demand-charges",
+          "claimIds": ["claim_ind44_electricity_demand_calculator_inputs", "claim_ind44_kerc_assessed_load_charges"],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind44_electricity_calculate_after_route",
+          "label": "Calculate only after route inputs are known",
+          "description": "Use the public calculator as a pre-submission information aid once authorised applicant load, purpose, location, and phase facts are known; do not treat its output as a generated demand letter.",
+          "url": "https://www.bescom.co.in/bescom/main/ftnc-demand-charges",
+          "claimIds": ["claim_ind44_electricity_demand_calculator_inputs"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "claimIds": ["claim_ind44_electricity_demand_calculator_inputs", "claim_ind44_kerc_assessed_load_charges"],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_electricity_tracking",
+      "label": "Request tracking and supply outcome",
+      "kind": "outcome",
+      "ownerAgencyId": "agency_bescom_ind32_new_electricity",
+      "summary": "Retain the generated registration/request reference, use the public tracker, and use KERC timing/escalation boundaries without asserting a supply result.",
+      "requiredState": "A submitted request/reference would be required for case tracking; no request was created.",
+      "checks": [
+        {
+          "id": "check_ind44_electricity_tracker",
+          "label": "Request or account tracking control",
+          "description": "BESCOM's public tracker accepts Request ID or Account ID and displays a Submit control.",
+          "url": "https://www.bescom.co.in/bescom/main/track-connection",
+          "claimIds": ["claim_ind44_electricity_tracker_inputs"],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind44_electricity_kerc_timing",
+          "label": "Regulatory supply timing",
+          "description": "KERC provides 7/15/30-day existing-network targets and 45/60/90/180-day network-extension bands, with a separate self-execution readiness rule.",
+          "url": "https://kerc.karnataka.gov.in/uploads/media_to_upload1720004194.pdf",
+          "claimIds": ["claim_ind44_kerc_existing_network_timing", "claim_ind44_kerc_network_extension_timing"],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind44_electricity_tracking_reference",
+          "label": "No trackable case reference",
+          "description": "The tracker requires Request ID or Account ID; no identifier, status result, inspection state, meter state, or energisation result was available in this research pass.",
+          "url": "https://www.bescom.co.in/bescom/main/track-connection",
+          "claimIds": ["claim_ind44_electricity_tracker_inputs"],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind44_electricity_overdue_escalation",
+          "label": "Use official status and escalation channels",
+          "description": "Retain the registration/request number, try the public tracker, and if the applicable KERC service period is missed use BESCOM's 1912 help/call-centre and the designated next-higher-authority complaint route; no complaint was filed.",
+          "url": "https://www.bescom.co.in/bescom/main/track-connection",
+          "claimIds": ["claim_ind44_electricity_tracker_inputs", "claim_ind44_kerc_default_escalation"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "claimIds": ["claim_ind44_electricity_tracker_inputs", "claim_ind44_kerc_existing_network_timing", "claim_ind44_kerc_network_extension_timing", "claim_ind44_kerc_default_escalation"],
+      "status": "partial",
+      "displayOrder": 50
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_ind44_electricity_route_form",
+      "fromNodeId": "node_electricity_route",
+      "toNodeId": "node_electricity_public_form",
+      "relationship": "requires",
+      "label": "After conceptual route selection, inspect the corresponding blank JVS or normal form; a live transition was not submitted.",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "claimIds": ["claim_ind44_electricity_jvs_default_route", "claim_ind44_electricity_normal_form_fields"],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind44_electricity_form_documents",
+      "fromNodeId": "node_electricity_public_form",
+      "toNodeId": "node_electricity_documents",
+      "relationship": "requires",
+      "label": "The public form displays a document stage after applicant/address/location/load controls; no file or validation was attempted.",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "claimIds": ["claim_ind44_electricity_document_upload_boundary"],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind44_electricity_documents_demand",
+      "fromNodeId": "node_electricity_documents",
+      "toNodeId": "node_electricity_demand",
+      "relationship": "produces",
+      "label": "A complete authorised case may lead to a demand calculation; the public calculator is separate and no case demand was generated.",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "claimIds": ["claim_ind44_electricity_demand_calculator_inputs"],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_ind44_electricity_demand_tracking",
+      "fromNodeId": "node_electricity_demand",
+      "toNodeId": "node_electricity_tracking",
+      "relationship": "requires",
+      "label": "Tracking requires a generated request/account reference; payment-to-supply timing and result remain unobserved.",
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "claimIds": ["claim_ind44_electricity_tracker_inputs", "claim_ind44_kerc_existing_network_timing"],
+      "status": "unknown"
+    }
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind44_electricity_jvs_route_boundary",
+      "title": "JVS route and threshold boundary",
+      "category": "documentation",
+      "symptom": "BESCOM's eligibility page says up to 18 kW excluding 18 kW, while its FAQ uses a 17.5 kW ceiling; the premise/network exclusions also require facts not supplied.",
+      "likelyCause": "Different official page wording and case-specific tariff, load, building, wiring, and network conditions.",
+      "recovery": "Confirm the current applicable JVS threshold and route with BESCOM; if an exclusion applies, inspect the normal route.",
+      "ownerAgencyIds": ["agency_bescom_ind32_new_electricity"],
+      "nodeIds": ["node_electricity_route"],
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "claimIds": ["claim_ind44_electricity_jvs_scope_reusable", "claim_ind44_electricity_jvs_default_route"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind44_electricity_document_conflict",
+      "title": "Portal labels versus regulatory document baseline",
+      "category": "documentation",
+      "symptom": "BESCOM's form displays several document categories, while KERC's 2022 regulation identifies two mandatory documents for sanction up to 150 kW plus a conditional licence.",
+      "likelyCause": "The form labels route/category evidence and technical documents beyond the regulation's stated mandatory baseline; exact applicability and field verification are not public here.",
+      "recovery": "Confirm the route/category checklist and original-verification requirement with BESCOM before uploading; no file was uploaded.",
+      "ownerAgencyIds": ["agency_bescom_ind32_new_electricity", "agency_kerc_ind32_new_electricity"],
+      "nodeIds": ["node_electricity_documents"],
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "claimIds": ["claim_ind44_electricity_document_upload_boundary", "claim_ind44_kerc_two_documents_150kw"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind44_electricity_case_demand",
+      "title": "Demand amount and charge basis are case-specific",
+      "category": "process",
+      "symptom": "The public calculator exposes inputs and KERC publishes assessed-load methodology, but no applicant-specific demand or payment result exists.",
+      "likelyCause": "Demand depends on route, purpose, location, load, phase, network/layout conditions, and case assessment.",
+      "recovery": "Use the public calculator only as an information aid after authorised inputs are known and rely on the generated official demand for payment decisions.",
+      "ownerAgencyIds": ["agency_bescom_ind32_new_electricity", "agency_kerc_ind32_new_electricity"],
+      "nodeIds": ["node_electricity_demand"],
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "claimIds": ["claim_ind44_electricity_demand_calculator_inputs", "claim_ind44_kerc_assessed_load_charges"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind44_electricity_network_clock",
+      "title": "Supply clock depends on network feasibility",
+      "category": "infrastructure",
+      "symptom": "KERC separates existing-network 7/15/30-day service from LT/HT/EHT network-extension periods; BESCOM's JVS promise also excludes line extension.",
+      "likelyCause": "A property-specific network feasibility/extension decision and application acknowledgement are not publicly observable without a case.",
+      "recovery": "Retain the acknowledgement/reference and ask BESCOM to state the applicable network category and clock; use KERC escalation if the applicable period is missed.",
+      "ownerAgencyIds": ["agency_bescom_ind32_new_electricity", "agency_kerc_ind32_new_electricity"],
+      "nodeIds": ["node_electricity_route", "node_electricity_tracking"],
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "claimIds": ["claim_ind44_electricity_jvs_scope_reusable", "claim_ind44_kerc_existing_network_timing", "claim_ind44_kerc_network_extension_timing"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind44_electricity_untracked_case",
+      "title": "No request reference or live status",
+      "category": "process",
+      "symptom": "The tracker requires Request ID or Account ID, but this official-source pass created no request, receipt, inspection status, meter result, or supply outcome.",
+      "likelyCause": "Case tracking and escalation require a submitted application/reference and case-specific processing.",
+      "recovery": "For an authorised case, retain the registration/request number, use the tracker and 1912, and follow the designated escalation route described by KERC; no case was submitted here.",
+      "ownerAgencyIds": ["agency_bescom_ind32_new_electricity", "agency_kerc_ind32_new_electricity"],
+      "nodeIds": ["node_electricity_tracking"],
+      "scenarioIds": ["scenario_ind32_electricity_jvs"],
+      "claimIds": ["claim_ind44_electricity_tracker_inputs", "claim_ind44_kerc_application_ack", "claim_ind44_kerc_default_escalation"],
+      "status": "partial"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_ind44_electricity_default_official",
+      "title": "BESCOM new connection — default JVS official-source path",
+      "scenarioId": "scenario_ind32_electricity_jvs",
+      "context": "Start with public JVS eligibility, inspect the blank form and document baseline, then preserve demand/tracking/supply as conditional until an authorised case creates an acknowledgement.",
+      "steps": [
+        {
+          "id": "step_ind44_electricity_route",
+          "label": "Check JVS scope",
+          "nodeId": "node_electricity_route",
+          "action": "Compare proposed tariff/load and premise/network facts with BESCOM's JVS scope and exclusions; do not resolve the 17.5-versus-18-kW wording by assumption.",
+          "expectedResult": "A route lead is identified, while property-specific eligibility remains unverified.",
+          "claimIds": ["claim_ind44_electricity_jvs_scope_reusable", "claim_ind44_electricity_jvs_default_route"],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind44_electricity_form",
+          "label": "Inspect blank form stages",
+          "nodeId": "node_electricity_public_form",
+          "action": "Review public JVS/normal stage headings and mandatory labels without entering applicant, property, identifier, or document data.",
+          "expectedResult": "Route-specific applicant, address, load/location, LEC, and upload controls are visible; no case is created.",
+          "claimIds": ["claim_ind44_electricity_jvs_default_route", "claim_ind44_electricity_normal_form_fields", "claim_ind44_electricity_document_upload_boundary"],
+          "status": "verified"
+        },
+        {
+          "id": "step_ind44_electricity_documents",
+          "label": "Confirm document baseline",
+          "nodeId": "node_electricity_documents",
+          "action": "Use KERC's up-to-150-kW identity/ownership baseline and BESCOM's category labels as leads; verify route-specific requirements before an authorised upload.",
+          "expectedResult": "The apparent portal/regulation boundary is visible, but document acceptance and technical readiness remain case-specific.",
+          "claimIds": ["claim_ind44_kerc_two_documents_150kw", "claim_ind44_electricity_document_upload_boundary"],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind44_electricity_demand",
+          "label": "Preserve demand boundary",
+          "nodeId": "node_electricity_demand",
+          "action": "Read the public per-connection calculator and KERC assessed-load rule without entering values or treating the calculator as a demand letter.",
+          "expectedResult": "The charge-input and regulatory methodology are documented; no amount or payment is asserted.",
+          "claimIds": ["claim_ind44_electricity_demand_calculator_inputs", "claim_ind44_kerc_assessed_load_charges"],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind44_electricity_tracking",
+          "label": "Preserve acknowledgement and supply boundary",
+          "nodeId": "node_electricity_tracking",
+          "action": "Record that an authorised online application should produce a registration number, then use the tracker/escalation route only with a real reference; no submission was made.",
+          "expectedResult": "KERC timing/escalation rules and BESCOM tracker inputs are visible, while status, inspection, meter, and energisation remain Unknown.",
+          "claimIds": ["claim_ind44_kerc_application_ack", "claim_ind44_electricity_tracker_inputs", "claim_ind44_kerc_existing_network_timing", "claim_ind44_kerc_network_extension_timing", "claim_ind44_kerc_default_escalation"],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dep_ind44_electricity_route_to_form",
+          "fromNodeId": "node_electricity_route",
+          "toNodeId": "node_electricity_public_form",
+          "description": "The selected JVS/normal route determines which blank controls and category stages are relevant; live transition was not observed.",
+          "claimIds": ["claim_ind44_electricity_jvs_default_route", "claim_ind44_electricity_normal_form_fields"],
+          "status": "partial"
+        },
+        {
+          "id": "dep_ind44_electricity_ack_to_clock",
+          "fromNodeId": "node_electricity_public_form",
+          "toNodeId": "node_electricity_tracking",
+          "description": "KERC treats a complete online application as received on acknowledgement/registration-number generation; no acknowledgement was generated in this pass.",
+          "claimIds": ["claim_ind44_kerc_application_ack"],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_ind44_electricity_jvs_route_boundary",
+        "roadblock_ind44_electricity_document_conflict",
+        "roadblock_ind44_electricity_case_demand",
+        "roadblock_ind44_electricity_network_clock",
+        "roadblock_ind44_electricity_untracked_case"
+      ],
+      "recoveryNotes": [
+        "No login, OTP, identifier, upload, payment, or submission was made.",
+        "Confirm the current JVS threshold, route-specific checklist, network category, and applicable clock with BESCOM before relying on a target.",
+        "For an authorised submitted case, retain the registration/request number and use BESCOM's tracker, 1912, and the KERC escalation boundary if service is overdue."
+      ],
+      "documentationQualityNotes": [
+        "BESCOM FAQ, JVS form, eligibility page, normal form, tracker, and demand calculator are specific public official sources observed or rechecked by 2026-08-30.",
+        "KERC 2022 regulation provides binding timing/document/escalation boundaries; KERC 2025 Distribution Code and 2025 order provide current regulatory context.",
+        "Portal labels and regulation baseline are not resolved into a universal checklist, and no source establishes a property-specific eligibility, demand, inspection, payment, or energisation outcome."
+      ],
+      "status": "partial"
+    }
+  ]
+}

@@ -218,7 +218,7 @@
       "url": "https://bbmp.gov.in/index.html",
       "accessedAt": "2026-08-27",
       "type": "official_guidance",
-      "notes": "Current public helpline listing. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail. This is a general-site reference, not claim-specific evidence. A more specific public document or endpoint was not verified on 2026-08-29; wording that depends only on this source is retained at Grade C or Unknown."
+      "notes": "Current public helpline listing. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail. This is a general-site reference, not claim-specific evidence. A more specific public document or endpoint was not verified on 2026-08-29; wording that depends only on this source is retained at Grade C or Unknown. IND-54: no claim-specific public URL could be located and verified on 2026-08-31; retained solely as a Grade C general-site reference."
     },
     {
       "id": "source_citizen_transfer",
@@ -762,9 +762,18 @@
       "id": "claim_ind38_eaasthi_status_fields",
       "text": "The public e-Khata Application Status page exposes Stage, From, received and sent timestamps, Sent To, Status, and Remarks for an EPID lookup.",
       "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure"],
-      "nodeIds": ["node_final_e_khata", "node_epid"],
-      "sourceIds": ["source_eaasthi_status"],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_epid"
+      ],
+      "sourceIds": [
+        "source_eaasthi_status"
+      ],
       "evidenceGrade": "B",
       "basis": "observation",
       "status": "verified",
@@ -775,9 +784,18 @@
       "id": "claim_ind38_eaasthi_status_empty_result",
       "text": "The public e-Khata Application Status page displays No Data Available for an empty lookup.",
       "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure"],
-      "nodeIds": ["node_final_e_khata", "node_epid"],
-      "sourceIds": ["source_eaasthi_status"],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_epid"
+      ],
+      "sourceIds": [
+        "source_eaasthi_status"
+      ],
       "evidenceGrade": "B",
       "basis": "observation",
       "status": "partial",
@@ -788,9 +806,18 @@
       "id": "claim_ind38_eaasthi_status_helpline",
       "text": "The public e-Khata Application Status page publishes helpline 9480683695 for issues.",
       "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_epid_mapping_failure"],
-      "nodeIds": ["node_final_e_khata", "node_epid"],
-      "sourceIds": ["source_eaasthi_status"],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata",
+        "scenario_epid_mapping_failure"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_epid"
+      ],
+      "sourceIds": [
+        "source_eaasthi_status"
+      ],
       "evidenceGrade": "B",
       "basis": "observation",
       "status": "partial",
@@ -801,9 +828,16 @@
       "id": "claim_ind38_mutation_empty_result",
       "text": "The public Pending Mutation Report displays No Data Available for an empty report query.",
       "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
-      "nodeIds": ["node_mutation"],
-      "sourceIds": ["source_eaasthi_mutation"],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "nodeIds": [
+        "node_mutation"
+      ],
+      "sourceIds": [
+        "source_eaasthi_mutation"
+      ],
       "evidenceGrade": "B",
       "basis": "observation",
       "status": "partial",
@@ -814,9 +848,16 @@
       "id": "claim_ind38_mutation_objection_entry",
       "text": "The public Pending Mutation Report labels a File Objection entry but does not expose its conditions, workflow, or outcome before a case is selected.",
       "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
-      "nodeIds": ["node_mutation"],
-      "sourceIds": ["source_eaasthi_mutation"],
+      "scenarioIds": [
+        "scenario_clean_sale",
+        "scenario_draft_e_khata"
+      ],
+      "nodeIds": [
+        "node_mutation"
+      ],
+      "sourceIds": [
+        "source_eaasthi_mutation"
+      ],
       "evidenceGrade": "B",
       "basis": "observation",
       "status": "partial",
@@ -827,9 +868,15 @@
       "id": "claim_ind38_kerc_title_transfer_standard",
       "text": "KERC's 2022 regulations list title transfer of ownership or conversion of service title as a service to be rendered within seven days of application receipt, with ₹200 per day payable for default.",
       "jurisdiction": "Karnataka, India",
-      "scenarioIds": ["scenario_clean_sale"],
-      "nodeIds": ["node_name_transfer"],
-      "sourceIds": ["source_kerc_consumer_rights_2022"],
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_kerc_consumer_rights_2022"
+      ],
       "evidenceGrade": "A",
       "basis": "observation",
       "status": "verified",
@@ -840,9 +887,16 @@
       "id": "claim_ind38_kerc_complaint_route",
       "text": "KERC's 2022 regulations allow a consumer to complain to the designated office in writing, by telephone, email, or online, and require a complaint number on registration.",
       "jurisdiction": "Karnataka, India",
-      "scenarioIds": ["scenario_clean_sale"],
-      "nodeIds": ["node_name_transfer", "node_request_tracking"],
-      "sourceIds": ["source_kerc_consumer_rights_2022"],
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "sourceIds": [
+        "source_kerc_consumer_rights_2022"
+      ],
       "evidenceGrade": "A",
       "basis": "observation",
       "status": "verified",
@@ -853,9 +907,16 @@
       "id": "claim_ind38_kerc_escalation_form_b",
       "text": "KERC's 2022 regulations allow escalation to the next higher authority using Form B when the designated office does not respond adequately within the prescribed period.",
       "jurisdiction": "Karnataka, India",
-      "scenarioIds": ["scenario_clean_sale"],
-      "nodeIds": ["node_name_transfer", "node_request_tracking"],
-      "sourceIds": ["source_kerc_consumer_rights_2022"],
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "sourceIds": [
+        "source_kerc_consumer_rights_2022"
+      ],
       "evidenceGrade": "A",
       "basis": "observation",
       "status": "verified",
@@ -866,9 +927,16 @@
       "id": "claim_ind38_citizen_open_application_unseen",
       "text": "One citizen reported a name-transfer error saying that an application of the same type was already open while reporting that no open application was visible to them.",
       "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": ["scenario_clean_sale"],
-      "nodeIds": ["node_name_transfer", "node_request_tracking"],
-      "sourceIds": ["source_citizen_transfer"],
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "sourceIds": [
+        "source_citizen_transfer"
+      ],
       "evidenceGrade": "E",
       "basis": "observation",
       "status": "partial",
@@ -879,9 +947,15 @@
       "id": "claim_ind38_citizen_upload_loading_stall",
       "text": "One citizen reported that the name-transfer flow remained on a loading screen after identity proof was uploaded.",
       "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": ["scenario_clean_sale"],
-      "nodeIds": ["node_name_transfer"],
-      "sourceIds": ["source_citizen_transfer"],
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_citizen_transfer"
+      ],
       "evidenceGrade": "E",
       "basis": "observation",
       "status": "partial",
@@ -892,9 +966,16 @@
       "id": "claim_ind38_citizen_esign_stall",
       "text": "One citizen reported that the e-sign stage displayed an error for several days before later advancing.",
       "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": ["scenario_clean_sale"],
-      "nodeIds": ["node_name_transfer", "node_request_tracking"],
-      "sourceIds": ["source_citizen_connection_transfer_2026"],
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [
+        "node_name_transfer",
+        "node_request_tracking"
+      ],
+      "sourceIds": [
+        "source_citizen_connection_transfer_2026"
+      ],
       "evidenceGrade": "E",
       "basis": "observation",
       "status": "partial",
@@ -905,9 +986,17 @@
       "id": "claim_ind38_citizen_auto_initiation_missing",
       "text": "One citizen reported that a recent municipal mutation had completed but they had not received an expected BESCOM initiation message.",
       "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": ["scenario_clean_sale"],
-      "nodeIds": ["node_final_e_khata", "node_bescom_mapping", "node_name_transfer"],
-      "sourceIds": ["source_citizen_connection_transfer_2026"],
+      "scenarioIds": [
+        "scenario_clean_sale"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_bescom_mapping",
+        "node_name_transfer"
+      ],
+      "sourceIds": [
+        "source_citizen_connection_transfer_2026"
+      ],
       "evidenceGrade": "E",
       "basis": "observation",
       "status": "partial",
@@ -929,7 +1018,9 @@
           "label": "Listed Final e-Khata input",
           "description": "Public e-Aasthi instructions list a registered deed among the information for Final e-Khata; this does not verify BESCOM acceptance.",
           "url": "https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx",
-          "claimIds": ["claim_ekhata_final_guidance"],
+          "claimIds": [
+            "claim_ekhata_final_guidance"
+          ],
           "status": "verified"
         }
       ],
@@ -965,7 +1056,9 @@
           "label": "Pending Mutation Report",
           "description": "The public report exposes registered-deed or mutation date, EPID, seller, purchaser, and pending-owner fields.",
           "url": "https://bbmpeaasthi.karnataka.gov.in/office/frmPendingMutationReport.aspx",
-          "claimIds": ["claim_mutation_fields"],
+          "claimIds": [
+            "claim_mutation_fields"
+          ],
           "status": "verified"
         }
       ],
@@ -975,7 +1068,9 @@
           "label": "No Data Available",
           "description": "The public report displays No Data Available for an empty query; this is not a property-specific rejection reason.",
           "url": "https://bbmpeaasthi.karnataka.gov.in/office/frmPendingMutationReport.aspx",
-          "claimIds": ["claim_ind38_mutation_empty_result"],
+          "claimIds": [
+            "claim_ind38_mutation_empty_result"
+          ],
           "status": "partial"
         }
       ],
@@ -985,7 +1080,9 @@
           "label": "File Objection entry",
           "description": "The public report labels a File Objection entry, but its conditions, workflow, and outcome are not visible before a case is selected.",
           "url": "https://bbmpeaasthi.karnataka.gov.in/office/frmPendingMutationReport.aspx",
-          "claimIds": ["claim_ind38_mutation_objection_entry"],
+          "claimIds": [
+            "claim_ind38_mutation_objection_entry"
+          ],
           "status": "partial"
         }
       ],
@@ -1016,7 +1113,9 @@
           "label": "e-Khata status lookup",
           "description": "The public status page accepts an EPID and exposes stage, routing, timestamps, status, and remarks fields.",
           "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
-          "claimIds": ["claim_ind38_eaasthi_status_fields"],
+          "claimIds": [
+            "claim_ind38_eaasthi_status_fields"
+          ],
           "status": "verified"
         }
       ],
@@ -1026,7 +1125,9 @@
           "label": "No Data Available",
           "description": "An empty public EPID lookup displays No Data Available; the authenticated Final e-Khata review or rejection state was not observed.",
           "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
-          "claimIds": ["claim_ind38_eaasthi_status_empty_result"],
+          "claimIds": [
+            "claim_ind38_eaasthi_status_empty_result"
+          ],
           "status": "partial"
         }
       ],
@@ -1036,7 +1137,9 @@
           "label": "Do Not Find My Property eKhata",
           "description": "Where the property cannot be found, the public e-Aasthi route says the corporation will check and revert; it is not a documented recovery for every Final e-Khata failure.",
           "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
-          "claimIds": ["claim_ekhata_search_recovery"],
+          "claimIds": [
+            "claim_ekhata_search_recovery"
+          ],
           "status": "partial"
         },
         {
@@ -1044,7 +1147,9 @@
           "label": "Published e-Khata helpline",
           "description": "The public status page publishes 9480683695 for issues; the scope and outcome of that support were not tested.",
           "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
-          "claimIds": ["claim_ind38_eaasthi_status_helpline"],
+          "claimIds": [
+            "claim_ind38_eaasthi_status_helpline"
+          ],
           "status": "partial"
         }
       ],
@@ -1083,7 +1188,10 @@
           "label": "Public EPID lookup",
           "description": "Public e-Aasthi search and the e-Khata Application Status page both accept an EPID.",
           "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
-          "claimIds": ["claim_ekhata_search_recovery", "claim_ekhata_status"],
+          "claimIds": [
+            "claim_ekhata_search_recovery",
+            "claim_ekhata_status"
+          ],
           "status": "verified"
         }
       ],
@@ -1093,7 +1201,9 @@
           "label": "No Data Available",
           "description": "An empty public EPID status lookup displays No Data Available; it does not diagnose BESCOM account matching.",
           "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
-          "claimIds": ["claim_ind38_eaasthi_status_empty_result"],
+          "claimIds": [
+            "claim_ind38_eaasthi_status_empty_result"
+          ],
           "status": "partial"
         }
       ],
@@ -1103,7 +1213,9 @@
           "label": "Do Not Find My Property eKhata",
           "description": "Where a property cannot be found, the public e-Aasthi route says the corporation will check and revert; it does not repair BESCOM matching.",
           "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
-          "claimIds": ["claim_ekhata_search_recovery"],
+          "claimIds": [
+            "claim_ekhata_search_recovery"
+          ],
           "status": "partial"
         }
       ],
@@ -1162,7 +1274,9 @@
           "id": "failure_ind38_epid_account_match_reported",
           "label": "Reported EPID-to-account matching failure",
           "description": "One citizen account identified a possible failure matching a BESCOM Account ID to an EPID even when an e-Khata record existed; no official diagnostic was found.",
-          "claimIds": ["claim_citizen_mapping_failure"],
+          "claimIds": [
+            "claim_citizen_mapping_failure"
+          ],
           "status": "partial"
         }
       ],
@@ -1220,7 +1334,9 @@
           "label": "Published name-transfer route",
           "description": "BESCOM's FAQ describes customer login, Janasnehi Vidhyuth Sevegalu, Name Change or Change of Ownership, preferred account selection, mandatory fields, document upload, submission, request ID, and payment.",
           "url": "https://www.bescom.co.in/bescom/main/faq",
-          "claimIds": ["claim_standard_authenticated_route"],
+          "claimIds": [
+            "claim_standard_authenticated_route"
+          ],
           "status": "verified"
         }
       ],
@@ -1229,14 +1345,19 @@
           "id": "failure_ind38_name_transfer_seven_days",
           "label": "Application not completed within seven days",
           "description": "KERC's current title-transfer standard is seven days from application receipt; the exact authenticated BESCOM validation and rejection states are not public.",
-          "claimIds": ["claim_ind38_kerc_title_transfer_standard"],
+          "claimIds": [
+            "claim_ind38_kerc_title_transfer_standard"
+          ],
           "status": "verified"
         },
         {
           "id": "failure_ind38_name_transfer_upload_stall",
           "label": "Reported upload or e-sign stall",
           "description": "Individual citizens reported an upload loading stall and an e-sign error. These are reported experiences, not official error definitions.",
-          "claimIds": ["claim_ind38_citizen_upload_loading_stall", "claim_ind38_citizen_esign_stall"],
+          "claimIds": [
+            "claim_ind38_citizen_upload_loading_stall",
+            "claim_ind38_citizen_esign_stall"
+          ],
           "status": "partial"
         }
       ],
@@ -1245,14 +1366,18 @@
           "id": "recovery_ind38_name_transfer_complaint",
           "label": "Register a complaint",
           "description": "KERC allows a complaint to the designated office in writing, by telephone, email, or online, and requires a complaint number on registration.",
-          "claimIds": ["claim_ind38_kerc_complaint_route"],
+          "claimIds": [
+            "claim_ind38_kerc_complaint_route"
+          ],
           "status": "verified"
         },
         {
           "id": "recovery_ind38_name_transfer_escalation",
           "label": "Escalate with Form B",
           "description": "Where the designated office does not respond adequately within the prescribed period, KERC allows escalation to the next higher authority using Form B.",
-          "claimIds": ["claim_ind38_kerc_escalation_form_b"],
+          "claimIds": [
+            "claim_ind38_kerc_escalation_form_b"
+          ],
           "status": "verified"
         }
       ],
@@ -1296,7 +1421,9 @@
           "label": "Track Name Change",
           "description": "The public tracker asks for the request ID sent by SMS after a name-change submission.",
           "url": "https://www.bescom.co.in/bescom/main/track-name-change",
-          "claimIds": ["claim_request_tracker"],
+          "claimIds": [
+            "claim_request_tracker"
+          ],
           "status": "verified"
         }
       ],
@@ -1305,7 +1432,9 @@
           "id": "failure_ind38_request_tracking_open_application",
           "label": "Reported unseen open application",
           "description": "One citizen reported an already-open application message while no open application was visible to them. No public diagnostic or repair procedure was found.",
-          "claimIds": ["claim_ind38_citizen_open_application_unseen"],
+          "claimIds": [
+            "claim_ind38_citizen_open_application_unseen"
+          ],
           "status": "partial"
         }
       ],
@@ -1314,14 +1443,18 @@
           "id": "recovery_ind38_request_tracking_complaint",
           "label": "Register a complaint",
           "description": "KERC's complaint route requires a complaint number when the designated office registers a complaint.",
-          "claimIds": ["claim_ind38_kerc_complaint_route"],
+          "claimIds": [
+            "claim_ind38_kerc_complaint_route"
+          ],
           "status": "verified"
         },
         {
           "id": "recovery_ind38_request_tracking_escalation",
           "label": "Escalate with Form B",
           "description": "KERC allows conditional escalation to the next higher authority using Form B when the designated office response is inadequate.",
-          "claimIds": ["claim_ind38_kerc_escalation_form_b"],
+          "claimIds": [
+            "claim_ind38_kerc_escalation_form_b"
+          ],
           "status": "verified"
         }
       ],

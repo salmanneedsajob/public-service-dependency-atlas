@@ -12,6 +12,13 @@ export const metadata: Metadata = {
 
 export default function AtlasHome() {
   const serviceGaps = atlasServices.map((service) => ({ service, gaps: collectUndocumentedQuestions(service.ledger) }));
+  const atlasMetrics = {
+    serviceCount: serviceGaps.length,
+    curatedGapCount: serviceGaps.reduce((total, item) => total + item.gaps.length, 0),
+    claimCount: atlasServices.reduce((total, service) => total + service.ledger.claims.length, 0),
+    sourceCount: atlasServices.reduce((total, service) => total + service.ledger.sources.length, 0),
+    distinctUrlCount: new Set(atlasServices.flatMap((service) => service.ledger.sources.map((source) => source.url))).size,
+  };
   const exampleGaps = serviceGaps
     .filter((item) => item.gaps.length)
     .map((item) => ({ service: item.service, gap: item.gaps[0] }))
@@ -43,7 +50,7 @@ export default function AtlasHome() {
         <div className="atlas-missing-intro">
           <p className="step-label">What the public record leaves out</p>
           <h2 id="missing-heading">What&apos;s missing</h2>
-          <p>Across 12 services we found 47 steps where no public document explains what to do. Here are five. We only searched public sources, so there are probably more.</p>
+          <p>Across {atlasMetrics.serviceCount} services we found {atlasMetrics.curatedGapCount} steps where no public document explains what to do. Here are {exampleGaps.length}. We only searched public sources, so there are probably more.</p>
         </div>
         <div className="missing-list-area">
           <ol className="missing-example-list">

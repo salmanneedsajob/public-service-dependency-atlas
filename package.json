@@ -14,7 +14,7 @@
     "start": "next start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "typecheck": "tsc --noEmit",
-    "test": "node scripts/verify-fixture.mjs && node scripts/verify-research.mjs && node scripts/verify-service-isolation.mjs && node scripts/verify-comprehension.mjs && node scripts/verify-mode-navigation.mjs && node scripts/verify-source-groups.mjs && node scripts/verify-service-status.mjs && node scripts/warn-research-coverage.mjs && node scripts/verify-links.mjs",
+    "test": "node scripts/verify-fixture.mjs && node scripts/verify-research.mjs && node scripts/verify-service-isolation.mjs && node scripts/verify-comprehension.mjs && node scripts/verify-mode-navigation.mjs && node scripts/verify-source-groups.mjs && node scripts/verify-service-status.mjs && node scripts/verify-derived-visible-counts.mjs && node scripts/warn-research-coverage.mjs && node scripts/verify-links.mjs",
     "deploy": "vercel --prod"
   },
   "dependencies": {

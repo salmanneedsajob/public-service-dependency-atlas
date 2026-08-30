@@ -1,0 +1,463 @@
+{
+  "_handoff": {
+    "issue": "IND-40",
+    "generatedAt": "2026-08-30",
+    "status": "in_review",
+    "scopeNote": "Official-source pass for the default scenario path only: scenario_ind32_water_residential (new residential BWSSB water-supply and underground-drainage connection). Sources are public BWSSB pages/documents and the official India Code Act. No login, OTP, property lookup, document upload, application, payment, grievance, or other submission was made. Records below are merge candidates; preserve existing ledger statuses and claim decisions.",
+    "defaultScenarioId": "scenario_ind32_water_residential",
+    "defaultPathNodeIds": ["node_mobile_otp", "node_buy_application", "node_consumer_details", "node_site_details", "node_building_plumber", "node_documents_review", "node_inspection_review", "node_demand_payment", "node_rr_status"],
+    "observationNote": "The current consumer page was directly observed on 2026-08-30. The consumer manual and FAQ describe documented workflow but do not establish a property-specific live case. The FAQ's registered-email/password instructions and Rs 100 application fee are retained as an older-route limitation because the current page uses mobile OTP and does not show the amount."
+  },
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru BWSSB new water and underground-drainage connection official-source pass — IND-40",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-30",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice. Public documentation, dated observations, and unresolved case-specific gaps are shown together; do not submit personal data through this ledger."
+  },
+  "sources": [
+    {
+      "id": "source_ind40_water_public_entry",
+      "title": "BWSSB Jaladhare consumer public entry",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Direct public observation. The page shows mobile-number OTP controls, application-number status lookup, same-mobile status instruction, high-level new-connection instructions, document classes, charge-category links, and an Application Status date of 30-08-2026 with a 14-day residential heading. No identifier was entered."
+    },
+    {
+      "id": "source_ind40_water_consumer_manual",
+      "title": "BWSSB Consumer User Manual — Jaladhare 3.0",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+      "accessedAt": "2026-08-28",
+      "type": "official_guidance",
+      "notes": "BWSSB-hosted manual reused from the existing official-source pass. It documents Consumer Details, Site Details, Building Details, Documents, Review, payment/demand-note wording, upload limits, and RWH/plumber conditions. It is not a live application. The current page's manual link is a BWSSB download; no live form was opened."
+    },
+    {
+      "id": "source_ind40_water_faq",
+      "title": "BWSSB Jaladhare Frequently Asked Questions",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/member/faq",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Public FAQ observed with registration/password, Rs 100 buy-application, payment-failure refund, draft/edit, ward/service-area routing, inspection contact, registered-plumber agreement, demand-note, final-payment, e-receipt, and support-contact wording. The credential route differs from the current mobile-OTP consumer page."
+    },
+    {
+      "id": "source_ind40_water_act",
+      "title": "The Bangalore Water Supply and Sewerage Act, 1964 — amended text",
+      "publisher": "Government of Karnataka / India Code",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/7908/1/36_of_1964%28e%29.pdf",
+      "accessedAt": "2026-08-30",
+      "type": "law",
+      "notes": "Official Act text. Sections 30, 59, 66, 72A and 75 supply legal boundaries for Board control of house connections, licensed-plumber work, sewer applications/permission, and rainwater harvesting."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind40_water_public_entry",
+      "text": "The current BWSSB Jaladhare consumer page tells a new-connection applicant to log in with a mobile number, provide an email and mobile number, pay to buy the application form, fill required details and upload documents, and use the same mobile number for status.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_mobile_otp", "node_buy_application", "node_documents_review", "node_rr_status"],
+      "sourceIds": ["source_ind40_water_public_entry"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct unauthenticated page text observed 2026-08-30; no account or case was created."
+    },
+    {
+      "id": "claim_ind40_water_public_documents",
+      "text": "The current BWSSB consumer page lists lease-cum-sale deed or sale deed, khata certificate, building or sanction plan, photographs of the building with owner, and an RWH adoption document for premises measuring 1200 square feet and above as document classes.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_site_details", "node_documents_review"],
+      "sourceIds": ["source_ind40_water_public_entry"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is a generic public checklist, not proof that every class is required for every property or that the 1200-square-foot presentation is the statutory threshold."
+    },
+    {
+      "id": "claim_ind40_water_public_charge_categories",
+      "text": "The current BWSSB consumer page exposes links or labels for application, attachment, inspection, three-month minimum deposit, meter, sanitary-point, GBWASP/BCC, prorata, and actual line-cost charges, plus a connection-fee lookup.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_buy_application", "node_documents_review", "node_demand_payment"],
+      "sourceIds": ["source_ind40_water_public_entry"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Categories are visible, but no property-specific total or demand amount is displayed."
+    },
+    {
+      "id": "claim_ind40_water_public_status",
+      "text": "The current BWSSB consumer page exposes an application-number status input and a Show All Application link, and displays a general Application Status section dated 30-08-2026 for permission for a new or additional water-supply and underground-drainage connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_rr_status"],
+      "sourceIds": ["source_ind40_water_public_entry"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Only the blank public controls were inspected; no application number was entered."
+    },
+    {
+      "id": "claim_ind40_water_public_residential_target",
+      "text": "On 2026-08-30 the public BWSSB status section displayed a 14-day heading for residential connections.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_rr_status"],
+      "sourceIds": ["source_ind40_water_public_entry"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The public table has no case metric and does not state the clock-start event; this is not treated as an unconditional service-level promise."
+    },
+    {
+      "id": "claim_ind40_water_manual_stages",
+      "text": "The BWSSB consumer manual describes a five-stage new-connection interface: Consumer Details, Site Details, Building Details, Documents, and Review.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_consumer_details", "node_site_details", "node_building_plumber", "node_documents_review"],
+      "sourceIds": ["source_ind40_water_consumer_manual"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Manual documentation, not a current authenticated case observation."
+    },
+    {
+      "id": "claim_ind40_water_manual_fields",
+      "text": "The BWSSB consumer manual describes applicant/communication and connection-address routing fields, existing BWSSB connection/RR information, BESCOM verification, and site fields including PID/khata, construction date, purpose, counts, sital/built-up area, and NOC/RWH/OC information.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_consumer_details", "node_site_details"],
+      "sourceIds": ["source_ind40_water_consumer_manual"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No PID, RR, BESCOM account, property lookup, or field validation was run."
+    },
+    {
+      "id": "claim_ind40_water_manual_plumber",
+      "text": "The BWSSB manual describes floor-by-floor building rows and a plumber-selection section; it states that when RWH is marked yes, plumber selection and a mutual agreement are mandatory.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_building_plumber"],
+      "sourceIds": ["source_ind40_water_consumer_manual"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Interface guidance; current plumber-list eligibility and property-specific RWH enforcement remain untested."
+    },
+    {
+      "id": "claim_ind40_water_manual_upload_review",
+      "text": "The BWSSB manual describes uploads for building plan, building photograph with owner, lease-cum-sale deed, and khata, a road-cutting endorsement when applicable, up to five documents per type, and a five-megabyte limit per file; its Review screen shows tentative input-based charges and a declaration that incorrect information may lead to rejection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_documents_review"],
+      "sourceIds": ["source_ind40_water_consumer_manual"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No file was selected or transmitted; manual examples do not establish current acceptance or a case-specific charge."
+    },
+    {
+      "id": "claim_ind40_water_faq_older_purchase",
+      "text": "BWSSB's FAQ describes an older registered-email/password route in which Buy New Application costs Rs 100 and a failed transaction with a debit is to be refunded by the payment-gateway merchant.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_buy_application"],
+      "sourceIds": ["source_ind40_water_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ is public and current in presentation but documents email/password credentials, while the current consumer page uses mobile OTP; do not treat Rs 100 or refund timing as confirmed for the current route."
+    },
+    {
+      "id": "claim_ind40_water_faq_draft_routing",
+      "text": "BWSSB's FAQ says an application can be saved as a draft and edited, and that a wrong ward/service-area selection may be corrected by the receiving AEE or returned for correction and re-submit/re-confirmation.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_consumer_details", "node_site_details"],
+      "sourceIds": ["source_ind40_water_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published FAQ behavior; no draft or correction was created."
+    },
+    {
+      "id": "claim_ind40_water_faq_inspection",
+      "text": "BWSSB's FAQ says status can show stage and designation, ward/service-area selection routes an application automatically to the concerned sub-division AEE, engineers may contact the registered number, and an AE/JE should call before inspecting the connection address.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_inspection_review", "node_rr_status"],
+      "sourceIds": ["source_ind40_water_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Guidance only; no application, notification, inspection, designation, or case stage was observed."
+    },
+    {
+      "id": "claim_ind40_water_faq_plumber_payment",
+      "text": "BWSSB's FAQ says the plumber must be BWSSB-registered, plumber details can be changed before final payment, and a scanned consumer/registered-plumber agreement must be attached before final payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_building_plumber", "node_demand_payment"],
+      "sourceIds": ["source_ind40_water_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No plumber was selected and no agreement was uploaded."
+    },
+    {
+      "id": "claim_ind40_water_faq_demand_payment",
+      "text": "BWSSB's FAQ says that after AE/JE inspection, parameters including sital area, prorata and GBWASP are used to calculate charges and raise a demand note; after AEE approval the applicant is notified, can view it in payment history, pay online, and receive an e-receipt after success.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_inspection_review", "node_demand_payment"],
+      "sourceIds": ["source_ind40_water_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No inspection, demand note, payment, or receipt was observed."
+    },
+    {
+      "id": "claim_ind40_water_manual_demand_conditions",
+      "text": "The BWSSB manual's demand-note wording describes RWH and, where applicable, STP/dual piping, KSPCB consent, and additional billing until OC; it states a 90-day demand-note validity period and an online payment/receipt flow through Cashfree or PayU.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_demand_payment"],
+      "sourceIds": ["source_ind40_water_consumer_manual"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Manual wording is not a property-specific demand or approval."
+    },
+    {
+      "id": "claim_ind40_water_act_house_connection",
+      "text": "Section 30 of the Bangalore Water Supply and Sewerage Act places house connections to water-supply mains under Board control and requires alterations, repairs, and proper order at the owner's expense and in conformity with regulations.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_site_details", "node_building_plumber"],
+      "sourceIds": ["source_ind40_water_act"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Statutory boundary; it does not provide the current portal checklist or fee."
+    },
+    {
+      "id": "claim_ind40_water_act_licensed_plumber",
+      "text": "Section 59 of the Bangalore Water Supply and Sewerage Act provides that water-supply works described in that chapter are to be executed by a licensed plumber, subject to the statutory trivial-work exception; section 82 applies the same kind of rule to sewerage works.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_building_plumber"],
+      "sourceIds": ["source_ind40_water_act"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Statutory licensed-plumber rule; current BWSSB list and application enforcement remain portal-specific."
+    },
+    {
+      "id": "claim_ind40_water_act_sewer_permission",
+      "text": "Section 66 allows an owner or occupier with a private drain to apply, subject to regulations, for communication with a Board sewer, while section 75 prohibits making a connection with a Board sewer without the Board's written permission.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_site_details", "node_inspection_review", "node_demand_payment"],
+      "sourceIds": ["source_ind40_water_act"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Legal permission boundary; no current form, fee, or technical-eligibility decision is supplied by these sections."
+    },
+    {
+      "id": "claim_ind40_water_act_rwh",
+      "text": "Section 72A of the Bangalore Water Supply and Sewerage Act requires rainwater-harvesting structure for an existing building with sital area of at least 216 square metres and for a proposed building on sital area of at least 108 square metres, subject to notified date, regulations, and Board guidelines.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_site_details", "node_building_plumber", "node_documents_review"],
+      "sourceIds": ["source_ind40_water_act"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This statutory threshold is not silently reconciled with the consumer page's 1200-square-foot document label; the two statements may serve different contexts and require current BWSSB confirmation."
+    },
+    {
+      "id": "claim_ind40_water_case_unknown",
+      "text": "This official-source pass does not establish a particular property's eligibility, PID/RR/BESCOM verification, document acceptance, inspection result, demand amount, payment state, or generated RR number.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_consumer_details", "node_site_details", "node_documents_review", "node_inspection_review", "node_demand_payment", "node_rr_status"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No login, OTP, property identifier, upload, application, inspection, payment, or status lookup was performed."
+    },
+    {
+      "id": "claim_ind40_water_route_currentness_unknown",
+      "text": "The relationship between the current mobile-OTP Jaladhare entry and the FAQ's older registered-email/password SAJALA instructions, including whether the FAQ's Rs 100 application fee and refund wording apply to the current route, is unresolved by public documentation reviewed here.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_mobile_otp", "node_buy_application"],
+      "sourceIds": ["source_ind40_water_public_entry", "source_ind40_water_faq"],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "This records a documentation/currentness conflict, not a finding that either official page is false."
+    }
+  ],
+  "nodeEvidence": [
+    {
+      "nodeId": "node_mobile_otp",
+      "checks": [
+        {"id":"check_ind40_water_mobile_controls","label":"Mobile OTP controls","description":"Current public page exposes Mobile Number, Send OTP, OTP entry, and Submit controls for Apply For Connection / Log In.","url":"https://owcv2.bwssb.gov.in/consumer","claimIds":["claim_ind40_water_public_entry"],"status":"verified"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind40_water_otp_outcome_unknown","label":"OTP failure outcome unknown","description":"The public page does not expose an OTP error, resend, or lockout result without entering a mobile number; no OTP was requested.","url":"https://owcv2.bwssb.gov.in/consumer","claimIds":["claim_ind40_water_case_unknown"],"status":"unknown"}
+      ],
+      "recoveries": [
+        {"id":"recovery_ind40_water_otp_support","label":"FAQ support contact","description":"The FAQ publishes owcenquiry@bwssb.org and 080 22238888 for queries; it does not publish a specific OTP recovery procedure.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind40_water_route_currentness_unknown"],"status":"partial"}
+      ]
+    },
+    {
+      "nodeId": "node_buy_application",
+      "checks": [
+        {"id":"check_ind40_water_buy_label","label":"Application-form purchase label","description":"The current page says payment is made to buy the Application form.","url":"https://owcv2.bwssb.gov.in/consumer","claimIds":["claim_ind40_water_public_entry"],"status":"verified"},
+        {"id":"check_ind40_water_fee_categories","label":"Published fee categories","description":"The current page links application-fee and related charge references but does not show a case total.","url":"https://owcv2.bwssb.gov.in/consumer","claimIds":["claim_ind40_water_public_charge_categories"],"status":"verified"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind40_water_purchase_failure","label":"Purchase transaction branch","description":"The FAQ says a failed transaction with a debit is to be refunded by the payment-gateway merchant, but the current OTP route was not tested.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind40_water_faq_older_purchase","claim_ind40_water_route_currentness_unknown"],"status":"partial"}
+      ],
+      "recoveries": [
+        {"id":"recovery_ind40_water_purchase_refund","label":"Merchant refund wording","description":"For the older documented route, the FAQ says a failed debited transaction will be refunded by the payment gateway merchant; current timing and route applicability remain unknown.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind40_water_faq_older_purchase"],"status":"partial"}
+      ]
+    },
+    {
+      "nodeId": "node_consumer_details",
+      "checks": [
+        {"id":"check_ind40_water_consumer_stage","label":"Consumer Details stage","description":"The manual names Consumer Details as the first application stage and describes applicant, communication, and routing fields.","url":"https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf","claimIds":["claim_ind40_water_manual_stages","claim_ind40_water_manual_fields"],"status":"partial"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind40_water_wrong_routing","label":"Wrong ward/service-area branch","description":"The FAQ describes correction or return when ward/service-area selection routes an application to the wrong sub-division; no live route was observed.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind40_water_faq_draft_routing"],"status":"partial"}
+      ],
+      "recoveries": [
+        {"id":"recovery_ind40_water_draft_return","label":"Save draft or correct and reconfirm","description":"The FAQ says a draft can be edited and that an AEE may correct the route or return the application for correction and re-submit/re-confirmation.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind40_water_faq_draft_routing"],"status":"partial"}
+      ]
+    },
+    {
+      "nodeId": "node_site_details",
+      "checks": [
+        {"id":"check_ind40_water_site_fields","label":"Site fields","description":"The manual describes PID/khata, construction, purpose, counts, areas, and NOC/RWH/OC information.","url":"https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf","claimIds":["claim_ind40_water_manual_fields"],"status":"partial"},
+        {"id":"check_ind40_water_sewer_legal_boundary","label":"Sewer permission boundary","description":"The Act permits an owner/occupier to apply subject to regulations and requires written Board permission before a sewer connection.","url":"https://www.indiacode.nic.in/bitstream/123456789/7908/1/36_of_1964%28e%29.pdf","claimIds":["claim_ind40_water_act_sewer_permission"],"status":"verified"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind40_water_rwh_threshold_conflict","label":"RWH threshold/context mismatch","description":"The current page labels an RWH adoption document at 1200 square feet and above, while Act section 72A states 216 square metres for an existing building and 108 square metres for a proposed building; current application-context reconciliation is not published.","url":"https://owcv2.bwssb.gov.in/consumer","claimIds":["claim_ind40_water_public_documents","claim_ind40_water_act_rwh"],"status":"partial"},
+        {"id":"failure_ind40_water_property_validation","label":"Property validation unknown","description":"No PID, khata, RR, BESCOM, purpose, area, or eligibility value was entered, so validation or rejection behavior is unknown.","claimIds":["claim_ind40_water_case_unknown"],"status":"unknown"}
+      ],
+      "recoveries": [
+        {"id":"recovery_ind40_water_route_correction","label":"Correct returned routing","description":"If the documented route is wrong, the FAQ says the receiving AEE may update it or return the application for correction and re-confirmation.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind40_water_faq_draft_routing"],"status":"partial"}
+      ]
+    },
+    {
+      "nodeId": "node_building_plumber",
+      "checks": [
+        {"id":"check_ind40_water_plumber_manual","label":"Building and plumber details","description":"The manual describes floor-by-floor building rows and RWH-linked plumber selection/mutual agreement.","url":"https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf","claimIds":["claim_ind40_water_manual_plumber"],"status":"partial"},
+        {"id":"check_ind40_water_plumber_law","label":"Licensed plumber legal rule","description":"Act sections 59 and 82 require licensed plumbers for covered water-supply and sewerage works, subject to the statutory exception.","url":"https://www.indiacode.nic.in/bitstream/123456789/7908/1/36_of_1964%28e%29.pdf","claimIds":["claim_ind40_water_act_licensed_plumber"],"status":"verified"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind40_water_unregistered_plumber","label":"Unregistered plumber not accepted","description":"The FAQ says no plumber other than a BWSSB-registered plumber will be entertained; live selection validation was not tested.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind40_water_faq_plumber_payment"],"status":"partial"}
+      ],
+      "recoveries": [
+        {"id":"recovery_ind40_water_change_plumber","label":"Change plumber before final payment","description":"The FAQ says plumber details may be changed any time before final payment, and the registered-plumber agreement must be attached before that payment.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind40_water_faq_plumber_payment"],"status":"partial"}
+      ]
+    },
+    {
+      "nodeId": "node_documents_review",
+      "checks": [
+        {"id":"check_ind40_water_document_classes","label":"Document classes and limits","description":"The current page lists deed, khata, plan, owner/building photograph, and RWH document classes; the manual gives upload-count and size guidance.","url":"https://owcv2.bwssb.gov.in/consumer","claimIds":["claim_ind40_water_public_documents","claim_ind40_water_manual_upload_review"],"status":"partial"},
+        {"id":"check_ind40_water_review_charges","label":"Review charge display","description":"The manual describes tentative input-based charges and a rejection warning on Review.","url":"https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf","claimIds":["claim_ind40_water_manual_upload_review"],"status":"partial"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind40_water_document_acceptance","label":"Document validation unknown","description":"No file was selected or submitted, so format, size, rejection, and resubmission behavior for the current portal are unknown.","url":"https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf","claimIds":["claim_ind40_water_manual_upload_review","claim_ind40_water_case_unknown"],"status":"unknown"}
+      ],
+      "recoveries": [
+        {"id":"recovery_ind40_water_document_draft","label":"Save and edit draft","description":"The FAQ says an application can be saved as a draft and edited; it does not publish a document-specific resubmission error flow.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind40_water_faq_draft_routing"],"status":"partial"}
+      ]
+    },
+    {
+      "nodeId": "node_inspection_review",
+      "checks": [
+        {"id":"check_ind40_water_inspection_route","label":"AEE routing and inspection guidance","description":"The FAQ describes ward/service-area routing, stage/designation status, registered-number contact, and prior AE/JE inspection notice.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind40_water_faq_inspection"],"status":"partial"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind40_water_inspection_outcome","label":"Inspection outcome unknown","description":"No application was submitted and no engineer, inspection date, measurement, correction, rejection, or approval was observed.","claimIds":["claim_ind40_water_case_unknown"],"status":"unknown"}
+      ],
+      "recoveries": [
+        {"id":"recovery_ind40_water_inspection_contact","label":"Use documented contact/status channel","description":"The FAQ says engineers may message in Inbox or contact the registered number and should call before inspection; no case-specific escalation route is documented.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind40_water_faq_inspection"],"status":"partial"}
+      ]
+    },
+    {
+      "nodeId": "node_demand_payment",
+      "checks": [
+        {"id":"check_ind40_water_demand_sequence","label":"Demand-note sequence","description":"FAQ guidance places inspection-based calculation and AEE approval before payment-history access and online payment; the manual adds conditional requirements and 90-day wording.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind40_water_faq_demand_payment","claim_ind40_water_manual_demand_conditions"],"status":"partial"},
+        {"id":"check_ind40_water_connection_permission","label":"Written sewer permission","description":"The Act requires written Board permission before making a connection with a Board sewer.","url":"https://www.indiacode.nic.in/bitstream/123456789/7908/1/36_of_1964%28e%29.pdf","claimIds":["claim_ind40_water_act_sewer_permission"],"status":"verified"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind40_water_demand_unknown","label":"Demand/payment state unknown","description":"No demand note, conditional approval, payment gateway, expiry, debit, or receipt was observed.","claimIds":["claim_ind40_water_case_unknown","claim_ind40_water_manual_demand_conditions"],"status":"unknown"}
+      ],
+      "recoveries": [
+        {"id":"recovery_ind40_water_payment_history","label":"Payment-history route","description":"The FAQ says an AEE-approved demand note is visible in payment history, where final online payment can be made and an e-receipt is generated after success.","url":"https://owcv2.bwssb.gov.in/member/faq","claimIds":["claim_ind40_water_faq_demand_payment"],"status":"partial"}
+      ]
+    },
+    {
+      "nodeId": "node_rr_status",
+      "checks": [
+        {"id":"check_ind40_water_status_input","label":"Application-number status control","description":"The current page exposes an application-number field, Submit control, Show All Application link, and general status section.","url":"https://owcv2.bwssb.gov.in/consumer","claimIds":["claim_ind40_water_public_status"],"status":"verified"},
+        {"id":"check_ind40_water_residential_target","label":"Residential target heading","description":"The current public status table shows a 14-day residential heading as of 30-08-2026.","url":"https://owcv2.bwssb.gov.in/consumer","claimIds":["claim_ind40_water_public_residential_target"],"status":"partial"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind40_water_case_status","label":"Case stage/RR result unknown","description":"No application number was entered, so no case-specific stage, error, demand status, connection result, or RR number was observed.","claimIds":["claim_ind40_water_case_unknown"],"status":"unknown"}
+      ],
+      "recoveries": [
+        {"id":"recovery_ind40_water_same_mobile_status","label":"Use same mobile/status route","description":"The current page instructs applicants to log in with the same mobile number to know application status; the pass did not perform the lookup.","url":"https://owcv2.bwssb.gov.in/consumer","claimIds":["claim_ind40_water_public_entry","claim_ind40_water_public_status"],"status":"partial"}
+      ]
+    }
+  ],
+  "edges": [
+    {"id":"edge_ind40_water_entry_buy","fromNodeId":"node_mobile_otp","toNodeId":"node_buy_application","relationship":"requires","label":"The current public page places mobile login before payment to buy the application form; live transition not tested.","scenarioIds":["scenario_ind32_water_residential"],"claimIds":["claim_ind40_water_public_entry","claim_ind40_water_route_currentness_unknown"],"status":"partial"},
+    {"id":"edge_ind40_water_buy_consumer","fromNodeId":"node_buy_application","toNodeId":"node_consumer_details","relationship":"produces","label":"The public page says payment buys the form; the manual names Consumer Details as the first application stage.","scenarioIds":["scenario_ind32_water_residential"],"claimIds":["claim_ind40_water_public_entry","claim_ind40_water_manual_stages"],"status":"partial"},
+    {"id":"edge_ind40_water_forms_documents","fromNodeId":"node_consumer_details","toNodeId":"node_documents_review","relationship":"produces","label":"The manual documents Consumer Details, Site Details, Building Details, Documents, and Review; no live form was completed.","scenarioIds":["scenario_ind32_water_residential"],"claimIds":["claim_ind40_water_manual_stages","claim_ind40_water_manual_fields","claim_ind40_water_manual_plumber","claim_ind40_water_manual_upload_review"],"status":"partial"},
+    {"id":"edge_ind40_water_review_inspection","fromNodeId":"node_documents_review","toNodeId":"node_inspection_review","relationship":"requires","label":"FAQ guidance describes routing and inspection after application information is submitted; live handoff is not observed.","scenarioIds":["scenario_ind32_water_residential"],"claimIds":["claim_ind40_water_faq_inspection","claim_ind40_water_case_unknown"],"status":"unknown"},
+    {"id":"edge_ind40_water_inspection_demand","fromNodeId":"node_inspection_review","toNodeId":"node_demand_payment","relationship":"produces","label":"FAQ/manual wording places inspection and review before demand-note calculation and payment; no demand note was observed.","scenarioIds":["scenario_ind32_water_residential"],"claimIds":["claim_ind40_water_faq_demand_payment","claim_ind40_water_manual_demand_conditions"],"status":"partial"},
+    {"id":"edge_ind40_water_payment_status","fromNodeId":"node_demand_payment","toNodeId":"node_rr_status","relationship":"produces","label":"The public page provides status controls, but payment-to-status or RR-number transition was not verified in a case.","scenarioIds":["scenario_ind32_water_residential"],"claimIds":["claim_ind40_water_public_status","claim_ind40_water_case_unknown"],"status":"unknown"}
+  ],
+  "roadblocks": [
+    {"id":"roadblock_ind40_water_route_version","title":"Current mobile-OTP route versus older FAQ credentials","category":"infrastructure","symptom":"The live consumer page uses mobile OTP while the FAQ describes registered-email/password login and Rs 100 purchase wording.","likelyCause":"Different portal versions or documentation paths; public pages do not state their relationship.","recovery":"Use the live BWSSB consumer page as the current entry surface and confirm any fee/refund assumption with BWSSB; do not merge the two credential routes.","ownerAgencyIds":["agency_bwssb_ind32_water"],"nodeIds":["node_mobile_otp","node_buy_application"],"scenarioIds":["scenario_ind32_water_residential"],"claimIds":["claim_ind40_water_route_currentness_unknown"],"status":"unknown"},
+    {"id":"roadblock_ind40_water_property_case","title":"Property-specific verification is behind the case workflow","category":"documentation","symptom":"Public pages and manuals do not establish a particular PID/RR/BESCOM validation, document acceptance, inspection result, demand amount, payment state, or RR outcome.","likelyCause":"Those results require authenticated case data and/or agency review; this pass did not enter identifiers or submit.","recovery":"For a real case, use the applicant's own current BWSSB route and retain the application number; do not infer eligibility or fee from generic documentation.","ownerAgencyIds":["agency_bwssb_ind32_water"],"nodeIds":["node_consumer_details","node_site_details","node_documents_review","node_inspection_review","node_demand_payment","node_rr_status"],"scenarioIds":["scenario_ind32_water_residential"],"claimIds":["claim_ind40_water_case_unknown"],"status":"unknown"},
+    {"id":"roadblock_ind40_water_rwh_context","title":"RWH document label and statutory threshold need reconciliation","category":"documentation","symptom":"The current page lists an RWH adoption document for premises of 1200 square feet and above, while Act section 72A states 216 square metres for an existing building and 108 square metres for a proposed building.","likelyCause":"The public checklist and statutory provision may address different application/document contexts or stages.","recovery":"Treat the current property-specific BWSSB checklist and applicable Board rules/guidelines as controlling after confirmation; do not silently substitute one threshold for the other.","ownerAgencyIds":["agency_bwssb_ind32_water"],"nodeIds":["node_site_details","node_building_plumber","node_documents_review"],"scenarioIds":["scenario_ind32_water_residential"],"claimIds":["claim_ind40_water_public_documents","claim_ind40_water_act_rwh"],"status":"partial"}
+  ],
+  "journeys": []
+}

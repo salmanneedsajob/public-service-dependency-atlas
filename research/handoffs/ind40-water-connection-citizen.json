@@ -1,0 +1,90 @@
+{
+  "_handoff": {
+    "issue": "IND-40",
+    "generatedAt": "2026-08-30",
+    "status": "in_review",
+    "scope": "Public first-person evidence concerning Bengaluru BWSSB new water-supply or sewerage connections. This handoff records case-specific reported failures and one reported eventual outcome; it does not establish official requirements, charges, eligibility, service levels, or wrongdoing. Names, usernames, property/location identifiers, application/RR/meter/account numbers, amounts, and contact details have been omitted or generalized. No login, application, payment, or submission was attempted."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind40_bwssb_citizen_post_demand_connection_gap",
+      "title": "Bangalore Water Supply and Sewerage Board - NOT GETTING BWSSB CAUVERY WATER CONNECTION",
+      "publisher": "Voxya consumer-complaint platform",
+      "url": "https://voxya.com/consumer-complaints/not-getting-bwssb-cauvery-water-connection/112100",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2021-02-15",
+      "type": "citizen_evidence",
+      "notes": "A public complainant reports a new-connection case that had reached demand-note payment, RR-number, and meter-assignment stages but not physical line completion. The account also reports an extra-payment request by a plumber and unsuccessful complaints. Identifiers, location, and reported amount are redacted. The platform's displayed case status is not independent proof of the events or of an official resolution."
+    },
+    {
+      "id": "source_ind40_bwssb_citizen_reported_four_year_wait",
+      "title": "Which areas do we find houses with kaveri drinking water connection directly?",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/oiox28",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2021-07-12",
+      "type": "citizen_evidence",
+      "notes": "In a dated reply, a commenter reports applying for a connection in 2009 and receiving it in 2013. The underlying application, property context, and reasons for elapsed time are not documented, so this is retained only as an uncorroborated historical lead."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind40_water_citizen_physical_connection_not_completed_after_assignment",
+      "text": "One public complainant reported that, after being assigned a BWSSB RR number and meter for a new connection, the supply line had not been provided and the meter had not been attached to the water line.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_payment_or_grievance"],
+      "nodeIds": ["node_demand_payment", "node_rr_status", "node_inspection_review"],
+      "sourceIds": ["source_ind40_bwssb_citizen_post_demand_connection_gap"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single complainant's account of a physical-completion gap. It does not establish that RR-number or meter assignment normally precedes line connection, or the cause, duration, or prevalence of the reported gap."
+    },
+    {
+      "id": "claim_ind40_water_citizen_reported_extra_payment_request",
+      "text": "One public complainant reported being asked by a plumber for payment outside the stated demand note to complete a new water connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential", "scenario_ind32_water_payment_or_grievance"],
+      "nodeIds": ["node_building_plumber", "node_demand_payment", "node_rr_status"],
+      "sourceIds": ["source_ind40_bwssb_citizen_post_demand_connection_gap"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This records a reported request, not an authorised BWSSB charge, an established demand, or wrongdoing by any person or organisation."
+    },
+    {
+      "id": "claim_ind40_water_citizen_reported_escalations_unresolved",
+      "text": "One public complainant reported that RTI, officer, and online-complaint escalations in their new-connection case were closed without resolving the reported physical connection gap.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_payment_or_grievance"],
+      "nodeIds": ["node_grievance", "node_rr_status"],
+      "sourceIds": ["source_ind40_bwssb_citizen_post_demand_connection_gap"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single report of attempted recovery, without the submissions, case records, closure reasons, or later outcome. It does not show that public escalation routes are generally ineffective."
+    },
+    {
+      "id": "claim_ind40_water_citizen_reported_four_year_elapsed_case",
+      "text": "One Reddit commenter reported that a prior connection application took four years from application to receipt of a connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_inspection_review", "node_rr_status"],
+      "sourceIds": ["source_ind40_bwssb_citizen_reported_four_year_wait"],
+      "evidenceGrade": "F",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "An uncorroborated historical commenter assertion. It identifies a possible delay/recovery outcome to check but establishes no current BWSSB timeline, process step, cause, or expectation."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

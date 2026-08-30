@@ -1,0 +1,361 @@
+{
+  "_handoff": {
+    "issue": "IND-40",
+    "generatedAt": "2026-08-30",
+    "status": "in_review",
+    "scope": "Public-workflow pass for the DEFAULT new residential water-supply and underground-drainage connection path in Bengaluru. Only unauthenticated BWSSB public pages were inspected. No phone number, OTP, application number, property identifier, document, payment, grievance, or submission was entered.",
+    "observationNote": "Direct public-interface observations are Grade B. Login, payment, upload, submission, case lookup, inspection outcome, demand-note state, and RR-number state remain Unknown. The current consumer page uses mobile OTP; the public FAQ and register page also expose an older email/password SAJALA route, which is retained as a currentness boundary rather than assumed to be the same live path."
+  },
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "IND-40 BWSSB new water/sewer connection public workflow",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-30",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice. It records only public BWSSB interface observations and published guidance; do not submit personal data through this ledger."
+  },
+  "defaultScenario": {
+    "id": "scenario_ind32_water_residential",
+    "label": "New residential water and UGD connection",
+    "pathNodeIds": [
+      "node_mobile_otp",
+      "node_buy_application",
+      "node_consumer_details",
+      "node_site_details",
+      "node_building_plumber",
+      "node_documents_review",
+      "node_inspection_review",
+      "node_demand_payment",
+      "node_rr_status"
+    ]
+  },
+  "sources": [
+    {
+      "id": "source_ind40_bwssb_consumer_public",
+      "title": "BWSSB Jaladhare consumer public entry",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Direct unauthenticated observation. Page footer says version 2.0 2026; Application Status As on : 30-08-2026."
+    },
+    {
+      "id": "source_ind40_bwssb_faq",
+      "title": "BWSSB Jaladhare Frequently Asked Questions",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/member/faq",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Direct public FAQ observation. It publishes transaction-failure refund wording, draft/edit behavior, routing correction, inspection contact, registered-plumber rules, demand-note/payment sequence, and enquiry contacts. Its registration/login wording is email/password SAJALA and is not assumed to replace the current mobile-OTP entry."
+    },
+    {
+      "id": "source_ind40_bwssb_register",
+      "title": "BWSSB Register for Online Water Connection: SAJALA",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/member/register",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Direct public observation of the older registration surface. It visibly labels Buy New Application, Verify Application, Track your application, Payment to BWSSB, Approve Application, and Generated RR Number, and displays Form validation error./Form validation successful. It was not submitted."
+    },
+    {
+      "id": "source_ind40_bwssb_grievance",
+      "title": "BWSSB Grievance Form",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/member/grievance-form",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Direct public observation of the blank form and page-level contacts. No grievance was submitted."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind40_water_public_entry_controls",
+      "text": "The current BWSSB Jaladhare consumer page exposes a Mobile Number input, Send OTP control, Enter OTP input, Submit control, an application-number input with Submit for status, and a Show All Application link.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_mobile_otp", "node_rr_status"],
+      "sourceIds": ["source_ind40_bwssb_consumer_public"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Exact visible labels: “Mobile Number”, “Send OTP”, “Enter OTP”, “Submit”, “Enter Your Application number to know the status”, and “Show All Application”. No value was entered or control activated."
+    },
+    {
+      "id": "claim_ind40_water_public_instructions",
+      "text": "The current public page instructs a new-connection applicant to log in with a mobile number, provide a proper email ID and mobile phone number, make payment to buy the Application form, fill required details and upload documents, and use the same mobile number to know application status.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_mobile_otp", "node_buy_application", "node_consumer_details", "node_documents_review", "node_rr_status"],
+      "sourceIds": ["source_ind40_bwssb_consumer_public"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "High-level public wording only; it does not establish a current authenticated transition, eligibility, or case outcome."
+    },
+    {
+      "id": "claim_ind40_water_public_documents",
+      "text": "The current public page lists lease cum sale deed or sale deed, Khata certificate, Building Plan / Sanction Plan, photographs of building with owner, and an RWH adoption document for premises measuring 1200sqft and above under Documents required.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_site_details", "node_documents_review"],
+      "sourceIds": ["source_ind40_bwssb_consumer_public"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is the public checklist text, not proof that every item is required for this particular property or that a selected upload would be accepted."
+    },
+    {
+      "id": "claim_ind40_water_public_targets",
+      "text": "The current public status section displays “Permission for new Connection/Additional Connection for water supply and under Ground Drainage” and headings of “Residential Connections 14 days” and “Commercial and High Rise Connections 42 days”.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_rr_status"],
+      "sourceIds": ["source_ind40_bwssb_consumer_public"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The page displays Application Status As on : 30-08-2026. Metrics are blank in the public view; the clock-start event and any guarantee are not stated."
+    },
+    {
+      "id": "claim_ind40_water_faq_buy_failure",
+      "text": "BWSSB's FAQ says that if the transaction fails while buying a new application and the amount is deducted, the payment-gateway merchant will refund the amount in a very short time.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_buy_application"],
+      "sourceIds": ["source_ind40_bwssb_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published FAQ recovery wording, not a live transaction observation. No payment page was opened."
+    },
+    {
+      "id": "claim_ind40_water_faq_application_controls",
+      "text": "BWSSB's FAQ says fields marked with (*) are mandatory, an application can be saved as a draft and edited later, and a confirmed application cannot be edited until it is received back from AEE for updates.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_consumer_details", "node_site_details", "node_documents_review"],
+      "sourceIds": ["source_ind40_bwssb_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published guidance; the current mobile-OTP form and its exact live field set were not opened."
+    },
+    {
+      "id": "claim_ind40_water_faq_routing_recovery",
+      "text": "BWSSB's FAQ says ward number and service area determine automatic routing to the concerned sub-division AEE; if selected incorrectly, the receiving AEE may correct them or send the application back to the applicant to correct and re-submit/re-confirm.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_consumer_details", "node_site_details", "node_inspection_review"],
+      "sourceIds": ["source_ind40_bwssb_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published correction route; no application was created or routed."
+    },
+    {
+      "id": "claim_ind40_water_faq_inspection_contact",
+      "text": "BWSSB's FAQ says engineers can message through an Inbox or call the registered number, and an AE/JE will call and inform the applicant in advance about an inspection visit to the connection address.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_inspection_review"],
+      "sourceIds": ["source_ind40_bwssb_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published guidance; no case, call, Inbox message, inspection, or finding was observed."
+    },
+    {
+      "id": "claim_ind40_water_faq_plumber",
+      "text": "BWSSB's FAQ says the plumber must be BWSSB-registered, plumber details may be changed before final payment, and a scanned consumer/registered-plumber agreement must be attached before final payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_building_plumber", "node_documents_review", "node_demand_payment"],
+      "sourceIds": ["source_ind40_bwssb_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published guidance; the public Plumber List link was visible on the consumer page, but no selection or agreement upload was performed."
+    },
+    {
+      "id": "claim_ind40_water_faq_demand_payment",
+      "text": "BWSSB's FAQ says that after AE/JE inspection, charges such as prorata and GBWASP are calculated and a demand note with a parameter breakdown and total is raised; after AEE approval an SMS asks the applicant to log in, the demand note is available in payment history, online final payment is then made, and an e-receipt is generated after successful payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_inspection_review", "node_demand_payment"],
+      "sourceIds": ["source_ind40_bwssb_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published sequence only; no inspection, demand note, SMS, payment, or receipt was observed."
+    },
+    {
+      "id": "claim_ind40_water_current_stale_notice",
+      "text": "The current consumer page visibly includes the notice: “Extention of Demand Note Validity : Please note that all demand notes cancelled since 03-05-2021 will be valid upto 31-07-2021.”",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_demand_payment"],
+      "sourceIds": ["source_ind40_bwssb_consumer_public"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is visibly stale relative to the 2026 page date and is not treated as a current validity rule or recovery promise."
+    },
+    {
+      "id": "claim_ind40_water_register_legacy_surface",
+      "text": "The public SAJALA register page visibly labels Buy New Application, Verify Application, Track your application, Payment to BWSSB, Approve Application, and Generated RR Number, and displays “Form validation error.” and “Form validation successful.”.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_buy_application", "node_documents_review", "node_inspection_review", "node_demand_payment", "node_rr_status"],
+      "sourceIds": ["source_ind40_bwssb_register"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "These are visible labels/states on an unauthenticated registration page, not a triggered application error or proof that the older email/password route is the current mobile-OTP journey."
+    },
+    {
+      "id": "claim_ind40_water_grievance_route",
+      "text": "The public BWSSB grievance page exposes Consumer Name, Consumer Mobile No, Subject, Application Number, Application Name, Address, Plumber Name, Remarks, and Submit; it displays Mail Us: eerbc@bwssb.gov.in and Toll Free : 1916.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_demand_payment", "node_rr_status"],
+      "sourceIds": ["source_ind40_bwssb_grievance"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Public recovery surface only; no field was populated and no grievance was submitted, acknowledged, routed, or answered."
+    },
+    {
+      "id": "claim_ind40_water_support_contacts",
+      "text": "BWSSB's FAQ publishes owcenquiry@bwssb.org and call centre number 080 22238888 for more queries.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_demand_payment", "node_rr_status"],
+      "sourceIds": ["source_ind40_bwssb_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published contact route; no contact was made."
+    },
+    {
+      "id": "claim_ind40_water_case_unknown",
+      "text": "The public pass did not establish eligibility, current property-field validation, document acceptance, inspection result, demand-note issuance or amount, payment state, application stage, or RR-number generation for any particular property.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_residential"],
+      "nodeIds": ["node_mobile_otp", "node_buy_application", "node_consumer_details", "node_site_details", "node_building_plumber", "node_documents_review", "node_inspection_review", "node_demand_payment", "node_rr_status"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No login, OTP, payment, upload, submission, application-number lookup, inspection, or grievance submission was attempted."
+    }
+  ],
+  "pathNodes": [
+    {
+      "nodeId": "node_mobile_otp",
+      "label": "Mobile OTP entry",
+      "visibleChecks": ["Apply For Connection / Log In", "Mobile Number", "Send OTP", "Enter OTP", "Submit"],
+      "failureSignals": [],
+      "recoveries": [],
+      "researchedNoSourceFound": ["failureSignals", "recoveries"],
+      "unknownBoundaries": ["OTP delivery/validation, login success, and post-login eligibility were not checked."],
+      "claimIds": ["claim_ind40_water_public_entry_controls", "claim_ind40_water_public_instructions", "claim_ind40_water_case_unknown"]
+    },
+    {
+      "nodeId": "node_buy_application",
+      "label": "Buy application form",
+      "visibleChecks": ["Make payment to buy the Application form", "Buy New Application (legacy SAJALA page)"],
+      "failureSignals": ["FAQ text: “While making payment if the transaction fails and the amount is deducted the amount will be refunded by payment gateway merchant in a very short time.”"],
+      "recoveries": ["Published route: wait for the payment-gateway merchant refund if a failed purchase deducted the amount; no refund was requested or observed."],
+      "unknownBoundaries": ["Current mobile-OTP purchase control, payment gateway, amount, transaction result, and refund timing were not opened."],
+      "claimIds": ["claim_ind40_water_public_instructions", "claim_ind40_water_faq_buy_failure", "claim_ind40_water_register_legacy_surface", "claim_ind40_water_case_unknown"]
+    },
+    {
+      "nodeId": "node_consumer_details",
+      "label": "Consumer and connection details",
+      "visibleChecks": ["FAQ: fields marked with (*) are mandatory", "FAQ: application may be saved as a draft and edited later"],
+      "failureSignals": [],
+      "recoveries": ["If routing data is wrong, FAQ says the receiving AEE may correct ward/service area or send the application back to correct and re-submit/re-confirm.", "If confirmed, FAQ says editing is unavailable until the application is received back from AEE."],
+      "researchedNoSourceFound": ["failureSignals"],
+      "unknownBoundaries": ["Exact live Consumer Details fields, validation, and submission were not opened."],
+      "claimIds": ["claim_ind40_water_faq_application_controls", "claim_ind40_water_faq_routing_recovery", "claim_ind40_water_case_unknown"]
+    },
+    {
+      "nodeId": "node_site_details",
+      "label": "Site details",
+      "visibleChecks": ["Public checklist mentions deed, Khata certificate, Building Plan / Sanction Plan, building-owner photograph, and conditional RWH adoption document."],
+      "failureSignals": [],
+      "recoveries": ["FAQ-published routing correction applies if ward/service area was selected incorrectly."],
+      "researchedNoSourceFound": ["failureSignals"],
+      "unknownBoundaries": ["PID/khata lookup, construction/purpose/area fields, conditional requirements, and save/submit behavior were not tested."],
+      "claimIds": ["claim_ind40_water_public_documents", "claim_ind40_water_faq_routing_recovery", "claim_ind40_water_case_unknown"]
+    },
+    {
+      "nodeId": "node_building_plumber",
+      "label": "Building and plumber details",
+      "visibleChecks": ["Consumer page exposes a Plumber List link.", "FAQ says plumber must be BWSSB-registered."],
+      "failureSignals": [],
+      "recoveries": ["FAQ says plumber details may be changed any time before final payment."],
+      "researchedNoSourceFound": ["failureSignals"],
+      "unknownBoundaries": ["Current eligible-list contents, selection validation, building rows, and plumber agreement upload were not opened."],
+      "claimIds": ["claim_ind40_water_faq_plumber", "claim_ind40_water_case_unknown"]
+    },
+    {
+      "nodeId": "node_documents_review",
+      "label": "Document upload and review",
+      "visibleChecks": ["Public Documents required checklist", "FAQ: fields marked with (*) are mandatory", "Legacy register surface visibly labels Verify Application and displays Form validation error./Form validation successful."],
+      "failureSignals": [],
+      "recoveries": [],
+      "researchedNoSourceFound": ["failureSignals", "recoveries"],
+      "unknownBoundaries": ["No document picker, upload, file validation, review screen, or submission was opened."],
+      "claimIds": ["claim_ind40_water_public_documents", "claim_ind40_water_faq_application_controls", "claim_ind40_water_register_legacy_surface", "claim_ind40_water_case_unknown"]
+    },
+    {
+      "nodeId": "node_inspection_review",
+      "label": "BWSSB review and inspection",
+      "visibleChecks": ["FAQ says status is stage-wise/designation-wise and routing uses ward/service area.", "FAQ says AE/JE calls to pre-inform an inspection visit."],
+      "failureSignals": [],
+      "recoveries": ["If ward/service area is wrong, FAQ publishes AEE correction or send-back for re-submit/re-confirm.", "FAQ publishes Inbox/registered-number contact for engineer queries."],
+      "researchedNoSourceFound": ["failureSignals"],
+      "unknownBoundaries": ["No case submission, status stage, engineer message, inspection, measurement, correction, or approval was observed."],
+      "claimIds": ["claim_ind40_water_faq_routing_recovery", "claim_ind40_water_faq_inspection_contact", "claim_ind40_water_register_legacy_surface", "claim_ind40_water_case_unknown"]
+    },
+    {
+      "nodeId": "node_demand_payment",
+      "label": "Demand note and final payment",
+      "visibleChecks": ["FAQ publishes inspection-based demand-note calculation, SMS after AEE approval, payment history, online final payment, and e-receipt.", "Consumer page visibly shows the stale demand-note notice ending 31-07-2021.", "Public grievance form and BWSSB contacts are visible."],
+      "failureSignals": ["Visible stale notice: “Extention of Demand Note Validity : Please note that all demand notes cancelled since 03-05-2021 will be valid upto 31-07-2021.” It is not treated as a current rule."],
+      "recoveries": ["Public grievance form accepts application and plumber details; page displays 1916 and eerbc@bwssb.gov.in.", "FAQ publishes owcenquiry@bwssb.org and 080 22238888 for more queries."],
+      "unknownBoundaries": ["Demand note, amount, approval SMS, payment gateway, payment result, receipt, and final-payment failure handling were not opened."],
+      "claimIds": ["claim_ind40_water_faq_demand_payment", "claim_ind40_water_current_stale_notice", "claim_ind40_water_grievance_route", "claim_ind40_water_support_contacts", "claim_ind40_water_case_unknown"]
+    },
+    {
+      "nodeId": "node_rr_status",
+      "label": "Application status and RR number",
+      "visibleChecks": ["Enter Your Application number to know the status", "Submit", "Show All Application", "Application Status As on : 30-08-2026", "Residential Connections 14 days"],
+      "failureSignals": [],
+      "recoveries": ["Public grievance form accepts Application Number and displays 1916/email contact.", "FAQ publishes Inbox/registered-number contact and enquiry contacts."],
+      "researchedNoSourceFound": ["failureSignals"],
+      "unknownBoundaries": ["No application number was entered; case status, status error text, stage, approval, and generated RR number were not checked."],
+      "claimIds": ["claim_ind40_water_public_entry_controls", "claim_ind40_water_public_targets", "claim_ind40_water_grievance_route", "claim_ind40_water_support_contacts", "claim_ind40_water_register_legacy_surface", "claim_ind40_water_case_unknown"]
+    }
+  ],
+  "journeyBoundary": {
+    "observedPublicPath": "Current page -> mobile-number/OTP controls -> high-level instruction to pay for the application -> fill details/upload documents -> same-mobile-number status lookup; public FAQ/register pages additionally describe older SAJALA stages.",
+    "unknownFromBoundary": "The pass stopped before login, payment, upload, submission, application-number lookup, inspection, demand-note display, and RR-number confirmation. No outcome was inferred from labels or published targets."
+  }
+}

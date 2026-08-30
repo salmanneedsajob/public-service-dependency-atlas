@@ -30,7 +30,10 @@ const assert = (condition, message) => { if (!condition) throw new Error(message
 
 for (const [service, prefix] of Object.entries(services)) {
   const phase2Handoffs = (await readdir('research/handoffs'))
-    .filter((file) => file.startsWith(`ind39-${prefix}-`) && file.endsWith('.json'))
+    // Phase 2 handoffs are additive evidence for an existing, isolated
+    // service ledger. Accept any numbered IND handoff for this service's
+    // stable prefix rather than baking IND-39 into the verifier.
+    .filter((file) => new RegExp(`^ind\\d+-${prefix}-.*\\.json$`).test(file))
     .map((file) => `research/handoffs/${file}`);
   const [ledger, ...handoffs] = await Promise.all([
     read(`ledger/${service}.json`),

@@ -43,6 +43,12 @@
       "name": "Office of the Chief Registrar of Births and Deaths, Government of Karnataka",
       "shortName": "Karnataka Chief Registrar (Births & Deaths)",
       "officialUrl": "https://ejanma.karnataka.gov.in/"
+    },
+    {
+      "id": "agency_bengaluru_smart_city_ind42",
+      "name": "Bengaluru Smart City Limited",
+      "shortName": "BenSCL / SmartNet",
+      "officialUrl": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm"
     }
   ],
   "scenarios": [
@@ -294,6 +300,74 @@
       "publishedAt": "2026-06-04",
       "type": "citizen_evidence",
       "notes": "A commenter reports that another service rejected an older-format birth certificate and directed the family to obtain a QR-code version from the website. This is an unverified downstream compatibility report, not proof of a BBMP issuance requirement."
+    },
+    {
+      "id": "source_ind42_birth_rbd_act_pdf",
+      "title": "The Registration of Births and Deaths Act, 1969 (as on 26 September 2025)",
+      "publisher": "Government of India / India Code",
+      "url": "https://censusindia.gov.in/nada/index.php/catalog/40408/download/44042/Act_03.pdf",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2025-09-26",
+      "type": "law",
+      "notes": "Direct Act PDF, not the India Code browse/index page. Sections 7, 8, 12, and 17 are the relevant provisions for local Registrar jurisdiction, reporting allocation, the free registration certificate, register search, and electronic/other certificate access."
+    },
+    {
+      "id": "source_ind42_birth_lookup_live",
+      "title": "Birth & Death Certificate Details — public lookup",
+      "publisher": "Bengaluru Smart City Limited / SmartNet",
+      "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Direct public page observation. The page footer identifies Bengaluru Smart City Limited/BenSCL, shows Version 1.3, and exposes the Birth Certificate selector and search controls before any identifier is entered."
+    },
+    {
+      "id": "source_ind42_birth_contact",
+      "title": "Contact Us — Bengaluru Smart City Limited",
+      "publisher": "Bengaluru Smart City Limited",
+      "url": "https://smartoneblr.com/wss/Contact.htm",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Public contact page lists the BenSCL office, phone 080-22200080, and email bsclnodal@gmail.com. This is a published support route, not a guarantee of birth-record resolution."
+    },
+    {
+      "id": "source_ind42_birth_name_portal_field_unusable",
+      "title": "How I add the name in the birth certificate for my newborn online.",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1ubu8lh/how_i_add_the_name_in_the_birth_certificate_for/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2026-06-21",
+      "type": "citizen_evidence",
+      "notes": "A parent describes their own attempts to add a newborn's name through eJanma and Seva Sindhu. The account is retained only for the reported interface limitation; it does not establish that the service was unavailable to all users or that an offline route was required."
+    },
+    {
+      "id": "source_ind42_birth_registered_name_missing_output",
+      "title": "How to include the name of the baby in BBMP Birth Certificate?",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1uax8yg/how_to_include_the_name_of_the_baby_in_bbmp_birth/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2026-06-20",
+      "type": "citizen_evidence",
+      "notes": "A parent reports that their hospital-submitted registration form included the child's name but the certificate downloaded from Seva Sindhu showed an empty name. This is a single claimed input/output mismatch, not proof of a registration-system defect."
+    },
+    {
+      "id": "source_ind42_birth_pre2010_not_online",
+      "title": "How to digitise birth certificate (pre-2010)?",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1lxs0rr/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2025-07-12",
+      "type": "citizen_evidence",
+      "notes": "A citizen reports holding a physical BBMP birth certificate that did not appear online and asks about digitisation. No resolution is claimed by the author."
+    },
+    {
+      "id": "source_ind42_birth_correction_unreceipted_payment",
+      "title": "Bbmp baby name addition and mother name correction",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1vjxyxk/bbmp_baby_name_addition_and_mother_name_correction/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2026-08-09",
+      "type": "citizen_evidence",
+      "notes": "A parent describes a completed in-person correction and alleges an unexpected unreceipted payment request after receiving the document. This is an allegation about one encounter, not a fee rule, office practice, or official recovery route."
     }
   ],
   "claims": [
@@ -593,7 +667,7 @@
     },
     {
       "id": "claim_ind32_birth_workflow_place_reporting",
-      "text": "The Act's reporting rules allocate institutional birth information to the medical officer/person authorised by the institution and domiciliary birth information to the head of the house/household or specified fallback person.",
+      "text": "Section 8 assigns reporting responsibility by place and circumstances, including the head of the house for a domiciliary birth and the medical officer in charge or authorised person for a hospital or similar institution birth.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow",
@@ -603,17 +677,17 @@
         "node_event_jurisdiction"
       ],
       "sourceIds": [
-        "source_ind32_birth_workflow_act"
+        "source_ind42_birth_rbd_act_pdf"
       ],
-      "evidenceGrade": "C",
+      "evidenceGrade": "A",
       "basis": "observation",
-      "status": "partial",
+      "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "Statutory responsibility; it does not establish the current BBMP office or portal screen. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "Statutory allocation only; it does not identify a current Bengaluru office or portal screen."
     },
     {
       "id": "claim_ind32_birth_workflow_certificate",
-      "text": "Sections 12 and 17 provide for a certificate of registration and for a person, subject to state rules and fees, to request a register search and obtain a birth certificate electronically or otherwise.",
+      "text": "Section 17(1) allows any person, subject to State rules including fees and postal charges, to cause a Registrar to search the register and obtain a birth certificate electronically or otherwise; section 17(2) requires certification.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow",
@@ -625,13 +699,13 @@
         "node_authenticity"
       ],
       "sourceIds": [
-        "source_ind32_birth_workflow_act"
+        "source_ind42_birth_rbd_act_pdf"
       ],
-      "evidenceGrade": "C",
+      "evidenceGrade": "A",
       "basis": "observation",
-      "status": "partial",
+      "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "The current public lookup fields, fee, and certificate-download route remain unknown. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "Section 17 legal access only; current lookup fields, fee, delivery and certificate-download behaviour remain unobserved."
     },
     {
       "id": "claim_ind32_birth_workflow_name",
@@ -864,6 +938,253 @@
       "status": "partial",
       "contradictsClaimIds": [],
       "notes": "A reported downstream acceptance issue, not a legal or administrative requirement for certificate issuance or a statement about all relying services."
+    },
+    {
+      "id": "claim_ind42_birth_act_registrar_jurisdiction",
+      "text": "Section 7(2) requires each Registrar to enter information given under sections 8 or 9 for births and deaths that occurred in the Registrar's jurisdiction; section 7(3) requires an office in the local area for which the Registrar is appointed.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_event_jurisdiction"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_rbd_act_pdf"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This establishes the statutory jurisdiction concept, not the particular ward/Registrar for an unknown record."
+    },
+    {
+      "id": "claim_ind42_birth_act_free_certificate",
+      "text": "Section 12 requires the Registrar, after registration is completed and not later than seven days, to give the person who supplied information under section 8 or 9 a certificate extracted from the register, electronically or otherwise under the Registrar's signature, free of charge.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_certificate_output"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_rbd_act_pdf"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The statutory seven-day/free first-certificate rule is not a promise about a later duplicate/copy request, current portal delivery, or a particular case."
+    },
+    {
+      "id": "claim_ind42_birth_live_record_result_unknown",
+      "text": "A particular Bengaluru birth record’s found/not-found or error result was not determined because no case-specific identifier or search was entered.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_record_lookup"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No personal data, registration number, date, CAPTCHA, login, or authenticated/public query was used."
+    },
+    {
+      "id": "claim_ind42_birth_public_entry",
+      "text": "The public SmartNet Birth & Death Certificate Details page initially exposes a certificate-type selector with the options “--Select--”, “Birth Certificate”, and “Death Certificate”.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_birth_public_entry"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_lookup_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Observed while unauthenticated; selecting Birth Certificate did not transmit personal data."
+    },
+    {
+      "id": "claim_ind42_birth_search_modes",
+      "text": "After Birth Certificate is selected, the public page exposes a Search by selector with “Registration Number”, “Temporary Registration No.”, and “Using DOB”.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_record_lookup"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_lookup_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Only the selector was inspected; no search mode was submitted."
+    },
+    {
+      "id": "claim_ind42_birth_registration_identifier_boundary",
+      "text": "The Registration Number search mode publicly renders fields labelled “Registration Number” and “Date of Birth”, with the date placeholder “Ex:15-01-22”; no values were entered.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_event_jurisdiction",
+        "node_record_lookup"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_lookup_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is the stopping boundary: registration number and date of birth are identifiers/personal data. No lookup, validation, no-record response, or certificate output was tested."
+    },
+    {
+      "id": "claim_ind42_birth_public_controls",
+      "text": "The public lookup page shows Back and Submit controls; the Submit control is wired to a search action, but no submission was performed.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_record_lookup",
+        "node_certificate_output"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_lookup_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The visible Submit label and its search action were inspected; action outcome, validation text, and output remain unknown because submission is out of scope."
+    },
+    {
+      "id": "claim_ind42_birth_published_recovery",
+      "text": "The BenSCL public Contact Us page publishes phone 080-22200080 and email bsclnodal@gmail.com.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_birth_public_entry",
+        "node_certificate_output"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_contact"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published support/navigation only; the pages do not promise a no-record remedy, status lookup, fee reversal, or certificate issuance."
+    },
+    {
+      "id": "claim_ind42_birth_outcome_unknown",
+      "text": "The public pass did not establish post-identifier result, no-record message, fee, login requirement, certificate download, acknowledgement, status tracking, or recovery after a failed lookup.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_record_lookup",
+        "node_certificate_output"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The pass stopped before entering identifiers or activating Submit. This is a genuine research boundary, not evidence that the government has no such behavior."
+    },
+    {
+      "id": "claim_ind42_birth_name_portal_field_unusable",
+      "text": "One parent reported that they could not enter a child's name into the blank name field while attempting name inclusion through Seva Sindhu.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_name_workflow"
+      ],
+      "nodeIds": [
+        "node_name_inclusion"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_name_portal_field_unusable"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Single citizen report of an attempted interaction; it does not prove the field's current behaviour, eligibility, or a universally required recovery path."
+    },
+    {
+      "id": "claim_ind42_birth_registered_name_missing_output",
+      "text": "One parent reported that a certificate downloaded from Seva Sindhu had an empty child-name field although their hospital-submitted registration form included the name.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_name_workflow"
+      ],
+      "nodeIds": [
+        "node_name_inclusion"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_registered_name_missing_output"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Single reported input/output discrepancy; it does not establish whether the name was absent from the underlying record, the download, or a particular processing stage."
+    },
+    {
+      "id": "claim_ind42_birth_pre2010_not_online",
+      "text": "One citizen reported that their pre-2010 physical BBMP birth certificate did not appear online.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_record_lookup"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_pre2010_not_online"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The author reports no outcome. The account does not establish an archival cutoff, digitisation policy, or route for any other certificate."
+    },
+    {
+      "id": "claim_ind42_birth_correction_unreceipted_payment",
+      "text": "One parent alleged that an in-person correction encounter included an unexpected request for an unreceipted payment after the updated certificate was provided.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_correction_workflow"
+      ],
+      "nodeIds": [
+        "node_correction"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_correction_unreceipted_payment"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One public allegation about a correction encounter. It does not establish an official payment requirement or general office practice."
     }
   ],
   "nodes": [
@@ -894,6 +1215,26 @@
             "claim_ind32_birth_workflow_place_reporting"
           ],
           "status": "verified"
+        },
+        {
+          "id": "check_ind42_birth_act_registrar_area",
+          "label": "Registrar local-area rule",
+          "description": "Section 7(2)-(3) ties register entry and the Registrar office to the local area/jurisdiction for which the Registrar is appointed.",
+          "url": "https://censusindia.gov.in/nada/index.php/catalog/40408/download/44042/Act_03.pdf",
+          "claimIds": [
+            "claim_ind42_birth_act_registrar_jurisdiction"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind42_birth_act_reporting_basis",
+          "label": "Place/circumstance reporting basis",
+          "description": "Section 8 assigns the reporting duty based on domiciliary or institutional circumstances.",
+          "url": "https://censusindia.gov.in/nada/index.php/catalog/40408/download/44042/Act_03.pdf",
+          "claimIds": [
+            "claim_ind32_birth_workflow_place_reporting"
+          ],
+          "status": "verified"
         }
       ],
       "failureSignals": [
@@ -905,6 +1246,15 @@
             "claim_ind32_birth_workflow_rural_boundary"
           ],
           "status": "verified"
+        },
+        {
+          "id": "failure_ind42_birth_registrar_unknown",
+          "label": "Responsible Registrar unknown",
+          "description": "No event place or record details were supplied, so the responsible Registrar/local office cannot be selected for this case.",
+          "claimIds": [
+            "claim_ind42_birth_live_record_result_unknown"
+          ],
+          "status": "unknown"
         }
       ],
       "recoveries": [],
@@ -917,7 +1267,11 @@
       "claimIds": [
         "claim_ind32_birth_workflow_place_reporting",
         "claim_ind32_birth_workflow_rural_boundary",
-        "claim_ind32_birth_workflow_end_to_end_unknown"
+        "claim_ind32_birth_workflow_end_to_end_unknown",
+        "claim_ind42_birth_act_registrar_jurisdiction",
+        "claim_ind42_birth_live_record_result_unknown",
+        "claim_ind42_birth_registration_identifier_boundary",
+        "claim_ind42_birth_outcome_unknown"
       ],
       "status": "partial",
       "displayOrder": 20
@@ -1093,6 +1447,24 @@
             "claim_ind32_birth_workflow_end_to_end_unknown"
           ],
           "status": "unknown"
+        },
+        {
+          "id": "failure_ind42_birth_name_field_report",
+          "label": "Reported name-entry field problem",
+          "description": "One parent reported being unable to enter a child name in a Seva Sindhu field; this does not establish a general current portal defect.",
+          "claimIds": [
+            "claim_ind42_birth_name_portal_field_unusable"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "failure_ind42_birth_name_missing_output_report",
+          "label": "Reported missing name in downloaded output",
+          "description": "One parent reported an empty child-name field in a downloaded certificate despite a hospital-submitted name; the affected stage is not established.",
+          "claimIds": [
+            "claim_ind42_birth_registered_name_missing_output"
+          ],
+          "status": "partial"
         }
       ],
       "recoveries": [],
@@ -1101,7 +1473,9 @@
       ],
       "claimIds": [
         "claim_ind32_birth_workflow_name",
-        "claim_ind32_birth_workflow_end_to_end_unknown"
+        "claim_ind32_birth_workflow_end_to_end_unknown",
+        "claim_ind42_birth_name_portal_field_unusable",
+        "claim_ind42_birth_registered_name_missing_output"
       ],
       "status": "partial",
       "displayOrder": 40
@@ -1246,6 +1620,16 @@
             "claim_ind32_birth_workflow_public_entry"
           ],
           "status": "partial"
+        },
+        {
+          "id": "check_ind42_birth_event_selector",
+          "label": "Certificate type selector",
+          "description": "Public selector exposes Birth Certificate and Death Certificate options; Birth Certificate was selected for this pass.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": [
+            "claim_ind42_birth_public_entry"
+          ],
+          "status": "verified"
         }
       ],
       "failureSignals": [
@@ -1257,9 +1641,30 @@
             "claim_ind32_birth_workflow_end_to_end_unknown"
           ],
           "status": "unknown"
+        },
+        {
+          "id": "failure_ind42_birth_public_target_unknown",
+          "label": "Live target unknown",
+          "description": "The dated official capture lists links but does not expose the current target fields, routing, or public/authenticated boundary for a copy request.",
+          "claimIds": [
+            "claim_ind42_birth_live_record_result_unknown",
+            "claim_ind42_birth_outcome_unknown"
+          ],
+          "status": "unknown"
         }
       ],
-      "recoveries": [],
+      "recoveries": [
+        {
+          "id": "recovery_ind42_birth_contact",
+          "label": "Published BenSCL support route",
+          "description": "Use the published Contact Us page for BenSCL phone 080-22200080 or email bsclnodal@gmail.com when the public directory is unreachable; this page does not promise case resolution.",
+          "url": "https://smartoneblr.com/wss/Contact.htm",
+          "claimIds": [
+            "claim_ind42_birth_published_recovery"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow",
         "scenario_ind32_birth_name_workflow",
@@ -1269,7 +1674,11 @@
       ],
       "claimIds": [
         "claim_ind32_birth_workflow_public_entry",
-        "claim_ind32_birth_workflow_end_to_end_unknown"
+        "claim_ind32_birth_workflow_end_to_end_unknown",
+        "claim_ind42_birth_live_record_result_unknown",
+        "claim_ind42_birth_outcome_unknown",
+        "claim_ind42_birth_public_entry",
+        "claim_ind42_birth_published_recovery"
       ],
       "status": "partial",
       "displayOrder": 10
@@ -1291,6 +1700,36 @@
             "claim_ind32_birth_workflow_certificate"
           ],
           "status": "verified"
+        },
+        {
+          "id": "check_ind42_birth_act_search",
+          "label": "Statutory register search",
+          "description": "Section 17(1) permits any person to cause a Registrar search, subject to State rules including fees, and obtain a certificate electronically or otherwise.",
+          "url": "https://censusindia.gov.in/nada/index.php/catalog/40408/download/44042/Act_03.pdf",
+          "claimIds": [
+            "claim_ind32_birth_workflow_certificate"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind42_birth_search_modes",
+          "label": "Search mode control",
+          "description": "Public Search by selector exposes Registration Number, Temporary Registration No., and Using DOB.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": [
+            "claim_ind42_birth_search_modes"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind42_birth_registration_fields",
+          "label": "Registration-number fields",
+          "description": "Registration Number mode renders Registration Number and Date of Birth fields with the observed date placeholder.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": [
+            "claim_ind42_birth_registration_identifier_boundary"
+          ],
+          "status": "verified"
         }
       ],
       "failureSignals": [
@@ -1302,16 +1741,41 @@
             "claim_ind32_birth_workflow_end_to_end_unknown"
           ],
           "status": "unknown"
+        },
+        {
+          "id": "failure_ind42_birth_record_result_unknown",
+          "label": "Record result unknown",
+          "description": "No lookup was performed, so found/not-found, duplicate, validation, and technical-error behavior remain unknown.",
+          "claimIds": [
+            "claim_ind42_birth_live_record_result_unknown"
+          ],
+          "status": "unknown"
         }
       ],
-      "recoveries": [],
+      "recoveries": [
+        {
+          "id": "recovery_ind42_birth_back_control",
+          "label": "Public Back control",
+          "description": "The lookup page exposes a Back button before any identifier is entered; its effect is navigation only and no submission was performed.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": [
+            "claim_ind42_birth_public_controls"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow",
         "scenario_ind32_birth_delayed_workflow"
       ],
       "claimIds": [
         "claim_ind32_birth_workflow_certificate",
-        "claim_ind32_birth_workflow_end_to_end_unknown"
+        "claim_ind32_birth_workflow_end_to_end_unknown",
+        "claim_ind42_birth_live_record_result_unknown",
+        "claim_ind42_birth_search_modes",
+        "claim_ind42_birth_registration_identifier_boundary",
+        "claim_ind42_birth_public_controls",
+        "claim_ind42_birth_outcome_unknown"
       ],
       "status": "partial",
       "displayOrder": 30
@@ -1344,6 +1808,15 @@
             "claim_ind32_birth_workflow_end_to_end_unknown"
           ],
           "status": "unknown"
+        },
+        {
+          "id": "failure_ind42_birth_correction_payment_report",
+          "label": "Reported unreceipted-payment request",
+          "description": "One parent alleged an unexpected unreceipted payment request in a correction encounter; it is not evidence of an official fee or universal practice.",
+          "claimIds": [
+            "claim_ind42_birth_correction_unreceipted_payment"
+          ],
+          "status": "partial"
         }
       ],
       "recoveries": [],
@@ -1352,7 +1825,8 @@
       ],
       "claimIds": [
         "claim_ind32_birth_workflow_correction",
-        "claim_ind32_birth_workflow_end_to_end_unknown"
+        "claim_ind32_birth_workflow_end_to_end_unknown",
+        "claim_ind42_birth_correction_unreceipted_payment"
       ],
       "status": "partial",
       "displayOrder": 50
@@ -1384,6 +1858,27 @@
             "claim_ind32_birth_workflow_timing_caveat"
           ],
           "status": "partial"
+        },
+        {
+          "id": "check_ind42_birth_act_certificate_output",
+          "label": "Certificate legal output",
+          "description": "Sections 12 and 17 provide for a signed certificate from the register; section 17 allows electronic or other issuance subject to State rules.",
+          "url": "https://censusindia.gov.in/nada/index.php/catalog/40408/download/44042/Act_03.pdf",
+          "claimIds": [
+            "claim_ind42_birth_act_free_certificate",
+            "claim_ind32_birth_workflow_certificate"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind42_birth_submit_boundary",
+          "label": "Submit boundary",
+          "description": "A visible Submit control is present, but the pass stopped before the search action to avoid lookup/submission and any resulting personal-data exposure.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": [
+            "claim_ind42_birth_public_controls"
+          ],
+          "status": "partial"
         }
       ],
       "failureSignals": [
@@ -1395,9 +1890,30 @@
             "claim_ind32_birth_workflow_end_to_end_unknown"
           ],
           "status": "unknown"
+        },
+        {
+          "id": "failure_ind42_birth_copy_output_unknown",
+          "label": "Copy/output outcome unknown",
+          "description": "No request, payment, certificate retrieval, acknowledgement, or status query was performed.",
+          "claimIds": [
+            "claim_ind42_birth_outcome_unknown"
+          ],
+          "status": "unknown"
         }
       ],
-      "recoveries": [],
+      "recoveries": [
+        {
+          "id": "recovery_ind42_birth_support_boundary",
+          "label": "Published support if output cannot be established",
+          "description": "The published BenSCL Contact Us page is the only support route observed; no public certificate-output or no-record recovery was published on the reviewed pages.",
+          "url": "https://smartoneblr.com/wss/Contact.htm",
+          "claimIds": [
+            "claim_ind42_birth_published_recovery",
+            "claim_ind42_birth_outcome_unknown"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow",
         "scenario_ind32_birth_name_workflow",
@@ -1407,7 +1923,11 @@
       "claimIds": [
         "claim_ind32_birth_workflow_certificate",
         "claim_ind32_birth_workflow_timing_caveat",
-        "claim_ind32_birth_workflow_end_to_end_unknown"
+        "claim_ind32_birth_workflow_end_to_end_unknown",
+        "claim_ind42_birth_act_free_certificate",
+        "claim_ind42_birth_outcome_unknown",
+        "claim_ind42_birth_public_controls",
+        "claim_ind42_birth_published_recovery"
       ],
       "status": "partial",
       "displayOrder": 70
@@ -1507,7 +2027,7 @@
       "fromNodeId": "node_birth_public_entry",
       "toNodeId": "node_event_jurisdiction",
       "relationship": "requires",
-      "label": "The public directory points to the service family; the live transition and jurisdiction selector were not observed.",
+      "label": "Statutory/planning dependency: identify the relevant local Registrar before directing a register search; this is not a demonstrated live UI sequence.",
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow",
         "scenario_ind32_birth_name_workflow",
@@ -1516,7 +2036,9 @@
       ],
       "claimIds": [
         "claim_ind32_birth_workflow_public_entry",
-        "claim_ind32_birth_workflow_end_to_end_unknown"
+        "claim_ind32_birth_workflow_end_to_end_unknown",
+        "claim_ind42_birth_act_registrar_jurisdiction",
+        "claim_ind32_birth_workflow_place_reporting"
       ],
       "status": "partial"
     },
@@ -1525,14 +2047,16 @@
       "fromNodeId": "node_event_jurisdiction",
       "toNodeId": "node_record_lookup",
       "relationship": "requires",
-      "label": "The relevant place/Registrar must be identified before register search or certificate retrieval; current UI was not tested.",
+      "label": "Statutory/planning dependency: identify the relevant local Registrar before directing a register search; this is not a demonstrated live UI sequence.",
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow",
         "scenario_ind32_birth_delayed_workflow"
       ],
       "claimIds": [
         "claim_ind32_birth_workflow_place_reporting",
-        "claim_ind32_birth_workflow_rural_boundary"
+        "claim_ind32_birth_workflow_rural_boundary",
+        "claim_ind42_birth_act_registrar_jurisdiction",
+        "claim_ind32_birth_workflow_certificate"
       ],
       "status": "partial"
     },
@@ -1541,7 +2065,7 @@
       "fromNodeId": "node_record_lookup",
       "toNodeId": "node_certificate_output",
       "relationship": "produces",
-      "label": "A found/registered entry supports certificate access under sections 12 and 17; current output route remains unknown.",
+      "label": "Section 17 supports certificate access after a register search; the current delivery route was not observed.",
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow",
         "scenario_ind32_birth_delayed_workflow"
@@ -1759,21 +2283,52 @@
       "status": "unknown"
     },
     {
-      "id": "roadblock_audit_birth_certificate",
-      "title": "Independent audit limitations",
+      "id": "roadblock_ind42_birth_live_copy_behavior_unknown",
+      "title": "Current lookup and duplicate-copy behavior is not publicly verified",
       "category": "documentation",
-      "symptom": "**Scope.** One independent, read-only audit of `ledger/birth-certificate.json` against `ledger/schema.json` and `ledger/AGENT_PROTOCOL.md`, completed 2026-08-28. This is an audit report, not a ledger change. **Result.** The document passes the JSON Schema, and its 21 edges have claim references. Preserve the evidence-backed graph: 19 `partial`, one `unknown`, and one `verified` edge. In particular, the partial/unknown birth-workflow edges appropriately retain the stated limitation that the current BBMP transition, required fields, submission, payment, result, and tracking were not publicly observed. The statutory claims support the legal relationships, not a completed current municipal journey. ## Material findings 1. **Broken reference integrity in the legacy citizen-evidence branch.** Seventeen references resolve to neither a current scenario nor node. This leaves seven claims and two ",
-      "likelyCause": "Evidence and schema boundaries identified by the single independent audit.",
-      "recovery": "Read the cited evidence and retain Unknown or partial status where the public record stops.",
-      "ownerAgencyIds": [],
+      "symptom": "The Act provides legal search/certificate access, but the current Bengaluru public lookup fields, fee, delivery, status, and not-found response were not verified in this pass.",
+      "likelyCause": "Current implementation was not taken past the case-specific identifier boundary; the official eJanMa capture is dated 2024 and implementation details sit in State rules.",
+      "recovery": "Use the responsible Registrar/respective birth-and-death registration centre; the official capture also names concerned data-entry operators and the District Statistical Officer for clarifications. Confirm the current office and fee before any real request. No live submission was made.",
+      "ownerAgencyIds": [
+        "agency_bbmp_birth_workflow_ind32",
+        "agency_karnataka_crs_workflow_ind32"
+      ],
       "nodeIds": [
-        "node_event_jurisdiction"
+        "node_record_lookup",
+        "node_certificate_output"
       ],
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow"
       ],
-      "claimIds": [],
-      "status": "unknown"
+      "claimIds": [
+        "claim_ind42_birth_live_record_result_unknown",
+        "claim_ind42_birth_outcome_unknown"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind42_birth_identifier_boundary",
+      "title": "Lookup stops at identifier fields",
+      "category": "process",
+      "symptom": "Registration Number mode renders Registration Number and Date of Birth fields, but no values were entered.",
+      "likelyCause": "A certificate-copy lookup requires case-specific record data that was intentionally not supplied in this public pass.",
+      "recovery": "Back is navigation only. The BenSCL contact may help clarify the route but does not promise a lookup recovery; no birth-specific no-record recovery was observed.",
+      "ownerAgencyIds": [
+        "agency_bengaluru_smart_city_ind42"
+      ],
+      "nodeIds": [
+        "node_record_lookup",
+        "node_certificate_output"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "claimIds": [
+        "claim_ind42_birth_registration_identifier_boundary",
+        "claim_ind42_birth_published_recovery",
+        "claim_ind42_birth_outcome_unknown"
+      ],
+      "status": "partial"
     }
   ],
   "journeys": []

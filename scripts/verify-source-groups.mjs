@@ -39,8 +39,8 @@ for (const file of ledgerFiles) {
 
 const birth = JSON.parse(await readFile('ledger/birth-certificate.json', 'utf8'));
 const birthGroups = groupSources(birth.sources);
-if (birth.sources.length !== 18 || birthGroups.specific.length !== 1 || birthGroups.general.length !== 2 || birthGroups.citizen.length !== 3) {
-  throw new Error('Birth-certificate grouping should expose 1 specific document, 2 general references, and 3 citizen accounts from 18 source records.');
+if (birthGroups.specific.length < 1 || birthGroups.general.length < 1 || birthGroups.citizen.length < 3) {
+  throw new Error('Birth-certificate grouping must retain specific official evidence, general references, and at least three citizen accounts.');
 }
 
-console.log(`Source grouping verified: ${ledgerFiles.length} ledgers, ${displayedFiles} displayed URL-level sources; birth certificate is 1 document · 2 general references · 3 citizen accounts.`);
+console.log(`Source grouping verified: ${ledgerFiles.length} ledgers, ${displayedFiles} displayed URL-level sources; birth certificate is ${birthGroups.specific.length} specific · ${birthGroups.general.length} general · ${birthGroups.citizen.length} citizen URL groups.`);

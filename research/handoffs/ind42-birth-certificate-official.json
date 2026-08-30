@@ -1,0 +1,542 @@
+{
+  "_handoff": {
+    "issue": "IND-42",
+    "generatedAt": "2026-08-30",
+    "status": "ready_for_merge",
+    "scopeNote": "Official-source pass for the default path only: an already registered Bengaluru birth and a request for a certificate/certified copy. Sources are limited to the current consolidated Registration of Births and Deaths Act PDF and an official Karnataka Chief Registrar/eJanMa public-interface snapshot. No login, OTP, identifier, document upload, payment, submission, or live record lookup was attempted. Name inclusion, correction, delayed registration, authenticity, rural-only routing, and non-default paths are out of scope.",
+    "defaultScenarioId": "scenario_ind32_birth_copy_workflow",
+    "defaultPathNodeIds": [
+      "node_birth_public_entry",
+      "node_event_jurisdiction",
+      "node_record_lookup",
+      "node_certificate_output"
+    ],
+    "observationNote": "The Act PDF is marked as on 2025-09-26 and directly supports sections 7, 8, 12, and 17. The Karnataka public-interface PDF is a dated 2024-11-14 capture of the Chief Registrar/eJanMa site; it records public links and office handoffs but does not prove current case-specific availability, fees, or output behavior in August 2026."
+  },
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru birth certificate official-source pass — default copy path",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-30",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice. It covers only the default existing-record certificate-copy path and preserves unknown live-case behavior."
+  },
+  "agencies": [
+    {
+      "id": "agency_bbmp_birth_workflow_ind32",
+      "name": "Greater Bengaluru Authority / Bengaluru City Corporations birth and death administration",
+      "shortName": "GBA / Bengaluru City Corporations Birth & Death",
+      "officialUrl": "https://site.bbmp.gov.in/departmentwebsites/Health/service.html"
+    },
+    {
+      "id": "agency_karnataka_crs_workflow_ind32",
+      "name": "Office of the Chief Registrar of Births and Deaths, Government of Karnataka",
+      "shortName": "Karnataka Chief Registrar (Births & Deaths)",
+      "officialUrl": "https://ejanma.karnataka.gov.in/frmDownloadCertificate.aspx"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind32_birth_copy_workflow",
+      "label": "Already registered birth — certificate copy",
+      "summary": "A citizen starts from the public Birth & Death entry and seeks a certificate or certified copy for an existing register entry.",
+      "tags": [
+        "copy",
+        "registered-birth",
+        "public-entry",
+        "default-path"
+      ],
+      "pathNodeIds": [
+        "node_birth_public_entry",
+        "node_event_jurisdiction",
+        "node_record_lookup",
+        "node_certificate_output"
+      ],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind42_birth_rbd_act_pdf",
+      "title": "The Registration of Births and Deaths Act, 1969 (as on 26 September 2025)",
+      "publisher": "Government of India / India Code",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/1682/1/A1969-18.pdf",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2025-09-26",
+      "type": "law",
+      "notes": "Direct Act PDF, not the India Code browse/index page. Sections 7, 8, 12, and 17 are the relevant provisions for local Registrar jurisdiction, reporting allocation, the free registration certificate, register search, and electronic/other certificate access."
+    },
+    {
+      "id": "source_ind42_birth_ejanma_official_snapshot",
+      "title": "Births and Deaths — Office of the Chief Registrar of Births and Deaths, Government of Karnataka (public eJanMa site capture)",
+      "publisher": "Office of the Chief Registrar of Births and Deaths, Government of Karnataka (snapshot hosted by Ministry of Housing and Urban Affairs)",
+      "url": "https://www.amrut.mohua.gov.in/uploads/reform/ulb/BIRTHS-AND-DEATHS--OFFICE-OF-THE-CHIEF-REGISTRAR-OF-BIRTHS-AND-DEATHSpdf2.pdf",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2024-11-14",
+      "type": "official_guidance",
+      "notes": "The PDF capture is timestamped 11/14/24 12:15 PM. It records eJanMa public links for Download Certificate, Birth/Death Verification, and Application Status; says urban-local-body and BBMP events are registered by Health Officers/Health Inspectors; and directs additional-copy queries to concerned Nada Kacheri/data-entry operators or respective registration centres. It is not treated as a current August 2026 fee, SLA, or case-result guarantee."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind42_birth_act_registrar_jurisdiction",
+      "text": "Section 7(2) requires each Registrar to enter information given under sections 8 or 9 for births and deaths that occurred in the Registrar's jurisdiction; section 7(3) requires an office in the local area for which the Registrar is appointed.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_event_jurisdiction"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_rbd_act_pdf"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This establishes the statutory jurisdiction concept, not the particular ward/Registrar for an unknown record."
+    },
+    {
+      "id": "claim_ind42_birth_act_reporting_allocation",
+      "text": "Section 8 assigns reporting responsibility by place and circumstances, including the head of the house for a domiciliary birth and the medical officer in charge or authorised person for a hospital or similar institution birth.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_event_jurisdiction"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_rbd_act_pdf"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The provision explains reporting allocation; it does not identify a current BBMP office for an individual record."
+    },
+    {
+      "id": "claim_ind42_birth_act_free_certificate",
+      "text": "Section 12 requires the Registrar, after registration is completed and not later than seven days, to give the person who supplied information under section 8 or 9 a certificate extracted from the register, electronically or otherwise under the Registrar's signature, free of charge.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_certificate_output"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_rbd_act_pdf"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The statutory seven-day/free first-certificate rule is not a promise about a later duplicate/copy request, current portal delivery, or a particular case."
+    },
+    {
+      "id": "claim_ind42_birth_act_search_and_copy",
+      "text": "Section 17(1) allows any person, subject to State rules including fees and postal charges, to cause a Registrar to search the birth-and-death register and obtain a birth certificate electronically or otherwise; section 17(2) requires certification by the Registrar or a State-authorised officer.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_record_lookup",
+        "node_certificate_output"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_rbd_act_pdf"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The Act leaves fees, search procedure, and delivery implementation to State rules/authorised systems; it does not establish that every historical Bengaluru entry is online."
+    },
+    {
+      "id": "claim_ind42_birth_ejanma_public_capabilities",
+      "text": "The official Karnataka Chief Registrar/eJanMa public-site capture lists public links for Download Certificate, Birth/Death Verification, and Application Status, and says births in urban-local-body and BBMP areas are registered in eJanMa by Health Officers and Health Inspectors in their respective areas.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_birth_public_entry",
+        "node_event_jurisdiction",
+        "node_record_lookup",
+        "node_certificate_output"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_ejanma_official_snapshot"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Directly documented in a timestamped 2024 official-site capture; no live 2026 interface, identifier query, login, or download was performed."
+    },
+    {
+      "id": "claim_ind42_birth_ejanma_copy_recovery",
+      "text": "The official Karnataka Chief Registrar/eJanMa public-site capture directs requests for additional birth/death certificate copies to data-entry operators of the concerned Nada Kacheri and respective birth-and-death registration centres, and directs clarifications to the District Statistical Officer of the concerned district.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_record_lookup",
+        "node_certificate_output"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_ejanma_official_snapshot"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is an official documented contact handoff, but the capture is dated 2024 and does not establish the current Bengaluru office name, contact details, fee, or response time."
+    },
+    {
+      "id": "claim_ind42_birth_live_record_result_unknown",
+      "text": "The current existence of a particular Bengaluru birth record, the identifier fields accepted by the current lookup, and the found/not-found/error response cannot be determined from this pass because no record identifier or search was entered.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_record_lookup"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No personal data, registration number, date, CAPTCHA, login, or authenticated/public query was used."
+    },
+    {
+      "id": "claim_ind42_birth_current_copy_delivery_unknown",
+      "text": "The current Bengaluru duplicate/certified-copy fee, delivery channel, acknowledgement/status behavior, and case-specific issuance outcome are not established by the reviewed official sources.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [
+        "node_certificate_output"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Section 17 expressly makes fees/rules State-dependent, while the 2024 eJanMa capture only lists a Download Certificate link and office handoffs."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_birth_public_entry",
+      "label": "Public Birth & Death entry",
+      "kind": "service",
+      "ownerAgencyId": "agency_bbmp_birth_workflow_ind32",
+      "summary": "Start from the authorised Bengaluru/Karnataka Birth & Death public service entry for an existing-record copy.",
+      "requiredState": "A current live request target and whether a public or authenticated step is required are unknown; no target was opened.",
+      "checks": [
+        {
+          "id": "check_ind42_birth_public_ejanma_links",
+          "label": "eJanMa public links",
+          "description": "The official Chief Registrar/eJanMa capture lists Download Certificate, Birth/Death Verification, and Application Status links.",
+          "url": "https://www.amrut.mohua.gov.in/uploads/reform/ulb/BIRTHS-AND-DEATHS--OFFICE-OF-THE-CHIEF-REGISTRAR-OF-BIRTHS-AND-DEATHSpdf2.pdf",
+          "claimIds": [
+            "claim_ind42_birth_ejanma_public_capabilities"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind42_birth_public_target_unknown",
+          "label": "Live target unknown",
+          "description": "The dated official capture lists links but does not expose the current target fields, routing, or public/authenticated boundary for a copy request.",
+          "claimIds": [
+            "claim_ind42_birth_live_record_result_unknown",
+            "claim_ind42_birth_current_copy_delivery_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "researchedNoSourceFound": [
+        "recoveries"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "claimIds": [
+        "claim_ind42_birth_ejanma_public_capabilities",
+        "claim_ind42_birth_live_record_result_unknown",
+        "claim_ind42_birth_current_copy_delivery_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_event_jurisdiction",
+      "label": "Event place and Registrar jurisdiction",
+      "kind": "service",
+      "ownerAgencyId": "agency_bbmp_birth_workflow_ind32",
+      "summary": "Confirm the place-of-occurrence Registrar/local area before searching for an existing birth entry.",
+      "requiredState": "The event place and responsible Bengaluru Registrar are case-specific and unknown.",
+      "checks": [
+        {
+          "id": "check_ind42_birth_act_registrar_area",
+          "label": "Registrar local-area rule",
+          "description": "Section 7(2)-(3) ties register entry and the Registrar office to the local area/jurisdiction for which the Registrar is appointed.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/1682/1/A1969-18.pdf",
+          "claimIds": [
+            "claim_ind42_birth_act_registrar_jurisdiction"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind42_birth_act_reporting_basis",
+          "label": "Place/circumstance reporting basis",
+          "description": "Section 8 assigns the reporting duty based on domiciliary or institutional circumstances.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/1682/1/A1969-18.pdf",
+          "claimIds": [
+            "claim_ind42_birth_act_reporting_allocation"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind42_birth_registrar_unknown",
+          "label": "Responsible Registrar unknown",
+          "description": "No event place or record details were supplied, so the responsible Registrar/local office cannot be selected for this case.",
+          "claimIds": [
+            "claim_ind42_birth_live_record_result_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "researchedNoSourceFound": [
+        "recoveries"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "claimIds": [
+        "claim_ind42_birth_act_registrar_jurisdiction",
+        "claim_ind42_birth_act_reporting_allocation",
+        "claim_ind42_birth_live_record_result_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_record_lookup",
+      "label": "Record search / existing entry",
+      "kind": "record",
+      "ownerAgencyId": "agency_karnataka_crs_workflow_ind32",
+      "summary": "Search the relevant birth register or use an authorised certificate-copy route after identifying the Registrar.",
+      "requiredState": "A registration number/date or other record data would be needed; no identifier was entered.",
+      "checks": [
+        {
+          "id": "check_ind42_birth_act_search",
+          "label": "Statutory register search",
+          "description": "Section 17(1) permits any person to cause a Registrar search, subject to State rules including fees, and obtain a certificate electronically or otherwise.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/1682/1/A1969-18.pdf",
+          "claimIds": [
+            "claim_ind42_birth_act_search_and_copy"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind42_birth_ejanma_download_link",
+          "label": "Documented Download Certificate link",
+          "description": "The official eJanMa site capture lists Download Certificate and Birth/Death Verification as public interface links.",
+          "url": "https://www.amrut.mohua.gov.in/uploads/reform/ulb/BIRTHS-AND-DEATHS--OFFICE-OF-THE-CHIEF-REGISTRAR-OF-BIRTHS-AND-DEATHSpdf2.pdf",
+          "claimIds": [
+            "claim_ind42_birth_ejanma_public_capabilities"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind42_birth_record_result_unknown",
+          "label": "Record result unknown",
+          "description": "No lookup was performed, so found/not-found, duplicate, validation, and technical-error behavior remain unknown.",
+          "claimIds": [
+            "claim_ind42_birth_live_record_result_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind42_birth_copy_registration_center",
+          "label": "Registration-centre copy handoff",
+          "description": "The official eJanMa capture directs additional-copy requests to data-entry operators of the concerned Nada Kacheri and respective birth-and-death registration centres.",
+          "url": "https://www.amrut.mohua.gov.in/uploads/reform/ulb/BIRTHS-AND-DEATHS--OFFICE-OF-THE-CHIEF-REGISTRAR-OF-BIRTHS-AND-DEATHSpdf2.pdf",
+          "claimIds": [
+            "claim_ind42_birth_ejanma_copy_recovery"
+          ],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "claimIds": [
+        "claim_ind42_birth_act_search_and_copy",
+        "claim_ind42_birth_ejanma_public_capabilities",
+        "claim_ind42_birth_ejanma_copy_recovery",
+        "claim_ind42_birth_live_record_result_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_certificate_output",
+      "label": "Certificate output and status",
+      "kind": "record",
+      "ownerAgencyId": "agency_bbmp_birth_workflow_ind32",
+      "summary": "Receive or download the certificate/certified copy after the record is found, if the current authorised route supports it.",
+      "requiredState": "Current duplicate fee, format, delivery, acknowledgement/status behavior, and issuance outcome are unknown.",
+      "checks": [
+        {
+          "id": "check_ind42_birth_act_certificate_output",
+          "label": "Certificate legal output",
+          "description": "Sections 12 and 17 provide for a signed certificate from the register; section 17 allows electronic or other issuance subject to State rules.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/1682/1/A1969-18.pdf",
+          "claimIds": [
+            "claim_ind42_birth_act_free_certificate",
+            "claim_ind42_birth_act_search_and_copy"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind42_birth_ejanma_download_output",
+          "label": "Documented download capability",
+          "description": "The official eJanMa capture lists Download Certificate, but does not show the current fields or a completed download.",
+          "url": "https://www.amrut.mohua.gov.in/uploads/reform/ulb/BIRTHS-AND-DEATHS--OFFICE-OF-THE-CHIEF-REGISTRAR-OF-BIRTHS-AND-DEATHSpdf2.pdf",
+          "claimIds": [
+            "claim_ind42_birth_ejanma_public_capabilities"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind42_birth_copy_output_unknown",
+          "label": "Copy/output outcome unknown",
+          "description": "No request, payment, certificate retrieval, acknowledgement, or status query was performed.",
+          "claimIds": [
+            "claim_ind42_birth_current_copy_delivery_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind42_birth_copy_clarification",
+          "label": "District clarification handoff",
+          "description": "The official eJanMa capture directs clarifications to the District Statistical Officer of the concerned district; it does not publish a current Bengaluru contact in the captured page.",
+          "url": "https://www.amrut.mohua.gov.in/uploads/reform/ulb/BIRTHS-AND-DEATHS--OFFICE-OF-THE-CHIEF-REGISTRAR-OF-BIRTHS-AND-DEATHSpdf2.pdf",
+          "claimIds": [
+            "claim_ind42_birth_ejanma_copy_recovery"
+          ],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "claimIds": [
+        "claim_ind42_birth_act_free_certificate",
+        "claim_ind42_birth_act_search_and_copy",
+        "claim_ind42_birth_ejanma_public_capabilities",
+        "claim_ind42_birth_current_copy_delivery_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 70
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_ind42_birth_public_to_jurisdiction",
+      "fromNodeId": "node_birth_public_entry",
+      "toNodeId": "node_event_jurisdiction",
+      "relationship": "requires",
+      "label": "A copy request must be mapped to the place-of-occurrence Registrar before a register search can be directed.",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "claimIds": [
+        "claim_ind42_birth_act_registrar_jurisdiction",
+        "claim_ind42_birth_act_reporting_allocation"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind42_birth_jurisdiction_to_lookup",
+      "fromNodeId": "node_event_jurisdiction",
+      "toNodeId": "node_record_lookup",
+      "relationship": "requires",
+      "label": "The relevant local area/Registrar is needed to search the existing register.",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "claimIds": [
+        "claim_ind42_birth_act_registrar_jurisdiction",
+        "claim_ind42_birth_act_search_and_copy"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind42_birth_lookup_to_output",
+      "fromNodeId": "node_record_lookup",
+      "toNodeId": "node_certificate_output",
+      "relationship": "produces",
+      "label": "A successful register search/copy route produces a certified certificate or copy when the authorised system or Registrar issues it.",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "claimIds": [
+        "claim_ind42_birth_act_search_and_copy",
+        "claim_ind42_birth_ejanma_public_capabilities"
+      ],
+      "status": "partial"
+    }
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind42_birth_live_copy_behavior_unknown",
+      "title": "Current lookup and duplicate-copy behavior is not publicly verified",
+      "category": "documentation",
+      "symptom": "The default path reaches the legal search/certificate step, but the current Bengaluru public target, accepted fields, fee, delivery, status, and not-found response cannot be confirmed from the reviewed sources.",
+      "likelyCause": "The current public eJanMa/municipal interface and a particular record were not opened or queried; the available official Karnataka capture is dated 2024 and the Act delegates implementation details to State rules.",
+      "recovery": "Use the responsible Registrar/respective birth-and-death registration centre; the official capture also names concerned data-entry operators and the District Statistical Officer for clarifications. Confirm the current office and fee before any real request. No live submission was made.",
+      "ownerAgencyIds": [
+        "agency_bbmp_birth_workflow_ind32",
+        "agency_karnataka_crs_workflow_ind32"
+      ],
+      "nodeIds": [
+        "node_record_lookup",
+        "node_certificate_output"
+      ],
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "claimIds": [
+        "claim_ind42_birth_ejanma_copy_recovery",
+        "claim_ind42_birth_live_record_result_unknown",
+        "claim_ind42_birth_current_copy_delivery_unknown"
+      ],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

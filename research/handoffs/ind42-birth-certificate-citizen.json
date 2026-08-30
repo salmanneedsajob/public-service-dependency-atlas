@@ -1,0 +1,139 @@
+{
+  "_handoff": {
+    "issue": "IND-42",
+    "generatedAt": "2026-08-30",
+    "status": "ready_for_merge",
+    "scope": "Public first-person Bengaluru accounts only. These claims identify possible default-path failure modes and recovery leads that are not official procedure, current fee information, or a service standard. Usernames, names, family details, office-location detail, document numbers, contact details, and payment amounts are intentionally omitted. Accounts that differ are retained as potential contradictions and are not resolved here."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind42_birth_name_portal_field_unusable",
+      "title": "How I add the name in the birth certificate for my newborn online.",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1ubu8lh/how_i_add_the_name_in_the_birth_certificate_for/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2026-06-21",
+      "type": "citizen_evidence",
+      "notes": "A parent describes their own attempts to add a newborn's name through eJanma and Seva Sindhu. The account is retained only for the reported interface limitation; it does not establish that the service was unavailable to all users or that an offline route was required."
+    },
+    {
+      "id": "source_ind42_birth_registered_name_missing_output",
+      "title": "How to include the name of the baby in BBMP Birth Certificate?",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1uax8yg/how_to_include_the_name_of_the_baby_in_bbmp_birth/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2026-06-20",
+      "type": "citizen_evidence",
+      "notes": "A parent reports that their hospital-submitted registration form included the child's name but the certificate downloaded from Seva Sindhu showed an empty name. This is a single claimed input/output mismatch, not proof of a registration-system defect."
+    },
+    {
+      "id": "source_ind42_birth_pre2010_not_online",
+      "title": "How to digitise birth certificate (pre-2010)?",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1lxs0rr/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2025-07-12",
+      "type": "citizen_evidence",
+      "notes": "A citizen reports holding a physical BBMP birth certificate that did not appear online and asks about digitisation. No resolution is claimed by the author."
+    },
+    {
+      "id": "source_ind42_birth_correction_unreceipted_payment",
+      "title": "Bbmp baby name addition and mother name correction",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1vjxyxk/bbmp_baby_name_addition_and_mother_name_correction/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2026-08-09",
+      "type": "citizen_evidence",
+      "notes": "A parent describes a completed in-person correction and alleges an unexpected unreceipted payment request after receiving the document. This is an allegation about one encounter, not a fee rule, office practice, or official recovery route."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind42_birth_name_portal_field_unusable",
+      "text": "One parent reported that they could not enter a child's name into the blank name field while attempting name inclusion through Seva Sindhu.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_name_workflow"
+      ],
+      "nodeIds": [
+        "node_name_inclusion"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_name_portal_field_unusable"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Single citizen report of an attempted interaction; it does not prove the field's current behaviour, eligibility, or a universally required recovery path."
+    },
+    {
+      "id": "claim_ind42_birth_registered_name_missing_output",
+      "text": "One parent reported that a certificate downloaded from Seva Sindhu had an empty child-name field although their hospital-submitted registration form included the name.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_name_workflow"
+      ],
+      "nodeIds": [
+        "node_name_inclusion",
+        "node_certificate_output"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_registered_name_missing_output"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Single reported input/output discrepancy; it does not establish whether the name was absent from the underlying record, the download, or a particular processing stage."
+    },
+    {
+      "id": "claim_ind42_birth_pre2010_not_online",
+      "text": "One citizen reported that their pre-2010 physical BBMP birth certificate did not appear online.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow",
+        "scenario_ind32_birth_delayed_workflow"
+      ],
+      "nodeIds": [
+        "node_record_lookup"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_pre2010_not_online"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The author reports no outcome. The account does not establish an archival cutoff, digitisation policy, or route for any other certificate."
+    },
+    {
+      "id": "claim_ind42_birth_correction_unreceipted_payment",
+      "text": "One parent alleged that an in-person correction encounter included an unexpected request for an unreceipted payment after the updated certificate was provided.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_correction_workflow"
+      ],
+      "nodeIds": [
+        "node_correction",
+        "node_certificate_output"
+      ],
+      "sourceIds": [
+        "source_ind42_birth_correction_unreceipted_payment"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_ind32_birth_name_correction_direct_success"
+      ],
+      "notes": "One public allegation about a completed correction encounter. It is retained as a potential practical contradiction with a separate report of a successful in-person correction, not as evidence of an official payment requirement or a general office practice."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

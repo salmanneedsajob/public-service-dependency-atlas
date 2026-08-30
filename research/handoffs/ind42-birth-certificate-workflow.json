@@ -1,0 +1,436 @@
+{
+  "_handoff": {
+    "issue": "IND-42",
+    "generatedAt": "2026-08-30",
+    "status": "ready_for_audit",
+    "scope": "Public-workflow pass for the default Bengaluru scenario: an already registered birth and certificate copy.",
+    "observationNote": "Unauthenticated, read-only observation of the public Bengaluru Smart City birth/death lookup page. Birth was selected, then the registration-number search control was opened without entering a registration number or date of birth. No login, OTP, CAPTCHA, upload, payment, submission, case lookup, or certificate download was attempted. The legacy BBMP citizen-services URL visibly returned a connection-refused error. This handoff stops at the identifier boundary."
+  },
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru birth certificate public workflow — registered copy",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-30",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Only public controls, visible failure text, and published support/recovery routes are recorded; do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_bengaluru_smart_city_ind42",
+      "name": "Bengaluru Smart City Limited",
+      "shortName": "BenSCL / SmartNet",
+      "officialUrl": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm"
+    },
+    {
+      "id": "agency_bbmp_health_ind42",
+      "name": "Bruhat Bengaluru Mahanagara Palike",
+      "shortName": "BBMP",
+      "officialUrl": "https://site.bbmp.gov.in/citizenservice.html"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind42_birth_copy_workflow",
+      "label": "Already registered birth — certificate copy",
+      "summary": "An unauthenticated citizen starts at the public Birth & Death lookup and seeks a copy of an existing birth record.",
+      "tags": ["copy", "registered-birth", "public-entry", "identifier-boundary"],
+      "pathNodeIds": ["node_birth_public_entry", "node_event_jurisdiction", "node_record_lookup", "node_certificate_output"],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind42_birth_lookup_live",
+      "title": "Birth & Death Certificate Details — public lookup",
+      "publisher": "Bengaluru Smart City Limited / SmartNet",
+      "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Direct public page observation. The page footer identifies Bengaluru Smart City Limited/BenSCL, shows Version 1.3, and exposes the Birth Certificate selector and search controls before any identifier is entered."
+    },
+    {
+      "id": "source_ind42_birth_contact",
+      "title": "Contact Us — Bengaluru Smart City Limited",
+      "publisher": "Bengaluru Smart City Limited",
+      "url": "https://smartoneblr.com/wss/Contact.htm",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Public contact page lists the BenSCL office, phone 080-22200080, and email bsclnodal@gmail.com. This is a published support route, not a guarantee of birth-record resolution."
+    },
+    {
+      "id": "source_ind42_birth_faq",
+      "title": "FAQ'S — One City One Portal",
+      "publisher": "Bengaluru Smart City Limited / SmartNet",
+      "url": "https://smartoneblr.com/wss/static_content/FAQS.jsp",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Public FAQ says citizens use the portal's interfaces/widgets by clicking the relevant service and that the portal is free. It contains no birth-specific no-record or lookup-error remedy."
+    },
+    {
+      "id": "source_ind42_birth_bbmp_directory_error",
+      "title": "BBMP Citizen Services — Birth & Death Certificate",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/citizenservice.html",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Direct browser navigation showed the visible error text: “This site can't be reached”; “site.bbmp.gov.in refused to connect”; “ERR_CONNECTION_REFUSED”. The page was not used to infer a working form."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind42_birth_public_entry",
+      "text": "The public SmartNet Birth & Death Certificate Details page initially exposes a certificate-type selector with the options “--Select--”, “Birth Certificate”, and “Death Certificate”.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "nodeIds": ["node_birth_public_entry"],
+      "sourceIds": ["source_ind42_birth_lookup_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Observed while unauthenticated; selecting Birth Certificate did not transmit personal data."
+    },
+    {
+      "id": "claim_ind42_birth_search_modes",
+      "text": "After Birth Certificate is selected, the public page exposes a Search by selector with “Registration Number”, “Temporary Registration No.”, and “Using DOB”.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "nodeIds": ["node_record_lookup"],
+      "sourceIds": ["source_ind42_birth_lookup_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Only the selector was inspected; no search mode was submitted."
+    },
+    {
+      "id": "claim_ind42_birth_registration_identifier_boundary",
+      "text": "The Registration Number search mode publicly renders fields labelled “Registration Number” and “Date of Birth”, with the date placeholder “Ex:15-01-22”; no values were entered.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "nodeIds": ["node_event_jurisdiction", "node_record_lookup"],
+      "sourceIds": ["source_ind42_birth_lookup_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is the stopping boundary: registration number and date of birth are identifiers/personal data. No lookup, validation, no-record response, or certificate output was tested."
+    },
+    {
+      "id": "claim_ind42_birth_public_controls",
+      "text": "The public lookup page shows Back and Submit controls; the Submit control is wired to a search action, but no submission was performed.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "nodeIds": ["node_record_lookup", "node_certificate_output"],
+      "sourceIds": ["source_ind42_birth_lookup_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The visible Submit label and its search action were inspected; action outcome, validation text, and output remain unknown because submission is out of scope."
+    },
+    {
+      "id": "claim_ind42_birth_directory_failure",
+      "text": "On 2026-08-30, direct navigation to the BBMP Citizen Services birth/death directory visibly returned “This site can't be reached”, “site.bbmp.gov.in refused to connect”, and “ERR_CONNECTION_REFUSED”.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "nodeIds": ["node_birth_public_entry"],
+      "sourceIds": ["source_ind42_birth_bbmp_directory_error"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is an observed infrastructure failure of the legacy directory URL, not a birth-record no-match signal."
+    },
+    {
+      "id": "claim_ind42_birth_published_recovery",
+      "text": "The BenSCL public Contact Us page publishes a support route with phone 080-22200080 and email bsclnodal@gmail.com; the public lookup page also exposes a ContactUs link and a Back control.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "nodeIds": ["node_birth_public_entry", "node_certificate_output"],
+      "sourceIds": ["source_ind42_birth_contact", "source_ind42_birth_lookup_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published support/navigation only; the pages do not promise a no-record remedy, status lookup, fee reversal, or certificate issuance."
+    },
+    {
+      "id": "claim_ind42_birth_outcome_unknown",
+      "text": "The current public pass does not establish the post-identifier result, no-record message, fee, login requirement, certificate download, acknowledgement, status tracking, or recovery after a failed lookup.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "nodeIds": ["node_record_lookup", "node_certificate_output"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The pass stopped before entering identifiers or activating Submit. This is a genuine research boundary, not evidence that the government has no such behavior."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_birth_public_entry",
+      "label": "Public Birth & Death entry",
+      "kind": "service",
+      "ownerAgencyId": "agency_bengaluru_smart_city_ind42",
+      "summary": "Open the public SmartNet Birth & Death Certificate Details page.",
+      "requiredState": "Unauthenticated browser session; certificate type can be selected without personal data.",
+      "checks": [
+        {
+          "id": "check_ind42_birth_event_selector",
+          "label": "Certificate type selector",
+          "description": "Public selector exposes Birth Certificate and Death Certificate options; Birth Certificate was selected for this pass.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": ["claim_ind42_birth_public_entry"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind42_birth_directory_connection",
+          "label": "Legacy directory connection failure",
+          "description": "The legacy BBMP citizen-services directory visibly displayed “This site can't be reached”; “site.bbmp.gov.in refused to connect”; “ERR_CONNECTION_REFUSED”.",
+          "url": "https://site.bbmp.gov.in/citizenservice.html",
+          "actualError": "This site can't be reached; site.bbmp.gov.in refused to connect; ERR_CONNECTION_REFUSED",
+          "claimIds": ["claim_ind42_birth_directory_failure"],
+          "status": "verified"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind42_birth_contact",
+          "label": "Published BenSCL support route",
+          "description": "Use the published Contact Us page for BenSCL phone 080-22200080 or email bsclnodal@gmail.com when the public directory is unreachable; this page does not promise case resolution.",
+          "url": "https://smartoneblr.com/wss/Contact.htm",
+          "claimIds": ["claim_ind42_birth_published_recovery"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "claimIds": ["claim_ind42_birth_public_entry", "claim_ind42_birth_directory_failure", "claim_ind42_birth_published_recovery"],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_event_jurisdiction",
+      "label": "Event place and Registrar jurisdiction",
+      "kind": "service",
+      "ownerAgencyId": "agency_bengaluru_smart_city_ind42",
+      "summary": "The live lookup page does not expose a place or Registrar selector before the identifier fields.",
+      "requiredState": "Birth event place and responsible Registrar remain case-specific and were not requested or entered.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "researchedNoSourceFound": ["checks", "failureSignals", "recoveries"],
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "claimIds": ["claim_ind42_birth_registration_identifier_boundary", "claim_ind42_birth_outcome_unknown"],
+      "status": "unknown",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_record_lookup",
+      "label": "Record search / existing entry",
+      "kind": "record",
+      "ownerAgencyId": "agency_bengaluru_smart_city_ind42",
+      "summary": "Choose a public search mode and stop before entering the registration identifier/date of birth.",
+      "requiredState": "Registration Number and Date of Birth are required in the observed mode; no values were entered.",
+      "checks": [
+        {
+          "id": "check_ind42_birth_search_modes",
+          "label": "Search mode control",
+          "description": "Public Search by selector exposes Registration Number, Temporary Registration No., and Using DOB.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": ["claim_ind42_birth_search_modes"],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind42_birth_registration_fields",
+          "label": "Registration-number fields",
+          "description": "Registration Number mode renders Registration Number and Date of Birth fields with the observed date placeholder.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": ["claim_ind42_birth_registration_identifier_boundary"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [
+        {
+          "id": "recovery_ind42_birth_back_control",
+          "label": "Public Back control",
+          "description": "The lookup page exposes a Back button before any identifier is entered; its effect is navigation only and no submission was performed.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": ["claim_ind42_birth_public_controls", "claim_ind42_birth_published_recovery"],
+          "status": "partial"
+        }
+      ],
+      "researchedNoSourceFound": ["failureSignals"],
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "claimIds": ["claim_ind42_birth_search_modes", "claim_ind42_birth_registration_identifier_boundary", "claim_ind42_birth_public_controls", "claim_ind42_birth_outcome_unknown"],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_certificate_output",
+      "label": "Certificate output and status",
+      "kind": "outcome",
+      "ownerAgencyId": "agency_bengaluru_smart_city_ind42",
+      "summary": "Certificate result, download, acknowledgement, fee, and status are beyond the identifier/submission boundary.",
+      "requiredState": "A valid identifier and date of birth would be needed; none was entered and Submit was not activated.",
+      "checks": [
+        {
+          "id": "check_ind42_birth_submit_boundary",
+          "label": "Submit boundary",
+          "description": "A visible Submit control is present, but the pass stopped before the search action to avoid lookup/submission and any resulting personal-data exposure.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": ["claim_ind42_birth_public_controls"],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [
+        {
+          "id": "recovery_ind42_birth_support_boundary",
+          "label": "Published support if output cannot be established",
+          "description": "The published BenSCL Contact Us page is the only support route observed; no public certificate-output or no-record recovery was published on the reviewed pages.",
+          "url": "https://smartoneblr.com/wss/Contact.htm",
+          "claimIds": ["claim_ind42_birth_published_recovery", "claim_ind42_birth_outcome_unknown"],
+          "status": "partial"
+        }
+      ],
+      "researchedNoSourceFound": ["failureSignals"],
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "claimIds": ["claim_ind42_birth_public_controls", "claim_ind42_birth_published_recovery", "claim_ind42_birth_outcome_unknown"],
+      "status": "unknown",
+      "displayOrder": 40
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_ind42_birth_entry_jurisdiction",
+      "fromNodeId": "node_birth_public_entry",
+      "toNodeId": "node_event_jurisdiction",
+      "relationship": "requires",
+      "label": "The public entry is followed by a jurisdiction boundary, but no public place/Registrar selector was exposed in this pass.",
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "claimIds": ["claim_ind42_birth_registration_identifier_boundary", "claim_ind42_birth_outcome_unknown"],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_ind42_birth_jurisdiction_lookup",
+      "fromNodeId": "node_event_jurisdiction",
+      "toNodeId": "node_record_lookup",
+      "relationship": "requires",
+      "label": "Record search remains behind the registration identifier/date-of-birth boundary; the current public route does not expose the jurisdiction handoff.",
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "claimIds": ["claim_ind42_birth_registration_identifier_boundary", "claim_ind42_birth_outcome_unknown"],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind42_birth_lookup_output",
+      "fromNodeId": "node_record_lookup",
+      "toNodeId": "node_certificate_output",
+      "relationship": "produces",
+      "label": "A certificate result may follow a successful lookup, but no identifier or search result was used in this pass.",
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "claimIds": ["claim_ind42_birth_outcome_unknown"],
+      "status": "unknown"
+    }
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind42_birth_directory_unreachable",
+      "title": "Legacy BBMP directory unreachable",
+      "category": "infrastructure",
+      "symptom": "Direct navigation to the BBMP Citizen Services birth/death directory displayed “This site can't be reached”, “site.bbmp.gov.in refused to connect”, and “ERR_CONNECTION_REFUSED”.",
+      "likelyCause": "The legacy site endpoint refused the browser connection at the time of observation.",
+      "recovery": "Use the public SmartNet lookup endpoint observed in this pass or the published BenSCL Contact Us phone/email; do not treat this as a record no-match result.",
+      "ownerAgencyIds": ["agency_bbmp_health_ind42", "agency_bengaluru_smart_city_ind42"],
+      "nodeIds": ["node_birth_public_entry"],
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "claimIds": ["claim_ind42_birth_directory_failure", "claim_ind42_birth_published_recovery"],
+      "status": "verified"
+    },
+    {
+      "id": "roadblock_ind42_birth_identifier_boundary",
+      "title": "Lookup stops at identifier fields",
+      "category": "process",
+      "symptom": "Registration Number mode renders Registration Number and Date of Birth fields, but no values were entered.",
+      "likelyCause": "A certificate-copy lookup requires case-specific record data that was intentionally not supplied in this public pass.",
+      "recovery": "Use the Back control or the published BenSCL support route; keep no-record text, status, fee, and output unknown until a user independently supplies an identifier and is prepared to continue.",
+      "ownerAgencyIds": ["agency_bengaluru_smart_city_ind42"],
+      "nodeIds": ["node_record_lookup", "node_certificate_output"],
+      "scenarioIds": ["scenario_ind42_birth_copy_workflow"],
+      "claimIds": ["claim_ind42_birth_registration_identifier_boundary", "claim_ind42_birth_published_recovery", "claim_ind42_birth_outcome_unknown"],
+      "status": "partial"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_ind42_birth_registered_copy",
+      "title": "Public lookup for a registered birth-certificate copy",
+      "scenarioId": "scenario_ind42_birth_copy_workflow",
+      "context": "Unauthenticated observer on 2026-08-30; no personal data, identifier, submission, payment, or download.",
+      "steps": [
+        {
+          "id": "step_ind42_birth_open",
+          "label": "Open public entry",
+          "nodeId": "node_birth_public_entry",
+          "action": "Open the public SmartNet Birth & Death Certificate Details page and choose Birth Certificate.",
+          "expectedResult": "Birth Certificate is selected and the Search by control appears.",
+          "claimIds": ["claim_ind42_birth_public_entry"],
+          "status": "verified"
+        },
+        {
+          "id": "step_ind42_birth_choose_search",
+          "label": "Choose public search mode",
+          "nodeId": "node_record_lookup",
+          "action": "Open Search by and choose Registration Number without typing a value.",
+          "expectedResult": "Registration Number and Date of Birth fields become visible.",
+          "claimIds": ["claim_ind42_birth_search_modes", "claim_ind42_birth_registration_identifier_boundary"],
+          "status": "verified"
+        },
+        {
+          "id": "step_ind42_birth_stop_identifier",
+          "label": "Stop at identifier boundary",
+          "nodeId": "node_record_lookup",
+          "action": "Do not enter Registration Number or Date of Birth and do not activate Submit.",
+          "expectedResult": "No lookup, validation message, no-record response, certificate, payment, or status is observed.",
+          "claimIds": ["claim_ind42_birth_public_controls", "claim_ind42_birth_outcome_unknown"],
+          "status": "unknown"
+        },
+        {
+          "id": "step_ind42_birth_recovery",
+          "label": "Published recovery/support",
+          "nodeId": "node_birth_public_entry",
+          "action": "If the directory is unreachable or the observer cannot proceed, use the published BenSCL Contact Us route or the page's Back control.",
+          "expectedResult": "A public support/navigation route is available; case resolution is not guaranteed.",
+          "claimIds": ["claim_ind42_birth_directory_failure", "claim_ind42_birth_published_recovery"],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_ind42_birth_identifier",
+          "fromNodeId": "node_record_lookup",
+          "toNodeId": "node_certificate_output",
+          "description": "Certificate output is dependent on a case-specific identifier/search action that was not performed.",
+          "claimIds": ["claim_ind42_birth_registration_identifier_boundary", "claim_ind42_birth_outcome_unknown"],
+          "status": "unknown"
+        }
+      ],
+      "failureRoadblockIds": ["roadblock_ind42_birth_directory_unreachable", "roadblock_ind42_birth_identifier_boundary"],
+      "recoveryNotes": [
+        "The visible connection-refused error belongs to the legacy BBMP directory, not to a record lookup.",
+        "BenSCL publishes phone 080-22200080 and email bsclnodal@gmail.com on its Contact Us page.",
+        "No birth-specific no-record recovery, status tracker, fee, or output route was publicly established before the identifier boundary."
+      ],
+      "documentationQualityNotes": [
+        "The live SmartNet page exposes concrete public selectors and fields, but the current pass cannot establish post-identifier behavior.",
+        "The BBMP directory error was directly visible on 2026-08-30; the SmartNet route was directly observed and is retained as a separate official public endpoint."
+      ],
+      "status": "partial"
+    }
+  ]
+}

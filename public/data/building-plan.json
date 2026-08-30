@@ -3,7 +3,7 @@
     "schemaVersion": "1.0.0",
     "title": "Bengaluru building plan evidence ledger",
     "jurisdiction": "Bengaluru, Karnataka, India",
-    "asOf": "2026-08-28",
+    "asOf": "2026-08-31",
     "dataKind": "research",
     "disclaimer": "Independent research, not official advice. Public sources and known gaps are shown together; do not submit personal data through this ledger."
   },
@@ -18,37 +18,20 @@
       "id": "agency_bbmp_bpas_ind32",
       "name": "Bruhat Bengaluru Mahanagara Palike Building Plan Approval System",
       "shortName": "BBMP BPAS / Town Planning",
-      "officialUrl": "https://bbmp.gov.in/"
-    },
-    {
-      "id": "agency_bda_ind32_building",
-      "name": "Bangalore Development Authority",
-      "shortName": "BDA",
-      "officialUrl": "https://bbmp.gov.in/"
-    },
-    {
-      "id": "agency_gba_building_ind32_w",
-      "name": "Greater Bengaluru Authority / Bengaluru City Corporations Town Planning",
-      "shortName": "GBA Town Planning",
-      "officialUrl": "https://bbmp.gov.in/"
-    },
-    {
-      "id": "agency_bpas_ind32_w",
-      "name": "BBMP Building Plan Approval System",
-      "shortName": "BBMP BPAS",
-      "officialUrl": "https://bbmp.gov.in/"
+      "officialUrl": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx"
     }
   ],
   "scenarios": [
     {
       "id": "scenario_building_w_suvarna",
       "label": "Smaller/Suvarna Paravanige lead",
-      "summary": "Publicly described architect-led zonal route for smaller layouts.",
+      "summary": "Publicly described architect-led zonal route for smaller layouts. The public evidence does not confirm this as an end-to-end current application sequence. The public evidence does not confirm this as an end-to-end current application sequence. The public evidence does not confirm this as an end-to-end current application sequence. The public evidence does not confirm this as an end-to-end current application sequence.",
       "tags": [
         "building-plan",
         "suvarna-paravanige"
       ],
       "pathNodeIds": [
+        "node_building_w_entry",
         "node_building_w_route",
         "node_building_w_professional",
         "node_building_w_docs",
@@ -62,12 +45,13 @@
     {
       "id": "scenario_building_w_general",
       "label": "Larger/general proposal lead",
-      "summary": "Publicly described path with additional chief engineer/joint commissioner approval stages.",
+      "summary": "Publicly described path with additional chief engineer/joint commissioner approval stages. The public evidence does not confirm this as an end-to-end current application sequence. The public evidence does not confirm this as an end-to-end current application sequence. The public evidence does not confirm this as an end-to-end current application sequence. The public evidence does not confirm this as an end-to-end current application sequence.",
       "tags": [
         "building-plan",
         "general-proposal"
       ],
       "pathNodeIds": [
+        "node_building_w_entry",
         "node_building_w_route",
         "node_building_w_professional",
         "node_building_w_docs",
@@ -114,42 +98,6 @@
       "notes": "Current public directory lists Building Permission. This is a general-site reference, not claim-specific evidence. A more specific public document or endpoint was not verified on 2026-08-29; wording that depends only on this source is retained at Grade C or Unknown."
     },
     {
-      "id": "source_building_index",
-      "title": "BPAS public entry page",
-      "publisher": "Bruhat Bengaluru Mahanagara Palike",
-      "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
-      "accessedAt": "2026-08-28",
-      "type": "official_guidance",
-      "notes": "Direct BPAS public entry page, verified reachable on 2026-08-29. It establishes a public BPAS entry point, but does not verify every historic route label or workflow step."
-    },
-    {
-      "id": "source_building_bpas",
-      "title": "BPAS Plan Approval Manual",
-      "publisher": "Bruhat Bengaluru Mahanagara Palike IT Department",
-      "url": "https://bpas.bbmpgov.in/BPAMSClient4/Downloads/PlanApprovalManual.pdf",
-      "accessedAt": "2026-08-28",
-      "type": "official_guidance",
-      "notes": "Direct BPAS manual PDF, verified reachable on 2026-08-29. It is dated guidance and not proof that every described step is current."
-    },
-    {
-      "id": "source_building_procedure",
-      "title": "BPAS FAQs",
-      "publisher": "Bruhat Bengaluru Mahanagara Palike",
-      "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
-      "accessedAt": "2026-08-28",
-      "type": "official_guidance",
-      "notes": "Direct BPAS FAQ page, verified reachable on 2026-08-29. It is public guidance, not a complete procedure or proof of an authenticated submission flow."
-    },
-    {
-      "id": "source_building_submission",
-      "title": "BPAS public entry page",
-      "publisher": "Bruhat Bengaluru Mahanagara Palike",
-      "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
-      "accessedAt": "2026-08-28",
-      "type": "official_guidance",
-      "notes": "Direct BPAS public entry page, verified reachable on 2026-08-29. No login or submission was attempted."
-    },
-    {
       "id": "source_building_w_gba",
       "title": "General-site reference — Greater Bengaluru Authority public home",
       "publisher": "Government of Karnataka / GBA",
@@ -157,33 +105,6 @@
       "accessedAt": "2026-08-28",
       "type": "official_portal",
       "notes": "Current Building Permission label. This is a general-site reference, not claim-specific evidence. A more specific public document or endpoint was not verified on 2026-08-29; wording that depends only on this source is retained at Grade C or Unknown."
-    },
-    {
-      "id": "source_building_w_procedure",
-      "title": "BPAS FAQs",
-      "publisher": "Bruhat Bengaluru Mahanagara Palike",
-      "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
-      "accessedAt": "2026-08-28",
-      "type": "official_guidance",
-      "notes": "Direct BPAS FAQ page, verified reachable on 2026-08-29. It does not verify the full authenticated workflow."
-    },
-    {
-      "id": "source_building_w_bpas",
-      "title": "BPAS Plan Approval Manual",
-      "publisher": "Bruhat Bengaluru Mahanagara Palike IT Department",
-      "url": "https://bpas.bbmpgov.in/BPAMSClient4/Downloads/PlanApprovalManual.pdf",
-      "accessedAt": "2026-08-28",
-      "type": "official_guidance",
-      "notes": "Direct BPAS manual PDF, verified reachable on 2026-08-29. Dated workflow description; current authenticated behaviour was not observed."
-    },
-    {
-      "id": "source_building_w_submission",
-      "title": "BPAS public entry page",
-      "publisher": "Bruhat Bengaluru Mahanagara Palike",
-      "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
-      "accessedAt": "2026-08-28",
-      "type": "official_guidance",
-      "notes": "Direct BPAS public entry page, verified reachable on 2026-08-29. No login or submission was attempted."
     },
     {
       "id": "source_ind32_building_citizen_stuck_gplus2",
@@ -203,12 +124,169 @@
       "publishedAt": "2026-06-19",
       "type": "citizen_evidence",
       "notes": "A citizen constructing a commercial building reports being told that treatment of a nearby road could affect the apparent proposal and reports an unofficial payment demand. The account is unverified and does not establish any road-classification rule, permission entitlement, official fee, or misconduct finding."
+    },
+    {
+      "id": "source_ind47_bpas_public_entry",
+      "title": "BPAS/GBA public construction-permit entry — Nambike Nakshe",
+      "publisher": "Greater Bengaluru Authority / BBMP",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Current public page observed 2026-08-31. It shows single-window construction permits, online digitally signed certificates, five city corporations, sign-in fields with CAPTCHA, public search/registration/payment links, and the message that e-Khata is mandatory for Building Licence, Plinth Certificate, and Occupancy Certificate applications from 1 July 2025. No login or value entry was attempted."
+    },
+    {
+      "id": "source_ind47_bpas_faq",
+      "title": "BPAS/GBA building-permit FAQ",
+      "publisher": "Greater Bengaluru Authority / BBMP",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Current public FAQ observed 2026-08-31. It covers professional-led online filing, CAF fields, document/NOC leads, risk classification, eight construction-permit steps, payment mode, timelines, tracking, common rejection reasons, and single-window NOC handling. The FAQ contains older terminology and linked legacy references; claims are limited to what the page presently states."
+    },
+    {
+      "id": "source_ind47_bpas_downloads",
+      "title": "BPAS public downloads, manuals, forms and checklist directory",
+      "publisher": "Greater Bengaluru Authority / BBMP",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/download.aspx",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Current public downloads page observed 2026-08-31. It lists the Plan Approval manual, architect utility/help, Plan Sanction checklist, Schedule-II and Schedule-III, affidavits/bonds, Nambike Nakshe and Single Plot Approval forms, and zone GIS PDFs. Listing a file does not prove current eligibility or a completed application."
+    },
+    {
+      "id": "source_ind47_plan_sanction_checklist",
+      "title": "Checklist for Building Plan Sanction",
+      "publisher": "Greater Bengaluru Authority / BBMP",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/Downloads/Plan_Sanction_checklist.pdf",
+      "accessedAt": "2026-08-31",
+      "type": "official_form",
+      "notes": "Direct public three-page checklist PDF observed 2026-08-31. It has fields for applicant/site, BDA layout, plot-area comparisons, RMP-2015 land use, conversion and revenue documents, Khata and tax receipt, earlier sanction, Metro NOC, NOC details, inspection date, road width, site/physical features, FAR/plinth/built-up area, floors/height, buffers, rainwater harvesting, solar, trees, solid waste, STP, transformer yard, and zoning-regulation comparison. It is a checklist example, not a property-specific determination."
+    },
+    {
+      "id": "source_ind47_plan_approval_manual",
+      "title": "User Manual for Licensed Architect (Applicant) — BPAS Plan Approval",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike IT Department",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/Downloads/PlanApprovalManual.pdf",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2020-08-27",
+      "type": "official_guidance",
+      "notes": "Direct official PDF. Revision history ends at version 2.1 dated 27-08-2020. It documents authenticated architect registration, project creation, applicant/consultant details, document and geolocation tabs, application type selection, drawing upload/AutoDCR scrutiny, NOC and document attachment, site progress, challan, final submission, and proposal-flow checks. No authenticated action was performed."
+    },
+    {
+      "id": "source_ind47_suvarna_procedure",
+      "title": "Suvarna Paravanige — Town Planning Section, Zonal Office",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/PDF/buildingplanapproval/Suvarna%20Paravanige%20-%20Zonal%20ADTP.pdf",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Direct official procedure PDF observed through the public BBMP document route. It describes residential sanction on a site area up to 4,000 sq ft, single BF+GF+3 upper floors, up to 4 dwelling units and height up to 15 m; names the zonal ADTP/designated office; lists online filing plus hard-copy records/drawings, 5% scrutiny/processing charge, inspection, document/drawing verification, demand note, fee receipt and approval/rejection; names form and document leads; and states 10 working days. The document does not resolve current property-specific eligibility or implementation."
+    },
+    {
+      "id": "source_ind47_site_inspection_procedure",
+      "title": "Procedure for Site Inspection — Building Plan Approval",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/PDF/buildingplanapproval/Site%20Inspection%20For%20Plan.pdf",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Direct official site-inspection procedure PDF. The published table states inspection within 7 days of application for head-office plan sanction and within 3 days for zonal-office plan sanction, with publication of reports within 48 hours and 24 hours respectively; it also includes an inspection-report template. Search results identify the document as older guidance, so no current SLA is asserted."
+    },
+    {
+      "id": "source_ind47_bpas_calculator",
+      "title": "BBMP/GBA construction-permit fee calculator",
+      "publisher": "Greater Bengaluru Authority / BBMP",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/BBMPCalculator.aspx",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Current public calculator observed 2026-08-31. It exposes service, use, built-up-area, building-type, dwelling-unit, locality and category controls and budget-head fields for scrutiny fee, ground rent, KTCP fee/betterment, security deposit, road cutting, labour cess, licence fee and related charges. Blank controls showed zero estimates; no property values were entered."
+    },
+    {
+      "id": "source_ind47_bpas_citizen_search",
+      "title": "BPAS Citizen Search",
+      "publisher": "Greater Bengaluru Authority / BBMP",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/CitizenSearch/CitizenSearch.aspx?edFlag=MA%3D%3D&iVal=MQ%3D%3D&sName=QkJNUA%3D%3D",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Public search surface observed 2026-08-31. Its visible fields/columns include project or proposal number, zone, ward, plot number, CTS number, applicant name, architect/L.E./S.E. name, and View Application. No search value or case was submitted."
+    },
+    {
+      "id": "source_ind47_bpas_contact",
+      "title": "BPAS Building Licence Cell contact page",
+      "publisher": "Greater Bengaluru Authority / BBMP",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/ContactUs.aspx",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Current public contact page observed 2026-08-31. It lists the Additional Director and Joint Directors for the Building Licence Cell plus zonal Assistant Director contacts for South, East, Dasarahalli, Rajarajeshwari Nagara and Mahadevapura. It does not establish which officer owns a particular property or a response time."
+    },
+    {
+      "id": "source_ind47_bpas_entry_live",
+      "title": "GBA Building Permission System public entry — current observation",
+      "publisher": "Greater Bengaluru Authority / Government of Karnataka",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+      "accessedAt": "2026-08-31",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated page observation. The page displays Nambike Nakshe, single-window construction-permit text, five city-corporation choices (North, South, Central, East and West), a SIGN IN area with username/password/CAPTCHA, Citizen Search and Owner Search labels, project/owner-mobile fields, Quick Links for manuals/circulars and a support link. It also displays the notice that e-Khata is mandatory for Building Licence, Plinth Certificate and Occupancy Certificate applications from 1 July 2025. No credential, CAPTCHA, project number, mobile number or search was entered."
+    },
+    {
+      "id": "source_ind47_bpas_faq_live",
+      "title": "GBA/BBMP Building Permission FAQs — current observation",
+      "publisher": "Greater Bengaluru Authority / Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+      "accessedAt": "2026-08-31",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated FAQ page observation. Building-permit answers publish online CAF/PreDCR and empanelled-professional guidance, document and NOC examples, risk categories, common rejection reasons, stages, timelines, fee guidance, status-search fields, architect/helpdesk recovery and completion/inspection guidance. No application or payment was made."
+    },
+    {
+      "id": "source_ind47_helpdesk_kb_live",
+      "title": "GBA BPAS Helpdesk knowledge base — current observation",
+      "publisher": "Greater Bengaluru Authority / Government of Karnataka",
+      "url": "https://bpas.bbmpgov.in/HelpDesk/KB",
+      "accessedAt": "2026-08-31",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated helpdesk page observation. Public knowledge-base browse/search is visible, with categories for payment issues, pre-sales questions and technical bug reports; the page also exposes a New ticket route and a sign-in control. No ticket or personal information was submitted."
+    },
+    {
+      "id": "source_ind47_helpdesk_ticket_live",
+      "title": "GBA BPAS Helpdesk New Ticket — current observation",
+      "publisher": "Greater Bengaluru Authority / Government of Karnataka",
+      "url": "https://bpas.bbmpgov.in/HelpDesk/Tickets/New",
+      "accessedAt": "2026-08-31",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated New ticket page observation. The form displays Your email address, Subject, category/attachment controls and Project No. fields, plus the public knowledge-base/sign-in navigation. No fields were filled and no ticket was submitted."
+    },
+    {
+      "id": "source_ind47_building_delay_month_report",
+      "title": "Key Documents to check while buying a home in benguluru.",
+      "publisher": "r/BangaloreRealEstates (Reddit)",
+      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1rbvu0s/key_documents_to_check_while_buying_a_home_in/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2026-02-23",
+      "type": "citizen_evidence",
+      "notes": "A public first-person comment reports that building-plan approval had taken almost one month. Username, property, application and other personal details are intentionally omitted. The comment does not identify the competent authority, application stage, document completeness, case status, cause, or applicable timeline."
+    },
+    {
+      "id": "source_ind47_building_map_plan_conflict",
+      "title": "Planning to buy an apartment which has BBMP approved plan, but Dishank app shows raja kaluve passing through it",
+      "publisher": "r/indianrealestate (Reddit)",
+      "url": "https://www.reddit.com/r/indianrealestate/comments/1oh9tk9/planning_to_buy_and_apartment_which_has_bbmp/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2025-10-27",
+      "type": "citizen_evidence",
+      "notes": "A public first-person prospective-buyer post reports an apparent mismatch between a public mapping result and a builder's statement about a BBMP-sanctioned plan. Username, locality, builder, property and map details are intentionally omitted. Neither representation was independently verified."
+    },
+    {
+      "id": "source_ind47_building_connection_dependency",
+      "title": "BBMP : OC Certificate mandatory for BWSSB and BESCOM",
+      "publisher": "r/indianrealestate (Reddit)",
+      "url": "https://www.reddit.com/r/indianrealestate/comments/1kmm3o9/bbmp_oc_certificate_mandatory_for_bwssb_and_bescom/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2025-05-14",
+      "type": "citizen_evidence",
+      "notes": "A public first-person commenter reports having a BBMP-sanctioned plan while encountering a claimed affidavit/CC dependency for an electricity connection, including a temporary connection. Username, plot size, address, blueprint and all other personal details are intentionally omitted. The reported request, requirements, eligibility, and later outcome are unverified."
     }
   ],
   "claims": [
     {
       "id": "claim_building_sec299",
-      "text": "Section 299 of the Karnataka Municipal Corporations Act says a person intending to construct or reconstruct a building must apply to the Commissioner with a site plan, ground plan, elevations, sections, work specification and other prescribed documents, prepared as required by rules/bye-laws.",
+      "text": "The atlas has not independently verified a claim-specific official text for the detailed Section 299 requirements previously summarised here.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_building_w_suvarna",
@@ -218,14 +296,12 @@
         "node_building_jurisdiction",
         "node_building_documents"
       ],
-      "sourceIds": [
-        "source_building_kmc_299"
-      ],
-      "evidenceGrade": "C",
-      "basis": "observation",
-      "status": "partial",
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "Public transcription link; current bye-laws, category thresholds and prescribed checklist are not resolved. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "The retained India Code entry point is not a claim-specific reproduction of the statutory text."
     },
     {
       "id": "claim_building_public_listing",
@@ -240,16 +316,12 @@
         "node_building_jurisdiction",
         "node_building_public_entry"
       ],
-      "sourceIds": [
-        "source_building_gba_home",
-        "source_building_index",
-        "source_building_procedure"
-      ],
-      "evidenceGrade": "C",
-      "basis": "observation",
-      "status": "partial",
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "Directory labels only; no live target was opened. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "Directory labels only; no live target was opened. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap."
     },
     {
       "id": "claim_building_bpas_architect",
@@ -263,14 +335,12 @@
         "node_building_professional",
         "node_building_public_entry"
       ],
-      "sourceIds": [
-        "source_building_bpas"
-      ],
-      "evidenceGrade": "C",
-      "basis": "observation",
-      "status": "partial",
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "Published 2019 IT description; current GBA/professional registration behavior is unknown. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "Published 2019 IT description; current GBA/professional registration behavior is unknown. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap."
     },
     {
       "id": "claim_building_bpas_docs",
@@ -283,14 +353,12 @@
       "nodeIds": [
         "node_building_documents"
       ],
-      "sourceIds": [
-        "source_building_bpas"
-      ],
-      "evidenceGrade": "C",
-      "basis": "observation",
-      "status": "partial",
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "Examples are not a universal current checklist; no file was uploaded. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "Examples are not a universal current checklist; no file was uploaded. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap."
     },
     {
       "id": "claim_building_bpas_review",
@@ -304,14 +372,12 @@
         "node_building_scrutiny",
         "node_building_inspection"
       ],
-      "sourceIds": [
-        "source_building_bpas"
-      ],
-      "evidenceGrade": "C",
-      "basis": "observation",
-      "status": "partial",
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "Dated workflow description; no scrutiny or inspection occurred. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "Dated workflow description; no scrutiny or inspection occurred. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap."
     },
     {
       "id": "claim_building_bpas_fee_license",
@@ -325,14 +391,12 @@
         "node_building_fee",
         "node_building_license"
       ],
-      "sourceIds": [
-        "source_building_bpas"
-      ],
-      "evidenceGrade": "C",
-      "basis": "observation",
-      "status": "partial",
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "Fee amount, authority thresholds and current output timing are unknown. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "Fee amount, authority thresholds and current output timing are unknown. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap."
     },
     {
       "id": "claim_building_route_labels",
@@ -347,14 +411,12 @@
         "node_building_jurisdiction",
         "node_building_manual_route"
       ],
-      "sourceIds": [
-        "source_building_procedure"
-      ],
-      "evidenceGrade": "C",
-      "basis": "observation",
-      "status": "partial",
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "Public labels do not prove current eligibility or office routing for a supplied property. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "Public labels do not prove current eligibility or office routing for a supplied property. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap."
     },
     {
       "id": "claim_building_unknown_case",
@@ -380,7 +442,7 @@
     },
     {
       "id": "claim_building_w_route",
-      "text": "The public procedure index presents multiple route leads: Sakala manual submission at sub-division office, Suvarna Paravanige and CC/OC at zonal office, and plan sanction at head office; which applies is property/category-specific.",
+      "text": "The earlier route-label index cited in this atlas could not be independently reproduced from the current public BPAS FAQ.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_building_w_suvarna",
@@ -389,14 +451,12 @@
       "nodeIds": [
         "node_building_w_route"
       ],
-      "sourceIds": [
-        "source_building_w_procedure"
-      ],
-      "evidenceGrade": "C",
-      "basis": "observation",
-      "status": "partial",
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "No route was selected. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "The prior route-label endpoint is unavailable. Sakala/manual/head-office labels and property applicability remain unverified."
     },
     {
       "id": "claim_building_w_professional",
@@ -410,7 +470,7 @@
         "node_building_w_professional"
       ],
       "sourceIds": [
-        "source_building_w_bpas"
+        "source_ind47_plan_approval_manual"
       ],
       "evidenceGrade": "C",
       "basis": "observation",
@@ -430,7 +490,7 @@
         "node_building_w_docs"
       ],
       "sourceIds": [
-        "source_building_w_bpas"
+        "source_ind47_plan_approval_manual"
       ],
       "evidenceGrade": "C",
       "basis": "observation",
@@ -451,7 +511,7 @@
         "node_building_w_inspection"
       ],
       "sourceIds": [
-        "source_building_w_bpas"
+        "source_ind47_plan_approval_manual"
       ],
       "evidenceGrade": "C",
       "basis": "observation",
@@ -472,7 +532,7 @@
         "node_building_w_license"
       ],
       "sourceIds": [
-        "source_building_w_bpas"
+        "source_ind47_plan_approval_manual"
       ],
       "evidenceGrade": "C",
       "basis": "observation",
@@ -492,7 +552,7 @@
         "node_building_w_entry"
       ],
       "sourceIds": [
-        "source_building_w_submission"
+        "source_ind47_bpas_entry_live"
       ],
       "evidenceGrade": "C",
       "basis": "observation",
@@ -588,6 +648,749 @@
       "status": "unknown",
       "contradictsClaimIds": [],
       "notes": "No application, upload, payment, inspection request, or case lookup was performed."
+    },
+    {
+      "id": "claim_ind47_current_portal_single_window",
+      "text": "The public BPAS/GBA entry page describes a single-window clearance system for Greater Bengaluru Authority construction permits and says certificates are online digitally signed certificates.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_entry",
+        "node_building_w_route"
+      ],
+      "sourceIds": [
+        "source_ind47_bpas_public_entry"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Current public page observation; it does not prove that every permit category or certificate is available without an authenticated professional/applicant session."
+    },
+    {
+      "id": "claim_ind47_current_portal_login_boundary",
+      "text": "The public BPAS/GBA entry page exposes username, password and CAPTCHA sign-in fields for the permit system; this public-only pass stops before authenticated project creation or submission.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_entry"
+      ],
+      "sourceIds": [
+        "source_ind47_bpas_public_entry"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No credentials, CAPTCHA, or authentication attempt was made."
+    },
+    {
+      "id": "claim_ind47_ekatha_mandatory_message",
+      "text": "The public BPAS/GBA entry page states that e-Khata is mandatory for Building Licence, Plinth Certificate and Occupancy Certificate applications from 1 July 2025.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_docs",
+        "node_building_w_license"
+      ],
+      "sourceIds": [
+        "source_ind47_bpas_public_entry"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Current portal message observed 2026-08-31. It does not show how e-Khata is validated or whether exceptions exist."
+    },
+    {
+      "id": "claim_ind47_online_professional_predcr_route",
+      "text": "The current BPAS FAQ says a building-permission applicant applies online with requisite documents and PreDCR drawings through empanelled professionals on the BBMP portal.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_professional",
+        "node_building_w_entry"
+      ],
+      "sourceIds": [
+        "source_ind47_bpas_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ states the professional-led route; no professional was selected and no application was created."
+    },
+    {
+      "id": "claim_ind47_caf_fields_and_noc_transfer",
+      "text": "The current BPAS FAQ says the architect fills a Common Application Form with plot and professional details including owner, plot size, colony category, zone and consultant details, and that relevant information is transferred to external agencies for NOCs as required.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_professional",
+        "node_building_w_docs"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "This records the FAQ description, not the fields or NOC result for a particular case. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap."
+    },
+    {
+      "id": "claim_ind47_faq_document_leads",
+      "text": "The current BPAS FAQ lists plans and drawings, ownership documents, Khata extract/certificate, up-to-date tax receipt, and digitally signed professional/safety/supervision/debris-removal/indemnity declarations as CAF document leads.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_docs"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ presents these as CAF document leads; exact requiredness remains proposal-specific. This broad statement is retained only as an unresolved lead after the source-specific citation cap."
+    },
+    {
+      "id": "claim_ind47_noc_conditions",
+      "text": "The current BPAS FAQ says NOC requirements depend on plot size, location, building type and height, and gives examples including aviation/fire/BESCOM for buildings at least 15 m, KSPCB/BWSSB for larger built-up area or 20-plus dwelling-unit residential proposals, SEIAA above 20,000 sq m, and BMRCL when a site abuts a proposed metro line.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_docs",
+        "node_building_w_route"
+      ],
+      "sourceIds": [
+        "source_ind47_bpas_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The thresholds and agency examples are transcribed from the current FAQ; no property facts were supplied to select an NOC."
+    },
+    {
+      "id": "claim_ind47_single_window_noc_recovery",
+      "text": "The current BPAS FAQ says applicants do not need separate applications for listed inter-departmental NOCs because the single-window system transmits the relevant information to concerned agencies; it also says online communication is used for inspection scheduling.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_docs",
+        "node_building_w_inspection"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ describes system routing; no NOC request or inspection event was initiated. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap."
+    },
+    {
+      "id": "claim_ind47_eight_permit_steps",
+      "text": "The current BPAS FAQ lists eight construction-permit steps: online CAF, online sanction including required external NOCs, payment and release of the sanctioned plan, plinth-level commencement application, commencement certificate, occupancy CAF, BBMP/NOC-agency inspection, and applicable compounding-fee/charge intimation with occupancy-certificate release.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_docs",
+        "node_building_w_scrutiny",
+        "node_building_w_inspection",
+        "node_building_w_license"
+      ],
+      "sourceIds": [
+        "source_ind47_bpas_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published sequence includes later CC/OC stages; this pass concerns plan approval and did not proceed into a live case."
+    },
+    {
+      "id": "claim_ind47_online_payment_and_demand_note",
+      "text": "The current BPAS FAQ says scrutiny fee is paid online with the application and other fees are paid against demand notes generated at plan-sanction, commencement-certificate and occupancy-certificate stages.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_fee"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No amount, demand note or payment was generated for a case. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap."
+    },
+    {
+      "id": "claim_ind47_online_only_payment_mode",
+      "text": "The current BPAS FAQ says applicable charges are deposited through online modes such as RTGS, NEFT or net banking and that cash, cheque and demand draft are not accepted.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_fee"
+      ],
+      "sourceIds": [
+        "source_ind47_bpas_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_ind47_fee_and_payment_guidance",
+        "claim_ind47_online_only_payment_do_guidance"
+      ],
+      "notes": "This current FAQ statement is recorded separately from older workflow documents that mention demand drafts; no payment method was tested. Public FAQ statements are retained as unreconciled guidance; no payment method was attempted. Public FAQ statements are retained as unreconciled guidance; no payment method was attempted. Public FAQ statements are retained as unreconciled guidance; no payment method was attempted. Public FAQ statements are retained as unreconciled guidance; no payment method was attempted."
+    },
+    {
+      "id": "claim_ind47_risk_matrix",
+      "text": "The current BPAS FAQ publishes risk categories B1 through B5 using plot size, height and floors for residential and non-residential buildings, and gives separate head-office and zonal-office working-day totals for plan sanction and later certificates.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_route",
+        "node_building_w_scrutiny",
+        "node_building_w_license"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ matrix is not used to classify an unknown property. The published totals range by risk and office; no sanction-time guarantee is inferred. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap."
+    },
+    {
+      "id": "claim_ind47_suvarna_scope_and_published_steps",
+      "text": "The public Suvarna Paravanige procedure PDF describes zonal-office residential building-plan sanction for a site area up to 4,000 sq ft, up to four dwelling units and up to 15 m height, with online filing plus hard-copy records/drawings, scrutiny/processing charge, inspection, document/drawing verification, demand note, fee receipt and approval/rejection steps.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_route",
+        "node_building_w_docs",
+        "node_building_w_inspection",
+        "node_building_w_fee"
+      ],
+      "sourceIds": [
+        "source_ind47_suvarna_procedure"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is what the public procedure document states; it is not a property-specific eligibility decision and does not override current portal validation."
+    },
+    {
+      "id": "claim_ind47_suvarna_document_leads",
+      "text": "The public Suvarna Paravanige procedure PDF lists latest Khata certificate/extract, latest tax receipt, sale/title deed, encumbrance certificate, conversion or land-use documents where applicable, revenue sketch where applicable, detailed building plan and architect licence copy as documents to enclose.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_docs",
+        "node_building_w_professional"
+      ],
+      "sourceIds": [
+        "source_ind47_suvarna_procedure"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The document describes enclosure leads and uses 'wherever applicable'; no file was selected or uploaded."
+    },
+    {
+      "id": "claim_ind47_suvarna_ten_working_days",
+      "text": "The public Suvarna Paravanige procedure PDF states a maximum service-delivery time of 10 working days.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_license"
+      ],
+      "sourceIds": [
+        "source_ind47_suvarna_procedure"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published document statement only; it does not establish a current case SLA or account for missing documents, inspection, risk category or portal changes."
+    },
+    {
+      "id": "claim_ind47_public_checklist_inputs",
+      "text": "The public BPAS Plan Sanction checklist contains fields for applicant/site, BDA layout, plot-area comparisons, RMP-2015 land use, conversion and revenue records, Khata and tax receipt, prior sanction, Metro NOC, NOC details, inspection date, road width, site features, FAR/plinth/built-up area, floors/height, buffers and zoning-regulation comparisons.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_docs",
+        "node_building_w_scrutiny",
+        "node_building_w_inspection"
+      ],
+      "sourceIds": [
+        "source_ind47_plan_sanction_checklist"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct checklist observation; the PDF does not establish that every listed field applies to every proposal."
+    },
+    {
+      "id": "claim_ind47_public_downloads_forms",
+      "text": "The current BPAS downloads page publicly lists a Plan Approval manual, Plan Sanction checklist, Schedule-II prescribed application, Schedule-III supervision form, professional/owner affidavits, bonds and Nambike Nakshe/Single Plot Approval forms.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_professional",
+        "node_building_w_docs"
+      ],
+      "sourceIds": [
+        "source_ind47_bpas_downloads"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The page lists public downloads; individual form eligibility and current submission behavior remain unverified."
+    },
+    {
+      "id": "claim_ind47_manual_authenticated_workflow",
+      "text": "The official BPAS Plan Approval Manual describes an authenticated architect workflow with project creation, applicant/consultant and plot/building details, document attachment, geolocation, application-type selection, drawing upload and AutoDCR scrutiny, NOC/document attachment, challan and final submission.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_professional",
+        "node_building_w_docs",
+        "node_building_w_scrutiny",
+        "node_building_w_fee"
+      ],
+      "sourceIds": [
+        "source_ind47_plan_approval_manual"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The manual revision history ends 27-08-2020. It is retained as dated official guidance, not proof of current authenticated UI or sequence."
+    },
+    {
+      "id": "claim_ind47_site_inspection_document_schedule",
+      "text": "The official site-inspection procedure document states inspection schedules of within 7 days for head-office plan sanction and within 3 days for zonal-office plan sanction, with inspection-report publication within 48 hours and 24 hours respectively.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_inspection"
+      ],
+      "sourceIds": [
+        "source_ind47_site_inspection_procedure"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Older official procedure; no current inspection appointment or report was observed."
+    },
+    {
+      "id": "claim_ind47_fee_calculator_controls",
+      "text": "The public BPAS fee calculator exposes service, use, built-up-area, building-type, dwelling-unit, locality and category inputs and budget-head estimates including scrutiny fee, ground rent, KTCP/betterment, security deposit, road-cutting, labour cess and licence fee.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_fee"
+      ],
+      "sourceIds": [
+        "source_ind47_bpas_calculator"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Current blank calculator surface only; no amount is asserted for an individual proposal."
+    },
+    {
+      "id": "claim_ind47_citizen_search_fields",
+      "text": "The public BPAS Citizen Search surface exposes project/proposal number, zone, ward, plot, CTS, applicant, architect/L.E./S.E. and View Application fields/columns.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_entry",
+        "node_building_w_license"
+      ],
+      "sourceIds": [
+        "source_ind47_bpas_citizen_search"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Public controls were observed without entering an identifier; no application result or licence was retrieved."
+    },
+    {
+      "id": "claim_ind47_zone_contact_directory",
+      "text": "The public BPAS contact page lists Building Licence Cell leadership and zonal Assistant Director contacts for South, East, Dasarahalli, Rajarajeshwari Nagara and Mahadevapura.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general"
+      ],
+      "nodeIds": [
+        "node_building_w_route"
+      ],
+      "sourceIds": [
+        "source_ind47_bpas_contact"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Contact listing only; it does not identify the correct authority for an unknown property or establish response time."
+    },
+    {
+      "id": "claim_ind47_case_specific_state_unknown",
+      "text": "No reviewed official public source establishes the correct route, current professional requirement, applicable document/NOC set, fee demand, scrutiny remark, inspection result, sanction decision or issued licence for a particular Bengaluru property without property and authenticated application data.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna",
+        "scenario_building_w_general",
+        "scenario_building_manual_sakala"
+      ],
+      "nodeIds": [
+        "node_building_w_route",
+        "node_building_w_professional",
+        "node_building_w_docs",
+        "node_building_w_scrutiny",
+        "node_building_w_inspection",
+        "node_building_w_fee",
+        "node_building_w_license"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Public pages and documents were reviewed, but no login, property identifier, upload, payment, submission or case lookup was performed."
+    },
+    {
+      "id": "claim_ind47_public_entry_surface",
+      "text": "The current unauthenticated GBA BPAS entry displays five Bengaluru city-corporation choices, a username/password/CAPTCHA sign-in surface, Citizen Search and Owner Search labels, project/owner-mobile fields, and an e-Khata mandatory notice for Building Licence, Plinth Certificate and Occupancy Certificate applications from 1 July 2025.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_entry",
+        "node_building_w_route"
+      ],
+      "sourceIds": [
+        "source_ind47_bpas_entry_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct public-page observation on 2026-08-31. No sign-in, CAPTCHA, identifier or search was used."
+    },
+    {
+      "id": "claim_ind47_online_application_inputs",
+      "text": "The current public FAQ says an applicant obtains building permission online with requisite documents and PreDCR drawings through an empanelled professional, and that the architect completes a Common Application Form containing plot and professional details.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_route",
+        "node_building_w_docs"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ wording is recorded as published guidance; no professional was selected and no CAF was opened or completed. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap."
+    },
+    {
+      "id": "claim_ind47_documents_nocs",
+      "text": "The current public FAQ lists plans/drawings, ownership documents, Khata extract or certificate and current tax receipt, plus digitally signed professional/safety declarations, and says NOCs depend on plot size, location, building type and height.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_docs"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The page supplies examples and a dependency table, not a property-specific checklist. No document, drawing or NOC was uploaded. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap."
+    },
+    {
+      "id": "claim_ind47_rejection_signals",
+      "text": "The current public FAQ names incomplete mandatory uploads, non-conforming plans, missing applicable NOCs or landowner/access-right documents, invalid ownership documents, Auto-Scrutiny drawing deviations and missing retained-structure evidence as common application-rejection reasons.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_docs",
+        "node_building_w_scrutiny"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "These are the FAQ's published common mistakes, not a rejection of a real case. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap."
+    },
+    {
+      "id": "claim_ind47_status_and_stages",
+      "text": "The current public FAQ publishes building-permit stages including Concession, Concession order, IOD, First CC, Further CC, BCC and OCC, and says a citizen-search route can use file number, applicant, architect, zone, ward or plot/location fields to look up a file.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_scrutiny",
+        "node_building_w_fee"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The search fields and stage labels were read from public FAQ text only; no identifier or live case lookup was performed. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap. This broad statement is retained only as an unresolved lead after the source-specific citation cap."
+    },
+    {
+      "id": "claim_ind47_fee_and_payment_guidance",
+      "text": "The current public FAQ says scrutiny fee is paid online with the application and other fees are charged through demand notes at construction stages, while another FAQ answer lists cash/cheque/DD at a CFC alongside online payment; the published fee-mode instructions are therefore internally conflicting.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_fee"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_ind47_online_only_payment_do_guidance",
+        "claim_ind47_online_only_payment_mode"
+      ],
+      "notes": "The two statements appear in different FAQ sections on the same current page. No payment method was selected or used. Public FAQ statements are retained as unreconciled guidance; no payment method was attempted. Public FAQ statements are retained as unreconciled guidance; no payment method was attempted. This broad statement is retained only as an unresolved lead after the source-specific citation cap. Public FAQ statements are retained as unreconciled guidance; no payment method was attempted. This broad statement is retained only as an unresolved lead after the source-specific citation cap. Public FAQ statements are retained as unreconciled guidance; no payment method was attempted."
+    },
+    {
+      "id": "claim_ind47_online_only_payment_do_guidance",
+      "text": "The current public FAQ's building-permit Do's section instructs applicants to make all payments online through net banking or debit/credit card.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_fee"
+      ],
+      "sourceIds": [
+        "source_ind47_bpas_faq_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_ind47_fee_and_payment_guidance",
+        "claim_ind47_online_only_payment_mode"
+      ],
+      "notes": "Retained with the separate FAQ payment-mode statement; this pass does not resolve which instruction applies to a current case. Public FAQ statements are retained as unreconciled guidance; no payment method was attempted. Public FAQ statements are retained as unreconciled guidance; no payment method was attempted. Public FAQ statements are retained as unreconciled guidance; no payment method was attempted. Public FAQ statements are retained as unreconciled guidance; no payment method was attempted."
+    },
+    {
+      "id": "claim_ind47_recovery_published",
+      "text": "The current public FAQ publishes recovery routes for workflow problems: an architect may email the concerned Building License Department or IT helpdesk if the architect is not cooperating, and an architect with online-filing difficulty may use the helpdesk email/telephone/SMS/EODB support route; the public helpdesk also exposes knowledge-base browse/search and a New ticket form.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind47_helpdesk_ticket_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ's recovery wording is directed to an architect/LS. The public New ticket form visibly requests an email address and Project No.; no ticket or personal data was entered."
+    },
+    {
+      "id": "claim_ind47_live_case_boundary_unknown",
+      "text": "The public-only pass does not establish the current property-specific corporation/route, required document or NOC set, scrutiny result, rejection text, inspection result, fee demand, payment acceptance, sanction decision or certificate output for any Bengaluru building-plan case; these are Unknown.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_route",
+        "node_building_w_docs",
+        "node_building_w_scrutiny",
+        "node_building_w_fee"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No login, property facts, professional selection, document/drawing upload, NOC request, live search, payment or submission was made."
+    },
+    {
+      "id": "claim_ind47_post_login_path_unknown",
+      "text": "After the public GBA/BPAS entry's sign-in/CAPTCHA boundary, the current authenticated form sequence, validation messages, live submission handoff and case-specific recovery remain Unknown in this pass.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_entry",
+        "node_building_w_scrutiny"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The sign-in controls were observed, but no credentials or CAPTCHA were used and no access-control bypass was attempted."
+    },
+    {
+      "id": "claim_ind47_building_delay_month_reported",
+      "text": "One citizen reported that their building-plan approval had taken almost one month.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_scrutiny"
+      ],
+      "sourceIds": [
+        "source_ind47_building_delay_month_report"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One unverified citizen-reported duration; it is not evidence of a service standard breach, a system-wide delay, or a cause."
+    },
+    {
+      "id": "claim_ind47_building_public_map_signal_reported",
+      "text": "One prospective buyer reported that a public mapping application displayed a watercourse signal at a shortlisted apartment site.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_route",
+        "node_building_w_scrutiny"
+      ],
+      "sourceIds": [
+        "source_ind47_building_map_plan_conflict"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This preserves a reported interface signal only. It does not establish the map's accuracy, a restriction, or the site's legal status."
+    },
+    {
+      "id": "claim_ind47_building_builder_sanction_representation_reported",
+      "text": "The same prospective buyer reported that the builder said the apartment had a BBMP-sanctioned plan and that the mapping result was incorrect.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_scrutiny",
+        "node_building_w_license"
+      ],
+      "sourceIds": [
+        "source_ind47_building_map_plan_conflict"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This records a reported builder representation, not proof of a sanction, its validity, the map's inaccuracy, or legality. It is cross-linked because the source presents it as inconsistent with the reported mapping signal."
+    },
+    {
+      "id": "claim_ind47_building_connection_dependency_reported",
+      "text": "One citizen reported that, despite a BBMP-sanctioned plan, an electricity provider requested an affidavit concerning a completion-certificate-related condition for connection, including temporary connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "nodeIds": [
+        "node_building_w_license"
+      ],
+      "sourceIds": [
+        "source_ind47_building_connection_dependency"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One unverified account of a cross-system dependency; it does not establish a current provider policy, a certificate requirement, an exemption, or whether the reported account was complete."
     }
   ],
   "nodes": [
@@ -642,9 +1445,12 @@
         "scenario_building_manual_sakala"
       ],
       "claimIds": [
+        "claim_building_sec299",
         "claim_building_public_listing",
         "claim_building_route_labels",
-        "claim_building_unknown_case"
+        "claim_building_unknown_case",
+        "claim_ind32_building_citizen_road_classification_uncertainty",
+        "claim_ind32_building_citizen_current_outcome_unknown"
       ],
       "status": "unknown",
       "displayOrder": 10
@@ -676,7 +1482,8 @@
       ],
       "claimIds": [
         "claim_building_public_listing",
-        "claim_building_bpas_architect"
+        "claim_building_bpas_architect",
+        "claim_ind32_building_citizen_approval_reported_stuck"
       ],
       "status": "partial",
       "displayOrder": 20
@@ -708,7 +1515,7 @@
       ],
       "claimIds": [
         "claim_building_bpas_architect",
-        "claim_building_unknown_case"
+        "claim_ind32_building_citizen_road_classification_uncertainty"
       ],
       "status": "unknown",
       "displayOrder": 25
@@ -738,8 +1545,7 @@
         "scenario_building_manual_sakala"
       ],
       "claimIds": [
-        "claim_building_route_labels",
-        "claim_building_unknown_case"
+        "claim_building_route_labels"
       ],
       "status": "unknown",
       "displayOrder": 30
@@ -785,7 +1591,8 @@
       "claimIds": [
         "claim_building_sec299",
         "claim_building_bpas_docs",
-        "claim_building_unknown_case"
+        "claim_building_unknown_case",
+        "claim_ind32_building_citizen_current_outcome_unknown"
       ],
       "status": "unknown",
       "displayOrder": 40
@@ -838,7 +1645,10 @@
         "scenario_building_w_general"
       ],
       "claimIds": [
-        "claim_building_bpas_review"
+        "claim_building_bpas_review",
+        "claim_ind32_building_citizen_approval_reported_stuck",
+        "claim_ind32_building_citizen_road_classification_uncertainty",
+        "claim_ind32_building_citizen_current_outcome_unknown"
       ],
       "status": "unknown",
       "displayOrder": 50
@@ -871,7 +1681,7 @@
       ],
       "claimIds": [
         "claim_building_bpas_review",
-        "claim_building_bpas_fee_license"
+        "claim_ind32_building_citizen_current_outcome_unknown"
       ],
       "status": "unknown",
       "displayOrder": 60
@@ -903,7 +1713,9 @@
       ],
       "claimIds": [
         "claim_building_bpas_fee_license",
-        "claim_building_unknown_case"
+        "claim_building_unknown_case",
+        "claim_ind32_building_citizen_road_classification_uncertainty",
+        "claim_ind32_building_citizen_current_outcome_unknown"
       ],
       "status": "unknown",
       "displayOrder": 70
@@ -924,7 +1736,8 @@
       ],
       "claimIds": [
         "claim_building_bpas_fee_license",
-        "claim_building_unknown_case"
+        "claim_building_unknown_case",
+        "claim_ind32_building_citizen_current_outcome_unknown"
       ],
       "status": "unknown",
       "displayOrder": 80
@@ -933,7 +1746,7 @@
       "id": "node_building_w_entry",
       "label": "Public permission entry",
       "kind": "service",
-      "ownerAgencyId": "agency_gba_building_ind32_w",
+      "ownerAgencyId": "agency_gba_building_ind32",
       "summary": "Record current GBA Building Permission label and BBMP public submission/login boundary.",
       "requiredState": "No live target or session exists.",
       "checks": [
@@ -946,25 +1759,65 @@
             "claim_building_w_login_boundary"
           ],
           "status": "verified"
+        },
+        {
+          "id": "check_ind47_entry_controls",
+          "label": "Entry controls and public searches",
+          "description": "Observe city-corporation choices, sign-in/CAPTCHA controls, Citizen Search/Owner Search labels and the e-Khata notice without entering data.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+          "claimIds": [
+            "claim_ind47_public_entry_surface"
+          ],
+          "status": "verified"
         }
       ],
-      "failureSignals": [],
-      "recoveries": [],
+      "failureSignals": [
+        {
+          "id": "failure_ind47_auth_boundary",
+          "label": "Sign-in/CAPTCHA boundary",
+          "description": "The entry exposes username, password and CAPTCHA controls; no public-only pass can verify what follows authenticated entry.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+          "claimIds": [
+            "claim_ind47_public_entry_surface",
+            "claim_ind47_post_login_path_unknown"
+          ],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind47_forgot_password_link",
+          "label": "Forgot Password link",
+          "description": "The public entry visibly exposes a Forgot Password link for an existing account; no account or reset was used.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+          "claimIds": [
+            "claim_ind47_public_entry_surface"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_building_w_suvarna",
         "scenario_building_w_general"
       ],
       "claimIds": [
-        "claim_building_w_login_boundary"
+        "claim_building_w_login_boundary",
+        "claim_ind47_current_portal_single_window",
+        "claim_ind47_current_portal_login_boundary",
+        "claim_ind47_online_professional_predcr_route",
+        "claim_ind47_citizen_search_fields",
+        "claim_ind47_public_entry_surface",
+        "claim_ind47_post_login_path_unknown"
       ],
       "status": "partial",
-      "displayOrder": 5
+      "displayOrder": 5,
+      "researchedNoSourceFound": []
     },
     {
       "id": "node_building_w_route",
       "label": "Choose route conceptually",
       "kind": "decision",
-      "ownerAgencyId": "agency_gba_building_ind32_w",
+      "ownerAgencyId": "agency_gba_building_ind32",
       "summary": "Compare Sakala/manual, Suvarna Paravanige and general/head-office route labels using property/category facts as questions only.",
       "requiredState": "Location, zone, land use, built-up area, height and proposal type are unknown.",
       "checks": [
@@ -977,26 +1830,70 @@
             "claim_building_w_route"
           ],
           "status": "partial"
+        },
+        {
+          "id": "check_ind47_caf_professional",
+          "label": "CAF and professional lead",
+          "description": "Read the FAQ's online application and empanelled-professional/CAF requirements without selecting a professional or filling a CAF.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": [
+            "claim_ind47_online_application_inputs"
+          ],
+          "status": "verified"
         }
       ],
-      "failureSignals": [],
-      "recoveries": [],
+      "failureSignals": [
+        {
+          "id": "failure_ind47_route_facts_unknown",
+          "label": "Property-specific route unresolved",
+          "description": "The public page shows corporation choices, but no property facts were supplied or used to select a current route/category.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+          "claimIds": [
+            "claim_ind47_public_entry_surface",
+            "claim_ind47_live_case_boundary_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind47_confirm_professional_route",
+          "label": "Confirm through empanelled professional",
+          "description": "The FAQ directs building-permission applicants to use an empanelled professional; current eligibility and professional availability still require case-specific confirmation.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": [
+            "claim_ind47_online_application_inputs"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_building_w_suvarna",
         "scenario_building_w_general"
       ],
       "claimIds": [
         "claim_building_w_route",
-        "claim_building_w_unknown"
+        "claim_building_w_unknown",
+        "claim_ind47_current_portal_single_window",
+        "claim_ind47_noc_conditions",
+        "claim_ind47_risk_matrix",
+        "claim_ind47_suvarna_scope_and_published_steps",
+        "claim_ind47_zone_contact_directory",
+        "claim_ind47_case_specific_state_unknown",
+        "claim_ind47_public_entry_surface",
+        "claim_ind47_online_application_inputs",
+        "claim_ind47_live_case_boundary_unknown",
+        "claim_ind47_building_public_map_signal_reported"
       ],
       "status": "unknown",
-      "displayOrder": 10
+      "displayOrder": 10,
+      "researchedNoSourceFound": []
     },
     {
       "id": "node_building_w_professional",
       "label": "Registered architect lead",
       "kind": "service",
-      "ownerAgencyId": "agency_bpas_ind32_w",
+      "ownerAgencyId": "agency_bbmp_bpas_ind32",
       "summary": "Published BPAS route uses registered architect/applicant for external file creation.",
       "requiredState": "No professional or registration selected.",
       "checks": [
@@ -1018,7 +1915,13 @@
         "scenario_building_w_general"
       ],
       "claimIds": [
-        "claim_building_w_professional"
+        "claim_building_w_professional",
+        "claim_ind47_online_professional_predcr_route",
+        "claim_ind47_caf_fields_and_noc_transfer",
+        "claim_ind47_suvarna_document_leads",
+        "claim_ind47_public_downloads_forms",
+        "claim_ind47_manual_authenticated_workflow",
+        "claim_ind47_case_specific_state_unknown"
       ],
       "status": "unknown",
       "displayOrder": 20
@@ -1027,7 +1930,7 @@
       "id": "node_building_w_docs",
       "label": "Plan/document/NOC stage",
       "kind": "record",
-      "ownerAgencyId": "agency_bpas_ind32_w",
+      "ownerAgencyId": "agency_bbmp_bpas_ind32",
       "summary": "Review pre-DCR CAD, NOC, title and Khata examples without selecting files.",
       "requiredState": "No drawing, document or NOC exists; current checklist unknown.",
       "checks": [
@@ -1040,6 +1943,16 @@
             "claim_building_w_docs"
           ],
           "status": "partial"
+        },
+        {
+          "id": "check_ind47_document_classes",
+          "label": "Published document and NOC classes",
+          "description": "Read the FAQ's plans/drawings, ownership/Khata/tax and declaration examples and its size/location/type/height NOC dependencies.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": [
+            "claim_ind47_documents_nocs"
+          ],
+          "status": "verified"
         }
       ],
       "failureSignals": [
@@ -1053,24 +1966,63 @@
             "claim_building_w_unknown"
           ],
           "status": "unknown"
+        },
+        {
+          "id": "failure_ind47_document_rejection_signals",
+          "label": "Missing or non-conforming submission",
+          "description": "Published common rejection signals include missing mandatory documents/NOCs, non-conforming plans, invalid ownership/access records and Auto-Scrutiny deviations.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": [
+            "claim_ind47_rejection_signals"
+          ],
+          "status": "verified"
         }
       ],
-      "recoveries": [],
+      "recoveries": [
+        {
+          "id": "recovery_ind47_correct_submission",
+          "label": "Correct the published gaps",
+          "description": "Use the FAQ's rejection list as a correction checklist with the authorised professional; no correction, upload or resubmission was attempted.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": [
+            "claim_ind47_rejection_signals"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_building_w_suvarna",
         "scenario_building_w_general"
       ],
       "claimIds": [
-        "claim_building_w_docs"
+        "claim_building_w_docs",
+        "claim_building_w_unknown",
+        "claim_ind47_ekatha_mandatory_message",
+        "claim_ind47_caf_fields_and_noc_transfer",
+        "claim_ind47_faq_document_leads",
+        "claim_ind47_noc_conditions",
+        "claim_ind47_single_window_noc_recovery",
+        "claim_ind47_eight_permit_steps",
+        "claim_ind47_suvarna_scope_and_published_steps",
+        "claim_ind47_suvarna_document_leads",
+        "claim_ind47_public_checklist_inputs",
+        "claim_ind47_public_downloads_forms",
+        "claim_ind47_manual_authenticated_workflow",
+        "claim_ind47_case_specific_state_unknown",
+        "claim_ind47_online_application_inputs",
+        "claim_ind47_documents_nocs",
+        "claim_ind47_rejection_signals",
+        "claim_ind47_live_case_boundary_unknown"
       ],
       "status": "unknown",
-      "displayOrder": 30
+      "displayOrder": 30,
+      "researchedNoSourceFound": []
     },
     {
       "id": "node_building_w_scrutiny",
       "label": "DCR/document scrutiny",
       "kind": "record",
-      "ownerAgencyId": "agency_bpas_ind32_w",
+      "ownerAgencyId": "agency_bbmp_bpas_ind32",
       "summary": "Dated BPAS workflow describes inward checking and automated DCR scrutiny, with correction if gaps are found.",
       "requiredState": "No project file or scrutiny remarks exist.",
       "checks": [
@@ -1083,6 +2035,16 @@
             "claim_building_w_scrutiny"
           ],
           "status": "partial"
+        },
+        {
+          "id": "check_ind47_status_fields",
+          "label": "Published stage and citizen-search fields",
+          "description": "Read the FAQ's permit stages and file-status search fields without entering a file number, name, zone, ward or plot.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": [
+            "claim_ind47_status_and_stages"
+          ],
+          "status": "verified"
         }
       ],
       "failureSignals": [
@@ -1095,35 +2057,109 @@
             "claim_building_w_scrutiny"
           ],
           "status": "unknown"
+        },
+        {
+          "id": "failure_ind47_live_status_unknown",
+          "label": "Live status or rejection not observable",
+          "description": "No public-only case lookup was run, so a current status, validation error, scrutiny remark or inspection outcome was not observed.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": [
+            "claim_ind47_live_case_boundary_unknown",
+            "claim_ind47_post_login_path_unknown"
+          ],
+          "status": "unknown"
         }
       ],
-      "recoveries": [],
+      "recoveries": [
+        {
+          "id": "recovery_ind47_public_status_search",
+          "label": "Use published Citizen Search route",
+          "description": "The FAQ publishes Citizen Search fields for file number, applicant, architect, zone, ward and plot/location; no identifier was entered.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": [
+            "claim_ind47_status_and_stages"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_building_w_suvarna",
         "scenario_building_w_general"
       ],
       "claimIds": [
-        "claim_building_w_scrutiny"
+        "claim_building_w_scrutiny",
+        "claim_ind47_eight_permit_steps",
+        "claim_ind47_risk_matrix",
+        "claim_ind47_public_checklist_inputs",
+        "claim_ind47_manual_authenticated_workflow",
+        "claim_ind47_case_specific_state_unknown",
+        "claim_ind47_rejection_signals",
+        "claim_ind47_status_and_stages",
+        "claim_ind47_live_case_boundary_unknown",
+        "claim_ind47_post_login_path_unknown",
+        "claim_ind47_building_delay_month_reported",
+        "claim_ind47_building_public_map_signal_reported",
+        "claim_ind47_building_builder_sanction_representation_reported"
       ],
       "status": "unknown",
-      "displayOrder": 40
+      "displayOrder": 40,
+      "researchedNoSourceFound": []
     },
     {
       "id": "node_building_w_inspection",
       "label": "Site inspection",
       "kind": "record",
-      "ownerAgencyId": "agency_bpas_ind32_w",
+      "ownerAgencyId": "agency_bbmp_bpas_ind32",
       "summary": "Published sequence places AE/ADTP inspection after documents are found correct.",
       "requiredState": "No inspection result exists.",
-      "checks": [],
-      "failureSignals": [],
-      "recoveries": [],
+      "checks": [
+        {
+          "id": "check_ind47_inspection_schedule",
+          "label": "Published inspection document lead",
+          "description": "A current public BPAS page links an inspection procedure document; this pass did not observe a property inspection or appointment.",
+          "url": "https://site.bbmp.gov.in/PDF/buildingplanapproval/Site%20Inspection%20For%20Plan.pdf",
+          "claimIds": [
+            "claim_ind47_site_inspection_document_schedule"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind47_inspection_case_unknown",
+          "label": "Inspection outcome not publicly observable",
+          "description": "No project, visit, inspection remark or outcome was observed in this public-only pass.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": [
+            "claim_ind47_live_case_boundary_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind47_inspection_helpdesk",
+          "label": "Published support route",
+          "description": "The public BPAS helpdesk exposes a New Ticket route, but acknowledgement and inspection resolution were not tested.",
+          "url": "https://bpas.bbmpgov.in/HelpDesk/Tickets/New",
+          "claimIds": [
+            "claim_ind47_recovery_published"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_building_w_suvarna",
         "scenario_building_w_general"
       ],
       "claimIds": [
-        "claim_building_w_scrutiny"
+        "claim_building_w_scrutiny",
+        "claim_ind47_single_window_noc_recovery",
+        "claim_ind47_eight_permit_steps",
+        "claim_ind47_suvarna_scope_and_published_steps",
+        "claim_ind47_public_checklist_inputs",
+        "claim_ind47_site_inspection_document_schedule",
+        "claim_ind47_case_specific_state_unknown"
       ],
       "status": "unknown",
       "displayOrder": 50
@@ -1132,7 +2168,7 @@
       "id": "node_building_w_fee",
       "label": "Fee and authority review",
       "kind": "record",
-      "ownerAgencyId": "agency_gba_building_ind32_w",
+      "ownerAgencyId": "agency_gba_building_ind32",
       "summary": "Fee is described as built-up-area based; larger proposals add chief engineer/joint commissioner review.",
       "requiredState": "No built-up area, fee, demand or payment exists.",
       "checks": [
@@ -1145,38 +2181,126 @@
             "claim_building_w_fee_license"
           ],
           "status": "partial"
+        },
+        {
+          "id": "check_ind47_fee_guidance",
+          "label": "Published fee and stage guidance",
+          "description": "Read the FAQ's scrutiny-fee/demand-note and payment-mode statements without opening a payment flow.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": [
+            "claim_ind47_fee_and_payment_guidance",
+            "claim_ind47_online_only_payment_do_guidance"
+          ],
+          "status": "contested"
         }
       ],
-      "failureSignals": [],
-      "recoveries": [],
+      "failureSignals": [
+        {
+          "id": "failure_ind47_fee_mode_conflict",
+          "label": "Conflicting published payment modes",
+          "description": "The same FAQ page contains an online-only Do's instruction and a separate answer listing CFC cash/cheque/DD alongside online payment.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": [
+            "claim_ind47_fee_and_payment_guidance",
+            "claim_ind47_online_only_payment_do_guidance"
+          ],
+          "status": "contested"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind47_fee_clarification_helpdesk",
+          "label": "Seek authorised fee clarification",
+          "description": "Use the published BPAS helpdesk/architect support route to clarify the applicable current payment instruction before paying; no payment or ticket was made.",
+          "url": "https://bpas.bbmpgov.in/HelpDesk/KB",
+          "claimIds": [
+            "claim_ind47_recovery_published",
+            "claim_ind47_fee_and_payment_guidance"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_building_w_suvarna",
         "scenario_building_w_general"
       ],
       "claimIds": [
         "claim_building_w_fee_license",
-        "claim_building_w_unknown"
+        "claim_building_w_unknown",
+        "claim_ind47_online_payment_and_demand_note",
+        "claim_ind47_online_only_payment_mode",
+        "claim_ind47_suvarna_scope_and_published_steps",
+        "claim_ind47_manual_authenticated_workflow",
+        "claim_ind47_fee_calculator_controls",
+        "claim_ind47_case_specific_state_unknown",
+        "claim_ind47_status_and_stages",
+        "claim_ind47_fee_and_payment_guidance",
+        "claim_ind47_online_only_payment_do_guidance",
+        "claim_ind47_live_case_boundary_unknown"
       ],
       "status": "unknown",
-      "displayOrder": 60
+      "displayOrder": 60,
+      "researchedNoSourceFound": []
     },
     {
       "id": "node_building_w_license",
       "label": "Licence/sanction output",
       "kind": "outcome",
-      "ownerAgencyId": "agency_gba_building_ind32_w",
+      "ownerAgencyId": "agency_gba_building_ind32",
       "summary": "Published BPAS description says online PDF licence follows approval; no output exists.",
       "requiredState": "No project number, approval, licence, CC or OC exists.",
-      "checks": [],
-      "failureSignals": [],
-      "recoveries": [],
+      "checks": [
+        {
+          "id": "check_ind47_license_stage_leads",
+          "label": "Published sanction-stage leads",
+          "description": "Public BPAS material describes permit stages and a Suvarna timing statement; it does not establish a live sanction for a property.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": [
+            "claim_ind47_eight_permit_steps",
+            "claim_ind47_suvarna_ten_working_days"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind47_license_case_unknown",
+          "label": "Sanction output not publicly observable",
+          "description": "No live sanction, licence, certificate or case-specific refusal was observed.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CitizenSearch/CitizenSearch.aspx?edFlag=MA%3D%3D&iVal=MQ%3D%3D&sName=QkJNUA%3D%3D",
+          "claimIds": [
+            "claim_ind47_case_specific_state_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind47_license_citizen_search",
+          "label": "Published Citizen Search lead",
+          "description": "BPAS publishes a Citizen Search surface; no case identifier was entered and no result was reviewed.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CitizenSearch/CitizenSearch.aspx?edFlag=MA%3D%3D&iVal=MQ%3D%3D&sName=QkJNUA%3D%3D",
+          "claimIds": [
+            "claim_ind47_citizen_search_fields"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_building_w_suvarna",
         "scenario_building_w_general"
       ],
       "claimIds": [
         "claim_building_w_fee_license",
-        "claim_building_w_unknown"
+        "claim_building_w_unknown",
+        "claim_ind47_ekatha_mandatory_message",
+        "claim_ind47_eight_permit_steps",
+        "claim_ind47_risk_matrix",
+        "claim_ind47_suvarna_ten_working_days",
+        "claim_ind47_citizen_search_fields",
+        "claim_ind47_case_specific_state_unknown",
+        "claim_ind47_building_builder_sanction_representation_reported",
+        "claim_ind47_building_connection_dependency_reported"
       ],
       "status": "unknown",
       "displayOrder": 70
@@ -1371,14 +2495,12 @@
       "fromNodeId": "node_building_w_inspection",
       "toNodeId": "node_building_w_fee",
       "relationship": "requires",
-      "label": "Inspection/review precedes case-specific fee/authority processing.",
+      "label": "Inspection and fee stages are both described, but their current order is not publicly confirmed",
       "scenarioIds": [
         "scenario_building_w_suvarna",
         "scenario_building_w_general"
       ],
-      "claimIds": [
-        "claim_building_w_fee_license"
-      ],
+      "claimIds": [],
       "status": "unknown"
     },
     {
@@ -1486,8 +2608,8 @@
       "likelyCause": "Property facts and GBA/city-corporation transition are not supplied.",
       "recovery": "Confirm current zone, route and competent authority before architect-led action.",
       "ownerAgencyIds": [
-        "agency_gba_building_ind32_w",
-        "agency_bpas_ind32_w"
+        "agency_gba_building_ind32",
+        "agency_bbmp_bpas_ind32"
       ],
       "nodeIds": [
         "node_building_w_entry",
@@ -1512,8 +2634,8 @@
       "likelyCause": "These states require a real architect/applicant submission and municipal processing.",
       "recovery": "Use current GBA/Town Planning and registered-professional guidance after authorisation; dated BPAS sequence is not a guarantee.",
       "ownerAgencyIds": [
-        "agency_gba_building_ind32_w",
-        "agency_bpas_ind32_w"
+        "agency_gba_building_ind32",
+        "agency_bbmp_bpas_ind32"
       ],
       "nodeIds": [
         "node_building_w_docs",
@@ -1580,21 +2702,157 @@
       "status": "partial"
     },
     {
-      "id": "roadblock_audit_building_plan",
-      "title": "Independent audit limitations",
-      "category": "documentation",
-      "symptom": "## Scope and result Audited `ledger/building-plan.json` against `ledger/schema.json` and `ledger/AGENT_PROTOCOL.md` only. The JSON validates against the supplied schema; IDs are unique, all checked links resolve, every non-`Unknown` claim has a source, and recorded dates are ISO-shaped. The service-specific material is a **partial, public-description map** for historical/legacy BBMP BPAS-style routes. It is not evidence of the current route, category, checklist, fee, scrutiny, inspection, or sanction outcome for any Bengaluru property. ## Findings to ship as limitations - **Service-scope contamination — material.** The ledger contains 22 BESCOM/e-Khata claims, six electricity-transfer scenarios, eight electricity-transfer edges, 11 roadblocks, and six journeys that do not concern building permission. Their link integrity is sound, but their inclusion makes the building-plan graph mislead",
-      "likelyCause": "Evidence and schema boundaries identified by the single independent audit.",
-      "recovery": "Read the cited evidence and retain Unknown or partial status where the public record stops.",
-      "ownerAgencyIds": [],
+      "id": "roadblock_ind47_public_access_boundary",
+      "title": "Authenticated case path not publicly verified",
+      "category": "process",
+      "symptom": "The current public entry shows sign-in/CAPTCHA controls, while the live authenticated form, validation and submission result were not observable.",
+      "likelyCause": "Architect/owner account access and case-specific property/application state are required for the next workflow states.",
+      "recovery": "Use the public FAQ and published architect/helpdesk routes; retain the authenticated form and case outcome as Unknown until an authorised user proceeds.",
+      "ownerAgencyIds": [
+        "agency_gba_building_ind32",
+        "agency_bbmp_bpas_ind32"
+      ],
       "nodeIds": [
-        "node_building_jurisdiction"
+        "node_building_w_entry",
+        "node_building_w_route",
+        "node_building_w_scrutiny"
       ],
       "scenarioIds": [
         "scenario_building_w_suvarna"
       ],
-      "claimIds": [],
+      "claimIds": [
+        "claim_ind47_post_login_path_unknown",
+        "claim_ind47_recovery_published"
+      ],
       "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind47_document_rejection",
+      "title": "Document/NOC and scrutiny failure signals",
+      "category": "documentation",
+      "symptom": "The FAQ lists missing or non-conforming plans, ownership/access records, NOCs and Auto-Scrutiny deviations as common rejection reasons.",
+      "likelyCause": "The proposal-specific document, drawing and NOC package does not meet the applicable requirements.",
+      "recovery": "Use the published mistake list to correct the package with the authorised professional; no correction or resubmission was performed.",
+      "ownerAgencyIds": [
+        "agency_gba_building_ind32"
+      ],
+      "nodeIds": [
+        "node_building_w_docs",
+        "node_building_w_scrutiny"
+      ],
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "claimIds": [
+        "claim_ind47_rejection_signals"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind47_payment_instruction_conflict",
+      "title": "Published fee-mode instructions conflict",
+      "category": "process",
+      "symptom": "One current FAQ section says all payments are online, while another lists CFC cash/cheque/DD alongside online payment.",
+      "likelyCause": "Different FAQ sections or legacy guidance have not been reconciled on the public page.",
+      "recovery": "Obtain current authorised clarification through the published architect/helpdesk route before paying; no payment was attempted.",
+      "ownerAgencyIds": [
+        "agency_gba_building_ind32",
+        "agency_bbmp_bpas_ind32"
+      ],
+      "nodeIds": [
+        "node_building_w_fee"
+      ],
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "claimIds": [
+        "claim_ind47_fee_and_payment_guidance",
+        "claim_ind47_online_only_payment_do_guidance",
+        "claim_ind47_recovery_published"
+      ],
+      "status": "contested"
+    },
+    {
+      "id": "roadblock_ind47_live_outcome_unknown",
+      "title": "No case-specific approval outcome",
+      "category": "process",
+      "symptom": "No live project, status result, scrutiny remark, fee demand, payment, inspection, sanction, licence, CC, BCC or OC exists in this public-only pass.",
+      "likelyCause": "Those states require an authorised route, case data and/or an actual municipal application.",
+      "recovery": "Use a case-specific authorised search or filing and retain the project/reference number; do not treat FAQ stages as a live approval.",
+      "ownerAgencyIds": [
+        "agency_gba_building_ind32"
+      ],
+      "nodeIds": [
+        "node_building_w_scrutiny",
+        "node_building_w_fee"
+      ],
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "claimIds": [
+        "claim_ind47_live_case_boundary_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind47_building_reported_delay",
+      "title": "Reported approval delay without a verifiable case state",
+      "category": "process",
+      "symptom": "One citizen reported that a building-plan approval had taken almost one month.",
+      "likelyCause": "Unknown; the account does not reveal the authority, submission date, completeness, scrutiny state, objection, or case-specific dependency.",
+      "recovery": "Use the competent authority's current, authorised case-status and written-reason route; do not infer a general delay or cause from this account.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_building_w_scrutiny"
+      ],
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "claimIds": [
+        "claim_ind47_building_delay_month_reported"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind47_building_conflicting_representations",
+      "title": "Unverified due-diligence lead about map and sanction representations",
+      "category": "documentation",
+      "symptom": "A prospective buyer reported a public mapping signal that appeared inconsistent with a builder's statement about an approved plan.",
+      "likelyCause": "Unknown; neither the map record nor the claimed sanction was verified, and the account does not establish how either source should be interpreted for the property.",
+      "recovery": "Obtain authoritative, property-specific records from the responsible agencies and qualified independent review before relying on either representation.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_building_w_route",
+        "node_building_w_scrutiny",
+        "node_building_w_license"
+      ],
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "claimIds": [
+        "claim_ind47_building_public_map_signal_reported",
+        "claim_ind47_building_builder_sanction_representation_reported"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind47_building_reported_connection_dependency",
+      "title": "Reported utility-connection obstacle after plan sanction",
+      "category": "infrastructure",
+      "symptom": "One citizen reported a claimed affidavit and certificate-related condition for electricity connection after plan sanction.",
+      "likelyCause": "Unknown; the citizen account cannot verify the provider's current rule, property category, application completeness, certificate status, or whether the reported condition applied.",
+      "recovery": "Request the current written requirement and case-specific explanation from the relevant provider and planning authority; do not rely on forum advice or an informal intermediary.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_building_w_license"
+      ],
+      "scenarioIds": [
+        "scenario_building_w_suvarna"
+      ],
+      "claimIds": [
+        "claim_ind47_building_connection_dependency_reported"
+      ],
+      "status": "partial"
     }
   ],
   "journeys": [
@@ -1602,7 +2860,7 @@
       "id": "journey_building_w_public",
       "title": "Building permission public route boundary",
       "scenarioId": "scenario_building_w_suvarna",
-      "context": "Read public route labels and dated BPAS stages, stopping at the architect login boundary.",
+      "context": "A public-interface evidence map, not a confirmed end-to-end building-permission application route.",
       "steps": [
         {
           "id": "step_building_w_entry",
@@ -1674,7 +2932,12 @@
       ],
       "documentationQualityNotes": [
         "GBA home is current directory; detailed BBMP BPAS/procedure materials are older.",
-        "Current zone/category checklist and sanction outcome remain unknown."
+        "Current zone/category checklist and sanction outcome remain unknown.",
+        "Current authenticated form sequence, validation, handoffs and case outcomes were not observed.",
+        "Historic route labels could not be independently reproduced from a current procedure index.",
+        "Inspection-to-fee ordering and payment guidance remain unresolved in public material.",
+        "Citizen reports are leads only; they do not establish delays, legal status, sanction validity or utility requirements.",
+        "Several broad source observations remain compound in the ledger and are retained as stated limitations pending a future atomisation pass."
       ],
       "status": "unknown"
     }

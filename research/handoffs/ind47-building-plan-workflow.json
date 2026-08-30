@@ -1,0 +1,660 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "IND-47 Bengaluru building-plan default public workflow pass",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-31",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice. It records only unauthenticated public-interface observations and explicit Unknown boundaries; do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_ind47_gba_bpas",
+      "name": "Greater Bengaluru Authority Building Permission System",
+      "shortName": "GBA BPAS",
+      "officialUrl": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx"
+    },
+    {
+      "id": "agency_ind47_bpas_helpdesk",
+      "name": "Greater Bengaluru Authority BPAS Helpdesk",
+      "shortName": "GBA BPAS Helpdesk",
+      "officialUrl": "https://bpas.bbmpgov.in/HelpDesk/KB"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind47_default_building_plan",
+      "label": "Default building-plan public lead",
+      "summary": "A citizen reviews the current GBA/BPAS public entry and published building-permit guidance without signing in, submitting, paying or uploading.",
+      "tags": ["building-plan", "public-interface", "default-path"],
+      "pathNodeIds": [
+        "node_ind47_public_entry",
+        "node_ind47_route_check",
+        "node_ind47_documents_nocs",
+        "node_ind47_scrutiny_status",
+        "node_ind47_fee_output",
+        "node_ind47_published_recovery"
+      ],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind47_bpas_entry_live",
+      "title": "GBA Building Permission System public entry — current observation",
+      "publisher": "Greater Bengaluru Authority / Government of Karnataka",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+      "accessedAt": "2026-08-31",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated page observation. The page displays Nambike Nakshe, single-window construction-permit text, five city-corporation choices (North, South, Central, East and West), a SIGN IN area with username/password/CAPTCHA, Citizen Search and Owner Search labels, project/owner-mobile fields, Quick Links for manuals/circulars and a support link. It also displays the notice that e-Khata is mandatory for Building Licence, Plinth Certificate and Occupancy Certificate applications from 1 July 2025. No credential, CAPTCHA, project number, mobile number or search was entered."
+    },
+    {
+      "id": "source_ind47_bpas_faq_live",
+      "title": "GBA/BBMP Building Permission FAQs — current observation",
+      "publisher": "Greater Bengaluru Authority / Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+      "accessedAt": "2026-08-31",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated FAQ page observation. Building-permit answers publish online CAF/PreDCR and empanelled-professional guidance, document and NOC examples, risk categories, common rejection reasons, stages, timelines, fee guidance, status-search fields, architect/helpdesk recovery and completion/inspection guidance. No application or payment was made."
+    },
+    {
+      "id": "source_ind47_helpdesk_kb_live",
+      "title": "GBA BPAS Helpdesk knowledge base — current observation",
+      "publisher": "Greater Bengaluru Authority / Government of Karnataka",
+      "url": "https://bpas.bbmpgov.in/HelpDesk/KB",
+      "accessedAt": "2026-08-31",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated helpdesk page observation. Public knowledge-base browse/search is visible, with categories for payment issues, pre-sales questions and technical bug reports; the page also exposes a New ticket route and a sign-in control. No ticket or personal information was submitted."
+    },
+    {
+      "id": "source_ind47_helpdesk_ticket_live",
+      "title": "GBA BPAS Helpdesk New Ticket — current observation",
+      "publisher": "Greater Bengaluru Authority / Government of Karnataka",
+      "url": "https://bpas.bbmpgov.in/HelpDesk/Tickets/New",
+      "accessedAt": "2026-08-31",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated New ticket page observation. The form displays Your email address, Subject, category/attachment controls and Project No. fields, plus the public knowledge-base/sign-in navigation. No fields were filled and no ticket was submitted."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind47_public_entry_surface",
+      "text": "The current unauthenticated GBA BPAS entry displays five Bengaluru city-corporation choices, a username/password/CAPTCHA sign-in surface, Citizen Search and Owner Search labels, project/owner-mobile fields, and an e-Khata mandatory notice for Building Licence, Plinth Certificate and Occupancy Certificate applications from 1 July 2025.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "nodeIds": ["node_ind47_public_entry", "node_ind47_route_check"],
+      "sourceIds": ["source_ind47_bpas_entry_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct public-page observation on 2026-08-31. No sign-in, CAPTCHA, identifier or search was used."
+    },
+    {
+      "id": "claim_ind47_online_application_inputs",
+      "text": "The current public FAQ says an applicant obtains building permission online with requisite documents and PreDCR drawings through an empanelled professional, and that the architect completes a Common Application Form containing plot and professional details.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "nodeIds": ["node_ind47_route_check", "node_ind47_documents_nocs"],
+      "sourceIds": ["source_ind47_bpas_faq_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ wording is recorded as published guidance; no professional was selected and no CAF was opened or completed."
+    },
+    {
+      "id": "claim_ind47_documents_nocs",
+      "text": "The current public FAQ lists plans/drawings, ownership documents, Khata extract or certificate and current tax receipt, plus digitally signed professional/safety declarations, and says NOCs depend on plot size, location, building type and height.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "nodeIds": ["node_ind47_documents_nocs"],
+      "sourceIds": ["source_ind47_bpas_faq_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The page supplies examples and a dependency table, not a property-specific checklist. No document, drawing or NOC was uploaded."
+    },
+    {
+      "id": "claim_ind47_rejection_signals",
+      "text": "The current public FAQ names incomplete mandatory uploads, non-conforming plans, missing applicable NOCs or landowner/access-right documents, invalid ownership documents, Auto-Scrutiny drawing deviations and missing retained-structure evidence as common application-rejection reasons.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "nodeIds": ["node_ind47_documents_nocs", "node_ind47_scrutiny_status"],
+      "sourceIds": ["source_ind47_bpas_faq_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "These are the FAQ's published common mistakes, not a rejection of a real case."
+    },
+    {
+      "id": "claim_ind47_status_and_stages",
+      "text": "The current public FAQ publishes building-permit stages including Concession, Concession order, IOD, First CC, Further CC, BCC and OCC, and says a citizen-search route can use file number, applicant, architect, zone, ward or plot/location fields to look up a file.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "nodeIds": ["node_ind47_scrutiny_status", "node_ind47_fee_output"],
+      "sourceIds": ["source_ind47_bpas_faq_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The search fields and stage labels were read from public FAQ text only; no identifier or live case lookup was performed."
+    },
+    {
+      "id": "claim_ind47_fee_and_payment_guidance",
+      "text": "The current public FAQ says scrutiny fee is paid online with the application and other fees are charged through demand notes at construction stages, while another FAQ answer lists cash/cheque/DD at a CFC alongside online payment; the published fee-mode instructions are therefore internally conflicting.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "nodeIds": ["node_ind47_fee_output"],
+      "sourceIds": ["source_ind47_bpas_faq_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": ["claim_ind47_online_only_payment_do_guidance"],
+      "notes": "The two statements appear in different FAQ sections on the same current page. No payment method was selected or used."
+    },
+    {
+      "id": "claim_ind47_online_only_payment_do_guidance",
+      "text": "The current public FAQ's building-permit Do's section instructs applicants to make all payments online through net banking or debit/credit card.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "nodeIds": ["node_ind47_fee_output"],
+      "sourceIds": ["source_ind47_bpas_faq_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": ["claim_ind47_fee_and_payment_guidance"],
+      "notes": "Retained with the separate FAQ payment-mode statement; this pass does not resolve which instruction applies to a current case."
+    },
+    {
+      "id": "claim_ind47_recovery_published",
+      "text": "The current public FAQ publishes recovery routes for workflow problems: an architect may email the concerned Building License Department or IT helpdesk if the architect is not cooperating, and an architect with online-filing difficulty may use the helpdesk email/telephone/SMS/EODB support route; the public helpdesk also exposes knowledge-base browse/search and a New ticket form.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "nodeIds": ["node_ind47_published_recovery"],
+      "sourceIds": ["source_ind47_bpas_faq_live", "source_ind47_helpdesk_kb_live", "source_ind47_helpdesk_ticket_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ's recovery wording is directed to an architect/LS. The public New ticket form visibly requests an email address and Project No.; no ticket or personal data was entered."
+    },
+    {
+      "id": "claim_ind47_live_case_boundary_unknown",
+      "text": "The public-only pass does not establish the current property-specific corporation/route, required document or NOC set, scrutiny result, rejection text, inspection result, fee demand, payment acceptance, sanction decision or certificate output for any Bengaluru building-plan case; these are Unknown.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "nodeIds": ["node_ind47_route_check", "node_ind47_documents_nocs", "node_ind47_scrutiny_status", "node_ind47_fee_output"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No login, property facts, professional selection, document/drawing upload, NOC request, live search, payment or submission was made."
+    },
+    {
+      "id": "claim_ind47_post_login_path_unknown",
+      "text": "After the public GBA/BPAS entry's sign-in/CAPTCHA boundary, the current authenticated form sequence, validation messages, live submission handoff and case-specific recovery remain Unknown in this pass.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "nodeIds": ["node_ind47_public_entry", "node_ind47_scrutiny_status"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The sign-in controls were observed, but no credentials or CAPTCHA were used and no access-control bypass was attempted."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_ind47_public_entry",
+      "label": "Public GBA/BPAS entry and access boundary",
+      "kind": "service",
+      "ownerAgencyId": "agency_ind47_gba_bpas",
+      "summary": "Read the current public entry surface and stop at the sign-in/CAPTCHA boundary.",
+      "requiredState": "No authenticated user, project, property identifier or search result exists.",
+      "checks": [
+        {
+          "id": "check_ind47_entry_controls",
+          "label": "Entry controls and public searches",
+          "description": "Observe city-corporation choices, sign-in/CAPTCHA controls, Citizen Search/Owner Search labels and the e-Khata notice without entering data.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+          "claimIds": ["claim_ind47_public_entry_surface"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind47_auth_boundary",
+          "label": "Sign-in/CAPTCHA boundary",
+          "description": "The entry exposes username, password and CAPTCHA controls; no public-only pass can verify what follows authenticated entry.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+          "claimIds": ["claim_ind47_public_entry_surface", "claim_ind47_post_login_path_unknown"],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind47_forgot_password_link",
+          "label": "Forgot Password link",
+          "description": "The public entry visibly exposes a Forgot Password link for an existing account; no account or reset was used.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+          "claimIds": ["claim_ind47_public_entry_surface"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "claimIds": ["claim_ind47_public_entry_surface", "claim_ind47_post_login_path_unknown"],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_ind47_route_check",
+      "label": "Route and professional check",
+      "kind": "decision",
+      "ownerAgencyId": "agency_ind47_gba_bpas",
+      "summary": "Use published CAF and empanelled-professional guidance as questions; do not decide a property-specific route.",
+      "requiredState": "Property location, corporation/zone, land use, plot size, height, building type and professional are unknown.",
+      "checks": [
+        {
+          "id": "check_ind47_caf_professional",
+          "label": "CAF and professional lead",
+          "description": "Read the FAQ's online application and empanelled-professional/CAF requirements without selecting a professional or filling a CAF.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": ["claim_ind47_online_application_inputs"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind47_route_facts_unknown",
+          "label": "Property-specific route unresolved",
+          "description": "The public page shows corporation choices, but no property facts were supplied or used to select a current route/category.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+          "claimIds": ["claim_ind47_public_entry_surface", "claim_ind47_live_case_boundary_unknown"],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind47_confirm_professional_route",
+          "label": "Confirm through empanelled professional",
+          "description": "The FAQ directs building-permission applicants to use an empanelled professional; current eligibility and professional availability still require case-specific confirmation.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": ["claim_ind47_online_application_inputs"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "claimIds": ["claim_ind47_online_application_inputs", "claim_ind47_live_case_boundary_unknown"],
+      "status": "unknown",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_ind47_documents_nocs",
+      "label": "Documents and NOC check",
+      "kind": "record",
+      "ownerAgencyId": "agency_ind47_gba_bpas",
+      "summary": "Review published document classes and NOC dependencies without creating a project or uploading files.",
+      "requiredState": "No drawing, ownership record, Khata/tax record, declaration or NOC exists in this pass.",
+      "checks": [
+        {
+          "id": "check_ind47_document_classes",
+          "label": "Published document and NOC classes",
+          "description": "Read the FAQ's plans/drawings, ownership/Khata/tax and declaration examples and its size/location/type/height NOC dependencies.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": ["claim_ind47_documents_nocs"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind47_document_rejection_signals",
+          "label": "Missing or non-conforming submission",
+          "description": "Published common rejection signals include missing mandatory documents/NOCs, non-conforming plans, invalid ownership/access records and Auto-Scrutiny deviations.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": ["claim_ind47_rejection_signals"],
+          "status": "verified"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind47_correct_submission",
+          "label": "Correct the published gaps",
+          "description": "Use the FAQ's rejection list as a correction checklist with the authorised professional; no correction, upload or resubmission was attempted.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": ["claim_ind47_rejection_signals"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "claimIds": ["claim_ind47_documents_nocs", "claim_ind47_rejection_signals", "claim_ind47_live_case_boundary_unknown"],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_ind47_scrutiny_status",
+      "label": "Scrutiny, status and stage check",
+      "kind": "record",
+      "ownerAgencyId": "agency_ind47_gba_bpas",
+      "summary": "Record the FAQ's published permit stages and citizen-search fields while leaving live status and validation outcomes Unknown.",
+      "requiredState": "No project/file number, search result, scrutiny remark, rejection, inspection or certificate exists.",
+      "checks": [
+        {
+          "id": "check_ind47_status_fields",
+          "label": "Published stage and citizen-search fields",
+          "description": "Read the FAQ's permit stages and file-status search fields without entering a file number, name, zone, ward or plot.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": ["claim_ind47_status_and_stages"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind47_live_status_unknown",
+          "label": "Live status or rejection not observable",
+          "description": "No public-only case lookup was run, so a current status, validation error, scrutiny remark or inspection outcome was not observed.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": ["claim_ind47_live_case_boundary_unknown", "claim_ind47_post_login_path_unknown"],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind47_public_status_search",
+          "label": "Use published Citizen Search route",
+          "description": "The FAQ publishes Citizen Search fields for file number, applicant, architect, zone, ward and plot/location; no identifier was entered.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": ["claim_ind47_status_and_stages"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "claimIds": ["claim_ind47_status_and_stages", "claim_ind47_live_case_boundary_unknown", "claim_ind47_post_login_path_unknown"],
+      "status": "unknown",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_ind47_fee_output",
+      "label": "Fee, payment and approval output",
+      "kind": "outcome",
+      "ownerAgencyId": "agency_ind47_gba_bpas",
+      "summary": "Record published fee/stage guidance and preserve the unresolved payment instruction conflict and absent case output.",
+      "requiredState": "No built-up/plot facts, fee demand, payment, sanction, licence, CC, BCC or OC exists.",
+      "checks": [
+        {
+          "id": "check_ind47_fee_guidance",
+          "label": "Published fee and stage guidance",
+          "description": "Read the FAQ's scrutiny-fee/demand-note and payment-mode statements without opening a payment flow.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": ["claim_ind47_fee_and_payment_guidance", "claim_ind47_online_only_payment_do_guidance"],
+          "status": "contested"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind47_fee_mode_conflict",
+          "label": "Conflicting published payment modes",
+          "description": "The same FAQ page contains an online-only Do's instruction and a separate answer listing CFC cash/cheque/DD alongside online payment.",
+          "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "claimIds": ["claim_ind47_fee_and_payment_guidance", "claim_ind47_online_only_payment_do_guidance"],
+          "status": "contested"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind47_fee_clarification_helpdesk",
+          "label": "Seek authorised fee clarification",
+          "description": "Use the published BPAS helpdesk/architect support route to clarify the applicable current payment instruction before paying; no payment or ticket was made.",
+          "url": "https://bpas.bbmpgov.in/HelpDesk/KB",
+          "claimIds": ["claim_ind47_recovery_published", "claim_ind47_fee_and_payment_guidance"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "claimIds": ["claim_ind47_status_and_stages", "claim_ind47_fee_and_payment_guidance", "claim_ind47_online_only_payment_do_guidance", "claim_ind47_live_case_boundary_unknown"],
+      "status": "unknown",
+      "displayOrder": 50
+    },
+    {
+      "id": "node_ind47_published_recovery",
+      "label": "Published support and recovery",
+      "kind": "service",
+      "ownerAgencyId": "agency_ind47_bpas_helpdesk",
+      "summary": "Record public FAQ recovery instructions and the current helpdesk knowledge-base/New-ticket surfaces without submitting a ticket.",
+      "requiredState": "No support ticket, email, project number or personal data exists.",
+      "checks": [
+        {
+          "id": "check_ind47_helpdesk_surface",
+          "label": "Public helpdesk and New Ticket form",
+          "description": "Observe public knowledge-base categories/search and the New Ticket form's email, subject, category/attachment and Project No. fields.",
+          "url": "https://bpas.bbmpgov.in/HelpDesk/Tickets/New",
+          "claimIds": ["claim_ind47_recovery_published"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind47_support_ticket_not_submitted",
+          "label": "Support outcome not observed",
+          "description": "The public form is visible, but no ticket was submitted, so acknowledgement, routing and resolution are Unknown.",
+          "url": "https://bpas.bbmpgov.in/HelpDesk/Tickets/New",
+          "claimIds": ["claim_ind47_recovery_published", "claim_ind47_live_case_boundary_unknown"],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind47_helpdesk_new_ticket",
+          "label": "Use public New Ticket route",
+          "description": "The current helpdesk exposes a New Ticket route; a real user would need to supply the form's requested contact/project information, which this pass deliberately did not do.",
+          "url": "https://bpas.bbmpgov.in/HelpDesk/Tickets/New",
+          "claimIds": ["claim_ind47_recovery_published"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "claimIds": ["claim_ind47_recovery_published", "claim_ind47_live_case_boundary_unknown"],
+      "status": "partial",
+      "displayOrder": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_ind47_entry_route",
+      "fromNodeId": "node_ind47_public_entry",
+      "toNodeId": "node_ind47_route_check",
+      "relationship": "requires",
+      "label": "The public entry displays corporation choices, but property-specific route selection is not completed in this pass.",
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "claimIds": ["claim_ind47_public_entry_surface", "claim_ind47_live_case_boundary_unknown"],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_ind47_route_documents",
+      "fromNodeId": "node_ind47_route_check",
+      "toNodeId": "node_ind47_documents_nocs",
+      "relationship": "requires",
+      "label": "Published CAF/professional guidance precedes the document and NOC package; no professional or file was selected.",
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "claimIds": ["claim_ind47_online_application_inputs", "claim_ind47_documents_nocs"],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind47_documents_scrutiny",
+      "fromNodeId": "node_ind47_documents_nocs",
+      "toNodeId": "node_ind47_scrutiny_status",
+      "relationship": "requires",
+      "label": "The FAQ's published rejection signals relate to the package before live scrutiny/status; no application was submitted.",
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "claimIds": ["claim_ind47_rejection_signals", "claim_ind47_live_case_boundary_unknown"],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_ind47_scrutiny_fee",
+      "fromNodeId": "node_ind47_scrutiny_status",
+      "toNodeId": "node_ind47_fee_output",
+      "relationship": "requires",
+      "label": "Published stages and status guidance precede any case-specific fee demand or approval output.",
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "claimIds": ["claim_ind47_status_and_stages", "claim_ind47_live_case_boundary_unknown"],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_ind47_fee_recovery",
+      "fromNodeId": "node_ind47_fee_output",
+      "toNodeId": "node_ind47_published_recovery",
+      "relationship": "alternative",
+      "label": "If a current fee or workflow issue is unclear, the published helpdesk/architect support route is the observed recovery lead; no ticket was filed.",
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "claimIds": ["claim_ind47_fee_and_payment_guidance", "claim_ind47_recovery_published"],
+      "status": "partial"
+    }
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind47_public_access_boundary",
+      "title": "Authenticated case path not publicly verified",
+      "category": "process",
+      "symptom": "The current public entry shows sign-in/CAPTCHA controls, while the live authenticated form, validation and submission result were not observable.",
+      "likelyCause": "Architect/owner account access and case-specific property/application state are required for the next workflow states.",
+      "recovery": "Use the public FAQ and published architect/helpdesk routes; retain the authenticated form and case outcome as Unknown until an authorised user proceeds.",
+      "ownerAgencyIds": ["agency_ind47_gba_bpas", "agency_ind47_bpas_helpdesk"],
+      "nodeIds": ["node_ind47_public_entry", "node_ind47_route_check", "node_ind47_scrutiny_status"],
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "claimIds": ["claim_ind47_post_login_path_unknown", "claim_ind47_recovery_published"],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind47_document_rejection",
+      "title": "Document/NOC and scrutiny failure signals",
+      "category": "documentation",
+      "symptom": "The FAQ lists missing or non-conforming plans, ownership/access records, NOCs and Auto-Scrutiny deviations as common rejection reasons.",
+      "likelyCause": "The proposal-specific document, drawing and NOC package does not meet the applicable requirements.",
+      "recovery": "Use the published mistake list to correct the package with the authorised professional; no correction or resubmission was performed.",
+      "ownerAgencyIds": ["agency_ind47_gba_bpas"],
+      "nodeIds": ["node_ind47_documents_nocs", "node_ind47_scrutiny_status"],
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "claimIds": ["claim_ind47_rejection_signals"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind47_payment_instruction_conflict",
+      "title": "Published fee-mode instructions conflict",
+      "category": "process",
+      "symptom": "One current FAQ section says all payments are online, while another lists CFC cash/cheque/DD alongside online payment.",
+      "likelyCause": "Different FAQ sections or legacy guidance have not been reconciled on the public page.",
+      "recovery": "Obtain current authorised clarification through the published architect/helpdesk route before paying; no payment was attempted.",
+      "ownerAgencyIds": ["agency_ind47_gba_bpas", "agency_ind47_bpas_helpdesk"],
+      "nodeIds": ["node_ind47_fee_output", "node_ind47_published_recovery"],
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "claimIds": ["claim_ind47_fee_and_payment_guidance", "claim_ind47_online_only_payment_do_guidance", "claim_ind47_recovery_published"],
+      "status": "contested"
+    },
+    {
+      "id": "roadblock_ind47_live_outcome_unknown",
+      "title": "No case-specific approval outcome",
+      "category": "process",
+      "symptom": "No live project, status result, scrutiny remark, fee demand, payment, inspection, sanction, licence, CC, BCC or OC exists in this public-only pass.",
+      "likelyCause": "Those states require an authorised route, case data and/or an actual municipal application.",
+      "recovery": "Use a case-specific authorised search or filing and retain the project/reference number; do not treat FAQ stages as a live approval.",
+      "ownerAgencyIds": ["agency_ind47_gba_bpas"],
+      "nodeIds": ["node_ind47_scrutiny_status", "node_ind47_fee_output"],
+      "scenarioIds": ["scenario_ind47_default_building_plan"],
+      "claimIds": ["claim_ind47_live_case_boundary_unknown"],
+      "status": "unknown"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_ind47_default_public_building_plan",
+      "title": "Default building-plan public route boundary",
+      "scenarioId": "scenario_ind47_default_building_plan",
+      "context": "Read current GBA/BPAS public interfaces and FAQ guidance without login, personal data, upload, payment or submission; stop exactly at the unauthenticated boundary and mark live case states Unknown.",
+      "steps": [
+        {
+          "id": "step_ind47_entry",
+          "label": "Observe public entry",
+          "nodeId": "node_ind47_public_entry",
+          "action": "Open the current GBA BPAS entry and record visible corporation choices, sign-in/CAPTCHA controls, public search labels and the e-Khata notice without entering data.",
+          "expectedResult": "Current public entry surface recorded; no authenticated session or case.",
+          "claimIds": ["claim_ind47_public_entry_surface"],
+          "status": "verified"
+        },
+        {
+          "id": "step_ind47_route",
+          "label": "Read route and CAF guidance",
+          "nodeId": "node_ind47_route_check",
+          "action": "Read the FAQ's empanelled-professional and CAF guidance without selecting a professional or deciding a property-specific route.",
+          "expectedResult": "Published route lead recorded; current property-specific route remains Unknown.",
+          "claimIds": ["claim_ind47_online_application_inputs", "claim_ind47_live_case_boundary_unknown"],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind47_documents",
+          "label": "Read document and failure signals",
+          "nodeId": "node_ind47_documents_nocs",
+          "action": "Read public document/NOC examples and common rejection reasons without creating a project or uploading a drawing/document.",
+          "expectedResult": "Citizen-check and failure-signal list recorded; no case validation.",
+          "claimIds": ["claim_ind47_documents_nocs", "claim_ind47_rejection_signals"],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind47_status_fee",
+          "label": "Preserve live status and fee boundary",
+          "nodeId": "node_ind47_fee_output",
+          "action": "Read published stages, status-search fields and fee statements without entering an identifier or opening payment.",
+          "expectedResult": "Published guidance and payment conflict recorded; live status, demand and approval remain Unknown.",
+          "claimIds": ["claim_ind47_status_and_stages", "claim_ind47_fee_and_payment_guidance", "claim_ind47_live_case_boundary_unknown"],
+          "status": "unknown"
+        },
+        {
+          "id": "step_ind47_recovery",
+          "label": "Record published recovery",
+          "nodeId": "node_ind47_published_recovery",
+          "action": "Open the public helpdesk knowledge base and New Ticket form to record visible support routes without filling or submitting the form.",
+          "expectedResult": "Published recovery route recorded; ticket acknowledgement/resolution remains Unknown.",
+          "claimIds": ["claim_ind47_recovery_published"],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dep_ind47_route_to_documents",
+          "fromNodeId": "node_ind47_route_check",
+          "toNodeId": "node_ind47_documents_nocs",
+          "description": "Published CAF/professional guidance precedes the proposal-specific document and NOC package, but this pass does not select a case route.",
+          "claimIds": ["claim_ind47_online_application_inputs", "claim_ind47_documents_nocs"],
+          "status": "partial"
+        },
+        {
+          "id": "dep_ind47_case_to_outcome",
+          "fromNodeId": "node_ind47_scrutiny_status",
+          "toNodeId": "node_ind47_fee_output",
+          "description": "A live project/status state would be needed before any case-specific demand or certificate outcome; none exists here.",
+          "claimIds": ["claim_ind47_live_case_boundary_unknown"],
+          "status": "unknown"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_ind47_public_access_boundary",
+        "roadblock_ind47_document_rejection",
+        "roadblock_ind47_payment_instruction_conflict",
+        "roadblock_ind47_live_outcome_unknown"
+      ],
+      "recoveryNotes": [
+        "The FAQ supplies correction signals and architect/helpdesk recovery; the public helpdesk New Ticket form was observed but not submitted.",
+        "No login, CAPTCHA, property identifier, professional selection, upload, NOC request, payment or live submission was made.",
+        "The public route ends at the unauthenticated interface; current authenticated fields and all case-specific outcomes remain Unknown."
+      ],
+      "documentationQualityNotes": [
+        "The entry, FAQ and helpdesk surfaces were directly observed as current public pages on 2026-08-31.",
+        "FAQ payment instructions conflict internally and are retained as contested; current property-specific eligibility, validation and sanction behavior are not established."
+      ],
+      "status": "partial"
+    }
+  ]
+}

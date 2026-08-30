@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru building-plan approval — citizen-evidence pass",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-31",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice or an application route. Public citizen accounts are redacted, limited, and do not establish eligibility, requirements, misconduct, or outcomes."
+  },
+  "agencies": [],
+  "scenarios": [
+    {
+      "id": "scenario_ind47_building_citizen",
+      "label": "Building-plan citizen evidence",
+      "summary": "Reported applicant and prospective-buyer uncertainty around plan processing, approved-plan representations, and a related utility dependency.",
+      "tags": ["building-plan", "citizen-evidence", "bengaluru"],
+      "pathNodeIds": ["node_building_w_scrutiny", "node_building_w_license"],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind47_building_delay_month_report",
+      "title": "Key Documents to check while buying a home in benguluru.",
+      "publisher": "r/BangaloreRealEstates (Reddit)",
+      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1rbvu0s/key_documents_to_check_while_buying_a_home_in/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2026-02-23",
+      "type": "citizen_evidence",
+      "notes": "A public first-person comment reports that building-plan approval had taken almost one month. Username, property, application and other personal details are intentionally omitted. The comment does not identify the competent authority, application stage, document completeness, case status, cause, or applicable timeline."
+    },
+    {
+      "id": "source_ind47_building_map_plan_conflict",
+      "title": "Planning to buy an apartment which has BBMP approved plan, but Dishank app shows raja kaluve passing through it",
+      "publisher": "r/indianrealestate (Reddit)",
+      "url": "https://www.reddit.com/r/indianrealestate/comments/1oh9tk9/planning_to_buy_and_apartment_which_has_bbmp/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2025-10-27",
+      "type": "citizen_evidence",
+      "notes": "A public first-person prospective-buyer post reports an apparent mismatch between a public mapping result and a builder's statement about a BBMP-sanctioned plan. Username, locality, builder, property and map details are intentionally omitted. Neither representation was independently verified."
+    },
+    {
+      "id": "source_ind47_building_connection_dependency",
+      "title": "BBMP : OC Certificate mandatory for BWSSB and BESCOM",
+      "publisher": "r/indianrealestate (Reddit)",
+      "url": "https://www.reddit.com/r/indianrealestate/comments/1kmm3o9/bbmp_oc_certificate_mandatory_for_bwssb_and_bescom/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2025-05-14",
+      "type": "citizen_evidence",
+      "notes": "A public first-person commenter reports having a BBMP-sanctioned plan while encountering a claimed affidavit/CC dependency for an electricity connection, including a temporary connection. Username, plot size, address, blueprint and all other personal details are intentionally omitted. The reported request, requirements, eligibility, and later outcome are unverified."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind47_building_delay_month_reported",
+      "text": "One citizen reported that their building-plan approval had taken almost one month.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind47_building_citizen"],
+      "nodeIds": ["node_building_w_scrutiny"],
+      "sourceIds": ["source_ind47_building_delay_month_report"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One unverified citizen-reported duration; it is not evidence of a service standard breach, a system-wide delay, or a cause."
+    },
+    {
+      "id": "claim_ind47_building_public_map_signal_reported",
+      "text": "One prospective buyer reported that a public mapping application displayed a watercourse signal at a shortlisted apartment site.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind47_building_citizen"],
+      "nodeIds": ["node_building_w_route", "node_building_w_scrutiny"],
+      "sourceIds": ["source_ind47_building_map_plan_conflict"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": ["claim_ind47_building_builder_sanction_representation_reported"],
+      "notes": "This preserves a reported interface signal only. It does not establish the map's accuracy, a restriction, or the site's legal status."
+    },
+    {
+      "id": "claim_ind47_building_builder_sanction_representation_reported",
+      "text": "The same prospective buyer reported that the builder said the apartment had a BBMP-sanctioned plan and that the mapping result was incorrect.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind47_building_citizen"],
+      "nodeIds": ["node_building_w_scrutiny", "node_building_w_license"],
+      "sourceIds": ["source_ind47_building_map_plan_conflict"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": ["claim_ind47_building_public_map_signal_reported"],
+      "notes": "This records a reported builder representation, not proof of a sanction, its validity, the map's inaccuracy, or legality. It is cross-linked because the source presents it as inconsistent with the reported mapping signal."
+    },
+    {
+      "id": "claim_ind47_building_connection_dependency_reported",
+      "text": "One citizen reported that, despite a BBMP-sanctioned plan, an electricity provider requested an affidavit concerning a completion-certificate-related condition for connection, including temporary connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind47_building_citizen"],
+      "nodeIds": ["node_building_w_license"],
+      "sourceIds": ["source_ind47_building_connection_dependency"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One unverified account of a cross-system dependency; it does not establish a current provider policy, a certificate requirement, an exemption, or whether the reported account was complete."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind47_building_reported_delay",
+      "title": "Reported approval delay without a verifiable case state",
+      "category": "process",
+      "symptom": "One citizen reported that a building-plan approval had taken almost one month.",
+      "likelyCause": "Unknown; the account does not reveal the authority, submission date, completeness, scrutiny state, objection, or case-specific dependency.",
+      "recovery": "Use the competent authority's current, authorised case-status and written-reason route; do not infer a general delay or cause from this account.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_building_w_scrutiny"],
+      "scenarioIds": ["scenario_ind47_building_citizen"],
+      "claimIds": ["claim_ind47_building_delay_month_reported"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind47_building_conflicting_representations",
+      "title": "Reported conflict between a map signal and a builder's sanction representation",
+      "category": "documentation",
+      "symptom": "A prospective buyer reported a public mapping signal that appeared inconsistent with a builder's statement about an approved plan.",
+      "likelyCause": "Unknown; neither the map record nor the claimed sanction was verified, and the account does not establish how either source should be interpreted for the property.",
+      "recovery": "Obtain authoritative, property-specific records from the responsible agencies and qualified independent review before relying on either representation.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_building_w_route", "node_building_w_scrutiny", "node_building_w_license"],
+      "scenarioIds": ["scenario_ind47_building_citizen"],
+      "claimIds": ["claim_ind47_building_public_map_signal_reported", "claim_ind47_building_builder_sanction_representation_reported"],
+      "status": "contested"
+    },
+    {
+      "id": "roadblock_ind47_building_reported_connection_dependency",
+      "title": "Reported utility-connection obstacle after plan sanction",
+      "category": "infrastructure",
+      "symptom": "One citizen reported a claimed affidavit and certificate-related condition for electricity connection after plan sanction.",
+      "likelyCause": "Unknown; the citizen account cannot verify the provider's current rule, property category, application completeness, certificate status, or whether the reported condition applied.",
+      "recovery": "Request the current written requirement and case-specific explanation from the relevant provider and planning authority; do not rely on forum advice or an informal intermediary.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_building_w_license"],
+      "scenarioIds": ["scenario_ind47_building_citizen"],
+      "claimIds": ["claim_ind47_building_connection_dependency_reported"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

@@ -1,0 +1,469 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "IND-45 Bengaluru khata public default-path gap pass",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-30",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice. It records only unauthenticated public-interface observations and explicit Unknown boundaries; do not submit personal data through this ledger."
+  },
+  "agencies": [],
+  "scenarios": [
+    {
+      "id": "scenario_clean_sale",
+      "label": "Clean sale",
+      "summary": "A buyer seeks municipal khata transfer or mutation after a registered property sale.",
+      "tags": ["sale", "khata-transfer", "mutation"],
+      "pathNodeIds": ["node_sale_deed", "node_property_search", "node_mutation", "node_final_e_khata", "node_epid", "node_khata_application_status", "node_khata_transfer_payment"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_draft_e_khata",
+      "label": "Draft or pending e-Khata",
+      "summary": "A property record is visible as a draft or has not reached a known final e-Khata state.",
+      "tags": ["e-khata", "draft", "pending"],
+      "pathNodeIds": ["node_property_search", "node_final_e_khata", "node_epid", "node_khata_application_status", "node_mutation"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_missing_property",
+      "label": "Property not found in public e-Aasthi search",
+      "summary": "A citizen cannot locate the property through the public e-Aasthi search inputs.",
+      "tags": ["property-search", "missing-property", "recovery"],
+      "pathNodeIds": ["node_property_search", "node_missing_property_recovery", "node_final_e_khata"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_pending_mutation",
+      "label": "Mutation pending or objection visible",
+      "summary": "A public mutation report exposes a pending-with-whom state or a File Objection route.",
+      "tags": ["mutation", "pending", "objection"],
+      "pathNodeIds": ["node_mutation", "node_khata_application_status", "node_final_e_khata"],
+      "status": "unknown"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind45_eaasthi_home_live",
+      "title": "e-Aasthi citizen public entry and search guidance — current observation",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated page observation. Search radios/field, SEARCH and RESET, ward-wise list, and the quoted Do Not Find My Property eKhata link were visible. The link was clicked without entering data; the URL remained on this page and no form or response appeared."
+    },
+    {
+      "id": "source_ind45_eaasthi_login_live",
+      "title": "e-Aasthi citizen login and Final eKhata instructions — current observation",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated login boundary observed: Mobile Number, Captcha image, Captcha Answer, and OTP-get control. The page says mobile-and-OTP login is used to see/download Draft eKhata, lists registered deed and other Final eKhata inputs, and displays a notice to ensure current financial-year tax is paid before entering property details for existing records. No post-login validation or rejection state was inspected."
+    },
+    {
+      "id": "source_ind45_ekhata_status_live",
+      "title": "eKhatha Application Status — current public observation",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated page exposes Enter EPID to know status, SEARCH STATUS, RESET, stage/routing/date/status/remarks headings, the literal default row No Data Available, waiting-list guidance, and helpline 9480683695. No EPID was entered."
+    },
+    {
+      "id": "source_ind45_pendance_report_live",
+      "title": "e-Aasthi Pendance Report — current public observation",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/PendanceReport",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated report displays the heading `Pendance Report as on -` (the date value is blank), Zone/ARO and Zone/Ward report radios, Zone Name, ARO Name, Ward Name, SEARCH and RESET controls, and a default `No data available` table. No filter was filled or searched."
+    },
+    {
+      "id": "source_ind45_pending_mutation_route_live",
+      "title": "e-Aasthi Pending Mutation Report route — currentness observation",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/PendingMutationReport",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Direct unauthenticated navigation rendered the common header/footer but no report controls, table, or error text after waiting. The older-looking https://bbmpeaasthi.karnataka.gov.in/office/frmPendingMutationReport.aspx route redirected to PageNotFound.html / File Not Found. No property or objection was entered."
+    },
+    {
+      "id": "source_ind45_ward_coordinates_live",
+      "title": "e-Aasthi ward/property map selection — current public observation",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/GoogleMapsWardCoordinates",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated page displays Select your Property, Enter a location, Go, and a map. No location, property, or map control was used."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind45_draft_login_controls_visible",
+      "text": "The public e-Aasthi citizen page displays Mobile Number, Captcha, Captcha Answer, and an OTP-get control, and states that mobile-and-OTP login is used to see or download a property's Draft eKhata.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "nodeIds": ["node_sale_deed"],
+      "sourceIds": ["source_ind45_eaasthi_login_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct unauthenticated observation on 2026-08-30. The OTP control was not activated and no login, identifier, or property was supplied."
+    },
+    {
+      "id": "claim_ind45_current_tax_notice_visible",
+      "text": "The public e-Aasthi citizen login page instructs citizens to ensure that tax for the current financial year is paid before trying to enter property details for existing records.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "nodeIds": ["node_sale_deed"],
+      "sourceIds": ["source_ind45_eaasthi_login_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This records the page's visible notice only; it does not establish a universal eligibility rule or how tax status is checked."
+    },
+    {
+      "id": "claim_ind45_missing_route_no_navigation",
+      "text": "On 2026-08-30, clicking the visible `DO NOT FIND MY PROPERTY EKHATA` link on the public e-Aasthi citizen entry without entering data left the URL at `/citizen_core/` and revealed no public form, confirmation, error, or response.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_missing_property"],
+      "nodeIds": ["node_missing_property_recovery"],
+      "sourceIds": ["source_ind45_eaasthi_home_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This records the observed public interaction only; it does not establish that the route is universally broken or that no authenticated route exists."
+    },
+    {
+      "id": "claim_ind45_status_default_no_data",
+      "text": "The public eKhatha Application Status page exposes an EPID input with SEARCH STATUS and RESET, shows status/routing/date/remarks headings, and renders the literal default row `No Data Available` when no EPID is entered; it also publishes waiting-list guidance and helpline 9480683695.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_pending_mutation"],
+      "nodeIds": ["node_epid", "node_khata_application_status"],
+      "sourceIds": ["source_ind45_ekhata_status_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No EPID was entered; the default no-data row is not a property-specific outcome."
+    },
+    {
+      "id": "claim_ind45_pendance_controls_no_data",
+      "text": "The public e-Aasthi Pendance Report exposes Zone/ARO and Zone/Ward report choices, Zone Name, ARO Name, Ward Name, SEARCH and RESET controls, and a default `No data available` table without any filter being entered.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_pending_mutation"],
+      "nodeIds": ["node_mutation"],
+      "sourceIds": ["source_ind45_pendance_report_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No search was activated; the default no-data table is not evidence that no pending cases exist."
+    },
+    {
+      "id": "claim_ind45_pending_mutation_route_currently_blank",
+      "text": "On 2026-08-30, the public e-Aasthi `/citizen_core/PendingMutationReport` route rendered only the common header/footer with no report controls or table, while `/office/frmPendingMutationReport.aspx` redirected to `PageNotFound.html` with `File Not Found`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_pending_mutation"],
+      "nodeIds": ["node_mutation"],
+      "sourceIds": ["source_ind45_pending_mutation_route_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": ["claim_ind32_pending_mutation_report_fields"],
+      "notes": "The earlier public observation captured report fields at a related/currently changing route. Both records are retained for audit; this observation does not prove the earlier fields were never visible."
+    },
+    {
+      "id": "claim_ind45_ward_map_controls",
+      "text": "The public e-Aasthi ward/property map page exposes `Select your Property`, an `Enter a location` textbox, a `Go` control, and a map before a property or location is selected.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "nodeIds": ["node_property_search"],
+      "sourceIds": ["source_ind45_ward_coordinates_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No location, property, or map control was used."
+    },
+    {
+      "id": "claim_ind45_ward_map_outcome_unknown",
+      "text": "The reviewed public ward/property map page does not establish what property result, ward assignment, validation error, or Draft eKhata handoff follows entering a location or selecting a property; those outcomes are Unknown.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "nodeIds": ["node_property_search"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No location or property was entered."
+    },
+    {
+      "id": "claim_ind45_sale_deed_failure_recovery_unknown",
+      "text": "The public Draft/Final eKhata instructions list a registered deed as an input, but the unauthenticated route exposes no deed-validation error, rejection text, or public recovery route; those outcomes are Unknown without login and upload.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "nodeIds": ["node_sale_deed"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The public login page was inspected; no login, upload, or validation action was attempted."
+    },
+    {
+      "id": "claim_ind45_epid_failure_recovery_unknown",
+      "text": "The unauthenticated e-Khata status route exposes an EPID input and a default `No Data Available` row, but it does not establish an EPID-specific invalid-value failure, lookup recovery, or property-specific status without entering an EPID; those outcomes are Unknown.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_pending_mutation"],
+      "nodeIds": ["node_epid"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No EPID or property identifier was entered."
+    },
+    {
+      "id": "claim_ind45_pending_report_recovery_unknown",
+      "text": "The reviewed public pendency and mutation-report routes expose filters or a report label but do not establish a public recovery, objection form, owner, deadline, or case-resolution path from the default no-data/blank views; these outcomes are Unknown.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_pending_mutation"],
+      "nodeIds": ["node_mutation"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No filter, property, objection, or submission was entered."
+    },
+    {
+      "id": "claim_ind32_pending_mutation_report_fields",
+      "text": "The public e-Aasthi Pending Mutation Report was previously observed exposing fields for the registered-deed or mutation-application date, basis of mutation, property EPID, seller/giving party, purchaser/receiving party, public-notice date, pending-with-whom state, and File Objection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_pending_mutation"],
+      "nodeIds": ["node_mutation"],
+      "sourceIds": ["source_ind32_pending_mutation_report"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": ["claim_ind45_pending_mutation_route_currently_blank"],
+      "notes": "Retained from the earlier workflow handoff; the current-route observation is in conflict and requires audit/currentness review."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_sale_deed",
+      "label": "Registered sale deed",
+      "kind": "document",
+      "ownerAgencyId": "agency_bbmp_ind32",
+      "summary": "Registered deed listed as a Final eKhata input after a sale.",
+      "requiredState": "A registered deed is listed in public Final eKhata instructions; post-login acceptance is not observed.",
+      "checks": [
+        {"id":"check_ind32_registered_deed_listed","label":"Listed Final eKhata input","description":"Public instructions list a registered deed among additional Final eKhata information.","url":"https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx","claimIds":["claim_ind32_draft_final_guidance"],"status":"verified"},
+        {"id":"check_ind45_draft_login_boundary","label":"Draft eKhata login boundary","description":"The public page shows Mobile Number, Captcha, Captcha Answer, and OTP controls and says mobile-and-OTP login is used to see or download Draft eKhata.","url":"https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx","claimIds":["claim_ind45_draft_login_controls_visible"],"status":"verified"},
+        {"id":"check_ind45_current_tax_notice","label":"Current-year tax notice","description":"The public page tells citizens to ensure current financial-year tax is paid before entering property details for existing records.","url":"https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx","claimIds":["claim_ind45_current_tax_notice_visible"],"status":"verified"}
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "researchedNoSourceFound": ["failureSignals", "recoveries"],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "claimIds": ["claim_ind32_draft_final_guidance", "claim_ind32_end_to_end_sequence_unknown", "claim_ind45_sale_deed_failure_recovery_unknown", "claim_ind45_draft_login_controls_visible", "claim_ind45_current_tax_notice_visible"],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_property_search",
+      "label": "Public e-Aasthi property search",
+      "kind": "service",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Public search by ward, SAS property-tax ID, ePID, or the ward/property map route.",
+      "requiredState": "A public search key or map selection is needed; no property value was entered.",
+      "checks": [
+        {"id":"check_ind32_search_fields","label":"Ward/SAS/ePID search","description":"The public search exposes Ward Name or Number, Property ePID, and SAS Property Tax ID inputs.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/","claimIds":["claim_ind32_public_search_inputs"],"status":"verified"},
+        {"id":"check_ind45_ward_map_controls","label":"Ward/property map controls","description":"The public map route exposes Select your Property, Enter a location, Go, and a map before selection.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/GoogleMapsWardCoordinates","claimIds":["claim_ind45_ward_map_controls"],"status":"verified"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind32_property_not_found","label":"Property not found","description":"The public instructions anticipate a property not being found in the search.","claimIds":["claim_ind32_missing_property_route"],"status":"verified"},
+        {"id":"failure_ind45_ward_map_outcome_unknown","label":"Map selection outcome unknown","description":"No property or location was entered, so no map result, validation error, or downstream Draft eKhata handoff was observed.","claimIds":["claim_ind45_ward_map_outcome_unknown"],"status":"unknown"}
+      ],
+      "recoveries": [
+        {"id":"recovery_ind32_missing_property_route","label":"Do Not Find My Property eKhata","description":"The public search offers a route for the corporation to check and revert; no details were submitted.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/","claimIds":["claim_ind32_missing_property_route"],"status":"verified"}
+      ],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_missing_property"],
+      "claimIds": ["claim_ind32_public_search_inputs", "claim_ind32_missing_property_route", "claim_ind45_ward_map_controls", "claim_ind45_ward_map_outcome_unknown"],
+      "status": "verified",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_missing_property_recovery",
+      "label": "Missing-property eKhata route",
+      "kind": "service",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Public missing-property label and attempted route when a property is absent from search.",
+      "requiredState": "The public entry offers a missing-property label, but no public form or response appeared in this pass.",
+      "checks": [],
+      "failureSignals": [
+        {"id":"failure_ind45_missing_route_no_navigation","label":"Missing-property link did not reveal a public form","description":"Clicking the visible missing-property link without data left the URL at the citizen entry and showed no form, confirmation, error, or response.","actualError":"No public form or response appeared; URL remained https://bbmpeaasthi.karnataka.gov.in/citizen_core/.","claimIds":["claim_ind45_missing_route_no_navigation"],"status":"partial"}
+      ],
+      "recoveries": [
+        {"id":"recovery_ind32_helpline_unknown_case","label":"Published eKhata helpline","description":"The public status page publishes eKhata helpline 9480683695, but no case-specific response was obtained.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus","claimIds":["claim_ind32_ekhata_status_public_route"],"status":"partial"}
+      ],
+      "researchedNoSourceFound": ["checks"],
+      "scenarioIds": ["scenario_missing_property"],
+      "claimIds": ["claim_ind32_missing_property_route", "claim_ind32_post_login_fields_unknown", "claim_ind45_missing_route_no_navigation"],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_mutation",
+      "label": "Municipal mutation",
+      "kind": "service",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Public Automatic Mutation, pendency, and current mutation-report route surfaces.",
+      "requiredState": "A property-specific mutation record would be needed; no property or filter was entered.",
+      "checks": [
+        {"id":"check_ind32_auto_mutation_entry","label":"Automatic Mutation entry","description":"The citizen page exposes eKhata Automatic Mutations - Get Your Mutation.","url":"https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx","claimIds":["claim_ind32_automatic_mutation_entry"],"status":"verified"},
+        {"id":"check_ind32_pending_report_fields","label":"Pending mutation report","description":"An earlier public observation captured deed/mutation basis, EPID, transfer parties, pending-with-whom, and objection fields.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/PendingMutationReport","claimIds":["claim_ind32_pending_mutation_report_fields"],"status":"contested"},
+        {"id":"check_ind45_pendance_controls","label":"Pendency report default controls","description":"The current public Pendance Report exposes Zone/ARO or Zone/Ward radios, Zone Name, ARO Name, Ward Name, SEARCH and RESET, with a default no-data table.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/PendanceReport","claimIds":["claim_ind45_pendance_controls_no_data"],"status":"verified"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind32_mutation_pending","label":"Mutation pending or objection visible","description":"The earlier public report included a pending-with-whom field and File Objection label; no property-specific row was available.","claimIds":["claim_ind32_pending_mutation_report_fields"],"status":"partial"},
+        {"id":"failure_ind45_pendance_no_data","label":"Pendency report has no default data","description":"The current public Pendance Report renders No data available before any filter is entered; this is not a case-specific result.","actualError":"No data available","claimIds":["claim_ind45_pendance_controls_no_data"],"status":"verified"},
+        {"id":"failure_ind45_pending_route_blank","label":"Pending Mutation Report route blank or not found","description":"The current citizen mutation-report route rendered no report controls/table, while the older office route showed File Not Found.","actualError":"File Not Found on /office/frmPendingMutationReport.aspx; common header/footer only on /citizen_core/PendingMutationReport.","claimIds":["claim_ind45_pending_mutation_route_currently_blank"],"status":"contested"}
+      ],
+      "recoveries": [
+        {"id":"recovery_ind32_objection_entry_only","label":"File Objection entry","description":"A File Objection entry was exposed in the earlier report observation, but its form and downstream handling remain Unknown.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/PendingMutationReport","claimIds":["claim_ind32_public_objection_entry"],"status":"unknown"}
+      ],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_pending_mutation"],
+      "claimIds": ["claim_ind32_automatic_mutation_entry", "claim_ind32_pending_mutation_report_fields", "claim_ind32_mutation_eligibility_unknown", "claim_ind32_public_objection_entry", "claim_ind45_pendance_controls_no_data", "claim_ind45_pending_mutation_route_currently_blank", "claim_ind45_pending_report_recovery_unknown"],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_epid",
+      "label": "Property ePID status",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "ePID is the public status lookup key, but no identifier was entered.",
+      "requiredState": "A property ePID is required for a case-specific status result; none was entered.",
+      "checks": [
+        {"id":"check_ind32_epid_search","label":"ePID search input","description":"Public e-Aasthi search exposes Property ePID as a lookup input.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/","claimIds":["claim_ind32_public_search_inputs"],"status":"verified"},
+        {"id":"check_ind32_epid_status","label":"ePID status lookup","description":"Public eKhata status accepts an EPID.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus","claimIds":["claim_ind32_ekhata_status_public_route"],"status":"verified"}
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "researchedNoSourceFound": ["failureSignals", "recoveries"],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_pending_mutation"],
+      "claimIds": ["claim_ind32_public_search_inputs", "claim_ind32_ekhata_status_public_route", "claim_ind32_mutation_eligibility_unknown", "claim_ind45_status_default_no_data", "claim_ind45_epid_failure_recovery_unknown"],
+      "status": "partial",
+      "displayOrder": 60
+    },
+    {
+      "id": "node_khata_application_status",
+      "label": "eKhata application status",
+      "kind": "service",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Public EPID status page with default no-data state and helpline.",
+      "requiredState": "An EPID is needed for a case-specific status; no EPID was entered.",
+      "checks": [
+        {"id":"check_ind32_status_fields","label":"Status columns","description":"The status page exposes stage, routing, timestamps, status, and remarks columns.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus","claimIds":["claim_ind32_ekhata_status_public_route"],"status":"verified"}
+      ],
+      "failureSignals": [
+        {"id":"failure_ind32_status_case_unknown","label":"Case status not checked","description":"No EPID was entered, so no property-specific error, status, or remark was observed.","claimIds":["claim_ind32_post_login_fields_unknown"],"status":"unknown"},
+        {"id":"failure_ind45_status_no_data_available","label":"Default status table says No Data Available","description":"The public status page renders the literal No Data Available row when no EPID is entered; this is not a property-specific failure.","actualError":"No Data Available","claimIds":["claim_ind45_status_default_no_data"],"status":"verified"}
+      ],
+      "recoveries": [
+        {"id":"recovery_ind32_ekhata_helpline","label":"Published eKhata helpline","description":"The public page publishes 9480683695 for issues; no response was obtained.","url":"https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus","claimIds":["claim_ind32_ekhata_status_public_route"],"status":"partial"}
+      ],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_pending_mutation"],
+      "claimIds": ["claim_ind32_ekhata_status_public_route", "claim_ind32_post_login_fields_unknown", "claim_ind45_status_default_no_data"],
+      "status": "partial",
+      "displayOrder": 70
+    }
+  ],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind45_default_case_outcome_unknown",
+      "title": "Default public views do not expose a case outcome",
+      "category": "process",
+      "symptom": "The public status and pendency pages show blank/no-data defaults, while deed processing and map selection stop before an authenticated or property-specific result.",
+      "likelyCause": "No EPID, property, filter, location, login, upload, or submission was used in this public-only pass.",
+      "recovery": "Use the published non-submission handoffs (eKhata helpline and any visible official report route) when a real case is authorised; validation, rejection, property result, and resolution timing remain Unknown here.",
+      "ownerAgencyIds": ["agency_gba"],
+      "nodeIds": ["node_sale_deed", "node_property_search", "node_epid", "node_khata_application_status"],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_missing_property", "scenario_pending_mutation"],
+      "claimIds": ["claim_ind45_sale_deed_failure_recovery_unknown", "claim_ind45_ward_map_outcome_unknown", "claim_ind45_epid_failure_recovery_unknown", "claim_ind45_status_default_no_data", "claim_ind45_missing_route_no_navigation"],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind45_mutation_route_currentness_conflict",
+      "title": "Mutation-report route currentness conflict",
+      "category": "infrastructure",
+      "symptom": "An earlier public observation recorded Pending Mutation Report fields, but the current direct citizen route rendered no report and the older office route returned File Not Found.",
+      "likelyCause": "The public service has route or deployment drift; this pass did not use an undocumented endpoint or bypass a missing page.",
+      "recovery": "Keep the earlier field observation and current blank/not-found observation contested, and recheck the official citizen directory before treating either route as the current default.",
+      "ownerAgencyIds": ["agency_gba"],
+      "nodeIds": ["node_mutation"],
+      "scenarioIds": ["scenario_pending_mutation"],
+      "claimIds": ["claim_ind32_pending_mutation_report_fields", "claim_ind45_pending_mutation_route_currently_blank"],
+      "status": "contested"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_ind45_public_default_gap_pass",
+      "title": "Public default-path controls and Unknown boundaries after a sale",
+      "scenarioId": "scenario_clean_sale",
+      "context": "An unauthenticated visitor follows the public e-Aasthi entry and records controls and default states without using a property, EPID, location, login, upload, payment, or submission.",
+      "steps": [
+        {"id":"step_ind45_open_entry","label":"Open public e-Aasthi entry","nodeId":"node_property_search","action":"Read the public citizen entry and its search controls.","expectedResult":"Ward Name or Number, Property ePID, SAS Property Tax ID, SEARCH, RESET, and ward-wise list are visible.","claimIds":["claim_ind32_public_search_inputs"],"status":"verified"},
+        {"id":"step_ind45_read_deed_boundary","label":"Read deed/login boundary","nodeId":"node_sale_deed","action":"Read the public Final eKhata instructions without logging in or uploading.","expectedResult":"Registered deed, the mobile/CAPTCHA/OTP login boundary, and current-year tax notice are visible; deed validation, rejection, and recovery are Unknown.","claimIds":["claim_ind32_draft_final_guidance","claim_ind45_sale_deed_failure_recovery_unknown","claim_ind45_draft_login_controls_visible","claim_ind45_current_tax_notice_visible"],"status":"partial"},
+        {"id":"step_ind45_read_status_default","label":"Read status default","nodeId":"node_khata_application_status","action":"Open the public status page without entering an EPID.","expectedResult":"EPID, SEARCH STATUS, RESET, status columns, No Data Available, and helpline are visible; no case status is known.","claimIds":["claim_ind45_status_default_no_data","claim_ind45_epid_failure_recovery_unknown"],"status":"partial"},
+        {"id":"step_ind45_read_map_boundary","label":"Read ward-map boundary","nodeId":"node_property_search","action":"Open the ward/property map route without entering a location or selecting a property.","expectedResult":"Select your Property, Enter a location, Go, and a map are visible; result and validation are Unknown.","claimIds":["claim_ind45_ward_map_controls","claim_ind45_ward_map_outcome_unknown"],"status":"partial"}
+      ],
+      "dependencies": [],
+      "failureRoadblockIds": ["roadblock_ind45_default_case_outcome_unknown"],
+      "recoveryNotes": ["The public helpline is visible, but no case-specific status or deed-processing recovery was obtained."],
+      "documentationQualityNotes": ["Public controls and default states are concrete; the post-login deed path and property-specific result remain Unknown.", "No-data defaults are not evidence that a real case has no record."] ,
+      "status": "partial"
+    },
+    {
+      "id": "journey_ind45_missing_property_gap_pass",
+      "title": "Missing-property link and recovery boundary",
+      "scenarioId": "scenario_missing_property",
+      "context": "The public search anticipates a missing property; the visible recovery label is inspected without submitting details.",
+      "steps": [
+        {"id":"step_ind45_missing_link","label":"Open missing-property label","nodeId":"node_missing_property_recovery","action":"Click the visible `DO NOT FIND MY PROPERTY EKHATA` link without entering data.","expectedResult":"The URL remains on the citizen entry and no public form, confirmation, error, or response appears.","claimIds":["claim_ind45_missing_route_no_navigation"],"status":"partial"},
+        {"id":"step_ind45_missing_recovery","label":"Recognize recovery boundary","nodeId":"node_missing_property_recovery","action":"Read the published corporation check-and-revert wording and status-page helpline only.","expectedResult":"A possible official handoff is visible, but response, ticket, timing, and case resolution are Unknown.","claimIds":["claim_ind32_missing_property_route","claim_ind32_ekhata_status_public_route"],"status":"partial"}
+      ],
+      "dependencies": [],
+      "failureRoadblockIds": ["roadblock_ind45_default_case_outcome_unknown"],
+      "recoveryNotes": ["Do not treat the visible label as proof that a missing-property request was accepted; no form or case response was observed."],
+      "documentationQualityNotes": ["The public page states check and revert but does not expose the form, response, owner, or service timing in this pass."],
+      "status": "partial"
+    },
+    {
+      "id": "journey_ind45_pending_mutation_gap_pass",
+      "title": "Pendency and mutation-report currentness boundary",
+      "scenarioId": "scenario_pending_mutation",
+      "context": "An unauthenticated visitor checks public pendency and mutation-report routes without filters, identifiers, objection, or submission.",
+      "steps": [
+        {"id":"step_ind45_pendance_default","label":"Read pendency controls","nodeId":"node_mutation","action":"Open Pendance Report and read the blank controls without searching.","expectedResult":"Zone/ARO or Zone/Ward, Zone Name, ARO Name, Ward Name, SEARCH, RESET, and No data available are visible.","claimIds":["claim_ind45_pendance_controls_no_data"],"status":"verified"},
+        {"id":"step_ind45_pending_route","label":"Check mutation-report route","nodeId":"node_mutation","action":"Open the current citizen Pending Mutation Report route and the visible older office route without entering data.","expectedResult":"The citizen route is blank and the older office route is File Not Found; earlier field observations remain contested.","claimIds":["claim_ind45_pending_mutation_route_currently_blank","claim_ind32_pending_mutation_report_fields"],"status":"contested"},
+        {"id":"step_ind45_pending_recovery","label":"Recognize resolution boundary","nodeId":"node_mutation","action":"Read the visible earlier File Objection/helpline handoffs without filing an objection.","expectedResult":"Objection fields, owner, deadline, and resolution remain Unknown.","claimIds":["claim_ind45_pending_report_recovery_unknown","claim_ind32_public_objection_entry"],"status":"unknown"}
+      ],
+      "dependencies": [],
+      "failureRoadblockIds": ["roadblock_ind45_mutation_route_currentness_conflict"],
+      "recoveryNotes": ["Retain both the earlier field observation and current blank/not-found route as contested until the official current route is re-established."],
+      "documentationQualityNotes": ["The current public default surfaces do not establish a property-specific pending case or objection resolution path."],
+      "status": "contested"
+    }
+  ]
+}

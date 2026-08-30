@@ -1,0 +1,228 @@
+{
+  "sources": [
+    {
+      "id": "source_ind45_bbmp_khatha_faq_rejection",
+      "title": "BBMP Revenue Department — Khatha services FAQ (document rejection guidance)",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike, Revenue Department",
+      "url": "https://site.bbmp.gov.in/departmentwebsites/Revenue/gen.html",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Official Revenue Department FAQ page. It states that uploading incomplete or incorrect documents can lead to rejection and describes a six-step Khatha-service sequence. The page is legacy/undated and does not establish current e-Aasthi validation or a reapplication procedure."
+    },
+    {
+      "id": "source_ind45_eaasthi_upload_ec",
+      "title": "e-Aasthi — Upload EC Document",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/UploadECPage",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Current public portal observation. The route exposes a PropertyId/ePID lookup and EC upload. It states that an application will not be processed when the registered-deed number is not in the submitted EC, and directs a user unable to fetch EC details to contact the respective ARO. No identifier, file, or submission was used."
+    },
+    {
+      "id": "source_ind45_bbmp_form24_rules",
+      "title": "BBMP Property Tax Assessment, Recovery and Management Rules, 2024 — Form 24 e-Khata Order",
+      "publisher": "Government of Karnataka / Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://updates.bbmpgov.in/v1/api/file/604205683683-53of2020BBMP%28PropertyTaxassessmentRecoveryandManagement%29Rules%2C2024_watermark.pdf",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2024-08-12",
+      "type": "official_form",
+      "notes": "Official Gazette/rules PDF. Form 24 states that a Khatha transfer is subject to cancellation under section 150 of the BBMP Act if submitted documents are found fraudulent or a dispute arises. This is a conditional order-template safeguard, not a property-specific cancellation or live portal outcome."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind45_khata_incomplete_document_rejection",
+      "text": "The BBMP Revenue Department FAQ states that uploading incomplete or incorrect documents can lead to rejection of a Khatha-service application.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale"],
+      "nodeIds": ["node_sale_deed"],
+      "sourceIds": ["source_ind45_bbmp_khatha_faq_rejection"],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The official page is legacy/undated and does not say how a current e-Aasthi rejection is displayed or whether reapplication is allowed."
+    },
+    {
+      "id": "claim_ind45_form24_cancellation_condition",
+      "text": "Form 24 in the BBMP Property Tax Assessment, Recovery and Management Rules, 2024 makes a Khatha transfer subject to cancellation under section 150 of the BBMP Act if the submitted documents are found fraudulent or a dispute arises.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale"],
+      "nodeIds": ["node_sale_deed"],
+      "sourceIds": ["source_ind45_bbmp_form24_rules"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is the condition printed in the official Form 24 template; it does not establish that a particular transfer was cancelled or disclose the live review route."
+    },
+    {
+      "id": "claim_ind45_ec_deed_number_required_for_processing",
+      "text": "The public e-Aasthi Upload EC Document route says an application will not be processed when the registered-deed number is not present in the submitted Encumbrance Certificate.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale"],
+      "nodeIds": ["node_sale_deed"],
+      "sourceIds": ["source_ind45_eaasthi_upload_ec"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Current public instruction observed 2026-08-30. No property identifier, EC, or application was supplied, so no case-specific rejection was observed."
+    },
+    {
+      "id": "claim_ind45_ec_fetch_aro_recovery",
+      "text": "The public e-Aasthi Upload EC Document route directs a user who is unable to fetch EC details to contact the respective Assistant Revenue Officer.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale"],
+      "nodeIds": ["node_sale_deed"],
+      "sourceIds": ["source_ind45_eaasthi_upload_ec"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is a published contact handoff only; it does not establish ARO response time, evidence requirements, or resolution."
+    },
+    {
+      "id": "claim_ind45_epid_status_no_data",
+      "text": "The public eKhata Application Status view displays No Data Available when no result row is present; this does not diagnose an invalid EPID or an ownership state.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale"],
+      "nodeIds": ["node_epid"],
+      "sourceIds": ["source_ind32_ekhata_status"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The blank public status view was inspected without entering an EPID. The message is a non-specific empty-result state, not an EPID validation error. The source record is reused from the existing ledger."
+    },
+    {
+      "id": "claim_ind45_epid_specific_failure_recovery_unknown",
+      "text": "After checking the public e-Aasthi property search, eKhata application-status, and Upload EC routes, no official public procedure was found that diagnoses an unresolved or incorrect EPID or provides an EPID-specific correction or recovery path for a clean-sale case.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_clean_sale"],
+      "nodeIds": ["node_epid"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The pass checked the public search controls, the blank status result, and the public PropertyId/EC route without entering an identifier. The visible generic helpline and missing-property route are not treated as EPID-specific correction procedures."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_sale_deed",
+      "label": "Registered sale deed",
+      "kind": "document",
+      "ownerAgencyId": "agency_gba",
+      "summary": "A document listed by public Final eKhata guidance as additional information for the municipal record.",
+      "requiredState": "Unknown for a particular property; public guidance lists a registered deed but does not establish universal eligibility or validation.",
+      "checks": [
+        {
+          "id": "check_ind32_registered_deed_listed",
+          "label": "Listed Final eKhata input",
+          "description": "Public instructions list a registered deed among additional Final eKhata information.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/CitzLogin.aspx",
+          "claimIds": ["claim_ind32_draft_final_guidance"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind45_incomplete_or_incorrect_documents",
+          "label": "Incomplete or incorrect documents",
+          "description": "BBMP Revenue FAQ guidance says uploading incomplete or incorrect documents can lead to application rejection.",
+          "url": "https://site.bbmp.gov.in/departmentwebsites/Revenue/gen.html",
+          "claimIds": ["claim_ind45_khata_incomplete_document_rejection"],
+          "status": "partial"
+        },
+        {
+          "id": "failure_ind45_fraud_or_dispute_cancellation",
+          "label": "Fraudulent document or dispute condition",
+          "description": "The Form 24 e-Khata order template makes transfer subject to cancellation under section 150 if submitted documents are fraudulent or a dispute arises.",
+          "url": "https://updates.bbmpgov.in/v1/api/file/604205683683-53of2020BBMP%28PropertyTaxassessmentRecoveryandManagement%29Rules%2C2024_watermark.pdf",
+          "claimIds": ["claim_ind45_form24_cancellation_condition"],
+          "status": "verified"
+        },
+        {
+          "id": "failure_ind45_ec_deed_number_missing",
+          "label": "Registered-deed number absent from EC",
+          "description": "The public Upload EC route states that an application will not be processed if its registered-deed number is not in the submitted EC.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/UploadECPage",
+          "claimIds": ["claim_ind45_ec_deed_number_required_for_processing"],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind45_ec_fetch_respective_aro",
+          "label": "Contact respective ARO for EC fetch issue",
+          "description": "The public Upload EC route directs a user unable to fetch EC details to contact the respective Assistant Revenue Officer.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/UploadECPage",
+          "claimIds": ["claim_ind45_ec_fetch_aro_recovery"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata"],
+      "claimIds": [
+        "claim_ind32_draft_final_guidance",
+        "claim_ind32_end_to_end_sequence_unknown",
+        "claim_ind45_khata_incomplete_document_rejection",
+        "claim_ind45_form24_cancellation_condition",
+        "claim_ind45_ec_deed_number_required_for_processing",
+        "claim_ind45_ec_fetch_aro_recovery"
+      ],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_epid",
+      "label": "Property ePID",
+      "kind": "record",
+      "ownerAgencyId": "agency_gba",
+      "summary": "Municipal property identifier accepted by public search, pending-mutation, and eKhata-status surfaces.",
+      "requiredState": "A usable property ePID is Unknown for an individual property; public pages show where an ePID can be entered, not how it is issued or corrected.",
+      "checks": [
+        {
+          "id": "check_ind32_epid_search",
+          "label": "ePID search input",
+          "description": "Public e-Aasthi search exposes Property ePID as a lookup input.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
+          "claimIds": ["claim_ind32_public_search_inputs"],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind32_epid_status",
+          "label": "ePID status lookup",
+          "description": "Public eKhata status accepts an EPID.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
+          "claimIds": ["claim_ind32_ekhata_status_public_route"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind45_epid_status_no_data",
+          "label": "No Data Available in public status view",
+          "description": "The public eKhata Application Status view displays No Data Available when no result row is present; this does not diagnose an invalid EPID or ownership state.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
+          "claimIds": ["claim_ind45_epid_status_no_data"],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [],
+      "researchedNoSourceFound": ["recoveries"],
+      "scenarioIds": ["scenario_clean_sale", "scenario_draft_e_khata", "scenario_pending_mutation"],
+      "claimIds": [
+        "claim_ind32_public_search_inputs",
+        "claim_ind32_pending_mutation_report_fields",
+        "claim_ind32_ekhata_status_public_route",
+        "claim_ind32_mutation_eligibility_unknown",
+        "claim_ind45_epid_status_no_data",
+        "claim_ind45_epid_specific_failure_recovery_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 60
+    }
+  ]
+}

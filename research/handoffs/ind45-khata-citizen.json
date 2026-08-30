@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "IND-45 additive citizen evidence — Bengaluru khata default path",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-30",
+    "dataKind": "research",
+    "disclaimer": "Additive public first-person evidence only, not official advice or a municipal procedure. Personal details, usernames, precise locations, property identifiers, contact details, and payment amounts have been omitted."
+  },
+  "agencies": [],
+  "scenarios": [
+    {
+      "id": "scenario_draft_e_khata",
+      "label": "Draft or pending e-Khata",
+      "summary": "A property record is visible as a draft or has not reached a known final e-Khata state.",
+      "tags": [
+        "e-khata",
+        "draft",
+        "pending"
+      ],
+      "pathNodeIds": [
+        "node_property_search",
+        "node_final_e_khata",
+        "node_epid",
+        "node_khata_application_status",
+        "node_mutation"
+      ],
+      "status": "unknown"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind45_khata_citizen_upload_validation_failure",
+      "title": "E-khaata application glitch with BBMP E-Aasthi portal - whom to contact??",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1lql2dl/ekhaata_application_glitch_with_bbmp_eaasthi/",
+      "accessedAt": "2026-08-30",
+      "type": "citizen_evidence",
+      "notes": "A citizen's first-person report of an e-Aasthi application. It describes a name-mismatch stage, an attempted supporting-document upload, repeat error messages after re-login, and no reported resolution through the initially contacted channels. It does not establish a current portal defect, a document requirement for other cases, an agency response obligation, or a general recovery route. Usernames, local-office detail, contact data, and payment detail are omitted."
+    },
+    {
+      "id": "source_ind45_khata_citizen_prior_holder_correction_block",
+      "title": "Ekhata issue - need help",
+      "publisher": "r/BangaloreRealEstates (Reddit)",
+      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1vmosd4/ekhata_issue_need_help/",
+      "accessedAt": "2026-08-30",
+      "type": "citizen_evidence",
+      "notes": "A citizen's first-person account of a draft record in a prior holder's name, a rejected mutation component, and a final e-Khata subsequently issued in that prior holder's name. The author reports that the online correction path displayed a prior-holder eKYC condition and that they could not reapply after issuance. This is one account, not evidence of an eKYC rule, mutation sequence, fee rule, final-record effect, or universal correction barrier. Personal and property details are omitted."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind45_khata_upload_validation_failure",
+      "text": "One citizen reported that an e-Aasthi application could not proceed past a name-mismatch stage because an attempted supporting-document upload repeatedly returned a re-login error and the next step then indicated that a deed document had not been uploaded.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_khata_application_status"
+      ],
+      "sourceIds": [
+        "source_ind45_khata_citizen_upload_validation_failure"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single self-report of a displayed state and failed action. The account does not distinguish a transient technical condition from user input, document format, authentication, or case-specific validation, and it reports no authoritative resolution."
+    },
+    {
+      "id": "claim_ind45_khata_prior_holder_correction_block",
+      "text": "One citizen reported that after a final e-Khata issued in a prior holder's name, the online correction path displayed a condition that the prior holder's eKYC was not complete, leaving the citizen unable to complete that correction online.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_draft_e_khata"
+      ],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_mutation"
+      ],
+      "sourceIds": [
+        "source_ind45_khata_citizen_prior_holder_correction_block"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The reported screen condition is case evidence only. It does not establish that prior-holder eKYC is generally required, that the record was legally incorrect, that final issuance always blocks reapplication, or that an offline or authorised recovery route is unavailable."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind45_khata_upload_validation_failure",
+      "title": "Reported supporting-document upload and validation dead end",
+      "category": "infrastructure",
+      "symptom": "A citizen reports that an attempted upload produced a repeat re-login error while the next step still required a deed document.",
+      "likelyCause": "Unknown; the account cannot distinguish portal availability, session state, document selection, file handling, authentication, or case-specific validation.",
+      "recovery": "No authoritative recovery outcome was reported. Preserve the displayed messages and seek authorised, case-specific support; do not infer a general document checklist or workaround from this account.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_khata_application_status"
+      ],
+      "scenarioIds": [
+        "scenario_draft_e_khata"
+      ],
+      "claimIds": [
+        "claim_ind45_khata_upload_validation_failure"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind45_khata_prior_holder_correction_block",
+      "title": "Reported online correction block after prior-holder final record",
+      "category": "process",
+      "symptom": "A citizen reports receiving a final e-Khata in a prior holder's name and seeing a prior-holder eKYC condition on the online correction path.",
+      "likelyCause": "Unknown; the account does not establish record ownership, the correction policy, the eKYC condition's applicability, or whether another authorised route can resolve the case.",
+      "recovery": "No completed recovery was reported. Obtain authorised, property-specific guidance on the issued record and correction state; do not generalise the reported eKYC condition or rely on informal workarounds.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_final_e_khata",
+        "node_mutation"
+      ],
+      "scenarioIds": [
+        "scenario_draft_e_khata"
+      ],
+      "claimIds": [
+        "claim_ind45_khata_prior_holder_correction_block"
+      ],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

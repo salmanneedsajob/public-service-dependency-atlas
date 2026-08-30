@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru marriage registration — citizen-evidence pass",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-31",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice or an application route. Public citizen accounts are redacted, limited, and do not establish legal route, eligibility, requirements, misconduct, office practice, or outcomes."
+  },
+  "agencies": [],
+  "scenarios": [
+    {
+      "id": "scenario_ind48_marriage_citizen_hma_or_unknown",
+      "label": "Marriage registration citizen evidence — HMA or unspecified route",
+      "summary": "Reported Kaveri marriage-registration experiences where the account does not establish the legal route; one account explicitly says it was not SMA.",
+      "tags": ["marriage", "citizen-evidence", "kaveri", "bengaluru", "hma-or-unknown"],
+      "pathNodeIds": ["node_marriage_w_kaveri", "node_marriage_w_outcome"],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_ind48_marriage_citizen_sma_unknown",
+      "label": "SMA citizen-evidence gap",
+      "summary": "No reviewed first-person Bengaluru account in this pass reliably identified an SMA notice or solemnization case.",
+      "tags": ["marriage", "citizen-evidence", "sma", "unknown"],
+      "pathNodeIds": ["node_marriage_w_sma_notice", "node_marriage_w_sma_solemn"],
+      "status": "unknown"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind48_marriage_kaveri_experience_2025",
+      "title": "Marriage Certificate at Kaveri Portal - My Experience",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1m3ygld/marriage_certificate_at_kaveri_portal_my/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2025-07-19",
+      "type": "citizen_evidence",
+      "notes": "Public first-person post and comments describe divergent Kaveri experiences. Usernames, SROs, personal circumstances, application identifiers, document details and payment details are omitted. The legal route is not stated, so this source must not be used as HMA or SMA procedural evidence."
+    },
+    {
+      "id": "source_ind48_marriage_bengaluru_verified_2026",
+      "title": "Kaveri 2.0 marriage certificate – application verified but no update for 8 days (Bengaluru)",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1qaqlig/kaveri_20_marriage_certificate_application/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2026-01-12",
+      "type": "citizen_evidence",
+      "notes": "A public Bengaluru applicant described an initially rejected application, then a later approval and certificate after resubmission. Personal identifiers, office, images, dates beyond the source date, and alleged informal-payment commentary are omitted. The account does not state the legal route."
+    },
+    {
+      "id": "source_ind48_marriage_witness_error_2026",
+      "title": "Kaveri Karnataka – Error while adding witness for marriage registration (Keeps saying “Try again”)",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1rejm6r/kaveri_karnataka_error_while_adding_witness_for/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2026-02-25",
+      "type": "citizen_evidence",
+      "notes": "A public applicant reported that witness details would not save and that the interface displayed “Try again”; a commenter reported eventually succeeding after repeated retries, with a possible need to re-enter details. No personal data, witness data, SRO, or legal route is retained."
+    },
+    {
+      "id": "source_ind48_marriage_non_sma_pending_2026",
+      "title": "How long does Kaveri portal take for approval/rejection of Marriage certificate?",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1vlp8uc/how_long_does_kaveri_portal_take_for/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2026-08-11",
+      "type": "citizen_evidence",
+      "notes": "A public applicant explicitly said their Bengaluru Kaveri case was not SMA and reported a submitted-online status after ten days despite e-signed witnesses. Personal identifiers, SRO and exact dates are omitted. The report does not identify whether the route was HMA, another registration category, or a valid complete case."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind48_marriage_reported_digital_certificate",
+      "text": "One citizen reported receiving a digitally signed marriage certificate through Kaveri after an online application.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind48_marriage_citizen_hma_or_unknown"],
+      "nodeIds": ["node_marriage_w_kaveri", "node_marriage_w_outcome"],
+      "sourceIds": ["source_ind48_marriage_kaveri_experience_2025"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": ["claim_ind48_marriage_reported_repeated_objections", "claim_ind48_marriage_reported_pending_non_sma"],
+      "notes": "One account only. It does not establish that online completion is available for a given SRO, legal route, document set, or case."
+    },
+    {
+      "id": "claim_ind48_marriage_reported_repeated_objections",
+      "text": "One citizen reported repeated Kaveri objections and that an objection reset Aadhaar-based verification and e-sign steps for the couple and witnesses.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind48_marriage_citizen_hma_or_unknown"],
+      "nodeIds": ["node_marriage_w_kaveri", "node_marriage_w_outcome"],
+      "sourceIds": ["source_ind48_marriage_kaveri_experience_2025"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": ["claim_ind48_marriage_reported_digital_certificate"],
+      "notes": "This is not evidence that objections are routine, that a reset occurs in every case, or that any alleged motive is true."
+    },
+    {
+      "id": "claim_ind48_marriage_reported_rejection_then_certificate",
+      "text": "One Bengaluru applicant reported an initial rejection, resubmission after adding requested wedding evidence and a photo, then a certificate after payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind48_marriage_citizen_hma_or_unknown"],
+      "nodeIds": ["node_marriage_w_kaveri", "node_marriage_w_outcome"],
+      "sourceIds": ["source_ind48_marriage_bengaluru_verified_2026"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One reported case progression; it does not establish a document checklist, review time, payment amount, eligibility, or whether a physical visit is ordinarily unnecessary."
+    },
+    {
+      "id": "claim_ind48_marriage_reported_witness_save_error",
+      "text": "One applicant reported that Kaveri would not save witness details and displayed “Try again”; another citizen reported eventual success only after repeated retries and possible re-entry of details.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind48_marriage_citizen_hma_or_unknown"],
+      "nodeIds": ["node_marriage_w_kaveri"],
+      "sourceIds": ["source_ind48_marriage_witness_error_2026"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Two unverified statements in one public discussion. They do not prove a system defect, identify its cause, or show that retrying resolves another case."
+    },
+    {
+      "id": "claim_ind48_marriage_reported_pending_non_sma",
+      "text": "One Bengaluru Kaveri applicant explicitly described their case as not SMA and reported a submitted-online status after ten days despite e-signed witnesses.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind48_marriage_citizen_hma_or_unknown"],
+      "nodeIds": ["node_marriage_w_kaveri", "node_marriage_w_outcome"],
+      "sourceIds": ["source_ind48_marriage_non_sma_pending_2026"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": ["claim_ind48_marriage_reported_digital_certificate"],
+      "notes": "The route is only distinguishable as non-SMA; it must not be relabelled as HMA. One reported status and duration do not establish a delay, service standard, or required next action."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind48_marriage_reported_objection_reset",
+      "title": "Reported objections followed by repeated verification",
+      "category": "process",
+      "symptom": "One citizen reported repeated objections and renewed Aadhaar verification/e-sign activity after an objection.",
+      "likelyCause": "Unknown; the account does not establish the objection reason, document validity, SRO practice, portal behavior, or any improper conduct.",
+      "recovery": "Use an authorised, case-specific objection reason and current official support route; do not infer a general document requirement or pay an intermediary from this report.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_marriage_w_kaveri", "node_marriage_w_outcome"],
+      "scenarioIds": ["scenario_ind48_marriage_citizen_hma_or_unknown"],
+      "claimIds": ["claim_ind48_marriage_reported_repeated_objections"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind48_marriage_reported_witness_save_error",
+      "title": "Reported inability to save witness details",
+      "category": "infrastructure",
+      "symptom": "One applicant reported a “Try again” message while adding witness details and no saved entry.",
+      "likelyCause": "Unknown; the report cannot determine whether the cause was an interface defect, account/session state, validation, connectivity, or case facts.",
+      "recovery": "Record the visible error and use the current authorised support route before re-entering personal or witness data; retries reported by another citizen are not a guaranteed fix.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_marriage_w_kaveri"],
+      "scenarioIds": ["scenario_ind48_marriage_citizen_hma_or_unknown"],
+      "claimIds": ["claim_ind48_marriage_reported_witness_save_error"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind48_marriage_reported_pending_status",
+      "title": "Reported submitted-online status with no further update",
+      "category": "process",
+      "symptom": "One explicitly non-SMA applicant reported that the submitted-online status remained after ten days.",
+      "likelyCause": "Unknown; the account does not establish queue position, completeness, SRO review, objection, payment eligibility, legal route beyond non-SMA, or a system fault.",
+      "recovery": "Confirm the case state and next authorised action with the competent office or official support channel; do not treat a forum duration as a service standard.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_marriage_w_kaveri", "node_marriage_w_outcome"],
+      "scenarioIds": ["scenario_ind48_marriage_citizen_hma_or_unknown"],
+      "claimIds": ["claim_ind48_marriage_reported_pending_non_sma"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

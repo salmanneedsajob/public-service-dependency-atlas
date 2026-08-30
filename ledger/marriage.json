@@ -3,7 +3,7 @@
     "schemaVersion": "1.0.0",
     "title": "Bengaluru marriage evidence ledger",
     "jurisdiction": "Bengaluru, Karnataka, India",
-    "asOf": "2026-08-28",
+    "asOf": "2026-08-31",
     "dataKind": "research",
     "disclaimer": "Independent research, not official advice. Public sources and known gaps are shown together; do not submit personal data through this ledger."
   },
@@ -67,6 +67,21 @@
         "node_marriage_w_outcome"
       ],
       "status": "partial"
+    },
+    {
+      "id": "scenario_marriage_w_kaveri_reported",
+      "label": "Unclassified Kaveri reports",
+      "summary": "First-person reports whose statutory route is unknown; they are not evidence for either HMA or SMA.",
+      "tags": [
+        "marriage",
+        "citizen-evidence",
+        "route-unknown"
+      ],
+      "pathNodeIds": [
+        "node_marriage_w_kaveri",
+        "node_marriage_w_outcome"
+      ],
+      "status": "partial"
     }
   ],
   "sources": [
@@ -89,24 +104,6 @@
       "notes": "Pages 95–101 identify marriage registration under HMA/SMA and Kaveri-2.0 implementation."
     },
     {
-      "id": "source_marriage_hma",
-      "title": "General-site reference — Hindu Marriage Act, 1955",
-      "publisher": "Government of India / India Code",
-      "url": "https://www.indiacode.nic.in/indiacode/",
-      "accessedAt": "2026-08-28",
-      "type": "official_guidance",
-      "notes": "Section 8 registration framework. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail. This is a general-site reference, not claim-specific evidence. A more specific public document or endpoint was not verified on 2026-08-29; wording that depends only on this source is retained at Grade C or Unknown."
-    },
-    {
-      "id": "source_marriage_sma",
-      "title": "General-site reference — Special Marriage Act, 1954",
-      "publisher": "Government of India / India Code",
-      "url": "https://www.indiacode.nic.in/indiacode/",
-      "accessedAt": "2026-08-28",
-      "type": "official_guidance",
-      "notes": "Sections 5–16 notice/solemnization/registration framework. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail. This is a general-site reference, not claim-specific evidence. A more specific public document or endpoint was not verified on 2026-08-29; wording that depends only on this source is retained at Grade C or Unknown."
-    },
-    {
       "id": "source_marriage_kaveri",
       "title": "General-site reference — Kaveri 2.0 public landing page",
       "publisher": "Department of Stamps and Registration, Government of Karnataka",
@@ -123,24 +120,6 @@
       "accessedAt": "2026-08-28",
       "type": "official_guidance",
       "notes": "Department report identifies HMA/SMA and Kaveri-2.0."
-    },
-    {
-      "id": "source_marriage_w_hma",
-      "title": "General-site reference — Hindu Marriage Act, 1955",
-      "publisher": "Government of India / India Code",
-      "url": "https://www.indiacode.nic.in/indiacode/",
-      "accessedAt": "2026-08-28",
-      "type": "official_guidance",
-      "notes": "Section 8. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail. This is a general-site reference, not claim-specific evidence. A more specific public document or endpoint was not verified on 2026-08-29; wording that depends only on this source is retained at Grade C or Unknown."
-    },
-    {
-      "id": "source_marriage_w_sma",
-      "title": "General-site reference — Special Marriage Act, 1954",
-      "publisher": "Government of India / India Code",
-      "url": "https://www.indiacode.nic.in/indiacode/",
-      "accessedAt": "2026-08-28",
-      "type": "official_guidance",
-      "notes": "Sections 5–16. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail. This is a general-site reference, not claim-specific evidence. A more specific public document or endpoint was not verified on 2026-08-29; wording that depends only on this source is retained at Grade C or Unknown."
     },
     {
       "id": "source_marriage_w_kaveri",
@@ -160,6 +139,190 @@
       "publishedAt": "2025-07-19",
       "type": "citizen_evidence",
       "notes": "The post and comments contain several first-person Kaveri experiences, including a reported digitally signed certificate, objections, repeated e-sign/OTP activity and a payment-status anomaly. Each is anecdotal; no stated format, payment, route, timing or SRO practice is retained as a general requirement."
+    },
+    {
+      "id": "source_ind48_kaveri_dashboard",
+      "title": "Kaveri Online Services — public landing/dashboard (Marriage Registration selector)",
+      "publisher": "Department of Stamps and Registration, Government of Karnataka",
+      "url": "https://kaveri.karnataka.gov.in/landing-page#dashboard",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Current public interface observed 2026-08-31. The fragment is a research locator for the dashboard state; the live page is the landing-page route. Visible controls included Marriage Registration, date range, SRO list and dashboard metrics; no values were submitted."
+    },
+    {
+      "id": "source_ind48_kaveri_faq_route",
+      "title": "Kaveri Online Services — Marriage Registration FAQ: route and identity rules",
+      "publisher": "Department of Stamps and Registration, Government of Karnataka",
+      "url": "https://kaveri.karnataka.gov.in/landing-page#faq-marriage-registration",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Current in-page Marriage Registration FAQ state observed 2026-08-31. FAQ answers are official interface guidance and are not treated as statutory text."
+    },
+    {
+      "id": "source_ind48_kaveri_faq_documents",
+      "title": "Kaveri Online Services — Marriage Registration FAQ: documents, witnesses and photos",
+      "publisher": "Department of Stamps and Registration, Government of Karnataka",
+      "url": "https://kaveri.karnataka.gov.in/landing-page#faq-marriage-documents",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Same current landing page, with the FAQ document/photo/witness answers expanded as a read-only state. Fragment is a research locator, not a claimed separate server route."
+    },
+    {
+      "id": "source_ind48_kaveri_faq_operations",
+      "title": "Kaveri Online Services — Marriage Registration FAQ: payment, editing, rescheduling and certificate",
+      "publisher": "Department of Stamps and Registration, Government of Karnataka",
+      "url": "https://kaveri.karnataka.gov.in/landing-page#faq-marriage-operations",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Same current landing page, with the FAQ operational answers expanded as a read-only state. No payment, appointment or submission was attempted."
+    },
+    {
+      "id": "source_ind48_kaveri_faq_sakala",
+      "title": "Kaveri Online Services — Marriage Registration FAQ: Sakala service answer",
+      "publisher": "Department of Stamps and Registration, Government of Karnataka",
+      "url": "https://kaveri.karnataka.gov.in/landing-page#faq-marriage-sakala",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Same current landing page; the FAQ answer says the service is under Sakala and 1 working day. Dashboard separately showed PSGA 3 Day(s), retained as a contradiction."
+    },
+    {
+      "id": "source_ind48_hma_act",
+      "title": "The Hindu Marriage Act, 1955",
+      "publisher": "Government of India / India Code",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/1560/1/A1955-25Eng.pdf",
+      "accessedAt": "2026-08-31",
+      "type": "law",
+      "notes": "Direct official PDF. Section 8 is on PDF page 6; sections 5 and 7 are also visible immediately before it."
+    },
+    {
+      "id": "source_ind48_sma_act",
+      "title": "The Special Marriage Act, 1954",
+      "publisher": "Government of India / India Code",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/15480/1/special_marriage_act.pdf",
+      "accessedAt": "2026-08-31",
+      "type": "law",
+      "notes": "Direct official PDF. Sections 4–18 are on PDF pages 4–7; the schedules/forms are on PDF pages 21–24."
+    },
+    {
+      "id": "source_ind48_sma_schedules",
+      "title": "The Special Marriage Act, 1954 — Second to Fifth Schedules",
+      "publisher": "Government of India / India Code",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/15480/1/special_marriage_act.pdf#page=21",
+      "accessedAt": "2026-08-31",
+      "type": "official_form",
+      "notes": "Direct official PDF page locator for the Second Schedule notice and Third, Fourth and Fifth Schedule declaration/certificate forms."
+    },
+    {
+      "id": "source_ind48_karnataka_report",
+      "title": "Annual Report 2023–24 — Stamps and Registration Department",
+      "publisher": "Government of Karnataka, Revenue Department",
+      "url": "https://revenue.karnataka.gov.in/uploads/media_to_upload1712395448.pdf",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Pages 95–101 state the department registers marriages under HMA and SMA, identify Kaveri-2.0 implementation and list the Acts/rules followed."
+    },
+    {
+      "id": "source_marriage_ind48_revenue_home",
+      "title": "Revenue Department English public interface",
+      "publisher": "Revenue Department, Government of Karnataka",
+      "url": "https://revenue.karnataka.gov.in/en",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Direct public observation. The page exposes Stamps & Registration and publishes an IPGRS link/call 1902 for grievances regarding Government of Karnataka service delivery; this is a general route, not a marriage-specific recovery."
+    },
+    {
+      "id": "source_marriage_ind48_revenue_stamps",
+      "title": "About Stamps and Registration",
+      "publisher": "Revenue Department, Government of Karnataka",
+      "url": "https://revenue.karnataka.gov.in/111/stamps-&-registration/en",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Direct public observation. Page identifies the Register of Marriages and Sub-Registrar Office service structure, but provides no current HMA/SMA application controls."
+    },
+    {
+      "id": "source_marriage_ind48_revenue_officers",
+      "title": "Know more about Stamps and Registration",
+      "publisher": "Revenue Department, Government of Karnataka",
+      "url": "https://revenue.karnataka.gov.in/114/know-more-about-stamps-and-registration/en",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Direct public observation. The page states that Sub-Registrars function as Marriage Officers under the Hindu Marriage Act, 1955 and Special Marriage Act, 1954."
+    },
+    {
+      "id": "source_marriage_ind48_report",
+      "title": "Annual Report 2023-24 — Stamps and Registration Department",
+      "publisher": "Government of Karnataka, Revenue Department",
+      "url": "https://revenue.karnataka.gov.in/uploads/media_to_upload1712395448.pdf",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Pages 95–101 state that Kaveri-2.0 is the latest online software, that the department registers marriages under HMA and SMA, and list HMA/SMA among Acts followed. This is official but indirect and not a live application outcome."
+    },
+    {
+      "id": "source_marriage_ind48_hma",
+      "title": "The Hindu Marriage Act, 1955",
+      "publisher": "Government of India / India Code",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/1560/1/A1955-25Eng.pdf",
+      "accessedAt": "2026-08-31",
+      "type": "law",
+      "notes": "Current consolidated PDF marked as on 15 April 2026; section 8 provides the registration-register framework and says omission of entry does not affect validity."
+    },
+    {
+      "id": "source_marriage_ind48_sma",
+      "title": "The Special Marriage Act, 1954",
+      "publisher": "Government of India / India Code",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/20574/1/special_marriage_act.pdf",
+      "accessedAt": "2026-08-31",
+      "type": "law",
+      "notes": "Official Act PDF. Sections 5–7 cover notice, publication and objections; sections 11–14 cover declaration, solemnization, certificate and a new notice after lapse; sections 15–16 cover registration of marriages celebrated in other forms."
+    },
+    {
+      "id": "source_marriage_ind48_kaveri",
+      "title": "Kaveri 2.0 public landing page",
+      "publisher": "Department of Stamps and Registration, Government of Karnataka",
+      "url": "https://kaveri.karnataka.gov.in/landing-page",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Direct current unauthenticated browser observation: document title is “Kaveri Online Services”; page body remained blank after load/wait, with no visible controls or error/recovery text. No login or applicant data was entered."
+    },
+    {
+      "id": "source_ind48_marriage_kaveri_experience_2025",
+      "title": "Marriage Certificate at Kaveri Portal - My Experience",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1m3ygld/marriage_certificate_at_kaveri_portal_my/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2025-07-19",
+      "type": "citizen_evidence",
+      "notes": "Public first-person post and comments describe divergent Kaveri experiences. Usernames, SROs, personal circumstances, application identifiers, document details and payment details are omitted. The legal route is not stated, so this source must not be used as HMA or SMA procedural evidence."
+    },
+    {
+      "id": "source_ind48_marriage_bengaluru_verified_2026",
+      "title": "Kaveri 2.0 marriage certificate – application verified but no update for 8 days (Bengaluru)",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1qaqlig/kaveri_20_marriage_certificate_application/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2026-01-12",
+      "type": "citizen_evidence",
+      "notes": "A public Bengaluru applicant described an initially rejected application, then a later approval and certificate after resubmission. Personal identifiers, office, images, dates beyond the source date, and alleged informal-payment commentary are omitted. The account does not state the legal route."
+    },
+    {
+      "id": "source_ind48_marriage_witness_error_2026",
+      "title": "Kaveri Karnataka – Error while adding witness for marriage registration (Keeps saying “Try again”)",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1rejm6r/kaveri_karnataka_error_while_adding_witness_for/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2026-02-25",
+      "type": "citizen_evidence",
+      "notes": "A public applicant reported that witness details would not save and that the interface displayed “Try again”; a commenter reported eventually succeeding after repeated retries, with a possible need to re-enter details. No personal data, witness data, SRO, or legal route is retained."
+    },
+    {
+      "id": "source_ind48_marriage_non_sma_pending_2026",
+      "title": "How long does Kaveri portal take for approval/rejection of Marriage certificate?",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1vlp8uc/how_long_does_kaveri_portal_take_for/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2026-08-11",
+      "type": "citizen_evidence",
+      "notes": "A public applicant explicitly said their Bengaluru Kaveri case was not SMA and reported a submitted-online status after ten days despite e-signed witnesses. Personal identifiers, SRO and exact dates are omitted. The report does not identify whether the route was HMA, another registration category, or a valid complete case."
     }
   ],
   "claims": [
@@ -198,11 +361,11 @@
       "sourceIds": [
         "source_marriage_annual_report"
       ],
-      "evidenceGrade": "A",
+      "evidenceGrade": "C",
       "basis": "observation",
-      "status": "verified",
+      "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Annual report is official but not a live application result."
+      "notes": "Annual report is official but not a live application result. Annual-report context is not a current service procedure. Annual-report context is not a current service procedure."
     },
     {
       "id": "claim_marriage_hma_section8",
@@ -215,7 +378,7 @@
         "node_marriage_hma"
       ],
       "sourceIds": [
-        "source_marriage_hma"
+        "source_ind48_hma_act"
       ],
       "evidenceGrade": "C",
       "basis": "observation",
@@ -233,14 +396,12 @@
       "nodeIds": [
         "node_marriage_sma_notice"
       ],
-      "sourceIds": [
-        "source_marriage_sma"
-      ],
-      "evidenceGrade": "C",
-      "basis": "observation",
-      "status": "partial",
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "Statutory route; no Bengaluru office or notice was selected. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "Statutory route; no Bengaluru office or notice was selected. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. Retained as an unresolved lead after the source-specific citation cap."
     },
     {
       "id": "claim_marriage_sma_certificate",
@@ -254,14 +415,12 @@
         "node_marriage_sma_registration",
         "node_marriage_sro_certificate"
       ],
-      "sourceIds": [
-        "source_marriage_sma"
-      ],
-      "evidenceGrade": "C",
-      "basis": "observation",
-      "status": "partial",
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "No statutory declaration, witness appearance or certificate was attempted. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "No statutory declaration, witness appearance or certificate was attempted. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. Retained as an unresolved lead after the source-specific citation cap."
     },
     {
       "id": "claim_marriage_public_kaveri_boundary",
@@ -318,11 +477,11 @@
       "sourceIds": [
         "source_marriage_w_report"
       ],
-      "evidenceGrade": "A",
+      "evidenceGrade": "C",
       "basis": "observation",
-      "status": "verified",
+      "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "No couple facts or category was supplied."
+      "notes": "No couple facts or category was supplied. Annual-report context is not a current service procedure. Annual-report context is not a current service procedure."
     },
     {
       "id": "claim_marriage_w_hma",
@@ -335,7 +494,7 @@
         "node_marriage_w_hma"
       ],
       "sourceIds": [
-        "source_marriage_w_hma"
+        "source_ind48_hma_act"
       ],
       "evidenceGrade": "C",
       "basis": "observation",
@@ -354,14 +513,12 @@
         "node_marriage_w_sma_notice",
         "node_marriage_w_sma_solemn"
       ],
-      "sourceIds": [
-        "source_marriage_w_sma"
-      ],
-      "evidenceGrade": "C",
-      "basis": "observation",
-      "status": "partial",
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "No notice, objection, appointment or ceremony was initiated. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "No notice, objection, appointment or ceremony was initiated. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. Retained as an unresolved lead after the source-specific citation cap."
     },
     {
       "id": "claim_marriage_w_kaveri",
@@ -422,9 +579,7 @@
       "evidenceGrade": "E",
       "basis": "observation",
       "status": "partial",
-      "contradictsClaimIds": [
-        "claim_ind32_marriage_citizen_objection_reset"
-      ],
+      "contradictsClaimIds": [],
       "notes": "One reported success. It does not establish eligibility, legal route, online availability for every SRO, or a completion time."
     },
     {
@@ -445,9 +600,7 @@
       "evidenceGrade": "E",
       "basis": "observation",
       "status": "partial",
-      "contradictsClaimIds": [
-        "claim_ind32_marriage_citizen_online_success"
-      ],
+      "contradictsClaimIds": [],
       "notes": "A single report of a post-objection workflow outcome. It does not prove that all objections reset verification or identify the cause of an objection."
     },
     {
@@ -490,6 +643,642 @@
       "status": "unknown",
       "contradictsClaimIds": [],
       "notes": "No login, OTP, form, upload, payment, appointment or submission was attempted."
+    },
+    {
+      "id": "claim_ind48_kaveri_dashboard_marriage_service",
+      "text": "The current public Kaveri page identifies itself as Kaveri Online Services of the Department of Stamps and Registration, Government of Karnataka, and its dashboard Search selector includes Marriage Registration alongside EC Search, CC Search, Agricultural and Non-Agricultural options.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_route",
+        "node_marriage_w_kaveri"
+      ],
+      "sourceIds": [
+        "source_ind48_kaveri_dashboard"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Public interface observation on 2026-08-31; no category-specific application was opened."
+    },
+    {
+      "id": "claim_ind48_kaveri_dashboard_public_controls",
+      "text": "The public Kaveri Marriage Registration dashboard exposes a date range, a Sub Registrar Offices List containing Bengaluru entries such as Kengeri, Banasawadi, Ganganagar, Indiranagar, Shivajinagar and Yeshwanthpura, and real-time dashboard labels; it showed PSGA time limit 3 Day(s) on 2026-08-31.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_route",
+        "node_marriage_w_kaveri",
+        "node_marriage_w_outcome"
+      ],
+      "sourceIds": [
+        "source_ind48_kaveri_dashboard"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [
+        "claim_ind48_kaveri_faq_sakala_one_day"
+      ],
+      "notes": "A dashboard list/control is not proof that a particular couple is assigned to an SRO or that a certificate will issue in the displayed time."
+    },
+    {
+      "id": "claim_ind48_kaveri_hma_route_identity",
+      "text": "The current Kaveri Marriage Registration FAQ says a Hindu Marriage Certificate is applied for post-marriage; offline Hindu Marriage Aadhaar is not mandatory, online Hindu Marriage Aadhaar is mandatory, and an online Hindu Marriage application need not be submitted by visiting the Sub-Registrar office.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_hma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_hma",
+        "node_marriage_w_kaveri"
+      ],
+      "sourceIds": [
+        "source_ind48_kaveri_faq_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Transcribed from the current FAQ; it does not establish that an online route is available for every SRO/case or that no later attendance can be required."
+    },
+    {
+      "id": "claim_ind48_kaveri_sma_intended_route",
+      "text": "The current Kaveri Marriage Registration FAQ says Special Intended Marriage is a pre-marriage service; intended parties should have resided at the current address for more than 30 days, must personally appear at the SRO before the Sub-Registrar to submit the signed Notice application, and do not need Aadhaar for the offline application.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_sma_notice",
+        "node_marriage_w_kaveri"
+      ],
+      "sourceIds": [
+        "source_ind48_kaveri_faq_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "FAQ wording is retained as interface guidance; the statutory source separately governs the notice/residence and objection rules."
+    },
+    {
+      "id": "claim_ind48_kaveri_sma_other_forms_route",
+      "text": "The current Kaveri Marriage Registration FAQ says that for Special Marriage of Other Forms, online processing requires Aadhaar for the bride, bridegroom and all three witnesses plus eKYC; offline processing does not require Aadhaar and requires personal appearance to submit the signed application before the Sub-Registrar; online applicants can download the final certificate after approval and offline certificates are issued at the office after document/party verification.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_sma_solemn",
+        "node_marriage_w_kaveri",
+        "node_marriage_w_outcome"
+      ],
+      "sourceIds": [
+        "source_ind48_kaveri_faq_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Official FAQ observation; no application, verification or certificate was attempted."
+    },
+    {
+      "id": "claim_ind48_kaveri_documents_witnesses_photos",
+      "text": "The current Kaveri Marriage Registration FAQ says three witnesses are required and each must be over 18; it lists one mandatory age-proof item (birth certificate, SSLC, school cumulative record or doctor certificate), one mandatory address-proof item (ration card, passport, driving licence, employee ID, bank passbook or voter ID), one identity-proof item (including PAN, passport, driving licence, bank passbook, ration card, Aadhaar, voter ID or employee ID), a mandatory wedding invitation plus one marriage-venue receipt/other relevant proof, and a photo limit of 2 MB in PNG format.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_hma",
+        "node_marriage_w_sma_notice",
+        "node_marriage_w_kaveri"
+      ],
+      "sourceIds": [
+        "source_ind48_kaveri_faq_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ also says a joint bride/bridegroom photo is required for the general marriage certificate and individual intended-bride/intended-bridegroom photos are used for the Intended Notice. Exact requiredness should be checked against the selected current form."
+    },
+    {
+      "id": "claim_ind48_kaveri_operations",
+      "text": "The current Kaveri Marriage Registration FAQ says payment is requested after officer approval and is made through the payment gateway; it lists net banking, debit/credit card and UPI while saying manual payment is not accepted, allows rescheduling only after 24 hours from booking, and permits editing only after the Sub-Registrar sends an application back for discrepancies.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_kaveri",
+        "node_marriage_w_outcome"
+      ],
+      "sourceIds": [
+        "source_ind48_kaveri_faq_operations"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No payment, appointment or editing action was performed."
+    },
+    {
+      "id": "claim_ind48_kaveri_faq_sakala_one_day",
+      "text": "The current Kaveri Marriage Registration FAQ answers that the service is under Sakala and the service time is 1 working day.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_kaveri",
+        "node_marriage_w_outcome"
+      ],
+      "sourceIds": [
+        "source_ind48_kaveri_faq_sakala"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_ind48_kaveri_dashboard_public_controls"
+      ],
+      "notes": "Same current page separately displayed dashboard label Time Limit as per PSGA: 3 Day(s). Preserve both until an official service-level document resolves the discrepancy."
+    },
+    {
+      "id": "claim_ind48_hma_conditions_and_ceremony",
+      "text": "Hindu Marriage Act sections 5 and 7 state conditions for a Hindu marriage, including no living spouse and minimum age of 21 for the bridegroom and 18 for the bride, and provide for solemnization according to the customary rites and ceremonies of either party; where the rites include Saptapadi, the marriage becomes complete and binding on the seventh step.",
+      "jurisdiction": "India; Karnataka administration by state rules",
+      "scenarioIds": [
+        "scenario_marriage_w_hma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_route",
+        "node_marriage_w_hma"
+      ],
+      "sourceIds": [
+        "source_ind48_hma_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "India Code PDF pages 5–6, sections 5 and 7."
+    },
+    {
+      "id": "claim_ind48_hma_section8_register",
+      "text": "Hindu Marriage Act section 8 allows the State Government to make rules for entering marriage particulars in a Hindu Marriage Register, may make entry compulsory in all or specified cases, keeps the register open for inspection, allows certified extracts on application for the prescribed fee, and says omission of entry does not affect the validity of the marriage.",
+      "jurisdiction": "India; Karnataka implementation by state rules",
+      "scenarioIds": [
+        "scenario_marriage_w_hma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_hma",
+        "node_marriage_w_outcome"
+      ],
+      "sourceIds": [
+        "source_ind48_hma_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "India Code PDF page 6, section 8(1)–(5). The section supplies a framework, not current Karnataka fields, fee or SRO allocation."
+    },
+    {
+      "id": "claim_ind48_sma_conditions",
+      "text": "Special Marriage Act section 4 permits solemnization between any two persons when neither has a living spouse, the statutory capacity conditions are met, the male is at least 21 and female at least 18, and the parties are not within prohibited degrees subject to the stated custom proviso.",
+      "jurisdiction": "India; Karnataka administration by Marriage Officer",
+      "scenarioIds": [
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_route",
+        "node_marriage_w_sma_notice"
+      ],
+      "sourceIds": [
+        "source_ind48_sma_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "India Code PDF page 4, section 4."
+    },
+    {
+      "id": "claim_ind48_sma_notice_publication_objection",
+      "text": "Special Marriage Act sections 5–7 require written notice in the Second Schedule form to the Marriage Officer of the district where at least one party has resided for at least 30 days immediately before notice; the officer enters and publishes the notice, and any person may object before expiry of 30 days on a section 4 ground.",
+      "jurisdiction": "India; Karnataka administration by Marriage Officer",
+      "scenarioIds": [
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_sma_notice"
+      ],
+      "sourceIds": [
+        "source_ind48_sma_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "India Code PDF page 5, sections 5–7."
+    },
+    {
+      "id": "claim_ind48_sma_objection_solemnization_certificate",
+      "text": "Special Marriage Act sections 8 and 9 require the Marriage Officer to inquire into an objection before solemnization, with up to 30 days for the inquiry and a 30-day appeal window from refusal; sections 11–13 require declarations signed by the parties and three witnesses, solemnization before the officer and three witnesses, and a certificate in the Fourth Schedule form signed by the parties and witnesses; section 14 requires a new notice if solemnization does not occur within three calendar months.",
+      "jurisdiction": "India; Karnataka administration by Marriage Officer",
+      "scenarioIds": [
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_sma_notice",
+        "node_marriage_w_sma_solemn",
+        "node_marriage_w_outcome"
+      ],
+      "sourceIds": [
+        "source_ind48_sma_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "India Code PDF pages 5–6, sections 8–14."
+    },
+    {
+      "id": "claim_ind48_sma_other_forms_registration",
+      "text": "Special Marriage Act sections 15–16 create a separate registration path for a marriage celebrated in another form: the parties must meet the listed conditions including a ceremony and continued cohabitation, no living spouse, age 21 for both at registration, prohibited-relationship rule and at least 30 days' residence in the Marriage Officer's district; after signed application, public notice and a 30-day objection period, the officer may enter a Fifth Schedule certificate signed by the parties and three witnesses.",
+      "jurisdiction": "India; Karnataka administration by Marriage Officer",
+      "scenarioIds": [
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_sma_solemn",
+        "node_marriage_w_outcome"
+      ],
+      "sourceIds": [
+        "source_ind48_sma_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "India Code PDF pages 6–7, sections 15–16."
+    },
+    {
+      "id": "claim_ind48_sma_schedules_forms",
+      "text": "The official Special Marriage Act PDF contains the Second Schedule Notice of Intended Marriage (see section 5), Third Schedule declaration (see section 11), Fourth Schedule Certificate of Marriage (see section 13), and Fifth Schedule Certificate of Marriage Celebrated in Other Forms (see section 16).",
+      "jurisdiction": "India; Karnataka forms administered by Marriage Officer",
+      "scenarioIds": [
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_sma_notice",
+        "node_marriage_w_sma_solemn",
+        "node_marriage_w_outcome"
+      ],
+      "sourceIds": [
+        "source_ind48_sma_schedules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "India Code PDF pages 21–24. These statutory schedules are the precise official form text located in this pass; no Kaveri-local blank form was surfaced."
+    },
+    {
+      "id": "claim_ind48_department_routes_kaveri",
+      "text": "The Karnataka Stamps and Registration Department's 2023–24 annual report says the department registers marriages under the Hindu Marriage Act and Special Marriage Act, registers documents in Kaveri-2.0, and lists HMA and SMA among the Acts followed by the department.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_route",
+        "node_marriage_w_kaveri"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Report PDF pp. 95–96 and 101. It is official departmental context, not a live case result. Annual-report context is not a current service procedure. Annual-report context is not a current service procedure. Retained as an unresolved lead after the source-specific citation cap."
+    },
+    {
+      "id": "claim_marriage_ind48_department_routes",
+      "text": "The Karnataka department's official annual report identifies HMA and SMA as marriage statutes administered by the Stamps and Registration Department and identifies Kaveri-2.0 as its latest online software.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_route",
+        "node_marriage_w_kaveri"
+      ],
+      "sourceIds": [
+        "source_marriage_ind48_report"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Official report evidence is not a current case-level procedure."
+    },
+    {
+      "id": "claim_marriage_ind48_sro_officer",
+      "text": "The current Revenue Department public page states that Sub-Registrars function as Marriage Officers under the Hindu Marriage Act, 1955 and the Special Marriage Act, 1954.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_route"
+      ],
+      "sourceIds": [
+        "source_marriage_ind48_revenue_officers"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The page does not identify which Bengaluru office would handle a particular couple."
+    },
+    {
+      "id": "claim_marriage_ind48_hma_section8",
+      "text": "HMA section 8 provides that a State Government may make rules for entering particulars of a Hindu marriage in a Hindu Marriage Register, may make entry compulsory in specified cases, and permits certified extracts on payment of the prescribed fee; omission of entry does not affect validity of the marriage.",
+      "jurisdiction": "India; Karnataka implementation by state rules",
+      "scenarioIds": [
+        "scenario_marriage_w_hma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_hma"
+      ],
+      "sourceIds": [
+        "source_marriage_ind48_hma"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is the statutory boundary only; it is not evidence of a completed registration or current Karnataka portal behavior."
+    },
+    {
+      "id": "claim_marriage_ind48_sma_notice",
+      "text": "SMA sections 5–7 provide for written notice to the district Marriage Officer after at least one party has resided in that district for at least thirty days immediately before notice, entry/publication in the Marriage Notice Book and an objection route.",
+      "jurisdiction": "India; Karnataka administration by Marriage Officer/SRO",
+      "scenarioIds": [
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_sma_notice"
+      ],
+      "sourceIds": [
+        "source_marriage_ind48_sma"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No Bengaluru Marriage Officer was selected and no notice or objection was filed."
+    },
+    {
+      "id": "claim_marriage_ind48_sma_solemnization",
+      "text": "SMA sections 11–14 provide for parties and three witnesses to sign a declaration before the Marriage Officer, solemnization at the office or another permitted place, certificate entry signed by the parties and witnesses, and a new notice if solemnization does not occur within three months.",
+      "jurisdiction": "India; Karnataka administration by Marriage Officer/SRO",
+      "scenarioIds": [
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_sma_solemn"
+      ],
+      "sourceIds": [
+        "source_marriage_ind48_sma"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No declaration, witness appearance, solemnization, certificate or new-notice situation was attempted."
+    },
+    {
+      "id": "claim_marriage_ind48_sma_other_form",
+      "text": "SMA sections 15–16 separately provide for registration of a marriage celebrated in another form and prescribe a Marriage Officer procedure for that registration.",
+      "jurisdiction": "India; Karnataka administration by Marriage Officer/SRO",
+      "scenarioIds": [
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_sma_solemn"
+      ],
+      "sourceIds": [
+        "source_marriage_ind48_sma"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This separate statutory branch was not selected or tested in Kaveri."
+    },
+    {
+      "id": "claim_marriage_ind48_kaveri_blank",
+      "text": "On 2026-08-31, the official Kaveri landing URL loaded a document titled “Kaveri Online Services” but exposed a blank visible page body after waiting; no unauthenticated HMA/SMA choice, login control, form, help text, error message or recovery link was visible.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_kaveri"
+      ],
+      "sourceIds": [
+        "source_marriage_ind48_kaveri"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The blank render is a visible interface failure, not proof that the service is permanently unavailable. No retry loop, login or bypass was attempted."
+    },
+    {
+      "id": "claim_marriage_ind48_department_public_boundary",
+      "text": "The current Revenue Department public pages expose department descriptions, the Register of Marriages/SRO structure and the Sub-Registrar Marriage Officer role, but do not expose a current case-specific HMA or SMA application workflow in the unauthenticated pages reviewed.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_route",
+        "node_marriage_w_hma",
+        "node_marriage_w_sma_notice",
+        "node_marriage_w_kaveri"
+      ],
+      "sourceIds": [
+        "source_marriage_ind48_revenue_stamps",
+        "source_marriage_ind48_revenue_officers",
+        "source_marriage_ind48_revenue_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Reviewed routes were the Revenue Department English home, Stamps & Registration page and Know-more page; no login or application action was taken."
+    },
+    {
+      "id": "claim_marriage_ind48_public_recovery",
+      "text": "The Revenue Department home page publishes IPGRS and telephone 1902 as a general grievance route for concerns about Government of Karnataka service delivery.",
+      "jurisdiction": "Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_kaveri"
+      ],
+      "sourceIds": [
+        "source_marriage_ind48_revenue_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published recovery is general, not a verified Kaveri marriage-specific escalation or fix for the blank render."
+    },
+    {
+      "id": "claim_marriage_ind48_unknown",
+      "text": "The current Bengaluru SRO/Marriage Officer, Kaveri HMA/SMA category availability, login/OTP boundary, application fields, document/original checklist, witness handling, fee, payment state, appointment availability, SMA notice publication/objection UI, processing time and certificate outcome remain Unknown after this public-only pass.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "nodeIds": [
+        "node_marriage_w_route",
+        "node_marriage_w_hma",
+        "node_marriage_w_sma_notice",
+        "node_marriage_w_sma_solemn",
+        "node_marriage_w_kaveri",
+        "node_marriage_w_outcome"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Unknown is precise to the unexposed operational boundary: no login, case data, payment, notice, objection, appointment, ceremony or certificate was attempted."
+    },
+    {
+      "id": "claim_ind48_marriage_reported_digital_certificate",
+      "text": "One citizen reported receiving a digitally signed marriage certificate through Kaveri after an online application.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_kaveri_reported"
+      ],
+      "nodeIds": [
+        "node_marriage_w_kaveri",
+        "node_marriage_w_outcome"
+      ],
+      "sourceIds": [
+        "source_ind48_marriage_kaveri_experience_2025"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One account only. It does not establish that online completion is available for a given SRO, legal route, document set, or case."
+    },
+    {
+      "id": "claim_ind48_marriage_reported_repeated_objections",
+      "text": "One citizen reported repeated Kaveri objections and that an objection reset Aadhaar-based verification and e-sign steps for the couple and witnesses.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_kaveri_reported"
+      ],
+      "nodeIds": [
+        "node_marriage_w_kaveri",
+        "node_marriage_w_outcome"
+      ],
+      "sourceIds": [
+        "source_ind48_marriage_kaveri_experience_2025"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is not evidence that objections are routine, that a reset occurs in every case, or that any alleged motive is true."
+    },
+    {
+      "id": "claim_ind48_marriage_reported_rejection_then_certificate",
+      "text": "One Bengaluru applicant reported an initial rejection, resubmission after adding requested wedding evidence and a photo, then a certificate after payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_kaveri_reported"
+      ],
+      "nodeIds": [
+        "node_marriage_w_kaveri",
+        "node_marriage_w_outcome"
+      ],
+      "sourceIds": [
+        "source_ind48_marriage_bengaluru_verified_2026"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One reported case progression; it does not establish a document checklist, review time, payment amount, eligibility, or whether a physical visit is ordinarily unnecessary."
+    },
+    {
+      "id": "claim_ind48_marriage_reported_witness_save_error",
+      "text": "One applicant reported that Kaveri would not save witness details and displayed “Try again”; another citizen reported eventual success only after repeated retries and possible re-entry of details.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_kaveri_reported"
+      ],
+      "nodeIds": [
+        "node_marriage_w_kaveri"
+      ],
+      "sourceIds": [
+        "source_ind48_marriage_witness_error_2026"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Two unverified statements in one public discussion. They do not prove a system defect, identify its cause, or show that retrying resolves another case."
+    },
+    {
+      "id": "claim_ind48_marriage_reported_pending_non_sma",
+      "text": "One Bengaluru Kaveri applicant explicitly described their case as not SMA and reported a submitted-online status after ten days despite e-signed witnesses.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_marriage_w_kaveri_reported"
+      ],
+      "nodeIds": [
+        "node_marriage_w_kaveri",
+        "node_marriage_w_outcome"
+      ],
+      "sourceIds": [
+        "source_ind48_marriage_non_sma_pending_2026"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The route is only distinguishable as non-SMA; it must not be relabelled as HMA. One reported status and duration do not establish a delay, service standard, or required next action."
     }
   ],
   "nodes": [
@@ -729,17 +1518,98 @@
             "claim_marriage_w_route"
           ],
           "status": "verified"
+        },
+        {
+          "id": "check_ind48_department_routes",
+          "label": "Department statutes",
+          "description": "Annual report names HMA and SMA among department Acts and says the department registers marriages under both.",
+          "url": "https://revenue.karnataka.gov.in/uploads/media_to_upload1712395448.pdf",
+          "claimIds": [
+            "claim_ind48_department_routes_kaveri"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind48_hma_conditions",
+          "label": "HMA conditions",
+          "description": "HMA section 5 conditions and section 7 ceremony framework apply to the HMA branch.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/1560/1/A1955-25Eng.pdf",
+          "claimIds": [
+            "claim_ind48_hma_conditions_and_ceremony"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind48_sma_conditions",
+          "label": "SMA conditions",
+          "description": "SMA section 4 conditions apply to solemnization under the SMA branch.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/15480/1/special_marriage_act.pdf",
+          "claimIds": [
+            "claim_ind48_sma_conditions"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_marriage_ind48_routes_report",
+          "label": "HMA/SMA department mandate",
+          "description": "Annual report identifies HMA and SMA among Acts followed by the department.",
+          "url": "https://revenue.karnataka.gov.in/uploads/media_to_upload1712395448.pdf",
+          "claimIds": [
+            "claim_marriage_ind48_department_routes"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_marriage_ind48_sro_officer",
+          "label": "Sub-Registrar Marriage Officer role",
+          "description": "Current department page states that Sub-Registrars function as Marriage Officers under HMA and SMA.",
+          "url": "https://revenue.karnataka.gov.in/114/know-more-about-stamps-and-registration/en",
+          "claimIds": [
+            "claim_marriage_ind48_sro_officer"
+          ],
+          "status": "verified"
         }
       ],
-      "failureSignals": [],
-      "recoveries": [],
+      "failureSignals": [
+        {
+          "id": "failure_marriage_ind48_route_not_exposed",
+          "label": "No public route selector",
+          "description": "The reviewed Kaveri landing rendered no visible HMA/SMA selector, and the reviewed department pages were descriptive rather than application screens.",
+          "url": "https://kaveri.karnataka.gov.in/landing-page",
+          "claimIds": [
+            "claim_marriage_ind48_kaveri_blank",
+            "claim_marriage_ind48_department_public_boundary"
+          ],
+          "status": "verified"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_marriage_ind48_confirm_officer",
+          "label": "Confirm the applicable Marriage Officer/SRO",
+          "description": "The department identifies Sub-Registrars as Marriage Officers; the specific Bengaluru office and route still require authorised case-specific confirmation.",
+          "url": "https://revenue.karnataka.gov.in/114/know-more-about-stamps-and-registration/en",
+          "claimIds": [
+            "claim_marriage_ind48_sro_officer",
+            "claim_marriage_ind48_unknown"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_marriage_w_hma",
         "scenario_marriage_w_sma"
       ],
       "claimIds": [
         "claim_marriage_w_route",
-        "claim_marriage_w_unknown"
+        "claim_marriage_w_unknown",
+        "claim_ind48_department_routes_kaveri",
+        "claim_ind48_hma_conditions_and_ceremony",
+        "claim_ind48_sma_conditions",
+        "claim_marriage_ind48_department_routes",
+        "claim_marriage_ind48_sro_officer",
+        "claim_marriage_ind48_department_public_boundary",
+        "claim_marriage_ind48_unknown"
       ],
       "status": "unknown",
       "displayOrder": 10
@@ -761,15 +1631,74 @@
             "claim_marriage_w_hma"
           ],
           "status": "verified"
+        },
+        {
+          "id": "check_ind48_hma_section8",
+          "label": "HMA section 8",
+          "description": "State rules may provide register entry and certified extracts; omission does not affect validity under section 8(5).",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/1560/1/A1955-25Eng.pdf",
+          "claimIds": [
+            "claim_ind48_hma_section8_register"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind48_hma_kaveri_faq",
+          "label": "Kaveri HMA FAQ",
+          "description": "FAQ says Hindu certificate is post-marriage, offline Aadhaar is not mandatory, online Aadhaar is mandatory and online submission need not visit the SRO.",
+          "url": "https://kaveri.karnataka.gov.in/landing-page#faq-marriage-registration",
+          "claimIds": [
+            "claim_ind48_kaveri_hma_route_identity"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "check_marriage_ind48_hma_section8",
+          "label": "HMA section 8",
+          "description": "India Code section 8 sets the registration-register framework.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/1560/1/A1955-25Eng.pdf",
+          "claimIds": [
+            "claim_marriage_ind48_hma_section8"
+          ],
+          "status": "verified"
         }
       ],
-      "failureSignals": [],
-      "recoveries": [],
+      "failureSignals": [
+        {
+          "id": "failure_marriage_ind48_hma_public_fields",
+          "label": "HMA portal fields not visible",
+          "description": "The current unauthenticated Kaveri landing rendered blank, so no HMA category, fields, document upload or fee state could be observed.",
+          "url": "https://kaveri.karnataka.gov.in/landing-page",
+          "claimIds": [
+            "claim_marriage_ind48_kaveri_blank",
+            "claim_marriage_ind48_unknown"
+          ],
+          "status": "verified"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_marriage_ind48_hma_grievance",
+          "label": "General service grievance route",
+          "description": "Revenue Department publishes IPGRS/1902 for service-delivery grievances; it is not verified as a marriage-specific Kaveri technical recovery.",
+          "url": "https://revenue.karnataka.gov.in/en",
+          "claimIds": [
+            "claim_marriage_ind48_public_recovery",
+            "claim_marriage_ind48_unknown"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_marriage_w_hma"
       ],
       "claimIds": [
-        "claim_marriage_w_hma"
+        "claim_marriage_w_hma",
+        "claim_ind48_hma_conditions_and_ceremony",
+        "claim_ind48_hma_section8_register",
+        "claim_ind48_kaveri_hma_route_identity",
+        "claim_marriage_ind48_hma_section8",
+        "claim_marriage_ind48_unknown"
       ],
       "status": "partial",
       "displayOrder": 20
@@ -791,6 +1720,36 @@
             "claim_marriage_w_sma"
           ],
           "status": "verified"
+        },
+        {
+          "id": "check_ind48_sma_notice",
+          "label": "SMA sections 5–7",
+          "description": "Written Second Schedule notice, 30-day residence condition, publication and objections are statutory.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/15480/1/special_marriage_act.pdf",
+          "claimIds": [
+            "claim_ind48_sma_notice_publication_objection"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind48_kaveri_intended_faq",
+          "label": "Kaveri intended FAQ",
+          "description": "FAQ says pre-marriage, more than 30 days current-address residence and personal submission of signed Notice at SRO before Sub-Registrar.",
+          "url": "https://kaveri.karnataka.gov.in/landing-page#faq-marriage-registration",
+          "claimIds": [
+            "claim_ind48_kaveri_sma_intended_route"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "check_marriage_ind48_sma_notice",
+          "label": "SMA sections 5–7",
+          "description": "India Code provides the statutory notice, publication and objection sequence.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/20574/1/special_marriage_act.pdf",
+          "claimIds": [
+            "claim_marriage_ind48_sma_notice"
+          ],
+          "status": "verified"
         }
       ],
       "failureSignals": [
@@ -804,14 +1763,51 @@
             "claim_marriage_w_unknown"
           ],
           "status": "unknown"
+        },
+        {
+          "id": "failure_ind48_sma_residence",
+          "label": "Residence/jurisdiction mismatch",
+          "description": "Notice may not be receivable if the statutory district-residence or Marriage Officer jurisdiction condition is not met; no case was tested.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/15480/1/special_marriage_act.pdf",
+          "claimIds": [
+            "claim_ind48_sma_notice_publication_objection"
+          ],
+          "status": "unknown"
+        },
+        {
+          "id": "failure_marriage_ind48_sma_notice_ui",
+          "label": "No live notice route visible",
+          "description": "No SMA notice form, Marriage Officer selector, notice-book/publication screen or objection control was visible because the current unauthenticated Kaveri landing rendered blank.",
+          "url": "https://kaveri.karnataka.gov.in/landing-page",
+          "claimIds": [
+            "claim_marriage_ind48_kaveri_blank",
+            "claim_marriage_ind48_unknown"
+          ],
+          "status": "verified"
         }
       ],
-      "recoveries": [],
+      "recoveries": [
+        {
+          "id": "recovery_marriage_ind48_sma_grievance",
+          "label": "General service grievance route",
+          "description": "Revenue Department publishes IPGRS/1902 for service-delivery grievances; no SMA-specific recovery was published on the reviewed pages.",
+          "url": "https://revenue.karnataka.gov.in/en",
+          "claimIds": [
+            "claim_marriage_ind48_public_recovery",
+            "claim_marriage_ind48_unknown"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_marriage_w_sma"
       ],
       "claimIds": [
-        "claim_marriage_w_sma"
+        "claim_marriage_w_sma",
+        "claim_ind48_sma_notice_publication_objection",
+        "claim_ind48_kaveri_sma_intended_route",
+        "claim_marriage_ind48_sma_notice",
+        "claim_marriage_ind48_unknown"
       ],
       "status": "partial",
       "displayOrder": 30
@@ -823,15 +1819,88 @@
       "ownerAgencyId": "agency_kar_stamps_ind32_marriage_workflow",
       "summary": "Declaration, solemnization and certificate are downstream statutory/office steps not initiated.",
       "requiredState": "No notice, objection period, appointment, ceremony or certificate exists.",
-      "checks": [],
-      "failureSignals": [],
-      "recoveries": [],
+      "checks": [
+        {
+          "id": "check_ind48_sma_solemnization",
+          "label": "SMA sections 8–14",
+          "description": "Objection inquiry, three-witness declaration, solemnization and Fourth Schedule certificate/lapse rules.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/15480/1/special_marriage_act.pdf",
+          "claimIds": [
+            "claim_ind48_sma_objection_solemnization_certificate"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind48_sma_other_forms",
+          "label": "SMA sections 15–16",
+          "description": "Other-form registration conditions, 30-day district residence, public notice, objections and Fifth Schedule certificate.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/15480/1/special_marriage_act.pdf",
+          "claimIds": [
+            "claim_ind48_sma_other_forms_registration"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind48_sma_forms",
+          "label": "Statutory schedules",
+          "description": "Second through Fifth Schedule notice/declaration/certificate text is in the official PDF.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/15480/1/special_marriage_act.pdf#page=21",
+          "claimIds": [
+            "claim_ind48_sma_schedules_forms"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_marriage_ind48_sma_solemn",
+          "label": "SMA sections 11–16",
+          "description": "India Code provides declaration, solemnization, certificate, lapse/new-notice and registration-of-other-form provisions.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/20574/1/special_marriage_act.pdf",
+          "claimIds": [
+            "claim_marriage_ind48_sma_solemnization",
+            "claim_marriage_ind48_sma_other_form"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_marriage_ind48_sma_solemn_ui",
+          "label": "No live solemnization controls visible",
+          "description": "The current unauthenticated route exposed no declaration, witness, appointment, venue, fee, certificate or three-month-lapse controls; the Kaveri page rendered blank.",
+          "url": "https://kaveri.karnataka.gov.in/landing-page",
+          "claimIds": [
+            "claim_marriage_ind48_kaveri_blank",
+            "claim_marriage_ind48_unknown"
+          ],
+          "status": "verified"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_marriage_ind48_sma_solemn_grievance",
+          "label": "General service grievance route",
+          "description": "IPGRS/1902 is the only published general service-delivery recovery observed; no SMA ceremony-specific recovery was exposed.",
+          "url": "https://revenue.karnataka.gov.in/en",
+          "claimIds": [
+            "claim_marriage_ind48_public_recovery",
+            "claim_marriage_ind48_unknown"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_marriage_w_sma"
       ],
       "claimIds": [
         "claim_marriage_w_sma",
-        "claim_marriage_w_unknown"
+        "claim_marriage_w_unknown",
+        "claim_ind48_sma_objection_solemnization_certificate",
+        "claim_ind48_sma_other_forms_registration",
+        "claim_ind48_sma_schedules_forms",
+        "claim_ind48_kaveri_sma_other_forms_route",
+        "claim_marriage_ind48_sma_solemnization",
+        "claim_marriage_ind48_sma_other_form",
+        "claim_marriage_ind48_unknown"
       ],
       "status": "unknown",
       "displayOrder": 40
@@ -853,16 +1922,95 @@
             "claim_marriage_w_kaveri"
           ],
           "status": "partial"
+        },
+        {
+          "id": "check_ind48_kaveri_dashboard",
+          "label": "Marriage Registration selector",
+          "description": "Public dashboard exposes Marriage Registration and SRO/date controls.",
+          "url": "https://kaveri.karnataka.gov.in/landing-page#dashboard",
+          "claimIds": [
+            "claim_ind48_kaveri_dashboard_marriage_service",
+            "claim_ind48_kaveri_dashboard_public_controls"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind48_kaveri_faq_docs",
+          "label": "Marriage FAQ",
+          "description": "FAQ exposes current route, identity, documents, photos, witness and operations answers.",
+          "url": "https://kaveri.karnataka.gov.in/landing-page#faq-marriage-registration",
+          "claimIds": [
+            "claim_ind48_kaveri_hma_route_identity",
+            "claim_ind48_kaveri_sma_intended_route",
+            "claim_ind48_kaveri_sma_other_forms_route",
+            "claim_ind48_kaveri_documents_witnesses_photos"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "check_marriage_ind48_kaveri_render",
+          "label": "Current landing render",
+          "description": "Document title was “Kaveri Online Services”; visible body remained blank after load/wait.",
+          "url": "https://kaveri.karnataka.gov.in/landing-page",
+          "claimIds": [
+            "claim_marriage_ind48_kaveri_blank"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_marriage_ind48_kaveri_program",
+          "label": "Kaveri-2.0 department program",
+          "description": "Official report identifies Kaveri-2.0 as the department's online software.",
+          "url": "https://revenue.karnataka.gov.in/uploads/media_to_upload1712395448.pdf",
+          "claimIds": [
+            "claim_marriage_ind48_department_routes"
+          ],
+          "status": "partial"
         }
       ],
-      "failureSignals": [],
-      "recoveries": [],
+      "failureSignals": [
+        {
+          "id": "failure_marriage_ind48_kaveri_blank",
+          "label": "Blank unauthenticated render",
+          "description": "No visible controls, route selector, login, help, error text or recovery link appeared on the landing page.",
+          "url": "https://kaveri.karnataka.gov.in/landing-page",
+          "claimIds": [
+            "claim_marriage_ind48_kaveri_blank"
+          ],
+          "status": "verified"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_marriage_ind48_kaveri_ipgrs",
+          "label": "Published general grievance route",
+          "description": "Revenue Department publishes IPGRS/1902 for Government service-delivery grievances; this is not confirmed as a Kaveri marriage technical support route.",
+          "url": "https://revenue.karnataka.gov.in/en",
+          "claimIds": [
+            "claim_marriage_ind48_public_recovery"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_marriage_w_hma",
         "scenario_marriage_w_sma"
       ],
       "claimIds": [
-        "claim_marriage_w_kaveri"
+        "claim_marriage_w_kaveri",
+        "claim_ind48_kaveri_dashboard_marriage_service",
+        "claim_ind48_kaveri_dashboard_public_controls",
+        "claim_ind48_kaveri_hma_route_identity",
+        "claim_ind48_kaveri_sma_intended_route",
+        "claim_ind48_kaveri_sma_other_forms_route",
+        "claim_ind48_kaveri_documents_witnesses_photos",
+        "claim_ind48_kaveri_operations",
+        "claim_ind48_kaveri_faq_sakala_one_day",
+        "claim_marriage_ind48_department_routes",
+        "claim_marriage_ind48_kaveri_blank",
+        "claim_marriage_ind48_department_public_boundary",
+        "claim_marriage_ind48_public_recovery",
+        "claim_marriage_ind48_unknown"
       ],
       "status": "partial",
       "displayOrder": 50
@@ -874,7 +2022,19 @@
       "ownerAgencyId": "agency_kar_stamps_ind32_marriage_workflow",
       "summary": "Certificate and processing outcome require a real routed application and Registrar/Marriage Officer action.",
       "requiredState": "No reference, payment, review or certificate exists.",
-      "checks": [],
+      "checks": [
+        {
+          "id": "check_ind48_sma_certificate",
+          "label": "SMA certificate form",
+          "description": "SMA sections 13 and 16 specify certificate-book entries signed by parties and three witnesses; Fourth/Fifth Schedule forms are in the Act PDF.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/15480/1/special_marriage_act.pdf",
+          "claimIds": [
+            "claim_ind48_sma_objection_solemnization_certificate",
+            "claim_ind48_sma_other_forms_registration"
+          ],
+          "status": "verified"
+        }
+      ],
       "failureSignals": [],
       "recoveries": [],
       "scenarioIds": [
@@ -882,7 +2042,12 @@
         "scenario_marriage_w_sma"
       ],
       "claimIds": [
-        "claim_marriage_w_unknown"
+        "claim_marriage_w_unknown",
+        "claim_ind48_hma_section8_register",
+        "claim_ind48_sma_objection_solemnization_certificate",
+        "claim_ind48_sma_other_forms_registration",
+        "claim_ind48_kaveri_operations",
+        "claim_marriage_ind48_unknown"
       ],
       "status": "unknown",
       "displayOrder": 60
@@ -1158,21 +2323,227 @@
       "status": "partial"
     },
     {
-      "id": "roadblock_audit_marriage",
-      "title": "Independent audit limitations",
+      "id": "roadblock_ind48_route_officer_unknown",
+      "title": "Legal route and Bengaluru officer still case-specific",
       "category": "documentation",
-      "symptom": "## Scope and result Audited `ledger/marriage.json` against `ledger/schema.json` and `ledger/AGENT_PROTOCOL.md` only. The JSON validates against the supplied schema; IDs are unique, checked references resolve, non-`Unknown` claims have sources, and recorded access dates are ISO-shaped. This assesses the ledger’s stated evidence, not the live legal or portal position. The marriage material supports a **partial legal-route map and a public Kaveri entry lead**. It does not support a current, case-specific Bengaluru registration procedure; that boundary is mostly retained correctly. ## Findings to ship as limitations - **Service-scope contamination — material.** The ledger contains 22 BESCOM/e-Khata claims, six electricity-transfer scenarios, eight electricity-transfer edges, 11 roadblocks, and six journeys that have no marriage-registration connection. Their references resolve but they mater",
-      "likelyCause": "Evidence and schema boundaries identified by the single independent audit.",
-      "recovery": "Read the cited evidence and retain Unknown or partial status where the public record stops.",
-      "ownerAgencyIds": [],
+      "symptom": "HMA, SMA intended solemnization and SMA other-form registration have different conditions and forms, while no supplied couple facts or current Bengaluru Marriage Officer/SRO is known.",
+      "likelyCause": "Ceremony status, parties' residence, jurisdiction and selected legal route were not supplied or tested.",
+      "recovery": "Confirm the applicable Act and current Marriage Officer/SRO before preparing a form or paying a fee.",
+      "ownerAgencyIds": [
+        "agency_kar_stamps_ind32_marriage",
+        "agency_kaveri_ind32_marriage"
+      ],
       "nodeIds": [
-        "node_marriage_route"
+        "node_marriage_w_route",
+        "node_marriage_w_sma_notice",
+        "node_marriage_w_sma_solemn"
       ],
       "scenarioIds": [
-        "scenario_marriage_w_hma"
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
       ],
-      "claimIds": [],
+      "claimIds": [
+        "claim_ind48_department_routes_kaveri",
+        "claim_ind48_hma_section8_register",
+        "claim_ind48_sma_notice_publication_objection",
+        "claim_ind48_sma_other_forms_registration"
+      ],
       "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind48_kaveri_form_boundary",
+      "title": "Current Kaveri form/download boundary",
+      "category": "documentation",
+      "symptom": "Public Kaveri exposes Marriage Registration dashboard and FAQ guidance, but no authenticated application fields or usable public marriage-form download was observed.",
+      "likelyCause": "Application creation and downstream form/document behavior may be account-, category- or SRO-gated; the rendered User Manual link was malformed.",
+      "recovery": "Use the current Kaveri interface after confirming route, or obtain the applicable form/instructions from the current Marriage Officer/SRO; no login or upload was attempted.",
+      "ownerAgencyIds": [
+        "agency_kaveri_ind32_marriage",
+        "agency_kar_stamps_ind32_marriage"
+      ],
+      "nodeIds": [
+        "node_marriage_w_hma",
+        "node_marriage_w_sma_notice",
+        "node_marriage_w_sma_solemn",
+        "node_marriage_w_kaveri"
+      ],
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "claimIds": [
+        "claim_ind48_kaveri_hma_route_identity",
+        "claim_ind48_kaveri_sma_intended_route",
+        "claim_ind48_kaveri_sma_other_forms_route",
+        "claim_ind48_sma_schedules_forms"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind48_sakala_psga_conflict",
+      "title": "Current page shows conflicting service-time labels",
+      "category": "infrastructure",
+      "symptom": "Marriage FAQ says Sakala 1 working day while the same page's dashboard displayed PSGA time limit 3 Day(s).",
+      "likelyCause": "The FAQ and dashboard may represent different service categories, revisions or SLA labels; no official resolution document was found in this pass.",
+      "recovery": "Preserve both observations and confirm the applicable current SLA with the department before promising a processing time.",
+      "ownerAgencyIds": [
+        "agency_kaveri_ind32_marriage",
+        "agency_kar_stamps_ind32_marriage"
+      ],
+      "nodeIds": [
+        "node_marriage_w_kaveri",
+        "node_marriage_w_outcome"
+      ],
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "claimIds": [
+        "claim_ind48_kaveri_dashboard_public_controls",
+        "claim_ind48_kaveri_faq_sakala_one_day"
+      ],
+      "status": "contested"
+    },
+    {
+      "id": "roadblock_marriage_ind48_route",
+      "title": "Legal route and Bengaluru Marriage Officer not selected",
+      "category": "process",
+      "symptom": "HMA registration and SMA notice/solemnization have distinct statutory sequences, but no couple facts or office was supplied and no public selector was visible.",
+      "likelyCause": "Current Kaveri landing rendered blank; department pages identify the role but not the case-specific office.",
+      "recovery": "Confirm the applicable Act, residence condition and Bengaluru Marriage Officer/SRO through an authorised official route before preparing documents or paying.",
+      "ownerAgencyIds": [
+        "agency_kar_stamps_ind32_marriage_workflow",
+        "agency_kaveri_ind32_marriage_workflow"
+      ],
+      "nodeIds": [
+        "node_marriage_w_route",
+        "node_marriage_w_hma",
+        "node_marriage_w_sma_notice"
+      ],
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "claimIds": [
+        "claim_marriage_ind48_sro_officer",
+        "claim_marriage_ind48_kaveri_blank",
+        "claim_marriage_ind48_unknown"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_marriage_ind48_kaveri_blank",
+      "title": "Kaveri unauthenticated landing rendered blank",
+      "category": "infrastructure",
+      "symptom": "The official Kaveri title loaded, but the visible page body had no controls, text, error or recovery link.",
+      "likelyCause": "Unknown; this pass cannot distinguish a transient rendering failure from a portal access boundary.",
+      "recovery": "The only published recovery observed was the Revenue Department's general IPGRS/1902 service-delivery grievance route; do not treat it as a confirmed marriage-specific fix.",
+      "ownerAgencyIds": [
+        "agency_kaveri_ind32_marriage_workflow",
+        "agency_kar_stamps_ind32_marriage_workflow"
+      ],
+      "nodeIds": [
+        "node_marriage_w_kaveri",
+        "node_marriage_w_hma",
+        "node_marriage_w_sma_notice",
+        "node_marriage_w_sma_solemn"
+      ],
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "claimIds": [
+        "claim_marriage_ind48_kaveri_blank",
+        "claim_marriage_ind48_public_recovery",
+        "claim_marriage_ind48_unknown"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_marriage_ind48_operational_unknowns",
+      "title": "Current HMA/SMA operational checklist is unobserved",
+      "category": "documentation",
+      "symptom": "No current public page exposed HMA fields/documents/fee or SMA notice publication, objection, witness, appointment and certificate controls.",
+      "likelyCause": "The Kaveri public landing did not render and reviewed Revenue Department pages were descriptive only.",
+      "recovery": "Preserve the statutory route as a lead only; obtain current case-specific instructions from the authorised Marriage Officer/SRO or published official support route before acting.",
+      "ownerAgencyIds": [
+        "agency_kar_stamps_ind32_marriage_workflow",
+        "agency_kaveri_ind32_marriage_workflow"
+      ],
+      "nodeIds": [
+        "node_marriage_w_hma",
+        "node_marriage_w_sma_notice",
+        "node_marriage_w_sma_solemn",
+        "node_marriage_w_outcome"
+      ],
+      "scenarioIds": [
+        "scenario_marriage_w_hma",
+        "scenario_marriage_w_sma"
+      ],
+      "claimIds": [
+        "claim_marriage_ind48_department_public_boundary",
+        "claim_marriage_ind48_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind48_marriage_reported_objection_reset",
+      "title": "Reported objections followed by repeated verification",
+      "category": "process",
+      "symptom": "One citizen reported repeated objections and renewed Aadhaar verification/e-sign activity after an objection.",
+      "likelyCause": "Unknown; the account does not establish the objection reason, document validity, SRO practice, portal behavior, or any improper conduct.",
+      "recovery": "Use an authorised, case-specific objection reason and current official support route; do not infer a general document requirement or pay an intermediary from this report.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_marriage_w_kaveri",
+        "node_marriage_w_outcome"
+      ],
+      "scenarioIds": [
+        "scenario_marriage_w_kaveri_reported"
+      ],
+      "claimIds": [
+        "claim_ind48_marriage_reported_repeated_objections"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind48_marriage_reported_witness_save_error",
+      "title": "Reported inability to save witness details",
+      "category": "infrastructure",
+      "symptom": "One applicant reported a “Try again” message while adding witness details and no saved entry.",
+      "likelyCause": "Unknown; the report cannot determine whether the cause was an interface defect, account/session state, validation, connectivity, or case facts.",
+      "recovery": "Record the visible error and use the current authorised support route before re-entering personal or witness data; retries reported by another citizen are not a guaranteed fix.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_marriage_w_kaveri"
+      ],
+      "scenarioIds": [
+        "scenario_marriage_w_kaveri_reported"
+      ],
+      "claimIds": [
+        "claim_ind48_marriage_reported_witness_save_error"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind48_marriage_reported_pending_status",
+      "title": "Reported submitted-online status with no further update",
+      "category": "process",
+      "symptom": "One explicitly non-SMA applicant reported that the submitted-online status remained after ten days.",
+      "likelyCause": "Unknown; the account does not establish queue position, completeness, SRO review, objection, payment eligibility, legal route beyond non-SMA, or a system fault.",
+      "recovery": "Confirm the case state and next authorised action with the competent office or official support channel; do not treat a forum duration as a service standard.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_marriage_w_kaveri",
+        "node_marriage_w_outcome"
+      ],
+      "scenarioIds": [
+        "scenario_marriage_w_kaveri_reported"
+      ],
+      "claimIds": [
+        "claim_ind48_marriage_reported_pending_non_sma"
+      ],
+      "status": "partial"
     }
   ],
   "journeys": [
@@ -1251,7 +2622,10 @@
       ],
       "documentationQualityNotes": [
         "Primary Acts and Karnataka department annual report are official.",
-        "Current portal behavior and case-specific checklist remain unverified."
+        "Current portal behavior and case-specific checklist remain unverified.",
+        "This entry establishes selected statutory text and public-interface observations, not a couple-specific application result.",
+        "Kaveri blank-render and FAQ/dashboard observations are not yet reconciled; form fields, appointment, payment, review and certificate outcomes remain Unknown.",
+        "Citizen accounts are route-unknown leads, not proof of requirements, timelines or recoveries."
       ],
       "status": "unknown"
     }

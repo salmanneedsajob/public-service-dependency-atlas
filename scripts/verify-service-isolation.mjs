@@ -41,6 +41,9 @@ const auditDerivedClaims = {
     'claim_ind43_death_public_navigation_controls',
   ]),
 };
+const auditDerivedScenarios = {
+  marriage: new Set(['scenario_marriage_w_kaveri_reported']),
+};
 const read = async (path) => JSON.parse(await readFile(path, 'utf8'));
 const assert = (condition, message) => { if (!condition) throw new Error(message); };
 
@@ -60,6 +63,7 @@ for (const [service, prefix] of Object.entries(services)) {
   const allowed = Object.fromEntries(fields.map((field) => [field, new Set(handoffs.flatMap((handoff) => (handoff[field] ?? []).map((record) => field === 'scenarios' ? alias(record.id) : record.id)))]));
   allowed.roadblocks.add(`roadblock_audit_${service.replaceAll('-', '_')}`);
   for (const id of auditDerivedClaims[service] ?? []) allowed.claims.add(id);
+  for (const id of auditDerivedScenarios[service] ?? []) allowed.scenarios.add(id);
 
   for (const field of fields) {
     const ids = ledger[field].map((record) => record.id);

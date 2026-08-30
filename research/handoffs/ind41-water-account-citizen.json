@@ -1,0 +1,100 @@
+{
+  "_handoff": {
+    "issue": "IND-41",
+    "generatedAt": "2026-08-30",
+    "status": "in_review",
+    "scope": "Public first-person evidence about changing an existing Bengaluru BWSSB water-account holder or bill name. These are individual, unverified reports, not official process, document, charge, entitlement, service-level, or misconduct findings. Names, usernames, property/location identifiers, account or RR numbers, contact details, and exact amounts have been removed or generalized. No login, application, payment, or submission was attempted."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind41_water_account_citizen_office_amount_and_recovery",
+      "title": "BWSSB charges",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1s7u3c6/bwssb_charges/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2026-03-30",
+      "type": "citizen_evidence",
+      "notes": "The original poster reports an office visit seeking a name change on an existing water bill and being quoted an area-linked amount. In the same public discussion, a commenter reports completing a name change after a meter reader helped with form completion and submission. The report does not identify the authorised route, any accepted documents, a lawful charge, or whether the assistive payment was official; personal, property, and exact monetary details are omitted."
+    },
+    {
+      "id": "source_ind41_water_account_citizen_prior_holder_barrier",
+      "title": "BWSSB connection transfer: A How-To",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1ioeeuh",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2025-02-13",
+      "type": "citizen_evidence",
+      "notes": "A commenter reports that BWSSB would not proceed in their old-owner context when they could not locate the prior holder. It is an unverified comment about one case; it does not establish a prior-holder requirement or identify evidence that BWSSB would accept."
+    },
+    {
+      "id": "source_ind41_water_account_citizen_prolonged_inperson_case",
+      "title": "Level of Corruption",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1nj2nj5",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2025-09-17",
+      "type": "citizen_evidence",
+      "notes": "A commenter reports spending several months pursuing BWSSB name and address changes, including an in-person inspection and payments. The account does not document the case record, the nature or authorisation of any payment, completion, or the cause of delay. Exact amount, location, and other identifying context are omitted."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind41_water_account_citizen_reported_area_linked_amount",
+      "text": "One citizen reported being quoted an unexplained amount linked to premises area while seeking a BWSSB water-bill name change at an office.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_account_sale", "scenario_ind32_water_account_correction"],
+      "nodeIds": ["node_water_account_route_check", "node_water_account_case_documents"],
+      "sourceIds": ["source_ind41_water_account_citizen_office_amount_and_recovery"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single applicant's report. It does not establish a BWSSB fee, calculation, arrears treatment, regularisation issue, or a general in-person requirement."
+    },
+    {
+      "id": "claim_ind41_water_account_citizen_reported_assisted_completion",
+      "text": "One commenter reported that their water-bill name change was completed after a meter reader assisted with form completion and submission.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_account_sale", "scenario_ind32_water_account_correction"],
+      "nodeIds": ["node_water_account_route_check", "node_water_account_outcome"],
+      "sourceIds": ["source_ind41_water_account_citizen_office_amount_and_recovery"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single recovery report. It does not establish that meter-reader assistance is an authorised BWSSB channel, that payment was required or authorised, or that this path is available for another case."
+    },
+    {
+      "id": "claim_ind41_water_account_citizen_prior_holder_barrier",
+      "text": "One commenter reported that BWSSB would not act in their case when the prior account holder could not be located.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_account_inheritance", "scenario_ind32_water_account_unresolved"],
+      "nodeIds": ["node_water_account_route_check", "node_water_account_case_documents", "node_water_account_support"],
+      "sourceIds": ["source_ind41_water_account_citizen_prior_holder_barrier"],
+      "evidenceGrade": "F",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "An uncorroborated commenter assertion retained as a lead. It does not prove a prior-holder requirement or identify acceptable succession, ownership, identity, or affidavit evidence."
+    },
+    {
+      "id": "claim_ind41_water_account_citizen_reported_prolonged_inperson_case",
+      "text": "One commenter reported spending several months pursuing BWSSB name and address changes, including an in-person inspection and payments.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_water_account_sale", "scenario_ind32_water_account_unresolved"],
+      "nodeIds": ["node_water_account_route_check", "node_water_account_case_documents", "node_water_account_outcome"],
+      "sourceIds": ["source_ind41_water_account_citizen_prolonged_inperson_case"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single unverified account of elapsed time and interactions. It does not establish a current service standard, that the inspection or payments were required or authorised, that the case completed, or that any person or organisation acted improperly."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

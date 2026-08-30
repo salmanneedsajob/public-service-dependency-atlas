@@ -3,7 +3,7 @@
     "schemaVersion": "1.0.0",
     "title": "Bengaluru water account evidence ledger",
     "jurisdiction": "Bengaluru, Karnataka, India",
-    "asOf": "2026-08-28",
+    "asOf": "2026-08-30",
     "dataKind": "research",
     "disclaimer": "Independent research, not official advice. Public sources and known gaps are shown together; do not submit personal data through this ledger."
   },
@@ -116,15 +116,6 @@
       "notes": "The FAQ describes the new-connection registration, application, inspection, demand-note, and payment flow and gives owcenquiry@bwssb.org and 080 22238888 for queries. It does not enumerate an existing-account transfer/name-change flow."
     },
     {
-      "id": "source_ind32_water_account_bwssb_contact",
-      "title": "BWSSB official home and consumer complaints contact",
-      "publisher": "Bangalore Water Supply and Sewerage Board",
-      "url": "https://owcv2.bwssb.gov.in/consumer",
-      "accessedAt": "2026-08-28",
-      "type": "official_guidance",
-      "notes": "Official public site lists the 24x7 helpline 1916 and consumer complaint channels. Contact availability is not proof that a transfer request can be filed online or that a complaint will amend account ownership. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail."
-    },
-    {
       "id": "source_ind32_water_account_district_directory",
       "title": "Bangalore Water Supply and Sewerage Board directory",
       "publisher": "Bengaluru Urban District Administration / Government of Karnataka",
@@ -132,33 +123,6 @@
       "accessedAt": "2026-08-28",
       "type": "official_guidance",
       "notes": "Government directory identifies BWSSB and its Cauvery Bhavan address/contact. It does not describe transfer documents, fees, or processing."
-    },
-    {
-      "id": "source_ind32_water_account_workflow_entry",
-      "title": "BWSSB Jaladhare consumer public entry",
-      "publisher": "Bangalore Water Supply and Sewerage Board",
-      "url": "https://owcv2.bwssb.gov.in/consumer",
-      "accessedAt": "2026-08-28",
-      "type": "official_portal",
-      "notes": "Public observation of mobile OTP, application-number status, and new/additional connection information. No value was entered."
-    },
-    {
-      "id": "source_ind32_water_account_workflow_faq",
-      "title": "BWSSB Jaladhare Frequently Asked Questions",
-      "publisher": "Bangalore Water Supply and Sewerage Board",
-      "url": "https://owcv2.bwssb.gov.in/member/faq",
-      "accessedAt": "2026-08-28",
-      "type": "official_guidance",
-      "notes": "Public FAQ gives new-connection guidance and enquiry contacts; it does not describe transfer/name change."
-    },
-    {
-      "id": "source_ind32_water_account_workflow_home",
-      "title": "BWSSB official home",
-      "publisher": "Bangalore Water Supply and Sewerage Board",
-      "url": "https://owcv2.bwssb.gov.in/consumer",
-      "accessedAt": "2026-08-28",
-      "type": "official_guidance",
-      "notes": "Public site lists 1916 and complaint channels; no complaint was lodged. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail."
     },
     {
       "id": "source_ind32_water_account_citizen_name_change_quote",
@@ -179,6 +143,43 @@
       "publishedAt": "2025-02-13",
       "type": "citizen_evidence",
       "notes": "A commenter reports being unable to trace a prior owner after an old family purchase and says BWSSB refused to proceed. This is an unverified comment about one inheritance/old-owner context, not evidence of a BWSSB requirement."
+    },
+    {
+      "id": "source_ind41_v2_showall",
+      "title": "BWSSB V2 Show All Applications public page",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/user/showallapplication",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Direct unauthenticated observation after following the public Show All Application link. Visible controls are Date Range (08/30/2026 - 08/30/2026), Filter, entries per page (10 selected; 25/50/100), Search, sortable Application No./Application Date/Approval Date/Fee Details/Total Fee Charges headers, and a table row `Loading...`. No application identifier or personal data was entered or collected."
+    },
+    {
+      "id": "source_ind41_owc_more_info",
+      "title": "BWSSB OWC More Information",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/more-info",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Direct public page says `To apply for new connection login with registered mobile number and otp.` and lists new-connection documents: Builing Plan, Lease cum sale deed, Buliding photo with owner, Katha, and conditional OC/RWH/STP photos. It does not state a name-transfer route."
+    },
+    {
+      "id": "source_ind41_water_account_citizen_prolonged_inperson_case",
+      "title": "Level of Corruption",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1nj2nj5",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2025-09-17",
+      "type": "citizen_evidence",
+      "notes": "A commenter reports spending several months pursuing BWSSB name and address changes, including an in-person inspection and payments. The account does not document the case record, the nature or authorisation of any payment, completion, or the cause of delay. Exact amount, location, and other identifying context are omitted."
+    },
+    {
+      "id": "source_ind41_water_account_grievance",
+      "title": "BWSSB Jaladhare Grievance Form",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/member/grievance-form",
+      "accessedAt": "2026-08-30",
+      "type": "official_form",
+      "notes": "Public 2026-08-30 observation of consumer/application/address/remarks fields, 1916, and enquiry email. It is not labelled as an existing-account transfer form."
     }
   ],
   "claims": [
@@ -242,7 +243,7 @@
       ],
       "nodeIds": [],
       "sourceIds": [
-        "source_ind32_water_account_bwssb_contact",
+        "source_ind32_water_account_consumer",
         "source_ind32_water_account_faq"
       ],
       "evidenceGrade": "C",
@@ -250,25 +251,6 @@
       "status": "partial",
       "contradictsClaimIds": [],
       "notes": "These are published contact leads only; no call, email, complaint, or case escalation was made. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
-    },
-    {
-      "id": "claim_ind32_water_account_transfer_unknown",
-      "text": "The inspected official public material does not establish whether a sale, inheritance, tenancy, death of the recorded holder, or simple spelling correction uses the same transfer route, nor does it establish accepted documents, arrears handling, security-deposit treatment, fee, or service standard.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_ind32_water_account_sale"
-      ],
-      "nodeIds": [],
-      "sourceIds": [
-        "source_ind32_water_account_consumer",
-        "source_ind32_water_account_faq",
-        "source_ind32_water_account_act"
-      ],
-      "evidenceGrade": "C",
-      "basis": "observation",
-      "status": "unknown",
-      "contradictsClaimIds": [],
-      "notes": "This is an explicit research boundary, not a claim that no such policy exists. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
     },
     {
       "id": "claim_ind32_water_account_workflow_entry",
@@ -284,7 +266,7 @@
         "node_water_account_public_entry"
       ],
       "sourceIds": [
-        "source_ind32_water_account_workflow_entry"
+        "source_ind32_water_account_consumer"
       ],
       "evidenceGrade": "B",
       "basis": "observation",
@@ -305,7 +287,7 @@
         "node_water_account_route_check"
       ],
       "sourceIds": [
-        "source_ind32_water_account_workflow_entry"
+        "source_ind32_water_account_consumer"
       ],
       "evidenceGrade": "B",
       "basis": "observation",
@@ -324,37 +306,14 @@
         "node_water_account_support"
       ],
       "sourceIds": [
-        "source_ind32_water_account_workflow_faq",
-        "source_ind32_water_account_workflow_home"
+        "source_ind32_water_account_faq",
+        "source_ind32_water_account_consumer"
       ],
       "evidenceGrade": "C",
-      "basis": "observation",
+      "basis": "mixed",
       "status": "partial",
       "contradictsClaimIds": [],
       "notes": "No call, email, or grievance was made. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
-    },
-    {
-      "id": "claim_ind32_water_account_workflow_case_unknown",
-      "text": "The inspected public workflow does not reveal required transfer documents, arrears or deposit treatment, transfer fee, case status, approval decision, or completion timing for any RR number.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_ind32_water_account_sale",
-        "scenario_ind32_water_account_inheritance",
-        "scenario_ind32_water_account_correction"
-      ],
-      "nodeIds": [
-        "node_water_account_case_documents",
-        "node_water_account_outcome"
-      ],
-      "sourceIds": [
-        "source_ind32_water_account_workflow_entry",
-        "source_ind32_water_account_workflow_faq"
-      ],
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "status": "unknown",
-      "contradictsClaimIds": [],
-      "notes": "Property-specific facts were intentionally not supplied."
     },
     {
       "id": "claim_ind32_water_account_citizen_office_quote",
@@ -398,6 +357,260 @@
       "status": "partial",
       "contradictsClaimIds": [],
       "notes": "A single unverified commenter account. It does not prove that prior-holder participation is required or identify any succession, ownership, identity, or affidavit evidence BWSSB would accept."
+    },
+    {
+      "id": "claim_ind41_water_account_public_scope",
+      "text": "The current unauthenticated BWSSB Jaladhare consumer page labels its application route as a new connection, lists permission for a new or additional water/underground-drainage connection, and exposes mobile-OTP and application-number status controls.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_account_sale"
+      ],
+      "nodeIds": [
+        "node_water_account_public_entry"
+      ],
+      "sourceIds": [
+        "source_ind32_water_account_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct public observation on 2026-08-30; no login, OTP, identifier, or application was used."
+    },
+    {
+      "id": "claim_ind41_water_account_no_public_transfer_control",
+      "text": "No transfer, name-change, or existing-account mutation control was visible in the inspected unauthenticated Jaladhare consumer page.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_account_sale"
+      ],
+      "nodeIds": [
+        "node_water_account_route_check"
+      ],
+      "sourceIds": [
+        "source_ind32_water_account_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is an observation about the public view, not proof that an authenticated, office-based, or unindexed route does not exist."
+    },
+    {
+      "id": "claim_ind41_water_account_faq_new_route",
+      "text": "BWSSB's public FAQ describes registration, Buy New Application, new-application fields, inspection, demand-note, final payment, and e-receipt steps for a new connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_account_sale"
+      ],
+      "nodeIds": [
+        "node_water_account_public_entry",
+        "node_water_account_route_check"
+      ],
+      "sourceIds": [
+        "source_ind32_water_account_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "FAQ questions 1–16 are specifically framed around applying for a new connection; no existing-account transfer step is described."
+    },
+    {
+      "id": "claim_ind41_water_account_grievance_support",
+      "text": "BWSSB publishes a generic Grievance Form with consumer/application/address/remarks fields and 1916 plus an enquiry email, but the form is not labelled or documented as an existing-account name-transfer application.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_account_sale"
+      ],
+      "nodeIds": [
+        "node_water_account_route_check"
+      ],
+      "sourceIds": [
+        "source_ind41_water_account_grievance"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is a published clarification/escalation lead only; no grievance was filed and the form does not promise an account-holder amendment."
+    },
+    {
+      "id": "claim_ind41_v2_controls",
+      "text": "The unauthenticated V2 Jaladhare consumer page exposes `Apply For Connection / Log In`, `Mobile Number`, `Send OTP`, `Enter OTP`, a Submit button, `Enter Your Application number to know the status`, a second Submit button, and `Show All Application`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_account_sale"
+      ],
+      "nodeIds": [
+        "node_water_account_public_entry"
+      ],
+      "sourceIds": [
+        "source_ind32_water_account_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Exact visible control labels were recorded. No identifier, OTP, or application number was entered."
+    },
+    {
+      "id": "claim_ind41_v2_scope",
+      "text": "The V2 public page labels its visible service as permission for `new Connection/Additional Connection for water supply and under Ground Drainage` and its public information describes new-connection payment, application, upload, and status steps.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_account_sale"
+      ],
+      "nodeIds": [
+        "node_water_account_public_entry",
+        "node_water_account_route_check"
+      ],
+      "sourceIds": [
+        "source_ind32_water_account_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The visible wording is adjacent new/additional-connection guidance, not an existing-account transfer procedure."
+    },
+    {
+      "id": "claim_ind41_no_public_transfer_control",
+      "text": "No transfer, name-change, or existing-account mutation control was visible on the inspected unauthenticated Jaladhare consumer page.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_account_sale"
+      ],
+      "nodeIds": [
+        "node_water_account_route_check"
+      ],
+      "sourceIds": [
+        "source_ind32_water_account_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is an unauthenticated public-interface boundary. It does not rule out an authenticated, office, or unindexed route."
+    },
+    {
+      "id": "claim_ind41_v2_showall_boundary",
+      "text": "The V2 `Show All Applications` public page exposes Date Range, Filter, entries-per-page choices 10/25/50/100, Search, sortable application/fee headers, and a visible `Loading...` table row; it does not expose an existing-account name-transfer case in the inspected public state.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_account_sale"
+      ],
+      "nodeIds": [
+        "node_water_account_case_documents"
+      ],
+      "sourceIds": [
+        "source_ind41_v2_showall"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The page was observed without entering an application number or collecting rows; loading state may reflect an unavailable/unfinished public data request."
+    },
+    {
+      "id": "claim_ind41_grievance_recovery",
+      "text": "The public BWSSB grievance page exposes Consumer Name, Consumer Mobile No, Subject, Application Number, Application Name, Address, Plumber Name, Remarks, and Submit, and displays `Mail Us: eerbc@bwssb.gov.in` and `Toll Free : 1916`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_account_sale"
+      ],
+      "nodeIds": [
+        "node_water_account_support"
+      ],
+      "sourceIds": [
+        "source_ind41_water_account_grievance"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is a published contact/complaint lead only. No field was populated and no grievance was submitted."
+    },
+    {
+      "id": "claim_ind41_faq_recovery",
+      "text": "The public BWSSB FAQ publishes `owcenquiry@bwssb.org` and call centre number `080 22238888` for more queries.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_account_sale"
+      ],
+      "nodeIds": [
+        "node_water_account_support"
+      ],
+      "sourceIds": [
+        "source_ind32_water_account_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ does not promise that these contacts can amend an account holder; no contact was made."
+    },
+    {
+      "id": "claim_ind41_transfer_requirements_unknown",
+      "text": "The public material reviewed does not establish a current BWSSB existing-account name-transfer route.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_account_sale"
+      ],
+      "nodeIds": [
+        "node_water_account_route_check",
+        "node_water_account_outcome"
+      ],
+      "sourceIds": [
+        "source_ind32_water_account_consumer",
+        "source_ind32_water_account_faq"
+      ],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "This is the boundary of the unauthenticated public pass, not proof that an authenticated, office-based, or unindexed route does not exist."
+    },
+    {
+      "id": "claim_ind41_water_account_citizen_reported_assisted_completion",
+      "text": "One commenter reported that their water-bill name change was completed after a meter reader assisted with form completion and submission.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_account_sale"
+      ],
+      "nodeIds": [
+        "node_water_account_route_check",
+        "node_water_account_outcome"
+      ],
+      "sourceIds": [
+        "source_ind32_water_account_citizen_name_change_quote"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single recovery report. It does not establish that meter-reader assistance is an authorised BWSSB channel, that payment was required or authorised, or that this path is available for another case."
+    },
+    {
+      "id": "claim_ind41_water_account_citizen_reported_prolonged_inperson_case",
+      "text": "One commenter reported spending several months pursuing BWSSB name and address changes, including an in-person inspection and payments.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_account_sale"
+      ],
+      "nodeIds": [
+        "node_water_account_route_check",
+        "node_water_account_case_documents",
+        "node_water_account_outcome"
+      ],
+      "sourceIds": [
+        "source_ind41_water_account_citizen_prolonged_inperson_case"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single unverified account of elapsed time and interactions. It does not establish a current service standard, that the inspection or payments were required or authorised, that the case completed, or that any person or organisation acted improperly."
     }
   ],
   "nodes": [
@@ -443,38 +656,41 @@
       "requiredState": "An existing RR number and case type would be needed for an authorised answer; neither was supplied.",
       "checks": [
         {
-          "id": "check_water_account_no_public_mutation",
-          "label": "No visible mutation control",
-          "description": "The inspected public view does not expose a transfer/name-change control.",
+          "id": "check_ind41_public_route_scope",
+          "label": "Public route scope",
+          "description": "The public Jaladhare page and FAQ describe new/additional connections, not an existing-account transfer service.",
           "url": "https://owcv2.bwssb.gov.in/consumer",
           "claimIds": [
-            "claim_ind32_water_account_workflow_no_transfer_control"
+            "claim_ind41_water_account_public_scope",
+            "claim_ind41_water_account_faq_new_route"
           ],
-          "status": "partial"
+          "status": "verified"
         }
       ],
       "failureSignals": [
         {
-          "id": "failure_water_account_route_absent",
-          "label": "Transfer route absent from public entry",
-          "description": "A consumer sees only new/additional connection and status controls.",
+          "id": "failure_ind41_no_public_transfer",
+          "label": "No public transfer control",
+          "description": "No transfer, name-change, or existing-account mutation control was visible on the public surfaces inspected.",
           "url": "https://owcv2.bwssb.gov.in/consumer",
           "claimIds": [
-            "claim_ind32_water_account_workflow_no_transfer_control"
+            "claim_ind41_water_account_no_public_transfer_control",
+            "claim_ind41_no_public_transfer_control"
           ],
           "status": "partial"
         }
       ],
       "recoveries": [
         {
-          "id": "recovery_water_account_contact",
-          "label": "Ask BWSSB for authorised route",
-          "description": "Use published BWSSB contacts to confirm the current RR-specific route before sending documents.",
-          "url": "https://owcv2.bwssb.gov.in/consumer",
+          "id": "recovery_ind41_contact_for_route",
+          "label": "Ask for the RR-specific route",
+          "description": "Use BWSSB’s published enquiry or grievance contact before sending documents or paying.",
+          "url": "https://owcv2.bwssb.gov.in/member/grievance-form",
           "claimIds": [
-            "claim_ind32_water_account_workflow_support"
+            "claim_ind41_water_account_grievance_support",
+            "claim_ind41_grievance_recovery"
           ],
-          "status": "verified"
+          "status": "partial"
         }
       ],
       "scenarioIds": [
@@ -485,7 +701,13 @@
       ],
       "claimIds": [
         "claim_ind32_water_account_workflow_no_transfer_control",
-        "claim_ind32_water_account_workflow_support"
+        "claim_ind32_water_account_workflow_support",
+        "claim_ind41_water_account_public_scope",
+        "claim_ind41_water_account_faq_new_route",
+        "claim_ind41_water_account_no_public_transfer_control",
+        "claim_ind41_no_public_transfer_control",
+        "claim_ind41_water_account_grievance_support",
+        "claim_ind41_grievance_recovery"
       ],
       "status": "unknown",
       "displayOrder": 20
@@ -497,7 +719,18 @@
       "ownerAgencyId": "agency_bwssb_ind32_water_account",
       "summary": "Potential ownership, succession, identity, bill, arrears, and deposit evidence would be case-specific.",
       "requiredState": "An authorised route must first establish which documents and charges apply.",
-      "checks": [],
+      "checks": [
+        {
+          "id": "check_ind41_no_transfer_checklist",
+          "label": "No public transfer checklist",
+          "description": "The public FAQ and manual do not establish documents, fee, venue, or arrears treatment for an existing-account transfer.",
+          "url": "https://owcv2.bwssb.gov.in/member/faq",
+          "claimIds": [
+            "claim_ind41_transfer_requirements_unknown"
+          ],
+          "status": "partial"
+        }
+      ],
       "failureSignals": [
         {
           "id": "failure_water_account_case_unknown",
@@ -505,21 +738,21 @@
           "description": "Public pages do not show transfer document validation or fee calculation.",
           "url": "https://owcv2.bwssb.gov.in/member/faq",
           "claimIds": [
-            "claim_ind32_water_account_workflow_case_unknown"
+            "claim_ind41_transfer_requirements_unknown"
           ],
           "status": "unknown"
         }
       ],
       "recoveries": [
         {
-          "id": "recovery_water_account_do_not_upload",
-          "label": "Pause before upload",
-          "description": "Do not upload documents or pay until BWSSB confirms the route and current checklist.",
-          "url": "https://owcv2.bwssb.gov.in/consumer",
+          "id": "recovery_ind41_confirm_before_upload",
+          "label": "Confirm before uploading",
+          "description": "Obtain BWSSB’s authorised RR-specific checklist before providing documents or payment.",
+          "url": "https://owcv2.bwssb.gov.in/member/grievance-form",
           "claimIds": [
-            "claim_ind32_water_account_workflow_case_unknown"
+            "claim_ind41_water_account_grievance_support"
           ],
-          "status": "unknown"
+          "status": "partial"
         }
       ],
       "scenarioIds": [
@@ -528,7 +761,8 @@
         "scenario_ind32_water_account_correction"
       ],
       "claimIds": [
-        "claim_ind32_water_account_workflow_case_unknown"
+        "claim_ind41_transfer_requirements_unknown",
+        "claim_ind41_water_account_grievance_support"
       ],
       "status": "unknown",
       "displayOrder": 30
@@ -580,7 +814,7 @@
         "scenario_ind32_water_account_unresolved"
       ],
       "claimIds": [
-        "claim_ind32_water_account_workflow_case_unknown"
+        "claim_ind41_transfer_requirements_unknown"
       ],
       "status": "unknown",
       "displayOrder": 40
@@ -591,8 +825,8 @@
       "id": "edge_water_account_entry_route",
       "fromNodeId": "node_water_account_public_entry",
       "toNodeId": "node_water_account_route_check",
-      "relationship": "requires",
-      "label": "Public entry inspection precedes determining whether an existing-account transfer route is exposed.",
+      "relationship": "alternative",
+      "label": "Research boundary: public entry was inspected before checking for a transfer route; this is not a demonstrated service dependency.",
       "scenarioIds": [
         "scenario_ind32_water_account_sale",
         "scenario_ind32_water_account_inheritance",
@@ -602,7 +836,7 @@
         "claim_ind32_water_account_workflow_entry",
         "claim_ind32_water_account_workflow_no_transfer_control"
       ],
-      "status": "partial"
+      "status": "unknown"
     },
     {
       "id": "edge_water_account_route_evidence",
@@ -616,7 +850,7 @@
         "scenario_ind32_water_account_correction"
       ],
       "claimIds": [
-        "claim_ind32_water_account_workflow_case_unknown"
+        "claim_ind41_transfer_requirements_unknown"
       ],
       "status": "unknown"
     },
@@ -624,15 +858,15 @@
       "id": "edge_water_account_evidence_outcome",
       "fromNodeId": "node_water_account_case_documents",
       "toNodeId": "node_water_account_outcome",
-      "relationship": "produces",
-      "label": "Only an authorised submitted case could produce a transfer decision or updated account; none was submitted.",
+      "relationship": "alternative",
+      "label": "Research boundary: no public evidence connects transfer documents to an account-name outcome.",
       "scenarioIds": [
         "scenario_ind32_water_account_sale",
         "scenario_ind32_water_account_inheritance",
         "scenario_ind32_water_account_correction"
       ],
       "claimIds": [
-        "claim_ind32_water_account_workflow_case_unknown"
+        "claim_ind41_transfer_requirements_unknown"
       ],
       "status": "unknown"
     },
@@ -641,7 +875,7 @@
       "fromNodeId": "node_water_account_route_check",
       "toNodeId": "node_water_account_support",
       "relationship": "requires",
-      "label": "When the public route is absent, published BWSSB support contacts are the next clarification lead.",
+      "label": "Where no public transfer control is visible, the published grievance/contact surface is a clarification lead—not a verified transfer route.",
       "scenarioIds": [
         "scenario_ind32_water_account_unresolved"
       ],
@@ -698,7 +932,7 @@
         "scenario_ind32_water_account_correction"
       ],
       "claimIds": [
-        "claim_ind32_water_account_workflow_case_unknown"
+        "claim_ind41_transfer_requirements_unknown"
       ],
       "status": "unknown"
     },
@@ -746,20 +980,29 @@
       "status": "partial"
     },
     {
-      "id": "roadblock_audit_water_account",
-      "title": "Independent audit limitations",
-      "category": "documentation",
-      "symptom": "**Scope.** One independent, read-only audit of `ledger/water-account.json` against `ledger/schema.json` and `ledger/AGENT_PROTOCOL.md`, completed 2026-08-28. This is an audit report, not a ledger change. **Result.** The document passes the JSON Schema and all checked internal references resolve. Scenario path-node membership, edge endpoint scenario membership, and journey references are internally consistent. Preserve all 12 edges: eight `partial`, three `unknown`, and one `verified`. The three `unknown` account-transfer edges are evidence-backed by the inspected public Jaladhare/FAQ material and correctly state what was *not* observed; they should remain visible rather than be removed. ## Material findings 1. **The decisive unknown claims are compound.** `claim_ind32_water_account_transfer_unknown` jointly covers whether sale, inheritance, tenancy, death, and spelling correction share a",
-      "likelyCause": "Evidence and schema boundaries identified by the single independent audit.",
-      "recovery": "Read the cited evidence and retain Unknown or partial status where the public record stops.",
-      "ownerAgencyIds": [],
+      "id": "roadblock_ind41_water_account_transfer_route_unpublished",
+      "title": "Existing-account name-transfer route not exposed in public Jaladhare material",
+      "category": "process",
+      "symptom": "The public portal and FAQ expose new/additional connection controls; the existing RR-number field appears only within the documented New Water Connection form, and the public grievance form is generic.",
+      "likelyCause": "A separate authenticated, office-based, legacy, or unindexed route may exist; current implementation is not established by the inspected sources.",
+      "recovery": "Ask BWSSB via its published 1916/contact or grievance lead for the current RR-specific name-transfer route and checklist; do not infer transfer requirements from new-connection material.",
+      "ownerAgencyIds": [
+        "agency_bwssb_ind32_water_account"
+      ],
       "nodeIds": [
-        "node_water_account_public_entry"
+        "node_water_account_route_check",
+        "node_water_account_case_documents",
+        "node_water_account_support"
       ],
       "scenarioIds": [
         "scenario_ind32_water_account_sale"
       ],
-      "claimIds": [],
+      "claimIds": [
+        "claim_ind41_water_account_no_public_transfer_control",
+        "claim_ind41_water_account_rr_field_is_new_connection",
+        "claim_ind41_water_account_grievance_support",
+        "claim_ind41_transfer_requirements_unknown"
+      ],
       "status": "unknown"
     }
   ],
@@ -799,7 +1042,7 @@
           "action": "Do not upload sale, succession, identity, or billing documents until BWSSB confirms the current route.",
           "expectedResult": "Documents, fee, arrears/deposit handling, and timing remain Unknown.",
           "claimIds": [
-            "claim_ind32_water_account_workflow_case_unknown"
+            "claim_ind41_transfer_requirements_unknown"
           ],
           "status": "unknown"
         }
@@ -815,7 +1058,8 @@
       ],
       "documentationQualityNotes": [
         "Current public controls are directly observed.",
-        "The FAQ is adjacent new-connection guidance, not transfer guidance."
+        "The FAQ is adjacent new-connection guidance, not transfer guidance.",
+        "Stated limitation from the independent audit: no public material verified an existing-account transfer route, eligibility, documents, prior-holder or succession treatment, arrears/deposit handling, fee, venue, status, decision, or timing."
       ],
       "status": "unknown"
     }

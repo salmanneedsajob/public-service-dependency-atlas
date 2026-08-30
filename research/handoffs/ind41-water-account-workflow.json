@@ -1,0 +1,270 @@
+{
+  "_handoff": {
+    "issue": "IND-41",
+    "generatedAt": "2026-08-30",
+    "status": "in_review",
+    "scope": "Unauthenticated public-workflow pass for changing the recorded name/holder on an existing BWSSB water or underground-drainage account in Bengaluru. Public V2 Jaladhare and alternate OWC consumer surfaces were inspected, including public FAQ, More Information, Important Docs, application-status dialog, and grievance form. No login, mobile number, OTP, RR number, application number, document, payment, personal data, grievance, or submission was entered.",
+    "observationNote": "The public V2 page visibly routes to new/additional connection and application-status controls; the alternate OWC consumer portal visibly routes to mobile OTP login, new-connection manuals/docs, and an application-status dialog. No existing-account transfer/name-change control or transfer checklist was observed. The blank alternate status lookup displayed the exact validation text `Application ID must be at least 2 characters long`; the V2 blank Send OTP probe did not yield a captured error message, so OTP validation wording remains Unknown."
+  },
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "IND-41 BWSSB existing water-account name-transfer public workflow",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-30",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice. It records only public BWSSB interface observations and published contact leads; do not submit personal data through this ledger."
+  },
+  "defaultScenario": {
+    "id": "scenario_ind41_water_account_name_transfer",
+    "label": "Existing BWSSB water-account name/holder transfer",
+    "pathNodeIds": [
+      "node_ind41_v2_public_entry",
+      "node_ind41_transfer_route_check",
+      "node_ind41_alternate_portal_check",
+      "node_ind41_status_boundary",
+      "node_ind41_support_recovery",
+      "node_ind41_transfer_outcome"
+    ]
+  },
+  "sources": [
+    {
+      "id": "source_ind41_v2_consumer",
+      "title": "BWSSB Jaladhare consumer public entry",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Direct unauthenticated observation. Exact visible labels include Apply For Connection / Log In, Mobile Number, Send OTP, Enter OTP, Submit, Enter Your Application number to know the status, Show All Application, Application Status As on : 30-08-2026, and Permission for new Connection/Additional Connection for water supply and under Ground Drainage. The page also exposes FAQ and Grievance Form links, 1916, and new-connection document/charge information. No value was entered."
+    },
+    {
+      "id": "source_ind41_v2_faq",
+      "title": "BWSSB Jaladhare Frequently Asked Questions",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/member/faq",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Direct public FAQ observation. It describes registration/login, new-connection purchase, application, routing, inspection, demand-note/payment, and publishes `owcenquiry@bwssb.org` and `080 22238888`. It does not describe an existing-account name transfer, accepted transfer evidence, transfer fee, arrears/deposit treatment, or transfer status."
+    },
+    {
+      "id": "source_ind41_v2_showall",
+      "title": "BWSSB V2 Show All Applications public page",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/user/showallapplication",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Direct unauthenticated observation after following the public Show All Application link. Visible controls are Date Range (08/30/2026 - 08/30/2026), Filter, entries per page (10 selected; 25/50/100), Search, sortable Application No./Application Date/Approval Date/Fee Details/Total Fee Charges headers, and a table row `Loading...`. No application identifier or personal data was entered or collected."
+    },
+    {
+      "id": "source_ind41_owc_consumer",
+      "title": "BWSSB OWC consumer public entry",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Direct unauthenticated observation of the alternate consumer portal. Exact visible controls include Mobile Number, Generate OTP, disabled OTP input, disabled Login, Click here to access Plumber Login, Consumer User Manual (KN), Consumer User Manual (EN), More Information, Important Docs, Click here to check the status of the application, and Dashboard. No transfer/name-change control was visible."
+    },
+    {
+      "id": "source_ind41_owc_status_dialog",
+      "title": "BWSSB OWC public application-status dialog",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "The public `Click here to check the status of the application` control opens an `Application Status` dialog with `Application ID`, placeholder `Enter the application ID eg: 60SE1`, Submit, disabled Reset, and Close. Activating Submit with the field blank produced the exact visible text `Application ID must be at least 2 characters long`; no identifier was entered."
+    },
+    {
+      "id": "source_ind41_owc_more_info",
+      "title": "BWSSB OWC More Information",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/more-info",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Direct public page says `To apply for new connection login with registered mobile number and otp.` and lists new-connection documents: Builing Plan, Lease cum sale deed, Buliding photo with owner, Katha, and conditional OC/RWH/STP photos. It does not state a name-transfer route."
+    },
+    {
+      "id": "source_ind41_grievance",
+      "title": "BWSSB Grievance Form",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/member/grievance-form",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Direct unauthenticated observation. Header displays `Mail Us: eerbc@bwssb.gov.in` and `Toll Free : 1916`. Blank form controls are Consumer Name, Consumer Mobile No, Subject, Application Number, Application Name, Address, Plumber Name, Remarks, and Submit. No field was populated and no grievance was submitted."
+    },
+    {
+      "id": "source_ind41_official_public_search",
+      "title": "Focused official-domain search for BWSSB existing-account transfer",
+      "publisher": "Bangalore Water Supply and Sewerage Board public surfaces",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "A focused public search across official BWSSB domains for existing water-account transfer/name change, including consumer entry, FAQ, alternate OWC consumer portal, More Information, Important Docs, and public grievance route, found no indexed transfer control or public transfer checklist. This records search coverage, not proof that no office, authenticated, or unindexed route exists."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind41_v2_controls",
+      "text": "The unauthenticated V2 Jaladhare consumer page exposes `Apply For Connection / Log In`, `Mobile Number`, `Send OTP`, `Enter OTP`, a Submit button, `Enter Your Application number to know the status`, a second Submit button, and `Show All Application`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind41_water_account_name_transfer"],
+      "nodeIds": ["node_ind41_v2_public_entry"],
+      "sourceIds": ["source_ind41_v2_consumer"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Exact visible control labels were recorded. No identifier, OTP, or application number was entered."
+    },
+    {
+      "id": "claim_ind41_v2_scope",
+      "text": "The V2 public page labels its visible service as permission for `new Connection/Additional Connection for water supply and under Ground Drainage` and its public information describes new-connection payment, application, upload, and status steps.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind41_water_account_name_transfer"],
+      "nodeIds": ["node_ind41_v2_public_entry", "node_ind41_transfer_route_check"],
+      "sourceIds": ["source_ind41_v2_consumer"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The visible wording is adjacent new/additional-connection guidance, not an existing-account transfer procedure."
+    },
+    {
+      "id": "claim_ind41_no_public_transfer_control",
+      "text": "No transfer, name-change, or existing-account mutation control was visible on the inspected unauthenticated V2 Jaladhare page or alternate OWC consumer landing page.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind41_water_account_name_transfer"],
+      "nodeIds": ["node_ind41_transfer_route_check", "node_ind41_alternate_portal_check"],
+      "sourceIds": ["source_ind41_v2_consumer", "source_ind41_owc_consumer", "source_ind41_official_public_search"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is an unauthenticated public-interface boundary. It does not rule out an authenticated, office, or unindexed route."
+    },
+    {
+      "id": "claim_ind41_owc_status_error",
+      "text": "The alternate OWC portal's public application-status dialog has an Application ID field with placeholder `Enter the application ID eg: 60SE1`, Submit, disabled Reset, and Close; submitting it blank displays `Application ID must be at least 2 characters long`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind41_water_account_name_transfer"],
+      "nodeIds": ["node_ind41_status_boundary"],
+      "sourceIds": ["source_ind41_owc_status_dialog"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Only the blank client-side validation path was used; no application ID or case data was supplied."
+    },
+    {
+      "id": "claim_ind41_v2_showall_boundary",
+      "text": "The V2 `Show All Applications` public page exposes Date Range, Filter, entries-per-page choices 10/25/50/100, Search, sortable application/fee headers, and a visible `Loading...` table row; it does not expose an existing-account name-transfer case in the inspected public state.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind41_water_account_name_transfer"],
+      "nodeIds": ["node_ind41_status_boundary"],
+      "sourceIds": ["source_ind41_v2_showall"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The page was observed without entering an application number or collecting rows; loading state may reflect an unavailable/unfinished public data request."
+    },
+    {
+      "id": "claim_ind41_grievance_recovery",
+      "text": "The public BWSSB grievance page exposes Consumer Name, Consumer Mobile No, Subject, Application Number, Application Name, Address, Plumber Name, Remarks, and Submit, and displays `Mail Us: eerbc@bwssb.gov.in` and `Toll Free : 1916`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind41_water_account_name_transfer"],
+      "nodeIds": ["node_ind41_support_recovery"],
+      "sourceIds": ["source_ind41_grievance"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is a published contact/complaint lead only. No field was populated and no grievance was submitted."
+    },
+    {
+      "id": "claim_ind41_faq_recovery",
+      "text": "The public BWSSB FAQ publishes `owcenquiry@bwssb.org` and call centre number `080 22238888` for more queries.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind41_water_account_name_transfer"],
+      "nodeIds": ["node_ind41_support_recovery"],
+      "sourceIds": ["source_ind41_v2_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ does not promise that these contacts can amend an account holder; no contact was made."
+    },
+    {
+      "id": "claim_ind41_transfer_requirements_unknown",
+      "text": "The unauthenticated public pass does not establish the authorised route, eligibility, accepted transfer/name-change documents, prior-holder or succession evidence, arrears/deposit treatment, transfer fee, case status, approval decision, or completion timing for an existing BWSSB account.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind41_water_account_name_transfer"],
+      "nodeIds": ["node_ind41_transfer_route_check", "node_ind41_transfer_outcome"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "This is the explicit public-workflow boundary. Login, submission, payment, upload, and any RR-specific case lookup were not attempted."
+    }
+  ],
+  "pathNodes": [
+    {
+      "nodeId": "node_ind41_v2_public_entry",
+      "label": "V2 Jaladhare public entry",
+      "visibleChecks": ["Apply For Connection / Log In", "Mobile Number", "Send OTP", "Enter OTP", "Submit", "Enter Your Application number to know the status", "Show All Application", "Application Status As on : 30-08-2026", "Permission for new Connection/Additional Connection for water supply and under Ground Drainage"],
+      "failureSignals": ["No transfer/name-change error state is visible on initial unauthenticated load."],
+      "recoveries": ["Visible Contact Us, FAQ, and Grievance Form links; page header shows Toll Free 1916."],
+      "unknownBoundaries": ["Blank Send OTP probe timed out without a captured visible message; OTP delivery/validation and any post-login view were not checked."],
+      "claimIds": ["claim_ind41_v2_controls", "claim_ind41_v2_scope"]
+    },
+    {
+      "nodeId": "node_ind41_transfer_route_check",
+      "label": "Check for existing-account transfer route",
+      "visibleChecks": ["The inspected V2 public controls are new/additional-connection login and application-status controls; the FAQ is new-connection guidance."],
+      "failureSignals": ["No transfer, name-change, or existing-account mutation control is visible in the inspected V2 public view."],
+      "recoveries": ["Ask BWSSB through the published FAQ contacts or grievance/contact surface for the RR-specific authorised route before sending documents."],
+      "unknownBoundaries": ["An authenticated, office, or separate unindexed transfer route remains Unknown."],
+      "claimIds": ["claim_ind41_v2_scope", "claim_ind41_no_public_transfer_control", "claim_ind41_transfer_requirements_unknown"]
+    },
+    {
+      "nodeId": "node_ind41_alternate_portal_check",
+      "label": "Alternate OWC consumer portal",
+      "visibleChecks": ["Mobile Number", "Generate OTP", "disabled OTP input", "disabled Login", "Consumer User Manual (KN)", "Consumer User Manual (EN)", "More Information", "Important Docs", "Click here to check the status of the application", "Dashboard"],
+      "failureSignals": ["No transfer/name-change control is visible; More Information states only `To apply for new connection login with registered mobile number and otp.`"],
+      "recoveries": ["Public More Information, Important Docs, manuals, and application-status dialog are available for adjacent new-connection/status questions."],
+      "unknownBoundaries": ["No login, OTP, Dashboard, transfer action, or account mutation was attempted."],
+      "claimIds": ["claim_ind41_no_public_transfer_control"]
+    },
+    {
+      "nodeId": "node_ind41_status_boundary",
+      "label": "Public application-status boundary",
+      "visibleChecks": ["V2 Show All Applications: Date Range, Filter, entries per page (10/25/50/100), Search, sortable application/fee headers", "V2 public table row `Loading...`", "Alternate OWC Application Status dialog", "Application ID", "Enter the application ID eg: 60SE1", "Submit", "Reset (disabled)", "Close"],
+      "failureSignals": ["V2 public application list remains at visible `Loading...` state in the inspected pass.", "Exact alternate-dialog blank-field validation: `Application ID must be at least 2 characters long`."],
+      "recoveries": ["Close the alternate status dialog; use the published BWSSB contact/grievance route when no transfer case can be looked up publicly."],
+      "unknownBoundaries": ["No application ID was entered; transfer-case status, rejection, approval, and completion were not observed. The V2 list's eventual rows and any transfer-case filtering remain Unknown."],
+      "claimIds": ["claim_ind41_owc_status_error", "claim_ind41_v2_showall_boundary", "claim_ind41_transfer_requirements_unknown"]
+    },
+    {
+      "nodeId": "node_ind41_support_recovery",
+      "label": "Published support recovery",
+      "visibleChecks": ["Grievance Form fields: Consumer Name, Consumer Mobile No, Subject, Application Number, Application Name, Address, Plumber Name, Remarks, Submit", "Mail Us: eerbc@bwssb.gov.in", "Toll Free : 1916", "FAQ: owcenquiry@bwssb.org and 080 22238888"],
+      "failureSignals": ["The public support surfaces do not state that a grievance or enquiry will amend an existing account holder."],
+      "recoveries": ["Confirm the RR-specific authorised transfer route and current checklist through BWSSB's published contacts before providing documents or payment."],
+      "unknownBoundaries": ["No call, email, grievance, acknowledgement, escalation, or account change was made."],
+      "claimIds": ["claim_ind41_grievance_recovery", "claim_ind41_faq_recovery"]
+    },
+    {
+      "nodeId": "node_ind41_transfer_outcome",
+      "label": "Existing-account transfer outcome",
+      "visibleChecks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "unknownBoundaries": ["No public unauthenticated surface establishes transfer approval, rejection, pending status, updated account name, billing effect, fee, or completion timing."],
+      "claimIds": ["claim_ind41_transfer_requirements_unknown"]
+    }
+  ],
+  "journeyBoundary": {
+    "observedPublicPath": "V2 Jaladhare consumer page -> mobile OTP/new-connection and application-status controls -> Show All Application opens public Date Range/Filter/Search/pagination table whose visible row remains `Loading...` -> no visible existing-account transfer/name-change control -> alternate OWC consumer page shows mobile OTP/new-connection manuals/docs and a status dialog -> blank status lookup returns `Application ID must be at least 2 characters long` -> published FAQ/grievance/contact leads are the available recovery route.",
+    "exactStopPoint": "The default existing-account transfer path ends at `node_ind41_transfer_route_check`: after inspecting V2 public controls and the alternate OWC consumer surface, no transfer/name-change control or public checklist is exposed. The journey must stop before login, OTP, RR/application lookup, document upload, payment, grievance submission, or account mutation.",
+    "unknownFromBoundary": "Whether BWSSB handles sale, inheritance, death of holder, tenancy, or spelling correction through a common or separate route; which documents/fees/arrears/deposit rules apply; and whether any public status or completion route exists remain Unknown."
+  }
+}

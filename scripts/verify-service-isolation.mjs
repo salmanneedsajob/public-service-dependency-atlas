@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 
 const fields = ['agencies', 'scenarios', 'sources', 'claims', 'nodes', 'edges', 'roadblocks', 'journeys'];
 const services = {
@@ -29,9 +29,13 @@ const read = async (path) => JSON.parse(await readFile(path, 'utf8'));
 const assert = (condition, message) => { if (!condition) throw new Error(message); };
 
 for (const [service, prefix] of Object.entries(services)) {
+  const phase2Handoffs = (await readdir('research/handoffs'))
+    .filter((file) => file.startsWith(`ind39-${prefix}-`) && file.endsWith('.json'))
+    .map((file) => `research/handoffs/${file}`);
   const [ledger, ...handoffs] = await Promise.all([
     read(`ledger/${service}.json`),
     ...['official', 'workflow', 'citizen'].map((role) => read(`research/handoffs/ind32-${prefix}-${role}.json`)),
+    ...phase2Handoffs.map(read),
   ]);
   const alias = (id) => aliases[service]?.[id] ?? id;
   const allowed = Object.fromEntries(fields.map((field) => [field, new Set(handoffs.flatMap((handoff) => (handoff[field] ?? []).map((record) => field === 'scenarios' ? alias(record.id) : record.id)))]));

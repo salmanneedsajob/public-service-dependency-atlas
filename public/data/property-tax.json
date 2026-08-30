@@ -3,7 +3,7 @@
     "schemaVersion": "1.0.0",
     "title": "Bengaluru property tax evidence ledger",
     "jurisdiction": "Bengaluru, Karnataka, India",
-    "asOf": "2026-08-28",
+    "asOf": "2026-08-30",
     "dataKind": "research",
     "disclaimer": "Independent research, not official advice. Public sources and known gaps are shown together; do not submit personal data through this ledger."
   },
@@ -321,6 +321,44 @@
       "publishedAt": "2023-06-16",
       "type": "citizen_evidence",
       "notes": "A commenter reports a self-filed online khata transfer whose status appeared inactive until a burst of updates at the end, followed by issuance. It is a single historic account and does not establish any current portal behaviour or timeline."
+    },
+    {
+      "id": "source_bbmp_rules_2024_gazette_ind39",
+      "title": "Gazette copy — BBMP Property Tax Assessment, Recovery and Management Rules, 2024",
+      "publisher": "Government of Karnataka / BBMP",
+      "url": "https://site.bbmp.gov.in/PDF/Gazette%20copy%20of%20Property%20tax%20Rules-2024%20%28SOP%29%20dated%2012-08-2024.pdf",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2024-08-12",
+      "type": "regulation",
+      "notes": "Official Gazette text. Rule 10 covers mutation intake, objections, disputed-case handling, and Form 24 e-Khata order."
+    },
+    {
+      "id": "source_bbmptax_corrections_ind39",
+      "title": "BBMP Property Tax System — correction help and ARO route",
+      "publisher": "BBMP / Greater Bengaluru Authority",
+      "url": "https://bbmptax.karnataka.gov.in/forms/helplinkDetails.aspx",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Public correction page; its feature list says last updated 2017, so current eligibility is not guaranteed."
+    },
+    {
+      "id": "source_bbmptax_grievance_ind39",
+      "title": "BBMP Property Tax System — Online Grievance",
+      "publisher": "BBMP / Greater Bengaluru Authority",
+      "url": "https://bbmptax.karnataka.gov.in/forms/GrievancesReq.aspx",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Public grievance page observed without submission; it requires authenticated/case-specific fields to continue."
+    },
+    {
+      "id": "source_ind39_citizen_tax_grievance_pending",
+      "title": "Property Tax Name Update Process Bangalore",
+      "publisher": "r/indianrealestate (Reddit)",
+      "url": "https://www.reddit.com/r/indianrealestate/comments/1qanujt/property_tax_name_update_process_bangalore/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2026-01-12",
+      "type": "citizen_evidence",
+      "notes": "Public first-person account; personal and property details are intentionally omitted."
     }
   ],
   "claims": [
@@ -845,6 +883,107 @@
       "status": "partial",
       "contradictsClaimIds": [],
       "notes": "A historic, one-person account. It does not show that an inactive status means approval, delay, or any current-system state."
+    },
+    {
+      "id": "claim_ind39_rule10_mutation_intake",
+      "text": "Rule 10(1) of the 2024 BBMP property-tax rules provides mutation information through a Sub-Registrar Form 18 intimation, an authorised-officer or court order, or information supplied by an interested person.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_sale_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32"
+      ],
+      "sourceIds": [
+        "source_bbmp_rules_2024_gazette_ind39"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published legal intake routes; it does not establish which route a particular property will use."
+    },
+    {
+      "id": "claim_ind39_rule10_form22_recovery",
+      "text": "Rule 10 allows a person to give transfer information in Form 22 when a registered-deed intimation slip from the Sub-Registrar has not reached BBMP, with a certified copy of the registered deed attached.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_sale_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_transfer_documents_ind32"
+      ],
+      "sourceIds": [
+        "source_bbmp_rules_2024_gazette_ind39"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published fallback only for the missing-intimation condition."
+    },
+    {
+      "id": "claim_ind39_property_tax_name_correction_scope",
+      "text": "The public BBMP Property Tax System correction page lists Name and Address Change under property corrections for Form 2 and Form 3 properties.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32",
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_final_record_ind32"
+      ],
+      "sourceIds": [
+        "source_bbmptax_corrections_ind39"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The public feature list is dated 2017; current eligibility and outcome are not established."
+    },
+    {
+      "id": "claim_ind39_grievance_subjects",
+      "text": "The public BBMP Property Tax System grievance form lists owner-name correction or update in a receipt as a selectable subject.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32",
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_final_record_ind32"
+      ],
+      "sourceIds": [
+        "source_bbmptax_grievance_ind39"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Selectable grievance subjects, not triggered errors; no grievance was submitted."
+    },
+    {
+      "id": "claim_ind39_citizen_tax_name_grievance_pending",
+      "text": "One citizen reported that, despite a completed e-Khata and paid mutation charge, their property-tax name-update grievance remained pending.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32",
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "nodeIds": [
+        "node_property_final_record_ind32"
+      ],
+      "sourceIds": [
+        "source_ind39_citizen_tax_grievance_pending"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One public account; it does not establish a general queue state, deadline, or recovery."
     }
   ],
   "nodes": [
@@ -904,7 +1043,8 @@
           "description": "Rule 10 names Form 18, authorised/court order, and interested-person information routes.",
           "url": "https://bbmp.gov.in/",
           "claimIds": [
-            "claim_ind32_property_rule10_intake"
+            "claim_ind32_property_rule10_intake",
+            "claim_ind39_rule10_mutation_intake"
           ],
           "status": "verified"
         },
@@ -916,11 +1056,33 @@
           "claimIds": [
             "claim_ind32_property_rule10_forms21_22"
           ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind39_mutation_correction_subject",
+          "label": "Published correction issue category",
+          "description": "The public grievance form lists owner-name correction in a receipt or online form as a selectable issue; it is not a triggered case error.",
+          "url": "https://bbmptax.karnataka.gov.in/forms/GrievancesReq.aspx",
+          "claimIds": [
+            "claim_ind39_grievance_subjects"
+          ],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind39_mutation_form22",
+          "label": "Form 22 missing-intimation route",
+          "description": "Where a Sub-Registrar intimation has not reached BBMP, Rule 10 publishes a Form 22 route with a certified registered-deed copy.",
+          "url": "https://site.bbmp.gov.in/PDF/Gazette%20copy%20of%20Property%20tax%20Rules-2024%20%28SOP%29%20dated%2012-08-2024.pdf",
+          "claimIds": [
+            "claim_ind39_rule10_form22_recovery"
+          ],
           "status": "verified"
         }
       ],
-      "failureSignals": [],
-      "recoveries": [],
       "scenarioIds": [
         "scenario_property_sale_ind32",
         "scenario_property_successor_ind32",
@@ -928,7 +1090,11 @@
       ],
       "claimIds": [
         "claim_ind32_property_rule10_intake",
-        "claim_ind32_property_rule10_forms21_22"
+        "claim_ind32_property_rule10_forms21_22",
+        "claim_ind39_rule10_mutation_intake",
+        "claim_ind39_rule10_form22_recovery",
+        "claim_ind39_property_tax_name_correction_scope",
+        "claim_ind39_grievance_subjects"
       ],
       "status": "partial",
       "displayOrder": 20
@@ -963,7 +1129,18 @@
         }
       ],
       "failureSignals": [],
-      "recoveries": [],
+      "recoveries": [
+        {
+          "id": "recovery_ind39_transfer_evidence_form22",
+          "label": "Certified-deed fallback",
+          "description": "Rule 10 names a certified registered-deed copy as part of the Form 22 fallback when Sub-Registrar intimation is missing.",
+          "url": "https://site.bbmp.gov.in/PDF/Gazette%20copy%20of%20Property%20tax%20Rules-2024%20%28SOP%29%20dated%2012-08-2024.pdf",
+          "claimIds": [
+            "claim_ind39_rule10_form22_recovery"
+          ],
+          "status": "verified"
+        }
+      ],
       "scenarioIds": [
         "scenario_property_sale_ind32",
         "scenario_property_successor_ind32"
@@ -971,7 +1148,8 @@
       "claimIds": [
         "claim_ind32_property_sale_documents",
         "claim_ind32_property_successor_documents",
-        "claim_ind32_property_faq_aro_and_fee"
+        "claim_ind32_property_faq_aro_and_fee",
+        "claim_ind39_rule10_form22_recovery"
       ],
       "status": "partial",
       "displayOrder": 30
@@ -996,7 +1174,18 @@
         }
       ],
       "failureSignals": [],
-      "recoveries": [],
+      "recoveries": [
+        {
+          "id": "recovery_ind39_final_record_correction_route",
+          "label": "Published name-correction route",
+          "description": "The public property-tax page lists name correction, but does not explain acceptance evidence or what a completed correction looks like.",
+          "url": "https://bbmptax.karnataka.gov.in/forms/helplinkDetails.aspx",
+          "claimIds": [
+            "claim_ind39_property_tax_name_correction_scope"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_property_sale_ind32",
         "scenario_property_successor_ind32",
@@ -1035,18 +1224,42 @@
           "claimIds": [
             "claim_ind32_property_rule10_form24"
           ],
-          "status": "verified"
+          "status": "partial"
         }
       ],
-      "failureSignals": [],
-      "recoveries": [],
+      "failureSignals": [
+        {
+          "id": "failure_ind39_final_record_name_grievance_pending",
+          "label": "Reported pending name-update grievance",
+          "description": "One citizen reported that a property-tax name-update grievance remained pending after e-Khata completion and a paid mutation charge; this is not a general service state.",
+          "claimIds": [
+            "claim_ind39_citizen_tax_name_grievance_pending"
+          ],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind39_final_record_correction_route",
+          "label": "Published name-correction route",
+          "description": "The public property-tax page lists name correction, but does not explain acceptance evidence or what a completed correction looks like.",
+          "url": "https://bbmptax.karnataka.gov.in/forms/helplinkDetails.aspx",
+          "claimIds": [
+            "claim_ind39_property_tax_name_correction_scope"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_property_sale_ind32",
         "scenario_property_successor_ind32"
       ],
       "claimIds": [
         "claim_ind32_property_act_register_entry",
-        "claim_ind32_property_rule10_form24"
+        "claim_ind32_property_rule10_form24",
+        "claim_ind39_property_tax_name_correction_scope",
+        "claim_ind39_grievance_subjects",
+        "claim_ind39_citizen_tax_name_grievance_pending"
       ],
       "status": "unknown",
       "displayOrder": 50
@@ -1452,6 +1665,35 @@
       "status": "partial"
     },
     {
+      "id": "edge_property_intake_to_documents_ind39",
+      "fromNodeId": "node_property_mutation_intake_ind32",
+      "toNodeId": "node_property_transfer_documents_ind32",
+      "relationship": "requires",
+      "label": "A published Form 22 fallback requires a certified registered-deed copy when the Sub-Registrar intimation is missing.",
+      "scenarioIds": [
+        "scenario_property_sale_ind32"
+      ],
+      "claimIds": [
+        "claim_ind39_rule10_form22_recovery"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_property_documents_to_record_ind39",
+      "fromNodeId": "node_property_transfer_documents_ind32",
+      "toNodeId": "node_property_final_record_ind32",
+      "relationship": "produces",
+      "label": "Published documents support an intake branch, but do not prove a final register outcome.",
+      "scenarioIds": [
+        "scenario_property_sale_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_sale_documents",
+        "claim_ind32_property_rule10_form24"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "edge_property_intake_to_objection_ind32",
       "fromNodeId": "node_property_mutation_intake_ind32",
       "toNodeId": "node_property_objection_ind32",
@@ -1494,6 +1736,20 @@
       ],
       "claimIds": [
         "claim_ind32_property_correction_aro"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_property_objection_to_aro_ind39",
+      "fromNodeId": "node_property_objection_ind32",
+      "toNodeId": "node_property_aro_recovery_ind32",
+      "relationship": "alternative",
+      "label": "The public correction page names a correction route, but does not connect an objection to a completed fix.",
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "claimIds": [
+        "claim_ind39_property_tax_name_correction_scope"
       ],
       "status": "partial"
     },
@@ -1572,6 +1828,20 @@
         "claim_ind32_property_workflow_aro_lookup"
       ],
       "status": "unknown"
+    },
+    {
+      "id": "edge_workflow_lookup_to_missing_ind39",
+      "fromNodeId": "node_public_property_lookup_ind32",
+      "toNodeId": "node_public_missing_property_ind32",
+      "relationship": "alternative",
+      "label": "The public lookup shows a missing-property instruction, but the route did not open a separate public form during observation.",
+      "scenarioIds": [
+        "scenario_property_missing_record_ind32"
+      ],
+      "claimIds": [
+        "claim_ind32_property_workflow_missing_route"
+      ],
+      "status": "partial"
     }
   ],
   "roadblocks": [
@@ -1809,20 +2079,26 @@
     },
     {
       "id": "roadblock_audit_property_tax",
-      "title": "Independent audit limitations",
+      "title": "Property-tax name correction has no published completion standard",
       "category": "documentation",
-      "symptom": "## Result The IND-32 property-tax records parse cleanly and the audited claims, nested details, journey steps, dependencies, and top-level edges resolve to existing IDs. The reusable journey dependency from the pending-mutation report to application status is now retained as `edge_workflow_mutation_to_status_ind32`, with the same `unknown` status and claim linkage. ## Stated limitations 1. **Unknown-edge marker is not machine-readable.** `edge_workflow_lookup_to_mutation_ind32` and `edge_workflow_mutation_to_status_ind32` preserve uncertainty in their prose and `unknown` status, but neither label uses the IND-32 edge-policy marker `reported-undocumented`. Consumers that depend on that marker cannot distinguish these unknown relationships from ordinary narrative labels without parsing text. 2. **End-to-end public workflow remains deliberately unproven.** The ledger correctly retains `clai",
-      "likelyCause": "Evidence and schema boundaries identified by the single independent audit.",
-      "recovery": "Read the cited evidence and retain Unknown or partial status where the public record stops.",
+      "symptom": "You need the property-tax record corrected, but the public page lists a route without saying what the office will accept or what completion looks like.",
+      "likelyCause": "The correction page is a dated public feature list and the grievance form exposes subjects, not a published case-resolution procedure.",
+      "recovery": "Use the published correction or ARO route for a case-specific answer; do not treat the route as proof that correction will be accepted or completed.",
       "ownerAgencyIds": [],
       "nodeIds": [
-        "node_property_title_notice_ind32"
+        "node_property_aro_recovery_ind32",
+        "node_property_final_record_ind32"
       ],
       "scenarioIds": [
-        "scenario_property_sale_ind32"
+        "scenario_property_missing_or_wrong_ind32",
+        "scenario_property_payment_or_correction_ind32"
       ],
-      "claimIds": [],
-      "status": "unknown"
+      "claimIds": [
+        "claim_ind39_property_tax_name_correction_scope",
+        "claim_ind39_grievance_subjects",
+        "claim_ind39_citizen_tax_name_grievance_pending"
+      ],
+      "status": "partial"
     }
   ],
   "journeys": [
@@ -1889,7 +2165,8 @@
         "Do not treat an official checklist or Form 24 template as proof of a specific property update."
       ],
       "documentationQualityNotes": [
-        "Binding rules are stronger than undated FAQ/checklists; live implementation remains partial."
+        "Binding rules are stronger than undated FAQ/checklists; live implementation remains partial.",
+        "Stated limitation from the independent audit: Rule 10 documents intake and a missing-intimation fallback, not a property-specific channel or successful mutation; the dated correction page and grievance subjects do not establish acceptance, completion, remedy, or response time."
       ],
       "status": "partial"
     },

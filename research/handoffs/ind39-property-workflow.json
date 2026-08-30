@@ -1,0 +1,11 @@
+{
+  "sources": [
+    {"id":"source_bbmptax_grievance_ind39","title":"BBMP Property Tax System — Online Grievance","publisher":"BBMP / Greater Bengaluru Authority","url":"https://bbmptax.karnataka.gov.in/forms/GrievancesReq.aspx","accessedAt":"2026-08-30","type":"official_portal","notes":"Public grievance page observed without submission; it requires authenticated/case-specific fields to continue."}
+  ],
+  "claims": [
+    {"id":"claim_ind39_grievance_subjects","text":"The public BBMP Property Tax System grievance form lists owner-name correction or update in a receipt as a selectable subject.","jurisdiction":"Bengaluru, Karnataka, India","scenarioIds":["scenario_property_missing_or_wrong_ind32","scenario_property_payment_or_correction_ind32"],"nodeIds":["node_property_mutation_intake_ind32","node_property_final_record_ind32"],"sourceIds":["source_bbmptax_grievance_ind39"],"evidenceGrade":"B","basis":"observation","status":"partial","contradictsClaimIds":[],"notes":"Selectable grievance subject, not a triggered error; no grievance was submitted."}
+  ],
+  "edges": [
+    {"id":"edge_workflow_lookup_to_missing_ind39","fromNodeId":"node_public_property_lookup_ind32","toNodeId":"node_public_missing_property_ind32","relationship":"alternative","label":"The public lookup shows a missing-property instruction, but the route did not open a separate public form during observation.","scenarioIds":["scenario_property_missing_record_ind32"],"claimIds":["claim_ind32_property_workflow_missing_route"],"status":"partial"}
+  ]
+}

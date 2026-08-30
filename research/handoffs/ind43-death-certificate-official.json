@@ -1,0 +1,586 @@
+{
+  "_handoff": {
+    "issue": "IND-43",
+    "generatedAt": "2026-08-30",
+    "status": "ready_for_merge",
+    "pass": "official-source",
+    "scopeNote": "Official-source pass for the default path only: an already registered death in Bengaluru and a request for a certificate/certified copy. Current GBA/eJanMa and Seva Sindhu public documentation was inspected without login, OTP, identifier, CAPTCHA submission, payment, application, upload, or certificate lookup. Statutory correction and appeal provisions are recorded as legal boundaries; no case-specific correction or objection was submitted.",
+    "defaultScenarioId": "scenario_ind32_death_copy",
+    "defaultPathNodeIds": [
+      "node_death_service_entry",
+      "node_death_classify_record",
+      "node_death_public_tools",
+      "node_death_registrar",
+      "node_death_outcome"
+    ],
+    "observationNote": "The current eJanMa pages identify a public death-search surface and a Seva Sindhu download route, and link a current death-certificate manual. They do not expose a case result without identifiers/CAPTCHA or prove the responsible Bengaluru Registrar for an unknown event. The current Bengaluru Urban district page explicitly describes Rural Karnataka/Nada Kacheri routing and therefore is not treated as BBMP municipal routing proof. No current public correction form, objection/hearing workflow, or case-specific output was verified."
+  },
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru death certificate official-source pass — default copy path",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-30",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice. It covers only the default existing-record death-certificate copy path and preserves unknown live-case behavior, correction procedure, and objection mechanics."
+  },
+  "agencies": [
+    {
+      "id": "agency_gba_bbmp_ind32_death",
+      "name": "Greater Bengaluru Authority / Bengaluru City Corporations",
+      "shortName": "GBA / Bengaluru City Corporations",
+      "officialUrl": "https://bbmp.gov.in/"
+    },
+    {
+      "id": "agency_karnataka_cr_ind32_death",
+      "name": "Office of the Chief Registrar of Births and Deaths, Government of Karnataka",
+      "shortName": "Karnataka Chief Registrar / e-JanMa",
+      "officialUrl": "https://ejanma.karnataka.gov.in/"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind32_death_copy",
+      "label": "Already registered death — certificate copy",
+      "summary": "A citizen starts from the public Bengaluru/Karnataka Birth & Death entry and seeks a certificate or certified copy for an existing death-register entry.",
+      "tags": [
+        "death",
+        "registered-death",
+        "certificate-copy",
+        "default-path"
+      ],
+      "pathNodeIds": [
+        "node_death_service_entry",
+        "node_death_classify_record",
+        "node_death_public_tools",
+        "node_death_registrar",
+        "node_death_outcome"
+      ],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind42_birth_rbd_act_pdf",
+      "title": "The Registration of Births and Deaths Act, 1969 (as on 26 September 2025)",
+      "publisher": "Government of India / India Code",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/1682/1/A1969-18.pdf",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2025-09-26",
+      "type": "law",
+      "notes": "Reused verified direct Act PDF source from the IND-42 birth ledger; it is not a new India Code index/root citation. Sections 7, 12, 15, 17, and 25A are used here for jurisdiction, certificate/search, correction, and appeal boundaries."
+    },
+    {
+      "id": "source_ind43_death_gba_home",
+      "title": "Greater Bengaluru Authority official home — Birth & Death Certificate e-service",
+      "publisher": "Greater Bengaluru Authority / Government of Karnataka",
+      "url": "https://bbmp.gov.in/",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Current public home page observed on 2026-08-30. It lists Birth & Death Certificate under e-Services and publishes helpline 1533. The home page does not disclose the case-specific death-copy form, fields, fee, or result behavior."
+    },
+    {
+      "id": "source_ind43_death_ejanma_search",
+      "title": "Birth/Death Search — Office of the Chief Registrar of Births and Deaths, Government of Karnataka",
+      "publisher": "Office of the Chief Registrar of Births and Deaths, Government of Karnataka / Directorate of Economics and Statistics",
+      "url": "https://ejanma.karnataka.gov.in/frmBirthDeathSearch.aspx",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Current public page observed with Birth/Death selector, Registration No., Birth/Death Date, CAPTCHA, a ULB-data search link for registration before 01/07/2018, and a Seva Sindhu Download Certificate link. Page footer states last update 09/02/2026 1:30 PM and eJanMa 3.0/2. No identifier or CAPTCHA was entered."
+    },
+    {
+      "id": "source_ind43_death_ejanma_download",
+      "title": "Download Certificate — Office of the Chief Registrar of Births and Deaths, Government of Karnataka",
+      "publisher": "Office of the Chief Registrar of Births and Deaths, Government of Karnataka / Directorate of Economics and Statistics",
+      "url": "https://ejanma.karnataka.gov.in/frmDownloadCertificate.aspx",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Current public page says certificates for events registered in eJanMa can be downloaded from Seva Sindhu by paying a specific fee and links the death-certificate manual. Page footer states last update 09/02/2026 1:30 PM and eJanMa 3.0/2. It does not state the current amount or a case-specific download result."
+    },
+    {
+      "id": "source_ind43_death_sevasindhu_manual",
+      "title": "User Manual — Death Certificate",
+      "publisher": "Directorate of Economics and Statistics, Government of Karnataka / eJanMa",
+      "url": "https://ejanma.karnataka.gov.in/Documents/User%20Manual%20-%20Death%20Certificate.pdf",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Current manual linked from the eJanMa Download Certificate page. It instructs a Seva Sindhu user to choose Application for Death Certificate, log in with username/password or OTP and CAPTCHA, search by an existing registration number or by date of death plus deceased/father/mother names, verify details, choose copies, submit CAPTCHA, pay, use the generated acknowledgement/reference, track status after login, and download the delivered output certificate. It is a published instruction, not proof that a particular Bengaluru record is found or delivered."
+    },
+    {
+      "id": "source_ind43_death_ejanma_act_rules_page",
+      "title": "Act and Rules — Office of the Chief Registrar of Births and Deaths, Government of Karnataka",
+      "publisher": "Office of the Chief Registrar of Births and Deaths, Government of Karnataka / Directorate of Economics and Statistics",
+      "url": "https://ejanma.karnataka.gov.in/frmActRules.aspx",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Current public page labels links for the RBD Act, Karnataka Registration of Birth & Death Rules 1999, and Kannada/English versions, but exposes an eJanMa CAPTCHA before the linked content. Footer states last update 09/02/2026 1:30 PM and eJanMa 3.0/1. No CAPTCHA was solved."
+    },
+    {
+      "id": "source_ind43_death_bengaluru_urban_page",
+      "title": "Death Certificate — District Bengaluru Urban, Government of Karnataka",
+      "publisher": "District Administration, Bengaluru Urban / Government of Karnataka",
+      "url": "https://bengaluruurban.nic.in/en/service/death-certificate/",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Current district page last updated 24 August 2026. It expressly says the page covers events electronically registered in Rural Karnataka, identifies Village Accountants through Nada Kacheri and government medical sub-registration units, and directs additional copies/corrections to concerned Nada Kacheri data-entry operators. It is retained as a current rural-routing/correction boundary, not as proof of the BBMP municipal route."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind43_death_gba_public_entry",
+      "text": "The current Greater Bengaluru Authority public home lists Birth & Death Certificate as an e-service and publishes helpline 1533.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "nodeIds": ["node_death_service_entry"],
+      "sourceIds": ["source_ind43_death_gba_home"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The page identifies the service entry only; it does not expose a death-specific copy form or case route."
+    },
+    {
+      "id": "claim_ind43_death_act_registrar_jurisdiction",
+      "text": "Section 7(2) requires a Registrar to enter birth/death information given under sections 8 or 9 for events occurring in the Registrar's jurisdiction, and section 7(3) requires an office in the local area for which the Registrar is appointed.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "nodeIds": ["node_death_registrar"],
+      "sourceIds": ["source_ind42_birth_rbd_act_pdf"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This establishes the statutory place-of-occurrence/jurisdiction concept, not the particular ward, registration centre, or Registrar for an unknown death record."
+    },
+    {
+      "id": "claim_ind43_death_public_search_fields",
+      "text": "The current public eJanMa Birth/Death Search page exposes a Birth/Death choice, a Registration No. field, a Birth/Death Date field, and a CAPTCHA before search; it also links to a separate ULB-data search for registration dates before 01/07/2018.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "nodeIds": ["node_death_public_tools"],
+      "sourceIds": ["source_ind43_death_ejanma_search"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The unauthenticated page was inspected without entering an identifier or solving CAPTCHA; no found/not-found/error response was observed."
+    },
+    {
+      "id": "claim_ind43_death_download_route",
+      "text": "The current eJanMa Download Certificate page states that birth/death certificates for events registered in eJanMa can be downloaded from Seva Sindhu by paying a specific fee.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "nodeIds": ["node_death_public_tools", "node_death_outcome"],
+      "sourceIds": ["source_ind43_death_ejanma_download"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The page does not state the amount, the current Seva Sindhu fields, or whether an individual Bengaluru record can be downloaded."
+    },
+    {
+      "id": "claim_ind43_death_manual_lookup_modes",
+      "text": "The linked Karnataka death-certificate manual gives two Seva Sindhu lookup modes: use the previously issued registration number, or search without it using date of death, deceased name, father's name, and mother's name.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "nodeIds": ["node_death_public_tools", "node_death_outcome"],
+      "sourceIds": ["source_ind43_death_sevasindhu_manual"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The manual documents input modes; it does not prove that a given record exists, is digitized, or will match those fields."
+    },
+    {
+      "id": "claim_ind43_death_manual_output_flow",
+      "text": "The death-certificate manual instructs the user to verify returned details, choose the number of copies, submit CAPTCHA, make payment, retain the generated acknowledgement/reference, track the application after login, and download the output certificate once delivered.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "nodeIds": ["node_death_outcome"],
+      "sourceIds": ["source_ind43_death_sevasindhu_manual"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is the published instruction sequence. No login, payment, submission, acknowledgement, status result, or output download was performed."
+    },
+    {
+      "id": "claim_ind43_death_act_search_certified_copy",
+      "text": "Section 17(1) permits any person, subject to State rules including fees and postal charges, to cause a Registrar to search a birth/death register and obtain a death certificate electronically or otherwise; section 17(2) requires certification by the Registrar or another State-authorised officer and the death certificate must not disclose the recorded cause of death.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "nodeIds": ["node_death_public_tools", "node_death_outcome"],
+      "sourceIds": ["source_ind42_birth_rbd_act_pdf"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The Act creates the legal search/certificate basis but leaves State rules, fees, and digital implementation to the applicable State framework; it does not establish that every historical Bengaluru entry is online."
+    },
+    {
+      "id": "claim_ind43_death_act_correction",
+      "text": "Section 15 allows the Registrar, when satisfied that a death-register entry is erroneous in form or substance or fraudulently/improperly made, to correct or cancel it by a suitable marginal entry without altering the original entry, with the Registrar's signature and date.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "nodeIds": ["node_death_registrar"],
+      "sourceIds": ["source_ind42_birth_rbd_act_pdf"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is the statutory correction/cancellation boundary; it does not specify the current Bengaluru request form, evidence list, office counter, fee, or turnaround."
+    },
+    {
+      "id": "claim_ind43_death_rural_copy_correction_route",
+      "text": "The current Bengaluru Urban district death-certificate page directs additional birth/death copies and corrections to data-entry operators of the concerned Nada Kacheri, while expressly describing rural Karnataka and government medical sub-registration-unit records.",
+      "jurisdiction": "Bengaluru Urban, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "nodeIds": ["node_death_registrar"],
+      "sourceIds": ["source_ind43_death_bengaluru_urban_page"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The page is not treated as proof of a BBMP municipal route: it says its electronic-record details concern Rural Karnataka and names Nada Kacheri/Village Accountant routing."
+    },
+    {
+      "id": "claim_ind43_death_act_appeal",
+      "text": "Section 25A provides that a person aggrieved by a Registrar's action or order may appeal to the District Registrar, and a person aggrieved by a District Registrar's action or order may appeal to the Chief Registrar, within thirty days in the prescribed form and manner; the deciding authority is to decide within ninety days.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "nodeIds": ["node_death_registrar", "node_death_outcome"],
+      "sourceIds": ["source_ind42_birth_rbd_act_pdf"],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is a statutory recovery route for an action/order, not a public objection form. The current Karnataka form, filing channel, office address, and proof requirements were not established."
+    },
+    {
+      "id": "claim_ind43_death_act_rules_public_boundary",
+      "text": "The current eJanMa Act and Rules page publicly labels English/Kannada RBD Act and Karnataka Registration of Birth & Death Rules links but displays an eJanMa CAPTCHA before the content; no unauthenticated correction or objection instructions were exposed in this pass.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "nodeIds": ["node_death_registrar"],
+      "sourceIds": ["source_ind43_death_ejanma_act_rules_page"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The page demonstrates the public documentation boundary, not the absence of rules or an objection right."
+    },
+    {
+      "id": "claim_ind43_death_record_result_unknown",
+      "text": "The current existence, digitization state, matching result, validation message, and error response for any particular Bengaluru death record remain unknown because no registration number, date, names, CAPTCHA, or live search was submitted.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "nodeIds": ["node_death_classify_record", "node_death_public_tools"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Research boundary: no personal or deceased-person data was entered and no identifier lookup was attempted."
+    },
+    {
+      "id": "claim_ind43_death_copy_fee_delivery_unknown",
+      "text": "The current Bengaluru duplicate/certified-copy fee amount, delivery channel, acknowledgement/status behavior, and case-specific issuance outcome are not established by the reviewed official sources.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "nodeIds": ["node_death_outcome"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The eJanMa page says a specific fee applies and the manual describes payment, but neither establishes the current amount or a particular case's delivery result."
+    },
+    {
+      "id": "claim_ind43_death_correction_objection_unknown",
+      "text": "No current public Bengaluru/Karnataka official source reviewed in this pass establishes a death-record correction form, document checklist, objection or hearing notice, appeal filing channel, or case-specific correction outcome.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "nodeIds": ["node_death_registrar", "node_death_outcome"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The Act supplies correction and appeal boundaries, and the rural district page supplies a rural operator handoff; those do not establish the current BBMP municipal mechanics or an objection procedure."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_death_service_entry",
+      "label": "Open public Birth & Death entry service",
+      "kind": "service",
+      "ownerAgencyId": "agency_gba_bbmp_ind32_death",
+      "summary": "Start from the current GBA Birth & Death e-service and then use the authorised Karnataka eJanMa/Seva Sindhu route.",
+      "requiredState": "The GBA service label is public, but the case-specific death-copy target and current municipal handoff remain unknown.",
+      "checks": [
+        {
+          "id": "check_ind43_death_gba_public_entry",
+          "label": "Current GBA service entry",
+          "description": "The GBA home lists Birth & Death Certificate as an e-service and publishes helpline 1533.",
+          "url": "https://bbmp.gov.in/",
+          "claimIds": ["claim_ind43_death_gba_public_entry"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind43_death_service_target_unknown",
+          "label": "Case-specific service target not exposed",
+          "description": "The public GBA home names the service but does not expose the current death-copy form fields, record lookup result, or municipal handoff for an unknown event.",
+          "claimIds": ["claim_ind43_death_gba_public_entry", "claim_ind43_death_record_result_unknown"],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "claimIds": ["claim_ind43_death_gba_public_entry", "claim_ind43_death_record_result_unknown"],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_death_classify_record",
+      "label": "Classify record state decision",
+      "kind": "decision",
+      "summary": "Determine whether the death is an existing registered record before pursuing a certificate copy.",
+      "requiredState": "A case-specific found/not-found/digitization state cannot be classified without entering identifiers or event details.",
+      "checks": [],
+      "failureSignals": [
+        {
+          "id": "failure_ind43_death_record_result_unknown",
+          "label": "Record result not tested",
+          "description": "No registration number, date, names, or CAPTCHA was entered, so existence, matching, validation, and error behavior remain unknown.",
+          "claimIds": ["claim_ind43_death_record_result_unknown"],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind43_death_use_public_search",
+          "label": "Use the public eJanMa search surface",
+          "description": "The current public page exposes Death selection, Registration No., Death Date, CAPTCHA, and a separate pre-01/07/2018 ULB-data link; submit only through the authorised portal after confirming the event jurisdiction.",
+          "url": "https://ejanma.karnataka.gov.in/frmBirthDeathSearch.aspx",
+          "claimIds": ["claim_ind43_death_public_search_fields"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "claimIds": ["claim_ind43_death_record_result_unknown", "claim_ind43_death_public_search_fields"],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_death_public_tools",
+      "label": "Public e-JanMa search and download tools",
+      "kind": "service",
+      "ownerAgencyId": "agency_karnataka_cr_ind32_death",
+      "summary": "Use the public eJanMa search surface and the Seva Sindhu certificate-download handoff for an existing record.",
+      "requiredState": "A current public search route is documented, but identifier matching and the Seva Sindhu authenticated output remain untested.",
+      "checks": [
+        {
+          "id": "check_ind43_death_search_fields",
+          "label": "Death search fields",
+          "description": "The public eJanMa page exposes Death selection, Registration No., Death Date, CAPTCHA, and a separate old-ULB search link.",
+          "url": "https://ejanma.karnataka.gov.in/frmBirthDeathSearch.aspx",
+          "claimIds": ["claim_ind43_death_public_search_fields"],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind43_death_download_route",
+          "label": "Seva Sindhu download route",
+          "description": "The current eJanMa download page links certificate download through Seva Sindhu for events registered in eJanMa and links a death-certificate manual.",
+          "url": "https://ejanma.karnataka.gov.in/frmDownloadCertificate.aspx",
+          "claimIds": ["claim_ind43_death_download_route"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind43_death_search_result_unknown",
+          "label": "Search result not observed",
+          "description": "The page requires an identifier/date and CAPTCHA; no found, not-found, validation, or error response was captured.",
+          "claimIds": ["claim_ind43_death_record_result_unknown"],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind43_death_manual_lookup_modes",
+          "label": "Follow documented lookup modes",
+          "description": "The linked manual documents lookup by existing registration number or by date of death plus deceased/father/mother names, followed by detail verification before payment.",
+          "url": "https://ejanma.karnataka.gov.in/Documents/User%20Manual%20-%20Death%20Certificate.pdf",
+          "claimIds": ["claim_ind43_death_manual_lookup_modes"],
+          "status": "verified"
+        }
+      ],
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "claimIds": [
+        "claim_ind43_death_public_search_fields",
+        "claim_ind43_death_download_route",
+        "claim_ind43_death_manual_lookup_modes",
+        "claim_ind43_death_record_result_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_death_registrar",
+      "label": "Registrar jurisdiction and correction/appeal route",
+      "kind": "decision",
+      "ownerAgencyId": "agency_karnataka_cr_ind32_death",
+      "summary": "Confirm the event-place Registrar and use statutory correction/appeal boundaries; do not treat the rural Nada Kacheri page as BBMP routing proof.",
+      "requiredState": "The governing jurisdiction concept is statutory, but the responsible Bengaluru Registrar, correction counter, evidence list, and objection/hearing channel are case-specific or undocumented in the reviewed public pages.",
+      "checks": [
+        {
+          "id": "check_ind43_death_act_jurisdiction",
+          "label": "Statutory Registrar jurisdiction",
+          "description": "Section 7 ties register entry and the Registrar office to the local area/jurisdiction for which the Registrar is appointed.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/1682/1/A1969-18.pdf",
+          "claimIds": ["claim_ind43_death_act_registrar_jurisdiction"],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind43_death_act_correction",
+          "label": "Statutory correction boundary",
+          "description": "Section 15 permits a satisfied Registrar to correct/cancel an erroneous or improper entry by dated marginal entry without altering the original.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/1682/1/A1969-18.pdf",
+          "claimIds": ["claim_ind43_death_act_correction"],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind43_death_act_appeal",
+          "label": "Statutory appeal boundary",
+          "description": "Section 25A provides a thirty-day appeal from Registrar to District Registrar or from District Registrar to Chief Registrar, with a ninety-day decision period.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/1682/1/A1969-18.pdf",
+          "claimIds": ["claim_ind43_death_act_appeal"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind43_death_objection_route_unknown",
+          "label": "Current objection mechanics not exposed",
+          "description": "No reviewed current public page exposes a death-specific objection/hearing notice, correction form, appeal filing channel, or BBMP evidence checklist; eJanMa's Act/Rules links are behind a CAPTCHA.",
+          "claimIds": ["claim_ind43_death_act_rules_public_boundary", "claim_ind43_death_correction_objection_unknown"],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind43_death_statutory_appeal",
+          "label": "Use the statutory appeal hierarchy after an action/order",
+          "description": "If a Registrar or District Registrar has made an action or order, section 25A identifies the next appellate authority and a thirty-day period; the current prescribed form and filing channel remain unknown.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/1682/1/A1969-18.pdf",
+          "claimIds": ["claim_ind43_death_act_appeal"],
+          "status": "partial"
+        },
+        {
+          "id": "recovery_ind43_death_rural_operator_boundary",
+          "label": "Rural-only correction/copy handoff",
+          "description": "For the rural records covered by the current Bengaluru Urban district page, contact the concerned Nada Kacheri data-entry operator; do not assume this is the BBMP municipal route.",
+          "url": "https://bengaluruurban.nic.in/en/service/death-certificate/",
+          "claimIds": ["claim_ind43_death_rural_copy_correction_route"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "claimIds": [
+        "claim_ind43_death_act_registrar_jurisdiction",
+        "claim_ind43_death_act_correction",
+        "claim_ind43_death_rural_copy_correction_route",
+        "claim_ind43_death_act_appeal",
+        "claim_ind43_death_act_rules_public_boundary",
+        "claim_ind43_death_correction_objection_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_death_outcome",
+      "label": "Certificate or certified-copy outcome",
+      "kind": "outcome",
+      "ownerAgencyId": "agency_karnataka_cr_ind32_death",
+      "summary": "Obtain a certified death certificate/copy after the record is found and details are verified, subject to the current Seva Sindhu route.",
+      "requiredState": "The legal certificate/search basis and published manual flow are known, but current fee, delivery, status, and case-specific output remain unknown.",
+      "checks": [
+        {
+          "id": "check_ind43_death_act_search_copy",
+          "label": "Statutory search and certified death certificate",
+          "description": "Section 17 permits register search and electronic/other death-certificate access, requires certification, and bars disclosure of cause of death in the certificate.",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/1682/1/A1969-18.pdf",
+          "claimIds": ["claim_ind43_death_act_search_certified_copy"],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind43_death_manual_output",
+          "label": "Published Seva Sindhu output sequence",
+          "description": "The current manual describes acknowledgement/reference, status tracking, and output-certificate download after delivery.",
+          "url": "https://ejanma.karnataka.gov.in/Documents/User%20Manual%20-%20Death%20Certificate.pdf",
+          "claimIds": ["claim_ind43_death_manual_output_flow"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind43_death_copy_delivery_unknown",
+          "label": "Fee, delivery, and output unknown",
+          "description": "The reviewed official pages do not establish the current duplicate-copy fee amount, delivery channel, acknowledgement/status behavior, or issuance result for an individual Bengaluru record.",
+          "claimIds": ["claim_ind43_death_copy_fee_delivery_unknown", "claim_ind43_death_record_result_unknown"],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind43_death_copy_manual_status",
+          "label": "Retain acknowledgement and track status",
+          "description": "The published manual directs users to retain the acknowledgement/reference and use Seva Sindhu status tracking before selecting the delivered output certificate.",
+          "url": "https://ejanma.karnataka.gov.in/Documents/User%20Manual%20-%20Death%20Certificate.pdf",
+          "claimIds": ["claim_ind43_death_manual_output_flow"],
+          "status": "verified"
+        }
+      ],
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "claimIds": [
+        "claim_ind43_death_act_search_certified_copy",
+        "claim_ind43_death_manual_output_flow",
+        "claim_ind43_death_copy_fee_delivery_unknown",
+        "claim_ind43_death_correction_objection_unknown"
+      ],
+      "status": "partial",
+      "displayOrder": 50
+    }
+  ],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind43_death_live_record_and_copy_unknown",
+      "title": "Live record match and certificate delivery are unverified",
+      "category": "process",
+      "symptom": "The public eJanMa search and Seva Sindhu manual are documented, but no case-specific record match, fee, acknowledgement, status result, or output certificate was observed.",
+      "likelyCause": "The public search requires an identifier/date and CAPTCHA, while the published copy flow crosses into Seva Sindhu login, payment, and status-tracking steps.",
+      "recovery": "Confirm the Registrar/jurisdiction, use the authorised eJanMa/Seva Sindhu route, retain the acknowledgement/reference, and treat any no-record or delivery result as requiring case-specific Registrar help; exact current help channel is unknown.",
+      "ownerAgencyIds": ["agency_gba_bbmp_ind32_death", "agency_karnataka_cr_ind32_death"],
+      "nodeIds": ["node_death_public_tools", "node_death_outcome"],
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "claimIds": ["claim_ind43_death_record_result_unknown", "claim_ind43_death_copy_fee_delivery_unknown"],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind43_death_correction_objection_documentation",
+      "title": "Current correction and objection mechanics are not public",
+      "category": "documentation",
+      "symptom": "The Act states correction and appeal boundaries, but the reviewed current public pages do not expose a BBMP correction form, evidence checklist, objection/hearing process, or appeal filing channel.",
+      "likelyCause": "eJanMa's Act/Rules content is CAPTCHA-gated and the current Bengaluru Urban page documents a rural Nada Kacheri handoff that is not municipal BBMP proof.",
+      "recovery": "Confirm the event-place Registrar; use section 15 as the correction boundary and section 25A after an action/order, then obtain the current prescribed form and filing channel from the responsible Registrar/District Registrar.",
+      "ownerAgencyIds": ["agency_gba_bbmp_ind32_death", "agency_karnataka_cr_ind32_death"],
+      "nodeIds": ["node_death_registrar", "node_death_outcome"],
+      "scenarioIds": ["scenario_ind32_death_copy"],
+      "claimIds": ["claim_ind43_death_act_correction", "claim_ind43_death_act_appeal", "claim_ind43_death_correction_objection_unknown"],
+      "status": "unknown"
+    }
+  ],
+  "journeys": []
+}

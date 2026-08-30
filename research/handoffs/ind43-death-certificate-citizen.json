@@ -1,0 +1,150 @@
+{
+  "_handoff": {
+    "issue": "IND-43",
+    "generatedAt": "2026-08-30",
+    "status": "ready_for_merge",
+    "scope": "Public first-person Bengaluru accounts relevant to default-path failures and the correction/objection gap for death certificates. These accounts are case evidence only, not official procedure, fee, office-routing, correction, objection, or service-standard evidence. Usernames, names, deceased-person details, family details, event dates, office-location detail, document identifiers, contact details, and amounts are intentionally omitted. Differing accounts are retained as unresolved potential contradictions."
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind43_death_portal_registration_unit_empty",
+      "title": "How to obtain death certificate in Bengaluru?",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1rcdzi3/how_to_obtain_death_certificate_in_bengaluru/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2026-02-23",
+      "type": "citizen_evidence",
+      "notes": "The author describes their own attempted e-JanMa death-certificate process and reports that the registration-unit selector displayed no options. The author reports no completion or recovery outcome."
+    },
+    {
+      "id": "source_ind43_death_default_route_redirects",
+      "title": "BBMP Death Certificate Tactics",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/s81qxm/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2022-01-19",
+      "type": "citizen_evidence",
+      "notes": "The author describes a relative's application and reports being directed among several centres before the initially visited centre issued the certificate. This is second-hand within the post and is retained only as a possible routing failure to check."
+    },
+    {
+      "id": "source_ind43_death_correction_office_request",
+      "title": "Bangalore parents: Please don’t edit government certificates using PDF editors — sharing a real case we recently saw",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1rqrehs/bangalore_parents_please_dont_edit_government/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2026-03-11",
+      "type": "citizen_evidence",
+      "notes": "A commenter describes their own in-person death-certificate encounter, reports noticing a spelling error, and says they submitted a correction request there. The post does not establish whether the request was accepted, the authoritative correction route, or its outcome."
+    },
+    {
+      "id": "source_ind43_death_correction_court_pending",
+      "title": "How to apply for death certificate?",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1n7lwbo/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2025-09-03",
+      "type": "citizen_evidence",
+      "notes": "A commenter describes their family's attempt to correct a relationship-name error on a death certificate and reports that their case remained in court after several years. The claimed court route is not treated as a general rule or an official objection process."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind43_death_portal_registration_unit_empty",
+      "text": "One citizen reported that the registration-unit selector showed no options during their attempted e-JanMa death-certificate process.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home",
+        "scenario_ind32_death_delayed"
+      ],
+      "nodeIds": [
+        "node_death_service_entry",
+        "node_death_classify_record",
+        "node_death_registrar"
+      ],
+      "sourceIds": [
+        "source_ind43_death_portal_registration_unit_empty"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One attempted use; it does not establish a portal outage, the applicable registrar, eligibility, or whether device, session, prior fields, or record facts affected the selector."
+    },
+    {
+      "id": "claim_ind43_death_default_route_redirects",
+      "text": "One author reported that a relative's death-certificate application was redirected among several centres before issuance at the initially visited centre.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_death_copy",
+        "scenario_ind32_death_hospital",
+        "scenario_ind32_death_home"
+      ],
+      "nodeIds": [
+        "node_death_service_entry",
+        "node_death_classify_record",
+        "node_death_registrar"
+      ],
+      "sourceIds": [
+        "source_ind43_death_default_route_redirects"
+      ],
+      "evidenceGrade": "F",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Second-hand public account. It does not establish the correct office for any case, why the directions differed, a current routing policy, or that the reported centres remain responsible."
+    },
+    {
+      "id": "claim_ind43_death_correction_office_request",
+      "text": "One citizen reported submitting a death-certificate correction request during an in-person encounter after noticing a spelling error.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_death_correction"
+      ],
+      "nodeIds": [
+        "node_death_public_tools",
+        "node_death_registrar",
+        "node_death_outcome"
+      ],
+      "sourceIds": [
+        "source_ind43_death_correction_office_request"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_ind43_death_correction_court_pending"
+      ],
+      "notes": "One reported request, not a confirmed correction outcome. It is retained as a potential practical conflict with a separate family account that describes a court-pending correction; neither account establishes the authorised route."
+    },
+    {
+      "id": "claim_ind43_death_correction_court_pending",
+      "text": "One citizen reported that their family's death-certificate correction case remained in court after several years.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_death_correction"
+      ],
+      "nodeIds": [
+        "node_death_public_tools",
+        "node_death_registrar",
+        "node_death_outcome"
+      ],
+      "sourceIds": [
+        "source_ind43_death_correction_court_pending"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_ind43_death_correction_office_request"
+      ],
+      "notes": "One family account. It does not establish that court action is required, identify the correction's legal or factual basis, or prove a current objection or appeal process."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

@@ -1,0 +1,476 @@
+{
+  "_handoff": {
+    "issue": "IND-43",
+    "generatedAt": "2026-08-30",
+    "status": "ready_for_audit",
+    "scope": "Unauthenticated public-workflow pass for the default Bengaluru scenario: an already registered death and certificate copy.",
+    "observationNote": "Read-only observation of the public SmartNet Birth & Death Certificate Details page with Death Certificate selected. Registration Number, Temporary Registration No., and Using DOD controls were inspected without entering any identifier, date, or name. No login, OTP, CAPTCHA, lookup, payment, upload, download, or submission was attempted. Direct navigation to the legacy BBMP citizen-services URL failed with the browser-reported text `net::ERR_CONNECTION_REFUSED`; this pass stops at the identifier/name/date boundary."
+  },
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru death certificate public workflow — registered copy",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-30",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Only public controls, visible failure text, and published support/recovery routes are recorded; do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_bengaluru_smart_city_ind43",
+      "name": "Bengaluru Smart City Limited",
+      "shortName": "BenSCL / SmartNet",
+      "officialUrl": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm"
+    },
+    {
+      "id": "agency_bbmp_health_ind43",
+      "name": "Bruhat Bengaluru Mahanagara Palike",
+      "shortName": "BBMP",
+      "officialUrl": "https://site.bbmp.gov.in/citizenservice.html"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind43_death_copy_workflow",
+      "label": "Already registered death — certificate copy",
+      "summary": "An unauthenticated citizen starts at the public Death Certificate lookup and seeks a copy of an existing death record.",
+      "tags": ["copy", "registered-death", "public-entry", "identifier-boundary"],
+      "pathNodeIds": ["node_death_public_entry_ind43", "node_death_search_mode_ind43", "node_death_lookup_boundary_ind43", "node_death_output_ind43"],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind43_death_lookup_live",
+      "title": "Birth & Death Certificate Details — public lookup",
+      "publisher": "Bengaluru Smart City Limited / SmartNet",
+      "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Direct unauthenticated page observation. The page footer identifies Bengaluru Smart City Limited/BenSCL and Version 1.3. Death Certificate was selected, then each public search-mode control was inspected without entering values."
+    },
+    {
+      "id": "source_ind43_death_contact",
+      "title": "Contact Us — Bengaluru Smart City Limited",
+      "publisher": "Bengaluru Smart City Limited",
+      "url": "https://smartoneblr.com/wss/Contact.htm",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Public contact page publishes phone `080-22200080` and email `bsclnodal@gmail.com`. This is a published support lead, not a promise of record resolution."
+    },
+    {
+      "id": "source_ind43_death_faq",
+      "title": "FAQ'S — One City One Portal",
+      "publisher": "Bengaluru Smart City Limited / SmartNet",
+      "url": "https://smartoneblr.com/wss/static_content/FAQS.jsp",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Public FAQ says citizens use the relevant service interface/widget and answers that One City One Portal is free. It contains no death-specific no-record or lookup-error remedy."
+    },
+    {
+      "id": "source_ind43_death_bbmp_directory_error",
+      "title": "BBMP Citizen Services — Birth & Death Certificate directory",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/citizenservice.html",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Direct navigation was attempted without entering data. The browser reported the exact network failure text `net::ERR_CONNECTION_REFUSED`; no page body or service form loaded. This is an endpoint/infrastructure failure, not a death-record no-match result."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind43_death_event_selector",
+      "text": "The public SmartNet Birth & Death Certificate Details page exposes a certificate-type selector with `--Select--`, `Birth Certificate`, and `Death Certificate`; Death Certificate can be selected without entering case data.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "nodeIds": ["node_death_public_entry_ind43"],
+      "sourceIds": ["source_ind43_death_lookup_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Observed unauthenticated on 2026-08-30; selecting the certificate type transmitted no personal data."
+    },
+    {
+      "id": "claim_ind43_death_search_modes",
+      "text": "After Death Certificate is selected, the public `Search by` selector exposes `Registration Number`, `Temporary Registration No.`, and `Using DOD`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "nodeIds": ["node_death_search_mode_ind43"],
+      "sourceIds": ["source_ind43_death_lookup_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Each option was viewed; no mode was submitted."
+    },
+    {
+      "id": "claim_ind43_death_registration_fields",
+      "text": "The public `Registration Number` mode renders a `Registration Number` textbox and a `Date Of Death` textbox with placeholder `Ex:15-01-22`; no values were entered.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "nodeIds": ["node_death_lookup_boundary_ind43"],
+      "sourceIds": ["source_ind43_death_lookup_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The registration identifier/date boundary was observed and is the stop point for this pass."
+    },
+    {
+      "id": "claim_ind43_death_temporary_field",
+      "text": "The public `Temporary Registration No.` mode renders a `Temporary Registration No.` textbox; no temporary registration number was entered.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "nodeIds": ["node_death_lookup_boundary_ind43"],
+      "sourceIds": ["source_ind43_death_lookup_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The field label was inspected without typing or submitting."
+    },
+    {
+      "id": "claim_ind43_death_dod_fields",
+      "text": "The public `Using DOD` mode renders `Date Of Death` with placeholder `Ex:2022-01-15`, plus `Name`, `Father Name`, and `Mother Name` textboxes; no date or names were entered.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "nodeIds": ["node_death_lookup_boundary_ind43"],
+      "sourceIds": ["source_ind43_death_lookup_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Names and date of death are case-specific data; this pass stopped before the fields were populated."
+    },
+    {
+      "id": "claim_ind43_death_public_controls",
+      "text": "The public lookup page shows `Back` and `Submit` controls after a death search mode is selected; neither control was used to submit a lookup in this pass.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "nodeIds": ["node_death_lookup_boundary_ind43", "node_death_output_ind43"],
+      "sourceIds": ["source_ind43_death_lookup_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Visible controls were recorded; validation, no-record text, and output remain unobserved because activation would cross the submission boundary."
+    },
+    {
+      "id": "claim_ind43_death_directory_failure",
+      "text": "On 2026-08-30, direct navigation to the specific BBMP Citizen Services directory URL failed before page load with the browser-reported text `net::ERR_CONNECTION_REFUSED`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "nodeIds": ["node_death_public_entry_ind43"],
+      "sourceIds": ["source_ind43_death_bbmp_directory_error"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is a connection failure of the legacy directory URL, not evidence that a death record is absent."
+    },
+    {
+      "id": "claim_ind43_death_published_recovery",
+      "text": "The BenSCL Contact Us page publishes phone `080-22200080` and email `bsclnodal@gmail.com`; the SmartNet death lookup page also exposes a `ContactUs` link and a `Back` control.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "nodeIds": ["node_death_public_entry_ind43", "node_death_output_ind43"],
+      "sourceIds": ["source_ind43_death_contact", "source_ind43_death_lookup_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published navigation/support only; neither page promises a death-record no-match remedy, status result, fee reversal, or certificate issuance."
+    },
+    {
+      "id": "claim_ind43_death_outcome_unknown",
+      "text": "This public-only pass does not establish post-identifier validation, no-record messaging, login/OTP requirements, certificate download, acknowledgement, fee, status tracking, or recovery after a failed death-record lookup.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "nodeIds": ["node_death_lookup_boundary_ind43", "node_death_output_ind43"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The pass stopped before identifier/name/date entry and before Submit. This is a research boundary, not evidence that the service lacks these behaviors."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_death_public_entry_ind43",
+      "label": "Public Death Certificate entry",
+      "kind": "service",
+      "ownerAgencyId": "agency_bengaluru_smart_city_ind43",
+      "summary": "Open the public SmartNet Birth & Death Certificate Details page and select Death Certificate.",
+      "requiredState": "Unauthenticated browser session; certificate type can be selected without personal data.",
+      "checks": [
+        {
+          "id": "check_ind43_death_event_selector",
+          "label": "Death Certificate selector",
+          "description": "Public certificate-type selector exposes Death Certificate and allows it to be selected without entering a case value.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": ["claim_ind43_death_event_selector"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind43_death_directory_connection",
+          "label": "Legacy directory connection failure",
+          "description": "The specific legacy BBMP citizen-services URL failed before page load with the browser-reported text `net::ERR_CONNECTION_REFUSED`.",
+          "url": "https://site.bbmp.gov.in/citizenservice.html",
+          "actualError": "net::ERR_CONNECTION_REFUSED",
+          "claimIds": ["claim_ind43_death_directory_failure"],
+          "status": "verified"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind43_death_contact",
+          "label": "Published BenSCL support route",
+          "description": "Use the specific BenSCL Contact Us page for phone 080-22200080 or email bsclnodal@gmail.com when the directory is unreachable; it does not promise case resolution.",
+          "url": "https://smartoneblr.com/wss/Contact.htm",
+          "claimIds": ["claim_ind43_death_published_recovery"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "claimIds": ["claim_ind43_death_event_selector", "claim_ind43_death_directory_failure", "claim_ind43_death_published_recovery"],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_death_search_mode_ind43",
+      "label": "Death search-mode selector",
+      "kind": "decision",
+      "ownerAgencyId": "agency_bengaluru_smart_city_ind43",
+      "summary": "Choose among the public registration-number, temporary-registration, or date-of-death search modes.",
+      "requiredState": "Death Certificate is selected; no search mode has been submitted.",
+      "checks": [
+        {
+          "id": "check_ind43_death_search_modes",
+          "label": "Search by options",
+          "description": "The Search by selector exposes Registration Number, Temporary Registration No., and Using DOD.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": ["claim_ind43_death_search_modes"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [
+        {
+          "id": "recovery_ind43_death_back_control",
+          "label": "Public Back control",
+          "description": "The lookup page exposes Back after a search mode is selected; only navigation was observed and no submission was performed.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": ["claim_ind43_death_public_controls", "claim_ind43_death_published_recovery"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "claimIds": ["claim_ind43_death_search_modes", "claim_ind43_death_public_controls"],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_death_lookup_boundary_ind43",
+      "label": "Death-record lookup boundary",
+      "kind": "record",
+      "ownerAgencyId": "agency_bengaluru_smart_city_ind43",
+      "summary": "Inspect public field requirements and stop before entering any identifier, date of death, or names.",
+      "requiredState": "Registration Number mode requires Registration Number and Date Of Death; Temporary mode requires Temporary Registration No.; Using DOD exposes Date Of Death, Name, Father Name, and Mother Name. No values were entered.",
+      "checks": [
+        {
+          "id": "check_ind43_death_registration_fields",
+          "label": "Registration Number fields",
+          "description": "Registration Number mode renders Registration Number and Date Of Death with placeholder Ex:15-01-22.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": ["claim_ind43_death_registration_fields"],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind43_death_temporary_field",
+          "label": "Temporary registration field",
+          "description": "Temporary Registration No. mode renders a Temporary Registration No. textbox.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": ["claim_ind43_death_temporary_field"],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind43_death_dod_fields",
+          "label": "Using DOD fields",
+          "description": "Using DOD mode renders Date Of Death with placeholder Ex:2022-01-15 and Name, Father Name, and Mother Name fields.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": ["claim_ind43_death_dod_fields"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "claimIds": ["claim_ind43_death_registration_fields", "claim_ind43_death_temporary_field", "claim_ind43_death_dod_fields", "claim_ind43_death_outcome_unknown"],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_death_output_ind43",
+      "label": "Death certificate output and status",
+      "kind": "outcome",
+      "ownerAgencyId": "agency_bengaluru_smart_city_ind43",
+      "summary": "Certificate result, no-record response, download, acknowledgement, fee, and status remain beyond the identifier/submission boundary.",
+      "requiredState": "A case-specific identifier/date/name would be needed; none was entered and Submit was not activated.",
+      "checks": [
+        {
+          "id": "check_ind43_death_submit_boundary",
+          "label": "Submit boundary",
+          "description": "A visible Submit control is present, but the pass stopped before its search action to avoid lookup/submission and personal-data exposure.",
+          "url": "https://smartoneblr.com/wss/BBMPBirthDeathCertificate.htm",
+          "claimIds": ["claim_ind43_death_public_controls"],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [
+        {
+          "id": "recovery_ind43_death_support_boundary",
+          "label": "Published support if output cannot be established",
+          "description": "The specific BenSCL Contact Us page is the published support route observed; no death-specific certificate-output or no-record recovery was established before the identifier boundary.",
+          "url": "https://smartoneblr.com/wss/Contact.htm",
+          "claimIds": ["claim_ind43_death_published_recovery", "claim_ind43_death_outcome_unknown"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "claimIds": ["claim_ind43_death_public_controls", "claim_ind43_death_published_recovery", "claim_ind43_death_outcome_unknown"],
+      "status": "unknown",
+      "displayOrder": 40
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_ind43_death_entry_mode",
+      "fromNodeId": "node_death_public_entry_ind43",
+      "toNodeId": "node_death_search_mode_ind43",
+      "relationship": "requires",
+      "label": "Selecting Death Certificate exposes the public search-mode selector.",
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "claimIds": ["claim_ind43_death_event_selector", "claim_ind43_death_search_modes"],
+      "status": "verified"
+    },
+    {
+      "id": "edge_ind43_death_mode_lookup",
+      "fromNodeId": "node_death_search_mode_ind43",
+      "toNodeId": "node_death_lookup_boundary_ind43",
+      "relationship": "requires",
+      "label": "A selected public mode exposes case-specific identifier/date/name fields; the pass stops before values are entered.",
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "claimIds": ["claim_ind43_death_search_modes", "claim_ind43_death_registration_fields", "claim_ind43_death_temporary_field", "claim_ind43_death_dod_fields"],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind43_death_lookup_output",
+      "fromNodeId": "node_death_lookup_boundary_ind43",
+      "toNodeId": "node_death_output_ind43",
+      "relationship": "produces",
+      "label": "A certificate result might follow a successful lookup, but no identifier/date/name or search result was used in this pass.",
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "claimIds": ["claim_ind43_death_public_controls", "claim_ind43_death_outcome_unknown"],
+      "status": "unknown"
+    }
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind43_death_directory_unreachable",
+      "title": "Legacy BBMP directory unreachable",
+      "category": "infrastructure",
+      "symptom": "Direct navigation to the specific BBMP Citizen Services URL failed before page load with `net::ERR_CONNECTION_REFUSED`.",
+      "likelyCause": "The legacy site endpoint refused the browser connection at the time of observation.",
+      "recovery": "Use the observed SmartNet death-certificate endpoint or the specific BenSCL Contact Us phone/email; do not treat the connection failure as a death-record no-match result.",
+      "ownerAgencyIds": ["agency_bbmp_health_ind43", "agency_bengaluru_smart_city_ind43"],
+      "nodeIds": ["node_death_public_entry_ind43"],
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "claimIds": ["claim_ind43_death_directory_failure", "claim_ind43_death_published_recovery"],
+      "status": "verified"
+    },
+    {
+      "id": "roadblock_ind43_death_identifier_boundary",
+      "title": "Death lookup stops at case-specific fields",
+      "category": "process",
+      "symptom": "The public modes expose Registration Number, Temporary Registration No., Date Of Death, and in Using DOD mode Name/Father Name/Mother Name fields, but no values were entered.",
+      "likelyCause": "A death-record lookup requires case-specific identifiers/date/name values that were intentionally not supplied in this public pass.",
+      "recovery": "Use the page Back control or the published BenSCL support route; keep no-record text, status, fee, and output unknown until a user independently supplies case data and is prepared to continue.",
+      "ownerAgencyIds": ["agency_bengaluru_smart_city_ind43"],
+      "nodeIds": ["node_death_lookup_boundary_ind43", "node_death_output_ind43"],
+      "scenarioIds": ["scenario_ind43_death_copy_workflow"],
+      "claimIds": ["claim_ind43_death_registration_fields", "claim_ind43_death_temporary_field", "claim_ind43_death_dod_fields", "claim_ind43_death_published_recovery", "claim_ind43_death_outcome_unknown"],
+      "status": "partial"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_ind43_death_registered_copy",
+      "title": "Public lookup for a registered death-certificate copy",
+      "scenarioId": "scenario_ind43_death_copy_workflow",
+      "context": "Unauthenticated observer on 2026-08-30; no personal data, identifier, date, lookup, submission, payment, upload, or download.",
+      "steps": [
+        {
+          "id": "step_ind43_death_open",
+          "label": "Open public entry",
+          "nodeId": "node_death_public_entry_ind43",
+          "action": "Open the specific SmartNet Birth & Death Certificate Details page and select Death Certificate.",
+          "expectedResult": "Death Certificate is selected and the public Search by control appears.",
+          "claimIds": ["claim_ind43_death_event_selector"],
+          "status": "verified"
+        },
+        {
+          "id": "step_ind43_death_modes",
+          "label": "Inspect public search modes",
+          "nodeId": "node_death_search_mode_ind43",
+          "action": "Inspect Registration Number, Temporary Registration No., and Using DOD options without submitting a search.",
+          "expectedResult": "The three public search modes are visible.",
+          "claimIds": ["claim_ind43_death_search_modes"],
+          "status": "verified"
+        },
+        {
+          "id": "step_ind43_death_stop_identifier",
+          "label": "Stop at identifier/name/date boundary",
+          "nodeId": "node_death_lookup_boundary_ind43",
+          "action": "Do not enter Registration Number, Temporary Registration No., Date Of Death, Name, Father Name, or Mother Name, and do not activate Submit.",
+          "expectedResult": "No death-record lookup, validation message, no-record response, certificate, payment, or status is observed.",
+          "claimIds": ["claim_ind43_death_registration_fields", "claim_ind43_death_temporary_field", "claim_ind43_death_dod_fields", "claim_ind43_death_public_controls", "claim_ind43_death_outcome_unknown"],
+          "status": "unknown"
+        },
+        {
+          "id": "step_ind43_death_recovery",
+          "label": "Use published recovery/support",
+          "nodeId": "node_death_public_entry_ind43",
+          "action": "If the legacy BBMP directory is unreachable or the observer cannot proceed, use the observed SmartNet endpoint, page Back control, or the specific BenSCL Contact Us route.",
+          "expectedResult": "A public navigation/support lead is available; case resolution is not guaranteed.",
+          "claimIds": ["claim_ind43_death_directory_failure", "claim_ind43_death_published_recovery"],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_ind43_death_identifier",
+          "fromNodeId": "node_death_lookup_boundary_ind43",
+          "toNodeId": "node_death_output_ind43",
+          "description": "Certificate output and any no-record/status behavior depend on a case-specific search action that was not performed.",
+          "claimIds": ["claim_ind43_death_registration_fields", "claim_ind43_death_dod_fields", "claim_ind43_death_outcome_unknown"],
+          "status": "unknown"
+        }
+      ],
+      "failureRoadblockIds": ["roadblock_ind43_death_directory_unreachable", "roadblock_ind43_death_identifier_boundary"],
+      "recoveryNotes": [
+        "The exact `net::ERR_CONNECTION_REFUSED` text belongs to the legacy BBMP directory, not to a death-record lookup.",
+        "BenSCL publishes phone 080-22200080 and email bsclnodal@gmail.com on its specific Contact Us page.",
+        "No death-specific no-record recovery, status tracker, fee, or certificate-output route was publicly established before the identifier/name/date boundary."
+      ],
+      "documentationQualityNotes": [
+        "The live SmartNet page exposes concrete public death search modes and field labels, but the current pass cannot establish post-identifier behavior.",
+        "The legacy BBMP directory connection failure and SmartNet controls were directly observed on 2026-08-30 and are retained as separate official public endpoints."
+      ],
+      "status": "partial"
+    }
+  ]
+}

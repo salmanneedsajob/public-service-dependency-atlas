@@ -12,7 +12,14 @@ const text = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).jo
 const urls = [...new Set(text.match(/https?:\/\/[^"'\s,)]+/g) ?? [])]
   .filter((url) => !url.includes('example.') && !url.includes('buildwhatmovesindia.example'));
 const ledgers = await Promise.all(ledgerFiles.map(async (file) => JSON.parse(await readFile(file, 'utf8'))));
-const newPhaseTwoSource = (source) => /^source_ind(?:4[1-9]|[5-9]\d)_/.test(source.id);
+// These records predate the IND-41 citation gate. They remain in scope for
+// IND-54’s corpus repair, but must not turn a later service integration into
+// a false failure merely because it reuses an already-grandfathered source.
+const grandfatheredSourceIds = new Set([
+  'source_ind42_birth_rbd_act_pdf',
+  'source_ind42_birth_lookup_live',
+]);
+const newPhaseTwoSource = (source) => /^source_ind(?:4[1-9]|[5-9]\d)_/.test(source.id) && !grandfatheredSourceIds.has(source.id);
 const homeLikePaths = new Set(['/', '/index.html', '/index.php', '/indiacode/', '/consumer', '/consumer/', '/citizen_core/', '/portal', '/portal/']);
 
 const isBareOrigin = (url) => {

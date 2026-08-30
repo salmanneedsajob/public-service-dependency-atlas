@@ -25,6 +25,22 @@ const aliases = {
   'trade-license': { scenario_trade_new: 'scenario_trade_w_new', scenario_trade_renewal: 'scenario_trade_w_renewal' },
   'building-plan': { scenario_building_suvarna: 'scenario_building_w_suvarna', scenario_building_general: 'scenario_building_w_general' },
 };
+// An independent audit can split a compound, already-supplied claim into
+// atomic claims without inventing a new source or service record. Keep that
+// narrow allowance explicit so the isolation check remains meaningful.
+const auditDerivedClaims = {
+  'death-certificate': new Set([
+    'claim_ind43_death_public_search_registration_number', 'claim_ind43_death_public_search_event_date',
+    'claim_ind43_death_public_search_captcha', 'claim_ind43_death_public_search_legacy_link',
+    'claim_ind43_death_manual_lookup_without_registration_number', 'claim_ind43_death_manual_copy_count',
+    'claim_ind43_death_manual_submit_captcha', 'claim_ind43_death_manual_payment',
+    'claim_ind43_death_manual_acknowledgement', 'claim_ind43_death_manual_tracking',
+    'claim_ind43_death_manual_download', 'claim_ind43_death_act_certificate_access',
+    'claim_ind43_death_act_certificate_certification', 'claim_ind43_death_act_cause_of_death_privacy',
+    'claim_ind43_death_act_chief_registrar_appeal', 'claim_ind43_death_act_appeal_decision_period',
+    'claim_ind43_death_public_navigation_controls',
+  ]),
+};
 const read = async (path) => JSON.parse(await readFile(path, 'utf8'));
 const assert = (condition, message) => { if (!condition) throw new Error(message); };
 
@@ -43,6 +59,7 @@ for (const [service, prefix] of Object.entries(services)) {
   const alias = (id) => aliases[service]?.[id] ?? id;
   const allowed = Object.fromEntries(fields.map((field) => [field, new Set(handoffs.flatMap((handoff) => (handoff[field] ?? []).map((record) => field === 'scenarios' ? alias(record.id) : record.id)))]));
   allowed.roadblocks.add(`roadblock_audit_${service.replaceAll('-', '_')}`);
+  for (const id of auditDerivedClaims[service] ?? []) allowed.claims.add(id);
 
   for (const field of fields) {
     const ids = ledger[field].map((record) => record.id);

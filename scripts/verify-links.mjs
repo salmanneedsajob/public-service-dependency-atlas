@@ -12,6 +12,8 @@ const text = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).jo
 const urls = [...new Set(text.match(/https?:\/\/[^"'\s,)]+/g) ?? [])]
   .filter((url) => !url.includes('example.') && !url.includes('buildwhatmovesindia.example'));
 const ledgers = await Promise.all(ledgerFiles.map(async (file) => JSON.parse(await readFile(file, 'utf8'))));
+const newPhaseTwoSource = (source) => /^source_ind(?:4[1-9]|[5-9]\d)_/.test(source.id);
+const homeLikePaths = new Set(['/', '/index.html', '/index.php', '/indiacode/', '/consumer', '/consumer/', '/citizen_core/', '/portal', '/portal/']);
 
 const isBareOrigin = (url) => {
   const parsed = new URL(url);
@@ -20,11 +22,27 @@ const isBareOrigin = (url) => {
 
 // Agency homepages are allowed as directory metadata and journey starting
 // points. They are not allowed to be ledger *sources*, which are citations.
-const sourceUrls = ledgers.flatMap((ledger) => (ledger.sources ?? []).map((source) => source.url));
-const bareOrigins = [...new Set(sourceUrls.filter(isBareOrigin))];
-if (bareOrigins.length) {
-  throw new Error(`Bare-origin citations are not allowed; use a verified document or explicitly marked general-site reference instead:\n${bareOrigins.join('\n')}`);
+const sourceRecords = ledgers.flatMap((ledger) => ledger.sources ?? []);
+
+// IND-54 will repair the inherited citation corpus. From IND-41 onward, do
+// not allow a new source record to make the problem worse: new claims need a
+// page, document, or form, rather than a home/portal entry point. A source
+// URL already supporting many claims is likewise a discovery lead, not a new
+// specific citation.
+const sourceById = new Map(sourceRecords.map((source) => [source.id, source]));
+const claimCountByUrl = new Map();
+for (const ledger of ledgers) for (const claim of ledger.claims ?? []) for (const sourceId of claim.sourceIds ?? []) {
+  const source = sourceById.get(sourceId);
+  if (source) claimCountByUrl.set(source.url, (claimCountByUrl.get(source.url) ?? 0) + 1);
 }
+const newSourceProblems = sourceRecords.filter(newPhaseTwoSource).flatMap((source) => {
+  const path = new URL(source.url).pathname.toLowerCase();
+  const problems = [];
+  if (isBareOrigin(source.url) || homeLikePaths.has(path)) problems.push(`homepage-like path ${path}`);
+  if ((claimCountByUrl.get(source.url) ?? 0) > 5) problems.push(`already supports ${claimCountByUrl.get(source.url)} claims across the atlas`);
+  return problems.map((problem) => `${source.id}: ${problem} (${source.url})`);
+});
+if (newSourceProblems.length) throw new Error(`New Phase 2 citations must be specific pages or documents:\n${newSourceProblems.join('\n')}`);
 
 const check = async (url) => {
   try {

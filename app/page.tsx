@@ -75,7 +75,7 @@ export default function AtlasHome() {
           <p>Each entry traces the records the service depends on, what can block it, and the evidence behind every statement.</p>
         </div>
         <p className="directory-status-key"><b>Mapped</b> = we traced the full published route and its gaps. <b>Partially mapped</b> = the public record stops before the journey does. Both are researched; neither means the service is complete or incomplete.</p>
-        <p className="directory-status-rule">Mapped means every record on the main route has a way to check it, a known failure state, and a recovery route, and every handoff is sourced.</p>
+        <p className="directory-status-rule">Mapped means every record on the main route has been researched: each answer is published, or we checked and found no public procedure. Every handoff is sourced.</p>
         <div className="service-grid">
           {serviceGaps.map(({ service, gaps }) => {
             const firstGap = gaps[0];
@@ -86,8 +86,8 @@ export default function AtlasHome() {
               ? 'Mapped: we traced the full published route and its gaps.'
               : 'Partially mapped: the public record stops before the journey does.';
             const { fullyDocumentedRecords, totalRecords, unknownRecords } = service.mappingSummary;
-            const completeness = `${fullyDocumentedRecords} of ${totalRecords} records fully documented`;
-            const unknownCopy = unknownRecords > 0 ? ` · ${unknownRecords} ${unknownRecords === 1 ? 'record' : 'records'} unknown` : '';
+            const completeness = `${fullyDocumentedRecords} of ${totalRecords} records researched`;
+            const unknownCopy = unknownRecords > 0 ? ` · ${unknownRecords} ${unknownRecords === 1 ? 'step has' : 'steps have'} no public procedure` : '';
             return <a className="service-card mapped-service" href={service.href} key={service.title}><span className="service-category">{service.category}</span><div className={`service-status service-${service.status.toLowerCase().replaceAll(' ', '-')}`} title={statusDefinition} aria-label={`${service.status}. ${completeness}${unknownCopy}`}>{service.status} · {completeness}{unknownCopy}</div><h3>{service.title}</h3><p>{cardCopy}</p><span className="service-cta">Open this entry →</span></a>;
           })}
         </div>

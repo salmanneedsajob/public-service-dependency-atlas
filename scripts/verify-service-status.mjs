@@ -5,17 +5,17 @@ const ignoredLedgers = new Set(['demo.synthetic.json', 'example.json', 'schema.j
 const ledgerFiles = (await readdir('ledger')).filter((file) => file.endsWith('.json') && !ignoredLedgers.has(file));
 const errors = [];
 const statusCounts = { Mapped: 0, 'Partially mapped': 0 };
+const researchFields = ['checks', 'failureSignals', 'recoveries'];
 
 function expectedStatus(ledger) {
   const defaultScenario = ledger.scenarios[0];
   if (!defaultScenario || defaultScenario.pathNodeIds.length === 0) return 'Partially mapped';
 
   const nodes = defaultScenario.pathNodeIds.map((id) => ledger.nodes.find((node) => node.id === id));
-  const nodesAreActionable = nodes.every((node) => node
-    && node.status !== 'unknown'
-    && node.checks.length > 0
-    && node.failureSignals.length > 0
-    && node.recoveries.length > 0);
+  const nodesAreResearched = nodes.every((node) => node
+    && researchFields.every((field) =>
+      node[field].length > 0 || node.researchedNoSourceFound?.includes(field),
+    ));
   const handoffsAreSourced = defaultScenario.pathNodeIds.slice(1).every((toNodeId, index) => {
     const edge = ledger.edges.find((candidate) => candidate.scenarioIds.includes(defaultScenario.id)
       && candidate.fromNodeId === defaultScenario.pathNodeIds[index]
@@ -23,7 +23,7 @@ function expectedStatus(ledger) {
     return edge && edge.claimIds.length > 0;
   });
 
-  return nodesAreActionable && handoffsAreSourced ? 'Mapped' : 'Partially mapped';
+  return nodesAreResearched && handoffsAreSourced ? 'Mapped' : 'Partially mapped';
 }
 
 for (const file of ledgerFiles) {
@@ -33,9 +33,9 @@ for (const file of ledgerFiles) {
   const summary = deriveServiceMappingSummary(ledger);
   const defaultPathNodes = (ledger.scenarios[0]?.pathNodeIds ?? []).map((id) => ledger.nodes.find((node) => node.id === id));
   const expectedFullyDocumented = defaultPathNodes.filter((node) => node
-    && node.checks.length > 0
-    && node.failureSignals.length > 0
-    && node.recoveries.length > 0).length;
+    && researchFields.every((field) =>
+      node[field].length > 0 || node.researchedNoSourceFound?.includes(field),
+    )).length;
   const expectedUnknown = defaultPathNodes.filter((node) => node?.status === 'unknown').length;
   if (derived !== expected) errors.push(`${file}: expected ${expected}, got ${derived}.`);
   if (summary.status !== derived) errors.push(`${file}: summary status and status helper disagree.`);

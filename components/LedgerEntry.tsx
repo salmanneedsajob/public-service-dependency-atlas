@@ -305,8 +305,8 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
   const datasetNotice = datasetCopy[ledger.meta.dataKind];
   const mappingSummary = deriveServiceMappingSummary(ledger);
   const serviceStatus = mappingSummary.status;
-  const completeness = `${mappingSummary.fullyDocumentedRecords} of ${mappingSummary.totalRecords} records fully documented`;
-  const unknownCopy = mappingSummary.unknownRecords > 0 ? ` · ${mappingSummary.unknownRecords} ${mappingSummary.unknownRecords === 1 ? 'record' : 'records'} unknown` : '';
+  const completeness = `${mappingSummary.fullyDocumentedRecords} of ${mappingSummary.totalRecords} records researched`;
+  const unknownCopy = mappingSummary.unknownRecords > 0 ? ` · ${mappingSummary.unknownRecords} ${mappingSummary.unknownRecords === 1 ? 'step has' : 'steps have'} no public procedure` : '';
   const sourceGroups = buildSourceGroups(ledger);
   const entryNames: Record<string, string> = {
     bescom: 'BESCOM transfer', khata: 'khata transfer', 'property-tax': 'property-tax transfer',

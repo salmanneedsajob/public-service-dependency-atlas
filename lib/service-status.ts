@@ -1,6 +1,7 @@
 import type { Ledger } from '@/lib/ledger-types';
 
 export type ServiceMappingStatus = 'Mapped' | 'Partially mapped';
+const researchFields = ['checks', 'failureSignals', 'recoveries'] as const;
 
 export type ServiceMappingSummary = {
   status: ServiceMappingStatus;
@@ -10,8 +11,8 @@ export type ServiceMappingSummary = {
 };
 
 /**
- * A service earns Mapped only when its first (default) citizen route is usable
- * end-to-end from the evidence currently held in the ledger.
+ * Mapped measures whether we researched each record and handoff on the first
+ * citizen route — including where that research found no public procedure.
  */
 export function deriveServiceMappingSummary(ledger: Ledger): ServiceMappingSummary {
   const defaultScenario = ledger.scenarios[0];
@@ -20,14 +21,12 @@ export function deriveServiceMappingSummary(ledger: Ledger): ServiceMappingSumma
   }
 
   const pathNodes = defaultScenario.pathNodeIds.map((nodeId) => ledger.nodes.find((node) => node.id === nodeId));
-  const fullyDocumentedRecords = pathNodes.filter((node) =>
-    node
-    && node.checks.length > 0
-    && node.failureSignals.length > 0
-    && node.recoveries.length > 0,
-  ).length;
+  const fullyDocumentedRecords = pathNodes.filter((node) => node &&
+    researchFields.every((field) =>
+      node[field].length > 0 || node.researchedNoSourceFound?.includes(field),
+    )).length;
   const unknownRecords = pathNodes.filter((node) => node?.status === 'unknown').length;
-  const everyNodeIsActionable = fullyDocumentedRecords === pathNodes.length && unknownRecords === 0;
+  const everyRecordIsResearched = fullyDocumentedRecords === pathNodes.length;
 
   const pathEdges = defaultScenario.pathNodeIds.slice(1).map((toNodeId, index) => {
     const fromNodeId = defaultScenario.pathNodeIds[index];
@@ -40,7 +39,7 @@ export function deriveServiceMappingSummary(ledger: Ledger): ServiceMappingSumma
   const everyHandoffIsSourced = pathEdges.every((edge) => edge && edge.claimIds.length > 0);
 
   return {
-    status: everyNodeIsActionable && everyHandoffIsSourced ? 'Mapped' : 'Partially mapped',
+    status: everyRecordIsResearched && everyHandoffIsSourced ? 'Mapped' : 'Partially mapped',
     fullyDocumentedRecords,
     totalRecords: pathNodes.length,
     unknownRecords,

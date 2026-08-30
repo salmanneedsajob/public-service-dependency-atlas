@@ -1,0 +1,397 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru BESCOM exception name-transfer official-source pass",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-31",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice. It distinguishes publicly hosted source text from current case acceptance; do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_bescom",
+      "name": "Bangalore Electricity Supply Company Limited",
+      "shortName": "BESCOM",
+      "officialUrl": "https://www.bescom.co.in/"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_tenant",
+      "label": "Tenant",
+      "summary": "An occupier seeks a bill-name change without owning the property.",
+      "tags": ["tenant", "consent", "exception"],
+      "pathNodeIds": ["node_transfer_evidence", "node_transfer_obligations", "node_name_transfer", "node_request_tracking"],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_previous_consumer_deceased",
+      "label": "Previous consumer deceased",
+      "summary": "The recorded consumer has died and a successor seeks transfer.",
+      "tags": ["death", "succession", "exception"],
+      "pathNodeIds": ["node_transfer_evidence", "node_transfer_obligations", "node_name_transfer", "node_request_tracking"],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_consent_unavailable",
+      "label": "Consent unavailable",
+      "summary": "The previous consumer cannot or will not provide consent.",
+      "tags": ["consent", "exception"],
+      "pathNodeIds": ["node_transfer_evidence", "node_transfer_obligations", "node_name_transfer", "node_request_tracking"],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind_exceptions_bescom_conditions",
+      "title": "Conditions of Supply of Electricity with I and II Amendments",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
+      "accessedAt": "2026-08-31",
+      "type": "regulation",
+      "notes": "Current BESCOM-hosted PDF directly inspected. Clause 36 and Annex 9 contain the transfer text used here. The PDF visibly carries 2013 page dates and refers to earlier amendment notifications; this pass did not locate a current KERC confirmation that Clause 36 remains the applicable exception checklist. Treat the content as official but potentially outdated."
+    },
+    {
+      "id": "source_ind_exceptions_bescom_name_change_faq",
+      "title": "BESCOM Frequently Asked Questions — How To Change Name?",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/main/faq",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Current public FAQ directly inspected. It describes customer login, Janasnehi Vidhyuth Sevegalu, Name Change/Change of Ownership, preferred account selection, mandatory fields, document upload, submission, request ID, and payment. No login or case-specific exception validation was attempted."
+    },
+    {
+      "id": "source_ind_exceptions_bescom_tracker",
+      "title": "Track Name Change",
+      "publisher": "Bangalore Electricity Supply Company Limited",
+      "url": "https://www.bescom.co.in/bescom/main/track-name-change",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Current public page directly inspected. It exposes a Request ID (Enter from SMS) field and Submit control, with 1912 help. No request ID was entered."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind_exceptions_consent_hosted_conditions",
+      "text": "The BESCOM-hosted Conditions PDF says that the registered consumer furnishes a consent letter to transfer the installation and deposits to the transferee.",
+      "jurisdiction": "Karnataka, India; Bengaluru BESCOM context",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_evidence"],
+      "sourceIds": ["source_ind_exceptions_bescom_conditions"],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This records wording in the currently hosted but visibly older Conditions PDF. It does not establish a current authenticated consent field or acceptance decision."
+    },
+    {
+      "id": "claim_ind_exceptions_no_consent_ownership_evidence",
+      "text": "The BESCOM-hosted Conditions PDF says that, in the absence of the registered consumer's consent letter, the transferee may produce ownership evidence including a registered sale deed, partition deed, khata, succession or heirship certificate, or deed of last will.",
+      "jurisdiction": "Karnataka, India; Bengaluru BESCOM context",
+      "scenarioIds": ["scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_evidence"],
+      "sourceIds": ["source_ind_exceptions_bescom_conditions"],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The listed succession/heirship and will options are evidence leads for the deceased-consumer route, not proof that any supplied document will be accepted now."
+    },
+    {
+      "id": "claim_ind_exceptions_no_consent_occupancy_scope",
+      "text": "The BESCOM-hosted Conditions PDF says that, where consent is absent, occupancy proof such as a valid power of attorney, latest rent-paid receipt, or valid lease deed is limited to non-commercial lighting and non-commercial combined lighting-and-heating installations.",
+      "jurisdiction": "Karnataka, India; Bengaluru BESCOM context",
+      "scenarioIds": ["scenario_tenant", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_evidence"],
+      "sourceIds": ["source_ind_exceptions_bescom_conditions"],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is not a general tenant entitlement or a current acceptance checklist; the tariff/category and current applicability remain unverified."
+    },
+    {
+      "id": "claim_ind_exceptions_transfer_indemnity",
+      "text": "The BESCOM-hosted Conditions PDF says that the transferee executes an Annex 9 indemnity bond for disputes arising from the transfer.",
+      "jurisdiction": "Karnataka, India; Bengaluru BESCOM context",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_obligations"],
+      "sourceIds": ["source_ind_exceptions_bescom_conditions"],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Annex 9 is present in the hosted PDF. No current BESCOM submission route or acceptance of an indemnity bond was observed."
+    },
+    {
+      "id": "claim_ind_exceptions_no_arrears_condition",
+      "text": "The BESCOM-hosted Conditions PDF says that no arrears may be outstanding against an installation for transfer.",
+      "jurisdiction": "Karnataka, India; Bengaluru BESCOM context",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_obligations"],
+      "sourceIds": ["source_ind_exceptions_bescom_conditions"],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No account balance or arrears outcome was queried."
+    },
+    {
+      "id": "claim_ind_exceptions_fresh_agreement_condition",
+      "text": "The BESCOM-hosted Conditions PDF says that the transferee executes a fresh power-supply agreement with the licensee for transfer.",
+      "jurisdiction": "Karnataka, India; Bengaluru BESCOM context",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_obligations"],
+      "sourceIds": ["source_ind_exceptions_bescom_conditions"],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No agreement form, current signature process, or completed agreement was inspected."
+    },
+    {
+      "id": "claim_ind_exceptions_no_consent_fresh_deposit",
+      "text": "The BESCOM-hosted Conditions PDF says that, where the registered consumer has not consented to transfer of the deposit, the transferee pays a fresh deposit as a new consumer.",
+      "jurisdiction": "Karnataka, India; Bengaluru BESCOM context",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_obligations"],
+      "sourceIds": ["source_ind_exceptions_bescom_conditions"],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No deposit calculation, demand, or payment was observed; do not state an amount."
+    },
+    {
+      "id": "claim_ind_exceptions_generic_name_change_boundary",
+      "text": "BESCOM's current public FAQ describes an authenticated Name Change/Change of Ownership route with account selection, mandatory fields, document upload, submission, request ID, and payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_ind_exceptions_bescom_name_change_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This confirms only the public generic route, not the acceptance of any exception evidence."
+    },
+    {
+      "id": "claim_ind_exceptions_exception_acceptance_unknown",
+      "text": "This pass did not establish a current public BESCOM rule for acceptance of tenant occupancy evidence, deceased-consumer succession evidence, or a no-consent transfer packet in the authenticated Name Change route.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_evidence", "node_name_transfer"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The public FAQ was inspected without login and the current hosted Conditions PDF has unresolved applicability. No account-specific validation or submission was attempted."
+    },
+    {
+      "id": "claim_ind_exceptions_tracker_request_id",
+      "text": "BESCOM's current public Track Name Change page requests the Request ID sent by SMS and provides a Submit control.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_request_tracking"],
+      "sourceIds": ["source_ind_exceptions_bescom_tracker"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No request ID was entered, so this does not establish a status result or exception-route completion."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_transfer_evidence",
+      "label": "Exception transfer evidence",
+      "kind": "document",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "Officially hosted historic transfer wording provides conditional consent, ownership/succession, and narrowly scoped occupancy evidence leads; current acceptance remains unknown.",
+      "requiredState": "Confirm the current exception-specific document rule and applicable tariff/category before preparing or submitting any evidence.",
+      "checks": [
+        {
+          "id": "check_ind_exceptions_no_consent_ownership",
+          "label": "Historic ownership or succession evidence lead",
+          "description": "The hosted Conditions PDF lists ownership evidence, including succession/heirship certificate and deed of last will, when consent is absent.",
+          "url": "https://bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
+          "claimIds": ["claim_ind_exceptions_no_consent_ownership_evidence"],
+          "status": "partial"
+        },
+        {
+          "id": "check_ind_exceptions_tenant_occupancy_scope",
+          "label": "Historic tenant occupancy-evidence lead",
+          "description": "The hosted Conditions PDF limits its no-consent occupancy examples to stated non-commercial installation classes.",
+          "url": "https://bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
+          "claimIds": ["claim_ind_exceptions_no_consent_occupancy_scope"],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind_exceptions_consent_not_available",
+          "label": "Consent is unavailable",
+          "description": "The hosted Conditions wording supplies alternative evidence categories only when the registered consumer's consent letter is absent; current portal acceptance is not established.",
+          "url": "https://bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
+          "claimIds": ["claim_ind_exceptions_consent_hosted_conditions", "claim_ind_exceptions_exception_acceptance_unknown"],
+          "status": "partial"
+        },
+        {
+          "id": "failure_ind_exceptions_tenant_scope_unconfirmed",
+          "label": "Tenant category is not confirmed",
+          "description": "The public historical occupancy wording is limited by installation class and does not establish tenant eligibility for a particular account.",
+          "url": "https://bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
+          "claimIds": ["claim_ind_exceptions_no_consent_occupancy_scope", "claim_ind_exceptions_exception_acceptance_unknown"],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind_exceptions_confirm_current_evidence_packet",
+          "label": "Obtain a current exception checklist",
+          "description": "Use the hosted ownership/succession or scoped occupancy text only as a lead; obtain current written confirmation from BESCOM of the accepted evidence packet before submitting.",
+          "url": "https://www.bescom.co.in/bescom/main/faq",
+          "claimIds": ["claim_ind_exceptions_no_consent_ownership_evidence", "claim_ind_exceptions_no_consent_occupancy_scope", "claim_ind_exceptions_exception_acceptance_unknown"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind_exceptions_consent_hosted_conditions", "claim_ind_exceptions_no_consent_ownership_evidence", "claim_ind_exceptions_no_consent_occupancy_scope", "claim_ind_exceptions_exception_acceptance_unknown"],
+      "status": "partial",
+      "displayOrder": 45
+    },
+    {
+      "id": "node_transfer_obligations",
+      "label": "Transfer obligations",
+      "kind": "decision",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "The hosted historic Conditions text identifies indemnity, arrears, fresh agreement, and deposit consequences; no live exception calculation or acceptance was observed.",
+      "requiredState": "Confirm current applicability, account arrears, demand, agreement, and deposit treatment through an authorised BESCOM channel.",
+      "checks": [
+        {
+          "id": "check_ind_exceptions_indemnity_lead",
+          "label": "Historic transfer indemnity lead",
+          "description": "The hosted Conditions PDF calls for an Annex 9 indemnity bond for transfer disputes.",
+          "url": "https://bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
+          "claimIds": ["claim_ind_exceptions_transfer_indemnity"],
+          "status": "partial"
+        },
+        {
+          "id": "check_ind_exceptions_fresh_agreement_lead",
+          "label": "Historic fresh-agreement lead",
+          "description": "The hosted Conditions PDF says the transferee executes a fresh power-supply agreement.",
+          "url": "https://bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
+          "claimIds": ["claim_ind_exceptions_fresh_agreement_condition"],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind_exceptions_arrears_unresolved",
+          "label": "Arrears state is unresolved",
+          "description": "The hosted Conditions text says no arrears may be outstanding, but no account was queried in this pass.",
+          "url": "https://bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
+          "claimIds": ["claim_ind_exceptions_no_arrears_condition"],
+          "status": "unknown"
+        },
+        {
+          "id": "failure_ind_exceptions_fresh_deposit_unpriced",
+          "label": "No-consent deposit treatment is unpriced",
+          "description": "The hosted Conditions text describes a fresh deposit without consent for deposit transfer; no live amount or demand was observed.",
+          "url": "https://bescom.co.in/bescom/assets/pdfs/ConditionsofSupplyofElectricitywithIandIIAmendments.pdf",
+          "claimIds": ["claim_ind_exceptions_no_consent_fresh_deposit"],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind_exceptions_request_written_obligation_confirmation",
+          "label": "Request current obligation confirmation",
+          "description": "Before any authorised submission, ask BESCOM to state the current exception-route requirements for arrears, indemnity, fresh agreement, and deposit treatment in writing.",
+          "url": "https://www.bescom.co.in/bescom/main/faq",
+          "claimIds": ["claim_ind_exceptions_transfer_indemnity", "claim_ind_exceptions_no_arrears_condition", "claim_ind_exceptions_fresh_agreement_condition", "claim_ind_exceptions_no_consent_fresh_deposit", "claim_ind_exceptions_exception_acceptance_unknown"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind_exceptions_transfer_indemnity", "claim_ind_exceptions_no_arrears_condition", "claim_ind_exceptions_fresh_agreement_condition", "claim_ind_exceptions_no_consent_fresh_deposit", "claim_ind_exceptions_exception_acceptance_unknown"],
+      "status": "partial",
+      "displayOrder": 55
+    },
+    {
+      "id": "node_name_transfer",
+      "label": "BESCOM name transfer",
+      "kind": "service",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "The current public entry describes a generic authenticated name-change route, but no exception-specific document acceptance was observed.",
+      "requiredState": "A current authorised decision is needed on whether the exception evidence can be submitted and accepted through the authenticated route.",
+      "checks": [
+        {
+          "id": "check_ind_exceptions_generic_name_change_entry",
+          "label": "Public generic name-change entry",
+          "description": "BESCOM's FAQ describes login, account selection, required fields, upload, submission, request ID, and payment for name change.",
+          "url": "https://www.bescom.co.in/bescom/main/faq",
+          "claimIds": ["claim_ind_exceptions_generic_name_change_boundary"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind_exceptions_portal_exception_unknown",
+          "label": "Exception acceptance is not publicly established",
+          "description": "The generic public route does not establish acceptance of tenant, successor, or no-consent evidence without entering an authenticated case.",
+          "url": "https://www.bescom.co.in/bescom/main/faq",
+          "claimIds": ["claim_ind_exceptions_exception_acceptance_unknown"],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind_exceptions_generic_name_change_boundary", "claim_ind_exceptions_exception_acceptance_unknown"],
+      "status": "partial",
+      "displayOrder": 60
+    },
+    {
+      "id": "node_request_tracking",
+      "label": "Request tracking",
+      "kind": "record",
+      "ownerAgencyId": "agency_bescom",
+      "summary": "The public tracker is available only after an SMS Request ID exists; it does not decide prospective exception eligibility.",
+      "requiredState": "Retain an SMS Request ID after an authorised submission; no exception-case tracker result was inspected.",
+      "checks": [
+        {
+          "id": "check_ind_exceptions_tracker_request_id",
+          "label": "Public Track Name Change input",
+          "description": "The public tracker requests the Request ID sent by SMS.",
+          "url": "https://www.bescom.co.in/bescom/main/track-name-change",
+          "claimIds": ["claim_ind_exceptions_tracker_request_id"],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind_exceptions_tracker_request_id", "claim_ind_exceptions_exception_acceptance_unknown"],
+      "status": "partial",
+      "displayOrder": 70
+    }
+  ],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind_exceptions_current_exception_checklist_unknown",
+      "title": "Current exception checklist is not publicly established",
+      "category": "documentation",
+      "symptom": "Public BESCOM material exposes a generic authenticated name-change route while the hosted exception Conditions text has unresolved current applicability.",
+      "likelyCause": "Tenant, succession, consent, tariff/category, arrears, deposit, and account facts require case-specific BESCOM validation not visible in this pass.",
+      "recovery": "Obtain current written BESCOM confirmation of the applicable exception evidence and obligations before providing documents or submitting a request.",
+      "ownerAgencyIds": ["agency_bescom"],
+      "nodeIds": ["node_transfer_evidence", "node_transfer_obligations", "node_name_transfer"],
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind_exceptions_exception_acceptance_unknown"],
+      "status": "unknown"
+    }
+  ],
+  "journeys": []
+}

@@ -30,7 +30,7 @@ const assert = (condition, message) => {
 };
 
 assert(ledger.meta.dataKind === 'research', 'research.json must declare meta.dataKind as research.');
-assert(ledger.meta.asOf === '2026-08-30', 'research.json must retain its current snapshot date.');
+assert(ledger.meta.asOf === '2026-08-31', 'research.json must retain its current snapshot date.');
 assert(ledger.meta.disclaimer.length > 0, 'research.json must retain its disclaimer.');
 assert(ledger.scenarios.length === expectedScenarioIds.length, 'Research ledger must contain exactly the six v1 scenarios.');
 

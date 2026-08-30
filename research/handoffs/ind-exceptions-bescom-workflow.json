@@ -1,0 +1,443 @@
+{
+  "_handoff": {
+    "issue": "IND-EXCEPTIONS-BESCOM",
+    "generatedAt": "2026-08-31",
+    "status": "in_review",
+    "scopeNote": "Unauthenticated public-workflow pass for BESCOM name transfer exception scenarios in Bengaluru/Karnataka: tenant or occupier, previous consumer deceased, and consent unavailable. Only current public BESCOM pages were inspected. No login, registration, account ID, personal data, upload, payment, request submission, tracker query, or complaint was made.",
+    "documentationShelf": [
+      {
+        "title": "BESCOM FAQ — name-change route",
+        "url": "https://www.bescom.co.in/bescom/main/faq",
+        "accessedAt": "2026-08-31",
+        "whatItCovers": "Current public description of the standard authenticated Name Change/Change of Ownership route: login, account selection, fields/documents, submission, request ID, payment and download.",
+        "whereItStops": "It does not expose a tenant, deceased-consumer or consent-unavailable branch, current exception documents, or case result."
+      },
+      {
+        "title": "BESCOM customer login",
+        "url": "https://www.bescom.co.in/bescom/login",
+        "accessedAt": "2026-08-31",
+        "whatItCovers": "Unauthenticated login shell with User ID, Password, image CAPTCHA, registration and account-recovery controls.",
+        "whereItStops": "No credentials or account ID were entered; no exception service or authenticated fields were inspected."
+      },
+      {
+        "title": "BESCOM Janasnehi Vidhyuth Sevegalu — Name Change",
+        "url": "https://www.bescom.co.in/bescom/dashboard/consumer-dashboard/janasnehi-vidhyuth-sevagalu/name-change-form",
+        "accessedAt": "2026-08-31",
+        "whatItCovers": "Direct public entry URL for the name-change service.",
+        "whereItStops": "Current direct render showed only the common BESCOM shell and no form controls, exception selector, error text or recovery link."
+      },
+      {
+        "title": "BESCOM Track Name Change",
+        "url": "https://www.bescom.co.in/bescom/main/track-name-change",
+        "accessedAt": "2026-08-31",
+        "whatItCovers": "Public tracker with a Request ID field labelled as coming from SMS.",
+        "whereItStops": "No request ID was supplied; no status or exception outcome was obtained."
+      },
+      {
+        "title": "BESCOM Billing-related complaints tracker",
+        "url": "https://www.bescom.co.in/bescom/dashboard/consumer-dashboard/track-complaints",
+        "accessedAt": "2026-08-31",
+        "whatItCovers": "Public complaint tracker shell with Request ID, request-raised date and Search controls.",
+        "whereItStops": "The page is labelled billing-related; no complaint was created or queried and it is not confirmed as an exception-transfer recovery."
+      },
+      {
+        "title": "BESCOM online services maintenance page",
+        "url": "https://www.bescom.co.in/bescom/main/maintanance",
+        "accessedAt": "2026-08-31",
+        "whatItCovers": "Current public failure page stating that scheduled upgradation temporarily makes BESCOM online services unavailable.",
+        "whereItStops": "It gives no exception-specific retry timing, queue state or alternate transfer submission route."
+      }
+    ]
+  },
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru BESCOM name-transfer exceptions — public workflow",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-31",
+    "dataKind": "research",
+    "disclaimer": "Public workflow observation, not official advice, eligibility determination or a name-transfer result. Current exception requirements must be confirmed through an authorised BESCOM channel; do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_bescom_ind_exceptions_workflow",
+      "name": "Bangalore Electricity Supply Company Limited",
+      "shortName": "BESCOM",
+      "officialUrl": "https://www.bescom.co.in/bescom/main/faq"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_tenant",
+      "label": "Tenant or occupier",
+      "summary": "An occupier seeks BESCOM bill-name change without owning the property; current public acceptance is not exposed.",
+      "tags": ["tenant", "occupancy", "consent", "exception"],
+      "pathNodeIds": ["node_transfer_evidence", "node_transfer_obligations", "node_name_transfer", "node_request_tracking"],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_previous_consumer_deceased",
+      "label": "Previous consumer deceased",
+      "summary": "The recorded BESCOM consumer has died and a successor seeks a name transfer; current public successor handling is not exposed.",
+      "tags": ["death", "succession", "exception"],
+      "pathNodeIds": ["node_transfer_evidence", "node_transfer_obligations", "node_name_transfer", "node_request_tracking"],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_consent_unavailable",
+      "label": "Consent unavailable",
+      "summary": "The previous consumer cannot or will not provide consent; the current public exception route is not exposed.",
+      "tags": ["consent", "exception", "ownership"],
+      "pathNodeIds": ["node_transfer_evidence", "node_transfer_obligations", "node_name_transfer", "node_request_tracking"],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind_exceptions_bescom_faq",
+      "title": "BESCOM FAQ — How To Change Name?",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/main/faq",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Direct current public observation. The expanded Name Change FAQ describes login, Janasnehi Vidhyuth Sevegalu, Name Change/Change of Ownership, account selection, mandatory fields, uploads, submission, request ID, payment and downloads; no exception-specific branch is shown."
+    },
+    {
+      "id": "source_ind_exceptions_bescom_login",
+      "title": "BESCOM customer login",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/login",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Direct current public observation. Login shell exposes User ID, Password, image CAPTCHA, registration and forgot User ID/password controls. No credentials were entered."
+    },
+    {
+      "id": "source_ind_exceptions_bescom_jvs_name_change",
+      "title": "BESCOM Janasnehi Vidhyuth Sevegalu — Name Change",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/dashboard/consumer-dashboard/janasnehi-vidhyuth-sevagalu/name-change-form",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Direct current public observation. The URL loaded BESCOM's common shell but exposed no visible name-change form controls, exception selector, error message or recovery link in the unauthenticated render."
+    },
+    {
+      "id": "source_ind_exceptions_bescom_name_tracker",
+      "title": "BESCOM Track Name Change",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/main/track-name-change",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Direct current public observation. Tracker asks for Request ID (Enter from SMS) and has a Submit button. No identifier was entered."
+    },
+    {
+      "id": "source_ind_exceptions_bescom_complaint_tracker",
+      "title": "BESCOM Billing related Complaints Tracker",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/dashboard/consumer-dashboard/track-complaints",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Direct current public observation. Page exposes Request ID, request-raised date and Search controls and is labelled Billing related Complaints Tracker; it is not confirmed as a name-transfer exception recovery."
+    },
+    {
+      "id": "source_ind_exceptions_bescom_maintenance",
+      "title": "BESCOM System Under Maintenance",
+      "publisher": "BESCOM",
+      "url": "https://www.bescom.co.in/bescom/main/maintanance",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Direct current public observation. Page states that scheduled upgradation makes BESCOM online services temporarily unavailable; it provides no exception-specific recovery or timing."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind_exceptions_bescom_standard_route",
+      "text": "BESCOM's current public FAQ directs a Name Change/Change of Ownership applicant through customer login, account selection, mandatory fields and document upload, submission, request ID retention, and payment/download controls.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer", "node_request_tracking"],
+      "sourceIds": ["source_ind_exceptions_bescom_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ describes the standard route but does not say that every exception scenario is accepted through it or enumerate exception documents."
+    },
+    {
+      "id": "claim_ind_exceptions_bescom_login_boundary",
+      "text": "The public BESCOM customer-login page requires User ID, Password and image CAPTCHA before account-specific name-transfer fields can be reached.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_ind_exceptions_bescom_login"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No credentials, CAPTCHA response, account ID or personal data was entered."
+    },
+    {
+      "id": "claim_ind_exceptions_bescom_jvs_blank",
+      "text": "The current unauthenticated BESCOM Janasnehi name-change URL rendered the common shell but no visible name-change form, exception selector, error text or recovery link.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_ind_exceptions_bescom_jvs_name_change"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is a direct public-render observation only; it does not establish whether the form appears after login or under a different route."
+    },
+    {
+      "id": "claim_ind_exceptions_bescom_tracker",
+      "text": "BESCOM's public Track Name Change page asks for a Request ID labelled as coming from SMS and provides a Submit control.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_request_tracking"],
+      "sourceIds": ["source_ind_exceptions_bescom_name_tracker"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No request ID was supplied and no status was queried."
+    },
+    {
+      "id": "claim_ind_exceptions_bescom_complaint_recovery_lead",
+      "text": "BESCOM exposes a public billing-related complaint tracker with Request ID, request-raised date and Search controls, but its applicability to name-transfer exceptions is not established.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_request_tracking", "node_name_transfer"],
+      "sourceIds": ["source_ind_exceptions_bescom_complaint_tracker"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "It is retained as a general recovery lead only; no complaint was created, and the page is explicitly billing-related."
+    },
+    {
+      "id": "claim_ind_exceptions_bescom_maintenance_failure",
+      "text": "BESCOM's public maintenance page can display a scheduled-upgradation message saying online services are temporarily unavailable.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer"],
+      "sourceIds": ["source_ind_exceptions_bescom_maintenance"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The page provides no exception-specific retry time, alternate submission route or case queue information."
+    },
+    {
+      "id": "claim_ind_exceptions_bescom_current_exception_unknown",
+      "text": "No current unauthenticated BESCOM page reviewed in this pass establishes whether a tenant, successor after death, or applicant without previous-consumer consent is eligible, which documents replace consent, what deposit or arrears treatment applies, or how an exception is approved.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_transfer_evidence", "node_transfer_obligations", "node_name_transfer", "node_request_tracking"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "FAQ, login, direct JVS route, name tracker, complaint tracker and maintenance page were reviewed without crossing authentication or submitting data. Historical rules in the canonical ledger are not treated as current public workflow evidence."
+    },
+    {
+      "id": "claim_ind_exceptions_bescom_case_outcome_unknown",
+      "text": "This pass produced no BESCOM request ID, exception decision, document acceptance, payment demand, approval, updated bill name or tracker status.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "nodeIds": ["node_name_transfer", "node_request_tracking"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No login, account identifier, upload, payment, submission or tracker query was made."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_transfer_evidence",
+      "label": "Exception transfer evidence",
+      "kind": "document",
+      "ownerAgencyId": "agency_bescom_ind_exceptions_workflow",
+      "summary": "The current public route exposes a generic name-change document-upload stage but no tenant, deceased-consumer or consent-unavailable evidence branch.",
+      "requiredState": "Current proof, succession evidence, ownership basis and any consent substitute are unknown.",
+      "checks": [
+        {"id": "check_ind_exceptions_generic_documents", "label": "Generic document stage", "description": "BESCOM FAQ says the standard name-change route uploads required documents for verification.", "url": "https://www.bescom.co.in/bescom/main/faq", "claimIds": ["claim_ind_exceptions_bescom_standard_route"], "status": "verified"}
+      ],
+      "failureSignals": [
+        {"id": "failure_ind_exceptions_specific_evidence_unexposed", "label": "Exception evidence list not exposed", "description": "No reviewed current public page names the tenant, successor or consent-unavailable document set or substitution rule.", "url": "https://www.bescom.co.in/bescom/main/faq", "claimIds": ["claim_ind_exceptions_bescom_current_exception_unknown"], "status": "unknown"}
+      ],
+      "recoveries": [
+        {"id": "recovery_ind_exceptions_confirm_evidence", "label": "Confirm current evidence with BESCOM", "description": "Obtain the case-specific current evidence list from an authorised BESCOM channel before any upload or submission; do not infer it from the historic ledger rule.", "url": "https://www.bescom.co.in/bescom/main/faq", "claimIds": ["claim_ind_exceptions_bescom_current_exception_unknown"], "status": "unknown"}
+      ],
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind_exceptions_bescom_standard_route", "claim_ind_exceptions_bescom_current_exception_unknown"],
+      "status": "unknown",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_transfer_obligations",
+      "label": "Exception obligations and deposit",
+      "kind": "decision",
+      "ownerAgencyId": "agency_bescom_ind_exceptions_workflow",
+      "summary": "Current public pages do not expose exception-specific arrears, indemnity, agreement, deposit, fee or consent-substitute treatment.",
+      "requiredState": "Current obligation, arrears and deposit treatment for each exception scenario is unknown.",
+      "checks": [],
+      "failureSignals": [
+        {"id": "failure_ind_exceptions_obligations_unexposed", "label": "Exception obligations not exposed", "description": "The reviewed current FAQ explains payment after a standard name-change submission but does not expose exception-specific deposit, arrears or consent treatment.", "url": "https://www.bescom.co.in/bescom/main/faq", "claimIds": ["claim_ind_exceptions_bescom_current_exception_unknown"], "status": "unknown"}
+      ],
+      "recoveries": [
+        {"id": "recovery_ind_exceptions_1912_lead", "label": "Use BESCOM help channel", "description": "The public BESCOM pages display Call 1912 for help; applicability to a name-transfer exception and any case handoff are not confirmed here.", "url": "https://www.bescom.co.in/bescom/main/faq", "claimIds": ["claim_ind_exceptions_bescom_current_exception_unknown"], "status": "partial"}
+      ],
+      "researchedNoSourceFound": ["checks"],
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind_exceptions_bescom_current_exception_unknown"],
+      "status": "unknown",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_name_transfer",
+      "label": "BESCOM name-transfer entry",
+      "kind": "service",
+      "ownerAgencyId": "agency_bescom_ind_exceptions_workflow",
+      "summary": "The FAQ exposes a standard authenticated Name Change/Change of Ownership route, while the direct unauthenticated Janasnehi name-change URL currently exposes no form.",
+      "requiredState": "No login, account selection, exception category, form fields, upload or submission exists.",
+      "checks": [
+        {"id": "check_ind_exceptions_login", "label": "Customer login boundary", "description": "Public BESCOM login requires User ID, Password and image CAPTCHA.", "url": "https://www.bescom.co.in/bescom/login", "claimIds": ["claim_ind_exceptions_bescom_login_boundary"], "status": "verified"},
+        {"id": "check_ind_exceptions_faq_route", "label": "Standard name-change route", "description": "FAQ directs the user into Janasnehi Name Change/Change of Ownership after login.", "url": "https://www.bescom.co.in/bescom/main/faq", "claimIds": ["claim_ind_exceptions_bescom_standard_route"], "status": "verified"}
+      ],
+      "failureSignals": [
+        {"id": "failure_ind_exceptions_jvs_blank", "label": "Unauthenticated JVS form not exposed", "description": "Direct public name-change URL rendered the common shell without form controls, exception selector, error text or recovery link.", "url": "https://www.bescom.co.in/bescom/dashboard/consumer-dashboard/janasnehi-vidhyuth-sevegalu/name-change-form", "claimIds": ["claim_ind_exceptions_bescom_jvs_blank"], "status": "verified"},
+        {"id": "failure_ind_exceptions_maintenance", "label": "Online services temporarily unavailable", "description": "BESCOM's public maintenance page states scheduled upgradation can make online services temporarily unavailable.", "url": "https://www.bescom.co.in/bescom/main/maintanance", "claimIds": ["claim_ind_exceptions_bescom_maintenance_failure"], "status": "verified"}
+      ],
+      "recoveries": [
+        {"id": "recovery_ind_exceptions_complaint_lead", "label": "Complaint tracker lead", "description": "BESCOM exposes a billing-related complaint tracker; it is retained only as a general recovery lead because applicability to name-transfer exceptions is unconfirmed.", "url": "https://www.bescom.co.in/bescom/dashboard/consumer-dashboard/track-complaints", "claimIds": ["claim_ind_exceptions_bescom_complaint_recovery_lead"], "status": "partial"}
+      ],
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind_exceptions_bescom_standard_route", "claim_ind_exceptions_bescom_login_boundary", "claim_ind_exceptions_bescom_jvs_blank", "claim_ind_exceptions_bescom_maintenance_failure", "claim_ind_exceptions_bescom_complaint_recovery_lead", "claim_ind_exceptions_bescom_current_exception_unknown"],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_request_tracking",
+      "label": "Request and complaint tracking",
+      "kind": "record",
+      "ownerAgencyId": "agency_bescom_ind_exceptions_workflow",
+      "summary": "BESCOM exposes a name-change tracker keyed by an SMS Request ID and a separate billing-related complaint tracker.",
+      "requiredState": "No Request ID, complaint ID, SMS, status or exception decision exists.",
+      "checks": [
+        {"id": "check_ind_exceptions_name_tracker", "label": "Name-change Request ID field", "description": "Public tracker asks for Request ID (Enter from SMS) and provides Submit.", "url": "https://www.bescom.co.in/bescom/main/track-name-change", "claimIds": ["claim_ind_exceptions_bescom_tracker"], "status": "verified"},
+        {"id": "check_ind_exceptions_complaint_tracker", "label": "Complaint tracker fields", "description": "Public billing-related complaint tracker exposes Request ID and request-raised date filters.", "url": "https://www.bescom.co.in/bescom/dashboard/consumer-dashboard/track-complaints", "claimIds": ["claim_ind_exceptions_bescom_complaint_recovery_lead"], "status": "verified"}
+      ],
+      "failureSignals": [
+        {"id": "failure_ind_exceptions_no_request_id", "label": "No request can be tracked", "description": "Without a submitted name-change request and SMS Request ID, the public name-change tracker cannot expose a status.", "url": "https://www.bescom.co.in/bescom/main/track-name-change", "claimIds": ["claim_ind_exceptions_bescom_tracker", "claim_ind_exceptions_bescom_case_outcome_unknown"], "status": "unknown"}
+      ],
+      "recoveries": [
+        {"id": "recovery_ind_exceptions_track_after_submission", "label": "Retain SMS Request ID", "description": "If an authorised submission ever produces an SMS Request ID, retain it for the public tracker; no such ID was created in this pass.", "url": "https://www.bescom.co.in/bescom/main/track-name-change", "claimIds": ["claim_ind_exceptions_bescom_tracker", "claim_ind_exceptions_bescom_case_outcome_unknown"], "status": "partial"}
+      ],
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind_exceptions_bescom_tracker", "claim_ind_exceptions_bescom_complaint_recovery_lead", "claim_ind_exceptions_bescom_case_outcome_unknown"],
+      "status": "partial",
+      "displayOrder": 40
+    }
+  ],
+  "edges": [
+    {"id": "edge_ind_exceptions_evidence_obligations", "fromNodeId": "node_transfer_evidence", "toNodeId": "node_transfer_obligations", "relationship": "requires", "label": "The applicable evidence branch must be known before current exception obligations or deposit treatment can be confirmed.", "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"], "claimIds": ["claim_ind_exceptions_bescom_current_exception_unknown"], "status": "unknown"},
+    {"id": "edge_ind_exceptions_obligations_transfer", "fromNodeId": "node_transfer_obligations", "toNodeId": "node_name_transfer", "relationship": "requires", "label": "Current obligations and any consent substitute would need confirmation before an authorised name-transfer submission.", "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"], "claimIds": ["claim_ind_exceptions_bescom_standard_route", "claim_ind_exceptions_bescom_current_exception_unknown"], "status": "unknown"},
+    {"id": "edge_ind_exceptions_transfer_tracking", "fromNodeId": "node_name_transfer", "toNodeId": "node_request_tracking", "relationship": "produces", "label": "A successful authorised submission would produce a Request ID for tracking; no submission occurred.", "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"], "claimIds": ["claim_ind_exceptions_bescom_standard_route", "claim_ind_exceptions_bescom_tracker", "claim_ind_exceptions_bescom_case_outcome_unknown"], "status": "unknown"}
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind_exceptions_authentication",
+      "title": "Exception fields are behind customer authentication",
+      "category": "process",
+      "symptom": "The standard route requires BESCOM customer login with User ID, password and image CAPTCHA; the direct unauthenticated JVS name-change URL exposes no form.",
+      "likelyCause": "Account-specific name-transfer fields and any exception branching are not publicly rendered before authentication.",
+      "recovery": "Confirm the current authorised exception route with BESCOM; do not enter credentials, account identifiers or CAPTCHA in this pass.",
+      "ownerAgencyIds": ["agency_bescom_ind_exceptions_workflow"],
+      "nodeIds": ["node_name_transfer", "node_transfer_evidence"],
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind_exceptions_bescom_login_boundary", "claim_ind_exceptions_bescom_jvs_blank", "claim_ind_exceptions_bescom_current_exception_unknown"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind_exceptions_case_rules",
+      "title": "Current tenant, successor and no-consent rules are unexposed",
+      "category": "documentation",
+      "symptom": "Public BESCOM pages describe a generic name-change document stage but do not identify exception-specific evidence, deposit, arrears or consent-substitute rules.",
+      "likelyCause": "The FAQ is a standard route description and the authenticated form/exception fields were not publicly visible.",
+      "recovery": "Obtain a current case-specific written/document list from an authorised BESCOM channel before preparing or uploading evidence.",
+      "ownerAgencyIds": ["agency_bescom_ind_exceptions_workflow"],
+      "nodeIds": ["node_transfer_evidence", "node_transfer_obligations", "node_name_transfer"],
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind_exceptions_bescom_standard_route", "claim_ind_exceptions_bescom_current_exception_unknown"],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind_exceptions_no_case_result",
+      "title": "No request ID or exception outcome exists",
+      "category": "process",
+      "symptom": "No name-transfer request, SMS Request ID, complaint query, document decision, payment, approval or updated bill name was produced.",
+      "likelyCause": "Those states require authenticated account data and a real submission or authorised office processing.",
+      "recovery": "After any authorised submission, retain the SMS Request ID and use the official tracker; treat the billing complaint tracker only as an unconfirmed general lead.",
+      "ownerAgencyIds": ["agency_bescom_ind_exceptions_workflow"],
+      "nodeIds": ["node_name_transfer", "node_request_tracking"],
+      "scenarioIds": ["scenario_tenant", "scenario_previous_consumer_deceased", "scenario_consent_unavailable"],
+      "claimIds": ["claim_ind_exceptions_bescom_tracker", "claim_ind_exceptions_bescom_complaint_recovery_lead", "claim_ind_exceptions_bescom_case_outcome_unknown"],
+      "status": "unknown"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_ind_exceptions_tenant",
+      "title": "Tenant or occupier — public workflow boundary",
+      "scenarioId": "scenario_tenant",
+      "context": "Trace only the unauthenticated public BESCOM route for an occupier seeking a name change; do not infer current eligibility from historic rules.",
+      "steps": [
+        {"id": "step_ind_exceptions_tenant_evidence", "label": "Preserve tenant evidence boundary", "nodeId": "node_transfer_evidence", "action": "Read the current FAQ's generic document-upload stage; do not enter occupancy facts or upload documents.", "expectedResult": "No tenant-specific proof or consent substitute is identified.", "claimIds": ["claim_ind_exceptions_bescom_standard_route", "claim_ind_exceptions_bescom_current_exception_unknown"], "status": "unknown"},
+        {"id": "step_ind_exceptions_tenant_obligations", "label": "Preserve obligation boundary", "nodeId": "node_transfer_obligations", "action": "Check current public pages for tenant-specific arrears, deposit, agreement and fee treatment; do not request a demand.", "expectedResult": "Current tenant obligations remain Unknown; generic payment wording is not treated as an exception rule.", "claimIds": ["claim_ind_exceptions_bescom_current_exception_unknown"], "status": "unknown"},
+        {"id": "step_ind_exceptions_tenant_entry", "label": "Observe authenticated entry stop", "nodeId": "node_name_transfer", "action": "Read the public FAQ, login shell and direct JVS URL without entering credentials or account data.", "expectedResult": "Standard route and login boundary are visible; direct JVS form and tenant branch remain unobserved.", "claimIds": ["claim_ind_exceptions_bescom_standard_route", "claim_ind_exceptions_bescom_login_boundary", "claim_ind_exceptions_bescom_jvs_blank", "claim_ind_exceptions_bescom_current_exception_unknown"], "status": "partial"},
+        {"id": "step_ind_exceptions_tenant_tracking", "label": "Preserve tracking boundary", "nodeId": "node_request_tracking", "action": "Inspect the public name-change tracker without supplying an SMS Request ID.", "expectedResult": "No request status or tenant outcome is available.", "claimIds": ["claim_ind_exceptions_bescom_tracker", "claim_ind_exceptions_bescom_case_outcome_unknown"], "status": "unknown"}
+      ],
+      "dependencies": [{"id": "dep_ind_exceptions_tenant_rules", "fromNodeId": "node_transfer_evidence", "toNodeId": "node_transfer_obligations", "description": "Current accepted occupancy evidence would need to be known before current obligations can be confirmed.", "claimIds": ["claim_ind_exceptions_bescom_current_exception_unknown"], "status": "unknown"}],
+      "failureRoadblockIds": ["roadblock_ind_exceptions_authentication", "roadblock_ind_exceptions_case_rules", "roadblock_ind_exceptions_no_case_result"],
+      "recoveryNotes": ["Confirm current tenant eligibility, evidence and obligations through an authorised BESCOM channel.", "No login, account ID, upload, payment, submission or tracker query was made."],
+      "documentationQualityNotes": ["The current FAQ is a generic authenticated route, not a tenant checklist.", "Direct JVS render and public trackers do not establish exception acceptance or outcome."],
+      "status": "partial"
+    },
+    {
+      "id": "journey_ind_exceptions_deceased",
+      "title": "Previous consumer deceased — public workflow boundary",
+      "scenarioId": "scenario_previous_consumer_deceased",
+      "context": "Trace only current public BESCOM pages for a successor after the prior consumer's death; no death or succession information is entered.",
+      "steps": [
+        {"id": "step_ind_exceptions_deceased_evidence", "label": "Preserve successor evidence boundary", "nodeId": "node_transfer_evidence", "action": "Read the generic current document stage without selecting a successor branch or uploading a death/succession document.", "expectedResult": "No current successor checklist or substitute-consent rule is exposed.", "claimIds": ["claim_ind_exceptions_bescom_standard_route", "claim_ind_exceptions_bescom_current_exception_unknown"], "status": "unknown"},
+        {"id": "step_ind_exceptions_deceased_obligations", "label": "Preserve deceased-case obligation boundary", "nodeId": "node_transfer_obligations", "action": "Search the current public FAQ and entry pages for deceased-consumer arrears, deposit, indemnity or fee treatment; do not request a demand.", "expectedResult": "Current deceased-case obligations remain Unknown.", "claimIds": ["claim_ind_exceptions_bescom_current_exception_unknown"], "status": "unknown"},
+        {"id": "step_ind_exceptions_deceased_entry", "label": "Observe authenticated entry stop", "nodeId": "node_name_transfer", "action": "Inspect public login, FAQ and direct JVS name-change URL without login or account data.", "expectedResult": "Generic Name Change/Change of Ownership route is documented, but no deceased-consumer branch is visible.", "claimIds": ["claim_ind_exceptions_bescom_standard_route", "claim_ind_exceptions_bescom_login_boundary", "claim_ind_exceptions_bescom_jvs_blank", "claim_ind_exceptions_bescom_current_exception_unknown"], "status": "partial"},
+        {"id": "step_ind_exceptions_deceased_tracking", "label": "Preserve tracking boundary", "nodeId": "node_request_tracking", "action": "Inspect Track Name Change without entering a Request ID.", "expectedResult": "No successor request or status exists.", "claimIds": ["claim_ind_exceptions_bescom_tracker", "claim_ind_exceptions_bescom_case_outcome_unknown"], "status": "unknown"}
+      ],
+      "dependencies": [{"id": "dep_ind_exceptions_deceased_rules", "fromNodeId": "node_transfer_evidence", "toNodeId": "node_transfer_obligations", "description": "Successor evidence does not establish current arrears/deposit treatment without a current public rule.", "claimIds": ["claim_ind_exceptions_bescom_current_exception_unknown"], "status": "unknown"}],
+      "failureRoadblockIds": ["roadblock_ind_exceptions_authentication", "roadblock_ind_exceptions_case_rules", "roadblock_ind_exceptions_no_case_result"],
+      "recoveryNotes": ["Confirm current successor evidence and obligation treatment through an authorised BESCOM channel.", "No death details, identity, login, upload, payment, submission or tracker query was made."],
+      "documentationQualityNotes": ["Current public pages do not expose a deceased-consumer checklist or approval path.", "Historic succession language in the canonical ledger is preserved as non-current context, not used as a live instruction."],
+      "status": "partial"
+    },
+    {
+      "id": "journey_ind_exceptions_consent",
+      "title": "Consent unavailable — public workflow boundary",
+      "scenarioId": "scenario_consent_unavailable",
+      "context": "Trace current public BESCOM pages where the prior consumer cannot or will not consent; do not manufacture consent or submit substitute evidence.",
+      "steps": [
+        {"id": "step_ind_exceptions_consent_evidence", "label": "Preserve consent-substitute boundary", "nodeId": "node_transfer_evidence", "action": "Read the generic current document stage without entering a consent status or uploading ownership evidence.", "expectedResult": "No current substitute-consent document rule is exposed.", "claimIds": ["claim_ind_exceptions_bescom_standard_route", "claim_ind_exceptions_bescom_current_exception_unknown"], "status": "unknown"},
+        {"id": "step_ind_exceptions_consent_obligations", "label": "Preserve deposit and arrears boundary", "nodeId": "node_transfer_obligations", "action": "Search current public pages for no-consent deposit, arrears, indemnity and agreement treatment; do not request payment details.", "expectedResult": "Current no-consent obligations remain Unknown.", "claimIds": ["claim_ind_exceptions_bescom_current_exception_unknown"], "status": "unknown"},
+        {"id": "step_ind_exceptions_consent_entry", "label": "Observe authenticated entry stop", "nodeId": "node_name_transfer", "action": "Inspect the FAQ, login shell, direct JVS URL and maintenance page without login, CAPTCHA, upload or submission.", "expectedResult": "Generic route, authentication boundary and possible maintenance failure are visible; no no-consent branch is visible.", "claimIds": ["claim_ind_exceptions_bescom_standard_route", "claim_ind_exceptions_bescom_login_boundary", "claim_ind_exceptions_bescom_jvs_blank", "claim_ind_exceptions_bescom_maintenance_failure", "claim_ind_exceptions_bescom_current_exception_unknown"], "status": "partial"},
+        {"id": "step_ind_exceptions_consent_tracking", "label": "Preserve tracking and recovery boundary", "nodeId": "node_request_tracking", "action": "Inspect name-change and billing-related complaint trackers without supplying identifiers or creating a complaint.", "expectedResult": "No no-consent request, status or confirmed recovery route is established.", "claimIds": ["claim_ind_exceptions_bescom_tracker", "claim_ind_exceptions_bescom_complaint_recovery_lead", "claim_ind_exceptions_bescom_case_outcome_unknown"], "status": "unknown"}
+      ],
+      "dependencies": [{"id": "dep_ind_exceptions_consent_rules", "fromNodeId": "node_transfer_evidence", "toNodeId": "node_transfer_obligations", "description": "Any current substitute-consent evidence and its obligations would need confirmation before submission.", "claimIds": ["claim_ind_exceptions_bescom_current_exception_unknown"], "status": "unknown"}],
+      "failureRoadblockIds": ["roadblock_ind_exceptions_authentication", "roadblock_ind_exceptions_case_rules", "roadblock_ind_exceptions_no_case_result"],
+      "recoveryNotes": ["Do not manufacture consent or rely on historic amounts; confirm a current authorised exception route and any complaint handoff.", "No login, account ID, CAPTCHA, upload, payment, submission or tracker query was made."],
+      "documentationQualityNotes": ["The public standard route does not expose a no-consent alternative.", "Billing complaint tracking is a general lead only and is not confirmed as a name-transfer exception recovery."],
+      "status": "partial"
+    }
+  ]
+}

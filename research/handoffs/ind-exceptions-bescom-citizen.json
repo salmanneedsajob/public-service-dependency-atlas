@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "BESCOM exception scenarios — citizen-evidence pass",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-31",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice or an application route. Redacted public first-person reports identify case-specific friction only; they do not establish BESCOM eligibility, tenant authority, consent or OTP requirements, arrears liability, deceased-consumer procedure, or a remedy."
+  },
+  "agencies": [],
+  "scenarios": [
+    {
+      "id": "scenario_indexceptions_bescom_tenant",
+      "label": "Tenant",
+      "summary": "A tenant faces a BESCOM account issue while the property owner is unavailable or uncooperative.",
+      "tags": ["bescom", "citizen-evidence", "tenant", "exception"],
+      "pathNodeIds": ["node_transfer_evidence", "node_transfer_obligations", "node_name_transfer"],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_indexceptions_bescom_previous_consumer_deceased",
+      "label": "Previous consumer deceased",
+      "summary": "A successor seeks a name transfer where the recorded consumer has died.",
+      "tags": ["bescom", "citizen-evidence", "deceased-consumer", "exception"],
+      "pathNodeIds": ["node_transfer_evidence", "node_transfer_obligations", "node_name_transfer"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_indexceptions_bescom_consent_unavailable",
+      "label": "Consent unavailable",
+      "summary": "A prospective transferee cannot use the previous consumer's or builder's recorded contact route.",
+      "tags": ["bescom", "citizen-evidence", "consent", "otp", "exception"],
+      "pathNodeIds": ["node_transfer_evidence", "node_name_transfer"],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_indexceptions_bescom_transfer_thread_2026",
+      "title": "BESCOM connection transfer is now 100% online and faceless",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1sw3ttu/bescom_connection_transfer_is_now_100_online_and/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2026-04-26",
+      "type": "citizen_evidence",
+      "notes": "Public thread containing individual first-person comments about a name-transfer interface. Usernames, property/account identifiers, builder and previous-consumer identity, telephone details, payment amounts, and addresses are omitted. Comments and the original post are not treated as provider policy."
+    },
+    {
+      "id": "source_indexceptions_bescom_tenant_owner_cooperation_report",
+      "title": "Stuck in Electricity Billing Issue Between Flat Owner and BESCOM, Seeking Advice.",
+      "publisher": "r/LegalAdviceIndia (Reddit)",
+      "url": "https://www.reddit.com/r/LegalAdviceIndia/comments/1pki7bl/stuck_in_electricity_billing_issue_between_flat/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2025-12-12",
+      "type": "citizen_evidence",
+      "notes": "Public first-person tenant account. Exact bill amount, dates, location, meter history, tenant duration, owner/caretaker details, messages, and other identifying facts are omitted. It concerns billing and owner cooperation, not a reported completed or refused name-transfer application."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_indexceptions_bescom_tenant_owner_cooperation_block_reported",
+      "text": "One tenant reported that an electricity bill included charges attributed to a period before their tenancy and that the property owner was uncooperative, leaving the tenant concerned about the account's unpaid balance.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_indexceptions_bescom_tenant"],
+      "nodeIds": ["node_transfer_obligations", "node_name_transfer"],
+      "sourceIds": ["source_indexceptions_bescom_tenant_owner_cooperation_report"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One tenant's 2025 account. It does not establish who is legally liable, that arrears block a name transfer, tenant authority to transfer the service, a billing error, or a BESCOM response."
+    },
+    {
+      "id": "claim_indexceptions_bescom_previous_contact_otp_block_reported",
+      "text": "One prospective name-transfer user reported being unable to check progress because the one-time password was sent to the previous owner's phone number.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_indexceptions_bescom_consent_unavailable"],
+      "nodeIds": ["node_transfer_evidence", "node_name_transfer"],
+      "sourceIds": ["source_indexceptions_bescom_transfer_thread_2026"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One 2026 report of a previous-contact dependency. It does not establish that an OTP is generally required, that it functions as legal consent, that the previous owner was unavailable, or the current correction path."
+    },
+    {
+      "id": "claim_indexceptions_bescom_builder_contact_login_block_reported",
+      "text": "One person who said their e-Khata had been completed reported that the BESCOM name-change login appeared to require a phone/OTP associated with the builder's contact and asked how to proceed without an offline route.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_indexceptions_bescom_consent_unavailable"],
+      "nodeIds": ["node_transfer_evidence", "node_name_transfer"],
+      "sourceIds": ["source_indexceptions_bescom_transfer_thread_2026"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One 2026 account of a perceived login/contact obstacle. It does not prove the builder's contact was the only possible credential, a builder consent requirement, an e-Khata effect, or a current BESCOM rule."
+    },
+    {
+      "id": "claim_indexceptions_bescom_deceased_consumer_citizen_evidence_gap",
+      "text": "This bounded pass did not identify a sufficiently specific public first-person Bengaluru account of a BESCOM name-transfer attempt after the recorded consumer's death.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_indexceptions_bescom_previous_consumer_deceased"],
+      "nodeIds": ["node_transfer_evidence", "node_transfer_obligations", "node_name_transfer"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Searches were restricted to public first-person evidence. General guides, legal reporting, provider material, and non-Bengaluru accounts were excluded; this is not evidence that the route succeeds or fails."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_indexceptions_bescom_tenant_owner_cooperation",
+      "title": "Reported tenant reliance on an uncooperative owner for an account issue",
+      "category": "process",
+      "symptom": "One tenant reported pre-tenancy charges on the current bill and could not obtain cooperation from the property owner while concerned about an unpaid account balance.",
+      "likelyCause": "Unknown; the account does not establish billing liability, account ownership, arrears status, a transfer request, or who could act for the service.",
+      "recovery": "Obtain current written account and transfer guidance from BESCOM and retain tenancy/payment records; do not infer tenant authority or arrears liability from the citizen account.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_transfer_obligations", "node_name_transfer"],
+      "scenarioIds": ["scenario_indexceptions_bescom_tenant"],
+      "claimIds": ["claim_indexceptions_bescom_tenant_owner_cooperation_block_reported"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_indexceptions_bescom_previous_contact_credential",
+      "title": "Reported prior-contact credential obstacle",
+      "category": "infrastructure",
+      "symptom": "Two citizens reported that a name-transfer login or status check appeared to depend on a previous owner's or builder's recorded phone/OTP route.",
+      "likelyCause": "Unknown; the accounts do not establish the authentication rule, record state, identity verification, consent status, or an available contact-update path.",
+      "recovery": "Use BESCOM's current authorised support and account-correction route for the specific service; do not request, share, or use another person's OTP or treat it as consent.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_transfer_evidence", "node_name_transfer"],
+      "scenarioIds": ["scenario_indexceptions_bescom_consent_unavailable"],
+      "claimIds": ["claim_indexceptions_bescom_previous_contact_otp_block_reported", "claim_indexceptions_bescom_builder_contact_login_block_reported"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_indexceptions_bescom_deceased_consumer_evidence_gap",
+      "title": "No retained citizen account for a deceased-consumer transfer",
+      "category": "documentation",
+      "symptom": "Citizen evidence in this pass does not substantiate a lived BESCOM transfer route after the recorded consumer's death.",
+      "likelyCause": "Unknown; absence of a usable public account is not evidence about the underlying procedure or its outcome.",
+      "recovery": "Use current official and public-workflow sources for case-specific guidance; add a redacted public first-person account only if one is later found.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_transfer_evidence", "node_transfer_obligations", "node_name_transfer"],
+      "scenarioIds": ["scenario_indexceptions_bescom_previous_consumer_deceased"],
+      "claimIds": ["claim_indexceptions_bescom_deceased_consumer_citizen_evidence_gap"],
+      "status": "unknown"
+    }
+  ],
+  "journeys": []
+}

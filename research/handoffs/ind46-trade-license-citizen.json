@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru trade licence — citizen-evidence pass",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-30",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice or a licence application. Citizen accounts are limited, redacted and do not establish eligibility, requirements or outcomes."
+  },
+  "agencies": [],
+  "scenarios": [
+    {
+      "id": "scenario_trade_w_new",
+      "label": "New trade licence workflow",
+      "summary": "Read the public new-registration, documents, OTP/payment and dated inspection/review sequence.",
+      "tags": ["trade-license", "new"],
+      "pathNodeIds": ["node_trade_w_entry", "node_trade_w_docs", "node_trade_w_payment", "node_trade_w_review", "node_trade_w_issue"],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind46_trade_online_only_uncertainty",
+      "title": "Trade License",
+      "publisher": "r/StartUpIndia (Reddit)",
+      "url": "https://www.reddit.com/r/StartUpIndia/comments/1p2nf9v/trade_license/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2025-11-21",
+      "type": "citizen_evidence",
+      "notes": "Public first-person post by a Bengaluru online-only startup founder. Username, company and virtual-office details are intentionally omitted. Replies were not treated as evidence of legal or municipal requirements."
+    },
+    {
+      "id": "source_ind46_trade_rental_agreement_gap",
+      "title": "Need Advise",
+      "publisher": "r/IndiaBusiness (Reddit)",
+      "url": "https://www.reddit.com/r/IndiaBusiness/comments/1qsmv9q/need_advise/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2026-02-01",
+      "type": "citizen_evidence",
+      "notes": "Public first-person post by a person planning a Bengaluru food business. Username, landlord, premises and document details beyond the reported rental-agreement issue are intentionally omitted."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind46_trade_online_only_eligibility_uncertain",
+      "text": "A person describing an online-only Bengaluru startup with a virtual office and no physical operations reported receiving conflicting online and chartered-accountant advice about whether a BBMP trade licence was required.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_trade_w_new"],
+      "nodeIds": ["node_trade_w_entry"],
+      "sourceIds": ["source_ind46_trade_online_only_uncertainty"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This records one person's report of conflicting advice, not the applicability of a trade licence to online businesses."
+    },
+    {
+      "id": "claim_ind46_trade_rental_agreement_unavailable",
+      "text": "A person planning a Bengaluru street-food or snacks business reported that their owner did not renew the rental agreement.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_trade_w_new"],
+      "nodeIds": ["node_trade_w_docs"],
+      "sourceIds": ["source_ind46_trade_rental_agreement_gap"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The account does not establish whether a current rental agreement is required, accepted alternatives, or an application outcome."
+    },
+    {
+      "id": "claim_ind46_trade_applicant_fears_delay_rejection",
+      "text": "The same prospective food-business applicant said they were considering an agent because they believed applying without one could lead to delay or rejection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_trade_w_new"],
+      "nodeIds": ["node_trade_w_entry", "node_trade_w_docs"],
+      "sourceIds": ["source_ind46_trade_rental_agreement_gap"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is a prospective applicant's concern, not evidence that delay, rejection or agent use occurs."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind46_trade_online_only_eligibility_uncertainty",
+      "title": "Online-only business eligibility is unclear to one prospective applicant",
+      "category": "documentation",
+      "symptom": "One prospective applicant could not reconcile advice about whether a virtual-office, online-only Bengaluru business needed a BBMP trade licence.",
+      "likelyCause": "Unknown; the citizen account reports conflicting advice but does not identify the governing rule or current municipal interpretation.",
+      "recovery": "Confirm the current city-corporation route and the business's eligibility directly with the responsible municipal authority or qualified adviser; do not rely on forum replies.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_trade_w_entry"],
+      "scenarioIds": ["scenario_trade_w_new"],
+      "claimIds": ["claim_ind46_trade_online_only_eligibility_uncertain"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind46_trade_premises_agreement_gap",
+      "title": "Prospective applicant lacked a renewed rental agreement",
+      "category": "documentation",
+      "symptom": "One prospective applicant reported that the owner had not renewed the rental agreement.",
+      "likelyCause": "Unknown; the account does not show a municipal validation result or whether another premises document would work.",
+      "recovery": "Check the current official document checklist and obtain written clarification before submitting; do not infer that an agent can cure a missing or expired document.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_trade_w_docs"],
+      "scenarioIds": ["scenario_trade_w_new"],
+      "claimIds": ["claim_ind46_trade_rental_agreement_unavailable", "claim_ind46_trade_applicant_fears_delay_rejection"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

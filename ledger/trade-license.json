@@ -3,7 +3,7 @@
     "schemaVersion": "1.0.0",
     "title": "Bengaluru trade licence evidence ledger",
     "jurisdiction": "Bengaluru, Karnataka, India",
-    "asOf": "2026-08-28",
+    "asOf": "2026-08-30",
     "dataKind": "research",
     "disclaimer": "Independent research, not official advice. Public sources and known gaps are shown together; do not submit personal data through this ledger."
   },
@@ -54,7 +54,7 @@
     {
       "id": "scenario_trade_w_renewal",
       "label": "Renewal workflow",
-      "summary": "Read public renewal lead using a prior application number and payment path.",
+      "summary": "A public renewal label exists, but no current public renewal procedure, prior-application requirement or payment path was verified.",
       "tags": [
         "trade-license",
         "renewal"
@@ -64,7 +64,7 @@
         "node_trade_w_payment",
         "node_trade_w_issue"
       ],
-      "status": "partial"
+      "status": "unknown"
     }
   ],
   "sources": [
@@ -148,6 +148,107 @@
       "accessedAt": "2026-08-28",
       "type": "official_guidance",
       "notes": "Public FAQ; date/transition caveat. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail. This is a general-site reference, not claim-specific evidence. A more specific public document or endpoint was not verified on 2026-08-29; wording that depends only on this source is retained at Grade C or Unknown."
+    },
+    {
+      "id": "source_ind46_trade_citizen_service",
+      "title": "BBMP Citizen Services — Trade License",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/citizenservice.html",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "The public Trade License section exposes separate links for how to get a new or renewal licence, public new registration, public renewal, MOH contact/address details, and the FAQ. The page is a directory; it does not establish a current case result or current GBA target."
+    },
+    {
+      "id": "source_ind46_trade_new_payment_pdf",
+      "title": "Online New Trade License Registration — public payment guide",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/PDF/trade%20license/NewTrade_Payment.pdf",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Direct public PDF. It describes mandatory fields, Next, owner-consent/lease and electricity-bill uploads, Send OTP/enter OTP, years selection and payment. No field, OTP, upload or payment was used."
+    },
+    {
+      "id": "source_ind46_trade_faq",
+      "title": "FAQ — Trade License",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/tradelicensefaq.html",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Direct public FAQ, with legacy/date caveat. It states 1–5-year selection, owner-consent/lease and electricity bill, optional OC, JPG/PDF and maximum 1 MB, no part-payment, and receipt/status/download features. Treat current implementation as unverified."
+    },
+    {
+      "id": "source_ind46_trade_annexure_g",
+      "title": "Annexure G — Procedure for Applying for New Trade Licence",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://dl.bbmp.gov.in/download/tradelic/Annexure-G.pdf",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Direct official procedure PDF. It lists owner consent and latest property-tax receipt, Zone A neighbour consent, layout plan, licence/power demand drafts, rejection with endorsement when requirements are missing, and inspection scheduling within a maximum of 3 working days. The document is dated/legacy and is not proof of the current GBA implementation."
+    },
+    {
+      "id": "source_ind46_trade_annexure_f",
+      "title": "Annexure F — Application for Trade New Licence",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://dl.bbmp.gov.in/download/howtrade/appln%204%20new%20tl_annex-f.pdf",
+      "accessedAt": "2026-08-30",
+      "type": "official_form",
+      "notes": "Direct official application form. It exposes Schedule X classification, health-officer jurisdiction, zonal classification, document checks, separate licence/power drafts, refusal-refund wording, and suspension/cancellation caveats. It is dated/legacy. No form was completed."
+    },
+    {
+      "id": "source_ind46_trade_form_b",
+      "title": "Form B — Format of Owner’s Consent",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://dl.bbmp.gov.in/download/tradelic/Form-B.pdf",
+      "accessedAt": "2026-08-30",
+      "type": "official_form",
+      "notes": "Direct official owner-consent form. It requests the property number/address, latest property-tax receipt or other title document, proposed trade and zone, and records that the Corporation may issue, suspend, withdraw or cancel a licence. No personal data was entered."
+    },
+    {
+      "id": "source_ind46_trade_otls",
+      "title": "Online Trade License System (OTLS) — workflow description",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike IT Department",
+      "url": "https://site.bbmp.gov.in/departmentwebsites/BBMPIT/OTLS.html",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Direct official IT description, published 2019 and therefore dated. It describes temporary application/payment challan, online/offline payment, inspection/document verification, staged MoH/DHO/HO review, final approval and status/license output."
+    },
+    {
+      "id": "source_ind46_trade_contact",
+      "title": "Trade License Contact — zonal Health Officer and technical contacts",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/tradelicensecontact.html",
+      "accessedAt": "2026-08-30",
+      "type": "official_guidance",
+      "notes": "Direct public contact page. It gives zone-wise Health Officer contacts, hours, Sahaaya 2.0 and a BBMP IT technical contact. The page is legacy/dated; use as a recovery lead, not as proof that every listed contact remains current."
+    },
+    {
+      "id": "source_ind46_kmc_act",
+      "title": "Karnataka Municipal Corporations Act, 1976",
+      "publisher": "Government of India / India Code",
+      "url": "https://www.indiacode.nic.in/handle/123456789/8129",
+      "accessedAt": "2026-08-30",
+      "type": "law",
+      "notes": "Official India Code Act record. Section 353 is the statutory licence basis for Schedule X purposes; the Act record does not determine a supplied trade’s current GBA category, fee, ward or exemption."
+    },
+    {
+      "id": "source_ind46_trade_online_only_uncertainty",
+      "title": "Trade License",
+      "publisher": "r/StartUpIndia (Reddit)",
+      "url": "https://www.reddit.com/r/StartUpIndia/comments/1p2nf9v/trade_license/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2025-11-21",
+      "type": "citizen_evidence",
+      "notes": "Public first-person post by a Bengaluru online-only startup founder. Username, company and virtual-office details are intentionally omitted. Replies were not treated as evidence of legal or municipal requirements."
+    },
+    {
+      "id": "source_ind46_trade_rental_agreement_gap",
+      "title": "Need Advise",
+      "publisher": "r/IndiaBusiness (Reddit)",
+      "url": "https://www.reddit.com/r/IndiaBusiness/comments/1qsmv9q/need_advise/",
+      "accessedAt": "2026-08-30",
+      "publishedAt": "2026-02-01",
+      "type": "citizen_evidence",
+      "notes": "Public first-person post by a person planning a Bengaluru food business. Username, landlord, premises and document details beyond the reported rental-agreement issue are intentionally omitted."
     }
   ],
   "claims": [
@@ -168,7 +269,7 @@
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Category and exemption applicability require case-specific legal/current municipal review. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "Category and exemption applicability require case-specific legal/current municipal review. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
     },
     {
       "id": "claim_trade_public_listing",
@@ -210,7 +311,7 @@
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Guide is a public workflow document; no field, OTP, upload or payment was used. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "Guide is a public workflow document; no field, OTP, upload or payment was used. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
     },
     {
       "id": "claim_trade_faq_docs_years",
@@ -231,7 +332,7 @@
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "FAQ is legacy/dated; current category-specific checklist and file validation are unknown. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "FAQ is legacy/dated; current category-specific checklist and file validation are unknown. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
     },
     {
       "id": "claim_trade_otls_flow",
@@ -254,7 +355,7 @@
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "IT description is dated 2019 and should not be treated as a current GBA service-level promise. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "IT description is dated 2019 and should not be treated as a current GBA service-level promise. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
     },
     {
       "id": "claim_trade_unknown_case",
@@ -317,7 +418,7 @@
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "No fields, OTP, document or payment were entered. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "No fields, OTP, document or payment were entered. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
     },
     {
       "id": "claim_trade_w_docs",
@@ -338,7 +439,7 @@
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "FAQ is legacy/dated; do not treat as a current universal checklist. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "FAQ is legacy/dated; do not treat as a current universal checklist. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
     },
     {
       "id": "claim_trade_w_otls",
@@ -360,7 +461,7 @@
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "2019 IT description; current GBA workflow and timelines remain unverified. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure."
+      "notes": "2019 IT description; current GBA workflow and timelines remain unverified. The original official endpoint is currently unavailable; this claim is retained as incomplete historical/public evidence, not a current complete procedure. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
     },
     {
       "id": "claim_trade_w_unknown",
@@ -403,6 +504,442 @@
       "status": "unknown",
       "contradictsClaimIds": [],
       "notes": "Only public, first-person evidence was in scope. Consultant pages, generic forum assertions and reporting without a usable first-person account were excluded."
+    },
+    {
+      "id": "claim_ind46_trade_service_directory",
+      "text": "The BBMP public citizen-service directory exposes separate Trade License links for new/renewal instructions, public new registration, public renewal, MOH contacts and the trade-licence FAQ.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new",
+        "scenario_trade_w_renewal"
+      ],
+      "nodeIds": [
+        "node_trade_w_entry"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_citizen_service"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is a public directory lead; it does not prove the current city-corporation target, category eligibility or a case result."
+    },
+    {
+      "id": "claim_ind46_trade_new_sequence",
+      "text": "The public new-registration guide sequences mandatory fields, Next, owner-consent/lease and electricity-bill uploads, OTP send/entry, years selection and payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "nodeIds": [
+        "node_trade_w_entry",
+        "node_trade_w_docs",
+        "node_trade_w_payment"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_new_payment_pdf"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published sequence only; no OTP, upload, payment or submission was performed. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
+    },
+    {
+      "id": "claim_ind46_trade_faq_documents",
+      "text": "The public FAQ lists owner-consent/lease, electricity bill and optional occupancy certificate for a new trade, accepts JPG/PDF with a stated maximum 1 MB file size, and allows 1–5 years for new and renewal applications.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new",
+        "scenario_trade_w_renewal"
+      ],
+      "nodeIds": [
+        "node_trade_w_docs",
+        "node_trade_w_payment"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_faq"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The page is legacy/dated; current category-specific requirements and upload validation remain unknown. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
+    },
+    {
+      "id": "claim_ind46_trade_faq_payment_features",
+      "text": "The public FAQ says part-payment is not allowed and lists receipt reprint, online-payment acknowledgement, renewal-certificate download and application-status features.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new",
+        "scenario_trade_w_renewal"
+      ],
+      "nodeIds": [
+        "node_trade_w_payment",
+        "node_trade_w_issue"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_faq"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ does not establish current gateway behavior, fee amount, receipt generation or status result for a particular case. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
+    },
+    {
+      "id": "claim_ind46_trade_form_classification",
+      "text": "The official new-licence form asks for the proposed trade, Schedule X part and trade classification, jurisdiction of the Health Officer, zonal classification and licence fee details.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "nodeIds": [
+        "node_trade_jurisdiction",
+        "node_trade_w_entry",
+        "node_trade_w_docs"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_annexure_f"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The form is an official public artefact but dated; it does not decide a supplied trade’s current classification or fee."
+    },
+    {
+      "id": "claim_ind46_trade_annexure_requirements",
+      "text": "The official procedure lists owner consent with the latest property-tax receipt, neighbour consent for a Zone A trade, a layout plan subject to its stated size/trade exception, and licence/power demand drafts as new-licence filing requirements.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "nodeIds": [
+        "node_trade_w_docs",
+        "node_trade_w_payment"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_annexure_g",
+        "source_ind46_trade_form_b"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "These are dated public document leads; confirm the current GBA corporation checklist before treating them as requirements. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
+    },
+    {
+      "id": "claim_ind46_trade_missing_requirements_rejection",
+      "text": "The official new-licence procedure says that if the filing lacks the requirements listed at serial numbers 4–8, the application will be rejected and an endorsement will be issued.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "nodeIds": [
+        "node_trade_w_docs",
+        "node_trade_w_review",
+        "node_trade_w_issue"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_annexure_g"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The document states rejection/endorsement but does not publish a current GBA resubmission or appeal mechanism."
+    },
+    {
+      "id": "claim_ind46_trade_inspection_timing",
+      "text": "The official procedure says an authorised officer sets the inspection date on the filing date and the maximum time set for inspection is within 3 working days, using a compliance checklist.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "nodeIds": [
+        "node_trade_w_review"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_annexure_g"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is a dated procedure statement, not a current GBA service-level promise; no inspection was requested or observed. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
+    },
+    {
+      "id": "claim_ind46_trade_refusal_refund_controls",
+      "text": "The official application form says that if the licence is refused, the licence and power fees paid will be refunded, and warns that a licence does not regularise unauthorised construction or building-bye-law violations and may be suspended or cancelled for violations or defective information.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "nodeIds": [
+        "node_trade_w_review",
+        "node_trade_w_issue"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_annexure_f"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The form is dated and does not establish current refund processing, review rights or current GBA enforcement practice. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
+    },
+    {
+      "id": "claim_ind46_trade_otls_payment_review",
+      "text": "The official OTLS description says a new case receives a temporary application number/payment challan, may use online or offline payment, and proceeds through site inspection/document verification and staged MoH, DHO and HO review before final approval.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new",
+        "scenario_trade_w_renewal"
+      ],
+      "nodeIds": [
+        "node_trade_w_payment",
+        "node_trade_w_review"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_otls"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The IT description is from 2019; it is a historical public workflow lead, not proof of current GBA routing or timing. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
+    },
+    {
+      "id": "claim_ind46_trade_otls_output",
+      "text": "The official OTLS description says an approved licence can be downloaded online or issued by a case worker/MoH and that application status can be checked online.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new",
+        "scenario_trade_w_renewal"
+      ],
+      "nodeIds": [
+        "node_trade_w_issue"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_otls"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No status lookup, approval, download or issued licence was observed. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
+    },
+    {
+      "id": "claim_ind46_trade_contact_recovery_leads",
+      "text": "The public Trade License contact page provides zone-wise Health Officer contacts, published office hours, a Sahaaya 2.0 lead and a BBMP IT technical-contact lead for fee or technical enquiries.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new",
+        "scenario_trade_w_renewal"
+      ],
+      "nodeIds": [
+        "node_trade_w_entry",
+        "node_trade_w_payment",
+        "node_trade_w_review"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_contact"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The page is legacy/dated; contact availability and current corporation ownership require confirmation. No contact was made. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome. Historical or inaccessible public guidance only; it is not evidence of a current live route, eligibility, fee, validation, inspection or outcome."
+    },
+    {
+      "id": "claim_ind46_trade_act_353_basis",
+      "text": "Section 353 of the Karnataka Municipal Corporations Act is the statutory starting point for a licence for purposes listed in Schedule X within city limits, subject to the Act’s provisos and amendments.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "nodeIds": [
+        "node_trade_jurisdiction"
+      ],
+      "sourceIds": [
+        "source_ind46_kmc_act"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The Act supplies the legal basis, not a current category, fee, ward/MOH assignment or exemption decision for a supplied trade."
+    },
+    {
+      "id": "claim_ind46_trade_login_boundary",
+      "text": "No authenticated session, OTP, applicant identifier, document upload, payment, application submission, status lookup or licence download was performed in this official-source pass; those case states remain Unknown.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new",
+        "scenario_trade_w_renewal"
+      ],
+      "nodeIds": [
+        "node_trade_w_payment",
+        "node_trade_w_review",
+        "node_trade_w_issue"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "This is a research boundary, not evidence that the authenticated workflow succeeds or fails."
+    },
+    {
+      "id": "claim_ind46_faq_route_refused",
+      "text": "The legacy public Trade License FAQ route `https://site.bbmp.gov.in/tradelicensefaq.html` returned a browser error stating `This site can’t be reached`, `site.bbmp.gov.in refused to connect`, and `ERR_CONNECTION_REFUSED`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "nodeIds": [
+        "node_trade_w_entry"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct unauthenticated navigation on 2026-08-30. The visible Reload control was not activated."
+    },
+    {
+      "id": "claim_ind46_manual_route_refused",
+      "text": "The legacy public new-registration guide route `https://site.bbmp.gov.in/PDF/trade%20license/NewTrade_Payment.pdf` returned a browser error stating `This site can’t be reached`, `site.bbmp.gov.in refused to connect`, and `ERR_CONNECTION_REFUSED`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "nodeIds": [
+        "node_trade_w_entry"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_new_payment_pdf"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct unauthenticated navigation on 2026-08-30. No guide controls, document checklist, OTP or payment control could be observed."
+    },
+    {
+      "id": "claim_ind46_otls_route_refused",
+      "text": "The legacy public OTLS description route `https://site.bbmp.gov.in/departmentwebsites/BBMPIT/OTLS.html` returned a browser error stating `This site can’t be reached`, `site.bbmp.gov.in refused to connect`, and `ERR_CONNECTION_REFUSED`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "nodeIds": [
+        "node_trade_w_entry"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_otls"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct unauthenticated navigation on 2026-08-30. No inspection, review or licence-output controls could be observed."
+    },
+    {
+      "id": "claim_ind46_authenticated_boundary_unknown",
+      "text": "The reviewed current public GBA path does not reach a login, OTP, applicant form or other authenticated boundary, so the authentication prerequisite and any post-authentication controls are Unknown.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "nodeIds": [
+        "node_trade_w_payment"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No attempt was made to bypass the missing route or authenticate."
+    },
+    {
+      "id": "claim_ind46_downstream_unknown",
+      "text": "No public observation in this pass established a current licence issue, status result, download, rejection or recovery after authentication/submission.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "nodeIds": [
+        "node_trade_w_issue"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No login, applicant identifier, document, OTP, payment, submission, inspection or status lookup was performed."
+    },
+    {
+      "id": "claim_ind46_trade_online_only_eligibility_uncertain",
+      "text": "A person describing an online-only Bengaluru startup with a virtual office and no physical operations reported receiving conflicting online and chartered-accountant advice about whether a BBMP trade licence was required.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "nodeIds": [
+        "node_trade_w_entry"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_online_only_uncertainty"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This records one person's report of conflicting advice, not the applicability of a trade licence to online businesses."
+    },
+    {
+      "id": "claim_ind46_trade_rental_agreement_unavailable",
+      "text": "A person planning a Bengaluru street-food or snacks business reported that their owner did not renew the rental agreement.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "nodeIds": [
+        "node_trade_w_docs"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_rental_agreement_gap"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The account does not establish whether a current rental agreement is required, accepted alternatives, or an application outcome."
+    },
+    {
+      "id": "claim_ind46_trade_applicant_fears_delay_rejection",
+      "text": "The same prospective food-business applicant said they were considering an agent because they believed applying without one could lead to delay or rejection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "nodeIds": [
+        "node_trade_w_entry",
+        "node_trade_w_docs"
+      ],
+      "sourceIds": [
+        "source_ind46_trade_rental_agreement_gap"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is a prospective applicant's concern, not evidence that delay, rejection or agent use occurs."
     }
   ],
   "nodes": [
@@ -423,6 +960,26 @@
             "claim_trade_act_353"
           ],
           "status": "verified"
+        },
+        {
+          "id": "ind46_check_trade_act",
+          "label": "Schedule X licence basis",
+          "description": "Section 353 is the statutory starting point for Schedule X purposes.",
+          "url": "https://www.indiacode.nic.in/handle/123456789/8129",
+          "claimIds": [
+            "claim_ind46_trade_act_353_basis"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "ind46_check_trade_classification",
+          "label": "Published classification fields",
+          "description": "The official form exposes Schedule X part, trade classification, Health Officer jurisdiction and zone fields.",
+          "url": "https://dl.bbmp.gov.in/download/howtrade/appln%204%20new%20tl_annex-f.pdf",
+          "claimIds": [
+            "claim_ind46_trade_form_classification"
+          ],
+          "status": "partial"
         }
       ],
       "failureSignals": [
@@ -434,6 +991,17 @@
           "claimIds": [
             "claim_trade_act_353",
             "claim_trade_unknown_case"
+          ],
+          "status": "unknown"
+        },
+        {
+          "id": "ind46_failure_trade_current_category",
+          "label": "Current category or route mismatch",
+          "description": "The dated form and Act do not determine a supplied trade’s current GBA corporation, category, fee or exemption.",
+          "url": "https://dl.bbmp.gov.in/download/howtrade/appln%204%20new%20tl_annex-f.pdf",
+          "claimIds": [
+            "claim_ind46_trade_form_classification",
+            "claim_ind46_trade_act_353_basis"
           ],
           "status": "unknown"
         }
@@ -449,6 +1017,17 @@
             "claim_trade_unknown_case"
           ],
           "status": "partial"
+        },
+        {
+          "id": "ind46_recovery_trade_route_confirm",
+          "label": "Confirm current corporation route",
+          "description": "Use the service-directory and MOH contact leads to confirm the current corporation/ward route before an authorised application.",
+          "url": "https://site.bbmp.gov.in/citizenservice.html",
+          "claimIds": [
+            "claim_ind46_trade_service_directory",
+            "claim_ind46_trade_contact_recovery_leads"
+          ],
+          "status": "partial"
         }
       ],
       "scenarioIds": [
@@ -457,7 +1036,9 @@
       ],
       "claimIds": [
         "claim_trade_act_353",
-        "claim_trade_unknown_case"
+        "claim_trade_unknown_case",
+        "claim_ind46_trade_act_353_basis",
+        "claim_ind46_trade_form_classification"
       ],
       "status": "unknown",
       "displayOrder": 10
@@ -643,16 +1224,78 @@
             "claim_trade_w_entry"
           ],
           "status": "partial"
+        },
+        {
+          "id": "ind46_check_trade_service_directory",
+          "label": "Public service links",
+          "description": "Directory exposes new registration, renewal, MOH contacts and FAQ links.",
+          "url": "https://site.bbmp.gov.in/citizenservice.html",
+          "claimIds": [
+            "claim_ind46_trade_service_directory"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "check_ind46_legacy_routes_observed",
+          "label": "Legacy public route check",
+          "description": "FAQ, new-registration guide and OTLS URLs were each opened directly without authentication or data entry.",
+          "url": "https://site.bbmp.gov.in/tradelicensefaq.html",
+          "claimIds": [
+            "claim_ind46_faq_route_refused",
+            "claim_ind46_manual_route_refused",
+            "claim_ind46_otls_route_refused"
+          ],
+          "status": "verified"
         }
       ],
-      "failureSignals": [],
-      "recoveries": [],
+      "failureSignals": [
+        {
+          "id": "ind46_failure_trade_legacy_target",
+          "label": "Legacy target or authority mismatch",
+          "description": "The directory links older BBMP artefacts and does not prove the current GBA corporation target.",
+          "url": "https://site.bbmp.gov.in/citizenservice.html",
+          "claimIds": [
+            "claim_ind46_trade_service_directory"
+          ],
+          "status": "unknown"
+        },
+        {
+          "id": "failure_ind46_legacy_connection_refused",
+          "label": "Legacy routes refuse connection",
+          "description": "The reviewed legacy FAQ, guide and OTLS routes show the browser error This site can’t be reached and ERR_CONNECTION_REFUSED.",
+          "actualError": "site.bbmp.gov.in refused to connect; ERR_CONNECTION_REFUSED",
+          "url": "https://site.bbmp.gov.in/tradelicensefaq.html",
+          "claimIds": [
+            "claim_ind46_faq_route_refused",
+            "claim_ind46_manual_route_refused",
+            "claim_ind46_otls_route_refused"
+          ],
+          "status": "verified"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "ind46_recovery_trade_contacts",
+          "label": "Use published contact leads",
+          "description": "For a blocked route, consult the published zonal Health Officer/technical contact leads after confirming they remain current.",
+          "url": "https://site.bbmp.gov.in/tradelicensecontact.html",
+          "claimIds": [
+            "claim_ind46_trade_contact_recovery_leads"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_trade_w_new",
         "scenario_trade_w_renewal"
       ],
       "claimIds": [
-        "claim_trade_w_entry"
+        "claim_trade_w_entry",
+        "claim_ind46_trade_service_directory",
+        "claim_ind46_trade_new_sequence",
+        "claim_ind46_faq_route_refused",
+        "claim_ind46_manual_route_refused",
+        "claim_ind46_otls_route_refused"
       ],
       "status": "partial",
       "displayOrder": 10
@@ -675,6 +1318,18 @@
             "claim_trade_w_docs"
           ],
           "status": "partial"
+        },
+        {
+          "id": "ind46_check_trade_docs",
+          "label": "Published document leads",
+          "description": "Public guide/FAQ and official forms name consent/lease, electricity bill, OC, tax receipt, neighbour consent and layout-plan leads.",
+          "url": "https://dl.bbmp.gov.in/download/tradelic/Annexure-G.pdf",
+          "claimIds": [
+            "claim_ind46_trade_new_sequence",
+            "claim_ind46_trade_faq_documents",
+            "claim_ind46_trade_annexure_requirements"
+          ],
+          "status": "partial"
         }
       ],
       "failureSignals": [
@@ -687,16 +1342,52 @@
             "claim_trade_w_docs"
           ],
           "status": "unknown"
+        },
+        {
+          "id": "ind46_failure_trade_missing_docs",
+          "label": "Missing filing requirement",
+          "description": "The official procedure states missing requirements at serial numbers 4–8 cause rejection and an endorsement.",
+          "url": "https://dl.bbmp.gov.in/download/tradelic/Annexure-G.pdf",
+          "claimIds": [
+            "claim_ind46_trade_missing_requirements_rejection"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "ind46_failure_trade_file_validation",
+          "label": "Current file validation mismatch",
+          "description": "The FAQ states a legacy JPG/PDF and 1 MB limit; current portal validation was not tested.",
+          "url": "https://site.bbmp.gov.in/tradelicensefaq.html",
+          "claimIds": [
+            "claim_ind46_trade_faq_documents"
+          ],
+          "status": "unknown"
         }
       ],
-      "recoveries": [],
+      "recoveries": [
+        {
+          "id": "ind46_recovery_trade_endorsement",
+          "label": "Correct endorsed omissions",
+          "description": "Retain any official endorsement and confirm the current checklist before correcting omissions for a later authorised filing; the public procedure does not specify resubmission mechanics.",
+          "url": "https://dl.bbmp.gov.in/download/tradelic/Annexure-G.pdf",
+          "claimIds": [
+            "claim_ind46_trade_missing_requirements_rejection",
+            "claim_ind46_trade_contact_recovery_leads"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_trade_w_new",
         "scenario_trade_w_renewal"
       ],
       "claimIds": [
         "claim_trade_w_new",
-        "claim_trade_w_docs"
+        "claim_trade_w_docs",
+        "claim_ind46_trade_new_sequence",
+        "claim_ind46_trade_faq_documents",
+        "claim_ind46_trade_annexure_requirements",
+        "claim_ind46_trade_missing_requirements_rejection"
       ],
       "status": "unknown",
       "displayOrder": 20
@@ -719,10 +1410,64 @@
             "claim_trade_w_otls"
           ],
           "status": "partial"
+        },
+        {
+          "id": "ind46_check_trade_payment",
+          "label": "Published payment sequence",
+          "description": "Guide states OTP/years/payment sequence; OTLS describes temporary challan and online/offline payment.",
+          "url": "https://site.bbmp.gov.in/PDF/trade%20license/NewTrade_Payment.pdf",
+          "claimIds": [
+            "claim_ind46_trade_new_sequence",
+            "claim_ind46_trade_faq_payment_features",
+            "claim_ind46_trade_otls_payment_review"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "check_ind46_auth_boundary_not_reached",
+          "label": "No public authentication boundary reached",
+          "description": "The current card fallback and unavailable legacy routes did not expose a login or application control.",
+          "url": "https://bbmp.gov.in/home",
+          "claimIds": [
+            "claim_ind46_authenticated_boundary_unknown"
+          ],
+          "status": "unknown"
         }
       ],
-      "failureSignals": [],
-      "recoveries": [],
+      "failureSignals": [
+        {
+          "id": "ind46_failure_trade_payment_unknown",
+          "label": "Gateway/receipt failure unknown",
+          "description": "No current gateway, fee, receipt, part-payment or OTP error was observed; FAQ only gives dated general rules.",
+          "url": "https://site.bbmp.gov.in/tradelicensefaq.html",
+          "claimIds": [
+            "claim_ind46_trade_faq_payment_features",
+            "claim_ind46_trade_login_boundary"
+          ],
+          "status": "unknown"
+        },
+        {
+          "id": "failure_ind46_auth_route_unknown",
+          "label": "Post-authentication state unknown",
+          "description": "No public route establishes whether login, OTP, applicant identity or a prior application number is required.",
+          "claimIds": [
+            "claim_ind46_authenticated_boundary_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "ind46_recovery_trade_payment_contact",
+          "label": "Escalate fee or technical issue",
+          "description": "Use the published zone Health Officer or technical contact lead after confirming current ownership; no contact was made.",
+          "url": "https://site.bbmp.gov.in/tradelicensecontact.html",
+          "claimIds": [
+            "claim_ind46_trade_contact_recovery_leads"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_trade_w_new",
         "scenario_trade_w_renewal"
@@ -730,7 +1475,12 @@
       "claimIds": [
         "claim_trade_w_new",
         "claim_trade_w_otls",
-        "claim_trade_w_unknown"
+        "claim_trade_w_unknown",
+        "claim_ind46_trade_new_sequence",
+        "claim_ind46_trade_faq_payment_features",
+        "claim_ind46_trade_otls_payment_review",
+        "claim_ind46_trade_login_boundary",
+        "claim_ind46_authenticated_boundary_unknown"
       ],
       "status": "unknown",
       "displayOrder": 30
@@ -752,16 +1502,63 @@
             "claim_trade_w_otls"
           ],
           "status": "partial"
+        },
+        {
+          "id": "ind46_check_trade_inspection",
+          "label": "Inspection timing lead",
+          "description": "Annexure G states inspection is set on filing and within a maximum of 3 working days.",
+          "url": "https://dl.bbmp.gov.in/download/tradelic/Annexure-G.pdf",
+          "claimIds": [
+            "claim_ind46_trade_inspection_timing"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "ind46_check_trade_review_chain",
+          "label": "Dated OTLS review chain",
+          "description": "OTLS describes site inspection/document verification and MoH/DHO/HO review.",
+          "url": "https://site.bbmp.gov.in/departmentwebsites/BBMPIT/OTLS.html",
+          "claimIds": [
+            "claim_ind46_trade_otls_payment_review"
+          ],
+          "status": "partial"
         }
       ],
-      "failureSignals": [],
-      "recoveries": [],
+      "failureSignals": [
+        {
+          "id": "ind46_failure_trade_review_return",
+          "label": "Missing-compliance return or refusal",
+          "description": "The procedure provides for rejection/endorsement and the form preserves refusal/suspension/cancellation controls; no current case signal was observed.",
+          "url": "https://dl.bbmp.gov.in/download/tradelic/Annexure-G.pdf",
+          "claimIds": [
+            "claim_ind46_trade_missing_requirements_rejection",
+            "claim_ind46_trade_refusal_refund_controls"
+          ],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "ind46_recovery_trade_review_contact",
+          "label": "Contact the responsible health office",
+          "description": "Use the published zonal Health Officer contact lead to ask about a documented endorsement or review issue after confirming current routing.",
+          "url": "https://site.bbmp.gov.in/tradelicensecontact.html",
+          "claimIds": [
+            "claim_ind46_trade_contact_recovery_leads"
+          ],
+          "status": "partial"
+        }
+      ],
       "scenarioIds": [
         "scenario_trade_w_new",
         "scenario_trade_w_renewal"
       ],
       "claimIds": [
-        "claim_trade_w_otls"
+        "claim_trade_w_otls",
+        "claim_ind46_trade_inspection_timing",
+        "claim_ind46_trade_missing_requirements_rejection",
+        "claim_ind46_trade_refusal_refund_controls",
+        "claim_ind46_trade_otls_payment_review"
       ],
       "status": "unknown",
       "displayOrder": 40
@@ -773,16 +1570,57 @@
       "ownerAgencyId": "agency_gba_trade_ind32_w",
       "summary": "Public sources describe license issue/download/status functions; no output was generated.",
       "requiredState": "No reference, approval, status, receipt or licence exists.",
-      "checks": [],
-      "failureSignals": [],
-      "recoveries": [],
+      "checks": [
+        {
+          "id": "ind46_check_trade_output",
+          "label": "Published output features",
+          "description": "FAQ and OTLS list status, receipt/acknowledgement and approved-licence download/issue features.",
+          "url": "https://site.bbmp.gov.in/departmentwebsites/BBMPIT/OTLS.html",
+          "claimIds": [
+            "claim_ind46_trade_faq_payment_features",
+            "claim_ind46_trade_otls_output"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "ind46_failure_trade_refusal",
+          "label": "Licence refusal or cancellation",
+          "description": "The dated form states refund on refusal and warns of suspension/cancellation for violations or defective information; no case was tested.",
+          "url": "https://dl.bbmp.gov.in/download/howtrade/appln%204%20new%20tl_annex-f.pdf",
+          "claimIds": [
+            "claim_ind46_trade_refusal_refund_controls"
+          ],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "ind46_recovery_trade_status_contact",
+          "label": "Use status/contact leads",
+          "description": "The public sources point to status/download functions and zonal/technical contact leads, but do not expose a current unauthenticated case recovery flow.",
+          "url": "https://site.bbmp.gov.in/tradelicensecontact.html",
+          "claimIds": [
+            "claim_ind46_trade_otls_output",
+            "claim_ind46_trade_contact_recovery_leads",
+            "claim_ind46_trade_login_boundary"
+          ],
+          "status": "unknown"
+        }
+      ],
       "scenarioIds": [
         "scenario_trade_w_new",
         "scenario_trade_w_renewal"
       ],
       "claimIds": [
         "claim_trade_w_otls",
-        "claim_trade_w_unknown"
+        "claim_trade_w_unknown",
+        "claim_ind46_trade_faq_payment_features",
+        "claim_ind46_trade_otls_output",
+        "claim_ind46_trade_refusal_refund_controls",
+        "claim_ind46_trade_login_boundary",
+        "claim_ind46_downstream_unknown"
       ],
       "status": "unknown",
       "displayOrder": 50
@@ -841,13 +1679,12 @@
       "relationship": "requires",
       "label": "Dated OTLS flow places payment before municipal inspection/document verification.",
       "scenarioIds": [
-        "scenario_trade_w_new",
-        "scenario_trade_w_renewal"
+        "scenario_trade_w_new"
       ],
       "claimIds": [
         "claim_trade_otls_flow"
       ],
-      "status": "unknown"
+      "status": "partial"
     },
     {
       "id": "edge_trade_inspection_issue",
@@ -856,14 +1693,13 @@
       "relationship": "produces",
       "label": "Inspection/review may result in approval/license or return; no case was created.",
       "scenarioIds": [
-        "scenario_trade_w_new",
-        "scenario_trade_w_renewal"
+        "scenario_trade_w_new"
       ],
       "claimIds": [
         "claim_trade_otls_flow",
         "claim_trade_unknown_case"
       ],
-      "status": "unknown"
+      "status": "partial"
     },
     {
       "id": "edge_trade_w_entry_docs",
@@ -901,29 +1737,27 @@
       "relationship": "requires",
       "label": "Dated OTLS flow places inspection/review after application/payment.",
       "scenarioIds": [
-        "scenario_trade_w_new",
-        "scenario_trade_w_renewal"
+        "scenario_trade_w_new"
       ],
       "claimIds": [
         "claim_trade_w_otls"
       ],
-      "status": "unknown"
+      "status": "partial"
     },
     {
       "id": "edge_trade_w_review_issue",
       "fromNodeId": "node_trade_w_review",
       "toNodeId": "node_trade_w_issue",
       "relationship": "produces",
-      "label": "Review may lead to licence issue/status/download or return; no case exists.",
+      "label": "Historical guide boundary: review is described before licence issue/status/download; a current return or rejection outcome was not established.",
       "scenarioIds": [
-        "scenario_trade_w_new",
-        "scenario_trade_w_renewal"
+        "scenario_trade_w_new"
       ],
       "claimIds": [
         "claim_trade_w_otls",
         "claim_trade_w_unknown"
       ],
-      "status": "unknown"
+      "status": "partial"
     }
   ],
   "roadblocks": [
@@ -1051,27 +1885,151 @@
       "status": "unknown"
     },
     {
-      "id": "roadblock_audit_trade_license",
-      "title": "Independent audit limitations",
+      "id": "roadblock_ind46_trade_missing_documents",
+      "title": "Missing document or filing requirement",
       "category": "documentation",
-      "symptom": "## Scope and result Audited `ledger/trade-license.json` against `ledger/schema.json` and `ledger/AGENT_PROTOCOL.md` only. The JSON validates against the supplied schema; all checked references resolve, IDs are unique, all non-`Unknown` claims cite at least one source, and recorded access dates are ISO-shaped. The service-specific evidence is a **partial public-guide map**. It supports public entry labels and some legacy BBMP guide sequence, not a current case-specific GBA trade-licence path, fee, inspection, or issuance result. ## Findings to ship as limitations - **Service-scope contamination — material.** The file retains 22 BESCOM/e-Khata claims, six electricity-transfer scenarios, eight electricity-transfer edges, 11 roadblocks, and six journeys unrelated to trade licensing. These records have valid links but do not constitute trade-licence evidence and distort the service journey. -",
-      "likelyCause": "Evidence and schema boundaries identified by the single independent audit.",
-      "recovery": "Read the cited evidence and retain Unknown or partial status where the public record stops.",
-      "ownerAgencyIds": [],
+      "symptom": "The official procedure says a filing missing listed requirements is rejected and an endorsement is issued.",
+      "likelyCause": "Missing owner consent/tax receipt, zone-specific consent, layout plan or fee draft under the dated procedure; current GBA checklist may differ.",
+      "recovery": "Retain the endorsement, confirm the current corporation checklist and ask the responsible current health office how a corrected authorised filing should proceed; the public source does not publish resubmission mechanics.",
+      "ownerAgencyIds": [
+        "agency_bbmp_health_ind32_w",
+        "agency_gba_trade_ind32_w"
+      ],
       "nodeIds": [
-        "node_trade_jurisdiction"
+        "node_trade_w_docs",
+        "node_trade_w_review"
       ],
       "scenarioIds": [
         "scenario_trade_w_new"
       ],
-      "claimIds": [],
+      "claimIds": [
+        "claim_ind46_trade_annexure_requirements",
+        "claim_ind46_trade_missing_requirements_rejection",
+        "claim_ind46_trade_contact_recovery_leads"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind46_trade_legacy_route",
+      "title": "Current GBA route versus legacy BBMP artefacts",
+      "category": "documentation",
+      "symptom": "Direct public service directories coexist with dated BBMP forms, FAQ, contact pages and OTLS descriptions.",
+      "likelyCause": "Greater Bengaluru Authority/five-city-corporation transition and legacy trade-licence documentation.",
+      "recovery": "Confirm the current city corporation, ward/MOH and live target before relying on any dated checklist, fee, timing or recovery statement.",
+      "ownerAgencyIds": [
+        "agency_gba_trade_ind32_w",
+        "agency_bbmp_health_ind32_w"
+      ],
+      "nodeIds": [
+        "node_trade_jurisdiction",
+        "node_trade_w_entry",
+        "node_trade_w_issue"
+      ],
+      "scenarioIds": [
+        "scenario_trade_w_new",
+        "scenario_trade_w_renewal"
+      ],
+      "claimIds": [
+        "claim_ind46_trade_service_directory",
+        "claim_ind46_trade_contact_recovery_leads",
+        "claim_ind46_trade_login_boundary",
+        "claim_ind46_faq_route_refused",
+        "claim_ind46_manual_route_refused",
+        "claim_ind46_otls_route_refused"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind46_trade_online_only_eligibility_uncertainty",
+      "title": "Online-only business eligibility is unclear to one prospective applicant",
+      "category": "documentation",
+      "symptom": "One prospective applicant could not reconcile advice about whether a virtual-office, online-only Bengaluru business needed a BBMP trade licence.",
+      "likelyCause": "Unknown; the citizen account reports conflicting advice but does not identify the governing rule or current municipal interpretation.",
+      "recovery": "Confirm the current city-corporation route and the business's eligibility directly with the responsible municipal authority or qualified adviser; do not rely on forum replies.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_trade_w_entry"
+      ],
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "claimIds": [
+        "claim_ind46_trade_online_only_eligibility_uncertain"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind46_trade_premises_agreement_gap",
+      "title": "Prospective applicant lacked a renewed rental agreement",
+      "category": "documentation",
+      "symptom": "One prospective applicant reported that the owner had not renewed the rental agreement.",
+      "likelyCause": "Unknown; the account does not show a municipal validation result or whether another premises document would work.",
+      "recovery": "Check the current official document checklist and obtain written clarification before submitting; do not infer that an agent can cure a missing or expired document.",
+      "ownerAgencyIds": [],
+      "nodeIds": [
+        "node_trade_w_docs"
+      ],
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "claimIds": [
+        "claim_ind46_trade_rental_agreement_unavailable",
+        "claim_ind46_trade_applicant_fears_delay_rejection"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind46_legacy_routes",
+      "title": "Legacy public Trade License documentation is unreachable",
+      "category": "infrastructure",
+      "symptom": "The public FAQ, new-registration guide and OTLS routes all show This site can’t be reached / ERR_CONNECTION_REFUSED.",
+      "likelyCause": "The legacy site host refused the connection during this current public check.",
+      "recovery": "Retain the current GBA directory and general contact details as the only observed recovery lead; verify a current official Trade License URL before relying on older manuals.",
+      "ownerAgencyIds": [
+        "agency_gba_trade_ind32_w"
+      ],
+      "nodeIds": [
+        "node_trade_w_entry"
+      ],
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "claimIds": [
+        "claim_ind46_faq_route_refused",
+        "claim_ind46_manual_route_refused",
+        "claim_ind46_otls_route_refused"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "roadblock_ind46_trade_outcome_boundary",
+      "title": "Authenticated and case outcomes not observable",
+      "category": "process",
+      "symptom": "No login, applicant form, document validation, fee, payment, inspection, approval, status or licence output is present on the reviewed public path.",
+      "likelyCause": "The current public card does not hand off to a verified application route, and downstream states would require an authorised case or authenticated interface.",
+      "recovery": "Unknown. Confirm the current official route first; do not infer fees, requirements, timing or outcome from the unavailable legacy pages.",
+      "ownerAgencyIds": [
+        "agency_gba_trade_ind32_w"
+      ],
+      "nodeIds": [
+        "node_trade_w_payment",
+        "node_trade_w_issue",
+        "node_trade_w_review"
+      ],
+      "scenarioIds": [
+        "scenario_trade_w_new"
+      ],
+      "claimIds": [
+        "claim_ind46_authenticated_boundary_unknown",
+        "claim_ind46_downstream_unknown"
+      ],
       "status": "unknown"
     }
   ],
   "journeys": [
     {
       "id": "journey_trade_w_public",
-      "title": "Trade licence public new/renewal workflow boundary",
+      "title": "Trade licence public new-workflow boundary",
       "scenarioId": "scenario_trade_w_new",
       "context": "Review public service labels and published stage sequence without creating a case.",
       "steps": [
@@ -1145,7 +2103,8 @@
       ],
       "documentationQualityNotes": [
         "GBA home is current public directory; detailed guides/OTLS are legacy/dated.",
-        "Current category-specific checklist and outcome remain unknown."
+        "Current category-specific checklist and outcome remain unknown.",
+        "Stated limitation from the independent audit: current public directory labels and legacy guides do not establish a live new or renewal application route; downstream authentication, payment, inspection, review and licence outcome are Unknown."
       ],
       "status": "unknown"
     }

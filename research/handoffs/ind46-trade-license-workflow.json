@@ -1,0 +1,641 @@
+{
+  "_handoff": {
+    "issue": "IND-46",
+    "generatedAt": "2026-08-30",
+    "status": "ready_for_audit",
+    "scope": "Unauthenticated public-workflow pass for the default Bengaluru municipal Trade License and Trade License Renewal leads.",
+    "observationNote": "Only public pages and visible controls were inspected. The current GBA cards were clicked only to observe navigation; no login, applicant data, OTP, upload, payment, submission, lookup or personal data was used. The current cards returned to /home without a trade form. Legacy FAQ, new-registration guide and OTLS routes showed ERR_CONNECTION_REFUSED. Authentication, validation, payment, inspection, approval, status and licence outputs remain Unknown."
+  },
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "IND-46 Bengaluru Trade License — public default-path workflow",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-30",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Only unauthenticated public-interface observations, visible errors and explicit Unknown boundaries are recorded; do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_gba_trade_ind46",
+      "name": "Greater Bengaluru Authority / Bengaluru City Corporations",
+      "shortName": "GBA / City Corporation Trade License",
+      "officialUrl": "https://bbmp.gov.in/"
+    },
+    {
+      "id": "agency_bbmp_trade_ind46_legacy",
+      "name": "Bruhat Bengaluru Mahanagara Palike legacy Trade License service",
+      "shortName": "BBMP legacy Trade License",
+      "officialUrl": "https://site.bbmp.gov.in/"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind46_trade_license_default",
+      "label": "Trade License public default-path boundary",
+      "summary": "A visitor opens the current GBA public directory, tests the visible Trade License and renewal cards, and checks the published legacy public routes without crossing an authentication or submission boundary.",
+      "tags": [
+        "trade-license",
+        "renewal",
+        "public-interface",
+        "default-path",
+        "submission-boundary"
+      ],
+      "pathNodeIds": [
+        "node_ind46_trade_public_entry",
+        "node_ind46_trade_route_failure",
+        "node_ind46_trade_auth_boundary",
+        "node_ind46_trade_outcome"
+      ],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind46_gba_home_live",
+      "title": "GBA public home — Trade License service cards",
+      "publisher": "Government of Karnataka / Greater Bengaluru Authority",
+      "url": "https://bbmp.gov.in/home",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated current-page observation. The e-Services section visibly contains Trade License and Trade License Renewal. Each rendered control is a cursor-pointer div without an href, role or tabindex; clicking Trade License or Renewal left the visitor on https://bbmp.gov.in/home and did not reveal a trade application form."
+    },
+    {
+      "id": "source_ind46_gba_contact_live",
+      "title": "GBA public home — general contact recovery details",
+      "publisher": "Government of Karnataka / Greater Bengaluru Authority",
+      "url": "https://bbmp.gov.in/home",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "The current public home visibly displays Helpline: 1533 and footer contact email comm@bbmp.gov.in. These are general GBA contact details, not a confirmed Trade License case route."
+    },
+    {
+      "id": "source_ind46_legacy_faq_refused",
+      "title": "Legacy BBMP Trade License FAQ — public route error",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/tradelicensefaq.html",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated navigation showed the browser page This site can’t be reached, site.bbmp.gov.in refused to connect, and ERR_CONNECTION_REFUSED, with visible Reload and Details controls. No FAQ content or service form was available."
+    },
+    {
+      "id": "source_ind46_legacy_manual_refused",
+      "title": "Legacy BBMP Online New Trade License Registration guide — public route error",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike",
+      "url": "https://site.bbmp.gov.in/PDF/trade%20license/NewTrade_Payment.pdf",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated navigation showed the browser page This site can’t be reached, site.bbmp.gov.in refused to connect, and ERR_CONNECTION_REFUSED, with visible Reload and Details controls. No guide or document/payment controls were available."
+    },
+    {
+      "id": "source_ind46_legacy_otls_refused",
+      "title": "Legacy BBMP Online Trade License System description — public route error",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike IT Department",
+      "url": "https://site.bbmp.gov.in/departmentwebsites/BBMPIT/OTLS.html",
+      "accessedAt": "2026-08-30",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated navigation showed the browser page This site can’t be reached, site.bbmp.gov.in refused to connect, and ERR_CONNECTION_REFUSED, with visible Reload and Details controls. No OTLS workflow text or status/payment controls were available."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind46_trade_public_labels",
+      "text": "On 2026-08-30, the current GBA public home visibly listed `Trade License` and `Trade License Renewal` in its e-Services section.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "nodeIds": [
+        "node_ind46_trade_public_entry"
+      ],
+      "sourceIds": [
+        "source_ind46_gba_home_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct current observation of the unauthenticated public home. A service label does not establish that a live application route is available."
+    },
+    {
+      "id": "claim_ind46_trade_cards_no_route",
+      "text": "The current GBA Trade License and Trade License Renewal cards render as non-link cursor-pointer containers without an href, and clicking either leaves the visitor at `https://bbmp.gov.in/home` without exposing a trade application form or trade-specific controls.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "nodeIds": [
+        "node_ind46_trade_public_entry",
+        "node_ind46_trade_route_failure"
+      ],
+      "sourceIds": [
+        "source_ind46_gba_home_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The click was navigation-only and did not submit data. This records the observed current fallback, not a universal assertion that no other authorised route exists."
+    },
+    {
+      "id": "claim_ind46_general_contact_recovery",
+      "text": "The current GBA public home displays general recovery contacts `Helpline: 1533` and `comm@bbmp.gov.in`; the page does not identify either as a Trade License-specific case handler.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "nodeIds": [
+        "node_ind46_trade_route_failure"
+      ],
+      "sourceIds": [
+        "source_ind46_gba_contact_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "General contact details are a possible recovery lead only; no message or call was made."
+    },
+    {
+      "id": "claim_ind46_faq_route_refused",
+      "text": "The legacy public Trade License FAQ route `https://site.bbmp.gov.in/tradelicensefaq.html` returned a browser error stating `This site can’t be reached`, `site.bbmp.gov.in refused to connect`, and `ERR_CONNECTION_REFUSED`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "nodeIds": [
+        "node_ind46_trade_route_failure"
+      ],
+      "sourceIds": [
+        "source_ind46_legacy_faq_refused"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct unauthenticated navigation on 2026-08-30. The visible Reload control was not activated."
+    },
+    {
+      "id": "claim_ind46_manual_route_refused",
+      "text": "The legacy public new-registration guide route `https://site.bbmp.gov.in/PDF/trade%20license/NewTrade_Payment.pdf` returned a browser error stating `This site can’t be reached`, `site.bbmp.gov.in refused to connect`, and `ERR_CONNECTION_REFUSED`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "nodeIds": [
+        "node_ind46_trade_route_failure"
+      ],
+      "sourceIds": [
+        "source_ind46_legacy_manual_refused"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct unauthenticated navigation on 2026-08-30. No guide controls, document checklist, OTP or payment control could be observed."
+    },
+    {
+      "id": "claim_ind46_otls_route_refused",
+      "text": "The legacy public OTLS description route `https://site.bbmp.gov.in/departmentwebsites/BBMPIT/OTLS.html` returned a browser error stating `This site can’t be reached`, `site.bbmp.gov.in refused to connect`, and `ERR_CONNECTION_REFUSED`.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "nodeIds": [
+        "node_ind46_trade_route_failure"
+      ],
+      "sourceIds": [
+        "source_ind46_legacy_otls_refused"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct unauthenticated navigation on 2026-08-30. No inspection, review or licence-output controls could be observed."
+    },
+    {
+      "id": "claim_ind46_authenticated_boundary_unknown",
+      "text": "The reviewed current public GBA path does not reach a login, OTP, applicant form or other authenticated boundary, so the authentication prerequisite and any post-authentication controls are Unknown.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "nodeIds": [
+        "node_ind46_trade_auth_boundary"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No attempt was made to bypass the missing route or authenticate."
+    },
+    {
+      "id": "claim_ind46_downstream_unknown",
+      "text": "Because no public application route was reached, current document validation, fees, payment, receipt, inspection, review, status, approval, renewal result and issued licence are Unknown; no case state exists.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "nodeIds": [
+        "node_ind46_trade_outcome"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No login, applicant identifier, document, OTP, payment, submission, inspection or status lookup was performed."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_ind46_trade_public_entry",
+      "label": "Current GBA public Trade License entry",
+      "kind": "service",
+      "ownerAgencyId": "agency_gba_trade_ind46",
+      "summary": "Current GBA e-Services directory visibly labels Trade License and Trade License Renewal, but the cards do not expose a link target.",
+      "requiredState": "No live trade URL, applicant, prior application, session or case exists.",
+      "checks": [
+        {
+          "id": "check_ind46_trade_labels",
+          "label": "Trade service labels",
+          "description": "The current public GBA home visibly lists Trade License and Trade License Renewal under e-Services.",
+          "url": "https://bbmp.gov.in/home",
+          "claimIds": [
+            "claim_ind46_trade_public_labels"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind46_trade_card_markup",
+          "label": "Card control shape",
+          "description": "The rendered Trade License cards are cursor-pointer divs without href, role or tabindex; no public target URL is exposed in the card markup.",
+          "url": "https://bbmp.gov.in/home",
+          "claimIds": [
+            "claim_ind46_trade_cards_no_route"
+          ],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "researchedNoSourceFound": [
+        "failureSignals",
+        "recoveries"
+      ],
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "claimIds": [
+        "claim_ind46_trade_public_labels",
+        "claim_ind46_trade_cards_no_route"
+      ],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_ind46_trade_route_failure",
+      "label": "Public route and legacy documentation failure",
+      "kind": "service",
+      "ownerAgencyId": "agency_bbmp_trade_ind46_legacy",
+      "summary": "The visible current-card fallback provides no trade form, while the reviewed legacy FAQ, guide and OTLS routes refuse the connection.",
+      "requiredState": "No public form, document checklist, OTP, payment or case reference is available from the reviewed routes.",
+      "checks": [
+        {
+          "id": "check_ind46_legacy_routes_observed",
+          "label": "Legacy public route check",
+          "description": "FAQ, new-registration guide and OTLS URLs were each opened directly without authentication or data entry.",
+          "url": "https://site.bbmp.gov.in/tradelicensefaq.html",
+          "claimIds": [
+            "claim_ind46_faq_route_refused",
+            "claim_ind46_manual_route_refused",
+            "claim_ind46_otls_route_refused"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind46_current_card_no_navigation",
+          "label": "Trade card returns to home",
+          "description": "Clicking the current Trade License or renewal card leaves the visitor at /home and shows no trade form or control.",
+          "actualError": "No trade-specific public form appeared; URL remained https://bbmp.gov.in/home.",
+          "url": "https://bbmp.gov.in/home",
+          "claimIds": [
+            "claim_ind46_trade_cards_no_route"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "failure_ind46_legacy_connection_refused",
+          "label": "Legacy routes refuse connection",
+          "description": "The reviewed legacy FAQ, guide and OTLS routes show the browser error This site can’t be reached and ERR_CONNECTION_REFUSED.",
+          "actualError": "site.bbmp.gov.in refused to connect; ERR_CONNECTION_REFUSED",
+          "url": "https://site.bbmp.gov.in/tradelicensefaq.html",
+          "claimIds": [
+            "claim_ind46_faq_route_refused",
+            "claim_ind46_manual_route_refused",
+            "claim_ind46_otls_route_refused"
+          ],
+          "status": "verified"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "recovery_ind46_general_gba_contact",
+          "label": "General GBA contact lead",
+          "description": "The current GBA home publishes Helpline 1533 and comm@bbmp.gov.in; the route is not identified as Trade License-specific.",
+          "url": "https://bbmp.gov.in/home",
+          "claimIds": [
+            "claim_ind46_general_contact_recovery"
+          ],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "claimIds": [
+        "claim_ind46_trade_cards_no_route",
+        "claim_ind46_general_contact_recovery",
+        "claim_ind46_faq_route_refused",
+        "claim_ind46_manual_route_refused",
+        "claim_ind46_otls_route_refused"
+      ],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_ind46_trade_auth_boundary",
+      "label": "Authentication and application boundary",
+      "kind": "decision",
+      "ownerAgencyId": "agency_gba_trade_ind46",
+      "summary": "No login, OTP, applicant form or authenticated trade route was reached from the current public directory.",
+      "requiredState": "Authentication state, applicant details and any prior application number are absent.",
+      "checks": [
+        {
+          "id": "check_ind46_auth_boundary_not_reached",
+          "label": "No public authentication boundary reached",
+          "description": "The current card fallback and unavailable legacy routes did not expose a login or application control.",
+          "url": "https://bbmp.gov.in/home",
+          "claimIds": [
+            "claim_ind46_authenticated_boundary_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "failure_ind46_auth_route_unknown",
+          "label": "Post-authentication state unknown",
+          "description": "No public route establishes whether login, OTP, applicant identity or a prior application number is required.",
+          "claimIds": [
+            "claim_ind46_authenticated_boundary_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "recoveries": [],
+      "researchedNoSourceFound": [
+        "recoveries"
+      ],
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "claimIds": [
+        "claim_ind46_authenticated_boundary_unknown"
+      ],
+      "status": "unknown",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_ind46_trade_outcome",
+      "label": "Trade License downstream outcome",
+      "kind": "outcome",
+      "ownerAgencyId": "agency_gba_trade_ind46",
+      "summary": "Document validation, fees, payment, inspection, review, status, approval, renewal result and licence output were not reachable on the reviewed public path.",
+      "requiredState": "No application number, receipt, inspection, decision, status or licence exists.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "researchedNoSourceFound": [
+        "checks",
+        "failureSignals",
+        "recoveries"
+      ],
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "claimIds": [
+        "claim_ind46_downstream_unknown"
+      ],
+      "status": "unknown",
+      "displayOrder": 40
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_ind46_entry_route_failure",
+      "fromNodeId": "node_ind46_trade_public_entry",
+      "toNodeId": "node_ind46_trade_route_failure",
+      "relationship": "blocks",
+      "label": "The current cards do not expose a verified trade route, and reviewed legacy public routes refuse connection.",
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "claimIds": [
+        "claim_ind46_trade_cards_no_route",
+        "claim_ind46_faq_route_refused",
+        "claim_ind46_manual_route_refused",
+        "claim_ind46_otls_route_refused"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "edge_route_failure_auth_boundary",
+      "fromNodeId": "node_ind46_trade_route_failure",
+      "toNodeId": "node_ind46_trade_auth_boundary",
+      "relationship": "blocks",
+      "label": "No reviewed public route reaches an authentication or applicant stage.",
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "claimIds": [
+        "claim_ind46_authenticated_boundary_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "edge_auth_boundary_outcome",
+      "fromNodeId": "node_ind46_trade_auth_boundary",
+      "toNodeId": "node_ind46_trade_outcome",
+      "relationship": "requires",
+      "label": "Application, payment, review and licence output cannot be checked without a verified route and authorised case state.",
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "claimIds": [
+        "claim_ind46_downstream_unknown"
+      ],
+      "status": "unknown"
+    }
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind46_trade_card_route",
+      "title": "Current Trade License card has no public destination",
+      "category": "process",
+      "symptom": "Trade License and Trade License Renewal are visible in the GBA directory, but clicking either remains at /home and reveals no trade form.",
+      "likelyCause": "The current directory cards are rendered without a public href or verified route, or the service handoff is not exposed on this page.",
+      "recovery": "Use the current GBA general contact lead (1533 or comm@bbmp.gov.in) to confirm the current corporation/ward route before any authorised application; no contact was made in this pass.",
+      "ownerAgencyIds": [
+        "agency_gba_trade_ind46"
+      ],
+      "nodeIds": [
+        "node_ind46_trade_public_entry",
+        "node_ind46_trade_route_failure"
+      ],
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "claimIds": [
+        "claim_ind46_trade_cards_no_route",
+        "claim_ind46_general_contact_recovery"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind46_legacy_routes",
+      "title": "Legacy public Trade License documentation is unreachable",
+      "category": "infrastructure",
+      "symptom": "The public FAQ, new-registration guide and OTLS routes all show This site can’t be reached / ERR_CONNECTION_REFUSED.",
+      "likelyCause": "The legacy site host refused the connection during this current public check.",
+      "recovery": "Retain the current GBA directory and general contact details as the only observed recovery lead; verify a current official Trade License URL before relying on older manuals.",
+      "ownerAgencyIds": [
+        "agency_gba_trade_ind46",
+        "agency_bbmp_trade_ind46_legacy"
+      ],
+      "nodeIds": [
+        "node_ind46_trade_route_failure"
+      ],
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "claimIds": [
+        "claim_ind46_faq_route_refused",
+        "claim_ind46_manual_route_refused",
+        "claim_ind46_otls_route_refused"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "roadblock_ind46_trade_outcome_boundary",
+      "title": "Authenticated and case outcomes not observable",
+      "category": "process",
+      "symptom": "No login, applicant form, document validation, fee, payment, inspection, approval, status or licence output is present on the reviewed public path.",
+      "likelyCause": "The current public card does not hand off to a verified application route, and downstream states would require an authorised case or authenticated interface.",
+      "recovery": "Unknown. Confirm the current official route first; do not infer fees, requirements, timing or outcome from the unavailable legacy pages.",
+      "ownerAgencyIds": [
+        "agency_gba_trade_ind46"
+      ],
+      "nodeIds": [
+        "node_ind46_trade_auth_boundary",
+        "node_ind46_trade_outcome"
+      ],
+      "scenarioIds": [
+        "scenario_ind46_trade_license_default"
+      ],
+      "claimIds": [
+        "claim_ind46_authenticated_boundary_unknown",
+        "claim_ind46_downstream_unknown"
+      ],
+      "status": "unknown"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_ind46_trade_default_public",
+      "title": "Trade License current public default-path boundary",
+      "scenarioId": "scenario_ind46_trade_license_default",
+      "context": "Follow the current GBA directory as an unauthenticated visitor, observe the two Trade License cards and test only their navigation behavior; inspect the legacy public routes without entering data.",
+      "steps": [
+        {
+          "id": "step_ind46_trade_public_entry",
+          "label": "Read current Trade License labels",
+          "nodeId": "node_ind46_trade_public_entry",
+          "action": "Open the current GBA public home and read the e-Services labels Trade License and Trade License Renewal.",
+          "expectedResult": "Both labels are visible; no application session or case is created.",
+          "claimIds": [
+            "claim_ind46_trade_public_labels"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "step_ind46_trade_card_click",
+          "label": "Test card navigation only",
+          "nodeId": "node_ind46_trade_route_failure",
+          "action": "Click each visible Trade License card without entering data or accepting any prompt.",
+          "expectedResult": "The URL remains https://bbmp.gov.in/home and no trade-specific controls appear.",
+          "claimIds": [
+            "claim_ind46_trade_cards_no_route"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind46_legacy_public_routes",
+          "label": "Check legacy public references",
+          "nodeId": "node_ind46_trade_route_failure",
+          "action": "Open the public FAQ, new-registration guide and OTLS URLs directly, without login or data entry.",
+          "expectedResult": "Each route shows This site can’t be reached / ERR_CONNECTION_REFUSED; no published controls are available.",
+          "claimIds": [
+            "claim_ind46_faq_route_refused",
+            "claim_ind46_manual_route_refused",
+            "claim_ind46_otls_route_refused"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "step_ind46_auth_outcome_boundary",
+          "label": "Stop before authentication and case state",
+          "nodeId": "node_ind46_trade_auth_boundary",
+          "action": "Do not seek an alternate login, enter an OTP, upload a document, pay, submit or look up a case.",
+          "expectedResult": "Authentication prerequisite and all downstream application/review/licence states remain Unknown.",
+          "claimIds": [
+            "claim_ind46_authenticated_boundary_unknown",
+            "claim_ind46_downstream_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dep_ind46_public_route_before_case",
+          "fromNodeId": "node_ind46_trade_public_entry",
+          "toNodeId": "node_ind46_trade_auth_boundary",
+          "description": "A verified current public route is needed before any authentication or application-stage prerequisite can be assessed.",
+          "claimIds": [
+            "claim_ind46_trade_cards_no_route",
+            "claim_ind46_authenticated_boundary_unknown"
+          ],
+          "status": "unknown"
+        }
+      ],
+      "failureRoadblockIds": [
+        "roadblock_ind46_trade_card_route",
+        "roadblock_ind46_legacy_routes",
+        "roadblock_ind46_trade_outcome_boundary"
+      ],
+      "recoveryNotes": [
+        "No login, applicant data, OTP, document, payment, submission or case lookup was performed.",
+        "The only observed recovery lead is the general GBA helpline 1533 and comm@bbmp.gov.in; these are not confirmed Trade License-specific handlers.",
+        "Confirm the current official Trade License URL and corporation/ward route before relying on legacy BBMP documentation."
+      ],
+      "documentationQualityNotes": [
+        "The current GBA directory supplies service labels but no public href or verified trade-form handoff on the observed cards.",
+        "The reviewed legacy FAQ, guide and OTLS references were unreachable on 2026-08-30, so requirements, fees, timing and outcomes are not current-publicly verified.",
+        "Authentication, validation, payment, inspection, review, status and licence issue remain explicit Unknown boundaries."
+      ],
+      "status": "partial"
+    }
+  ]
+}

@@ -1,0 +1,531 @@
+{
+  "_handoff": {
+    "issue": "IND-49",
+    "generatedAt": "2026-08-31",
+    "status": "ready_for_merge",
+    "pass": "official-source",
+    "scopeNote": "Official-source pass for LPG connection transfer, address change and distributor portability in Bengaluru, Karnataka. Current public IndianOil, HP Gas and Bharatgas material and Ministry/PIB public material were read without login, OTP, CAPTCHA, lookup, upload, payment, personal data or submission.",
+    "observationNote": "IndianOil and HP Gas publish carrier-specific transfer branches; Bharatgas publishes a current portability page with a login boundary; the Ministry/PIB release is government policy context and is older than the carrier pages. These materials must not be collapsed into one universal OMC procedure.",
+    "limitations": [
+      "No OMC account, distributor lookup, connection number, address, OTP, document upload, payment, transfer request or case outcome was used.",
+      "No reviewed current public source establishes which distributor serves a particular Bengaluru address, whether a particular transfer will be approved, or a case-specific processing time.",
+      "Carrier terminology differs: IndianOil uses SV/TTV/TSV/TV, while HP Gas uses SV/e-CTA/TV; these are not interchangeable requirements.",
+      "The Ministry/PIB portability release was published in 2021 and is retained as government policy context, not as proof that every current Bengaluru portal or app route still behaves exactly as described."
+    ],
+    "documentationShelf": [
+      {
+        "title": "IndianOil FAQ — Indane connection transfer",
+        "url": "https://iocl.com/pages/faq",
+        "accessedAt": "2026-08-31",
+        "whatItCovers": "Current IndianOil FAQ branches for same-distributor-area, same-town and out-of-town Indane moves; page footer last updated 2026-08-27.",
+        "whereItStops": "IndianOil guidance does not decide a Bengaluru address's assigned distributor or a supplied consumer's approval."
+      },
+      {
+        "title": "HP Gas FAQ — transfer, KYC and name-change material",
+        "url": "https://www.hindustanpetroleum.com/pages/faq",
+        "accessedAt": "2026-08-31",
+        "whatItCovers": "HPCL's current public FAQ for within-city/adjoining-city e-CTA, out-of-town TV, KYC and family/death name change; page footer last updated 2026-06-10.",
+        "whereItStops": "HPCL guidance is carrier-specific and does not establish a current Bengaluru distributor assignment or case result."
+      },
+      {
+        "title": "HPCL LPG Systemic Improvements — portability",
+        "url": "https://www.hindustanpetroleum.com/pages/Systemic-Improvements-LPG",
+        "accessedAt": "2026-08-31",
+        "whatItCovers": "HPCL's public description of portability through HP Pay/HP Gas Consumer Portal, within-city residence change or dissatisfaction, user login and OTP.",
+        "whereItStops": "The page does not expose a public case-specific distributor list or permit a transfer without authenticated access."
+      },
+      {
+        "title": "My Bharatgas — LPG connection portability",
+        "url": "https://mylang.ebharatgas.com/LPGServices/OptForPortability",
+        "accessedAt": "2026-08-31",
+        "whatItCovers": "Current Bharatgas public portability information: nearby/distributor choice, selected-city limitation, no transfer fee/additional security deposit and login requirement; page last updated 2026-06-22.",
+        "whereItStops": "This is a public information page in the Bharatgas site shell; no login or portability request was attempted and Bengaluru availability was not established."
+      },
+      {
+        "title": "Bharatgas customer declaration",
+        "url": "https://mylang.ebharatgas.com/bharatgas/LPGServices/Declaration",
+        "accessedAt": "2026-08-31",
+        "whatItCovers": "Bharatgas declaration text requiring advance written notice of residence change and KYC with proof of address/identity, plus household/de-duplication declarations.",
+        "whereItStops": "A declaration is not proof of a completed transfer or a universal current document checklist."
+      },
+      {
+        "title": "Bharatgas unified transfer/regularization form",
+        "url": "https://mylang.ebharatgas.com/Documents/UnifiedTransferRegularizationForm.pdf",
+        "accessedAt": "2026-08-31",
+        "whatItCovers": "Official blank form categories A–E for family, outside-family, no-consent, next-of-kin/death and regularization cases.",
+        "whereItStops": "The blank form does not establish current eligibility, distributor acceptance, fees or a Bengaluru outcome."
+      },
+      {
+        "title": "PIB — Refill Booking Portability for LPG consumers",
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1725944&lang=2&reg=48",
+        "accessedAt": "2026-08-31",
+        "publishedAt": "2021-06-10",
+        "whatItCovers": "Ministry of Petroleum & Natural Gas public description of OMC portals/apps for portability, transfer and address change, and same-area online portability policy context.",
+        "whereItStops": "This is a 2021 government release; current carrier implementation and Bengaluru availability must be checked on the relevant OMC route."
+      }
+    ]
+  },
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru LPG connection transfer — IND-49 official-source pass",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-31",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice. OMC procedures, distributor coverage, accepted evidence, fees and outcomes must be confirmed through the relevant current carrier channel; do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {"id": "agency_ind49_psu_omc", "name": "PSU OMC LPG distributor network (IndianOil, BPCL and HPCL)", "shortName": "PSU OMC LPG network", "officialUrl": "https://www.mylpg.in/"},
+    {"id": "agency_ind49_iocl", "name": "Indian Oil Corporation Limited — Indane", "shortName": "IndianOil / Indane", "officialUrl": "https://iocl.com/"},
+    {"id": "agency_ind49_hpcl", "name": "Hindustan Petroleum Corporation Limited — HP Gas", "shortName": "HPCL / HP Gas", "officialUrl": "https://www.hindustanpetroleum.com/"},
+    {"id": "agency_ind49_bpcl", "name": "Bharat Petroleum Corporation Limited — Bharatgas", "shortName": "BPCL / Bharatgas", "officialUrl": "https://www.bharatpetroleum.in/"},
+    {"id": "agency_ind49_mopng", "name": "Ministry of Petroleum and Natural Gas, Government of India", "shortName": "MoPNG", "officialUrl": "https://mopng.gov.in/"}
+  ],
+  "scenarios": [
+    {"id": "scenario_ind49_same_area", "label": "Same-distributor-area address change", "summary": "Move remains within the existing distributor's operating area.", "tags": ["lpg", "address-change", "same-area"], "pathNodeIds": ["node_ind49_route", "node_ind49_address", "node_ind49_outcome"], "status": "partial"},
+    {"id": "scenario_ind49_same_town", "label": "Same-town distributor transfer", "summary": "Move is in the same town but outside the old distributor's service area.", "tags": ["lpg", "transfer", "same-town"], "pathNodeIds": ["node_ind49_route", "node_ind49_transfer_out", "node_ind49_transfer_in", "node_ind49_outcome"], "status": "partial"},
+    {"id": "scenario_ind49_out_town", "label": "Out-of-town transfer", "summary": "Move leaves the current town and equipment/voucher treatment becomes carrier-specific.", "tags": ["lpg", "transfer", "out-of-town"], "pathNodeIds": ["node_ind49_route", "node_ind49_out_town", "node_ind49_outcome"], "status": "partial"},
+    {"id": "scenario_ind49_portability", "label": "Online distributor portability", "summary": "Authenticated OMC portability route where the carrier exposes a choice of distributor.", "tags": ["lpg", "portability", "online"], "pathNodeIds": ["node_ind49_portability", "node_ind49_outcome"], "status": "partial"},
+    {"id": "scenario_ind49_name_transfer", "label": "Family/death/regularization transfer", "summary": "Change the connection holder or regularize equipment possession under the carrier's form and proofs.", "tags": ["lpg", "family-transfer", "death", "regularization"], "pathNodeIds": ["node_ind49_transfer_type", "node_ind49_documents", "node_ind49_outcome"], "status": "partial"}
+  ],
+  "sources": [
+    {
+      "id": "source_ind49_iocl_faq",
+      "title": "FAQs — Indane LPG connection transfer",
+      "publisher": "Indian Oil Corporation Limited",
+      "url": "https://iocl.com/pages/faq",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Current IndianOil carrier FAQ observed 2026-08-31; page footer says last updated 27/08/2026 04:40 PM. This is OMC/distributor guidance, not a Ministry rule."
+    },
+    {
+      "id": "source_ind49_hpcl_faq",
+      "title": "FAQs — HP Gas transfer, KYC and name change",
+      "publisher": "Hindustan Petroleum Corporation Limited",
+      "url": "https://www.hindustanpetroleum.com/pages/faq",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Current HPCL carrier FAQ observed 2026-08-31; page footer says last updated 10/06/2026 06:10 AM. This is OMC/distributor guidance, not a Ministry rule."
+    },
+    {
+      "id": "source_ind49_hpcl_portability",
+      "title": "LPG — Systemic Improvements: Portability Feature",
+      "publisher": "Hindustan Petroleum Corporation Limited",
+      "url": "https://www.hindustanpetroleum.com/pages/Systemic-Improvements-LPG",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Current HPCL public feature description observed 2026-08-31; page footer says last updated 10/06/2026 06:10 AM. Login and OTP were not attempted."
+    },
+    {
+      "id": "source_ind49_bpcl_portability",
+      "title": "Bharatgas — LPG connection portability",
+      "publisher": "Bharat Petroleum Corporation Limited / Bharatgas",
+      "url": "https://mylang.ebharatgas.com/LPGServices/OptForPortability",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Current public Bharatgas page observed 2026-08-31 (Hindi site shell); page last updated 22/06/2026 03:58 PM. It states the scheme is available in selected cities and requires login."
+    },
+    {
+      "id": "source_ind49_bpcl_declaration",
+      "title": "Bharatgas customer declaration",
+      "publisher": "Bharat Petroleum Corporation Limited / Bharatgas",
+      "url": "https://mylang.ebharatgas.com/bharatgas/LPGServices/Declaration",
+      "accessedAt": "2026-08-31",
+      "type": "official_guidance",
+      "notes": "Current public Bharatgas declaration page observed 2026-08-31; declaration text is a customer undertaking and not evidence of a completed transfer."
+    },
+    {
+      "id": "source_ind49_bpcl_form",
+      "title": "Format for Transfer of Domestic LPG Connection",
+      "publisher": "Bharat Petroleum Corporation Limited / Bharatgas",
+      "url": "https://mylang.ebharatgas.com/Documents/UnifiedTransferRegularizationForm.pdf",
+      "accessedAt": "2026-08-31",
+      "type": "official_form",
+      "notes": "Official blank form observed 2026-08-31. The form's categories and fields are evidence of the published form, not of current eligibility or approval."
+    },
+    {
+      "id": "source_ind49_pib_portability",
+      "title": "Refill Booking Portability for LPG consumers",
+      "publisher": "Press Information Bureau, Ministry of Petroleum and Natural Gas, Government of India",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1725944&lang=2&reg=48",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2021-06-10",
+      "type": "government_release",
+      "notes": "Government/PIB policy-context release dated 10 June 2021. It describes OMC digital services and same-area portability; it is not a current carrier transaction record."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind49_iocl_same_area",
+      "text": "IndianOil's current Indane FAQ says that when a customer shifts within the same distributor's operating area, the customer should advise the distributor of the new address with supporting residence proof so the distributor changes its records and future supplies go to the new residence.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_same_area"],
+      "nodeIds": ["node_ind49_address"],
+      "sourceIds": ["source_ind49_iocl_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Carrier-specific public guidance. It does not identify the assigned Bengaluru distributor or guarantee acceptance of a supplied proof document."
+    },
+    {
+      "id": "claim_ind49_iocl_same_town",
+      "text": "IndianOil's current Indane FAQ says that for a same-town move outside the present distributor's service area, the old distributor prepares a TTV against the original SV, and the receiving distributor uses proof of residence, TTV and DGCC booklet to prepare a TSV and provide a new consumer number.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_same_town"],
+      "nodeIds": ["node_ind49_transfer_out", "node_ind49_transfer_in"],
+      "sourceIds": ["source_ind49_iocl_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "IndianOil terminology and sequence only; do not substitute HP Gas e-CTA or BPCL portability language. The FAQ is not a live Bengaluru transaction."
+    },
+    {
+      "id": "claim_ind49_iocl_out_town",
+      "text": "IndianOil's current Indane FAQ says that an out-of-town move requires surrender of the cylinder and regulator to the current distributor, who prepares a TV and refunds the equipment deposit; the customer is directed to a distributor at the new place for future service.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_out_town"],
+      "nodeIds": ["node_ind49_out_town"],
+      "sourceIds": ["source_ind49_iocl_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Carrier-specific published guidance; no equipment was surrendered and no refund or destination distributor was observed."
+    },
+    {
+      "id": "claim_ind49_hpcl_within_city",
+      "text": "HP Gas's current FAQ says that for a transfer within the city or certain adjoining city, the existing distributor issues an e-CTA/authorisation code against the SV, the e-CTA is valid for three months, and the customer presents the SV and code to the new distributor; cylinder and regulator need not be surrendered.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_same_town", "scenario_ind49_portability"],
+      "nodeIds": ["node_ind49_transfer_out", "node_ind49_transfer_in"],
+      "sourceIds": ["source_ind49_hpcl_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "HPCL's carrier-specific rule. It is not evidence that another OMC uses e-CTA or that a supplied address is within the relevant city/market."
+    },
+    {
+      "id": "claim_ind49_hpcl_out_town",
+      "text": "HP Gas's current FAQ says that for an out-of-town transfer, the current distributor issues a TV and refunds the SV deposit after surrender of cylinders and regulator; the TV is valid for one year, and the Domestic Gas Consumer Card should be retained for endorsement at the new location.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_out_town"],
+      "nodeIds": ["node_ind49_out_town"],
+      "sourceIds": ["source_ind49_hpcl_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "HPCL carrier guidance; no surrender, TV, refund, endorsement or reconnection was attempted."
+    },
+    {
+      "id": "claim_ind49_hpcl_kyc_transfer",
+      "text": "HP Gas's current FAQ says KYC is required in cases including transfer of connection and change of name after the connection holder's death.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_name_transfer", "scenario_ind49_same_town"],
+      "nodeIds": ["node_ind49_documents"],
+      "sourceIds": ["source_ind49_hpcl_faq"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ does not establish a universal current proof list for every transfer case; no KYC was submitted."
+    },
+    {
+      "id": "claim_ind49_hpcl_portability_auth",
+      "text": "HPCL's public LPG systemic-improvements page says its portability feature can transfer an HP Gas connection to another distributor when the consumer changes residence within the city or is dissatisfied with the current distributor, and that requests can only be logged through the HP Gas Consumer Portal or HPPAY with OTP validation.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_portability", "scenario_ind49_same_town"],
+      "nodeIds": ["node_ind49_portability"],
+      "sourceIds": ["source_ind49_hpcl_portability"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Current HPCL carrier description. The login/OTP boundary was recorded without attempting authentication."
+    },
+    {
+      "id": "claim_ind49_bpcl_portability_limits",
+      "text": "The current Bharatgas portability page says consumers may choose a nearby distributor or change distributor for service dissatisfaction only under a scheme available in selected cities, with no transfer fee or additional security deposit, and that login with a user ID and password is required.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_portability"],
+      "nodeIds": ["node_ind49_portability"],
+      "sourceIds": ["source_ind49_bpcl_portability"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Current BPCL page does not identify the selected-city list or establish that Bengaluru is enabled; no login or request was attempted."
+    },
+    {
+      "id": "claim_ind49_bpcl_written_address_notice",
+      "text": "The Bharatgas customer declaration says that whenever the customer changes residence, the LPG distributor is to be informed in writing in advance for change of address in the records.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_same_area", "scenario_ind49_same_town"],
+      "nodeIds": ["node_ind49_address"],
+      "sourceIds": ["source_ind49_bpcl_declaration"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A Bharatgas customer undertaking, not a universal rule for IndianOil or HP Gas and not proof that a written request will be accepted in a particular case."
+    },
+    {
+      "id": "claim_ind49_bpcl_declaration_kyc",
+      "text": "The Bharatgas customer declaration says the customer encloses a completed KYC form with proof of address and proof of identity and accepts household/de-duplication conditions for a domestic subsidized connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_name_transfer", "scenario_ind49_same_area"],
+      "nodeIds": ["node_ind49_documents"],
+      "sourceIds": ["source_ind49_bpcl_declaration"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The declaration does not provide a case-specific current checklist or approval decision; no identity or address data was supplied."
+    },
+    {
+      "id": "claim_ind49_bpcl_form_types",
+      "text": "The official Bharatgas unified transfer/regularization form lists Type A family transfer, Type B outside-family transfer, Type C transfer without transferor consent, Type D next-of-kin transfer after death and Type E regularization where equipment is held without the subscription voucher.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_name_transfer"],
+      "nodeIds": ["node_ind49_transfer_type"],
+      "sourceIds": ["source_ind49_bpcl_form"],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Blank BPCL form categories are published form content; they do not establish eligibility, distributor acceptance, fee or approval."
+    },
+    {
+      "id": "claim_ind49_pib_omc_digital_services",
+      "text": "A Ministry of Petroleum and Natural Gas PIB release dated 2021-06-10 lists OMC portals and mobile apps as channels for LPG portability, transfer of connection and address change for Indane, Bharatgas and HP Gas.",
+      "jurisdiction": "India; Bengaluru, Karnataka context",
+      "scenarioIds": ["scenario_ind49_portability", "scenario_ind49_same_area", "scenario_ind49_same_town"],
+      "nodeIds": ["node_ind49_portability", "node_ind49_address"],
+      "sourceIds": ["source_ind49_pib_portability"],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Government policy/public communication, not a current carrier page. Current OMC implementation and Bengaluru availability remain carrier-specific."
+    },
+    {
+      "id": "claim_ind49_pib_registered_login",
+      "text": "The same 2021 Ministry/PIB release says online portability lets a customer using a registered login choose a distributor from the list serving the customer's area, and that the facility is free of transfer charges.",
+      "jurisdiction": "India; Bengaluru, Karnataka context",
+      "scenarioIds": ["scenario_ind49_portability"],
+      "nodeIds": ["node_ind49_portability"],
+      "sourceIds": ["source_ind49_pib_portability"],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is dated Ministry policy context and should not override a carrier's current selected-city, login, OTP or service-area constraints."
+    },
+    {
+      "id": "claim_ind49_pib_withdrawal_window",
+      "text": "The same 2021 Ministry/PIB release says the source distributor may contact the customer and the portability request may be withdrawn within three days; otherwise the connection transfers automatically to the target distributor.",
+      "jurisdiction": "India; Bengaluru, Karnataka context",
+      "scenarioIds": ["scenario_ind49_portability"],
+      "nodeIds": ["node_ind49_portability", "node_ind49_outcome"],
+      "sourceIds": ["source_ind49_pib_portability"],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Dated government release; no current portal timer, withdrawal control or automatic transfer was observed."
+    },
+    {
+      "id": "claim_ind49_current_bengaluru_unknowns",
+      "text": "The reviewed official material does not establish the current OMC/distributor assigned to a particular Bengaluru address, whether that address is inside a chosen distributor's service area or portability cluster, the accepted proof variant for a case, a current transfer fee/security amount for every branch, or approval/timing for a supplied connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_same_area", "scenario_ind49_same_town", "scenario_ind49_out_town", "scenario_ind49_portability", "scenario_ind49_name_transfer"],
+      "nodeIds": ["node_ind49_route", "node_ind49_documents", "node_ind49_outcome"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No login, OTP, distributor lookup, upload, payment, equipment handoff or submission was performed."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_ind49_route",
+      "label": "Identify OMC and service-area branch",
+      "kind": "decision",
+      "ownerAgencyId": "agency_ind49_psu_omc",
+      "summary": "The route depends on carrier and whether the new address remains within the old distributor's area, city/market or portability cluster.",
+      "requiredState": "OMC, current distributor, new address and service-area match are case-specific and unknown.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind49_same_area", "scenario_ind49_same_town", "scenario_ind49_out_town", "scenario_ind49_portability"],
+      "claimIds": ["claim_ind49_current_bengaluru_unknowns"],
+      "status": "unknown",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_ind49_address",
+      "label": "Address notice and residence proof",
+      "kind": "record",
+      "ownerAgencyId": "agency_ind49_psu_omc",
+      "summary": "Carrier guidance refers to notifying the distributor and/or presenting supporting residence proof; exact accepted evidence is not universal.",
+      "requiredState": "New address and current accepted proof variant are not supplied.",
+      "checks": [
+        {"id": "check_ind49_iocl_address", "label": "IndianOil same-area address proof", "description": "IndianOil FAQ says advise the distributor with supporting residence proof.", "url": "https://iocl.com/pages/faq", "claimIds": ["claim_ind49_iocl_same_area"], "status": "verified"},
+        {"id": "check_ind49_bpcl_written_notice", "label": "Bharatgas advance written notice", "description": "Bharatgas declaration says residence changes are reported in writing in advance.", "url": "https://mylang.ebharatgas.com/bharatgas/LPGServices/Declaration", "claimIds": ["claim_ind49_bpcl_written_address_notice"], "status": "verified"}
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind49_same_area", "scenario_ind49_same_town"],
+      "claimIds": ["claim_ind49_iocl_same_area", "claim_ind49_bpcl_written_address_notice"],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_ind49_transfer_type",
+      "label": "Choose holder-transfer or regularization type",
+      "kind": "decision",
+      "ownerAgencyId": "agency_ind49_bpcl",
+      "summary": "Bharatgas's blank form distinguishes family, outside-family, no-consent, next-of-kin/death and equipment-without-SV cases.",
+      "requiredState": "Transfer relationship/event facts are unknown.",
+      "checks": [{"id": "check_ind49_bpcl_form_types", "label": "Published BPCL form categories", "description": "The official blank form lists five transfer/regularization types.", "url": "https://mylang.ebharatgas.com/Documents/UnifiedTransferRegularizationForm.pdf", "claimIds": ["claim_ind49_bpcl_form_types"], "status": "verified"}],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind49_name_transfer"],
+      "claimIds": ["claim_ind49_bpcl_form_types"],
+      "status": "partial",
+      "displayOrder": 25
+    },
+    {
+      "id": "node_ind49_documents",
+      "label": "KYC and household/document check",
+      "kind": "record",
+      "ownerAgencyId": "agency_ind49_psu_omc",
+      "summary": "HP Gas and Bharatgas materials require KYC/identity/address evidence in relevant transfer or declaration contexts; exact current case checklist remains carrier-specific.",
+      "requiredState": "No KYC or personal proof is supplied.",
+      "checks": [{"id": "check_ind49_kyc", "label": "KYC reference", "description": "HP Gas FAQ and Bharatgas declaration refer to KYC with identity/address evidence for relevant cases.", "url": "https://www.hindustanpetroleum.com/pages/faq", "claimIds": ["claim_ind49_hpcl_kyc_transfer", "claim_ind49_bpcl_declaration_kyc"], "status": "verified"}],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind49_name_transfer", "scenario_ind49_same_area", "scenario_ind49_same_town"],
+      "claimIds": ["claim_ind49_hpcl_kyc_transfer", "claim_ind49_bpcl_declaration_kyc", "claim_ind49_current_bengaluru_unknowns"],
+      "status": "partial",
+      "displayOrder": 30
+    },
+    {
+      "id": "node_ind49_transfer_out",
+      "label": "Old distributor transfer-out",
+      "kind": "service",
+      "ownerAgencyId": "agency_ind49_psu_omc",
+      "summary": "IndianOil describes SV/TTV transfer-out for same-town moves; HP Gas describes e-CTA for within-city/adjoining-city moves.",
+      "requiredState": "Carrier, original SV and old distributor are unknown; no transfer-out was requested.",
+      "checks": [{"id": "check_ind49_transfer_out", "label": "Carrier-specific transfer-out record", "description": "IndianOil and HP Gas publish different transfer-out records for their own connections.", "url": "https://iocl.com/pages/faq", "claimIds": ["claim_ind49_iocl_same_town", "claim_ind49_hpcl_within_city"], "status": "verified"}],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind49_same_town"],
+      "claimIds": ["claim_ind49_iocl_same_town", "claim_ind49_hpcl_within_city"],
+      "status": "partial",
+      "displayOrder": 40
+    },
+    {
+      "id": "node_ind49_transfer_in",
+      "label": "Receiving distributor transfer-in",
+      "kind": "service",
+      "ownerAgencyId": "agency_ind49_psu_omc",
+      "summary": "The receiving distributor's required packet and new consumer record depend on the carrier and branch.",
+      "requiredState": "Receiving distributor and applicable voucher/proof packet are unknown; no transfer-in was attempted.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind49_same_town"],
+      "claimIds": ["claim_ind49_iocl_same_town", "claim_ind49_hpcl_within_city", "claim_ind49_current_bengaluru_unknowns"],
+      "status": "unknown",
+      "displayOrder": 50
+    },
+    {
+      "id": "node_ind49_out_town",
+      "label": "Out-of-town surrender and reconnection",
+      "kind": "service",
+      "ownerAgencyId": "agency_ind49_psu_omc",
+      "summary": "IndianOil and HP Gas both describe out-of-town equipment surrender/TV routes, with carrier-specific validity and record handling.",
+      "requiredState": "No equipment, voucher or destination distributor is supplied.",
+      "checks": [{"id": "check_ind49_out_town", "label": "Published out-of-town branch", "description": "IndianOil and HP Gas FAQs publish out-of-town TV/equipment handling.", "url": "https://www.hindustanpetroleum.com/pages/faq", "claimIds": ["claim_ind49_iocl_out_town", "claim_ind49_hpcl_out_town"], "status": "verified"}],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind49_out_town"],
+      "claimIds": ["claim_ind49_iocl_out_town", "claim_ind49_hpcl_out_town"],
+      "status": "partial",
+      "displayOrder": 55
+    },
+    {
+      "id": "node_ind49_portability",
+      "label": "Authenticated online portability",
+      "kind": "service",
+      "ownerAgencyId": "agency_ind49_psu_omc",
+      "summary": "OMC pages describe portal/app portability with carrier-specific login and OTP boundaries; Ministry material supplies older policy context.",
+      "requiredState": "No authenticated account, OTP, selected-city/cluster list or target distributor is available.",
+      "checks": [
+        {"id": "check_ind49_hp_portability", "label": "HP Gas login and OTP boundary", "description": "HPCL says portability requests are logged through user login and validated by OTP.", "url": "https://www.hindustanpetroleum.com/pages/Systemic-Improvements-LPG", "claimIds": ["claim_ind49_hpcl_portability_auth"], "status": "verified"},
+        {"id": "check_ind49_bpcl_portability", "label": "Bharatgas selected-city/login boundary", "description": "Bharatgas says portability is in selected cities and requires user login.", "url": "https://mylang.ebharatgas.com/LPGServices/OptForPortability", "claimIds": ["claim_ind49_bpcl_portability_limits"], "status": "verified"}
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind49_portability"],
+      "claimIds": ["claim_ind49_hpcl_portability_auth", "claim_ind49_bpcl_portability_limits", "claim_ind49_pib_omc_digital_services", "claim_ind49_pib_registered_login", "claim_ind49_pib_withdrawal_window"],
+      "status": "partial",
+      "displayOrder": 60
+    },
+    {
+      "id": "node_ind49_outcome",
+      "label": "Updated consumer record and future supply",
+      "kind": "outcome",
+      "ownerAgencyId": "agency_ind49_psu_omc",
+      "summary": "A published route may mention a new consumer number, endorsed record or future delivery, but no real case outcome was observed.",
+      "requiredState": "No transfer approval, updated record, fee receipt, new number or delivery result exists.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_ind49_same_area", "scenario_ind49_same_town", "scenario_ind49_out_town", "scenario_ind49_portability", "scenario_ind49_name_transfer"],
+      "claimIds": ["claim_ind49_current_bengaluru_unknowns"],
+      "status": "unknown",
+      "displayOrder": 70
+    }
+  ],
+  "edges": [
+    {"id": "edge_ind49_route_address", "fromNodeId": "node_ind49_route", "toNodeId": "node_ind49_address", "relationship": "requires", "label": "Carrier and service-area branch determines the address/proof route.", "scenarioIds": ["scenario_ind49_same_area", "scenario_ind49_same_town"], "claimIds": ["claim_ind49_iocl_same_area", "claim_ind49_bpcl_written_address_notice"], "status": "partial"},
+    {"id": "edge_ind49_route_portability", "fromNodeId": "node_ind49_route", "toNodeId": "node_ind49_portability", "relationship": "branches", "label": "A carrier's portability feature is distinct from manual voucher transfer and may have login/OTP/selected-city constraints.", "scenarioIds": ["scenario_ind49_portability"], "claimIds": ["claim_ind49_hpcl_portability_auth", "claim_ind49_bpcl_portability_limits", "claim_ind49_current_bengaluru_unknowns"], "status": "partial"},
+    {"id": "edge_ind49_out_in", "fromNodeId": "node_ind49_transfer_out", "toNodeId": "node_ind49_transfer_in", "relationship": "requires", "label": "Carrier-specific transfer-out record precedes receiving-distributor enrollment.", "scenarioIds": ["scenario_ind49_same_town"], "claimIds": ["claim_ind49_iocl_same_town", "claim_ind49_hpcl_within_city"], "status": "partial"},
+    {"id": "edge_ind49_documents_outcome", "fromNodeId": "node_ind49_documents", "toNodeId": "node_ind49_outcome", "relationship": "produces", "label": "Accepted KYC/proof may support a carrier record change; no outcome was observed.", "scenarioIds": ["scenario_ind49_name_transfer", "scenario_ind49_same_area"], "claimIds": ["claim_ind49_hpcl_kyc_transfer", "claim_ind49_bpcl_declaration_kyc", "claim_ind49_current_bengaluru_unknowns"], "status": "unknown"},
+    {"id": "edge_ind49_portability_outcome", "fromNodeId": "node_ind49_portability", "toNodeId": "node_ind49_outcome", "relationship": "produces", "label": "A successful portability request would update the carrier's consumer/distributor record; no request was submitted.", "scenarioIds": ["scenario_ind49_portability"], "claimIds": ["claim_ind49_pib_withdrawal_window", "claim_ind49_current_bengaluru_unknowns"], "status": "unknown"}
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind49_omc_service_area",
+      "title": "Carrier and service-area boundary is case-specific",
+      "category": "documentation",
+      "symptom": "The same move can follow an address update, a same-town voucher/e-CTA transfer, an out-of-town TV route or an authenticated portability route.",
+      "likelyCause": "OMC terminology and distributor coverage differ; public pages do not assign a supplied Bengaluru address.",
+      "recovery": "Identify the current OMC and distributor through its official current channel, then confirm the new address's serving area before choosing a branch.",
+      "ownerAgencyIds": ["agency_ind49_iocl", "agency_ind49_hpcl", "agency_ind49_bpcl"],
+      "nodeIds": ["node_ind49_route", "node_ind49_transfer_out", "node_ind49_portability"],
+      "scenarioIds": ["scenario_ind49_same_area", "scenario_ind49_same_town", "scenario_ind49_out_town", "scenario_ind49_portability"],
+      "claimIds": ["claim_ind49_current_bengaluru_unknowns"],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_ind49_authentication",
+      "title": "Online portability stops at authenticated access",
+      "category": "access",
+      "symptom": "HP Gas requires user login and OTP; Bharatgas requires user ID/password and limits the scheme to selected cities.",
+      "likelyCause": "Portability is an account-bound OMC service rather than an unauthenticated public lookup.",
+      "recovery": "Use only the relevant OMC's official account route if the consumer elects to proceed; no credentials or OTP were collected in this pass.",
+      "ownerAgencyIds": ["agency_ind49_hpcl", "agency_ind49_bpcl"],
+      "nodeIds": ["node_ind49_portability"],
+      "scenarioIds": ["scenario_ind49_portability"],
+      "claimIds": ["claim_ind49_hpcl_portability_auth", "claim_ind49_bpcl_portability_limits"],
+      "status": "partial"
+    }
+  ]
+}

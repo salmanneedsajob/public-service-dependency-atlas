@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru LPG transfer — citizen-evidence pass",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-31",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice or an application route. These redacted public first-person accounts are case evidence only; they do not establish OMC or distributor policy, document requirements, charges, service areas, complaint outcomes, or service standards."
+  },
+  "agencies": [],
+  "scenarios": [
+    {
+      "id": "scenario_ind49_lpg_citizen_move",
+      "label": "Citizen-reported LPG address or distributor change",
+      "summary": "Reported roadblocks while updating an LPG address, changing distributor, or receiving the first delivery after moving to Bengaluru.",
+      "tags": ["lpg", "citizen-evidence", "address-change", "distributor-transfer", "bengaluru"],
+      "pathNodeIds": ["node_lpg_route", "node_lpg_address_proof", "node_lpg_old_distributor", "node_lpg_new_distributor", "node_lpg_record_update"],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind49_lpg_address_update_access_report",
+      "title": "Gas agency not changing address can't claim pf",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/yr66qe/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2022-11-10",
+      "type": "citizen_evidence",
+      "notes": "Public first-person account. Agency and locality names, family details, financial context, address, account and voucher details, and phone-routing details are omitted. The account reports an attempt to update an LPG address, not a verified agency closure, telephone-service record, or current Indane process."
+    },
+    {
+      "id": "source_ind49_lpg_online_transfer_document_report",
+      "title": "Transfer My Indane Gas Connection Online Within City",
+      "publisher": "Society views (personal blog)",
+      "url": "https://transferindanegas.blogspot.com/2016/08/transfer-my-indane-gas-connection.html",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2016-08-13",
+      "type": "citizen_evidence",
+      "notes": "Public first-person Bengaluru account. Names, username, exact origin and destination, consumer number, proofs, request number, email, and other personal details are omitted. It is a historical Indane-specific report and does not establish that the online route, transfer document, feedback channel, or response is available now."
+    },
+    {
+      "id": "source_ind49_lpg_post_transfer_delivery_payment_report",
+      "title": "LPG cylinder delivery charges",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1t53v58/lpg_cylinder_delivery_charges/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2026-05-06",
+      "type": "citizen_evidence",
+      "notes": "Public first-person report from a person who said they had transferred a Bharatgas connection to Bengaluru. Their floor, building details, hometown, requested amount, and username are omitted. It reports a requested additional payment and unsuccessful negotiation, not an authorised fee, a demand by BPCL or its distributor, or a general delivery practice."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind49_lpg_address_update_access_block_reported",
+      "text": "One citizen seeking an LPG address update reported repeatedly finding the assigned agency office closed and being unable to reach the referred regional telephone contact, leaving the update unresolved at the time of posting.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_lpg_citizen_move"],
+      "nodeIds": ["node_lpg_route", "node_lpg_address_proof", "node_lpg_record_update"],
+      "sourceIds": ["source_ind49_lpg_address_update_access_report"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One 2022 account of access and contact friction. It does not establish whether the office was permanently closed, whether another authorised channel was available, the accepted proof, or any current provider practice."
+    },
+    {
+      "id": "claim_ind49_lpg_online_transfer_document_download_block_reported",
+      "text": "One citizen who reported completing an online Indane distributor transfer within Bengaluru also reported being unable to download the transfer document until using the site's feedback channel; they later reported that the download issue was resolved after contact from the service.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_lpg_citizen_move"],
+      "nodeIds": ["node_lpg_route", "node_lpg_old_distributor", "node_lpg_new_distributor", "node_lpg_record_update"],
+      "sourceIds": ["source_ind49_lpg_online_transfer_document_report"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One 2016, carrier-specific account. The reported feedback route and recovery are only a historical recovery lead; neither proves a current online route nor a transfer-document requirement for other cases."
+    },
+    {
+      "id": "claim_ind49_lpg_post_transfer_delivery_payment_request_reported",
+      "text": "One citizen reported that, after transferring a Bharatgas connection to Bengaluru, the delivery worker requested an additional payment at delivery and that negotiation did not resolve the request.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_lpg_citizen_move"],
+      "nodeIds": ["node_lpg_new_distributor", "node_lpg_record_update"],
+      "sourceIds": ["source_ind49_lpg_post_transfer_delivery_payment_report"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One 2026 report of a post-transfer delivery interaction. It does not establish an official or unofficial charge, a provider responsibility, delivery eligibility, a complaint result, or a system-wide practice."
+    },
+    {
+      "id": "claim_ind49_lpg_citizen_current_route_unknown",
+      "text": "The retained citizen accounts do not establish a current OMC-specific address-update or distributor-transfer route, service-area decision, proof acceptance, transfer-document requirement, charge, or delivery outcome in Bengaluru.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_ind49_lpg_citizen_move"],
+      "nodeIds": ["node_lpg_route", "node_lpg_address_proof", "node_lpg_old_distributor", "node_lpg_new_distributor", "node_lpg_record_update"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The accounts are dated, carrier- and case-specific. Their different channel experiences are not treated as a contradiction because they concern different dates and facts. No authenticated account, application, payment, or personal data was used."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind49_lpg_reported_address_update_access_failure",
+      "title": "Reported inability to reach an address-update channel",
+      "category": "process",
+      "symptom": "One citizen reported an assigned agency office appearing closed on repeated visits and no answer from a referred regional contact while attempting an LPG address update.",
+      "likelyCause": "Unknown; the account does not establish the office's status, contact routing, the consumer record state, or other authorised channels.",
+      "recovery": "Confirm the assigned OMC/distributor's current authorised address-update and escalation channels before relying on the reported access path; retain any case-specific written response.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_lpg_route", "node_lpg_record_update"],
+      "scenarioIds": ["scenario_ind49_lpg_citizen_move"],
+      "claimIds": ["claim_ind49_lpg_address_update_access_block_reported", "claim_ind49_lpg_citizen_current_route_unknown"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind49_lpg_reported_transfer_document_download_failure",
+      "title": "Reported online transfer-document download failure",
+      "category": "infrastructure",
+      "symptom": "One citizen reported completing a historical online distributor transfer but being unable to download the related transfer document until contacting the site's feedback channel.",
+      "likelyCause": "Unknown; the report does not identify a current portal condition, account state, document rule, or system owner.",
+      "recovery": "Treat the historical feedback contact only as a lead and confirm the current authorised transfer-document and support route with the assigned OMC/distributor.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_lpg_route", "node_lpg_new_distributor", "node_lpg_record_update"],
+      "scenarioIds": ["scenario_ind49_lpg_citizen_move"],
+      "claimIds": ["claim_ind49_lpg_online_transfer_document_download_block_reported", "claim_ind49_lpg_citizen_current_route_unknown"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind49_lpg_reported_post_transfer_delivery_payment_request",
+      "title": "Reported additional payment request on first delivery after transfer",
+      "category": "process",
+      "symptom": "One citizen reported an unresolved additional-payment request from a delivery worker after transferring a connection to Bengaluru.",
+      "likelyCause": "Unknown; the citizen report cannot establish whether the request was authorised, who made it on whose behalf, or whether it was connected to the transfer.",
+      "recovery": "Check the current official invoice and use the assigned OMC/distributor's authorised complaint route for any disputed delivery interaction; do not infer a fee from this report.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_lpg_new_distributor", "node_lpg_record_update"],
+      "scenarioIds": ["scenario_ind49_lpg_citizen_move"],
+      "claimIds": ["claim_ind49_lpg_post_transfer_delivery_payment_request_reported", "claim_ind49_lpg_citizen_current_route_unknown"],
+      "status": "partial"
+    }
+  ],
+  "journeys": []
+}

@@ -43,6 +43,7 @@ const auditDerivedClaims = {
 };
 const auditDerivedScenarios = {
   marriage: new Set(['scenario_marriage_w_kaveri_reported']),
+  lpg: new Set(['scenario_lpg_citizen_reported']),
 };
 const read = async (path) => JSON.parse(await readFile(path, 'utf8'));
 const assert = (condition, message) => { if (!condition) throw new Error(message); };

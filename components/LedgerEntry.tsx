@@ -305,8 +305,12 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
   const datasetNotice = datasetCopy[ledger.meta.dataKind];
   const mappingSummary = deriveServiceMappingSummary(ledger);
   const serviceStatus = mappingSummary.status;
-  const completeness = `${mappingSummary.fullyDocumentedRecords} of ${mappingSummary.totalRecords} records researched`;
-  const unknownCopy = mappingSummary.unknownRecords > 0 ? ` · ${mappingSummary.unknownRecords} ${mappingSummary.unknownRecords === 1 ? 'step has' : 'steps have'} no public procedure` : '';
+  const selectedScenarioSummary = mappingSummary.scenarioSummaries.find((summary) => summary.scenarioId === selectedScenario.id);
+  const completeness = mappingSummary.fullyResearchedScenarios + ' of ' + mappingSummary.totalScenarios + ' routes fully researched';
+  const scenarioCoverage = (summary: typeof selectedScenarioSummary) => summary
+    ? summary.fullyDocumentedRecords + ' of ' + summary.totalRecords + ' records researched' + (summary.unknownRecords > 0 ? ' · ' + summary.unknownRecords + ' ' + (summary.unknownRecords === 1 ? 'step has' : 'steps have') + ' no public procedure' : '')
+    : 'Research coverage unavailable';
+  const selectedCompleteness = scenarioCoverage(selectedScenarioSummary);
   const sourceGroups = buildSourceGroups(ledger);
   const entryNames: Record<string, string> = {
     bescom: 'BESCOM transfer', khata: 'khata transfer', 'property-tax': 'property-tax transfer',
@@ -361,7 +365,7 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
         <div className="hero-copy">
           <p className="eyebrow">Bengaluru · Independent public-source guide</p>
           <h1>{isBescom ? 'Why is my BESCOM transfer blocked?' : `Your ${entryName} journey`}</h1>
-          <p className="ledger-subtitle">Independent research snapshot · checked {ledger.meta.asOf} · <span className={`service-map-status service-${serviceStatus.toLowerCase().replaceAll(' ', '-')}`}>Map status: {serviceStatus} · {completeness}{unknownCopy}</span></p>
+          <p className="ledger-subtitle">Independent research snapshot · checked {ledger.meta.asOf} · <span className={`service-map-status service-${serviceStatus.toLowerCase().replaceAll(' ', '-')}`}>Map status: {serviceStatus} · {completeness}</span></p>
           <p className="lede">{isBescom ? 'Follow the records that affect an electricity name transfer, the places the route can stall, and the gaps no public source currently explains.' : `Follow the published route for ${entryName}, the places it can stall, and the questions the available public record does not answer.`}</p>
           {guide && (
             <div className="key-terms" aria-label={`Key terms for ${entryName}`}>
@@ -437,11 +441,13 @@ export default function LedgerEntry({ service, ledger }: { service: string; ledg
               <span className="scenario-number">{String(index + 1).padStart(2, '0')}</span>
               <strong>{publicCopy(scenario.label)}</strong>
               <span className="scenario-summary">{publicCopy(scenario.summary)}</span>
+              <span className="scenario-coverage">{scenarioCoverage(mappingSummary.scenarioSummaries.find((item) => item.scenarioId === scenario.id))}</span>
               <span className="tag-row">{scenario.tags.map((tag) => <small key={tag}>{tag}</small>)}</span>
               <StatusBadge status={scenario.status} compact />
             </button>
           ))}
         </div>
+        <p className="selected-scenario-coverage"><b>{publicCopy(selectedScenario.label)}</b> · {selectedCompleteness}</p>
       </section>
 
       <section className="section map-section" id="map" aria-labelledby="map-heading">

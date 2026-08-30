@@ -291,7 +291,7 @@ h1 {
   position: relative;
   min-height: 224px;
   display: grid;
-  grid-template-rows: auto auto 1fr auto auto;
+  grid-template-rows: auto auto 1fr auto auto auto;
   gap: 11px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -307,6 +307,10 @@ h1 {
 .scenario-number { font-size: 10px; font-weight: 850; opacity: .55; }
 .scenario-card strong { max-width: 260px; font-family: Georgia, serif; font-size: 25px; font-weight: 500; line-height: 1.05; letter-spacing: -.03em; }
 .scenario-summary { max-width: 340px; opacity: .73; font-size: 13px; line-height: 1.45; }
+.scenario-coverage { font-size: 11px; font-weight: 750; line-height: 1.35; color: var(--muted); }
+.scenario-card.selected .scenario-coverage { color: rgba(255, 255, 255, .88); }
+.selected-scenario-coverage { margin: 20px 0 0; color: var(--muted); font-size: 14px; }
+.selected-scenario-coverage b { color: var(--ink); }
 .tag-row { display: flex; flex-wrap: wrap; gap: 5px; }
 .tag-row small { border-radius: 99px; padding: 4px 7px; background: rgba(24, 50, 45, .08); font-size: 9px; }
 .selected .tag-row small { background: rgba(255, 255, 255, .12); }

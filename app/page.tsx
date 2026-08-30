@@ -81,8 +81,8 @@ export default function AtlasHome() {
           </div>
           <p>Each entry traces the records the service depends on, what can block it, and the evidence behind every statement.</p>
         </div>
-        <p className="directory-status-key"><b>Mapped</b> = we traced the full published route and its gaps. <b>Partially mapped</b> = the public record stops before the journey does. Both are researched; neither means the service is complete or incomplete.</p>
-        <p className="directory-status-rule">Mapped means every record on the main route has been researched: each answer is published, or we checked and found no public procedure. Every handoff is sourced.</p>
+        <p className="directory-status-key"><b>Mapped</b> = we traced every mapped route and its gaps. <b>Partially mapped</b> = the public record stops before at least one journey does. Both are researched; neither means the service is complete or incomplete.</p>
+        <p className="directory-status-rule">Mapped means every record on every mapped route has been researched: each answer is published, or we checked and found no public procedure. Every handoff is sourced.</p>
         <div className="service-grid">
           {serviceGaps.map(({ service, gaps }) => {
             const firstGap = gaps[0];
@@ -90,12 +90,11 @@ export default function AtlasHome() {
               ? `Published route with ${gaps.length} ${gaps.length === 1 ? 'place' : 'places'} where the public procedure stops, kept visible.`
               : `${gaps.length === 1 ? 'One place' : `${gaps.length} places`} where the public record stops, including: ${firstGap?.situation ?? 'the remaining route has not been fully traced.'}`;
             const statusDefinition = service.status === 'Mapped'
-              ? 'Mapped: we traced the full published route and its gaps.'
-              : 'Partially mapped: the public record stops before the journey does.';
-            const { fullyDocumentedRecords, totalRecords, unknownRecords } = service.mappingSummary;
-            const completeness = `${fullyDocumentedRecords} of ${totalRecords} records researched`;
-            const unknownCopy = unknownRecords > 0 ? ` · ${unknownRecords} ${unknownRecords === 1 ? 'step has' : 'steps have'} no public procedure` : '';
-            return <a className="service-card mapped-service" href={service.href} key={service.title}><span className="service-category">{service.category}</span><div className={`service-status service-${service.status.toLowerCase().replaceAll(' ', '-')}`} title={statusDefinition} aria-label={`${service.status}. ${completeness}${unknownCopy}`}>{service.status} · {completeness}{unknownCopy}</div><h3>{service.title}</h3><p>{cardCopy}</p><span className="service-cta">Open this entry →</span></a>;
+              ? 'Mapped: every mapped situation has a researched route and sourced handoffs between records.'
+              : 'Partially mapped: at least one situation stops before the public record does.';
+            const { fullyResearchedScenarios, totalScenarios } = service.mappingSummary;
+            const completeness = `${fullyResearchedScenarios} of ${totalScenarios} routes fully researched`;
+            return <a className="service-card mapped-service" href={service.href} key={service.title}><span className="service-category">{service.category}</span><div className={`service-status service-${service.status.toLowerCase().replaceAll(' ', '-')}`} title={statusDefinition} aria-label={`${service.status}. ${completeness}`}>{service.status} · {completeness}</div><h3>{service.title}</h3><p>{cardCopy}</p><span className="service-cta">Open this entry →</span></a>;
           })}
         </div>
       </section>

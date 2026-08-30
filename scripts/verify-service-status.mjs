@@ -7,43 +7,46 @@ const errors = [];
 const statusCounts = { Mapped: 0, 'Partially mapped': 0 };
 const researchFields = ['checks', 'failureSignals', 'recoveries'];
 
-function expectedStatus(ledger) {
-  const defaultScenario = ledger.scenarios[0];
-  if (!defaultScenario || defaultScenario.pathNodeIds.length === 0) return 'Partially mapped';
-
-  const nodes = defaultScenario.pathNodeIds.map((id) => ledger.nodes.find((node) => node.id === id));
-  const nodesAreResearched = nodes.every((node) => node
-    && researchFields.every((field) =>
-      node[field].length > 0 || node.researchedNoSourceFound?.includes(field),
-    ));
-  const handoffsAreSourced = defaultScenario.pathNodeIds.slice(1).every((toNodeId, index) => {
-    const edge = ledger.edges.find((candidate) => candidate.scenarioIds.includes(defaultScenario.id)
-      && candidate.fromNodeId === defaultScenario.pathNodeIds[index]
+function expectedScenario(ledger, scenario) {
+  const nodes = scenario.pathNodeIds.map((id) => ledger.nodes.find((node) => node.id === id));
+  const fullyDocumentedRecords = nodes.filter((node) => node
+    && researchFields.every((field) => node[field].length > 0 || node.researchedNoSourceFound?.includes(field))).length;
+  const unknownRecords = nodes.filter((node) => node?.status === 'unknown').length;
+  const handoffsAreSourced = scenario.pathNodeIds.slice(1).every((toNodeId, index) => {
+    const edge = ledger.edges.find((candidate) => candidate.scenarioIds.includes(scenario.id)
+      && candidate.fromNodeId === scenario.pathNodeIds[index]
       && candidate.toNodeId === toNodeId);
     return edge && edge.claimIds.length > 0;
   });
-
-  return nodesAreResearched && handoffsAreSourced ? 'Mapped' : 'Partially mapped';
+  return {
+    fullyDocumentedRecords,
+    totalRecords: nodes.length,
+    unknownRecords,
+    status: nodes.length > 0 && fullyDocumentedRecords === nodes.length && handoffsAreSourced ? 'Mapped' : 'Partially mapped',
+  };
 }
 
 for (const file of ledgerFiles) {
-  const ledger = JSON.parse(await readFile(`ledger/${file}`, 'utf8'));
-  const expected = expectedStatus(ledger);
-  const derived = deriveServiceStatus(ledger);
+  const ledger = JSON.parse(await readFile('ledger/' + file, 'utf8'));
   const summary = deriveServiceMappingSummary(ledger);
-  const defaultPathNodes = (ledger.scenarios[0]?.pathNodeIds ?? []).map((id) => ledger.nodes.find((node) => node.id === id));
-  const expectedFullyDocumented = defaultPathNodes.filter((node) => node
-    && researchFields.every((field) =>
-      node[field].length > 0 || node.researchedNoSourceFound?.includes(field),
-    )).length;
-  const expectedUnknown = defaultPathNodes.filter((node) => node?.status === 'unknown').length;
-  if (derived !== expected) errors.push(`${file}: expected ${expected}, got ${derived}.`);
-  if (summary.status !== derived) errors.push(`${file}: summary status and status helper disagree.`);
-  if (summary.totalRecords !== ledger.scenarios[0]?.pathNodeIds.length) errors.push(`${file}: summary total must equal default-route records.`);
-  if (summary.fullyDocumentedRecords !== expectedFullyDocumented) errors.push(`${file}: summary fully documented count is incorrect.`);
-  if (summary.unknownRecords !== expectedUnknown) errors.push(`${file}: summary Unknown count is incorrect.`);
-  statusCounts[derived] += 1;
-  if (/\b(?:mapped|unmapped)\b/i.test(ledger.meta.title)) errors.push(`${file}: meta.title must be neutral about mapping status.`);
+  const expectedScenarios = ledger.scenarios.map((scenario) => expectedScenario(ledger, scenario));
+  const expectedStatus = expectedScenarios.length > 0 && expectedScenarios.every((scenario) => scenario.status === 'Mapped')
+    ? 'Mapped'
+    : 'Partially mapped';
+
+  if (deriveServiceStatus(ledger) !== expectedStatus) errors.push(file + ': expected service status ' + expectedStatus + '.');
+  if (summary.status !== expectedStatus) errors.push(file + ': summary status is not derived from every scenario.');
+  if (summary.totalScenarios !== ledger.scenarios.length) errors.push(file + ': total scenarios is incorrect.');
+  if (summary.fullyResearchedScenarios !== expectedScenarios.filter((scenario) => scenario.status === 'Mapped').length) errors.push(file + ': fully researched scenario count is incorrect.');
+  for (const [index, scenario] of expectedScenarios.entries()) {
+    const actual = summary.scenarioSummaries.find((item) => item.scenarioId === ledger.scenarios[index].id);
+    if (!actual) errors.push(file + ': scenario summary is missing.');
+    else if (actual.fullyDocumentedRecords !== scenario.fullyDocumentedRecords || actual.totalRecords !== scenario.totalRecords || actual.unknownRecords !== scenario.unknownRecords || actual.status !== scenario.status) {
+      errors.push(file + ': scenario summary is incorrect.');
+    }
+  }
+  statusCounts[expectedStatus] += 1;
+  if (/\b(?:mapped|unmapped)\b/i.test(ledger.meta.title)) errors.push(file + ': meta.title must be neutral about mapping status.');
 }
 
 const [atlasData, directory, entry, explorerData, explorer] = await Promise.all([
@@ -55,9 +58,8 @@ const [atlasData, directory, entry, explorerData, explorer] = await Promise.all(
 ]);
 if (/status:\s*['"][^'"]+['"]/.test(atlasData)) errors.push('Atlas services must not contain a handwritten status value.');
 if (!atlasData.includes('deriveServiceMappingSummary(service.ledger)') || !atlasData.includes('status: mappingSummary.status')) errors.push('Atlas services must derive their status from each ledger.');
-if (!directory.includes('directory-status-rule')) errors.push('Directory must explain what earns Mapped.');
-if (!directory.includes('fullyDocumentedRecords') || !entry.includes('deriveServiceMappingSummary(ledger)')) errors.push('Directory cards and entry pages must show the derived completeness summary.');
+if (!directory.includes('fullyResearchedScenarios') || !entry.includes('scenarioSummaries')) errors.push('Directory and entry pages must show route-aware completeness.');
 if (!explorerData.includes('status: service.status') || !explorer.includes('folder.status')) errors.push('Filing cabinet folders must receive and show the derived service status.');
 
-if (errors.length) throw new Error(`Service-status check failed:\n${errors.join('\n')}`);
-console.log(`Service status verified: ${ledgerFiles.length} ledgers derive from their default route; ${statusCounts.Mapped} Mapped, ${statusCounts['Partially mapped']} Partially mapped.`);
+if (errors.length) throw new Error('Service-status check failed:\n' + errors.join('\n'));
+console.log('Service status verified: ' + ledgerFiles.length + ' ledgers derive from every scenario; ' + statusCounts.Mapped + ' Mapped, ' + statusCounts['Partially mapped'] + ' Partially mapped.');

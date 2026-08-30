@@ -5,44 +5,61 @@ const researchFields = ['checks', 'failureSignals', 'recoveries'] as const;
 
 export type ServiceMappingSummary = {
   status: ServiceMappingStatus;
+  fullyResearchedScenarios: number;
+  totalScenarios: number;
+  scenarioSummaries: ScenarioMappingSummary[];
+};
+
+export type ScenarioMappingSummary = {
+  scenarioId: string;
   fullyDocumentedRecords: number;
   totalRecords: number;
   unknownRecords: number;
+  status: ServiceMappingStatus;
 };
 
-/**
- * Mapped measures whether we researched each record and handoff on the first
- * citizen route — including where that research found no public procedure.
- */
-export function deriveServiceMappingSummary(ledger: Ledger): ServiceMappingSummary {
-  const defaultScenario = ledger.scenarios[0];
-  if (!defaultScenario || defaultScenario.pathNodeIds.length === 0) {
-    return { status: 'Partially mapped', fullyDocumentedRecords: 0, totalRecords: 0, unknownRecords: 0 };
-  }
-
-  const pathNodes = defaultScenario.pathNodeIds.map((nodeId) => ledger.nodes.find((node) => node.id === nodeId));
+function deriveScenarioMappingSummary(ledger: Ledger, scenario: Ledger['scenarios'][number]): ScenarioMappingSummary {
+  const pathNodes = scenario.pathNodeIds.map((nodeId) => ledger.nodes.find((node) => node.id === nodeId));
   const fullyDocumentedRecords = pathNodes.filter((node) => node &&
     researchFields.every((field) =>
       node[field].length > 0 || node.researchedNoSourceFound?.includes(field),
     )).length;
   const unknownRecords = pathNodes.filter((node) => node?.status === 'unknown').length;
-  const everyRecordIsResearched = fullyDocumentedRecords === pathNodes.length;
-
-  const pathEdges = defaultScenario.pathNodeIds.slice(1).map((toNodeId, index) => {
-    const fromNodeId = defaultScenario.pathNodeIds[index];
+  const pathEdges = scenario.pathNodeIds.slice(1).map((toNodeId, index) => {
+    const fromNodeId = scenario.pathNodeIds[index];
     return ledger.edges.find((edge) =>
-      edge.scenarioIds.includes(defaultScenario.id)
+      edge.scenarioIds.includes(scenario.id)
       && edge.fromNodeId === fromNodeId
       && edge.toNodeId === toNodeId,
     );
   });
-  const everyHandoffIsSourced = pathEdges.every((edge) => edge && edge.claimIds.length > 0);
+  const fullyResearched = pathNodes.length > 0
+    && fullyDocumentedRecords === pathNodes.length
+    && pathEdges.every((edge) => edge && edge.claimIds.length > 0);
 
   return {
-    status: everyRecordIsResearched && everyHandoffIsSourced ? 'Mapped' : 'Partially mapped',
+    scenarioId: scenario.id,
     fullyDocumentedRecords,
     totalRecords: pathNodes.length,
     unknownRecords,
+    status: fullyResearched ? 'Mapped' : 'Partially mapped',
+  };
+}
+
+/**
+ * Mapped measures whether every citizen route has researched records and
+ * sourced handoffs — including where research found no public procedure.
+ */
+export function deriveServiceMappingSummary(ledger: Ledger): ServiceMappingSummary {
+  const scenarioSummaries = ledger.scenarios.map((scenario) => deriveScenarioMappingSummary(ledger, scenario));
+  const fullyResearchedScenarios = scenarioSummaries.filter((scenario) => scenario.status === 'Mapped').length;
+  const totalScenarios = scenarioSummaries.length;
+
+  return {
+    status: totalScenarios > 0 && fullyResearchedScenarios === totalScenarios ? 'Mapped' : 'Partially mapped',
+    fullyResearchedScenarios,
+    totalScenarios,
+    scenarioSummaries,
   };
 }
 

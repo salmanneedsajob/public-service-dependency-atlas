@@ -17,7 +17,7 @@ const visibleDateNote = /\b(?:visible[- ]date|published(?: on)?|dated|last[- ]up
 const datedOrArchived = /\b(?:stale|undated|outdated|archiv(?:e|ed))\b/i;
 const limitation = /\b(?:limitation|not current|may be outdated|historical only)\b/i;
 const archiveFailure = /\b(?:archive|wayback|internet archive)[^.]{0,80}\b(?:failed|failure|timed out|rejected|unsafe|http \d{3}|did not complete)\b/i;
-const uncertainty = /\b(?:unknown|unclear|unobserved|not (?:publicly |fully )?(?:shown|known|verified|observed|established|attempted|opened|selected|entered)|cannot (?:be )?(?:checked|observed|verified)|outside (?:this )?scope|no (?:login|account|case data|personal data)[^.]{0,80}(?:was|were) (?:used|entered|requested)|no [^.]{0,80}case-specific (?:selection|determination)[^.]{0,80}(?:was|were) attempted)\b/i;
+const uncertainty = /\b(?:unknown|unclear|unobserved|not (?:publicly |fully )?(?:shown|known|verified|observed|established|attempted|opened|selected|entered)|not an? (?:observed|verified) (?:result|failure|outcome|signal)|cannot (?:be )?(?:checked|observed|verified)|outside (?:this )?scope|without (?:a )?(?:login|sign-in|authentication)|no (?:login|account|case data|personal data)[^.]{0,80}(?:was|were) (?:used|entered|requested)|no [^.]{0,80}case-specific (?:selection|determination)[^.]{0,80}(?:was|were) attempted|no [^.]{0,80}(?:was|were) selected)\b/i;
 const loginBoundary = /\b(?:log ?in|sign ?in|authenticated|OTP|case[- ]specific|personal (?:data|account))\b/i;
 const compoundList = /\b(?:documents?|proofs?|requirements?|includes?|requires?)\b[^.]{0,120},[^.]{0,120}(?:,|\band\b|\bor\b)/i;
 
@@ -36,7 +36,7 @@ function lintLedger(ledger, service, handoff = {}) {
     if (compoundList.test(claim.text)) add('compound-claim', claim.id, 'Claim appears to list multiple requirements; split it into atomic claims.');
     const sources = claim.sourceIds.map((id) => sourcesById.get(id)).filter(Boolean);
     if (claim.evidenceGrade === 'B' && sources.some((source) => source.type === 'secondary')) add('grade-b-secondary', claim.id, 'Grade B claim cites a secondary source.');
-    if (claim.evidenceGrade === 'C' && claim.basis === 'observation' && sources.some((source) => source.type === 'official_form')) add('grade-c-observed-form', claim.id, 'Observed current official form must be Grade B, not C.');
+    if (claim.evidenceGrade === 'C' && claim.basis === 'observation' && sources.some((source) => source.type === 'official_form' && !datedOrArchived.test(source.notes ?? ''))) add('grade-c-observed-form', claim.id, 'Observed current official form must be Grade B, not C.');
     if (service) {
       const declared = new Set([service.primaryScenarioId, ...service.branchScenarioIds]);
       const unknown = claim.scenarioIds.filter((id) => !declared.has(id));

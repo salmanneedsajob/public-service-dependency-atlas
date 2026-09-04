@@ -1,0 +1,433 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "IND-71 Bengaluru fresh adult ordinary passport public-workflow pass",
+    "jurisdiction": "Bengaluru, Karnataka, India (Regional Passport Office Bengaluru context; Passport Seva is a Union Government service)",
+    "asOf": "2026-09-04",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice. It records only unauthenticated public-interface observations as of 2026-09-04. Do not submit personal data, make payments, or use this ledger to access a case."
+  },
+  "agencies": [
+    {
+      "id": "agency_ministry_external_affairs",
+      "name": "Ministry of External Affairs, Government of India",
+      "shortName": "MEA",
+      "officialUrl": "https://www.passportindia.gov.in/psp"
+    },
+    {
+      "id": "agency_passport_seva",
+      "name": "Passport Seva",
+      "shortName": "Passport Seva",
+      "officialUrl": "https://www.passportindia.gov.in/psp"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_passport_fresh_adult_normal",
+      "label": "Fresh adult ordinary passport — Normal",
+      "summary": "An adult in the Bengaluru RPO context follows the public guidance for a fresh ordinary passport under the Normal quota; account, application, payment, appointment, and case data remain outside this pass's unauthenticated boundary.",
+      "tags": ["passport", "fresh", "adult", "ordinary", "normal", "bengaluru-rpo"],
+      "pathNodeIds": ["node_passport_public_guidance", "node_passport_account_boundary", "node_passport_rpo_selection", "node_passport_application_submission", "node_passport_payment_appointment", "node_passport_psk_visit"],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind71_passport_home_live",
+      "title": "Passport Seva public home — current observation",
+      "publisher": "Passport Seva, Ministry of External Affairs, Government of India",
+      "url": "https://www.passportindia.gov.in/psp",
+      "accessedAt": "2026-09-04",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated public observation. The entry seed https://passportindia.gov.in/ returned 301 to this final URL, which returned 200 on 2026-09-04. Visible date not shown; currentness is limited to the access date. Visible content named Passport Seva and MEA, exposed Login and Register links to services1.passportindia.gov.in, showed Quick Links for Apply For Passport, Check Appointment Availability, Track Passport Application, and Register Feedback / Grievance, and published National Call Center 1800-258-1800. Internet Archive save request for this public source timed out on 2026-09-04; no snapshot URL is asserted."
+    },
+    {
+      "id": "source_ind71_passport_apply_live",
+      "title": "Process to apply for Fresh / Reissue Ordinary Passport — current observation",
+      "publisher": "Passport Seva, Ministry of External Affairs, Government of India",
+      "url": "https://www.passportindia.gov.in/psp/Apply",
+      "accessedAt": "2026-09-04",
+      "type": "firsthand_observation",
+      "notes": "Unauthenticated public guidance reached by selecting Fresh / Re-issue Ordinary Passport on the official site. It visibly describes registration, email confirmation, login, RPO selection, nine application sections, submission, payment and appointment guidance, document advisory, and fee-calculator labels. No registration, login, data entry, submission, payment, appointment lookup, or case lookup was attempted. Internet Archive save returned HTTP 520 on 2026-09-04; no snapshot URL is asserted."
+    },
+    {
+      "id": "source_ind71_passport_prelogin_live",
+      "title": "Passport Seva PreLogin — current observation",
+      "publisher": "Passport Seva, Ministry of External Affairs, Government of India",
+      "url": "https://services1.passportindia.gov.in/forms/PreLogin",
+      "accessedAt": "2026-09-04",
+      "type": "firsthand_observation",
+      "notes": "The second seed returned 200 on 2026-09-04. Visible date not shown; currentness is limited to the access date. The unauthenticated screen displayed Login ID, Continue, Having Trouble Logging in?, and Register here, plus a warning to remember the registration Login ID and not share credentials. No Login ID, password, CAPTCHA, account, or case data was entered or requested. Internet Archive save timed out on 2026-09-04; no snapshot URL is asserted."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind71_home_public_handoffs_visible",
+      "text": "The public Passport Seva home page identifies the Ministry of External Affairs and exposes Login and Register handoffs to services1.passportindia.gov.in, along with Quick Links labelled Apply For Passport, Check Appointment Availability, Track Passport Application, and Register Feedback / Grievance.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "nodeIds": ["node_passport_public_guidance", "node_passport_account_boundary"],
+      "sourceIds": ["source_ind71_passport_home_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct current observation of the public official interface; the quick-link destination routes were not opened from this page."
+    },
+    {
+      "id": "claim_ind71_apply_requires_register_login",
+      "text": "The public fresh/reissue ordinary-passport guidance instructs an applicant to register, confirm the registered email ID, and then log in to the Passport Seva Online Portal with the registered Login ID and Password; it also says the password expires every three months.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "nodeIds": ["node_passport_account_boundary"],
+      "sourceIds": ["source_ind71_passport_apply_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Records the guide's visible instructions only. Registration and login were not attempted."
+    },
+    {
+      "id": "claim_ind71_prelogin_controls_visible",
+      "text": "The public PreLogin page displays a Login ID field, a Continue control, a Having Trouble Logging in? surface, and a Register here path, and warns applicants to remember their Login ID and not share credentials with unauthorized persons.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "nodeIds": ["node_passport_account_boundary"],
+      "sourceIds": ["source_ind71_passport_prelogin_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No Login ID was entered and Continue was not selected. No CAPTCHA was visible at this initial screen."
+    },
+    {
+      "id": "claim_ind71_rpo_selection_guidance",
+      "text": "The public fresh-passport guide calls RPO selection a prerequisite, says to select the RPO based on the current residing location, and says the selected RPO will reflect the nearest Passport Seva Kendra during appointment scheduling; it also states that applicants may apply at any PSK/RPO across India based on preference.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "nodeIds": ["node_passport_rpo_selection"],
+      "sourceIds": ["source_ind71_passport_apply_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The public guide does not expose a Bengaluru-specific selection result without proceeding into registration/login, which was not attempted."
+    },
+    {
+      "id": "claim_ind71_application_sections_and_submission_guidance",
+      "text": "The public fresh-passport guide lists nine sections from Passport Type through Details Verification and says that submitting the completed application generates a unique Application Reference Number and that an application can be saved and resumed before submission.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "nodeIds": ["node_passport_application_submission"],
+      "sourceIds": ["source_ind71_passport_apply_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This pass did not create an application or obtain an ARN; the statement describes visible public guidance only."
+    },
+    {
+      "id": "claim_ind71_payment_appointment_guidance",
+      "text": "The public fresh-passport guide says that payment of the applicable passport service fee is mandatory before booking appointments in all Passport Seva Kendras, and describes selecting Normal or Tatkaal quota, selecting a PSK/POPSK, seeing the next available appointment date, and being redirected to a payment gateway after Pay and Book Appointment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "nodeIds": ["node_passport_payment_appointment"],
+      "sourceIds": ["source_ind71_passport_apply_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No payment, appointment availability lookup, booking, rescheduling, or gateway was opened. The exact fee and Bengaluru appointment availability remain outside this handoff."
+    },
+    {
+      "id": "claim_ind71_psk_visit_guidance",
+      "text": "The public fresh-passport guide says that, after successful payment, the portal displays appointment confirmation details, sends appointment-date details by SMS to the registered mobile number, and instructs the user to carry necessary documents on the PSK visit date.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "nodeIds": ["node_passport_psk_visit"],
+      "sourceIds": ["source_ind71_passport_apply_live"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No SMS, appointment confirmation, document upload, or PSK visit was tested."
+    },
+    {
+      "id": "claim_ind71_case_tracking_unknown",
+      "text": "Although the public home page visibly labels a Track Passport Application quick link, this pass did not open it or enter an ARN, file number, date of birth, CAPTCHA, or other case data; tracking inputs, validation, error messages, and recovery are Unknown.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "nodeIds": ["node_passport_application_submission"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "observation",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "The route was deliberately not opened because case tracking is outside the no-case-data safety boundary. This is not a researchedNoSourceFound marker."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_passport_public_guidance",
+      "label": "Public Passport Seva guidance",
+      "kind": "service",
+      "ownerAgencyId": "agency_passport_seva",
+      "summary": "The public home page exposes the ordinary-passport guide and public support/link surfaces.",
+      "requiredState": "Use an official public Passport Seva route; no account or personal information is required to read the guide.",
+      "checks": [
+        {"id": "detail_ind71_public_guide_visible", "label": "Ordinary-passport guide", "description": "Fresh / Re-issue Ordinary Passport is visibly offered on the public home page.", "url": "https://www.passportindia.gov.in/psp/Apply", "claimIds": ["claim_ind71_home_public_handoffs_visible"], "status": "verified"}
+      ],
+      "failureSignals": [],
+      "recoveries": [
+        {"id": "detail_ind71_public_call_center", "label": "Public support surface", "description": "The public home page publishes National Call Center 1800-258-1800.", "url": "https://www.passportindia.gov.in/psp", "claimIds": ["claim_ind71_home_public_handoffs_visible"], "status": "verified"}
+      ],
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "claimIds": ["claim_ind71_home_public_handoffs_visible"],
+      "status": "verified",
+      "displayOrder": 0
+    },
+    {
+      "id": "node_passport_account_boundary",
+      "label": "Registration and login boundary",
+      "kind": "system",
+      "ownerAgencyId": "agency_passport_seva",
+      "summary": "The public guide directs registration, email confirmation, and login before dashboard-based application steps; the public handoff exposes an initial Login ID screen.",
+      "requiredState": "A registered Passport Seva account is required by the public guide before dashboard application actions.",
+      "checks": [
+        {"id": "detail_ind71_prelogin_loginid", "label": "Initial pre-login surface", "description": "The public PreLogin screen shows Login ID and Continue.", "url": "https://services1.passportindia.gov.in/forms/PreLogin", "claimIds": ["claim_ind71_prelogin_controls_visible"], "status": "verified"}
+      ],
+      "failureSignals": [
+        {"id": "detail_ind71_credentials_warning", "label": "Credential warning", "description": "The initial PreLogin screen warns users to remember their Login ID and not share credentials with unauthorized persons.", "url": "https://services1.passportindia.gov.in/forms/PreLogin", "claimIds": ["claim_ind71_prelogin_controls_visible"], "status": "verified"}
+      ],
+      "recoveries": [
+        {"id": "detail_ind71_register_or_login_help", "label": "Public account-path surfaces", "description": "The initial PreLogin screen provides Register here and Having Trouble Logging in? surfaces.", "url": "https://services1.passportindia.gov.in/forms/PreLogin", "claimIds": ["claim_ind71_prelogin_controls_visible"], "status": "verified"}
+      ],
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "claimIds": ["claim_ind71_apply_requires_register_login", "claim_ind71_prelogin_controls_visible"],
+      "status": "partial",
+      "displayOrder": 1
+    },
+    {
+      "id": "node_passport_rpo_selection",
+      "label": "RPO selection",
+      "kind": "decision",
+      "ownerAgencyId": "agency_passport_seva",
+      "summary": "The public guide calls selection of an RPO a prerequisite and ties it to current residence and nearest PSK display during scheduling.",
+      "requiredState": "Select an RPO in the authenticated portal; the Bengaluru-specific outcome was not public on the inspected route.",
+      "checks": [
+        {"id": "detail_ind71_rpo_prerequisite", "label": "RPO prerequisite guidance", "description": "The public guide says to select RPO based on current residing location.", "url": "https://www.passportindia.gov.in/psp/Apply", "claimIds": ["claim_ind71_rpo_selection_guidance"], "status": "verified"}
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "claimIds": ["claim_ind71_rpo_selection_guidance"],
+      "status": "partial",
+      "displayOrder": 2
+    },
+    {
+      "id": "node_passport_application_submission",
+      "label": "Authenticated application and submission",
+      "kind": "service",
+      "ownerAgencyId": "agency_passport_seva",
+      "summary": "The public guide lists the application sections and describes submission, but an actual application and ARN are case data and were not accessed.",
+      "requiredState": "Complete the authenticated application details and submit; the public guide says this generates an ARN.",
+      "checks": [
+        {"id": "detail_ind71_application_sections", "label": "Nine application sections", "description": "The public guide lists Passport Type through Details Verification as the fresh-passport sections.", "url": "https://www.passportindia.gov.in/psp/Apply", "claimIds": ["claim_ind71_application_sections_and_submission_guidance"], "status": "verified"}
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "claimIds": ["claim_ind71_application_sections_and_submission_guidance", "claim_ind71_case_tracking_unknown"],
+      "status": "partial",
+      "displayOrder": 3
+    },
+    {
+      "id": "node_passport_payment_appointment",
+      "label": "Payment and appointment",
+      "kind": "system",
+      "ownerAgencyId": "agency_passport_seva",
+      "summary": "The public guide describes payment and appointment after submission, while actual fees, availability, booking, and payment are outside this pass.",
+      "requiredState": "The guide says applicable payment is mandatory before appointment booking and occurs after an authenticated submitted application.",
+      "checks": [
+        {"id": "detail_ind71_payment_before_booking", "label": "Payment-before-booking guidance", "description": "The public guide says prior payment is mandatory for booking in all PSKs.", "url": "https://www.passportindia.gov.in/psp/Apply", "claimIds": ["claim_ind71_payment_appointment_guidance"], "status": "verified"}
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "claimIds": ["claim_ind71_payment_appointment_guidance"],
+      "status": "partial",
+      "displayOrder": 4
+    },
+    {
+      "id": "node_passport_psk_visit",
+      "label": "Appointment confirmation and PSK visit",
+      "kind": "outcome",
+      "ownerAgencyId": "agency_passport_seva",
+      "summary": "The public guide describes confirmation, registered-mobile SMS, documents, and a PSK visit after successful payment.",
+      "requiredState": "Have the appointment confirmation and carry necessary documents on the scheduled PSK visit date, as stated in the guide.",
+      "checks": [
+        {"id": "detail_ind71_confirmation_sms_guidance", "label": "Confirmation and SMS guidance", "description": "The guide describes appointment confirmation and an SMS to the registered mobile number after successful payment.", "url": "https://www.passportindia.gov.in/psp/Apply", "claimIds": ["claim_ind71_psk_visit_guidance"], "status": "verified"}
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "claimIds": ["claim_ind71_psk_visit_guidance"],
+      "status": "partial",
+      "displayOrder": 5
+    }
+  ],
+  "edges": [
+    {"id": "edge_ind71_guidance_to_account", "fromNodeId": "node_passport_public_guidance", "toNodeId": "node_passport_account_boundary", "relationship": "requires", "label": "Public ordinary-passport guidance hands off to Register and Login.", "scenarioIds": ["scenario_passport_fresh_adult_normal"], "claimIds": ["claim_ind71_home_public_handoffs_visible", "claim_ind71_apply_requires_register_login"], "status": "verified"},
+    {"id": "edge_ind71_account_to_rpo", "fromNodeId": "node_passport_account_boundary", "toNodeId": "node_passport_rpo_selection", "relationship": "requires", "label": "The guide puts RPO selection within the registered portal process.", "scenarioIds": ["scenario_passport_fresh_adult_normal"], "claimIds": ["claim_ind71_apply_requires_register_login", "claim_ind71_rpo_selection_guidance"], "status": "partial"},
+    {"id": "edge_ind71_rpo_to_application", "fromNodeId": "node_passport_rpo_selection", "toNodeId": "node_passport_application_submission", "relationship": "requires", "label": "The guide describes fresh-application steps after RPO selection.", "scenarioIds": ["scenario_passport_fresh_adult_normal"], "claimIds": ["claim_ind71_rpo_selection_guidance", "claim_ind71_application_sections_and_submission_guidance"], "status": "verified"},
+    {"id": "edge_ind71_application_to_payment", "fromNodeId": "node_passport_application_submission", "toNodeId": "node_passport_payment_appointment", "relationship": "requires", "label": "The guide places payment and appointment after application submission.", "scenarioIds": ["scenario_passport_fresh_adult_normal"], "claimIds": ["claim_ind71_application_sections_and_submission_guidance", "claim_ind71_payment_appointment_guidance"], "status": "verified"},
+    {"id": "edge_ind71_payment_to_psk", "fromNodeId": "node_passport_payment_appointment", "toNodeId": "node_passport_psk_visit", "relationship": "produces", "label": "The guide describes confirmation and a PSK visit after successful payment.", "scenarioIds": ["scenario_passport_fresh_adult_normal"], "claimIds": ["claim_ind71_payment_appointment_guidance", "claim_ind71_psk_visit_guidance"], "status": "verified"}
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind71_account_required_for_application",
+      "title": "Application actions are beyond the public account boundary",
+      "category": "process",
+      "symptom": "The public guide directs the user to register, confirm email, and log in before dashboard application actions; the pre-login screen begins with Login ID and Continue.",
+      "likelyCause": "The application workflow is account-bound after the public guidance layer.",
+      "recovery": "Use the visible Register here or Having Trouble Logging in? public surfaces; do not provide credentials or submit an application through this research pass.",
+      "ownerAgencyIds": ["agency_passport_seva"],
+      "nodeIds": ["node_passport_account_boundary"],
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "claimIds": ["claim_ind71_apply_requires_register_login", "claim_ind71_prelogin_controls_visible"],
+      "status": "verified"
+    },
+    {
+      "id": "roadblock_ind71_case_data_not_researched",
+      "title": "Case tracking and case-specific recovery are Unknown",
+      "category": "process",
+      "symptom": "A public tracking link is visible, but its fields and outcomes were not inspected because using it would require case data.",
+      "likelyCause": "Tracking is a case-data-bound surface outside the unauthenticated public-workflow scope.",
+      "recovery": "No public recovery is asserted from this pass; consult the official portal or published support surface with appropriate authorization.",
+      "ownerAgencyIds": ["agency_passport_seva"],
+      "nodeIds": ["node_passport_application_submission"],
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "claimIds": ["claim_ind71_case_tracking_unknown"],
+      "status": "unknown"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_ind71_fresh_adult_normal_public_boundary",
+      "title": "Fresh adult ordinary passport (Normal) — public-interface boundary",
+      "scenarioId": "scenario_passport_fresh_adult_normal",
+      "context": "Bengaluru RPO context. This is a public-interface map only, ending before any account, case data, submission, payment, booking, or police-verification lookup.",
+      "steps": [
+        {"id": "step_ind71_open_public_guide", "label": "Open official ordinary-passport guidance", "nodeId": "node_passport_public_guidance", "action": "Use the public Passport Seva home page and Fresh / Re-issue Ordinary Passport guidance.", "expectedResult": "The official guide explains the high-level path and displays public support/link surfaces.", "claimIds": ["claim_ind71_home_public_handoffs_visible"], "status": "verified"},
+        {"id": "step_ind71_reach_account_boundary", "label": "Identify account boundary", "nodeId": "node_passport_account_boundary", "action": "Follow the visible public guidance only up to Register/Login or the PreLogin screen; do not enter credentials.", "expectedResult": "Registration, email confirmation, and login are stated prerequisites for dashboard application actions.", "claimIds": ["claim_ind71_apply_requires_register_login", "claim_ind71_prelogin_controls_visible"], "status": "verified"},
+        {"id": "step_ind71_rpo_guidance", "label": "Read RPO-selection prerequisite", "nodeId": "node_passport_rpo_selection", "action": "Read the guide's RPO-selection instruction without selecting an RPO.", "expectedResult": "The guide associates RPO selection with current residence and nearest PSK display during scheduling.", "claimIds": ["claim_ind71_rpo_selection_guidance"], "status": "verified"},
+        {"id": "step_ind71_application_guidance", "label": "Read authenticated-application guidance", "nodeId": "node_passport_application_submission", "action": "Read the listed application sections and submission guidance; do not create or submit an application.", "expectedResult": "The guide lists nine sections and says submission generates an ARN.", "claimIds": ["claim_ind71_application_sections_and_submission_guidance"], "status": "verified"},
+        {"id": "step_ind71_payment_guidance", "label": "Read payment and booking guidance", "nodeId": "node_passport_payment_appointment", "action": "Read the payment/appointment instructions without checking availability, booking, or paying.", "expectedResult": "The guide says payment is required before booking and describes later PSK/POPSK selection and gateway redirection.", "claimIds": ["claim_ind71_payment_appointment_guidance"], "status": "verified"},
+        {"id": "step_ind71_visit_guidance", "label": "Read post-payment visit guidance", "nodeId": "node_passport_psk_visit", "action": "Read the confirmation/SMS/document/PSK-visit instructions without entering or receiving case data.", "expectedResult": "The guide describes confirmation, SMS, and carrying documents on the visit date.", "claimIds": ["claim_ind71_psk_visit_guidance"], "status": "verified"}
+      ],
+      "dependencies": [
+        {"id": "dependency_ind71_public_account", "fromNodeId": "node_passport_public_guidance", "toNodeId": "node_passport_account_boundary", "description": "The public guide hands off to registration/login before application actions.", "claimIds": ["claim_ind71_apply_requires_register_login"], "status": "verified"},
+        {"id": "dependency_ind71_account_rpo", "fromNodeId": "node_passport_account_boundary", "toNodeId": "node_passport_rpo_selection", "description": "RPO selection is described inside the registered portal path.", "claimIds": ["claim_ind71_rpo_selection_guidance"], "status": "partial"},
+        {"id": "dependency_ind71_submission_payment", "fromNodeId": "node_passport_application_submission", "toNodeId": "node_passport_payment_appointment", "description": "The guide places payment and appointment after submission.", "claimIds": ["claim_ind71_payment_appointment_guidance"], "status": "verified"}
+      ],
+      "failureRoadblockIds": ["roadblock_ind71_account_required_for_application", "roadblock_ind71_case_data_not_researched"],
+      "recoveryNotes": ["Public account recovery surfaces are visible, but their workflows were not entered.", "No appointment, payment, tracking, police-verification, document-objection, or case-specific recovery route was exercised."],
+      "documentationQualityNotes": ["Direct current observations of public official interfaces are Grade B.", "The public guide describes downstream actions but does not make post-login outcomes observed in this pass.", "No predeclared branch was encountered: neither document objection nor police-verification delay is recorded."],
+      "status": "partial"
+    }
+  ],
+  "portalRecords": [
+    {
+      "portalId": "portal_ind71_passportindia",
+      "host": "www.passportindia.gov.in",
+      "observedAt": "2026-09-04T19:01:00+05:30",
+      "serviceId": "ind71_passport_fresh_adult_normal",
+      "serviceOwner": "Ministry of External Affairs, Government of India",
+      "portalOperator": "Tata Consultancy Services Ltd. (shown in the public site footer)",
+      "agencyNamingShown": "Passport Seva; Ministry of External Affairs, Government of India",
+      "languages": ["English", "Hindi"],
+      "visibleVersionOrLastUpdated": "Footer showed Last updated on: 28/07/2026.",
+      "evidenceSourceIds": ["source_ind71_passport_home_live", "source_ind71_passport_apply_live"],
+      "routeObservations": [
+        {
+          "routeId": "route_ind71_seed_passportindia_home",
+          "serviceId": "ind71_passport_fresh_adult_normal",
+          "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+          "entryUrl": "https://passportindia.gov.in/",
+          "finalUrl": "https://www.passportindia.gov.in/psp",
+          "redirects": [{"status": 301, "to": "https://www.passportindia.gov.in/psp"}],
+          "finalStatus": 200,
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": "None to view the page; visible Login and Register links hand off to services1.passportindia.gov.in.",
+          "publicProcedureVsCaseDataBoundary": "Public home guidance and labels are visible. Tracking, appointment, payment, and account outcomes were not opened or inferred.",
+          "captchaDependencies": "No CAPTCHA visible on the public home page.",
+          "javascriptDependencies": "The page rendered in the browser; no form submission or script-dependent outcome was tested.",
+          "publicGuidanceSurfaces": ["Apply For Passport", "Check Appointment Availability", "Track Passport Application", "Register Feedback / Grievance", "National Call Center 1800-258-1800"],
+          "trackingSurfaces": ["Track Passport Application label visible; route not opened because case tracking is outside scope."],
+          "errorSurfaces": [],
+          "recoverySurfaces": ["National Call Center 1800-258-1800"],
+          "evidenceIds": ["source_ind71_passport_home_live", "claim_ind71_home_public_handoffs_visible"],
+          "limitations": ["Only the seed and its public redirect were tested; no quick link was activated from this page.", "No case data, appointment lookup, payment, registration, or login was used."]
+        },
+        {
+          "routeId": "route_ind71_passport_apply",
+          "serviceId": "ind71_passport_fresh_adult_normal",
+          "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+          "entryUrl": "https://www.passportindia.gov.in/psp/Apply",
+          "finalUrl": "https://www.passportindia.gov.in/psp/Apply",
+          "redirects": [],
+          "finalStatus": 200,
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": "The guide states registration, email confirmation, and login are required before dashboard application actions.",
+          "publicProcedureVsCaseDataBoundary": "High-level process guidance is public. RPO selection outcome, application details, ARN, payment, appointment availability/booking, confirmation, SMS, and documents tied to a case are not public observations here.",
+          "captchaDependencies": "No CAPTCHA visible on this guidance page.",
+          "javascriptDependencies": "The guide rendered in the browser. No login handoff, account form, payment, or appointment interaction was tested.",
+          "publicGuidanceSurfaces": ["Registration and login instructions", "RPO selection prerequisite", "nine fresh-application sections", "payment and appointment guidance", "Document Advisory", "Fee Calculator"],
+          "trackingSurfaces": [],
+          "errorSurfaces": ["The guide says a submitted application cannot be changed; no rejection or validation error was tested."],
+          "recoverySurfaces": ["The guide says an application can be saved and resumed before submission."],
+          "evidenceIds": ["source_ind71_passport_apply_live", "claim_ind71_apply_requires_register_login", "claim_ind71_rpo_selection_guidance", "claim_ind71_application_sections_and_submission_guidance", "claim_ind71_payment_appointment_guidance", "claim_ind71_psk_visit_guidance"],
+          "limitations": ["No account, RPO, personal data, submission, fee calculation, payment, appointment, confirmation, document upload, or case tracking was used.", "The guide is a national service page; it does not expose a Bengaluru-specific post-login selection result on the inspected public route."]
+        }
+      ]
+    },
+    {
+      "portalId": "portal_ind71_services1_passportindia",
+      "host": "services1.passportindia.gov.in",
+      "observedAt": "2026-09-04T19:01:00+05:30",
+      "serviceId": "ind71_passport_fresh_adult_normal",
+      "serviceOwner": "Ministry of External Affairs, Government of India",
+      "portalOperator": "Not separately named on the inspected PreLogin screen",
+      "agencyNamingShown": "Passport Seva; Ministry of External Affairs, Government of India",
+      "languages": ["English", "Hindi"],
+      "visibleVersionOrLastUpdated": "No visible version or last-updated date observed on the initial PreLogin screen.",
+      "evidenceSourceIds": ["source_ind71_passport_prelogin_live"],
+      "routeObservations": [
+        {
+          "routeId": "route_ind71_seed_services1_prelogin",
+          "serviceId": "ind71_passport_fresh_adult_normal",
+          "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+          "entryUrl": "https://services1.passportindia.gov.in/forms/PreLogin",
+          "finalUrl": "https://services1.passportindia.gov.in/forms/PreLogin",
+          "redirects": [],
+          "finalStatus": 200,
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": "The initial screen requests Login ID before Continue; the public guide separately says a registered Login ID and Password are used after registration and email confirmation.",
+          "publicProcedureVsCaseDataBoundary": "The initial pre-login controls and account-help labels are public. Any credential step, dashboard, application, appointment, payment, case data, and tracking result is unknown and was not accessed.",
+          "captchaDependencies": "No CAPTCHA was visible at the initial PreLogin screen; later authentication steps were not opened.",
+          "javascriptDependencies": "The initial screen rendered in the browser; Continue was not selected, so no subsequent dependency is asserted.",
+          "publicGuidanceSurfaces": ["Login ID", "Continue", "Register here", "Having Trouble Logging in?", "credential safety warning"],
+          "trackingSurfaces": [],
+          "errorSurfaces": ["Having Trouble Logging in? label visible; no error state was induced or observed."],
+          "recoverySurfaces": ["Register here", "Having Trouble Logging in?"],
+          "evidenceIds": ["source_ind71_passport_prelogin_live", "claim_ind71_prelogin_controls_visible"],
+          "limitations": ["No Login ID, password, CAPTCHA, OTP, account, or personal data was entered.", "No authentication, registration, account recovery, or post-login result was tested."]
+        }
+      ]
+    }
+  ],
+  "routeSearches": []
+}

@@ -46,9 +46,9 @@ const canonicalScenario = (id) => scenarioAliases[id] ?? id;
 const ledger = {
   meta: {
     schemaVersion: '1.0.0',
-    title: `Bengaluru ${service.replaceAll('-', ' ')} evidence ledger — partially mapped v1`,
+    title: `Bengaluru ${service.replaceAll('-', ' ')} evidence ledger v1`,
     jurisdiction: handoffMeta.jurisdiction,
-    asOf: '2026-08-28',
+    asOf: handoffMeta.asOf,
     dataKind: 'research',
     disclaimer: 'Independent research, not official advice. Public sources and known gaps are shown together; do not submit personal data through this ledger.',
   },
@@ -58,6 +58,21 @@ for (const field of fields) {
   const records = new Map();
   for (const handoff of handoffs) for (const record of handoff[field] ?? []) records.set(record.id, structuredClone(record));
   ledger[field] = [...records.values()];
+}
+
+// Independent passes may observe the same public page on the same day using
+// different source IDs. Keep one source record and retarget all claim links.
+const canonicalSourceIds = new Map();
+const duplicateSourceIds = new Map();
+for (const source of ledger.sources) {
+  const key = `${source.url}\u0000${source.accessedAt}`;
+  const canonical = canonicalSourceIds.get(key);
+  if (canonical) duplicateSourceIds.set(source.id, canonical);
+  else canonicalSourceIds.set(key, source.id);
+}
+if (duplicateSourceIds.size) {
+  for (const claim of ledger.claims) claim.sourceIds = [...new Set(claim.sourceIds.map((id) => duplicateSourceIds.get(id) ?? id))];
+  ledger.sources = ledger.sources.filter((source) => !duplicateSourceIds.has(source.id));
 }
 
 for (const scenario of ledger.scenarios) scenario.id = canonicalScenario(scenario.id);

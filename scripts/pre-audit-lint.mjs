@@ -16,7 +16,8 @@ const protocolChecks = [
 const visibleDateNote = /\b(?:visible[- ]date|published(?: on)?|dated|last[- ]updated)\b/i;
 const datedOrArchived = /\b(?:stale|undated|outdated|archiv(?:e|ed))\b/i;
 const limitation = /\b(?:limitation|not current|may be outdated|historical only)\b/i;
-const uncertainty = /\b(?:unknown|unclear|unobserved|not (?:publicly |fully )?(?:shown|known|verified|observed|established)|cannot (?:be )?(?:checked|observed|verified))\b/i;
+const archiveFailure = /\b(?:archive|wayback|internet archive)[^.]{0,80}\b(?:failed|failure|timed out|rejected|unsafe|http \d{3}|did not complete)\b/i;
+const uncertainty = /\b(?:unknown|unclear|unobserved|not (?:publicly |fully )?(?:shown|known|verified|observed|established|attempted|opened|selected|entered)|cannot (?:be )?(?:checked|observed|verified)|outside (?:this )?scope|no (?:login|account|case data|personal data)[^.]{0,80}(?:was|were) (?:used|entered|requested)|no [^.]{0,80}case-specific (?:selection|determination)[^.]{0,80}(?:was|were) attempted)\b/i;
 const loginBoundary = /\b(?:log ?in|sign ?in|authenticated|OTP|case[- ]specific|personal (?:data|account))\b/i;
 const compoundList = /\b(?:documents?|proofs?|requirements?|includes?|requires?)\b[^.]{0,120},[^.]{0,120}(?:,|\band\b|\bor\b)/i;
 
@@ -52,7 +53,7 @@ function lintLedger(ledger, service, handoff = {}) {
     else duplicateKeys.set(key, source.id);
     const notes = source.notes ?? '';
     if (!source.publishedAt && !visibleDateNote.test(notes)) add('source-date-quality', source.id, 'Source lacks publishedAt and a visible-date note.');
-    if (datedOrArchived.test(notes) && !limitation.test(notes)) add('source-date-quality', source.id, 'Stale, undated, or archived source lacks a stated limitation.');
+    if (datedOrArchived.test(notes) && !limitation.test(notes) && !archiveFailure.test(notes)) add('source-date-quality', source.id, 'Stale, undated, or archived source lacks a stated limitation.');
   }
 
   const searches = handoff.routeSearches ?? [];

@@ -1,0 +1,330 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru fresh adult ordinary passport — citizen-evidence pass",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-09-04",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official passport advice or an application. Public citizen accounts are redacted, case-specific and quarantined to a citizen-reported branch; they do not establish official rules, requirements, timelines, fees, eligibility, or outcomes."
+  },
+  "agencies": [
+    {
+      "id": "agency_ministry_external_affairs",
+      "name": "Ministry of External Affairs, Government of India",
+      "shortName": "MEA",
+      "officialUrl": "https://www.mea.gov.in/"
+    },
+    {
+      "id": "agency_regional_passport_office_bengaluru",
+      "name": "Regional Passport Office Bengaluru",
+      "shortName": "RPO Bengaluru",
+      "officialUrl": "https://passportindia.gov.in/"
+    },
+    {
+      "id": "agency_karnataka_state_police",
+      "name": "Karnataka State Police",
+      "shortName": "Karnataka Police",
+      "officialUrl": "https://ksp.karnataka.gov.in/"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_citizen_reported",
+      "label": "Citizen-reported passport cases",
+      "summary": "Quarantine branch for public Bengaluru passport accounts whose Tatkal, reissue, or otherwise non-comparable route cannot evidence the primary ordinary fresh-adult workflow.",
+      "tags": ["passport", "citizen-reported", "quarantine", "bengaluru"],
+      "pathNodeIds": ["node_passport_citizen_psk_review", "node_passport_citizen_police_verification", "node_passport_citizen_case_followup"],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind71_citizen_tatkal_document_objection",
+      "title": "Tatkal passport mess at Lalbagh PSK. Am I just screwed now?",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1mbpryj/",
+      "accessedAt": "2026-09-04",
+      "publishedAt": "2025-07-28",
+      "type": "citizen_evidence",
+      "notes": "Public first-person account of a Tatkal case at a Bengaluru PSK, not an ordinary fresh-adult case. Username, education, work, travel, application, appointment, and other identifying details are omitted. Wayback availability was checked on 2026-09-04 and returned no archived snapshot; a save request did not complete within the public capture attempt. The live URL and this archive limitation are retained."
+    },
+    {
+      "id": "source_ind71_citizen_police_followup_report",
+      "title": "Passport police verification, Do NOT pay bribe, just Tweet, it works",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1r0uaup/",
+      "accessedAt": "2026-09-04",
+      "publishedAt": "2026-02-10",
+      "type": "citizen_evidence",
+      "notes": "Public first-person report of a Bengaluru post-police-verification Tatkal case. Username, police-station name, application/status identifiers, payment allegation details, and linked social-media account are omitted. Wayback availability was checked on 2026-09-04 and returned no archived snapshot; no authenticated or case-specific page was archived. Archive limitation: no snapshot was available on the access date. This is an unverified personal report, not a finding about any individual, agency practice, or official recovery route."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind71_citizen_tatkal_document_not_accepted",
+      "text": "One Bengaluru Tatkal applicant reported that a PSK official did not accept the applicant's digital education-record access and referred the case to the regional passport office after the applicant lacked a physical education document.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_citizen_reported"],
+      "nodeIds": ["node_passport_citizen_psk_review", "node_passport_citizen_case_followup"],
+      "sourceIds": ["source_ind71_citizen_tatkal_document_objection"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single account of a Tatkal document-objection and referral. It does not establish an ordinary-passport document requirement, treatment of digital records, referral rule, or recovery route."
+    },
+    {
+      "id": "claim_ind71_citizen_tatkal_rpo_followup_access_uncertain",
+      "text": "The same Tatkal applicant reported that a later public appointment view did not offer an early regional-passport-office slot for their referred case.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_citizen_reported"],
+      "nodeIds": ["node_passport_citizen_case_followup"],
+      "sourceIds": ["source_ind71_citizen_tatkal_document_objection"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The account reports what the applicant saw for one referred Tatkal case in 2025. It does not establish current RPO appointment availability, eligibility for follow-up, or a normal-passport delay."
+    },
+    {
+      "id": "claim_ind71_citizen_post_pv_pending_and_escalation_reported",
+      "text": "One Bengaluru Tatkal applicant reported that the case remained pending after a police-verification interaction and that, after the applicant raised the matter publicly, the applicant observed a later approval and dispatch update.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_citizen_reported"],
+      "nodeIds": ["node_passport_citizen_police_verification", "node_passport_citizen_case_followup"],
+      "sourceIds": ["source_ind71_citizen_police_followup_report"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is one applicant's reported sequence and does not show why the case remained pending, whether the reported public escalation caused the change, or that this is a safe or generally effective remedy. It is not evidence for ordinary fresh adult passports."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_passport_citizen_psk_review",
+      "label": "Citizen-reported PSK document review",
+      "kind": "decision",
+      "ownerAgencyId": "agency_regional_passport_office_bengaluru",
+      "summary": "A case-specific Tatkal account reported a document objection during a Bengaluru PSK visit.",
+      "requiredState": "Unknown for the primary scenario; only the reported case had progressed to a PSK document-review interaction.",
+      "checks": [
+        {
+          "id": "detail_ind71_citizen_psk_document_objection",
+          "label": "Reported physical-document objection",
+          "description": "The applicant reported that a physical education document was requested despite digital-record access.",
+          "claimIds": ["claim_ind71_citizen_tatkal_document_not_accepted"],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "detail_ind71_citizen_psk_referral",
+          "label": "Reported referral to regional passport office",
+          "description": "The account says the Tatkal case was referred onward after the reported objection.",
+          "claimIds": ["claim_ind71_citizen_tatkal_document_not_accepted"],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": ["scenario_citizen_reported"],
+      "claimIds": ["claim_ind71_citizen_tatkal_document_not_accepted"],
+      "status": "partial",
+      "displayOrder": 10
+    },
+    {
+      "id": "node_passport_citizen_police_verification",
+      "label": "Citizen-reported police-verification interaction",
+      "kind": "system",
+      "ownerAgencyId": "agency_karnataka_state_police",
+      "summary": "A separate post-verification Tatkal account reported a case remaining pending after an interaction with local police.",
+      "requiredState": "Unknown for the primary scenario; this is a reported Tatkal case only.",
+      "checks": [],
+      "failureSignals": [
+        {
+          "id": "detail_ind71_citizen_post_pv_pending",
+          "label": "Reported pending post-verification status",
+          "description": "The applicant reported observing a pending case status after the police-verification interaction.",
+          "claimIds": ["claim_ind71_citizen_post_pv_pending_and_escalation_reported"],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [],
+      "scenarioIds": ["scenario_citizen_reported"],
+      "claimIds": ["claim_ind71_citizen_post_pv_pending_and_escalation_reported"],
+      "status": "partial",
+      "displayOrder": 20
+    },
+    {
+      "id": "node_passport_citizen_case_followup",
+      "label": "Citizen-reported case follow-up",
+      "kind": "service",
+      "ownerAgencyId": "agency_regional_passport_office_bengaluru",
+      "summary": "Accounts reported referral or public follow-up after a case-specific disruption; no official follow-up workflow is established here.",
+      "requiredState": "Unknown for the primary scenario and for any general recovery route.",
+      "checks": [
+        {
+          "id": "detail_ind71_citizen_later_status_update",
+          "label": "Reported later status change",
+          "description": "One applicant reported later approval and dispatch after public follow-up.",
+          "claimIds": ["claim_ind71_citizen_post_pv_pending_and_escalation_reported"],
+          "status": "partial"
+        }
+      ],
+      "failureSignals": [
+        {
+          "id": "detail_ind71_citizen_rpo_slot_unavailable",
+          "label": "Reported unavailable early follow-up slot",
+          "description": "One referred applicant reported no early regional-passport-office appointment view for that case.",
+          "claimIds": ["claim_ind71_citizen_tatkal_rpo_followup_access_uncertain"],
+          "status": "partial"
+        }
+      ],
+      "recoveries": [
+        {
+          "id": "detail_ind71_citizen_public_followup_not_generalized",
+          "label": "Reported public follow-up, not a recommended route",
+          "description": "One applicant reported a later status change after a public escalation; causation and general applicability are unknown.",
+          "claimIds": ["claim_ind71_citizen_post_pv_pending_and_escalation_reported"],
+          "status": "partial"
+        }
+      ],
+      "scenarioIds": ["scenario_citizen_reported"],
+      "claimIds": ["claim_ind71_citizen_tatkal_document_not_accepted", "claim_ind71_citizen_tatkal_rpo_followup_access_uncertain", "claim_ind71_citizen_post_pv_pending_and_escalation_reported"],
+      "status": "partial",
+      "displayOrder": 30
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_ind71_citizen_psk_review_to_followup",
+      "fromNodeId": "node_passport_citizen_psk_review",
+      "toNodeId": "node_passport_citizen_case_followup",
+      "relationship": "produces",
+      "label": "Reported referral after document objection",
+      "scenarioIds": ["scenario_citizen_reported"],
+      "claimIds": ["claim_ind71_citizen_tatkal_document_not_accepted"],
+      "status": "partial"
+    },
+    {
+      "id": "edge_ind71_citizen_police_to_followup",
+      "fromNodeId": "node_passport_citizen_police_verification",
+      "toNodeId": "node_passport_citizen_case_followup",
+      "relationship": "blocks",
+      "label": "Reported pending case led to follow-up",
+      "scenarioIds": ["scenario_citizen_reported"],
+      "claimIds": ["claim_ind71_citizen_post_pv_pending_and_escalation_reported"],
+      "status": "partial"
+    }
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind71_citizen_tatkal_document_objection",
+      "title": "Case-specific document objection at a Bengaluru PSK",
+      "category": "documentation",
+      "symptom": "One Tatkal applicant reported that a digital education record was not accepted when a physical document was unavailable and the case was referred onward.",
+      "likelyCause": "Unknown; the account does not establish whether the objection was correct, which document rule applied, or whether the case details were unusual.",
+      "recovery": "Do not treat this report as a checklist. Confirm current official documentary requirements and any case-specific referral process through official channels before acting.",
+      "ownerAgencyIds": ["agency_regional_passport_office_bengaluru"],
+      "nodeIds": ["node_passport_citizen_psk_review", "node_passport_citizen_case_followup"],
+      "scenarioIds": ["scenario_citizen_reported"],
+      "claimIds": ["claim_ind71_citizen_tatkal_document_not_accepted", "claim_ind71_citizen_tatkal_rpo_followup_access_uncertain"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_ind71_citizen_post_pv_pending",
+      "title": "Case-specific pending status after police-verification interaction",
+      "category": "process",
+      "symptom": "One Tatkal applicant reported a pending case after a local police-verification interaction.",
+      "likelyCause": "Unknown; the account does not provide an official case record or a verified reason for the pending state.",
+      "recovery": "Use only the current official case-specific support route when authorised to do so; the reported public escalation is retained solely as an anecdote and is not a recommended remedy.",
+      "ownerAgencyIds": ["agency_karnataka_state_police", "agency_regional_passport_office_bengaluru"],
+      "nodeIds": ["node_passport_citizen_police_verification", "node_passport_citizen_case_followup"],
+      "scenarioIds": ["scenario_citizen_reported"],
+      "claimIds": ["claim_ind71_citizen_post_pv_pending_and_escalation_reported"],
+      "status": "partial"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_ind71_citizen_tatkal_document_case",
+      "title": "Reported Tatkal document-objection case",
+      "scenarioId": "scenario_citizen_reported",
+      "context": "A 2025 public first-person account at a Bengaluru PSK; it is not an ordinary fresh-adult passport journey and must not be generalized.",
+      "steps": [
+        {
+          "id": "step_ind71_citizen_tatkal_document_review",
+          "label": "Reported PSK review",
+          "nodeId": "node_passport_citizen_psk_review",
+          "action": "The applicant reported presenting digital education-record access while lacking a physical document.",
+          "expectedResult": "The account says an objection was made and the case was referred onward.",
+          "claimIds": ["claim_ind71_citizen_tatkal_document_not_accepted"],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind71_citizen_tatkal_followup",
+          "label": "Reported follow-up availability",
+          "nodeId": "node_passport_citizen_case_followup",
+          "action": "The applicant reported viewing follow-up availability for the referred case.",
+          "expectedResult": "The account says no early follow-up slot was visible at that time.",
+          "claimIds": ["claim_ind71_citizen_tatkal_rpo_followup_access_uncertain"],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_ind71_citizen_document_referral",
+          "fromNodeId": "node_passport_citizen_psk_review",
+          "toNodeId": "node_passport_citizen_case_followup",
+          "description": "In this reported Tatkal case, the claimed document objection preceded the claimed referral/follow-up issue.",
+          "claimIds": ["claim_ind71_citizen_tatkal_document_not_accepted", "claim_ind71_citizen_tatkal_rpo_followup_access_uncertain"],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": ["roadblock_ind71_citizen_tatkal_document_objection"],
+      "recoveryNotes": ["No general recovery is established by this account."],
+      "documentationQualityNotes": ["Public first-person report; not independently verified; Tatkal route is not comparable evidence for the primary scenario."],
+      "status": "partial"
+    },
+    {
+      "id": "journey_ind71_citizen_post_pv_case",
+      "title": "Reported post-police-verification pending case",
+      "scenarioId": "scenario_citizen_reported",
+      "context": "A 2026 public first-person Tatkal account in Bengaluru. The report is kept separate from ordinary fresh-adult workflow evidence.",
+      "steps": [
+        {
+          "id": "step_ind71_citizen_post_pv_pending",
+          "label": "Reported pending state",
+          "nodeId": "node_passport_citizen_police_verification",
+          "action": "The applicant reported a police-verification interaction and then observing a pending case status.",
+          "expectedResult": "No general outcome can be inferred; the account reports a pending case only.",
+          "claimIds": ["claim_ind71_citizen_post_pv_pending_and_escalation_reported"],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind71_citizen_post_pv_public_followup",
+          "label": "Reported later update",
+          "nodeId": "node_passport_citizen_case_followup",
+          "action": "The applicant reported publicly raising the matter.",
+          "expectedResult": "The applicant later reported seeing approval and dispatch; causation is unknown.",
+          "claimIds": ["claim_ind71_citizen_post_pv_pending_and_escalation_reported"],
+          "status": "partial"
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dependency_ind71_citizen_post_pv_followup",
+          "fromNodeId": "node_passport_citizen_police_verification",
+          "toNodeId": "node_passport_citizen_case_followup",
+          "description": "In this reported case, the applicant's claimed pending status preceded the claimed follow-up and later update.",
+          "claimIds": ["claim_ind71_citizen_post_pv_pending_and_escalation_reported"],
+          "status": "partial"
+        }
+      ],
+      "failureRoadblockIds": ["roadblock_ind71_citizen_post_pv_pending"],
+      "recoveryNotes": ["The account does not verify that public escalation caused the later update or that it will work in another case."],
+      "documentationQualityNotes": ["Public first-person report; not independently verified; the Tatkal/post-verification route is not evidence for the primary scenario."],
+      "status": "partial"
+    }
+  ]
+}

@@ -12,6 +12,7 @@ const handoffDirectory = join(projectRoot, 'research', 'handoffs');
 const researchDirectory = join(projectRoot, 'research');
 const reportPath = join(projectRoot, 'public', 'data', 'report.json');
 const expectationTagsPath = join(projectRoot, 'report', 'expectation-tags.json');
+const authoredExpectationsDirectory = join(projectRoot, 'ledger', 'expectations');
 const manifestPath = join(projectRoot, 'ledger', 'services.manifest.json');
 
 const statuses = ['verified', 'partial', 'contested', 'unknown'];
@@ -512,6 +513,19 @@ async function readExistingExpectationTags() {
   }
 }
 
+async function readAuthoredExpectations() {
+  const sidecars = new Map();
+  try {
+    for (const filename of (await readdir(authoredExpectationsDirectory)).filter((name) => name.endsWith('.json') && name !== 'schema.json')) {
+      const sidecar = JSON.parse(await readFile(join(authoredExpectationsDirectory, filename), 'utf8'));
+      sidecars.set(sidecar.serviceId, sidecar);
+    }
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+  return sidecars;
+}
+
 function validateReviewedColumns(columns, serviceId, claimId) {
   if (!Array.isArray(columns) || columns.some((column) => !expectationColumns.includes(column))) {
     throw new Error(`Invalid reviewed columns for ${serviceId}/${claimId} in ${relative(projectRoot, expectationTagsPath)}.`);
@@ -648,7 +662,7 @@ function claimStaleness(claim, sourcesById) {
   return { stale: false, reason: null };
 }
 
-function deriveExpectationGrid(ledgers, sidecar) {
+function deriveExpectationGrid(ledgers, sidecar, authoredExpectations) {
   const grid = [];
   const ambiguities = [];
   const proposedStatedClaims = [];
@@ -660,6 +674,7 @@ function deriveExpectationGrid(ledgers, sidecar) {
     const claimsById = new Map(ledger.data.claims.map((claim) => [claim.id, claim]));
     const sourcesById = new Map(ledger.data.sources.map((source) => [source.id, source]));
     const reviewedClaims = sidecar.services?.[ledger.serviceId]?.claims ?? {};
+    const authoredCells = authoredExpectations.get(ledger.serviceId)?.cells ?? null;
     const cells = {};
 
     for (const column of expectationColumns) {
@@ -674,7 +689,10 @@ function deriveExpectationGrid(ledgers, sidecar) {
         stated: eligibleReviewedEntries.filter(([, entry]) => entry.reviewState?.[column] === 'stated').map(([claimId]) => claimId).sort(),
         mentioned: eligibleReviewedEntries.filter(([, entry]) => entry.reviewState?.[column] === 'mentioned').map(([claimId]) => claimId).sort(),
       };
-      const state = supportingClaimIds.stated.length ? 'stated' : supportingClaimIds.mentioned.length ? 'mentioned' : 'absent';
+      const regexState = supportingClaimIds.stated.length ? 'stated' : supportingClaimIds.mentioned.length ? 'mentioned' : 'absent';
+      const authoredCell = authoredCells?.[column];
+      const state = authoredCell?.state ?? regexState;
+      if (authoredCell && regexState !== state) ambiguities.push({ serviceId: ledger.serviceId, service: ledger.service, column, proposedState: regexState, claimIds: authoredCell.claimIds, reasons: ['Authored expectation sidecar disagrees with regex cross-check; authored state is retained.'] });
       countsByColumn[column][state] += 1;
 
       const statedGrades = supportingClaimIds.stated.map((claimId) => claimsById.get(claimId).evidenceGrade);
@@ -705,7 +723,10 @@ function deriveExpectationGrid(ledgers, sidecar) {
 
       cells[column] = {
         state,
-        supportingClaimIds,
+        supportingClaimIds: authoredCell ? {
+          stated: state === 'stated' ? authoredCell.claimIds : [],
+          mentioned: state === 'mentioned' ? authoredCell.claimIds : [],
+        } : supportingClaimIds,
         strongestEvidenceGradeBehindStated,
         proposedState,
         proposedSupportingClaimIds,
@@ -1409,6 +1430,7 @@ if (ledgers.length !== reportServices.length) throw new Error(`Expected ${report
 
 const window = await researchWindow();
 const existingExpectationTags = await readExistingExpectationTags();
+const authoredExpectations = await readAuthoredExpectations();
 const expectationSidecar = applyRequiredReviewDecisions(buildExpectationSidecar(ledgers, existingExpectationTags));
 await mkdir(dirname(expectationTagsPath), { recursive: true });
 await writeFile(expectationTagsPath, `${JSON.stringify(expectationSidecar, null, 2)}\n`);
@@ -1417,7 +1439,7 @@ const reviewedExpectationTags = JSON.parse(await readFile(expectationTagsPath, '
 const documentationShelf = await collectDocumentationShelf(ledgers);
 const auditorExcerpts = await collectAuditExcerpts();
 const loginClassification = classifyLoginRelated(ledgers);
-const expectations = deriveExpectationGrid(ledgers, reviewedExpectationTags);
+const expectations = deriveExpectationGrid(ledgers, reviewedExpectationTags, authoredExpectations);
 const publicErrors = collectPublicErrors(ledgers);
 const recurringPhrases = collectRecurringPhrases(ledgers);
 

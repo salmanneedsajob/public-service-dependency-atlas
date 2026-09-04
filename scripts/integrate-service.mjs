@@ -1,4 +1,4 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 
 const [service, ...files] = process.argv.slice(2);
 if (!service || !files.length) throw new Error('Usage: node scripts/integrate-service.mjs <service> <handoff...>');
@@ -145,4 +145,19 @@ for (const journey of ledger.journeys) {
 }
 
 await writeFile(`ledger/${service}.json`, `${JSON.stringify(ledger, null, 2)}\n`);
+const officialHandoff = handoffs.find((handoff) => handoff._handoff?.pass === 'official-source');
+if (officialHandoff?._handoff?.expectations) {
+  const authored = officialHandoff._handoff.expectations;
+  const cells = Object.fromEntries(['cost', 'documents', 'eligibility', 'time', 'owner', 'after-submission'].map((column) => {
+    const cell = authored[column] ?? {};
+    return [column, {
+      state: cell.state,
+      claimIds: cell.claimIds ?? [],
+      searchedRoutes: cell.searchedRoutes ?? [],
+      note: cell.note ?? '',
+    }];
+  }));
+  await mkdir('ledger/expectations', { recursive: true });
+  await writeFile(`ledger/expectations/${service}.json`, `${JSON.stringify({ schemaVersion: '1.0.0', serviceId: service, primaryScenarioId: authored.scenarioId ?? serviceManifest.primaryScenarioId, cells }, null, 2)}\n`);
+}
 console.log(`Integrated isolated ${service} ledger from ${files.length} handoffs.`);

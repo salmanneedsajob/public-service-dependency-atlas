@@ -9,7 +9,7 @@ Every agent writes findings into the shared ledger contract in `schema.json`. Pr
 
 One service per Linear issue and one service per Codex run. Do not batch.
 
-For each service, the binding workflow is: official-source pass, public-workflow pass, citizen-evidence pass, integration, then one audit in a separate fresh run. Passes write isolated handoffs. The audit receives only the integrated ledger, `ledger/schema.json`, this protocol, and the audit-corrections contract; it does not receive researchers' reasoning or prior pass handoffs. No Wave 2 research may start until its blocking pre-flight issue is Done.
+For each service, the binding workflow is: official-source pass, public-workflow pass, citizen-evidence pass, integration, then one audit in a separate fresh run. Passes write isolated handoffs. The audit input boundary is defined in section 12. No Wave 2 research may start until its blocking pre-flight issue is Done.
 
 ### Official-source agent
 

@@ -60,11 +60,15 @@
       ],
       "pathNodeIds": [
         "node_passport_public_guidance",
+        "node_passport_fresh_category",
+        "node_passport_document_advisor",
         "node_passport_account_boundary",
         "node_passport_rpo_selection",
         "node_passport_application_submission",
         "node_passport_payment_appointment",
-        "node_passport_psk_visit"
+        "node_passport_psk_visit",
+        "node_passport_police_verification",
+        "node_passport_dispatch"
       ],
       "status": "partial"
     },
@@ -155,7 +159,7 @@
       "url": "https://www.passportindia.gov.in/psp",
       "accessedAt": "2026-09-04",
       "type": "firsthand_observation",
-      "notes": "Unauthenticated public observation. The entry seed https://passportindia.gov.in/ returned 301 to this final URL, which returned 200 on 2026-09-04. Visible date not shown; currentness is limited to the access date. Visible content named Passport Seva and MEA, exposed Login and Register links to services1.passportindia.gov.in, showed Quick Links for Apply For Passport, Check Appointment Availability, Track Passport Application, and Register Feedback / Grievance, and published National Call Center 1800-258-1800. Internet Archive save request for this public source timed out on 2026-09-04; no snapshot URL is asserted."
+      "notes": "Unauthenticated public observation. Source jurisdiction: India; ledger applicability: Bengaluru, Karnataka, India. The entry seed https://passportindia.gov.in/ returned 301 to this final URL, which returned 200 on 2026-09-04. Visible date not shown; currentness is limited to the access date. Visible content named Passport Seva and MEA, exposed Login and Register links to services1.passportindia.gov.in, showed Quick Links for Apply For Passport, Check Appointment Availability, Track Passport Application, and Register Feedback / Grievance, and published National Call Center 1800-258-1800. Internet Archive save request for this public source timed out on 2026-09-04; no snapshot URL is asserted."
     },
     {
       "id": "source_ind71_passport_prelogin_live",
@@ -164,7 +168,7 @@
       "url": "https://services1.passportindia.gov.in/forms/PreLogin",
       "accessedAt": "2026-09-04",
       "type": "firsthand_observation",
-      "notes": "The second seed returned 200 on 2026-09-04. Visible date not shown; currentness is limited to the access date. The unauthenticated screen displayed Login ID, Continue, Having Trouble Logging in?, and Register here, plus a warning to remember the registration Login ID and not share credentials. No Login ID, password, CAPTCHA, account, or case data was entered or requested. Internet Archive save timed out on 2026-09-04; no snapshot URL is asserted."
+      "notes": "Source jurisdiction: India; ledger applicability: Bengaluru, Karnataka, India. The second seed returned 200 on 2026-09-04. Visible date not shown; currentness is limited to the access date. The unauthenticated screen displayed Login ID, Continue, Having Trouble Logging in?, and Register here, plus a warning to remember the registration Login ID and not share credentials. No Login ID, password, CAPTCHA, account, or case data was entered or requested. Internet Archive save timed out on 2026-09-04; no snapshot URL is asserted."
     },
     {
       "id": "source_ind71_citizen_tatkal_document_objection",
@@ -174,7 +178,7 @@
       "accessedAt": "2026-09-04",
       "publishedAt": "2025-07-28",
       "type": "citizen_evidence",
-      "notes": "Public first-person account of a Tatkal case at a Bengaluru PSK, not an ordinary fresh-adult case. Username, education, work, travel, application, appointment, and other identifying details are omitted. Wayback availability was checked on 2026-09-04 and returned no archived snapshot; a save request did not complete within the public capture attempt. The live URL and this archive limitation are retained."
+      "notes": "Public first-person account of a Tatkal case at a Bengaluru PSK; reported jurisdiction: Bengaluru, Karnataka, India. It is not an ordinary fresh-adult case. Username, education, work, travel, application, appointment, and other identifying details are omitted. Wayback availability was checked on 2026-09-04 and returned no archived snapshot; a save request did not complete within the public capture attempt. The live URL and this archive limitation are retained."
     },
     {
       "id": "source_ind71_citizen_police_followup_report",
@@ -184,7 +188,7 @@
       "accessedAt": "2026-09-04",
       "publishedAt": "2026-02-10",
       "type": "citizen_evidence",
-      "notes": "Public first-person report of a Bengaluru post-police-verification Tatkal case. Username, police-station name, application/status identifiers, payment allegation details, and linked social-media account are omitted. Wayback availability was checked on 2026-09-04 and returned no archived snapshot; no authenticated or case-specific page was archived. Archive limitation: no snapshot was available on the access date. This is an unverified personal report, not a finding about any individual, agency practice, or official recovery route."
+      "notes": "Public first-person report of a post-police-verification Tatkal case; reported jurisdiction: Bengaluru, Karnataka, India. Username, police-station name, application/status identifiers, payment allegation details, and linked social-media account are omitted. Wayback availability was checked on 2026-09-04 and returned no archived snapshot; no authenticated or case-specific page was archived. Archive limitation: no snapshot was available on the access date. This is an unverified personal report, not a finding about any individual, agency practice, or official recovery route."
     }
   ],
   "claims": [
@@ -220,7 +224,7 @@
       "sourceIds": [
         "source_passport_application_booklet"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
@@ -234,6 +238,7 @@
         "scenario_passport_fresh_adult_normal"
       ],
       "nodeIds": [
+        "node_passport_document_advisor",
         "node_passport_psk_visit"
       ],
       "sourceIds": [
@@ -247,22 +252,23 @@
     },
     {
       "id": "claim_passport_normal_36_page_fee",
-      "text": "The official application-instruction booklet lists Rs. 1,500 as the normal fee for a 36-page ordinary fresh passport with ten-year validity in India.",
+      "text": "The undated official application-instruction booklet accessed on 2026-09-04 lists Rs. 1,500 for a normal 36-page ordinary fresh passport with ten-year validity in India.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_passport_fresh_adult_normal"
       ],
       "nodeIds": [
-        "node_passport_online_application"
+        "node_passport_online_application",
+        "node_passport_payment_appointment"
       ],
       "sourceIds": [
         "source_passport_application_booklet"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
-      "status": "partial",
+      "status": "contested",
       "contradictsClaimIds": [],
-      "notes": "The current public portal announces fee revision effective 1 July 2026; confirm the live fee calculator before paying. No payment or calculation was performed."
+      "notes": "The cited booklet has no recorded visible publication date, so this amount may be outdated; verify a current official fee schedule before acting. No payment or calculation was performed."
     },
     {
       "id": "claim_passport_appointment_before_psk_service",
@@ -273,6 +279,7 @@
       ],
       "nodeIds": [
         "node_passport_online_application",
+        "node_passport_payment_appointment",
         "node_passport_psk_visit"
       ],
       "sourceIds": [
@@ -286,7 +293,7 @@
     },
     {
       "id": "claim_passport_police_verification_decision",
-      "text": "Passport Seva says the Passport Office decides whether police verification is required for a fresh or re-issue application and says pre-passport verification is required in most cases.",
+      "text": "Passport Seva says the Passport Office decides whether police verification is required for a fresh or re-issue application.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_passport_fresh_adult_normal",
@@ -317,7 +324,7 @@
       "sourceIds": [
         "source_passport_application_booklet"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
       "status": "partial",
       "contradictsClaimIds": [],
@@ -363,7 +370,7 @@
     },
     {
       "id": "claim_ind71_home_public_handoffs_visible",
-      "text": "The public Passport Seva home page identifies the Ministry of External Affairs and exposes Login and Register handoffs to services1.passportindia.gov.in, along with Quick Links labelled Apply For Passport, Check Appointment Availability, Track Passport Application, and Register Feedback / Grievance.",
+      "text": "The public Passport Seva home page exposes Login and Register handoffs to services1.passportindia.gov.in.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_passport_fresh_adult_normal"
@@ -383,7 +390,7 @@
     },
     {
       "id": "claim_ind71_apply_requires_register_login",
-      "text": "The public fresh/reissue ordinary-passport guidance instructs an applicant to register, confirm the registered email ID, and then log in to the Passport Seva Online Portal with the registered Login ID and Password; it also says the password expires every three months.",
+      "text": "The public fresh/reissue ordinary-passport guidance instructs an applicant to register, confirm the registered email ID, and then log in with the registered Login ID and password before using the application route.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_passport_fresh_adult_normal"
@@ -402,7 +409,7 @@
     },
     {
       "id": "claim_ind71_prelogin_controls_visible",
-      "text": "The public PreLogin page displays a Login ID field, a Continue control, a Having Trouble Logging in? surface, and a Register here path, and warns applicants to remember their Login ID and not share credentials with unauthorized persons.",
+      "text": "The public PreLogin page displays a Login ID field and a Continue control.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_passport_fresh_adult_normal"
@@ -421,7 +428,7 @@
     },
     {
       "id": "claim_ind71_rpo_selection_guidance",
-      "text": "The public fresh-passport guide calls RPO selection a prerequisite, says to select the RPO based on the current residing location, and says the selected RPO will reflect the nearest Passport Seva Kendra during appointment scheduling; it also states that applicants may apply at any PSK/RPO across India based on preference.",
+      "text": "The public fresh-passport guide says RPO selection is a prerequisite and instructs applicants to select the RPO based on current residence so the nearest Passport Seva Kendra can be shown during appointment scheduling.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_passport_fresh_adult_normal"
@@ -440,7 +447,7 @@
     },
     {
       "id": "claim_ind71_application_sections_and_submission_guidance",
-      "text": "The public fresh-passport guide lists nine sections from Passport Type through Details Verification and says that submitting the completed application generates a unique Application Reference Number and that an application can be saved and resumed before submission.",
+      "text": "The public fresh-passport guide lists nine application sections from Passport Type through Details Verification.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_passport_fresh_adult_normal"
@@ -459,7 +466,7 @@
     },
     {
       "id": "claim_ind71_payment_appointment_guidance",
-      "text": "The public fresh-passport guide says that payment of the applicable passport service fee is mandatory before booking appointments in all Passport Seva Kendras, and describes selecting Normal or Tatkaal quota, selecting a PSK/POPSK, seeing the next available appointment date, and being redirected to a payment gateway after Pay and Book Appointment.",
+      "text": "The public fresh-passport guide says payment of the applicable passport service fee is mandatory before booking an appointment at a Passport Seva Kendra.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_passport_fresh_adult_normal"
@@ -478,7 +485,7 @@
     },
     {
       "id": "claim_ind71_psk_visit_guidance",
-      "text": "The public fresh-passport guide says that, after successful payment, the portal displays appointment confirmation details, sends appointment-date details by SMS to the registered mobile number, and instructs the user to carry necessary documents on the PSK visit date.",
+      "text": "The public fresh-passport guide says the portal displays appointment-confirmation details after successful payment.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_passport_fresh_adult_normal"
@@ -497,7 +504,7 @@
     },
     {
       "id": "claim_ind71_case_tracking_unknown",
-      "text": "Although the public home page visibly labels a Track Passport Application quick link, this pass did not open it or enter an ARN, file number, date of birth, CAPTCHA, or other case data; tracking inputs, validation, error messages, and recovery are Unknown.",
+      "text": "Case-tracking inputs, validation behavior, error messages, and recovery behavior remain Unknown because the case-data-bound route was not opened.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_passport_fresh_adult_normal"
@@ -514,7 +521,7 @@
     },
     {
       "id": "claim_ind71_citizen_tatkal_document_not_accepted",
-      "text": "One Bengaluru Tatkal applicant reported that a PSK official did not accept the applicant's digital education-record access and referred the case to the regional passport office after the applicant lacked a physical education document.",
+      "text": "One Bengaluru Tatkal applicant reported that a PSK official did not accept the applicant's digital education-record access when the applicant lacked a physical education document.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_citizen_reported"
@@ -553,7 +560,7 @@
     },
     {
       "id": "claim_ind71_citizen_post_pv_pending_and_escalation_reported",
-      "text": "One Bengaluru Tatkal applicant reported that the case remained pending after a police-verification interaction and that, after the applicant raised the matter publicly, the applicant observed a later approval and dispatch update.",
+      "text": "One Bengaluru Tatkal applicant reported that the case remained pending after a police-verification interaction.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_citizen_reported"
@@ -570,6 +577,331 @@
       "status": "partial",
       "contradictsClaimIds": [],
       "notes": "This is one applicant's reported sequence and does not show why the case remained pending, whether the reported public escalation caused the change, or that this is a safe or generally effective remedy. It is not evidence for ordinary fresh adult passports."
+    },
+    {
+      "id": "claim_passport_most_fresh_pre_verification",
+      "text": "Passport Seva says pre-passport police verification is required in most fresh-passport cases.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal",
+        "scenario_passport_police_verification_delay"
+      ],
+      "nodeIds": [
+        "node_passport_police_verification"
+      ],
+      "sourceIds": [
+        "source_passport_police_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "General published wording; it does not establish the verification mode for an individual applicant."
+    },
+    {
+      "id": "claim_ind71_home_agency_naming_visible",
+      "text": "The public Passport Seva home page visibly identifies Passport Seva and the Ministry of External Affairs.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_public_guidance"
+      ],
+      "sourceIds": [
+        "source_ind71_passport_home_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct current observation of public agency naming."
+    },
+    {
+      "id": "claim_ind71_home_quick_links_visible",
+      "text": "The public Passport Seva home page shows a Quick Links group for applying, appointment availability, application tracking, and feedback or grievance registration.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_public_guidance"
+      ],
+      "sourceIds": [
+        "source_ind71_passport_home_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The destination routes were not opened from the home page."
+    },
+    {
+      "id": "claim_ind71_home_call_center_visible",
+      "text": "The public Passport Seva home page publishes National Call Center 1800-258-1800.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_public_guidance"
+      ],
+      "sourceIds": [
+        "source_ind71_passport_home_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No call was placed."
+    },
+    {
+      "id": "claim_ind71_password_expiry_guidance",
+      "text": "The public fresh/reissue ordinary-passport guidance says the portal password expires every three months.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_account_boundary"
+      ],
+      "sourceIds": [
+        "source_passport_apply"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published guidance only; no account was created or used."
+    },
+    {
+      "id": "claim_ind71_prelogin_account_help_visible",
+      "text": "The public PreLogin page displays Having Trouble Logging in? and Register here account-path surfaces.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_account_boundary"
+      ],
+      "sourceIds": [
+        "source_ind71_passport_prelogin_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Neither surface was opened."
+    },
+    {
+      "id": "claim_ind71_prelogin_credential_warning_visible",
+      "text": "The public PreLogin page warns users to remember their Login ID and not share credentials with unauthorized persons.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_account_boundary"
+      ],
+      "sourceIds": [
+        "source_ind71_passport_prelogin_live"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Security guidance, not an observed failure signal."
+    },
+    {
+      "id": "claim_ind71_any_psk_rpo_preference_guidance",
+      "text": "The public fresh-passport guide states that applicants may apply at a PSK or RPO across India based on preference.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_rpo_selection"
+      ],
+      "sourceIds": [
+        "source_passport_apply"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The guide's general statement is retained separately; no RPO or PSK was selected."
+    },
+    {
+      "id": "claim_ind71_application_arn_after_submission",
+      "text": "The public fresh-passport guide says submitting a completed application generates a unique Application Reference Number.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_application_submission"
+      ],
+      "sourceIds": [
+        "source_passport_apply"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published guidance only; no application was submitted and no ARN was obtained."
+    },
+    {
+      "id": "claim_ind71_application_save_resume_guidance",
+      "text": "The public fresh-passport guide says an application can be saved and resumed before submission.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_application_submission"
+      ],
+      "sourceIds": [
+        "source_passport_apply"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published guidance only; the authenticated workflow was not entered."
+    },
+    {
+      "id": "claim_ind71_appointment_booking_flow_guidance",
+      "text": "The public fresh-passport guide describes selecting a quota and PSK or POPSK, viewing the next available appointment date, and then being redirected to a payment gateway after Pay and Book Appointment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_payment_appointment"
+      ],
+      "sourceIds": [
+        "source_passport_apply"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Published flow only; no availability lookup, booking, or gateway was opened."
+    },
+    {
+      "id": "claim_ind71_appointment_sms_guidance",
+      "text": "The public fresh-passport guide says appointment-date details are sent by SMS to the registered mobile number after successful payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_psk_visit"
+      ],
+      "sourceIds": [
+        "source_passport_apply"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published guidance only; no SMS was received."
+    },
+    {
+      "id": "claim_ind71_carry_documents_to_psk_guidance",
+      "text": "The public fresh-passport guide instructs the applicant to carry the necessary documents on the PSK visit date.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_psk_visit"
+      ],
+      "sourceIds": [
+        "source_passport_apply"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Published guidance only; no PSK visit was performed."
+    },
+    {
+      "id": "claim_ind71_citizen_tatkal_rpo_referral_reported",
+      "text": "The same Bengaluru Tatkal applicant reported that the PSK referred the case to the regional passport office after the document objection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_citizen_reported"
+      ],
+      "nodeIds": [
+        "node_passport_citizen_psk_review",
+        "node_passport_citizen_case_followup"
+      ],
+      "sourceIds": [
+        "source_ind71_citizen_tatkal_document_objection"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single non-comparable Tatkal account; no official referral rule or recovery route is established."
+    },
+    {
+      "id": "claim_ind71_citizen_public_escalation_reported",
+      "text": "The same Bengaluru Tatkal applicant reported publicly raising the pending matter.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_citizen_reported"
+      ],
+      "nodeIds": [
+        "node_passport_citizen_case_followup"
+      ],
+      "sourceIds": [
+        "source_ind71_citizen_police_followup_report"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is not an official or recommended recovery route."
+    },
+    {
+      "id": "claim_ind71_citizen_later_approval_dispatch_reported",
+      "text": "The same Bengaluru Tatkal applicant reported later observing approval and dispatch updates.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_citizen_reported"
+      ],
+      "nodeIds": [
+        "node_passport_citizen_case_followup"
+      ],
+      "sourceIds": [
+        "source_ind71_citizen_police_followup_report"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The report does not establish why the status changed or that public escalation caused it."
+    },
+    {
+      "id": "claim_ind71_document_advisor_public_surface",
+      "text": "The public fresh-passport Document Advisor opened without login and without a case-specific document selection being made.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_document_advisor"
+      ],
+      "sourceIds": [
+        "source_passport_document_advisor"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No answers were selected, so no case-specific output or recovery behavior is asserted."
     }
   ],
   "nodes": [
@@ -620,27 +952,27 @@
             "claim_passport_adult_normal_document_categories"
           ],
           "status": "partial"
-        }
-      ],
-      "failureSignals": [],
-      "recoveries": [
+        },
         {
-          "id": "detail_passport_document_advisor_recovery",
-          "label": "Use the public advisor",
-          "description": "Use the blank Document Advisor to obtain the published list for the applicant's actual category answers; it is not an application submission.",
+          "id": "detail_ind71_document_advisor_public_surface",
+          "label": "Public Document Advisor boundary",
+          "description": "The fresh-passport Document Advisor opened without login, but no answers were selected and no case-specific output was observed.",
           "url": "https://www.passportindia.gov.in/psp/docAdvisor/attachmentAdvFreshInp",
           "claimIds": [
-            "claim_passport_adult_normal_document_categories"
+            "claim_ind71_document_advisor_public_surface"
           ],
           "status": "partial"
         }
       ],
+      "failureSignals": [],
+      "recoveries": [],
       "scenarioIds": [
         "scenario_passport_fresh_adult_normal"
       ],
       "claimIds": [
         "claim_passport_adult_normal_document_categories",
-        "claim_passport_psk_originals_and_copies"
+        "claim_passport_psk_originals_and_copies",
+        "claim_ind71_document_advisor_public_surface"
       ],
       "status": "partial",
       "displayOrder": 2
@@ -690,7 +1022,8 @@
           "description": "The guide describes appointment confirmation and an SMS to the registered mobile number after successful payment.",
           "url": "https://www.passportindia.gov.in/psp/Apply",
           "claimIds": [
-            "claim_ind71_psk_visit_guidance"
+            "claim_ind71_psk_visit_guidance",
+            "claim_ind71_appointment_sms_guidance"
           ],
           "status": "verified"
         }
@@ -701,7 +1034,12 @@
         "scenario_passport_fresh_adult_normal"
       ],
       "claimIds": [
-        "claim_ind71_psk_visit_guidance"
+        "claim_ind71_psk_visit_guidance",
+        "claim_ind71_appointment_sms_guidance",
+        "claim_ind71_carry_documents_to_psk_guidance",
+        "claim_passport_psk_originals_and_copies",
+        "claim_passport_appointment_before_psk_service",
+        "claim_passport_bengaluru_rpo_owner"
       ],
       "status": "partial",
       "displayOrder": 5
@@ -720,7 +1058,8 @@
           "description": "The Passport Office decides whether verification is required; most fresh cases use pre-passport verification.",
           "url": "https://www.passportindia.gov.in/psp/FaqPoliceVerification",
           "claimIds": [
-            "claim_passport_police_verification_decision"
+            "claim_passport_police_verification_decision",
+            "claim_passport_most_fresh_pre_verification"
           ],
           "status": "partial"
         }
@@ -755,6 +1094,7 @@
       ],
       "claimIds": [
         "claim_passport_police_verification_decision",
+        "claim_passport_most_fresh_pre_verification",
         "claim_passport_pending_pv_recovery"
       ],
       "status": "partial",
@@ -804,7 +1144,7 @@
           "description": "Fresh / Re-issue Ordinary Passport is visibly offered on the public home page.",
           "url": "https://www.passportindia.gov.in/psp/Apply",
           "claimIds": [
-            "claim_ind71_home_public_handoffs_visible"
+            "claim_ind71_home_quick_links_visible"
           ],
           "status": "verified"
         }
@@ -817,7 +1157,7 @@
           "description": "The public home page publishes National Call Center 1800-258-1800.",
           "url": "https://www.passportindia.gov.in/psp",
           "claimIds": [
-            "claim_ind71_home_public_handoffs_visible"
+            "claim_ind71_home_call_center_visible"
           ],
           "status": "verified"
         }
@@ -826,7 +1166,10 @@
         "scenario_passport_fresh_adult_normal"
       ],
       "claimIds": [
-        "claim_ind71_home_public_handoffs_visible"
+        "claim_ind71_home_public_handoffs_visible",
+        "claim_ind71_home_agency_naming_visible",
+        "claim_ind71_home_quick_links_visible",
+        "claim_ind71_home_call_center_visible"
       ],
       "status": "verified",
       "displayOrder": 0
@@ -848,20 +1191,19 @@
             "claim_ind71_prelogin_controls_visible"
           ],
           "status": "verified"
-        }
-      ],
-      "failureSignals": [
+        },
         {
           "id": "detail_ind71_credentials_warning",
           "label": "Credential warning",
           "description": "The initial PreLogin screen warns users to remember their Login ID and not share credentials with unauthorized persons.",
           "url": "https://services1.passportindia.gov.in/forms/PreLogin",
           "claimIds": [
-            "claim_ind71_prelogin_controls_visible"
+            "claim_ind71_prelogin_credential_warning_visible"
           ],
           "status": "verified"
         }
       ],
+      "failureSignals": [],
       "recoveries": [
         {
           "id": "detail_ind71_register_or_login_help",
@@ -869,7 +1211,7 @@
           "description": "The initial PreLogin screen provides Register here and Having Trouble Logging in? surfaces.",
           "url": "https://services1.passportindia.gov.in/forms/PreLogin",
           "claimIds": [
-            "claim_ind71_prelogin_controls_visible"
+            "claim_ind71_prelogin_account_help_visible"
           ],
           "status": "verified"
         }
@@ -878,8 +1220,12 @@
         "scenario_passport_fresh_adult_normal"
       ],
       "claimIds": [
+        "claim_ind71_home_public_handoffs_visible",
         "claim_ind71_apply_requires_register_login",
-        "claim_ind71_prelogin_controls_visible"
+        "claim_ind71_password_expiry_guidance",
+        "claim_ind71_prelogin_controls_visible",
+        "claim_ind71_prelogin_account_help_visible",
+        "claim_ind71_prelogin_credential_warning_visible"
       ],
       "status": "partial",
       "displayOrder": 1
@@ -909,7 +1255,8 @@
         "scenario_passport_fresh_adult_normal"
       ],
       "claimIds": [
-        "claim_ind71_rpo_selection_guidance"
+        "claim_ind71_rpo_selection_guidance",
+        "claim_ind71_any_psk_rpo_preference_guidance"
       ],
       "status": "partial",
       "displayOrder": 2
@@ -940,6 +1287,8 @@
       ],
       "claimIds": [
         "claim_ind71_application_sections_and_submission_guidance",
+        "claim_ind71_application_arn_after_submission",
+        "claim_ind71_application_save_resume_guidance",
         "claim_ind71_case_tracking_unknown"
       ],
       "status": "partial",
@@ -970,7 +1319,10 @@
         "scenario_passport_fresh_adult_normal"
       ],
       "claimIds": [
-        "claim_ind71_payment_appointment_guidance"
+        "claim_ind71_payment_appointment_guidance",
+        "claim_ind71_appointment_booking_flow_guidance",
+        "claim_passport_normal_36_page_fee",
+        "claim_passport_appointment_before_psk_service"
       ],
       "status": "partial",
       "displayOrder": 4
@@ -999,7 +1351,7 @@
           "label": "Reported referral to regional passport office",
           "description": "The account says the Tatkal case was referred onward after the reported objection.",
           "claimIds": [
-            "claim_ind71_citizen_tatkal_document_not_accepted"
+            "claim_ind71_citizen_tatkal_rpo_referral_reported"
           ],
           "status": "partial"
         }
@@ -1009,7 +1361,8 @@
         "scenario_citizen_reported"
       ],
       "claimIds": [
-        "claim_ind71_citizen_tatkal_document_not_accepted"
+        "claim_ind71_citizen_tatkal_document_not_accepted",
+        "claim_ind71_citizen_tatkal_rpo_referral_reported"
       ],
       "status": "partial",
       "displayOrder": 10
@@ -1056,7 +1409,7 @@
           "label": "Reported later status change",
           "description": "One applicant reported later approval and dispatch after public follow-up.",
           "claimIds": [
-            "claim_ind71_citizen_post_pv_pending_and_escalation_reported"
+            "claim_ind71_citizen_later_approval_dispatch_reported"
           ],
           "status": "partial"
         }
@@ -1078,7 +1431,8 @@
           "label": "Reported public follow-up, not a recommended route",
           "description": "One applicant reported a later status change after a public escalation; causation and general applicability are unknown.",
           "claimIds": [
-            "claim_ind71_citizen_post_pv_pending_and_escalation_reported"
+            "claim_ind71_citizen_public_escalation_reported",
+            "claim_ind71_citizen_later_approval_dispatch_reported"
           ],
           "status": "partial"
         }
@@ -1088,8 +1442,11 @@
       ],
       "claimIds": [
         "claim_ind71_citizen_tatkal_document_not_accepted",
+        "claim_ind71_citizen_tatkal_rpo_referral_reported",
         "claim_ind71_citizen_tatkal_rpo_followup_access_uncertain",
-        "claim_ind71_citizen_post_pv_pending_and_escalation_reported"
+        "claim_ind71_citizen_post_pv_pending_and_escalation_reported",
+        "claim_ind71_citizen_public_escalation_reported",
+        "claim_ind71_citizen_later_approval_dispatch_reported"
       ],
       "status": "partial",
       "displayOrder": 30
@@ -1112,21 +1469,6 @@
       "status": "partial"
     },
     {
-      "id": "edge_passport_documents_to_application",
-      "fromNodeId": "node_passport_document_advisor",
-      "toNodeId": "node_passport_online_application",
-      "relationship": "requires",
-      "label": "Published documents should be confirmed before the account-bound application and appointment route.",
-      "scenarioIds": [
-        "scenario_passport_fresh_adult_normal"
-      ],
-      "claimIds": [
-        "claim_passport_adult_normal_document_categories",
-        "claim_passport_appointment_before_psk_service"
-      ],
-      "status": "partial"
-    },
-    {
       "id": "edge_passport_application_to_psk",
       "fromNodeId": "node_passport_online_application",
       "toNodeId": "node_passport_psk_visit",
@@ -1139,20 +1481,6 @@
         "claim_passport_appointment_before_psk_service"
       ],
       "status": "verified"
-    },
-    {
-      "id": "edge_passport_psk_to_pv",
-      "fromNodeId": "node_passport_psk_visit",
-      "toNodeId": "node_passport_police_verification",
-      "relationship": "maps_to",
-      "label": "The Passport Office then determines whether police verification is required.",
-      "scenarioIds": [
-        "scenario_passport_fresh_adult_normal"
-      ],
-      "claimIds": [
-        "claim_passport_police_verification_decision"
-      ],
-      "status": "partial"
     },
     {
       "id": "edge_passport_pv_to_dispatch",
@@ -1223,7 +1551,7 @@
         "scenario_passport_fresh_adult_normal"
       ],
       "claimIds": [
-        "claim_ind71_application_sections_and_submission_guidance",
+        "claim_ind71_application_arn_after_submission",
         "claim_ind71_payment_appointment_guidance"
       ],
       "status": "verified"
@@ -1253,7 +1581,7 @@
         "scenario_citizen_reported"
       ],
       "claimIds": [
-        "claim_ind71_citizen_tatkal_document_not_accepted"
+        "claim_ind71_citizen_tatkal_rpo_referral_reported"
       ],
       "status": "partial"
     },
@@ -1261,13 +1589,15 @@
       "id": "edge_ind71_citizen_police_to_followup",
       "fromNodeId": "node_passport_citizen_police_verification",
       "toNodeId": "node_passport_citizen_case_followup",
-      "relationship": "blocks",
-      "label": "Reported pending case led to follow-up",
+      "relationship": "maps_to",
+      "label": "Reported pending case preceded reported public follow-up and later status updates",
       "scenarioIds": [
         "scenario_citizen_reported"
       ],
       "claimIds": [
-        "claim_ind71_citizen_post_pv_pending_and_escalation_reported"
+        "claim_ind71_citizen_post_pv_pending_and_escalation_reported",
+        "claim_ind71_citizen_public_escalation_reported",
+        "claim_ind71_citizen_later_approval_dispatch_reported"
       ],
       "status": "partial"
     }
@@ -1356,6 +1686,7 @@
       ],
       "claimIds": [
         "claim_ind71_citizen_tatkal_document_not_accepted",
+        "claim_ind71_citizen_tatkal_rpo_referral_reported",
         "claim_ind71_citizen_tatkal_rpo_followup_access_uncertain"
       ],
       "status": "partial"
@@ -1540,7 +1871,8 @@
           "action": "Read the listed application sections and submission guidance; do not create or submit an application.",
           "expectedResult": "The guide lists nine sections and says submission generates an ARN.",
           "claimIds": [
-            "claim_ind71_application_sections_and_submission_guidance"
+            "claim_ind71_application_sections_and_submission_guidance",
+            "claim_ind71_application_arn_after_submission"
           ],
           "status": "verified"
         },
@@ -1551,7 +1883,8 @@
           "action": "Read the payment/appointment instructions without checking availability, booking, or paying.",
           "expectedResult": "The guide says payment is required before booking and describes later PSK/POPSK selection and gateway redirection.",
           "claimIds": [
-            "claim_ind71_payment_appointment_guidance"
+            "claim_ind71_payment_appointment_guidance",
+            "claim_ind71_appointment_booking_flow_guidance"
           ],
           "status": "verified"
         },
@@ -1562,7 +1895,9 @@
           "action": "Read the confirmation/SMS/document/PSK-visit instructions without entering or receiving case data.",
           "expectedResult": "The guide describes confirmation, SMS, and carrying documents on the visit date.",
           "claimIds": [
-            "claim_ind71_psk_visit_guidance"
+            "claim_ind71_psk_visit_guidance",
+            "claim_ind71_appointment_sms_guidance",
+            "claim_ind71_carry_documents_to_psk_guidance"
           ],
           "status": "verified"
         }
@@ -1610,7 +1945,7 @@
       "documentationQualityNotes": [
         "Direct current observations of public official interfaces are Grade B.",
         "The public guide describes downstream actions but does not make post-login outcomes observed in this pass.",
-        "No predeclared branch was encountered: neither document objection nor police-verification delay is recorded."
+        "A police-verification-delay branch is recorded from the public official FAQ; no case-specific document-objection branch was encountered in the primary public-interface journey."
       ],
       "status": "partial"
     },
@@ -1627,7 +1962,8 @@
           "action": "The applicant reported presenting digital education-record access while lacking a physical document.",
           "expectedResult": "The account says an objection was made and the case was referred onward.",
           "claimIds": [
-            "claim_ind71_citizen_tatkal_document_not_accepted"
+            "claim_ind71_citizen_tatkal_document_not_accepted",
+            "claim_ind71_citizen_tatkal_rpo_referral_reported"
           ],
           "status": "partial"
         },
@@ -1651,6 +1987,7 @@
           "description": "In this reported Tatkal case, the claimed document objection preceded the claimed referral/follow-up issue.",
           "claimIds": [
             "claim_ind71_citizen_tatkal_document_not_accepted",
+            "claim_ind71_citizen_tatkal_rpo_referral_reported",
             "claim_ind71_citizen_tatkal_rpo_followup_access_uncertain"
           ],
           "status": "partial"
@@ -1691,7 +2028,8 @@
           "action": "The applicant reported publicly raising the matter.",
           "expectedResult": "The applicant later reported seeing approval and dispatch; causation is unknown.",
           "claimIds": [
-            "claim_ind71_citizen_post_pv_pending_and_escalation_reported"
+            "claim_ind71_citizen_public_escalation_reported",
+            "claim_ind71_citizen_later_approval_dispatch_reported"
           ],
           "status": "partial"
         }
@@ -1703,7 +2041,9 @@
           "toNodeId": "node_passport_citizen_case_followup",
           "description": "In this reported case, the applicant's claimed pending status preceded the claimed follow-up and later update.",
           "claimIds": [
-            "claim_ind71_citizen_post_pv_pending_and_escalation_reported"
+            "claim_ind71_citizen_post_pv_pending_and_escalation_reported",
+            "claim_ind71_citizen_public_escalation_reported",
+            "claim_ind71_citizen_later_approval_dispatch_reported"
           ],
           "status": "partial"
         }

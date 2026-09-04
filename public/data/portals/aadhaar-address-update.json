@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "aadhaar-address-update",
+  "portals": [
+    {
+      "portalId": "portal_ind70_myaadhaar_entry",
+      "host": "myaadhaar.uidai.gov.in",
+      "observedAt": "2026-09-04T00:00:00+05:30",
+      "serviceId": "aadhaar-address-update",
+      "serviceOwner": "Unique Identification Authority of India",
+      "portalOperator": "Unique Identification Authority of India",
+      "agencyNamingShown": "Unique Identification Authority of India",
+      "languages": [
+        "English"
+      ],
+      "visibleVersionOrLastUpdated": "No visible version or last-updated date observed",
+      "evidenceSourceIds": [
+        "source_ind70_myaadhaar_entry"
+      ],
+      "routeObservations": [
+        {
+          "routeId": "route_ind70_myaadhaar_entry",
+          "serviceId": "aadhaar-address-update",
+          "scenarioIds": [
+            "scenario_aadhaar_address_update_online_poa",
+            "scenario_aadhaar_address_update_hof"
+          ],
+          "entryUrl": "https://myaadhaar.uidai.gov.in/",
+          "finalUrl": "https://myaadhaarbeta.uidai.gov.in/",
+          "redirects": [],
+          "finalStatus": 200,
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": "None to view the public home and its Update Address card.",
+          "publicProcedureVsCaseDataBoundary": "The home is public; its card states that mobile OTP is required, while case-specific activity is not exposed here.",
+          "captchaDependencies": "None observed on the public home.",
+          "javascriptDependencies": "JavaScript-rendered public interface observed.",
+          "publicGuidanceSurfaces": [
+            "Update Address card",
+            "mobile OTP statement",
+            "₹75 fee statement"
+          ],
+          "trackingSurfaces": [
+            "Check Enrolment / Update Status card displayed on the public home"
+          ],
+          "errorSurfaces": [],
+          "recoverySurfaces": [
+            "Support control displayed"
+          ],
+          "evidenceIds": [
+            "source_ind70_myaadhaar_entry"
+          ],
+          "limitations": [
+            "Browser navigation from the 200 seed reached the beta host; a public HTTP header check did not expose an HTTP redirect status.",
+            "No case-specific service was opened from this route beyond the public Update Address choice."
+          ]
+        }
+      ]
+    },
+    {
+      "portalId": "portal_ind70_myaadhaarbeta",
+      "host": "myaadhaarbeta.uidai.gov.in",
+      "observedAt": "2026-09-04T00:00:00+05:30",
+      "serviceId": "aadhaar-address-update",
+      "serviceOwner": "Unique Identification Authority of India",
+      "portalOperator": "Unique Identification Authority of India",
+      "agencyNamingShown": "Unique Identification Authority of India",
+      "languages": [
+        "English"
+      ],
+      "visibleVersionOrLastUpdated": "Copyright © 2026; no page-specific version or last-updated date observed",
+      "evidenceSourceIds": [
+        "source_ind70_myaadhaar_ssup"
+      ],
+      "routeObservations": [
+        {
+          "routeId": "route_ind70_update_address_public",
+          "serviceId": "aadhaar-address-update",
+          "scenarioIds": [
+            "scenario_aadhaar_address_update_online_poa",
+            "scenario_aadhaar_address_update_hof"
+          ],
+          "entryUrl": "https://myaadhaarbeta.uidai.gov.in/ssup/en",
+          "finalUrl": "https://myaadhaarbeta.uidai.gov.in/ssup/en",
+          "redirects": [],
+          "finalStatus": 200,
+          "checkedLinkCount": 3,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": "None to see the address-update choices, fee, timing, supporting-documents button, FAQ, and status control.",
+          "publicProcedureVsCaseDataBoundary": "Selecting the document route's Start control leaves this public procedure and redirects to resident OTP login; the authenticated case flow is unknown.",
+          "captchaDependencies": "None observed on the public page; CAPTCHA appears only on the login destination.",
+          "javascriptDependencies": "JavaScript-rendered public interface observed.",
+          "publicGuidanceSurfaces": [
+            "Using your document",
+            "Using your family member’s Aadhaar",
+            "List of supporting documents",
+            "registered-mobile FAQ",
+            "₹75 fee",
+            "Up to 30 days"
+          ],
+          "trackingSurfaces": [
+            "Check Address Update Status control"
+          ],
+          "errorSurfaces": [],
+          "recoverySurfaces": [
+            "Talk To Aadhaar control"
+          ],
+          "evidenceIds": [
+            "source_ind70_myaadhaar_ssup",
+            "source_ind70_tathya_login"
+          ],
+          "limitations": [
+            "The supporting-documents control did not expose a list during this observation.",
+            "The status control was not opened because this pass does not perform SRN/URN or case-data lookup.",
+            "The family-member branch was observed as a public option but was not progressed."
+          ]
+        }
+      ]
+    },
+    {
+      "portalId": "portal_ind70_tathya_login",
+      "host": "tathya.uidai.gov.in",
+      "observedAt": "2026-09-04T00:00:00+05:30",
+      "serviceId": "aadhaar-address-update",
+      "serviceOwner": "Unique Identification Authority of India",
+      "portalOperator": "Unique Identification Authority of India",
+      "agencyNamingShown": "Unique Identification Authority of India",
+      "languages": [
+        "English"
+      ],
+      "visibleVersionOrLastUpdated": "Copyright © 2024; no page-specific version or last-updated date observed",
+      "evidenceSourceIds": [
+        "source_ind70_tathya_login"
+      ],
+      "routeObservations": [
+        {
+          "routeId": "route_ind70_resident_otp_login",
+          "serviceId": "aadhaar-address-update",
+          "scenarioIds": [
+            "scenario_aadhaar_address_update_online_poa"
+          ],
+          "entryUrl": "https://tathya.uidai.gov.in/access/login?role=resident",
+          "finalUrl": "https://tathya.uidai.gov.in/access/login?role=resident",
+          "redirects": [],
+          "finalStatus": 200,
+          "checkedLinkCount": 0,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": "The page requires an Aadhaar number, CAPTCHA, and Login With OTP action before authenticated activity.",
+          "publicProcedureVsCaseDataBoundary": "This is the observed stop: all case data and subsequent procedure remain behind resident authentication and were not inspected.",
+          "captchaDependencies": "CAPTCHA field, CAPTCHA image, and audio icon observed.",
+          "javascriptDependencies": "The login page states that JavaScript is required.",
+          "publicGuidanceSurfaces": [
+            "Login to Aadhaar via OTP"
+          ],
+          "trackingSurfaces": [],
+          "errorSurfaces": [],
+          "recoverySurfaces": [],
+          "evidenceIds": [
+            "source_ind70_tathya_login"
+          ],
+          "limitations": [
+            "No Aadhaar number, CAPTCHA, or OTP was entered.",
+            "Authenticated upload, payment, submission, acknowledgement, status result, and rejection details are unknown."
+          ]
+        }
+      ]
+    }
+  ]
+}

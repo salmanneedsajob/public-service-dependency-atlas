@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "aadhaar-address-update",
+  "primaryScenarioId": "scenario_aadhaar_address_update_online_poa",
+  "cells": {
+    "cost": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_ind70_online_submission_invoice"
+      ],
+      "searchedRoutes": [
+        "https://uidai.gov.in/index.php?Itemid=2524&id=922&lang=en&option=com_content&view=category",
+        "https://uidai.gov.in/en/updating-data-on-aadhaar"
+      ],
+      "note": "The retained Online Address Update FAQ names an invoice after successful submission but gives no amount; the current update page gives no online-address-update fee. Do not apply the separate document-update fee-relaxation notice to this address-change scenario."
+    },
+    "documents": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind70_poa_required_and_upload",
+        "claim_ind70_update_poa_definition",
+        "claim_ind70_update_poa_current",
+        "claim_ind70_update_poa_issued_to_holder",
+        "claim_ind70_update_poa_verifiable"
+      ],
+      "searchedRoutes": [],
+      "note": "Use an applicable List IV proof-of-address document containing the applicant's name and Indian address; it must be current, issued to the person seeking update, and verifiable. The online route requires upload of the supporting PoA document."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind70_registered_mobile_requirement",
+        "claim_ind70_aadhaar_number_login",
+        "claim_ind70_registered_mobile_otp",
+        "claim_ind70_online_own_poa_route"
+      ],
+      "searchedRoutes": [],
+      "note": "This route is for an Aadhaar number holder with a mobile number registered in Aadhaar, who can log in with the Aadhaar number and OTP and directly request an address update using supporting PoA."
+    },
+    "time": {
+      "state": "absent",
+      "claimIds": [],
+      "searchedRoutes": [
+        "https://uidai.gov.in/index.php?Itemid=2524&id=922&lang=en&option=com_content&view=category",
+        "https://uidai.gov.in/en/updating-data-on-aadhaar",
+        "https://uidai.gov.in/images/commdoc/List_of_Supporting_Document_for_Aadhaar_Enrolment_and_Update.pdf"
+      ],
+      "note": "The reviewed retained sources describe later verification but give no actionable processing duration, deadline, or service-level target for this online PoA address-update route."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind70_quality_processing_team_review"
+      ],
+      "searchedRoutes": [],
+      "note": "UIDAI identifies a quality and processing team as conducting the later verification of the uploaded PoA against the requested data."
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind70_online_submission_srn",
+        "claim_ind70_online_submission_invoice",
+        "claim_ind70_status_login",
+        "claim_ind70_rejection_invalid_poa",
+        "claim_ind70_rejection_holder_name",
+        "claim_ind70_rejection_address_mismatch",
+        "claim_ind70_rejection_scan_quality"
+      ],
+      "searchedRoutes": [],
+      "note": "On successful submission, the FAQ states that an SRN is shown and sent by SMS, an invoice with the SRN can be downloaded, and status is available after login; it also states documented invalid-document rejection conditions."
+    }
+  }
+}

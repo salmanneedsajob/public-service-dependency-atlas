@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru property-tax exception scenarios — citizen-evidence pass",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-31",
+    "dataKind": "research",
+    "disclaimer": "Research handoff, not official advice or an application route. Redacted public first-person accounts are individual case evidence only; they do not establish municipal procedure, document acceptance, fee validity, record status, payment obligation, correction eligibility, or an outcome for another property."
+  },
+  "agencies": [],
+  "scenarios": [
+    {
+      "id": "scenario_indexceptions_property_successor",
+      "label": "Death or succession",
+      "summary": "A successor seeks property-tax record mutation after a recorded owner or occupier dies.",
+      "tags": ["property-tax", "citizen-evidence", "death", "succession", "exception"],
+      "pathNodeIds": ["node_property_title_notice_ind32", "node_property_mutation_intake_ind32", "node_property_transfer_documents_ind32", "node_property_final_record_ind32"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_indexceptions_property_missing_or_incorrect",
+      "label": "Missing or incorrect property record",
+      "summary": "A citizen reports that the municipal record, e-Khata, or its displayed ownership data is incomplete or incorrect.",
+      "tags": ["property-tax", "citizen-evidence", "record-correction", "exception"],
+      "pathNodeIds": ["node_property_mutation_intake_ind32", "node_property_objection_ind32", "node_property_final_record_ind32", "node_property_aro_recovery_ind32"],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_indexceptions_property_not_found",
+      "label": "Property not found",
+      "summary": "A public property lookup does not locate the relevant property record.",
+      "tags": ["property-tax", "citizen-evidence", "property-not-found", "exception"],
+      "pathNodeIds": ["node_public_property_lookup_ind32", "node_public_missing_property_ind32"],
+      "status": "unknown"
+    },
+    {
+      "id": "scenario_indexceptions_property_payment_or_name_discrepancy",
+      "label": "Payment or name discrepancy",
+      "summary": "A citizen reports inconsistent ownership/name signals or a payment demand during e-Khata or property-tax record work.",
+      "tags": ["property-tax", "citizen-evidence", "payment", "name-discrepancy", "exception"],
+      "pathNodeIds": ["node_property_mutation_intake_ind32", "node_property_final_record_ind32", "node_public_payment_ind32", "node_public_aro_recovery_ind32"],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_indexceptions_property_ledger_name_fee_report",
+      "title": "Property Owning since 2012 - E-Khatha Mutation Fee ?",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1uxwu10/property_owning_since_2012_ekhatha_mutation_fee/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2026-07-16",
+      "type": "citizen_evidence",
+      "notes": "Public first-person account. Owner, property, record, document, amount, e-PID, payment and other identifying details are omitted. It reports a ledger-name issue, reapplication and a requested fee; it is not proof of the cause, a valid fee, municipal responsibility, or the result for another property."
+    },
+    {
+      "id": "source_indexceptions_property_final_record_prior_owner_report",
+      "title": "Ekhata issue - need help",
+      "publisher": "r/BangaloreRealEstates (Reddit)",
+      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1vmosd4/ekhata_issue_need_help/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2026-08-12",
+      "type": "citizen_evidence",
+      "notes": "Public first-person account. Usernames, property/location detail, purchase timing, applicant and seller identity, document details, e-KYC condition, and fee information are omitted. It reports a rejected mutation component and a final e-Khata subsequently issued in a prior owner's name; it does not establish a portal rule, correction condition, or municipal outcome."
+    },
+    {
+      "id": "source_indexceptions_property_tax_khata_mismatch_report",
+      "title": "Help to clear confusion if flat Khata transfer is done or not",
+      "publisher": "r/Bengaluru (Reddit)",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1qhvq3u/help_to_clear_confusion_if_flat_khata_transfer_is/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2026-01-20",
+      "type": "citizen_evidence",
+      "notes": "Public first-person account. Names, developer/vendor information, application references, property details, historic dates, amounts and receipt details are omitted. Replies are not treated as evidence of property-tax/khata rules or remedies."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_indexceptions_property_ledger_name_reapply_fee_reported",
+      "text": "One citizen reported that their name was absent from a property-record ledger after an incorrect page had been uploaded, that the issue was later corrected, and that they were asked to submit a new e-Khata application with a new e-PID and an additional mutation-fee demand whose reason was unclear to them.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_indexceptions_property_missing_or_incorrect", "scenario_indexceptions_property_payment_or_name_discrepancy"],
+      "nodeIds": ["node_property_mutation_intake_ind32", "node_property_final_record_ind32", "node_public_payment_ind32"],
+      "sourceIds": ["source_indexceptions_property_ledger_name_fee_report"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One 2026 account. It does not establish a missing-record cause, whether correction or reapplication was required, the source or validity of a fee, or a general e-PID rule."
+    },
+    {
+      "id": "claim_indexceptions_property_final_record_prior_owner_reported",
+      "text": "One citizen reported that a mutation component was rejected but a final e-Khata was later issued in the prior owner's name, and that the displayed online correction route could not be used in their case because it showed a prior-owner e-KYC condition.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_indexceptions_property_missing_or_incorrect", "scenario_indexceptions_property_payment_or_name_discrepancy"],
+      "nodeIds": ["node_property_mutation_intake_ind32", "node_property_final_record_ind32", "node_property_aro_recovery_ind32"],
+      "sourceIds": ["source_indexceptions_property_final_record_prior_owner_report"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One 2026 account. It does not establish a current e-KYC rule, final-record effect, correction eligibility, cause of rejection, or that reapplication is unavailable in other cases."
+    },
+    {
+      "id": "claim_indexceptions_property_tax_name_mutation_payment_mismatch_reported",
+      "text": "One citizen reported a property-tax receipt showing their name while an e-Aasthi page sought a mutation-related payment, leaving the person uncertain whether the khata transfer had already occurred.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_indexceptions_property_payment_or_name_discrepancy"],
+      "nodeIds": ["node_property_mutation_intake_ind32", "node_property_final_record_ind32", "node_public_payment_ind32"],
+      "sourceIds": ["source_indexceptions_property_tax_khata_mismatch_report"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One 2026 account of inconsistent displayed indicators. It does not prove that the tax receipt and khata record have a required relationship, that the payment was due, or that either record was correct."
+    },
+    {
+      "id": "claim_indexceptions_property_successor_citizen_evidence_gap",
+      "text": "This bounded pass did not identify a sufficiently specific public first-person Bengaluru account of property-tax or e-Khata mutation after a recorded owner or occupier's death.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_indexceptions_property_successor"],
+      "nodeIds": ["node_property_title_notice_ind32", "node_property_mutation_intake_ind32", "node_property_transfer_documents_ind32", "node_property_final_record_ind32"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Only public first-person evidence was in scope. Official forms, general guides, court records, and non-Bengaluru accounts were excluded; the gap does not indicate success or failure of the successor route."
+    },
+    {
+      "id": "claim_indexceptions_property_not_found_citizen_evidence_gap",
+      "text": "This bounded pass did not identify a sufficiently specific public first-person Bengaluru account that reports a property absent from the public property-tax/e-Khata lookup and a resulting municipal case outcome.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_indexceptions_property_not_found"],
+      "nodeIds": ["node_public_property_lookup_ind32", "node_public_missing_property_ind32"],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Accounts about incorrect records, status, or document upload were not relabelled as a missing-property lookup result. The gap does not establish the availability or outcome of the public recovery route."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_indexceptions_property_reported_incorrect_record_reapplication",
+      "title": "Reported incorrect record followed by reapplication and unclear fee",
+      "category": "documentation",
+      "symptom": "One citizen reported a corrected ledger-name issue followed by a new e-Khata application, new e-PID and an additional mutation-fee demand that they could not explain.",
+      "likelyCause": "Unknown; the account does not establish the record state, source of the earlier error, fee basis, application type, or municipal decision.",
+      "recovery": "Use the current official record/correction and payment routes to request a property-specific written explanation; do not infer a fee or reapplication requirement from this account.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_property_mutation_intake_ind32", "node_property_final_record_ind32", "node_public_payment_ind32"],
+      "scenarioIds": ["scenario_indexceptions_property_missing_or_incorrect", "scenario_indexceptions_property_payment_or_name_discrepancy"],
+      "claimIds": ["claim_indexceptions_property_ledger_name_reapply_fee_reported"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_indexceptions_property_reported_prior_owner_final_record",
+      "title": "Reported final record in a prior owner's name after rejected mutation",
+      "category": "process",
+      "symptom": "One citizen reported a final e-Khata in a prior owner's name after a rejected mutation component and an unavailable correction route in that case.",
+      "likelyCause": "Unknown; the account does not establish the correct record, rejection reason, e-KYC rule, or a general correction path.",
+      "recovery": "Request a current property-specific correction or review route from the responsible revenue office; do not rely on a prior owner's identity credential or presume that final issuance closes every recovery option.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_property_mutation_intake_ind32", "node_property_final_record_ind32", "node_property_aro_recovery_ind32"],
+      "scenarioIds": ["scenario_indexceptions_property_missing_or_incorrect", "scenario_indexceptions_property_payment_or_name_discrepancy"],
+      "claimIds": ["claim_indexceptions_property_final_record_prior_owner_reported"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_indexceptions_property_reported_tax_name_payment_mismatch",
+      "title": "Reported mismatch between tax-receipt name and mutation-payment prompt",
+      "category": "process",
+      "symptom": "One citizen reported a tax receipt in their name while an e-Aasthi page sought a mutation-related payment, with no reported resolution.",
+      "likelyCause": "Unknown; the report cannot establish the property-record state, payment validity, or relationship between the displayed tax and khata indicators.",
+      "recovery": "Obtain a current written, property-specific record and payment explanation from the authorised revenue channel before paying or assuming transfer completion.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_property_mutation_intake_ind32", "node_property_final_record_ind32", "node_public_payment_ind32"],
+      "scenarioIds": ["scenario_indexceptions_property_payment_or_name_discrepancy"],
+      "claimIds": ["claim_indexceptions_property_tax_name_mutation_payment_mismatch_reported"],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_indexceptions_property_successor_citizen_evidence_gap",
+      "title": "No retained citizen account for death or succession mutation",
+      "category": "documentation",
+      "symptom": "Citizen evidence in this pass does not substantiate a lived Bengaluru property-tax/e-Khata mutation after the recorded owner or occupier's death.",
+      "likelyCause": "Unknown; lack of an attributable public account says nothing about the underlying municipal procedure or its outcome.",
+      "recovery": "Use current official and public-workflow sources for case-specific guidance; add a redacted public first-person account only if one is later found.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_property_title_notice_ind32", "node_property_mutation_intake_ind32", "node_property_transfer_documents_ind32", "node_property_final_record_ind32"],
+      "scenarioIds": ["scenario_indexceptions_property_successor"],
+      "claimIds": ["claim_indexceptions_property_successor_citizen_evidence_gap"],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_indexceptions_property_not_found_citizen_evidence_gap",
+      "title": "No retained citizen account for a property-not-found outcome",
+      "category": "infrastructure",
+      "symptom": "Citizen evidence in this pass does not substantiate a property-not-found lookup result and a resulting municipal outcome.",
+      "likelyCause": "Unknown; absence of a usable public account does not establish whether a particular property is present, absent, searchable, or recoverable.",
+      "recovery": "Use the official public lookup and its property-not-found route with authorised property information; add a redacted public first-person account only if one is later found.",
+      "ownerAgencyIds": [],
+      "nodeIds": ["node_public_property_lookup_ind32", "node_public_missing_property_ind32"],
+      "scenarioIds": ["scenario_indexceptions_property_not_found"],
+      "claimIds": ["claim_indexceptions_property_not_found_citizen_evidence_gap"],
+      "status": "unknown"
+    }
+  ],
+  "journeys": []
+}

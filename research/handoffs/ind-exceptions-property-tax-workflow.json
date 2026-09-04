@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru property-tax exception scenarios — public workflow reuse",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-08-31",
+    "dataKind": "research",
+    "disclaimer": "This bounded workflow pass reuses a dated unauthenticated public observation. It does not establish an authenticated submission, mutation result, payment outcome, or office decision."
+  },
+  "agencies": [],
+  "scenarios": [
+    {
+      "id": "scenario_property_missing_or_wrong_ind32",
+      "label": "Missing or incorrect property record",
+      "summary": "A public property-tax record needs correction or cannot be reconciled with the citizen's documents.",
+      "tags": ["property-tax", "record-correction", "exception"],
+      "pathNodeIds": ["node_property_mutation_intake_ind32", "node_property_final_record_ind32"],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_property_payment_or_correction_ind32",
+      "label": "Payment or name discrepancy",
+      "summary": "A tax receipt or payment route has a name or payment discrepancy.",
+      "tags": ["property-tax", "payment", "name-correction", "exception"],
+      "pathNodeIds": ["node_public_payment_ind32", "node_public_aro_recovery_ind32"],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_bbmptax_grievance_ind39",
+      "title": "BBMP Property Tax System — Online Grievance",
+      "publisher": "BBMP / Greater Bengaluru Authority",
+      "url": "https://bbmptax.karnataka.gov.in/forms/GrievancesReq.aspx",
+      "accessedAt": "2026-08-30",
+      "type": "official_portal",
+      "notes": "Unauthenticated public grievance page observed without submission; it requires case-specific fields and authentication controls to continue."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind39_grievance_subjects",
+      "text": "The public BBMP Property Tax System grievance form lists owner-name correction or update in a receipt as a selectable subject.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_property_missing_or_wrong_ind32", "scenario_property_payment_or_correction_ind32"],
+      "nodeIds": ["node_property_mutation_intake_ind32", "node_property_final_record_ind32"],
+      "sourceIds": ["source_bbmptax_grievance_ind39"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Selectable grievance subject, not a triggered error or a completed correction; no grievance was submitted."
+    }
+  ],
+  "nodes": [],
+  "edges": [
+    {
+      "id": "edge_workflow_lookup_to_missing_ind39",
+      "fromNodeId": "node_public_property_lookup_ind32",
+      "toNodeId": "node_public_missing_property_ind32",
+      "relationship": "alternative",
+      "label": "The public lookup describes a missing-property instruction, but this observation did not open a separate public form.",
+      "scenarioIds": ["scenario_property_missing_record_ind32"],
+      "claimIds": ["claim_ind32_property_workflow_missing_route"],
+      "status": "partial"
+    }
+  ],
+  "roadblocks": [],
+  "journeys": []
+}

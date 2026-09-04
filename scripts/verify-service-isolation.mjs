@@ -53,7 +53,11 @@ for (const [service, prefix] of Object.entries(services)) {
     // Phase 2 handoffs are additive evidence for an existing, isolated
     // service ledger. Accept any numbered IND handoff for this service's
     // stable prefix rather than baking IND-39 into the verifier.
-    .filter((file) => new RegExp(`^ind\\d+-${prefix}-.*\\.json$`).test(file))
+    // Property-tax also has an explicitly named exception handoff trio. It is
+    // additive to that same service only, so discover it here rather than
+    // weakening the cross-service source checks below.
+    .filter((file) => new RegExp(`^ind\\d+-${prefix}-.*\\.json$`).test(file)
+      || (service === 'property-tax' && /^ind-exceptions-property-tax-(?:official|workflow|citizen)\.json$/.test(file)))
     .map((file) => `research/handoffs/${file}`);
   const [ledger, ...handoffs] = await Promise.all([
     read(`ledger/${service}.json`),

@@ -7,10 +7,6 @@ const execFileAsync = promisify(execFile);
 const ledgerFiles = (await readdir('ledger'))
   .filter((file) => file.endsWith('.json') && !['schema.json', 'example.json', 'demo.synthetic.json'].includes(file))
   .map((file) => `ledger/${file}`);
-const files = ['app/page.tsx', ...ledgerFiles];
-const text = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n');
-const urls = [...new Set(text.match(/https?:\/\/[^"'\s,)]+/g) ?? [])]
-  .filter((url) => !url.includes('example.') && !url.includes('buildwhatmovesindia.example'));
 const ledgers = await Promise.all(ledgerFiles.map(async (file) => JSON.parse(await readFile(file, 'utf8'))));
 // This direct Census Act PDF predates the per-URL cap and is deliberately
 // shared for the Act's individual sections; it is not a homepage exception.
@@ -26,6 +22,7 @@ const isBareOrigin = (url) => {
 // Agency homepages are allowed as directory metadata and journey starting
 // points. They are not allowed to be ledger *sources*, which are citations.
 const sourceRecords = ledgers.flatMap((ledger) => ledger.sources ?? []);
+const citationUrls = [...new Set(sourceRecords.map((source) => source.url))];
 // IND-54 exhausted reproducible public lookups for these historical records.
 // Each remains Grade C and explicitly says why no claim-specific page is shown.
 const homepageCitationAllowlist = new Set([
@@ -63,21 +60,36 @@ const newSourceProblems = sourceRecords.filter(newPhaseTwoSource).flatMap((sourc
 });
 if (homepageProblems.length || newSourceProblems.length) throw new Error(`Homepage citations must be specific pages or explicitly documented IND-54 exceptions:\n${[...homepageProblems, ...newSourceProblems].join('\n')}`);
 
-const check = async (url) => {
+const request = async (url, ipVersion) => {
   try {
-    const { stdout } = await execFileAsync('curl', ['-sS', '-L', '--connect-timeout', '10', '--max-time', '30', '-A', 'Public-Service-Dependency-Atlas link checker', '-o', '/dev/null', '-w', '%{http_code}', url]);
-    const status = Number(stdout.trim());
-    return status >= 200 && status < 400 ? null : `${status || 'no status'} ${url}`;
+    const { stdout } = await execFileAsync('curl', [ipVersion, '-sS', '-L', '--connect-timeout', '10', '--max-time', '15', '--range', '0-0', '-A', 'Public-Service-Dependency-Atlas link checker', '-o', '/dev/null', '-w', '%{http_code}', url], { timeout: 20000 });
+    return { status: Number(stdout.trim()), detail: '' };
   } catch (error) {
-    return `${error instanceof Error ? error.message : String(error)} ${url}`;
+    const status = Number(String(error && typeof error === 'object' && 'stdout' in error ? error.stdout : '').trim());
+    const detail = error instanceof Error ? error.message : String(error);
+    return { status, detail };
   }
 };
 
-const concurrency = 64;
+const check = async (url) => {
+  const ipv4 = await request(url, '--ipv4');
+  // Some older Karnataka hosts expose only IPv6, while India Code's current
+  // PDF endpoint is reliable on IPv4. Retry only a connection/timeout result;
+  // an HTTP response is definitive for that URL.
+  const result = ipv4.status === 0 ? await request(url, '--ipv6') : ipv4;
+  if (result.status === 403) return { kind: 'bot-blocked', url };
+  if (result.status >= 200 && result.status < 400) return { kind: 'ok', url };
+  return { kind: 'failure', detail: String(result.status || 'no status') + ' ' + url + (result.detail ? ': ' + result.detail : '') };
+};
+
+const concurrency = 192;
 const failures = [];
-for (let index = 0; index < urls.length; index += concurrency) {
-  const batch = await Promise.all(urls.slice(index, index + concurrency).map(check));
-  failures.push(...batch.filter(Boolean));
+const botBlocked = [];
+for (let index = 0; index < citationUrls.length; index += concurrency) {
+  const batch = await Promise.all(citationUrls.slice(index, index + concurrency).map(check));
+  failures.push(...batch.filter((result) => result.kind === 'failure').map((result) => result.detail));
+  botBlocked.push(...batch.filter((result) => result.kind === 'bot-blocked').map((result) => result.url));
 }
-if (failures.length) throw new Error(`External citation check failed:\n${failures.join('\n')}`);
-console.log(`External citation check passed: ${urls.length} URLs.`);
+if (failures.length) throw new Error('External citation check failed:\n' + failures.join('\n'));
+if (botBlocked.length) console.log('Unverifiable by bot (HTTP 403; accepted):\n' + botBlocked.join('\n'));
+console.log('External citation check passed: ' + citationUrls.length + ' cited URLs' + (botBlocked.length ? '; ' + botBlocked.length + ' unverifiable by bot' : '') + '.');

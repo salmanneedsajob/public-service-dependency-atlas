@@ -3,7 +3,7 @@
     "schemaVersion": "1.0.0",
     "title": "Bengaluru property tax evidence ledger",
     "jurisdiction": "Bengaluru, Karnataka, India",
-    "asOf": "2026-08-30",
+    "asOf": "2026-08-31",
     "dataKind": "research",
     "disclaimer": "Independent research, not official advice. Public sources and known gaps are shown together; do not submit personal data through this ledger."
   },
@@ -359,6 +359,44 @@
       "accessedAt": "2026-08-28",
       "type": "official_guidance",
       "notes": "Current index observed to list the 2024 property-tax rules, 2024 amendments, and a BBMP Revenue Act amendment dated 10-01-2025. Legacy official endpoint was unavailable in the 2026-08-28 citation check; this live official entry point identifies the responsible service but does not reproduce every captured detail. This is a general-site reference, not claim-specific evidence. A more specific public document or endpoint was not verified on 2026-08-29; wording that depends only on this source is retained at Grade C or Unknown. IND-54: no claim-specific public URL could be located and verified on 2026-08-31; retained solely as a Grade C general-site reference."
+    },
+    {
+      "id": "source_ind_exceptions_property_upload_ec",
+      "title": "e-Aasthi Upload EC Document",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/UploadECPage",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Current public page observed. It exposes PropertyId/ePID lookup, EC upload, and a statement that an application will not be processed when its registered deed number is absent from the submitted EC; it directs users unable to fetch EC details to the respective ARO. No identifier or file was provided."
+    },
+    {
+      "id": "source_ind_exceptions_property_download",
+      "title": "Online Khatha Download (BBMP)",
+      "publisher": "Bengaluru City Corporations / Government of Karnataka",
+      "url": "https://bbmpeaasthi.karnataka.gov.in/office/frmKhathaDownload.aspx",
+      "accessedAt": "2026-08-31",
+      "type": "official_portal",
+      "notes": "Current public page observed. It repeats the bank and ARO recovery notices for online payment issues and provides Revenue contact details. No property number or already-paid route was used."
+    },
+    {
+      "id": "source_indexceptions_property_ledger_name_fee_report",
+      "title": "Property Owning since 2012 - E-Khatha Mutation Fee ?",
+      "publisher": "r/bangalore (Reddit)",
+      "url": "https://www.reddit.com/r/bangalore/comments/1uxwu10/property_owning_since_2012_ekhatha_mutation_fee/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2026-07-16",
+      "type": "citizen_evidence",
+      "notes": "Public first-person account. Owner, property, record, document, amount, e-PID, payment and other identifying details are omitted. It reports a ledger-name issue, reapplication and a requested fee; it is not proof of the cause, a valid fee, municipal responsibility, or the result for another property."
+    },
+    {
+      "id": "source_indexceptions_property_final_record_prior_owner_report",
+      "title": "Ekhata issue - need help",
+      "publisher": "r/BangaloreRealEstates (Reddit)",
+      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1vmosd4/ekhata_issue_need_help/",
+      "accessedAt": "2026-08-31",
+      "publishedAt": "2026-08-12",
+      "type": "citizen_evidence",
+      "notes": "Public first-person account. Usernames, property/location detail, purchase timing, applicant and seller identity, document details, e-KYC condition, and fee information are omitted. It reports a rejected mutation component and a final e-Khata subsequently issued in a prior owner's name; it does not establish a portal rule, correction condition, or municipal outcome."
     }
   ],
   "claims": [
@@ -984,6 +1022,422 @@
       "status": "partial",
       "contradictsClaimIds": [],
       "notes": "One public account; it does not establish a general queue state, deadline, or recovery."
+    },
+    {
+      "id": "claim_ind_exceptions_property_form21_successor",
+      "text": "Rule 10 of the BBMP Property Tax Assessment, Recovery and Management Rules, 2024 prescribes Form 21 for an inheritor, survivor, or successor after death.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_successor_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_rules_sop"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The prescribed form does not prove a current public online submission flow, successor eligibility, document acceptance, or an issued mutation."
+    },
+    {
+      "id": "claim_ind_exceptions_property_rule10_intake",
+      "text": "Rule 10 of the BBMP Property Tax Assessment, Recovery and Management Rules, 2024 permits mutation information from a Sub-Registrar Form 18 intimation, an authorised-officer or court order, or information supplied by an interested person.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_successor_ind32",
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_rules_sop"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This rule states intake bases; it does not identify which one a particular property or public portal route will accept."
+    },
+    {
+      "id": "claim_ind_exceptions_property_rule10_objection",
+      "text": "Rule 10 and Form 23 of the BBMP Property Tax Assessment, Recovery and Management Rules, 2024 provide at least fifteen days for an objection to a published mutation entry, in writing or online.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_successor_ind32",
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "nodeIds": [
+        "node_property_objection_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_rules_sop"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No notice, objection, or property-specific response was observed."
+    },
+    {
+      "id": "claim_ind_exceptions_property_form24_condition",
+      "text": "Rule 10 and Form 24 of the BBMP Property Tax Assessment, Recovery and Management Rules, 2024 state that an authorised officer may certify a mutation and issue an e-Khata order when no objection is received within the notice period.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_successor_ind32"
+      ],
+      "nodeIds": [
+        "node_property_final_record_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_rules_sop"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is a conditional rule, not an approval promise, service-level time, or property-specific outcome."
+    },
+    {
+      "id": "claim_ind_exceptions_property_pending_inheritance_label",
+      "text": "The current public e-Aasthi Pending Mutation Report lists inheritance as one of the displayed bases of mutation.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_successor_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_pending"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A visible report label is not evidence that a successor's record exists, qualifies for automatic mutation, or can be completed online."
+    },
+    {
+      "id": "claim_ind_exceptions_property_search_and_missing_route",
+      "text": "The current public e-Aasthi search exposes Ward Name/Number, property ePID, and SAS Property Tax ID lookup controls.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32",
+        "scenario_property_missing_record_ind32"
+      ],
+      "nodeIds": [
+        "node_public_property_lookup_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_search"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No identifier, ward, owner name, or property result was entered or retrieved."
+    },
+    {
+      "id": "claim_ind_exceptions_property_not_found_recovery",
+      "text": "The current public e-Aasthi search says a person who cannot find a property can select Do Not Find My Property eKhata for Bengaluru City Corporation to check and revert.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_record_ind32"
+      ],
+      "nodeIds": [
+        "node_public_missing_property_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_search"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No details were submitted, so fields, response channel, review owner, and timing remain unknown."
+    },
+    {
+      "id": "claim_ind_exceptions_property_status_boundary",
+      "text": "The current public eKhata Application Status page requires an EPID and exposes stage, routing, date, status, and remarks columns.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "nodeIds": [
+        "node_public_property_status_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_status"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No EPID was entered, so no property-specific status, error, or ownership state is asserted."
+    },
+    {
+      "id": "claim_ind_exceptions_property_status_default_no_data",
+      "text": "The unqueried public eKhata Application Status page renders No Data Available by default.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "nodeIds": [
+        "node_public_property_status_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_status"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This default display is not a diagnosis that a particular EPID is invalid, missing, or incorrectly owned."
+    },
+    {
+      "id": "claim_ind_exceptions_property_ec_deed_mismatch",
+      "text": "The current public e-Aasthi EC-upload page says an application will not be processed if its registered deed number is not in the submitted encumbrance certificate.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32"
+      ],
+      "sourceIds": [
+        "source_ind_exceptions_property_upload_ec"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "No deed number, EC, upload, or processing result was supplied; this is a public validation condition, not a case result."
+    },
+    {
+      "id": "claim_ind_exceptions_property_ec_aro_recovery",
+      "text": "The current public e-Aasthi EC-upload page directs a user unable to fetch EC details to the respective ARO.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32"
+      ],
+      "nodeIds": [
+        "node_public_aro_recovery_ind32"
+      ],
+      "sourceIds": [
+        "source_ind_exceptions_property_upload_ec"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The source does not state how the ARO resolves a case or how long resolution takes."
+    },
+    {
+      "id": "claim_ind_exceptions_property_payment_bank_recovery",
+      "text": "The current public e-Aasthi transfer-payment and download notices direct online-payment failure or auto-refund issues to the user's bank.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "nodeIds": [
+        "node_public_payment_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_payment",
+        "source_ind_exceptions_property_download"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No payment, bank contact, refund, or timing was observed."
+    },
+    {
+      "id": "claim_ind_exceptions_property_payment_aro_recovery",
+      "text": "The current public e-Aasthi transfer-payment and download notices direct a user whose payment was deducted but not updated in e-Aasthi to contact the ARO with details.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "nodeIds": [
+        "node_public_payment_ind32",
+        "node_public_aro_recovery_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_workflow_payment",
+        "source_ind_exceptions_property_download"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The notices do not state the required details, refund timing, or a guaranteed reconciliation outcome."
+    },
+    {
+      "id": "claim_ind_exceptions_property_name_receipt_aro",
+      "text": "The current BBMP Property Tax System grievance page directs receipt discrepancies, name-related queries, and related queries to Find Your ARO.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32",
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "nodeIds": [
+        "node_public_aro_recovery_ind32"
+      ],
+      "sourceIds": [
+        "source_bbmptax_grievance_ind39"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The source exposes the official handoff, not a name-correction document checklist or completed correction."
+    },
+    {
+      "id": "claim_ind_exceptions_property_grievance_boundary",
+      "text": "The current BBMP Property Tax System page exposes an Online Grievance form with application, taxpayer-name, mobile, email, and OTP controls.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "nodeIds": [
+        "node_public_aro_recovery_ind32"
+      ],
+      "sourceIds": [
+        "source_bbmptax_grievance_ind39"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No values or OTP were entered. The page does not establish that this form accepts or resolves a particular e-Aasthi/khata transfer discrepancy."
+    },
+    {
+      "id": "claim_ind_exceptions_property_case_outcomes_unknown",
+      "text": "This pass did not establish a property-specific succession decision, record correction, missing-property response, payment reconciliation, name correction, mutation certification, or e-Khata order.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_successor_ind32",
+        "scenario_property_missing_or_wrong_ind32",
+        "scenario_property_missing_record_ind32",
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "nodeIds": [
+        "node_property_final_record_ind32",
+        "node_public_aro_recovery_ind32"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "No login, OTP, property identifier, EC, form, objection, payment, or submission was used."
+    },
+    {
+      "id": "claim_indexceptions_property_ledger_name_reapply_fee_reported",
+      "text": "One citizen reported that their name was absent from a property-record ledger after an incorrect page had been uploaded, that the issue was later corrected, and that they were asked to submit a new e-Khata application with a new e-PID and an additional mutation-fee demand whose reason was unclear to them.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32",
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_final_record_ind32",
+        "node_public_payment_ind32"
+      ],
+      "sourceIds": [
+        "source_indexceptions_property_ledger_name_fee_report"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One 2026 account. It does not establish a missing-record cause, whether correction or reapplication was required, the source or validity of a fee, or a general e-PID rule."
+    },
+    {
+      "id": "claim_indexceptions_property_final_record_prior_owner_reported",
+      "text": "One citizen reported that a mutation component was rejected but a final e-Khata was later issued in the prior owner's name, and that the displayed online correction route could not be used in their case because it showed a prior-owner e-KYC condition.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32",
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_final_record_ind32",
+        "node_property_aro_recovery_ind32"
+      ],
+      "sourceIds": [
+        "source_indexceptions_property_final_record_prior_owner_report"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One 2026 account. It does not establish a current e-KYC rule, final-record effect, correction eligibility, cause of rejection, or that reapplication is unavailable in other cases."
+    },
+    {
+      "id": "claim_indexceptions_property_tax_name_mutation_payment_mismatch_reported",
+      "text": "One citizen reported a property-tax receipt showing their name while an e-Aasthi page sought a mutation-related payment, leaving the person uncertain whether the khata transfer had already occurred.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_final_record_ind32",
+        "node_public_payment_ind32"
+      ],
+      "sourceIds": [
+        "source_ind32_property_citizen_tax_khata_mismatch"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One 2026 account of inconsistent displayed indicators. It does not prove that the tax receipt and khata record have a required relationship, that the payment was due, or that either record was correct."
+    },
+    {
+      "id": "claim_indexceptions_property_successor_citizen_evidence_gap",
+      "text": "This bounded pass did not identify a sufficiently specific public first-person Bengaluru account of property-tax or e-Khata mutation after a recorded owner or occupier's death.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_successor_ind32"
+      ],
+      "nodeIds": [
+        "node_property_title_notice_ind32",
+        "node_property_mutation_intake_ind32",
+        "node_property_transfer_documents_ind32",
+        "node_property_final_record_ind32"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Only public first-person evidence was in scope. Official forms, general guides, court records, and non-Bengaluru accounts were excluded; the gap does not indicate success or failure of the successor route."
+    },
+    {
+      "id": "claim_indexceptions_property_not_found_citizen_evidence_gap",
+      "text": "This bounded pass did not identify a sufficiently specific public first-person Bengaluru account that reports a property absent from the public property-tax/e-Khata lookup and a resulting municipal case outcome.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_missing_record_ind32"
+      ],
+      "nodeIds": [
+        "node_public_property_lookup_ind32",
+        "node_public_missing_property_ind32"
+      ],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Accounts about incorrect records, status, or document upload were not relabelled as a missing-property lookup result. The gap does not establish the availability or outcome of the public recovery route."
     }
   ],
   "nodes": [
@@ -1057,6 +1511,36 @@
             "claim_ind32_property_rule10_forms21_22"
           ],
           "status": "partial"
+        },
+        {
+          "id": "check_ind_exceptions_property_form21",
+          "label": "Succession Form 21 lead",
+          "description": "The 2024 Rules prescribe Form 21 for an inheritor, survivor, or successor after death.",
+          "url": "https://updates.bbmpgov.in/v1/api/file/604205683683-53of2020BBMP%28PropertyTaxassessmentRecoveryandManagement%29Rules%2C2024_watermark.pdf",
+          "claimIds": [
+            "claim_ind_exceptions_property_form21_successor"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "check_ind_exceptions_property_rule10_intake",
+          "label": "Rule 10 intake bases",
+          "description": "The 2024 Rules identify Form 18 intimation, authorised/court order, and interested-person information as mutation-information bases.",
+          "url": "https://updates.bbmpgov.in/v1/api/file/604205683683-53of2020BBMP%28PropertyTaxassessmentRecoveryandManagement%29Rules%2C2024_watermark.pdf",
+          "claimIds": [
+            "claim_ind_exceptions_property_rule10_intake"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "check_ind_exceptions_property_pending_inheritance",
+          "label": "Public inheritance report label",
+          "description": "The public pending-mutation report lists inheritance among the displayed mutation bases.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/PendingMutationReport",
+          "claimIds": [
+            "claim_ind_exceptions_property_pending_inheritance_label"
+          ],
+          "status": "verified"
         }
       ],
       "failureSignals": [
@@ -1069,6 +1553,16 @@
             "claim_ind39_grievance_subjects"
           ],
           "status": "partial"
+        },
+        {
+          "id": "failure_ind_exceptions_property_ec_deed_mismatch",
+          "label": "Registered deed number absent from EC",
+          "description": "The EC-upload page says the application will not be processed if the registered deed number is not in the submitted EC.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/UploadECPage",
+          "claimIds": [
+            "claim_ind_exceptions_property_ec_deed_mismatch"
+          ],
+          "status": "partial"
         }
       ],
       "recoveries": [
@@ -1079,6 +1573,16 @@
           "url": "https://site.bbmp.gov.in/PDF/Gazette%20copy%20of%20Property%20tax%20Rules-2024%20%28SOP%29%20dated%2012-08-2024.pdf",
           "claimIds": [
             "claim_ind39_rule10_form22_recovery"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "recovery_ind_exceptions_property_ec_aro",
+          "label": "Contact the respective ARO for EC details",
+          "description": "The EC-upload page directs users unable to fetch EC details to the respective ARO; no resolution process was tested.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/UploadECPage",
+          "claimIds": [
+            "claim_ind_exceptions_property_ec_aro_recovery"
           ],
           "status": "verified"
         }
@@ -1094,10 +1598,16 @@
         "claim_ind39_rule10_mutation_intake",
         "claim_ind39_rule10_form22_recovery",
         "claim_ind39_property_tax_name_correction_scope",
-        "claim_ind39_grievance_subjects"
+        "claim_ind39_grievance_subjects",
+        "claim_ind_exceptions_property_form21_successor",
+        "claim_ind_exceptions_property_rule10_intake",
+        "claim_ind_exceptions_property_pending_inheritance_label",
+        "claim_ind_exceptions_property_ec_deed_mismatch",
+        "claim_ind_exceptions_property_case_outcomes_unknown"
       ],
       "status": "partial",
-      "displayOrder": 20
+      "displayOrder": 20,
+      "researchedNoSourceFound": []
     },
     {
       "id": "node_property_transfer_documents_ind32",
@@ -1171,6 +1681,16 @@
             "claim_ind32_property_rule10_notice_objection"
           ],
           "status": "verified"
+        },
+        {
+          "id": "check_ind_exceptions_property_form23_objection",
+          "label": "Form 23 objection period",
+          "description": "Rule 10/Form 23 provides at least fifteen days to object in writing or online.",
+          "url": "https://updates.bbmpgov.in/v1/api/file/604205683683-53of2020BBMP%28PropertyTaxassessmentRecoveryandManagement%29Rules%2C2024_watermark.pdf",
+          "claimIds": [
+            "claim_ind_exceptions_property_rule10_objection"
+          ],
+          "status": "partial"
         }
       ],
       "failureSignals": [],
@@ -1193,10 +1713,13 @@
       ],
       "claimIds": [
         "claim_ind32_property_rule10_notice_objection",
-        "claim_ind32_property_rule10_form24"
+        "claim_ind32_property_rule10_form24",
+        "claim_ind_exceptions_property_rule10_objection",
+        "claim_ind_exceptions_property_case_outcomes_unknown"
       ],
       "status": "partial",
-      "displayOrder": 40
+      "displayOrder": 40,
+      "researchedNoSourceFound": []
     },
     {
       "id": "node_property_final_record_ind32",
@@ -1223,6 +1746,16 @@
           "url": "https://bbmp.gov.in/",
           "claimIds": [
             "claim_ind32_property_rule10_form24"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "check_ind_exceptions_property_form24",
+          "label": "Conditional Form 24 outcome",
+          "description": "Rule 10/Form 24 allows certification and an e-Khata order if no objection is received within the notice period.",
+          "url": "https://updates.bbmpgov.in/v1/api/file/604205683683-53of2020BBMP%28PropertyTaxassessmentRecoveryandManagement%29Rules%2C2024_watermark.pdf",
+          "claimIds": [
+            "claim_ind_exceptions_property_form24_condition"
           ],
           "status": "partial"
         }
@@ -1259,10 +1792,13 @@
         "claim_ind32_property_rule10_form24",
         "claim_ind39_property_tax_name_correction_scope",
         "claim_ind39_grievance_subjects",
-        "claim_ind39_citizen_tax_name_grievance_pending"
+        "claim_ind39_citizen_tax_name_grievance_pending",
+        "claim_ind_exceptions_property_form24_condition",
+        "claim_ind_exceptions_property_case_outcomes_unknown"
       ],
       "status": "unknown",
-      "displayOrder": 50
+      "displayOrder": 50,
+      "researchedNoSourceFound": []
     },
     {
       "id": "node_property_aro_recovery_ind32",
@@ -1312,6 +1848,16 @@
             "claim_ind32_property_workflow_search_inputs"
           ],
           "status": "verified"
+        },
+        {
+          "id": "check_ind_exceptions_property_search_controls",
+          "label": "Ward/ePID/SAS search controls",
+          "description": "The public e-Aasthi page exposes lookup controls for ward, property ePID, and SAS Property Tax ID.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
+          "claimIds": [
+            "claim_ind_exceptions_property_search_and_missing_route"
+          ],
+          "status": "verified"
         }
       ],
       "failureSignals": [
@@ -1322,6 +1868,16 @@
           "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/",
           "claimIds": [
             "claim_ind32_property_workflow_missing_route"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "failure_ind_exceptions_property_not_found",
+          "label": "Property not found in public search",
+          "description": "The public e-Aasthi page expressly provides a fallback for a property not found in its searches.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
+          "claimIds": [
+            "claim_ind_exceptions_property_not_found_recovery"
           ],
           "status": "verified"
         }
@@ -1336,6 +1892,16 @@
             "claim_ind32_property_workflow_missing_route"
           ],
           "status": "verified"
+        },
+        {
+          "id": "recovery_ind_exceptions_property_not_found",
+          "label": "Do Not Find My Property eKhata",
+          "description": "The public page says Bengaluru City Corporation will check and revert after the named route is used; no route was submitted.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
+          "claimIds": [
+            "claim_ind_exceptions_property_not_found_recovery"
+          ],
+          "status": "verified"
         }
       ],
       "scenarioIds": [
@@ -1345,10 +1911,13 @@
       ],
       "claimIds": [
         "claim_ind32_property_workflow_search_inputs",
-        "claim_ind32_property_workflow_missing_route"
+        "claim_ind32_property_workflow_missing_route",
+        "claim_ind_exceptions_property_search_and_missing_route",
+        "claim_ind_exceptions_property_not_found_recovery"
       ],
       "status": "partial",
-      "displayOrder": 10
+      "displayOrder": 10,
+      "researchedNoSourceFound": []
     },
     {
       "id": "node_public_missing_property_ind32",
@@ -1369,6 +1938,16 @@
             "claim_ind32_property_workflow_missing_route"
           ],
           "status": "verified"
+        },
+        {
+          "id": "recovery_ind_exceptions_property_corporation_check",
+          "label": "Corporation check and revert statement",
+          "description": "The search page describes a corporation check-and-revert response for the named missing-property route, without a published timing or case result.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/forms/HomePage.aspx",
+          "claimIds": [
+            "claim_ind_exceptions_property_not_found_recovery"
+          ],
+          "status": "verified"
         }
       ],
       "researchedNoSourceFound": [
@@ -1379,7 +1958,9 @@
       ],
       "claimIds": [
         "claim_ind32_property_workflow_missing_route",
-        "claim_ind32_property_workflow_post_login_unknown"
+        "claim_ind32_property_workflow_post_login_unknown",
+        "claim_ind_exceptions_property_not_found_recovery",
+        "claim_ind_exceptions_property_case_outcomes_unknown"
       ],
       "status": "partial",
       "displayOrder": 20
@@ -1476,6 +2057,16 @@
             "claim_ind32_property_workflow_final_e_khata_labels"
           ],
           "status": "partial"
+        },
+        {
+          "id": "check_ind_exceptions_property_status_fields",
+          "label": "EPID status fields",
+          "description": "The public status page requests an EPID and exposes routing, date, status, and remarks columns.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
+          "claimIds": [
+            "claim_ind_exceptions_property_status_boundary"
+          ],
+          "status": "verified"
         }
       ],
       "failureSignals": [
@@ -1487,6 +2078,17 @@
             "claim_ind32_property_workflow_post_login_unknown"
           ],
           "status": "unknown"
+        },
+        {
+          "id": "failure_ind_exceptions_property_default_no_data",
+          "label": "Default No Data Available",
+          "description": "The unqueried screen renders No Data Available; it is not a property-specific invalid-EPID or ownership finding.",
+          "actualError": "No Data Available",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/citizen_core/EkhataApplicationStatus",
+          "claimIds": [
+            "claim_ind_exceptions_property_status_default_no_data"
+          ],
+          "status": "verified"
         }
       ],
       "recoveries": [
@@ -1508,10 +2110,14 @@
       "claimIds": [
         "claim_ind32_property_workflow_status_route",
         "claim_ind32_property_workflow_final_e_khata_labels",
-        "claim_ind32_property_workflow_post_login_unknown"
+        "claim_ind32_property_workflow_post_login_unknown",
+        "claim_ind_exceptions_property_status_boundary",
+        "claim_ind_exceptions_property_status_default_no_data",
+        "claim_ind_exceptions_property_case_outcomes_unknown"
       ],
       "status": "partial",
-      "displayOrder": 40
+      "displayOrder": 40,
+      "researchedNoSourceFound": []
     },
     {
       "id": "node_public_payment_ind32",
@@ -1542,6 +2148,26 @@
             "claim_ind32_property_workflow_payment_recovery"
           ],
           "status": "verified"
+        },
+        {
+          "id": "failure_ind_exceptions_property_payment_bank",
+          "label": "Online payment failure or auto-refund",
+          "description": "The public notices direct online-payment failure or auto-refund issues to the bank.",
+          "url": "https://www.bbmpeaasthi.karnataka.gov.in/office/frmKhathaTransferPayOnline.aspx?id=BTqOdaLv1WZFXnr4ei0KIQ%3D%3D",
+          "claimIds": [
+            "claim_ind_exceptions_property_payment_bank_recovery"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "failure_ind_exceptions_property_payment_not_updated",
+          "label": "Payment deducted but not updated",
+          "description": "The public notices identify a payment deducted but not updated in e-Aasthi state.",
+          "url": "https://www.bbmpeaasthi.karnataka.gov.in/office/frmKhathaTransferPayOnline.aspx?id=BTqOdaLv1WZFXnr4ei0KIQ%3D%3D",
+          "claimIds": [
+            "claim_ind_exceptions_property_payment_aro_recovery"
+          ],
+          "status": "verified"
         }
       ],
       "recoveries": [
@@ -1564,6 +2190,26 @@
             "claim_ind32_property_workflow_payment_recovery"
           ],
           "status": "verified"
+        },
+        {
+          "id": "recovery_ind_exceptions_property_payment_bank",
+          "label": "Contact the bank",
+          "description": "The public notices route online-payment failure or auto-refund issues to the bank; no refund outcome was tested.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/office/frmKhathaDownload.aspx",
+          "claimIds": [
+            "claim_ind_exceptions_property_payment_bank_recovery"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "recovery_ind_exceptions_property_payment_aro",
+          "label": "Contact the ARO with details",
+          "description": "The public notices direct deducted-but-not-updated payment cases to the ARO with details; no evidence list or result is stated.",
+          "url": "https://bbmpeaasthi.karnataka.gov.in/office/frmKhathaDownload.aspx",
+          "claimIds": [
+            "claim_ind_exceptions_property_payment_aro_recovery"
+          ],
+          "status": "verified"
         }
       ],
       "scenarioIds": [
@@ -1572,10 +2218,14 @@
       "claimIds": [
         "claim_ind32_property_workflow_payment_surface",
         "claim_ind32_property_workflow_payment_recovery",
-        "claim_ind32_property_workflow_sequence_unknown"
+        "claim_ind32_property_workflow_sequence_unknown",
+        "claim_ind_exceptions_property_payment_bank_recovery",
+        "claim_ind_exceptions_property_payment_aro_recovery",
+        "claim_ind_exceptions_property_case_outcomes_unknown"
       ],
       "status": "partial",
-      "displayOrder": 50
+      "displayOrder": 50,
+      "researchedNoSourceFound": []
     },
     {
       "id": "node_public_aro_recovery_ind32",
@@ -1604,6 +2254,26 @@
             "claim_ind32_property_workflow_aro_lookup"
           ],
           "status": "verified"
+        },
+        {
+          "id": "check_ind_exceptions_property_name_receipt_aro",
+          "label": "Name and receipt discrepancy ARO handoff",
+          "description": "The Property Tax System grievance page directs receipt discrepancies and name-related queries to Find Your ARO.",
+          "url": "https://bbmptax.karnataka.gov.in/forms/GrievancesReq.aspx",
+          "claimIds": [
+            "claim_ind_exceptions_property_name_receipt_aro"
+          ],
+          "status": "verified"
+        },
+        {
+          "id": "check_ind_exceptions_property_grievance_controls",
+          "label": "Online Grievance controls",
+          "description": "The official page exposes application, taxpayer-name, mobile, email, and OTP controls without proving that a particular discrepancy is eligible.",
+          "url": "https://bbmptax.karnataka.gov.in/forms/GrievancesReq.aspx",
+          "claimIds": [
+            "claim_ind_exceptions_property_grievance_boundary"
+          ],
+          "status": "verified"
         }
       ],
       "failureSignals": [],
@@ -1618,6 +2288,16 @@
             "claim_ind32_property_workflow_tax_correction"
           ],
           "status": "partial"
+        },
+        {
+          "id": "recovery_ind_exceptions_property_aro_name_receipt",
+          "label": "Use Find Your ARO",
+          "description": "The current Property Tax System page names Find Your ARO for receipt and name-related discrepancies; current document requirements and resolution are unknown.",
+          "url": "https://bbmptax.karnataka.gov.in/forms/GrievancesReq.aspx",
+          "claimIds": [
+            "claim_ind_exceptions_property_name_receipt_aro"
+          ],
+          "status": "verified"
         }
       ],
       "researchedNoSourceFound": [
@@ -1629,7 +2309,12 @@
       ],
       "claimIds": [
         "claim_ind32_property_workflow_tax_correction",
-        "claim_ind32_property_workflow_aro_lookup"
+        "claim_ind32_property_workflow_aro_lookup",
+        "claim_ind_exceptions_property_ec_aro_recovery",
+        "claim_ind_exceptions_property_payment_aro_recovery",
+        "claim_ind_exceptions_property_name_receipt_aro",
+        "claim_ind_exceptions_property_grievance_boundary",
+        "claim_ind_exceptions_property_case_outcomes_unknown"
       ],
       "status": "partial",
       "displayOrder": 60
@@ -2105,6 +2790,149 @@
         "claim_ind39_citizen_tax_name_grievance_pending"
       ],
       "status": "partial"
+    },
+    {
+      "id": "roadblock_ind_exceptions_property_case_result_unknown",
+      "title": "Exception-route case result is not public",
+      "category": "process",
+      "symptom": "Public rules and screens identify succession, search, EC, payment, and ARO handoffs but do not expose a property-specific decision or correction result without case data.",
+      "likelyCause": "Eligibility, identifiers, evidence, payment, notice, and authorised review are case-specific and were not entered or submitted in this pass.",
+      "recovery": "Use the applicable exact official route and preserve the resulting official acknowledgement or status; do not infer an outcome from public labels or default no-data screens.",
+      "ownerAgencyIds": [
+        "agency_bbmp_revenue_ind32_property"
+      ],
+      "nodeIds": [
+        "node_property_final_record_ind32",
+        "node_public_aro_recovery_ind32",
+        "node_public_payment_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_successor_ind32",
+        "scenario_property_missing_or_wrong_ind32",
+        "scenario_property_missing_record_ind32",
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "claimIds": [
+        "claim_ind_exceptions_property_case_outcomes_unknown"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_indexceptions_property_reported_incorrect_record_reapplication",
+      "title": "Reported incorrect record followed by reapplication and unclear fee",
+      "category": "documentation",
+      "symptom": "One citizen reported a corrected ledger-name issue followed by a new e-Khata application, new e-PID and an additional mutation-fee demand that they could not explain.",
+      "likelyCause": "Unknown; the account does not establish the record state, source of the earlier error, fee basis, application type, or municipal decision.",
+      "recovery": "Use the current official record/correction and payment routes to request a property-specific written explanation; do not infer a fee or reapplication requirement from this account.",
+      "ownerAgencyIds": [
+        "agency_bbmp_revenue_ind32_property"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_final_record_ind32",
+        "node_public_payment_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32",
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "claimIds": [
+        "claim_indexceptions_property_ledger_name_reapply_fee_reported"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_indexceptions_property_reported_prior_owner_final_record",
+      "title": "Reported final record in a prior owner's name after rejected mutation",
+      "category": "process",
+      "symptom": "One citizen reported a final e-Khata in a prior owner's name after a rejected mutation component and an unavailable correction route in that case.",
+      "likelyCause": "Unknown; the account does not establish the correct record, rejection reason, e-KYC rule, or a general correction path.",
+      "recovery": "Request a current property-specific correction or review route from the responsible revenue office; do not rely on a prior owner's identity credential or presume that final issuance closes every recovery option.",
+      "ownerAgencyIds": [
+        "agency_bbmp_revenue_ind32_property"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_final_record_ind32",
+        "node_property_aro_recovery_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_missing_or_wrong_ind32",
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "claimIds": [
+        "claim_indexceptions_property_final_record_prior_owner_reported"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_indexceptions_property_reported_tax_name_payment_mismatch",
+      "title": "Reported mismatch between tax-receipt name and mutation-payment prompt",
+      "category": "process",
+      "symptom": "One citizen reported a tax receipt in their name while an e-Aasthi page sought a mutation-related payment, with no reported resolution.",
+      "likelyCause": "Unknown; the report cannot establish the property-record state, payment validity, or relationship between the displayed tax and khata indicators.",
+      "recovery": "Obtain a current written, property-specific record and payment explanation from the authorised revenue channel before paying or assuming transfer completion.",
+      "ownerAgencyIds": [
+        "agency_bbmp_revenue_ind32_property"
+      ],
+      "nodeIds": [
+        "node_property_mutation_intake_ind32",
+        "node_property_final_record_ind32",
+        "node_public_payment_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_payment_or_correction_ind32"
+      ],
+      "claimIds": [
+        "claim_indexceptions_property_tax_name_mutation_payment_mismatch_reported"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "roadblock_indexceptions_property_successor_citizen_evidence_gap",
+      "title": "No retained citizen account for death or succession mutation",
+      "category": "documentation",
+      "symptom": "Citizen evidence in this pass does not substantiate a lived Bengaluru property-tax/e-Khata mutation after the recorded owner or occupier's death.",
+      "likelyCause": "Unknown; lack of an attributable public account says nothing about the underlying municipal procedure or its outcome.",
+      "recovery": "Use current official and public-workflow sources for case-specific guidance; add a redacted public first-person account only if one is later found.",
+      "ownerAgencyIds": [
+        "agency_bbmp_revenue_ind32_property"
+      ],
+      "nodeIds": [
+        "node_property_title_notice_ind32",
+        "node_property_mutation_intake_ind32",
+        "node_property_transfer_documents_ind32",
+        "node_property_final_record_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_successor_ind32"
+      ],
+      "claimIds": [
+        "claim_indexceptions_property_successor_citizen_evidence_gap"
+      ],
+      "status": "unknown"
+    },
+    {
+      "id": "roadblock_indexceptions_property_not_found_citizen_evidence_gap",
+      "title": "No retained citizen account for a property-not-found outcome",
+      "category": "infrastructure",
+      "symptom": "Citizen evidence in this pass does not substantiate a property-not-found lookup result and a resulting municipal outcome.",
+      "likelyCause": "Unknown; absence of a usable public account does not establish whether a particular property is present, absent, searchable, or recoverable.",
+      "recovery": "Use the official public lookup and its property-not-found route with authorised property information; add a redacted public first-person account only if one is later found.",
+      "ownerAgencyIds": [
+        "agency_bbmp_revenue_ind32_property"
+      ],
+      "nodeIds": [
+        "node_public_property_lookup_ind32",
+        "node_public_missing_property_ind32"
+      ],
+      "scenarioIds": [
+        "scenario_property_missing_record_ind32"
+      ],
+      "claimIds": [
+        "claim_indexceptions_property_not_found_citizen_evidence_gap"
+      ],
+      "status": "unknown"
     }
   ],
   "journeys": [

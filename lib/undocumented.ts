@@ -1,5 +1,5 @@
 import type { Ledger, RecordStatus } from '@/lib/ledger-types';
-import { getServiceManifestEntry } from '@/lib/services-manifest';
+import serviceManifest from '../ledger/services.manifest.json' with { type: 'json' };
 
 export type DocumentationGap = {
   id: string;
@@ -144,7 +144,7 @@ function normalizedNodeKey(label: string) {
  * statuses. It changes presentation only; no source record is inferred or edited.
  */
 export function collectUndocumentedQuestions(ledger: Ledger, serviceId?: string): DocumentationGap[] {
-  if (serviceId && !getServiceManifestEntry(serviceId)?.published) throw new Error(`No published manifest service exists for ${serviceId}.`);
+  if (serviceId && !serviceManifest.services.some((service) => service.id === serviceId && service.published)) throw new Error(`No published manifest service exists for ${serviceId}.`);
   const eligibleRoadblocks = ledger.roadblocks.filter((roadblock) =>
     roadblock.status !== ('verified' as RecordStatus)
     && !internalArtifact.test(`${roadblock.id} ${roadblock.title}`)

@@ -1,6 +1,6 @@
 import { readFile, readdir } from 'node:fs/promises';
 
-const ignored = new Set(['schema.json', 'example.json', 'demo.synthetic.json']);
+const ignored = new Set(['schema.json', 'example.json', 'demo.synthetic.json', 'services.manifest.json']);
 const files = (await readdir('ledger')).filter((file) => file.endsWith('.json') && !ignored.has(file));
 const fields = ['checks', 'failureSignals', 'recoveries'];
 let warnings = 0;

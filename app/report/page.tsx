@@ -4,9 +4,10 @@ import Link from 'next/link';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { createReportTokens, parseChapterCopy, resolveReportTemplate, tokenNumber } from '@/lib/report-tokens.js';
+import { reportServiceManifest } from '@/lib/services-manifest';
 
 export const metadata: Metadata = {
-  title: 'Field notes from twelve services | Public Service Dependency Atlas',
+  title: `Field notes from ${reportServiceManifest.length} services | Public Service Dependency Atlas`,
   description: 'A derived account of what public documentation does and does not let a Bengaluru citizen expect.',
   robots: {
     index: false,
@@ -113,7 +114,7 @@ export default async function FieldNotesReport() {
 
       <section className="report-hero">
         <p className="report-kicker">Field report · Bengaluru public services</p>
-        <h1>Field notes from<br />twelve services</h1>
+        <h1>Field notes from<br />{reportServiceManifest.length} services</h1>
         <p className="report-deck">Can public documentation tell a citizen what to expect before a case begins?</p>
         <div className="report-notice">
           <p><b>Independent research, not official guidance.</b> No agent logged in, paid, uploaded personal data, or submitted an application.</p>
@@ -255,7 +256,7 @@ export default async function FieldNotesReport() {
         </article>
       </div>
 
-      <footer className="report-footer"><p>Field notes from twelve services</p><p>Independent public-source research · Bengaluru, Karnataka</p><Link href="/">Return to the atlas →</Link></footer>
+      <footer className="report-footer"><p>Field notes from {reportServiceManifest.length} services</p><p>Independent public-source research · Bengaluru, Karnataka</p><Link href="/">Return to the atlas →</Link></footer>
     </main>
   );
 }

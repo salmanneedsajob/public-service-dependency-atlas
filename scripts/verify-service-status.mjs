@@ -1,7 +1,7 @@
 import { readFile, readdir } from 'node:fs/promises';
 import { deriveServiceMappingSummary, deriveServiceStatus } from '../lib/service-status.ts';
 
-const ignoredLedgers = new Set(['demo.synthetic.json', 'example.json', 'schema.json']);
+const ignoredLedgers = new Set(['demo.synthetic.json', 'example.json', 'schema.json', 'services.manifest.json']);
 const ledgerFiles = (await readdir('ledger')).filter((file) => file.endsWith('.json') && !ignoredLedgers.has(file));
 const errors = [];
 const statusCounts = { Mapped: 0, 'Partially mapped': 0 };

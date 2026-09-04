@@ -1,4 +1,4 @@
-import { publishedServiceManifest } from '@/lib/services-manifest';
+import serviceManifest from '../ledger/services.manifest.json' with { type: 'json' };
 
 export type ServiceGuide = {
   terms: Array<{ term: string; definition: string }>;
@@ -122,6 +122,6 @@ export const serviceGuides: Record<string, ServiceGuide> = {
   },
 };
 
-for (const service of publishedServiceManifest) {
+for (const service of serviceManifest.services.filter((service) => service.published)) {
   if (!serviceGuides[service.id]) throw new Error(`Published service ${service.id} is missing guide copy.`);
 }

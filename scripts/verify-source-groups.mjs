@@ -1,7 +1,7 @@
 import { readFile, readdir } from 'node:fs/promises';
 
 const ledgerFiles = (await readdir('ledger'))
-  .filter((file) => file.endsWith('.json') && !['schema.json', 'example.json', 'demo.synthetic.json'].includes(file));
+  .filter((file) => file.endsWith('.json') && !['schema.json', 'example.json', 'demo.synthetic.json', 'services.manifest.json'].includes(file));
 
 function isCitizenSource(source) {
   return source.type === 'citizen_evidence' || /(?:^|\.)reddit\.com$/i.test(new URL(source.url).hostname);

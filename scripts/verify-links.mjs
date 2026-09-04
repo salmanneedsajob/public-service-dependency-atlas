@@ -5,7 +5,7 @@ import { promisify } from 'node:util';
 const execFileAsync = promisify(execFile);
 
 const ledgerFiles = (await readdir('ledger'))
-  .filter((file) => file.endsWith('.json') && !['schema.json', 'example.json', 'demo.synthetic.json'].includes(file))
+  .filter((file) => file.endsWith('.json') && !['schema.json', 'example.json', 'demo.synthetic.json', 'services.manifest.json'].includes(file))
   .map((file) => `ledger/${file}`);
 const ledgers = await Promise.all(ledgerFiles.map(async (file) => JSON.parse(await readFile(file, 'utf8'))));
 // This direct Census Act PDF predates the per-URL cap and is deliberately

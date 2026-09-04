@@ -12,41 +12,18 @@ const handoffDirectory = join(projectRoot, 'research', 'handoffs');
 const researchDirectory = join(projectRoot, 'research');
 const reportPath = join(projectRoot, 'public', 'data', 'report.json');
 const expectationTagsPath = join(projectRoot, 'report', 'expectation-tags.json');
+const manifestPath = join(projectRoot, 'ledger', 'services.manifest.json');
 
-const ignoredLedgerFiles = new Set(['example.json', 'demo.synthetic.json', 'schema.json']);
 const statuses = ['verified', 'partial', 'contested', 'unknown'];
 const grades = ['A', 'B', 'C', 'D', 'E', 'F', 'Unknown'];
 const expectationColumns = ['cost', 'documents', 'eligibility', 'time', 'owner', 'after-submission'];
 
-const serviceNames = {
-  'bescom-name-transfer': 'BESCOM name transfer',
-  'birth-certificate': 'Birth certificate',
-  'building-plan': 'Building plan approval',
-  'death-certificate': 'Death certificate',
-  khata: 'e-Khata transfer',
-  lpg: 'LPG transfer',
-  marriage: 'Marriage registration',
-  'new-electricity': 'New electricity connection',
-  'property-tax': 'Property tax',
-  'trade-license': 'Trade licence',
-  'water-account': 'Water account transfer',
-  'water-connection': 'Water connection',
-};
-
-const serviceHrefs = {
-  'bescom-name-transfer': '/bescom',
-  'birth-certificate': '/birth-certificate',
-  'building-plan': '/building-plan',
-  'death-certificate': '/death-certificate',
-  khata: '/khata',
-  lpg: '/lpg',
-  marriage: '/marriage-registration',
-  'new-electricity': '/new-electricity',
-  'property-tax': '/property-tax',
-  'trade-license': '/trade-license',
-  'water-account': '/water-account',
-  'water-connection': '/water-connection',
-};
+const servicesManifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+const reportServices = servicesManifest.services.filter((service) => service.reportIncluded);
+if (!reportServices.length) throw new Error('Services manifest has no reportIncluded services.');
+const reportTitle = `Field notes from ${reportServices.length} services`;
+const serviceNames = Object.fromEntries(reportServices.map((service) => [service.reportServiceId ?? service.id, service.title]));
+const serviceHrefs = Object.fromEntries(reportServices.map((service) => [service.reportServiceId ?? service.id, service.href]));
 
 const expectationRules = {
   cost: [
@@ -332,10 +309,6 @@ const recurringPhraseRules = [
   },
 ];
 
-function serviceIdForLedger(filename) {
-  return filename === 'research.json' ? 'bescom-name-transfer' : filename.replace(/\.json$/u, '');
-}
-
 function countBy(items, key) {
   const counts = {};
   for (const item of items) {
@@ -620,7 +593,7 @@ function buildExpectationSidecar(ledgers, previous) {
 
   return {
     schemaVersion: '2.1.0',
-    description: 'Reviewable expectation tags for Field notes from twelve services. proposedColumns and proposedState are generated. Edit reviewState and reviewNote; the grid reads only reviewState. cellReviews records human review of a service-expectation cell. A reviewState that differs from the preceding proposedState is preserved on rerun.',
+    description: `Reviewable expectation tags for ${reportTitle}. proposedColumns and proposedState are generated. Edit reviewState and reviewNote; the grid reads only reviewState. cellReviews records human review of a service-expectation cell. A reviewState that differs from the preceding proposedState is preserved on rerun.`,
     columns: expectationColumns,
     states: ['stated', 'mentioned', 'absent'],
     rule: {
@@ -1424,15 +1397,15 @@ function printSummary(report) {
   console.log(`\nWrote ${relative(projectRoot, reportPath)} and ${relative(projectRoot, expectationTagsPath)}.`);
 }
 
-const ledgerFiles = (await readdir(ledgerDirectory)).filter((filename) => filename.endsWith('.json') && !ignoredLedgerFiles.has(filename)).sort();
 const ledgers = [];
-for (const filename of ledgerFiles) {
+for (const serviceManifest of reportServices) {
+  const filename = serviceManifest.ledgerFile;
   const data = JSON.parse(await readFile(join(ledgerDirectory, filename), 'utf8'));
-  if (data.meta?.dataKind !== 'research') continue;
-  const serviceId = serviceIdForLedger(filename);
-  ledgers.push({ filename, serviceId, service: serviceNames[serviceId] ?? data.meta.title, data });
+  if (data.meta?.dataKind !== 'research') throw new Error(`Manifest report service ${serviceManifest.id} does not point to a research ledger.`);
+  const serviceId = serviceManifest.reportServiceId ?? serviceManifest.id;
+  ledgers.push({ filename, serviceId, service: serviceNames[serviceId], data });
 }
-if (ledgers.length !== 12) throw new Error(`Expected 12 published research ledgers; found ${ledgers.length}.`);
+if (ledgers.length !== reportServices.length) throw new Error(`Expected ${reportServices.length} report ledgers from the manifest; found ${ledgers.length}.`);
 
 const window = await researchWindow();
 const existingExpectationTags = await readExistingExpectationTags();
@@ -1450,7 +1423,7 @@ const recurringPhrases = collectRecurringPhrases(ledgers);
 
 const report = {
   meta: {
-    title: 'Field notes from twelve services — derived figures',
+    title: `${reportTitle} — derived figures`,
     generatedBy: 'scripts/report-figures.mjs',
     ledgerFiles: ledgers.map((ledger) => `ledger/${ledger.filename}`),
     handoffGlob: 'research/handoffs/*.json',

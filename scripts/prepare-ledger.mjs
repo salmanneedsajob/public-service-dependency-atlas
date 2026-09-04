@@ -33,7 +33,7 @@ if (!validate(ledger)) {
 await mkdir(path.dirname(outputPath), { recursive: true });
 const serializedLedger = `${JSON.stringify(ledger, null, 2)}\n`;
 await Promise.all([writeFile(outputPath, serializedLedger), writeFile(serviceOutputPath, serializedLedger)]);
-for (const filename of (await readdir(path.resolve(projectRoot, 'ledger'))).filter((name) => !['research.json','example.json','demo.synthetic.json','schema.json'].includes(name) && name.endsWith('.json'))) {
+for (const filename of (await readdir(path.resolve(projectRoot, 'ledger'))).filter((name) => !['research.json','example.json','demo.synthetic.json','schema.json','services.manifest.json'].includes(name) && name.endsWith('.json'))) {
   const serviceLedger = JSON.parse(await readFile(path.resolve(projectRoot, 'ledger', filename), 'utf8'));
   if (!validate(serviceLedger)) throw new Error(`${filename} does not satisfy schema: ${(validate.errors ?? []).map((error) => `${error.instancePath} ${error.message}`).join('; ')}`);
   await writeFile(path.resolve(projectRoot, 'public/data', filename), `${JSON.stringify(serviceLedger, null, 2)}\n`);

@@ -7,13 +7,13 @@ Every agent writes findings into the shared ledger contract in `schema.json`. Pr
 
 ## 1. Research roles and the binding workflow
 
-One service per Linear issue and one service per Codex run. Do not batch. The reference standard is `ledger/khata.json`: every node there carries populated `checks`, `failureSignals`, and `recoveries` with sourced claims. Most other ledgers have these fields empty, which is the gap this work closes.
+One service per Linear issue and one service per Codex run. Do not batch.
 
 For each service, the binding workflow is: official-source pass, public-workflow pass, citizen-evidence pass, integration, then one audit in a separate fresh run. Passes write isolated handoffs. The audit receives only the integrated ledger, `ledger/schema.json`, this protocol, and the audit-corrections contract; it does not receive researchers' reasoning or prior pass handoffs. No Wave 2 research may start until its blocking pre-flight issue is Done.
 
 ### Official-source agent
 
-Find primary law, regulation, official pages, forms, circulars, portals, and help text. Create `sources` and atomic `claims`; connect claims to relevant nodes and scenarios. Record the exact access date and jurisdiction. Do not infer a working end-to-end journey merely because individual requirements are published.
+Find primary law, regulation, official pages, forms, circulars, portals, and help text. Create `sources` and atomic `claims`; one claim asserts one checkable thing. Connect claims to relevant nodes and scenarios. For every source, record the exact access date, jurisdiction, and agency name as displayed on that access date. Do not infer a working end-to-end journey merely because individual requirements are published.
 
 ### Public-workflow agent
 
@@ -49,7 +49,12 @@ An explicit zero requirement is a stated value, not an absence and not a not-app
 | --- | --- |
 | A | A binding law, regulation, commission order, or gazette notification |
 | B | A current official procedure, form, service portal, circular, or agency page, including direct current observation of a public official interface |
+| B | An observed current official form |
 | C | Official but indirect, incomplete, archived, or potentially outdated material |
+| C | An official press release |
+| C | An official annual report |
+| C | A department homepage or general-site reference; never use it as a specific citation |
+| C | Archived, undated, or visibly outdated official material; state the date and limitation |
 | D | Reputable secondary reporting or professional guidance with attributable sources |
 | E | Genuine citizen accounts, public forum posts, or citizen-provided screenshots and first-person evidence |
 | F | An uncorroborated assertion retained only because it identifies something worth checking |
@@ -75,27 +80,42 @@ Every non-`Unknown` claim needs at least one source. A source supplies the direc
 
 Use ISO dates (`YYYY-MM-DD`) and Bengaluru/Karnataka-specific jurisdiction text. The citation gate is green only when these requirements, source links, claim-source references, scenario tags, and required limitations are present and valid.
 
-## 8. Expectations block written by the official pass
+## 8. Pre-audit lint and waivers
 
-The official-source pass writes a human-authored expectations block for the `primaryScenarioId`. It covers exactly these six cells: `cost`, `documents`, `eligibility`, `time`, `owner`, and `afterSubmission`.
+Before audit, run the pre-audit lint. It checks:
+
+1. compound or list claims;
+2. duplicate sources with the same URL and access date;
+3. Grade B assigned to secondary sources;
+4. Grade C assigned to observed current official forms;
+5. source-date quality: missing `publishedAt` without a visible-date note, or a stale or undated source without a stated limitation;
+6. overclaims across a login or other authentication boundary;
+7. undeclared or incorrect scenario IDs; and
+8. `researchedNoSourceFound` without a matching public-route search.
+
+A waiver names the affected record ID and the reason in the handoff. An unwaived finding blocks audit.
+
+## 9. Expectations block written by the official pass
+
+The official-source pass writes a human-authored expectations block for the `primaryScenarioId`. It covers exactly these six cells: `cost`, `documents`, `eligibility`, `time`, `owner`, and `after-submission`.
 
 For a `stated` cell, write its state, `claimIds`, and an actionable-value note. For a `mentioned` or `absent` cell, write its state, searched route IDs or URLs, optional topic-only `claimIds`, and a search note. A regex or other automated extraction may cross-check the block but cannot replace it. Explicit zero values follow section 3.
 
-## 9. Portal record written by the public-workflow pass
+## 10. Portal record written by the public-workflow pass
 
 The public-workflow pass writes one portal record per portal, not one conclusion per host. Each portal record contains: `portalId`, `host`, observation timestamp, service owner, portal operator, agency naming shown, languages, visible version or last-updated date, and evidence source IDs.
 
 Each portal record contains nested `routeObservations`. Every route observation contains: `routeId`; service and scenario IDs; entry and final URLs; redirects; checked and dead-link counts; authentication prerequisites; the boundary between public procedure and case data; CAPTCHA, JavaScript, or app dependencies; public guidance, tracking, error, and recovery surfaces; evidence IDs; and limitations. Login- or case-data-bound surfaces remain unknown rather than inferred.
 
-## 10. Archive-snapshot rule
+## 11. Archive-snapshot rule
 
-At access time, capture a Wayback snapshot for every public source used. Record the snapshot URL with the source. If capture fails, record the access date, the failure, and a limitation. Archive failure does not permit a substitute homepage or an unsupported claim.
+At access time, capture a Wayback snapshot for every public source used. Record the snapshot URL with the source. Never archive authenticated, personal, payment, or case-specific pages. If capture fails, record the access date, the failure, and a limitation. Archive failure does not permit a substitute homepage or an unsupported claim. If a link later dies, retain the original URL and point to its snapshot.
 
-## 11. Citizen-evidence quarantine
+## 12. Citizen-evidence quarantine
 
-Citizen evidence is quarantined to `citizen_reported`. It may expose a failure mode, undocumented dependency, terminology, or possible recovery path, but cannot establish an official rule. Redact all personal data. Cross-link a citizen contradiction to other evidence only when the account establishes the same route and a comparable period; otherwise keep it quarantined and do not resolve it by intuition.
+Citizen evidence is quarantined to `citizen_reported`. It may expose a failure mode, undocumented dependency, terminology, or possible recovery path, but cannot establish an official rule. Redact names, handles, vehicle, property, account and application identifiers, addresses, phone numbers, and identity data. Cross-link a citizen contradiction to other evidence only when the account establishes the same route and a comparable period; otherwise keep it quarantined and do not resolve it by intuition.
 
-## 12. Structured audit corrections and auditor isolation
+## 13. Structured audit corrections and auditor isolation
 
 The audit produces markdown findings and a corrections JSON document. Each correction object contains:
 
@@ -118,13 +138,13 @@ Use `null` for a true addition or deletion. The generic application step validat
 
 The audit is isolated: one fresh audit run per service, with only the integrated ledger, schema, this protocol, and corrections contract. It must not receive researcher reasoning or pass handoffs. The auditor may split compound claims, merge duplicates, remove false contradiction links, and downgrade unsupported claims. It may not invent evidence to make a record complete.
 
-## 13. Definition of done
+## 14. Definition of done
 
 A service is done when the primary scenario is fixed and present; the integrated ledger is schema-valid; six authored expectation cells are present; stated cells cite claim IDs and mentioned/absent cells record searched routes; public sources include visible agency naming, access date, and a Wayback snapshot or documented archival failure; required portal route records exist; every `researchedNoSourceFound` is backed by a recorded search; lint is clean or waived; a fresh audit has completed and structured corrections are applied; unapplied corrections are stated limitations; validation is green; and the service finish comment is posted.
 
 Branch IDs are declared for stability but are recorded only when encountered. Done depends on the primary scenario alone. Derived Mapped status is informational only, never a completion target.
 
-## 14. Start and finish comment formats
+## 15. Start and finish comment formats
 
 Post this start comment before a service run:
 
@@ -144,14 +164,14 @@ Post this finish comment when the service is complete:
 ```text
 Primary scenario: <primaryScenarioId>; encountered branches: <IDs or none>
 Evidence counts: sources by grade; claims by status; nodes; edges; roadblocks; journeys
-Expectations: cost <claim IDs or searched routes>; documents <...>; eligibility <...>; time <...>; owner <...>; afterSubmission <...>
+Expectations: cost <claim IDs or searched routes>; documents <...>; eligibility <...>; time <...>; owner <...>; after-submission <...>
 Portal records written: <portal IDs>; route observations: <route IDs>
 Audit: <file>; corrections proposed/applied/unapplied: <counts and IDs>
 Validation: <results>; derived-status change: <informational before/after>
 Unresolved limitations: <explicit list or none>
 ```
 
-## 15. Safety boundaries
+## 16. Safety boundaries
 
 - Do not submit live government or utility applications.
 - Do not log in, use OTPs, pay, book appointments, upload documents, or query real case data.

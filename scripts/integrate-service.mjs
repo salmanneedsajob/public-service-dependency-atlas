@@ -3,6 +3,10 @@ import { readFile, writeFile } from 'node:fs/promises';
 const [service, ...files] = process.argv.slice(2);
 if (!service || !files.length) throw new Error('Usage: node scripts/integrate-service.mjs <service> <handoff...>');
 
+const manifest = JSON.parse(await readFile('ledger/services.manifest.json', 'utf8'));
+const serviceManifest = manifest.services.find((entry) => entry.id === service);
+if (!serviceManifest) throw new Error(`Service ${service} is not declared in ledger/services.manifest.json.`);
+
 const fields = ['agencies', 'scenarios', 'sources', 'claims', 'nodes', 'edges', 'roadblocks', 'journeys'];
 const readJson = async (file) => JSON.parse(await readFile(file, 'utf8'));
 const handoffs = await Promise.all(files.map(readJson));
@@ -58,6 +62,12 @@ for (const field of fields) {
 
 for (const scenario of ledger.scenarios) scenario.id = canonicalScenario(scenario.id);
 ledger.scenarios = [...new Map(ledger.scenarios.map((scenario) => [scenario.id, scenario])).values()];
+if (serviceManifest.stratum === 'deep') {
+  const declaredScenarioIds = new Set([serviceManifest.primaryScenarioId, ...serviceManifest.branchScenarioIds]);
+  const undeclaredScenarioIds = ledger.scenarios.map((scenario) => scenario.id).filter((id) => !declaredScenarioIds.has(id));
+  if (undeclaredScenarioIds.length) throw new Error(`Wave 2 service ${service} has undeclared scenario IDs: ${undeclaredScenarioIds.join(', ')}.`);
+  if (!ledger.scenarios.some((scenario) => scenario.id === serviceManifest.primaryScenarioId)) throw new Error(`Wave 2 service ${service} is missing primary scenario ${serviceManifest.primaryScenarioId}.`);
+}
 
 const ids = (field) => new Set(ledger[field].map((record) => record.id));
 const onlyKnown = (values, known) => [...new Set((values ?? []).filter((value) => known.has(value)))];

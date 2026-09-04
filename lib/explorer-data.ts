@@ -45,7 +45,7 @@ export function buildExplorerFolders(): ExplorerFolder[] {
       status: service.status,
       href: service.href,
       ...groups,
-      missingFiles: collectUndocumentedQuestions(service.ledger).map((gap) => ({
+      missingFiles: collectUndocumentedQuestions(service.ledger, service.id).map((gap) => ({
         id: gap.id,
         name: `${gap.situation}.missing-procedure`,
         situation: gap.situation,

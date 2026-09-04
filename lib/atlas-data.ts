@@ -12,6 +12,7 @@ import propertyTaxLedger from '@/ledger/property-tax.json';
 import tradeLicenseLedger from '@/ledger/trade-license.json';
 import waterAccountLedger from '@/ledger/water-account.json';
 import waterConnectionLedger from '@/ledger/water-connection.json';
+import { publishedServiceManifest } from '@/lib/services-manifest';
 
 export type AtlasService = {
   id: string;
@@ -23,20 +24,26 @@ export type AtlasService = {
   ledger: Ledger;
 };
 
-const serviceDefinitions: Array<Omit<AtlasService, 'status' | 'mappingSummary'>> = [
-  { id: 'bescom', title: 'Electricity name transfer', category: 'Utility account', href: '/bescom', ledger: bescomLedger as Ledger },
-  { id: 'birth-certificate', title: 'Birth certificate', category: 'Civil record', href: '/birth-certificate', ledger: birthCertificateLedger as Ledger },
-  { id: 'death-certificate', title: 'Death certificate', category: 'Civil record', href: '/death-certificate', ledger: deathCertificateLedger as Ledger },
-  { id: 'water-connection', title: 'New water / sewer connection', category: 'BWSSB utility', href: '/water-connection', ledger: waterConnectionLedger as Ledger },
-  { id: 'water-account', title: 'Water account name transfer', category: 'BWSSB utility', href: '/water-account', ledger: waterAccountLedger as Ledger },
-  { id: 'new-electricity', title: 'New electricity connection', category: 'Electricity utility', href: '/new-electricity', ledger: newElectricityLedger as Ledger },
-  { id: 'property-tax', title: 'Property tax name transfer', category: 'Municipal property', href: '/property-tax', ledger: propertyTaxLedger as Ledger },
-  { id: 'khata', title: 'Khata transfer / mutation', category: 'Municipal property', href: '/khata', ledger: khataLedger as Ledger },
-  { id: 'trade-license', title: 'Trade licence', category: 'Municipal business', href: '/trade-license', ledger: tradeLicenseLedger as Ledger },
-  { id: 'building-plan', title: 'Building plan approval', category: 'Municipal planning', href: '/building-plan', ledger: buildingPlanLedger as Ledger },
-  { id: 'marriage', title: 'Marriage registration', category: 'Civil record', href: '/marriage-registration', ledger: marriageLedger as Ledger },
-  { id: 'lpg', title: 'LPG connection transfer', category: 'Household utility', href: '/lpg', ledger: lpgLedger as Ledger },
-];
+const ledgersByServiceId: Record<string, Ledger> = {
+  bescom: bescomLedger as Ledger,
+  'birth-certificate': birthCertificateLedger as Ledger,
+  'death-certificate': deathCertificateLedger as Ledger,
+  'water-connection': waterConnectionLedger as Ledger,
+  'water-account': waterAccountLedger as Ledger,
+  'new-electricity': newElectricityLedger as Ledger,
+  'property-tax': propertyTaxLedger as Ledger,
+  khata: khataLedger as Ledger,
+  'trade-license': tradeLicenseLedger as Ledger,
+  'building-plan': buildingPlanLedger as Ledger,
+  marriage: marriageLedger as Ledger,
+  lpg: lpgLedger as Ledger,
+};
+
+const serviceDefinitions: Array<Omit<AtlasService, 'status' | 'mappingSummary'>> = publishedServiceManifest.map((service) => {
+  const ledger = ledgersByServiceId[service.id];
+  if (!ledger) throw new Error(`Published service ${service.id} has no loaded ledger.`);
+  return { id: service.id, title: service.title, category: service.category, href: service.href, ledger };
+});
 
 export const atlasServices: AtlasService[] = serviceDefinitions.map((service) => {
   const mappingSummary = deriveServiceMappingSummary(service.ledger);

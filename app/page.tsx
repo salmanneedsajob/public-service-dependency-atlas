@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function AtlasHome() {
-  const serviceGaps = atlasServices.map((service) => ({ service, gaps: collectUndocumentedQuestions(service.ledger) }));
+  const serviceGaps = atlasServices.map((service) => ({ service, gaps: collectUndocumentedQuestions(service.ledger, service.id) }));
   const atlasMetrics = {
     serviceCount: serviceGaps.length,
     curatedGapCount: serviceGaps.reduce((total, item) => total + item.gaps.length, 0),

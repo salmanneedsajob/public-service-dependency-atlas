@@ -1,3 +1,5 @@
+import { publishedServiceManifest } from '@/lib/services-manifest';
+
 export type ServiceGuide = {
   terms: Array<{ term: string; definition: string }>;
   processSummary: string;
@@ -119,3 +121,7 @@ export const serviceGuides: Record<string, ServiceGuide> = {
     processSummary: 'Building plan approval is permission to build or alter a property under the responsible planning authority. Public material starts with confirming the authority and route, then points to an architect-led or manual route, plans and documents, scrutiny, inspection, fees and a sanction or licence result. No project-specific route or approval was tested.',
   },
 };
+
+for (const service of publishedServiceManifest) {
+  if (!serviceGuides[service.id]) throw new Error(`Published service ${service.id} is missing guide copy.`);
+}

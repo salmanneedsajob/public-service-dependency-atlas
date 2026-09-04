@@ -11,6 +11,7 @@ const recordTypeCollections = new Map([
   ['roadblock', 'roadblocks'],
   ['journey', 'journeys'],
 ]);
+const sidecarRecordTypes = new Set(['expectation', 'portal']);
 
 function deepEqual(left, right) {
   return JSON.stringify(left) === JSON.stringify(right);
@@ -129,19 +130,44 @@ function applyCorrection(ledger, correction) {
   }
 }
 
-function applyCorrections(ledger, corrections) {
+function applySidecarCorrection(sidecar, correction) {
+  validateCorrection(correction);
+  const record = correction.recordType === 'expectation'
+    ? sidecar.cells?.[correction.recordId]
+    : sidecar.portals?.find((portal) => portal.portalId === correction.recordId);
+  if (!record) throw new Error(`${correction.recordType} record ${correction.recordId} does not exist in its sidecar.`);
+  if (correction.fieldPath === '/') throw new Error(`Whole-record ${correction.recordType} corrections are not supported; target a cell or route field.`);
+  const { target, key } = getTarget(record, correction.fieldPath);
+  const actual = readValue(target, key);
+  if (correction.old === null) {
+    if (actual !== undefined) throw new Error(`Drift at ${correction.fieldPath}: expected no value, found ${JSON.stringify(actual)}.`);
+    if (correction.new === null) throw new Error('A correction cannot add and delete the same value.');
+    writeValue(target, key, structuredClone(correction.new));
+  } else {
+    if (actual === undefined || !deepEqual(actual, correction.old)) throw new Error(`Drift at ${correction.fieldPath}: expected ${JSON.stringify(correction.old)}, found ${JSON.stringify(actual)}.`);
+    if (correction.new === null) deleteValue(target, key);
+    else replaceValue(target, key, structuredClone(correction.new));
+  }
+}
+
+function applyCorrections(ledger, corrections, sidecars = {}) {
   const working = structuredClone(ledger);
+  const workingSidecars = Object.fromEntries(Object.entries(sidecars).map(([type, sidecar]) => [type, structuredClone(sidecar)]));
   const applied = [];
   const unapplied = [];
   for (const correction of corrections) {
     try {
-      applyCorrection(working, correction);
+      if (sidecarRecordTypes.has(correction.recordType)) {
+        const sidecar = workingSidecars[correction.recordType];
+        if (!sidecar) throw new Error(`No ${correction.recordType} sidecar was supplied.`);
+        applySidecarCorrection(sidecar, correction);
+      } else applyCorrection(working, correction);
       applied.push(correction);
     } catch (error) {
       unapplied.push(asLimitation(correction, error));
     }
   }
-  return { ledger: working, applied, unapplied };
+  return { ledger: working, sidecars: workingSidecars, applied, unapplied };
 }
 
 async function readJson(file) {
@@ -164,6 +190,14 @@ function selfTest() {
   ];
   const rootResult = applyCorrections(ledger, rootCorrections);
   if (rootResult.unapplied.length || rootResult.ledger.claims.length !== 1 || rootResult.ledger.claims[0].id !== 'claim_added') throw new Error('Apply-audit self-test failed whole-record corrections.');
+  const sidecarResult = applyCorrections(ledger, [
+    { recordType: 'expectation', recordId: 'cost', fieldPath: '/state', old: 'mentioned', new: 'stated', reason: 'A current fee is cited.', support: { auditNote: 'Self-test.' } },
+    { recordType: 'portal', recordId: 'portal_sample', fieldPath: '/routeObservations/0/deadLinkCount', old: 0, new: 1, reason: 'A route link was observed dead.', support: { auditNote: 'Self-test.' } },
+  ], {
+    expectation: { cells: { cost: { state: 'mentioned' } } },
+    portal: { portals: [{ portalId: 'portal_sample', routeObservations: [{ deadLinkCount: 0 }] }] },
+  });
+  if (sidecarResult.unapplied.length || sidecarResult.sidecars.expectation.cells.cost.state !== 'stated' || sidecarResult.sidecars.portal.portals[0].routeObservations[0].deadLinkCount !== 1) throw new Error('Apply-audit self-test failed sidecar corrections.');
   console.log('Generic audit application self-test verified.');
 }
 
@@ -176,13 +210,27 @@ else {
   const [ledger, correctionDocument] = await Promise.all([readJson(ledgerPath), readJson(correctionsPath)]);
   const corrections = Array.isArray(correctionDocument) ? correctionDocument : correctionDocument.corrections;
   if (!Array.isArray(corrections)) throw new Error('Corrections JSON must be an array or an object with a corrections array.');
-  const result = applyCorrections(ledger, corrections);
+  const service = ledgerPath.split('/').at(-1).replace(/\.json$/u, '');
+  const sidecars = {};
+  for (const type of sidecarRecordTypes) {
+    if (!corrections.some((correction) => correction.recordType === type)) continue;
+    const correction = corrections.find((candidate) => candidate.recordType === type);
+    const targetPath = correction.targetFile ?? `ledger/${type === 'expectation' ? 'expectations' : 'portals'}/${service}.json`;
+    sidecars[type] = await readJson(targetPath);
+    sidecars[type]._targetPath = targetPath;
+  }
+  const result = applyCorrections(ledger, corrections, sidecars);
   const report = { appliedCount: result.applied.length, unappliedLimitations: result.unapplied };
   console.log(JSON.stringify(report, null, 2));
   if (result.unapplied.length) {
     process.exitCode = 1;
   } else if (!dryRun) {
     await writeFile(ledgerPath, `${JSON.stringify(result.ledger, null, 2)}\n`);
+    for (const [type, sidecar] of Object.entries(result.sidecars)) {
+      const targetPath = sidecars[type]._targetPath;
+      delete sidecar._targetPath;
+      await writeFile(targetPath, `${JSON.stringify(sidecar, null, 2)}\n`);
+    }
   }
 }
 

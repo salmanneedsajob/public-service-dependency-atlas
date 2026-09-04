@@ -1,0 +1,173 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "passport",
+  "portals": [
+    {
+      "portalId": "portal_ind71_passportindia",
+      "host": "www.passportindia.gov.in",
+      "observedAt": "2026-09-04T19:01:00+05:30",
+      "serviceId": "ind71_passport_fresh_adult_normal",
+      "serviceOwner": "Ministry of External Affairs, Government of India",
+      "portalOperator": "Tata Consultancy Services Ltd. (shown in the public site footer)",
+      "agencyNamingShown": "Passport Seva; Ministry of External Affairs, Government of India",
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "visibleVersionOrLastUpdated": "Footer showed Last updated on: 28/07/2026.",
+      "evidenceSourceIds": [
+        "source_ind71_passport_home_live",
+        "source_passport_apply"
+      ],
+      "routeObservations": [
+        {
+          "routeId": "route_ind71_seed_passportindia_home",
+          "serviceId": "ind71_passport_fresh_adult_normal",
+          "scenarioIds": [
+            "scenario_passport_fresh_adult_normal"
+          ],
+          "entryUrl": "https://passportindia.gov.in/",
+          "finalUrl": "https://www.passportindia.gov.in/psp",
+          "redirects": [
+            {
+              "status": 301,
+              "to": "https://www.passportindia.gov.in/psp"
+            }
+          ],
+          "finalStatus": 200,
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": "None to view the page; visible Login and Register links hand off to services1.passportindia.gov.in.",
+          "publicProcedureVsCaseDataBoundary": "Public home guidance and labels are visible. Tracking, appointment, payment, and account outcomes were not opened or inferred.",
+          "captchaDependencies": "No CAPTCHA visible on the public home page.",
+          "javascriptDependencies": "The page rendered in the browser; no form submission or script-dependent outcome was tested.",
+          "publicGuidanceSurfaces": [
+            "Apply For Passport",
+            "Check Appointment Availability",
+            "Track Passport Application",
+            "Register Feedback / Grievance",
+            "National Call Center 1800-258-1800"
+          ],
+          "trackingSurfaces": [
+            "Track Passport Application label visible; route not opened because case tracking is outside scope."
+          ],
+          "errorSurfaces": [],
+          "recoverySurfaces": [
+            "National Call Center 1800-258-1800"
+          ],
+          "evidenceIds": [
+            "source_ind71_passport_home_live",
+            "claim_ind71_home_public_handoffs_visible"
+          ],
+          "limitations": [
+            "Only the seed and its public redirect were tested; no quick link was activated from this page.",
+            "No case data, appointment lookup, payment, registration, or login was used."
+          ]
+        },
+        {
+          "routeId": "route_ind71_passport_apply",
+          "serviceId": "ind71_passport_fresh_adult_normal",
+          "scenarioIds": [
+            "scenario_passport_fresh_adult_normal"
+          ],
+          "entryUrl": "https://www.passportindia.gov.in/psp/Apply",
+          "finalUrl": "https://www.passportindia.gov.in/psp/Apply",
+          "redirects": [],
+          "finalStatus": 200,
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": "The guide states registration, email confirmation, and login are required before dashboard application actions.",
+          "publicProcedureVsCaseDataBoundary": "High-level process guidance is public. RPO selection outcome, application details, ARN, payment, appointment availability or booking, confirmation, SMS, and documents tied to a case are not public observations here.",
+          "captchaDependencies": "No CAPTCHA visible on this guidance page.",
+          "javascriptDependencies": "The guide rendered in the browser. No login handoff, account form, payment, or appointment interaction was tested.",
+          "publicGuidanceSurfaces": [
+            "Registration and login instructions",
+            "RPO selection prerequisite",
+            "nine fresh-application sections",
+            "payment and appointment guidance",
+            "Document Advisory",
+            "Fee Calculator"
+          ],
+          "trackingSurfaces": [],
+          "errorSurfaces": [
+            "The guide says a submitted application cannot be changed; no rejection or validation error was tested."
+          ],
+          "recoverySurfaces": [
+            "The guide says an application can be saved and resumed before submission."
+          ],
+          "evidenceIds": [
+            "source_passport_apply",
+            "claim_ind71_apply_requires_register_login",
+            "claim_ind71_rpo_selection_guidance",
+            "claim_ind71_application_sections_and_submission_guidance",
+            "claim_ind71_payment_appointment_guidance",
+            "claim_ind71_psk_visit_guidance"
+          ],
+          "limitations": [
+            "No account, RPO, personal data, submission, fee calculation, payment, appointment, confirmation, document upload, or case tracking was used.",
+            "The guide is a national service page; it does not expose a Bengaluru-specific post-login selection result on the inspected public route."
+          ]
+        }
+      ]
+    },
+    {
+      "portalId": "portal_ind71_services1_passportindia",
+      "host": "services1.passportindia.gov.in",
+      "observedAt": "2026-09-04T19:01:00+05:30",
+      "serviceId": "ind71_passport_fresh_adult_normal",
+      "serviceOwner": "Ministry of External Affairs, Government of India",
+      "portalOperator": "Not separately named on the inspected PreLogin screen",
+      "agencyNamingShown": "Passport Seva; Ministry of External Affairs, Government of India",
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "visibleVersionOrLastUpdated": "No visible version or last-updated date observed on the initial PreLogin screen.",
+      "evidenceSourceIds": [
+        "source_ind71_passport_prelogin_live"
+      ],
+      "routeObservations": [
+        {
+          "routeId": "route_ind71_seed_services1_prelogin",
+          "serviceId": "ind71_passport_fresh_adult_normal",
+          "scenarioIds": [
+            "scenario_passport_fresh_adult_normal"
+          ],
+          "entryUrl": "https://services1.passportindia.gov.in/forms/PreLogin",
+          "finalUrl": "https://services1.passportindia.gov.in/forms/PreLogin",
+          "redirects": [],
+          "finalStatus": 200,
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": "The initial screen requests Login ID before Continue; the public guide separately says a registered Login ID and Password are used after registration and email confirmation.",
+          "publicProcedureVsCaseDataBoundary": "The initial pre-login controls and account-help labels are public. Any credential step, dashboard, application, appointment, payment, case data, and tracking result is unknown and was not accessed.",
+          "captchaDependencies": "No CAPTCHA was visible at the initial PreLogin screen; later authentication steps were not opened.",
+          "javascriptDependencies": "The initial screen rendered in the browser; Continue was not selected, so no subsequent dependency is asserted.",
+          "publicGuidanceSurfaces": [
+            "Login ID",
+            "Continue",
+            "Register here",
+            "Having Trouble Logging in?",
+            "credential safety warning"
+          ],
+          "trackingSurfaces": [],
+          "errorSurfaces": [
+            "Having Trouble Logging in? label visible; no error state was induced or observed."
+          ],
+          "recoverySurfaces": [
+            "Register here",
+            "Having Trouble Logging in?"
+          ],
+          "evidenceIds": [
+            "source_ind71_passport_prelogin_live",
+            "claim_ind71_prelogin_controls_visible"
+          ],
+          "limitations": [
+            "No Login ID, password, CAPTCHA, OTP, account, or personal data was entered.",
+            "No authentication, registration, account recovery, or post-login result was tested."
+          ]
+        }
+      ]
+    }
+  ]
+}

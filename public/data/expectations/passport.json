@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "passport",
+  "primaryScenarioId": "scenario_passport_fresh_adult_normal",
+  "cells": {
+    "cost": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_ind71_payment_appointment_guidance"
+      ],
+      "searchedRoutes": [
+        "route_ind71_passport_apply"
+      ],
+      "note": "The public guide makes payment mandatory before booking but gives no current amount or actionable fee schedule."
+    },
+    "documents": {
+      "state": "stated",
+      "claimIds": [
+        "claim_passport_adult_normal_document_categories",
+        "claim_passport_psk_originals_and_copies"
+      ],
+      "searchedRoutes": [],
+      "note": "The official evidence names actionable document categories and the originals-and-copies requirement."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_passport_fresh_ordinary_category"
+      ],
+      "searchedRoutes": [],
+      "note": "The official category guidance defines the fresh ordinary-passport route."
+    },
+    "time": {
+      "state": "stated",
+      "claimIds": [
+        "claim_passport_pre_pv_dispatch_timing"
+      ],
+      "searchedRoutes": [],
+      "note": "The published timing applies to dispatch after pre-police verification; it is not a whole-service completion promise."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_passport_bengaluru_rpo_owner",
+        "claim_passport_police_verification_decision"
+      ],
+      "searchedRoutes": [],
+      "note": "The Bengaluru Regional Passport Office is named and the Passport Office's verification decision is stated."
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind71_application_arn_after_submission",
+        "claim_ind71_psk_visit_guidance"
+      ],
+      "searchedRoutes": [],
+      "note": "The public guide describes an ARN and appointment confirmation shown after submitting or paying; no personal result was accessed."
+    }
+  }
+}

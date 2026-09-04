@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Wave 2 public-workflow portal sidecar",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "serviceId", "portals"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "serviceId": { "type": "string", "minLength": 1 },
+    "portals": { "type": "array", "items": { "$ref": "#/$defs/portal" } }
+  },
+  "$defs": {
+    "portal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["portalId", "host", "observedAt", "serviceId", "serviceOwner", "portalOperator", "agencyNamingShown", "languages", "visibleVersionOrLastUpdated", "evidenceSourceIds", "routeObservations"],
+      "properties": {
+        "portalId": { "type": "string" }, "host": { "type": "string" }, "observedAt": { "type": "string" }, "serviceId": { "type": "string" }, "serviceOwner": { "type": "string" }, "portalOperator": { "type": "string" }, "agencyNamingShown": { "type": "string" }, "languages": { "type": "array", "items": { "type": "string" } }, "visibleVersionOrLastUpdated": { "type": "string" }, "evidenceSourceIds": { "type": "array", "items": { "type": "string" } }, "routeObservations": { "type": "array", "items": { "$ref": "#/$defs/route" } }
+      }
+    },
+    "route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["routeId", "serviceId", "scenarioIds", "entryUrl", "finalUrl", "redirects", "finalStatus", "checkedLinkCount", "deadLinkCount", "authenticationPrerequisites", "publicProcedureVsCaseDataBoundary", "captchaDependencies", "javascriptDependencies", "publicGuidanceSurfaces", "trackingSurfaces", "errorSurfaces", "recoverySurfaces", "evidenceIds", "limitations"],
+      "properties": {
+        "routeId": { "type": "string" }, "serviceId": { "type": "string" }, "scenarioIds": { "type": "array", "items": { "type": "string" } }, "entryUrl": { "type": "string" }, "finalUrl": { "type": "string" }, "redirects": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["status", "to"], "properties": { "status": { "type": "integer" }, "to": { "type": "string" } } } }, "finalStatus": { "type": "integer" }, "checkedLinkCount": { "type": "integer", "minimum": 0 }, "deadLinkCount": { "type": "integer", "minimum": 0 }, "authenticationPrerequisites": { "type": "string" }, "publicProcedureVsCaseDataBoundary": { "type": "string" }, "captchaDependencies": { "type": "string" }, "javascriptDependencies": { "type": "string" }, "publicGuidanceSurfaces": { "type": "array", "items": { "type": "string" } }, "trackingSurfaces": { "type": "array", "items": { "type": "string" } }, "errorSurfaces": { "type": "array", "items": { "type": "string" } }, "recoverySurfaces": { "type": "array", "items": { "type": "string" } }, "evidenceIds": { "type": "array", "items": { "type": "string" } }, "limitations": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

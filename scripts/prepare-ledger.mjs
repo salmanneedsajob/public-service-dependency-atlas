@@ -12,6 +12,8 @@ const outputPath = path.resolve(projectRoot, 'public/data/ledger.json');
 const serviceOutputPath = path.resolve(projectRoot, 'public/data/bescom.json');
 const expectationsDirectory = path.resolve(projectRoot, 'ledger/expectations');
 const expectationsOutputDirectory = path.resolve(projectRoot, 'public/data/expectations');
+const portalsDirectory = path.resolve(projectRoot, 'ledger/portals');
+const portalsOutputDirectory = path.resolve(projectRoot, 'public/data/portals');
 
 const [rawInput, rawSchema] = await Promise.all([
   readFile(inputPath, 'utf8'),
@@ -54,6 +56,26 @@ try {
     const claimIds = new Set(ledgerForService.claims.map((claim) => claim.id));
     for (const [cell, value] of Object.entries(sidecar.cells)) for (const claimId of value.claimIds) if (!claimIds.has(claimId)) throw new Error(`${filename} ${cell} references unknown claim ${claimId}.`);
     await writeFile(path.resolve(expectationsOutputDirectory, filename), `${JSON.stringify(sidecar, null, 2)}\n`);
+  }
+} catch (error) {
+  if (error.code !== 'ENOENT') throw error;
+}
+try {
+  const portalsSchema = JSON.parse(await readFile(path.resolve(portalsDirectory, 'schema.json'), 'utf8'));
+  const validatePortals = ajv.compile(portalsSchema);
+  await mkdir(portalsOutputDirectory, { recursive: true });
+  for (const filename of (await readdir(portalsDirectory)).filter((name) => name.endsWith('.json') && name !== 'schema.json')) {
+    const sidecar = JSON.parse(await readFile(path.resolve(portalsDirectory, filename), 'utf8'));
+    if (!validatePortals(sidecar)) throw new Error(`${filename} does not satisfy portals schema: ${(validatePortals.errors ?? []).map((error) => `${error.instancePath} ${error.message}`).join('; ')}`);
+    const ledgerForService = serviceLedgers.get(sidecar.serviceId);
+    if (!ledgerForService) throw new Error(`${filename} has no matching ledger for ${sidecar.serviceId}.`);
+    const sourceIds = new Set(ledgerForService.sources.map((source) => source.id));
+    const evidenceIds = new Set([...sourceIds, ...ledgerForService.claims.map((claim) => claim.id)]);
+    for (const portal of sidecar.portals) {
+      for (const sourceId of portal.evidenceSourceIds) if (!sourceIds.has(sourceId)) throw new Error(`${filename} ${portal.portalId} references unknown source ${sourceId}.`);
+      for (const route of portal.routeObservations) for (const evidenceId of route.evidenceIds) if (!evidenceIds.has(evidenceId)) throw new Error(`${filename} ${route.routeId} references unknown evidence ${evidenceId}.`);
+    }
+    await writeFile(path.resolve(portalsOutputDirectory, filename), `${JSON.stringify(sidecar, null, 2)}\n`);
   }
 } catch (error) {
   if (error.code !== 'ENOENT') throw error;

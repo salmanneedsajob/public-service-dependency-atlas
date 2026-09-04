@@ -160,4 +160,14 @@ if (officialHandoff?._handoff?.expectations) {
   await mkdir('ledger/expectations', { recursive: true });
   await writeFile(`ledger/expectations/${service}.json`, `${JSON.stringify({ schemaVersion: '1.0.0', serviceId: service, primaryScenarioId: authored.scenarioId ?? serviceManifest.primaryScenarioId, cells }, null, 2)}\n`);
 }
+const workflowHandoff = handoffs.find((handoff) => handoff._handoff?.pass === 'public-workflow');
+if (workflowHandoff?.portalRecords) {
+  const portals = structuredClone(workflowHandoff.portalRecords);
+  for (const portal of portals) {
+    portal.evidenceSourceIds = portal.evidenceSourceIds.map((id) => duplicateSourceIds.get(id) ?? id);
+    for (const route of portal.routeObservations) route.evidenceIds = route.evidenceIds.map((id) => duplicateSourceIds.get(id) ?? id);
+  }
+  await mkdir('ledger/portals', { recursive: true });
+  await writeFile(`ledger/portals/${service}.json`, `${JSON.stringify({ schemaVersion: '1.0.0', serviceId: service, portals }, null, 2)}\n`);
+}
 console.log(`Integrated isolated ${service} ledger from ${files.length} handoffs.`);

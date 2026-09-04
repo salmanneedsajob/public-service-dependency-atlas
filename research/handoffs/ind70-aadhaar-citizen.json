@@ -1,0 +1,120 @@
+{
+  "_handoff": {
+    "issue": "IND-70",
+    "generatedAt": "2026-09-04",
+    "status": "in_review",
+    "quarantine": "citizen_reported",
+    "scope": "Public first-person accounts relevant to Aadhaar address updates. This is quarantined citizen evidence only: it may surface lived outcomes, failure modes, terminology, and possible recovery paths, but does not establish UIDAI procedure, accepted documents, fees, timing, or a universal outcome. Names, handles, vehicle, property, account and application identifiers, addresses, phone numbers, and identity data are omitted.",
+    "limitations": [
+      "Accounts are self-reported, case-specific, and may be old or changed since publication.",
+      "No live Aadhaar login, OTP, upload, payment, submission, booking, status lookup, personal data, or undocumented API was used.",
+      "Wayback snapshot capture was attempted for each public page on 2026-09-04, but the archive host was unavailable to this research environment; the original specific URLs and this archival limitation are retained.",
+      "The sources do not establish official procedure or current acceptance of a proof document."
+    ]
+  },
+  "agencies": [],
+  "scenarios": [],
+  "sources": [
+    {
+      "id": "source_ind70_citizen_online_poa_success_2020",
+      "title": "Aadhaar: Address update procedure and related issues — public forum discussion",
+      "publisher": "Team-BHP forum participant",
+      "url": "https://www.team-bhp.com/forum/shifting-gears/209437-aadhaar-address-update-procedure-related-issues-2.html",
+      "accessedAt": "2026-09-04",
+      "publishedAt": "2020-08-03",
+      "type": "citizen_evidence",
+      "notes": "Two forum participants reported separate online address-update outcomes: one reported completion after aligning wording with a rental agreement, and one reported a data-mismatch rejection after submitting documents. Location, profile handles, and address details are omitted. Wayback capture was unavailable on access."
+    },
+    {
+      "id": "source_ind70_citizen_online_poa_success_2026",
+      "title": "LPT - This is the easiest way to change Aadhar address — public forum discussion",
+      "publisher": "Reddit forum participant",
+      "url": "https://www.reddit.com/r/india/comments/10mmary/lpt_this_is_the_easiest_way_to_change_aadhar/",
+      "accessedAt": "2026-09-04",
+      "publishedAt": "2026-06-06",
+      "type": "citizen_evidence",
+      "notes": "A now-deleted participant reported uploading a document in the Aadhaar portal and said the address update appeared the following day. Personal, policy, payment, and document-detail information is omitted. Wayback capture was unavailable on access."
+    },
+    {
+      "id": "source_ind70_citizen_hof_rejection_2023",
+      "title": "HoF based address updated rejected — public forum discussion",
+      "publisher": "Reddit forum participant",
+      "url": "https://www.reddit.com/r/india/comments/180onth/hof_based_address_updated_rejected/",
+      "accessedAt": "2026-09-04",
+      "publishedAt": "2023-11-21",
+      "type": "citizen_evidence",
+      "notes": "A participant reported using the online portal's Head of Family route, approving the request in that role, and receiving a relationship/gender-mismatch rejection for one household member. Handles, household relationships, and identity details are omitted. Wayback capture was unavailable on access."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind70_citizen_online_poa_reported_success_2020",
+      "text": "One citizen reported that an online Aadhaar address update completed after the entered address wording was aligned with the wording in that person's rental agreement.",
+      "jurisdiction": "India; locality not retained",
+      "scenarioIds": ["scenario_aadhaar_address_update_online_poa"],
+      "nodeIds": [],
+      "sourceIds": ["source_ind70_citizen_online_poa_success_2020"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": ["claim_ind70_citizen_online_poa_reported_rejection_2020"],
+      "notes": "One August 2020 account. It does not establish that this wording practice is required, that a rental agreement is currently accepted, or that an online request will complete within the reported time."
+    },
+    {
+      "id": "claim_ind70_citizen_online_poa_reported_rejection_2020",
+      "text": "One citizen reported that an online Aadhaar address-update request was rejected with a data-mismatch message after documents were submitted.",
+      "jurisdiction": "India; locality not retained",
+      "scenarioIds": ["scenario_aadhaar_address_update_online_poa", "scenario_aadhaar_address_update_rejected"],
+      "nodeIds": [],
+      "sourceIds": ["source_ind70_citizen_online_poa_success_2020"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": ["claim_ind70_citizen_online_poa_reported_success_2020"],
+      "notes": "One August 2020 account. The participant's thought about abbreviated address wording is not verified and is retained separately only as a possible lead."
+    },
+    {
+      "id": "claim_ind70_citizen_online_poa_wording_lead_2020",
+      "text": "The citizen who reported a data-mismatch rejection speculated that differences between abbreviated and expanded address wording might have contributed.",
+      "jurisdiction": "India; locality not retained",
+      "scenarioIds": ["scenario_aadhaar_address_update_online_poa", "scenario_aadhaar_address_update_rejected"],
+      "nodeIds": [],
+      "sourceIds": ["source_ind70_citizen_online_poa_success_2020"],
+      "evidenceGrade": "F",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [],
+      "notes": "An uncorroborated participant speculation, retained only as a checkable failure-mode lead; it is not a UIDAI requirement or diagnosis."
+    },
+    {
+      "id": "claim_ind70_citizen_online_poa_reported_success_2026",
+      "text": "One citizen reported that an address update appeared the day after that person uploaded a document through the Aadhaar portal.",
+      "jurisdiction": "India; locality not retained",
+      "scenarioIds": ["scenario_aadhaar_address_update_online_poa"],
+      "nodeIds": [],
+      "sourceIds": ["source_ind70_citizen_online_poa_success_2026"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": ["claim_ind70_citizen_online_poa_reported_rejection_2020"],
+      "notes": "One June 2026 account. It does not establish current processing time, document acceptance, portal behavior, or an official procedure."
+    },
+    {
+      "id": "claim_ind70_citizen_hof_reported_rejection_2023",
+      "text": "One citizen reported an online Head of Family address-update request rejected with a relationship/gender-mismatch reason.",
+      "jurisdiction": "India; locality not retained",
+      "scenarioIds": ["scenario_aadhaar_address_update_hof", "scenario_aadhaar_address_update_rejected"],
+      "nodeIds": [],
+      "sourceIds": ["source_ind70_citizen_hof_rejection_2023"],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "One November 2023 household account. It establishes only that reported route and reported result, not the current Head of Family procedure or a general rejection rule."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

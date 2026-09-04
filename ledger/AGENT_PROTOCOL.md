@@ -122,7 +122,9 @@ Each portal record contains nested `routeObservations`. Every route observation 
 
 At access time, capture a Wayback snapshot for every public source used. Record the snapshot URL with the source. Never archive authenticated, personal, payment, or case-specific pages. If capture fails, record the access date, the failure, and a limitation. Archive failure does not permit a substitute homepage or an unsupported claim. If a link later dies, retain the original URL and point to its snapshot.
 
-## 12. Citizen-evidence quarantine
+## 12. Auditor inputs and citizen-evidence quarantine
+
+The audit receives only the integrated ledger, the expectations sidecar, the portal sidecar, the service's entry from `ledger/services.manifest.json`, `ledger/schema.json`, this protocol, and the corrections contract. Nothing else. It checks expectation-cell states against the section 8 definitions and route observations against section 9. It must not receive researcher reasoning or pass handoffs.
 
 Citizen evidence is quarantined to `citizen_reported`. It may expose a failure mode, undocumented dependency, terminology, or possible recovery path, but cannot establish an official rule. Redact names, handles, vehicle, property, account and application identifiers, addresses, phone numbers, and identity data. Cross-link a citizen contradiction to other evidence only when the account establishes the same route and a comparable period; otherwise keep it quarantined and do not resolve it by intuition.
 
@@ -147,7 +149,7 @@ The audit produces markdown findings and a corrections JSON document. Each corre
 
 Use `null` for a true addition or deletion. The generic application step validates `recordType`, `recordId`, exact field path, and old value; applies the complete correction set atomically; rejects drift; and emits unapplied corrections as stated limitations. Corrections must state `recordType`, `recordId`, exact field path, `old`, `new`, `reason`, and source or audit support.
 
-The audit is isolated: one fresh audit run per service, with only the integrated ledger, schema, this protocol, and corrections contract. It must not receive researcher reasoning or pass handoffs. The auditor may split compound claims, merge duplicates, remove false contradiction links, and downgrade unsupported claims. It may not invent evidence to make a record complete.
+The audit is isolated: one fresh audit run per service, subject to the section 12 input boundary. The auditor may split compound claims, merge duplicates, remove false contradiction links, and downgrade unsupported claims. It may not invent evidence to make a record complete.
 
 ## 14. Definition of done
 

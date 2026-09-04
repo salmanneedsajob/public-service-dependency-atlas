@@ -1,22 +1,31 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import process from 'node:process';
 
-const recordTypes = new Set(['agencies', 'scenarios', 'sources', 'claims', 'nodes', 'edges', 'roadblocks', 'journeys']);
+const recordTypeCollections = new Map([
+  ['agency', 'agencies'],
+  ['scenario', 'scenarios'],
+  ['source', 'sources'],
+  ['claim', 'claims'],
+  ['node', 'nodes'],
+  ['edge', 'edges'],
+  ['roadblock', 'roadblocks'],
+  ['journey', 'journeys'],
+]);
 
 function deepEqual(left, right) {
   return JSON.stringify(left) === JSON.stringify(right);
 }
 
 function decodePointer(pointer) {
-  if (typeof pointer !== 'string' || !pointer.startsWith('/') || pointer === '/') throw new Error('fieldPath must be a non-root JSON Pointer beginning with /.');
+  if (typeof pointer !== 'string' || !pointer.startsWith('/')) throw new Error('fieldPath must be a JSON Pointer beginning with /.');
+  if (pointer === '/') return [];
   return pointer.slice(1).split('/').map((part) => part.replaceAll('~1', '/').replaceAll('~0', '~'));
 }
 
-function getRecord(ledger, correction) {
-  if (!recordTypes.has(correction.recordType)) throw new Error(`Unsupported recordType ${correction.recordType}.`);
-  const record = ledger[correction.recordType]?.find((item) => item.id === correction.recordId);
-  if (!record) throw new Error(`${correction.recordType} record ${correction.recordId} does not exist.`);
-  return record;
+function getCollection(ledger, correction) {
+  const collectionName = recordTypeCollections.get(correction.recordType);
+  if (!collectionName) throw new Error(`Unsupported recordType ${correction.recordType}.`);
+  return { collectionName, records: ledger[collectionName] };
 }
 
 function getTarget(record, fieldPath) {
@@ -63,7 +72,7 @@ function deleteValue(target, key) {
 }
 
 function validateCorrection(correction) {
-  for (const field of ['recordType', 'recordId', 'fieldPath', 'reason', 'support']) {
+  for (const field of ['recordType', 'recordId', 'fieldPath', 'old', 'new', 'reason', 'support']) {
     if (correction[field] === undefined) throw new Error(`Correction is missing ${field}.`);
   }
   if (!correction.reason?.trim()) throw new Error('Correction reason must be non-empty.');
@@ -73,6 +82,7 @@ function validateCorrection(correction) {
 
 function asLimitation(correction, error) {
   return {
+    id: correction?.id ?? null,
     status: 'unapplied',
     recordType: correction?.recordType ?? null,
     recordId: correction?.recordId ?? null,
@@ -85,7 +95,26 @@ function asLimitation(correction, error) {
 
 function applyCorrection(ledger, correction) {
   validateCorrection(correction);
-  const record = getRecord(ledger, correction);
+  const { collectionName, records } = getCollection(ledger, correction);
+  const recordIndex = records.findIndex((item) => item.id === correction.recordId);
+  if (correction.fieldPath === '/') {
+    if (correction.old === null) {
+      if (recordIndex !== -1) throw new Error(`${correction.recordType} record ${correction.recordId} already exists.`);
+      if (correction.new === null || correction.new.id !== correction.recordId) throw new Error('A whole-record addition must supply a matching record ID.');
+      records.push(structuredClone(correction.new));
+      return;
+    }
+    if (recordIndex === -1) throw new Error(`${correction.recordType} record ${correction.recordId} does not exist.`);
+    if (!deepEqual(records[recordIndex], correction.old)) throw new Error(`Drift at ${collectionName}/${correction.recordId}: expected ${JSON.stringify(correction.old)}, found ${JSON.stringify(records[recordIndex])}.`);
+    if (correction.new === null) records.splice(recordIndex, 1);
+    else {
+      if (correction.new.id !== correction.recordId) throw new Error('A whole-record replacement must preserve the record ID.');
+      records[recordIndex] = structuredClone(correction.new);
+    }
+    return;
+  }
+  if (recordIndex === -1) throw new Error(`${correction.recordType} record ${correction.recordId} does not exist.`);
+  const record = records[recordIndex];
   const { target, key } = getTarget(record, correction.fieldPath);
   const actual = readValue(target, key);
   const expected = correction.old;
@@ -122,13 +151,19 @@ async function readJson(file) {
 function selfTest() {
   const ledger = { claims: [{ id: 'claim_sample', status: 'partial', labels: [] }], agencies: [], scenarios: [], sources: [], nodes: [], edges: [], roadblocks: [], journeys: [] };
   const corrections = [
-    { recordType: 'claims', recordId: 'claim_sample', fieldPath: '/status', old: 'partial', new: 'verified', reason: 'Confirmed by the cited source.', support: { sourceIds: ['source_sample'] } },
-    { recordType: 'claims', recordId: 'claim_sample', fieldPath: '/labels/-', old: null, new: 'audited', reason: 'Add audit marker.', support: { auditNote: 'Self-test.' } },
+    { recordType: 'claim', recordId: 'claim_sample', fieldPath: '/status', old: 'partial', new: 'verified', reason: 'Confirmed by the cited source.', support: { sourceIds: ['source_sample'] } },
+    { recordType: 'claim', recordId: 'claim_sample', fieldPath: '/labels/-', old: null, new: 'audited', reason: 'Add audit marker.', support: { auditNote: 'Self-test.' } },
   ];
   const result = applyCorrections(ledger, corrections);
   if (result.unapplied.length || result.ledger.claims[0].status !== 'verified' || result.ledger.claims[0].labels[0] !== 'audited') throw new Error('Apply-audit self-test failed to apply corrections.');
   const drift = applyCorrections(ledger, [{ ...corrections[0], old: 'unknown' }]);
   if (drift.unapplied.length !== 1 || ledger.claims[0].status !== 'partial') throw new Error('Apply-audit self-test failed to reject drift atomically.');
+  const rootCorrections = [
+    { id: 'test-add', recordType: 'claim', recordId: 'claim_added', fieldPath: '/', old: null, new: { id: 'claim_added', status: 'partial' }, reason: 'Add a split claim.', support: { auditNote: 'Self-test.' } },
+    { id: 'test-delete', recordType: 'claim', recordId: 'claim_sample', fieldPath: '/', old: { id: 'claim_sample', status: 'partial', labels: [] }, new: null, reason: 'Remove an unsupported claim.', support: { auditNote: 'Self-test.' } },
+  ];
+  const rootResult = applyCorrections(ledger, rootCorrections);
+  if (rootResult.unapplied.length || rootResult.ledger.claims.length !== 1 || rootResult.ledger.claims[0].id !== 'claim_added') throw new Error('Apply-audit self-test failed whole-record corrections.');
   console.log('Generic audit application self-test verified.');
 }
 

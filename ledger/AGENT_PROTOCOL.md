@@ -95,6 +95,17 @@ Before audit, run the pre-audit lint. It checks:
 
 A waiver names the affected record ID and the reason in the handoff. An unwaived finding blocks audit.
 
+### Expectation-cell definitions
+
+Each expectation cell has exactly one state. `stated` means a Grade A, B, or C claim gives a value a citizen can act on. `mentioned` means the topic is named but no actionable value is given. `absent` means the reviewed evidence does not touch the topic. Only `verified` or `partial` claims may support `stated` or `mentioned`; a boundary statement or `Unknown` claim records a limitation, not a positive cell value.
+
+- `cost`: `stated` when the evidence gives an amount a citizen pays or an actionable fee schedule. A fee described only as prescribed, a payment step without an amount, or a penalty payable by the agency is `mentioned`.
+- `documents`: `stated` when the evidence gives an actionable document list or names a concrete document with a requirement to submit, provide, upload, produce, or attach it. A reference to documents without telling the citizen what is required is `mentioned`.
+- `eligibility`: `stated` when the evidence gives a rule that decides who qualifies or which route applies. Naming eligibility, applicability, jurisdiction, or an applicant category without a usable rule is `mentioned`.
+- `time`: `stated` when the evidence gives an actionable duration, deadline, processing period, or service-level target. A reference to timing, delay, sequence, or processing without a figure or usable time rule is `mentioned`; when the figure covers only one stage, the cell note must say so.
+- `owner`: `stated` when the evidence lets a citizen identify the office, officer, or operational role that holds or decides the case, including a specific office list, a designation tied to a jurisdiction rule, or a contact route for that role. A statutory designation or general agency name alone is `mentioned`.
+- `after-submission`: `stated` only when the evidence identifies something the citizen sees after submitting, such as a status page, tracker, acknowledgement, receipt, rejection reason, or downloadable result. A step at or before submission—including registration, document presentation, payment, appointment booking, or the act of submission—is not after-submission evidence. An outcome named without a visible or actionable post-submission surface is `mentioned`.
+
 ## 9. Expectations block written by the official pass
 
 The official-source pass writes a human-authored expectations block for the `primaryScenarioId`. It covers exactly these six cells: `cost`, `documents`, `eligibility`, `time`, `owner`, and `after-submission`.

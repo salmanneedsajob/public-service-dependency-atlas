@@ -19,7 +19,21 @@ const limitation = /\b(?:limitation|not current|may be outdated|historical only)
 const archiveFailure = /\b(?:archive|wayback|internet archive)[^.]{0,80}\b(?:failed|failure|timed out|rejected|unsafe|http \d{3}|did not complete)\b/i;
 const uncertainty = /\b(?:unknown|unclear|unobserved|not (?:publicly |fully )?(?:shown|known|verified|observed|established|attempted|opened|selected|entered)|not an? (?:observed|verified) (?:result|failure|outcome|signal)|cannot (?:be )?(?:checked|observed|verified)|outside (?:this )?scope|without (?:a )?(?:login|sign-in|authentication)|no (?:login|account|case data|personal data)[^.]{0,80}(?:was|were) (?:used|entered|requested)|no [^.]{0,80}case-specific (?:selection|determination)[^.]{0,80}(?:was|were) attempted|no [^.]{0,80}(?:was|were) selected)\b/i;
 const loginBoundary = /\b(?:log ?in|sign ?in|authenticated|OTP|case[- ]specific|personal (?:data|account))\b/i;
-const compoundList = /\b(?:documents?|proofs?|requirements?|includes?|requires?)\b[^.]{0,120},[^.]{0,120}(?:,|\band\b|\bor\b)/i;
+const clauseVerb = /\b(?:is|are|was|were|says?|states?|shows?|lists?|instructs?|describes?|displays?|exposes?|identifies|warns?|reported|observed|did|does|do|calls?|requires?|includes?|selects?|sends?|refers?|referred|remained|generates?|can|may|must|will)\b/i;
+const conjunction = /\b(?:and|or|while|but)\b/i;
+const enumeration = /(?:^|\s)(?:[^,;.]{2,80},){2,}[^;.]{2,80}(?:\b(?:and|or)\b[^;.]{2,80})?/i;
+
+function compoundReasons(text) {
+  const reasons = [];
+  const clauses = text.split(conjunction).map((clause) => clause.trim()).filter(Boolean);
+  if (clauses.length >= 2 && clauses.filter((clause) => clauseVerb.test(clause)).length >= 2) {
+    reasons.push('independent verb clauses joined by and, or, while, or but');
+  }
+  if (text.includes(';')) reasons.push('a semicolon');
+  if (enumeration.test(text)) reasons.push('an enumeration of three or more items');
+  if (text.length > 220) reasons.push(`text length ${text.length} exceeds 220 characters`);
+  return reasons;
+}
 
 function findService(manifest, ledgerPath, explicitService) {
   if (explicitService) return manifest.services.find((service) => service.id === explicitService);
@@ -33,7 +47,8 @@ function lintLedger(ledger, service, handoff = {}) {
   const sourcesById = new Map(ledger.sources.map((source) => [source.id, source]));
 
   for (const claim of ledger.claims) {
-    if (compoundList.test(claim.text)) add('compound-claim', claim.id, 'Claim appears to list multiple requirements; split it into atomic claims.');
+    const compound = compoundReasons(claim.text);
+    if (compound.length) add('compound-claim', claim.id, `Claim must be atomic; it contains ${compound.join(', ')}.`);
     const sources = claim.sourceIds.map((id) => sourcesById.get(id)).filter(Boolean);
     if (claim.evidenceGrade === 'B' && sources.some((source) => source.type === 'secondary')) add('grade-b-secondary', claim.id, 'Grade B claim cites a secondary source.');
     if (claim.evidenceGrade === 'C' && claim.basis === 'observation' && sources.some((source) => source.type === 'official_form' && !datedOrArchived.test(source.notes ?? ''))) add('grade-c-observed-form', claim.id, 'Observed current official form must be Grade B, not C.');
@@ -92,6 +107,25 @@ async function runSelfTest() {
   };
   const result = lintLedger(ledger, manifest.services[0]);
   if (!result.unwaived.some((finding) => finding.check === 'compound-claim') || !result.unwaived.some((finding) => finding.check === 'grade-b-secondary')) throw new Error('Pre-audit lint self-test did not detect required findings.');
+  const ind71AuditSplitRegression = [
+    'Passport Seva says the Passport Office decides whether police verification is required and says pre-passport verification is required in most cases.',
+    'The public home page identifies the Ministry and exposes Login and Register handoffs, along with Quick Links labelled Apply, Track, and Feedback.',
+    'The guidance instructs an applicant to register, confirm email, and then log in; it also says the password expires every three months.',
+    'The public page displays a Login ID field, a Continue control, a trouble surface, and a Register path, and warns applicants not to share credentials.',
+    'The guide calls RPO selection a prerequisite, says to select based on residence, says the selection reflects the nearest PSK, and states applicants may apply anywhere.',
+    'The guide lists nine sections from type through verification and says submission generates an ARN and an application can be saved and resumed before submission.',
+    'The guide says payment is mandatory before booking and describes selecting quota, selecting a PSK, seeing a date, and being redirected to a payment gateway.',
+    'The guide says payment displays appointment details, sends an SMS, and instructs the user to carry documents on the visit date.',
+    "One applicant reported that an official did not accept a digital record and referred the case to the regional office after the applicant lacked a physical document.",
+    'One applicant reported that the case remained pending after a verification interaction and that, after raising the matter publicly, the applicant observed approval and dispatch.',
+  ];
+  const regressionLedger = {
+    ...ledger,
+    claims: ind71AuditSplitRegression.map((text, index) => ({ ...ledger.claims[0], id: `claim_ind71_f005_${index + 1}`, text })),
+  };
+  const regression = lintLedger(regressionLedger, manifest.services[0]);
+  const flagged = regression.unwaived.filter((finding) => finding.check === 'compound-claim');
+  if (flagged.length < 8) throw new Error(`Passport IND71 compound regression flagged only ${flagged.length}/10 claims.`);
   console.log('Pre-audit lint self-test verified.');
 }
 

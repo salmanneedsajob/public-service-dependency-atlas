@@ -35,15 +35,6 @@
   ],
   "sources": [
     {
-      "id": "source_ind70_myaadhaar_entry",
-      "title": "myAadhaar public home",
-      "publisher": "Unique Identification Authority of India",
-      "url": "https://myaadhaar.uidai.gov.in/",
-      "accessedAt": "2026-09-04",
-      "type": "firsthand_observation",
-      "notes": "Direct public-interface observation. Browser navigation from the 200 seed reached https://myaadhaarbeta.uidai.gov.in/. The page displayed UIDAI naming, English, an Update Address service card, 'Mobile OTP is required', and '₹ 75 fee'. No visible page-version or last-updated date. A Wayback save request made on the access date did not return a stable snapshot URL; no substitute page was used."
-    },
-    {
       "id": "source_ind70_myaadhaar_ssup",
       "title": "myAadhaar Update Address public route",
       "publisher": "Unique Identification Authority of India",
@@ -63,18 +54,6 @@
     }
   ],
   "claims": [
-    {
-      "id": "claim_ind70_entry_address_card",
-      "text": "The public myAadhaar home displayed an Update Address card described as using documents or a family member's Aadhaar.",
-      "jurisdiction": "India; nationally administered service, including Bengaluru residents",
-      "scenarioIds": ["scenario_aadhaar_address_update_online_poa", "scenario_aadhaar_address_update_hof"],
-      "nodeIds": ["node_ind70_update_address_public"],
-      "sourceIds": ["source_ind70_myaadhaar_entry"],
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "status": "verified",
-      "contradictsClaimIds": []
-    },
     {
       "id": "claim_ind70_poa_choice",
       "text": "The public Update Address route offered 'Using your document' and instructed the visitor to provide a recent proof of address with their name and new address.",
@@ -141,7 +120,7 @@
       "jurisdiction": "India; nationally administered service, including Bengaluru residents",
       "scenarioIds": ["scenario_aadhaar_address_update_online_poa"],
       "nodeIds": ["node_ind70_otp_login_boundary"],
-      "sourceIds": ["source_ind70_myaadhaar_ssup", "source_ind70_tathya_login"],
+      "sourceIds": ["source_ind70_tathya_login"],
       "evidenceGrade": "B",
       "basis": "observation",
       "status": "verified",
@@ -160,19 +139,6 @@
       "status": "verified",
       "contradictsClaimIds": [],
       "notes": "The same page also displayed an 'Enter Captcha' field and a 'Login With OTP' button. Observation stopped before any field was used. This is the boundary between the public procedure and authenticated case data; upload, payment, submission, status results, and rejection handling remain unknown in this pass."
-    },
-    {
-      "id": "claim_ind70_status_surface",
-      "text": "The public Update Address route displayed a 'Check Address Update Status' control.",
-      "jurisdiction": "India; nationally administered service, including Bengaluru residents",
-      "scenarioIds": ["scenario_aadhaar_address_update_online_poa"],
-      "nodeIds": ["node_ind70_update_address_public"],
-      "sourceIds": ["source_ind70_myaadhaar_ssup"],
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "status": "verified",
-      "contradictsClaimIds": [],
-      "notes": "The control was not opened because this pass did not perform SRN/URN or other case-data lookup."
     }
   ],
   "nodes": [
@@ -205,7 +171,7 @@
         }
       ],
       "scenarioIds": ["scenario_aadhaar_address_update_online_poa", "scenario_aadhaar_address_update_hof"],
-      "claimIds": ["claim_ind70_entry_address_card", "claim_ind70_poa_choice", "claim_ind70_hof_choice", "claim_ind70_fee_display", "claim_ind70_time_display", "claim_ind70_status_surface"],
+      "claimIds": ["claim_ind70_poa_choice", "claim_ind70_hof_choice", "claim_ind70_fee_display", "claim_ind70_time_display"],
       "status": "partial",
       "displayOrder": 1
     },
@@ -314,7 +280,7 @@
       "agencyNamingShown": "Unique Identification Authority of India",
       "languages": ["English"],
       "visibleVersionOrLastUpdated": "No visible version or last-updated date observed",
-      "evidenceSourceIds": ["source_ind70_myaadhaar_entry"],
+      "evidenceSourceIds": [],
       "routeObservations": [
         {
           "routeId": "route_ind70_myaadhaar_entry",
@@ -334,8 +300,8 @@
           "trackingSurfaces": ["Check Enrolment / Update Status card displayed on the public home"],
           "errorSurfaces": [],
           "recoverySurfaces": ["Support control displayed"],
-          "evidenceIds": ["source_ind70_myaadhaar_entry"],
-          "limitations": ["Browser navigation from the 200 seed reached the beta host; a public HTTP header check did not expose an HTTP redirect status.", "No case-specific service was opened from this route beyond the public Update Address choice."]
+          "evidenceIds": [],
+          "limitations": ["The observation is retained as a portal-route limitation only: its available URL is a bare homepage and is not cited as evidence in this handoff.", "Browser navigation from the 200 seed reached the beta host; a public HTTP header check did not expose an HTTP redirect status.", "No case-specific service was opened from this route beyond the public Update Address choice."]
         }
       ]
     },

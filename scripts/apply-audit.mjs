@@ -11,7 +11,11 @@ const recordTypeCollections = new Map([
   ['roadblock', 'roadblocks'],
   ['journey', 'journeys'],
 ]);
-const sidecarRecordTypes = new Set(['expectation', 'portal']);
+const sidecarRecordTypes = new Set(['expectation', 'expectations', 'portal']);
+
+function canonicalRecordType(recordType) {
+  return recordType === 'expectations' ? 'expectation' : recordType;
+}
 
 function deepEqual(left, right) {
   return JSON.stringify(left) === JSON.stringify(right);
@@ -24,6 +28,7 @@ function decodePointer(pointer) {
 }
 
 function getCollection(ledger, correction) {
+  if (correction.recordType === 'meta') return { collectionName: 'meta', records: [ledger] };
   const collectionName = recordTypeCollections.get(correction.recordType);
   if (!collectionName) throw new Error(`Unsupported recordType ${correction.recordType}.`);
   return { collectionName, records: ledger[collectionName] };
@@ -96,6 +101,14 @@ function asLimitation(correction, error) {
 
 function applyCorrection(ledger, correction) {
   validateCorrection(correction);
+  if (correction.recordType === 'meta') {
+    const { target, key } = getTarget(ledger.meta, correction.fieldPath);
+    const actual = readValue(target, key);
+    if (!deepEqual(actual, correction.old)) throw new Error(`Drift at ${correction.fieldPath}: expected ${JSON.stringify(correction.old)}, found ${JSON.stringify(actual)}.`);
+    if (correction.new === null) deleteValue(target, key);
+    else replaceValue(target, key, structuredClone(correction.new));
+    return;
+  }
   const { collectionName, records } = getCollection(ledger, correction);
   const recordIndex = records.findIndex((item) => item.id === correction.recordId);
   if (correction.fieldPath === '/') {
@@ -132,11 +145,21 @@ function applyCorrection(ledger, correction) {
 
 function applySidecarCorrection(sidecar, correction) {
   validateCorrection(correction);
-  const record = correction.recordType === 'expectation'
-    ? sidecar.cells?.[correction.recordId]
+  const isDocumentExpectation = correction.recordType === 'expectations';
+  const record = isDocumentExpectation
+    ? sidecar
+    : correction.recordType === 'expectation'
+      ? sidecar.cells?.[correction.recordId]
     : sidecar.portals?.find((portal) => portal.portalId === correction.recordId);
   if (!record) throw new Error(`${correction.recordType} record ${correction.recordId} does not exist in its sidecar.`);
-  if (correction.fieldPath === '/') throw new Error(`Whole-record ${correction.recordType} corrections are not supported; target a cell or route field.`);
+  if (correction.fieldPath === '/') {
+    if (correction.recordType !== 'portal') throw new Error(`Whole-record ${correction.recordType} corrections are not supported.`);
+    const recordIndex = sidecar.portals.findIndex((portal) => portal.portalId === correction.recordId);
+    if (!deepEqual(sidecar.portals[recordIndex], correction.old)) throw new Error(`Drift at portals/${correction.recordId}.`);
+    if (correction.new === null) sidecar.portals.splice(recordIndex, 1);
+    else sidecar.portals[recordIndex] = structuredClone(correction.new);
+    return;
+  }
   const { target, key } = getTarget(record, correction.fieldPath);
   const actual = readValue(target, key);
   if (correction.old === null) {
@@ -158,7 +181,7 @@ function applyCorrections(ledger, corrections, sidecars = {}) {
   for (const correction of corrections) {
     try {
       if (sidecarRecordTypes.has(correction.recordType)) {
-        const sidecar = workingSidecars[correction.recordType];
+        const sidecar = workingSidecars[canonicalRecordType(correction.recordType)];
         if (!sidecar) throw new Error(`No ${correction.recordType} sidecar was supplied.`);
         applySidecarCorrection(sidecar, correction);
       } else applyCorrection(working, correction);
@@ -198,6 +221,16 @@ function selfTest() {
     portal: { portals: [{ portalId: 'portal_sample', routeObservations: [{ deadLinkCount: 0 }] }] },
   });
   if (sidecarResult.unapplied.length || sidecarResult.sidecars.expectation.cells.cost.state !== 'stated' || sidecarResult.sidecars.portal.portals[0].routeObservations[0].deadLinkCount !== 1) throw new Error('Apply-audit self-test failed sidecar corrections.');
+  const documentSidecarResult = applyCorrections(
+    { meta: { asOf: '2026-09-04' }, claims: [], agencies: [], scenarios: [], sources: [], nodes: [], edges: [], roadblocks: [], journeys: [] },
+    [
+      { recordType: 'meta', recordId: 'ignored', fieldPath: '/asOf', old: '2026-09-04', new: '2026-09-05', reason: 'Refresh the source access date.', support: { auditNote: 'Self-test.' } },
+      { recordType: 'expectations', recordId: 'service_sample', fieldPath: '/cells/time/state', old: 'absent', new: 'stated', reason: 'A duration is cited.', support: { auditNote: 'Self-test.' } },
+      { recordType: 'portal', recordId: 'portal_sample', fieldPath: '/', old: { portalId: 'portal_sample' }, new: null, reason: 'Remove an unsupported portal.', support: { auditNote: 'Self-test.' } },
+    ],
+    { expectation: { cells: { time: { state: 'absent' } } }, portal: { portals: [{ portalId: 'portal_sample' }] } },
+  );
+  if (documentSidecarResult.unapplied.length || documentSidecarResult.ledger.meta.asOf !== '2026-09-05' || documentSidecarResult.sidecars.expectation.cells.time.state !== 'stated' || documentSidecarResult.sidecars.portal.portals.length) throw new Error('Apply-audit self-test failed document sidecar or meta corrections.');
   console.log('Generic audit application self-test verified.');
 }
 
@@ -212,9 +245,9 @@ else {
   if (!Array.isArray(corrections)) throw new Error('Corrections JSON must be an array or an object with a corrections array.');
   const service = ledgerPath.split('/').at(-1).replace(/\.json$/u, '');
   const sidecars = {};
-  for (const type of sidecarRecordTypes) {
-    if (!corrections.some((correction) => correction.recordType === type)) continue;
-    const correction = corrections.find((candidate) => candidate.recordType === type);
+  for (const type of new Set([...sidecarRecordTypes].map(canonicalRecordType))) {
+    if (!corrections.some((correction) => canonicalRecordType(correction.recordType) === type)) continue;
+    const correction = corrections.find((candidate) => canonicalRecordType(candidate.recordType) === type);
     const targetPath = correction.targetFile ?? `ledger/${type === 'expectation' ? 'expectations' : 'portals'}/${service}.json`;
     sidecars[type] = await readJson(targetPath);
     sidecars[type]._targetPath = targetPath;

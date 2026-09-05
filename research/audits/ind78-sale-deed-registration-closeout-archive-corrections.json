@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "sale-deed-registration",
+  "auditDate": "2026-09-06",
+  "corrections": [
+    {
+      "id": "IND78-CLOSEOUT-ARCHIVE-001",
+      "recordType": "source",
+      "recordId": "source_ind78_revenue_annual_report",
+      "fieldPath": "/notes",
+      "old": "Visible date: not shown; report period is 2023-24. Official annual report; the document publication date is not shown. Relevant text is the IGR section, PDF pages 95-101: department ownership, property-transaction registration, Kaveri-2.0, SROs, and acts/rules. Historical report; not a current citizen procedure or SLA.",
+      "new": "Visible date: not shown; report period is 2023-24. Official annual report; the document publication date is not shown. Relevant text is the IGR section, PDF pages 95-101: department ownership, property-transaction registration, Kaveri-2.0, SROs, and acts/rules. Historical report; not a current citizen procedure or SLA. Archive capture not attempted during the official pass on 2026-09-05; limitation.",
+      "reason": "Record the missing archive-attempt limitation without asserting that an attempt failed.",
+      "support": {"sourceIds":["source_ind78_revenue_annual_report"],"auditNote":"The source was accessed on 2026-09-05 and has no prior archive note."}
+    },
+    {
+      "id": "IND78-CLOSEOUT-ARCHIVE-002",
+      "recordType": "source",
+      "recordId": "source_ind78_kaveri_indiastack_local",
+      "fieldPath": "/notes",
+      "old": "Visible date: not shown. Official government project directory record; the page publication date is not shown. It identifies Kaveri online document registration and explicitly lists sale of immovable-property transactions. It also reports a historical 8-hours-to-50-minutes benefit and integrations; those are not current guarantees. The page names Prabhakar H L as AIGR (Computers) and Project Director (KAVERI), Department of Stamps and Registration, Government of Karnataka.",
+      "new": "Visible date: not shown. Official government project directory record; the page publication date is not shown. It identifies Kaveri online document registration and explicitly lists sale of immovable-property transactions. It also reports a historical 8-hours-to-50-minutes benefit and integrations; those are not current guarantees. The page names Prabhakar H L as AIGR (Computers) and Project Director (KAVERI), Department of Stamps and Registration, Government of Karnataka. Archive capture not attempted during the official pass on 2026-09-05; limitation.",
+      "reason": "Record the missing archive-attempt limitation without asserting that an attempt failed.",
+      "support": {"sourceIds":["source_ind78_kaveri_indiastack_local"],"auditNote":"The source was accessed on 2026-09-05 and has no prior archive note."}
+    },
+    {
+      "id": "IND78-CLOSEOUT-ARCHIVE-003",
+      "recordType": "source",
+      "recordId": "source_ind78_tumkur_stamps_page",
+      "fieldPath": "/notes",
+      "old": "Visible date: 2026-09-01 in the page's last-updated footer; publication date is not shown. Official district page. It lists the Acts and Rules administered, Kaveri features, and Kaveri/Bhoomi integration. The page contains historical references (including 2011-2013 rollout details), so current Bengaluru routing, fees, and timing remain unestablished.",
+      "new": "Visible date: 2026-09-01 in the page's last-updated footer; publication date is not shown. Official district page. It lists the Acts and Rules administered, Kaveri features, and Kaveri/Bhoomi integration. The page contains historical references (including 2011-2013 rollout details), so current Bengaluru routing, fees, and timing remain unestablished. Archive capture not attempted during the official pass on 2026-09-05; limitation.",
+      "reason": "Record the missing archive-attempt limitation without asserting that an attempt failed.",
+      "support": {"sourceIds":["source_ind78_tumkur_stamps_page"],"auditNote":"The source was accessed on 2026-09-05 and has no prior archive note."}
+    },
+    {
+      "id": "IND78-CLOSEOUT-ARCHIVE-004",
+      "recordType": "source",
+      "recordId": "source_ind78_registration_act_india_code",
+      "fieldPath": "/notes",
+      "old": "Visible date: not shown; the India Code document date is not shown. Section 17(1)(b) text states that non-testamentary instruments creating, declaring, assigning, limiting, or extinguishing rights, title, or interest of value Rs 100 and upwards in immovable property shall be registered. This is a legal applicability rule, not a live Kaveri workflow or fee schedule.",
+      "new": "Visible date: not shown; the India Code document date is not shown. Section 17(1)(b) text states that non-testamentary instruments creating, declaring, assigning, limiting, or extinguishing rights, title, or interest of value Rs 100 and upwards in immovable property shall be registered. This is a legal applicability rule, not a live Kaveri workflow or fee schedule. Archive capture not attempted during the official pass on 2026-09-05; limitation.",
+      "reason": "Record the missing archive-attempt limitation without asserting that an attempt failed.",
+      "support": {"sourceIds":["source_ind78_registration_act_india_code"],"auditNote":"The source was accessed on 2026-09-05 and has no prior archive note."}
+    },
+    {
+      "id": "IND78-CLOSEOUT-ARCHIVE-005",
+      "recordType": "source",
+      "recordId": "source_ind78_karnataka_stamp_act_india_code",
+      "fieldPath": "/notes",
+      "old": "Visible date: not shown; the India Code consolidated-document publication date is not shown and the search record identifies amendments through 2025. Section 30(b) states that, absent an agreement to the contrary, in the case of a conveyance the expense of providing proper stamp is borne by the grantee. It does not supply a current Bengaluru amount for this case.",
+      "new": "Visible date: not shown; the India Code consolidated-document publication date is not shown and the search record identifies amendments through 2025. Section 30(b) states that, absent an agreement to the contrary, in the case of a conveyance the expense of providing proper stamp is borne by the grantee. It does not supply a current Bengaluru amount for this case. Archive capture not attempted during the official pass on 2026-09-05; limitation.",
+      "reason": "Record the missing archive-attempt limitation without asserting that an attempt failed.",
+      "support": {"sourceIds":["source_ind78_karnataka_stamp_act_india_code"],"auditNote":"The source was accessed on 2026-09-05 and has no prior archive note."}
+    }
+  ]
+}

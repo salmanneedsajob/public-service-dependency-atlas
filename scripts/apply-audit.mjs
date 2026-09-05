@@ -11,10 +11,12 @@ const recordTypeCollections = new Map([
   ['roadblock', 'roadblocks'],
   ['journey', 'journeys'],
 ]);
-const sidecarRecordTypes = new Set(['expectation', 'expectations', 'portal']);
+const sidecarRecordTypes = new Set(['expectation', 'expectations', 'portal', 'portalRouteObservation']);
 
 function canonicalRecordType(recordType) {
-  return recordType === 'expectations' ? 'expectation' : recordType;
+  if (recordType === 'expectations') return 'expectation';
+  if (recordType === 'portalRouteObservation') return 'portal';
+  return recordType;
 }
 
 function deepEqual(left, right) {
@@ -145,13 +147,17 @@ function applyCorrection(ledger, correction) {
 
 function applySidecarCorrection(sidecar, correction) {
   validateCorrection(correction);
+  const routeMatch = correction.recordType === 'portalRouteObservation'
+    ? sidecar.portals?.flatMap((portal) => portal.routeObservations?.map((route) => ({ portal, route })) ?? [])
+      .find(({ route }) => route.routeId === correction.recordId)
+    : null;
   const isDocumentExpectation = correction.recordType === 'expectations'
     || (correction.recordType === 'expectation' && correction.recordId === sidecar.serviceId && correction.fieldPath.startsWith('/cells/'));
-  const record = isDocumentExpectation
+  const record = routeMatch?.route ?? (isDocumentExpectation
     ? sidecar
     : correction.recordType === 'expectation'
       ? sidecar.cells?.[correction.recordId]
-    : sidecar.portals?.find((portal) => portal.portalId === correction.recordId);
+    : sidecar.portals?.find((portal) => portal.portalId === correction.recordId));
   if (!record) throw new Error(`${correction.recordType} record ${correction.recordId} does not exist in its sidecar.`);
   if (correction.fieldPath === '/') {
     if (correction.recordType !== 'portal') throw new Error(`Whole-record ${correction.recordType} corrections are not supported.`);
@@ -223,11 +229,12 @@ function selfTest() {
   const sidecarResult = applyCorrections(ledger, [
     { recordType: 'expectation', recordId: 'cost', fieldPath: '/state', old: 'mentioned', new: 'stated', reason: 'A current fee is cited.', support: { auditNote: 'Self-test.' } },
     { recordType: 'portal', recordId: 'portal_sample', fieldPath: '/routeObservations/0/deadLinkCount', old: 0, new: 1, reason: 'A route link was observed dead.', support: { auditNote: 'Self-test.' } },
+    { recordType: 'portalRouteObservation', recordId: 'route_sample', fieldPath: '/finalStatus', old: 200, new: null, reason: 'No final response was observed.', support: { auditNote: 'Self-test.' } },
   ], {
     expectation: { cells: { cost: { state: 'mentioned' } } },
-    portal: { portals: [{ portalId: 'portal_sample', routeObservations: [{ deadLinkCount: 0 }] }] },
+    portal: { portals: [{ portalId: 'portal_sample', routeObservations: [{ routeId: 'route_sample', deadLinkCount: 0, finalStatus: 200 }] }] },
   });
-  if (sidecarResult.unapplied.length || sidecarResult.sidecars.expectation.cells.cost.state !== 'stated' || sidecarResult.sidecars.portal.portals[0].routeObservations[0].deadLinkCount !== 1) throw new Error('Apply-audit self-test failed sidecar corrections.');
+  if (sidecarResult.unapplied.length || sidecarResult.sidecars.expectation.cells.cost.state !== 'stated' || sidecarResult.sidecars.portal.portals[0].routeObservations[0].deadLinkCount !== 1 || Object.hasOwn(sidecarResult.sidecars.portal.portals[0].routeObservations[0], 'finalStatus')) throw new Error('Apply-audit self-test failed sidecar corrections.');
   const documentSidecarResult = applyCorrections(
     { meta: { asOf: '2026-09-04' }, claims: [], agencies: [], scenarios: [], sources: [], nodes: [], edges: [], roadblocks: [], journeys: [] },
     [

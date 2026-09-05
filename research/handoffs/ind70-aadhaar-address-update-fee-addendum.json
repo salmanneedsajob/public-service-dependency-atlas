@@ -1,0 +1,213 @@
+{
+  "serviceId": "aadhaar-address-update",
+  "primaryScenarioId": "scenario_aadhaar_address_update_online_poa",
+  "asOf": "2026-09-06",
+  "scope": "Official-source fee addendum only. No login, Aadhaar number, OTP, upload, payment, case lookup, centre booking, personal data, or undocumented API was used.",
+  "answer": {
+    "currentPublicOfficialPageHasActionableFee": true,
+    "amountForPrimaryScenario": "₹75",
+    "conclusion": "UIDAI's current public My Aadhaar page displays a ₹75 fee for Address update. This confirms the existing ₹75 claim for scenario_aadhaar_address_update_online_poa.",
+    "centreComparison": "UIDAI's current Aadhaar Enrolment and Update Charges sheet classifies address as a demographic update. At an Aadhaar centre, a demographic update done separately costs ₹75; if done at the same time as a biometric update, the demographic-update component is free.",
+    "routeSeparation": "The charge sheet lists Document update as a separate service: submission of PoI and PoA documents in support of details already enrolled. Its myAadhaar fee waiver through 14.06.2027 is not the fee for changing an address. Head-of-Family is also a separate address-update method and is not used as evidence for the primary own-PoA scenario."
+  },
+  "newSources": [
+    {
+      "id": "source_ind70_fee_addendum_uidai_my_aadhaar_20260906",
+      "title": "My Aadhaar",
+      "publisher": "Unique Identification Authority of India",
+      "url": "https://www.uidai.gov.in/en/my-aadhaar",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2026-04-22",
+      "type": "official_guidance",
+      "jurisdiction": "Bengaluru, Karnataka, India (UIDAI national service)",
+      "agencyNameAsDisplayed": "Unique Identification Authority of India",
+      "evidenceGrade": "B",
+      "observed": "Under Updates Details, the page displays Address update, says documents or a family member's Aadhaar may be used, and displays ₹ 75 fee. The page displays Last Updated: 26 Jun 2026.",
+      "limitations": "The fee card covers Address update at route level and does not break the ₹75 out by own-document versus Head-of-Family method. The primary scenario is supported because own documents are expressly one of the displayed address-update methods; the existing public-route observation supplies the scenario-specific context.",
+      "wayback": {
+        "attemptedAt": "2026-09-06",
+        "outcome": "failed",
+        "detail": "The Wayback Save Page Now request timed out after 20 seconds with no response bytes (HTTP 000). No snapshot URL was obtained and no substitute source was used."
+      }
+    },
+    {
+      "id": "source_ind70_fee_addendum_uidai_charge_sheet_20260906",
+      "title": "Aadhaar Enrolment and Update Charges",
+      "publisher": "Unique Identification Authority of India",
+      "url": "https://www.uidai.gov.in/images/Aadhaar_Enrolment__and__Update__-__English.pdf",
+      "accessedAt": "2026-09-06",
+      "type": "official_charge_schedule",
+      "jurisdiction": "Bengaluru, Karnataka, India (UIDAI national service)",
+      "agencyNameAsDisplayed": "Unique Identification Authority of India",
+      "evidenceGrade": "B",
+      "observed": "The current one-page PDF was retrieved successfully and visually inspected in full. It lists demographic update, including address, as free when done at the same time as biometric update and ₹75 when done separately. It separately lists Document update through myAadhaar as free until 14.06.2027 and at an Aadhaar centre as ₹75.",
+      "visibleDateNote": "No publication or last-updated date is printed on the PDF. The current My Aadhaar page labels the linked charge document as uploaded on 29-04-2026. The retrieved PDF metadata has a creation and modification date of 2026-07-08; metadata is not treated as a displayed publication date.",
+      "limitations": "Currentness is bounded to the successful 2026-09-06 retrieval from UIDAI and its presence on UIDAI's current My Aadhaar page. The conditional free demographic-update line is a centre schedule and does not state that the primary online own-PoA address-change route is free.",
+      "wayback": {
+        "attemptedAt": "2026-09-06",
+        "outcome": "success_existing_snapshot",
+        "snapshotUrl": "https://web.archive.org/web/20260821075736/https://uidai.gov.in/images/Aadhaar_Enrolment__and__Update__-__English.pdf",
+        "detail": "The Wayback save request returned HTTP 200 and resolved to this stable snapshot dated 2026-08-21."
+      }
+    }
+  ],
+  "newClaims": [
+    {
+      "id": "claim_ind70_fee_addendum_online_address_75",
+      "text": "UIDAI's current public My Aadhaar page displays a ₹75 fee for Address update.",
+      "jurisdiction": "Bengaluru, Karnataka, India (UIDAI national service)",
+      "scenarioIds": [
+        "scenario_aadhaar_address_update_online_poa"
+      ],
+      "nodeIds": [
+        "node_ind70_update_address_public"
+      ],
+      "sourceIds": [
+        "source_ind70_fee_addendum_uidai_my_aadhaar_20260906"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This corroborates claim_ind70_fee_display at the current ₹75 figure. The page names own documents as an address-update method, while the existing public-route observation provides the primary-scenario context."
+    },
+    {
+      "id": "claim_ind70_fee_addendum_centre_address_is_demographic",
+      "text": "UIDAI's charge sheet includes address within the demographic-update service at an Aadhaar centre.",
+      "jurisdiction": "Bengaluru, Karnataka, India (UIDAI national service)",
+      "scenarioIds": [
+        "scenario_aadhaar_address_update_online_poa"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind70_fee_addendum_uidai_charge_sheet_20260906"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Centre comparison only; it does not change the primary scenario from online own-PoA address update."
+    },
+    {
+      "id": "claim_ind70_fee_addendum_centre_demographic_separate_75",
+      "text": "UIDAI's charge sheet states that a demographic update done separately at an Aadhaar centre costs ₹75.",
+      "jurisdiction": "Bengaluru, Karnataka, India (UIDAI national service)",
+      "scenarioIds": [
+        "scenario_aadhaar_address_update_online_poa"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind70_fee_addendum_uidai_charge_sheet_20260906"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Because the same schedule expressly includes address under demographic update, this is the current centre fee when the address update is performed separately."
+    },
+    {
+      "id": "claim_ind70_fee_addendum_centre_demographic_combined_free",
+      "text": "UIDAI's charge sheet states that the demographic-update component is free when done at the same time as a biometric update at an Aadhaar centre.",
+      "jurisdiction": "Bengaluru, Karnataka, India (UIDAI national service)",
+      "scenarioIds": [
+        "scenario_aadhaar_address_update_online_poa"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind70_fee_addendum_uidai_charge_sheet_20260906"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is a conditional centre schedule, not a zero fee for the primary online scenario. The sheet separately states that mandatory biometric update is stand-alone and may not be clubbed with another transaction."
+    },
+    {
+      "id": "claim_ind70_fee_addendum_document_update_distinct",
+      "text": "UIDAI's charge sheet lists Document update separately from demographic update.",
+      "jurisdiction": "Bengaluru, Karnataka, India (UIDAI national service)",
+      "scenarioIds": [
+        "scenario_aadhaar_address_update_online_poa"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind70_fee_addendum_uidai_charge_sheet_20260906"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The sheet defines Document update as submission of identity and address proofs in support of the details already enrolled. Its online fee waiver must not be applied to an address-change request."
+    },
+    {
+      "id": "claim_ind70_fee_addendum_document_update_online_free_until_20270614",
+      "text": "UIDAI's charge sheet states that Document update through the myAadhaar portal is free until 14.06.2027.",
+      "jurisdiction": "Bengaluru, Karnataka, India (UIDAI national service)",
+      "scenarioIds": [
+        "scenario_aadhaar_address_update_online_poa"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind70_fee_addendum_uidai_charge_sheet_20260906"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Non-applicable comparison retained only to prevent conflation with the primary address-change scenario."
+    }
+  ],
+  "existingClaimAssessment": {
+    "claimId": "claim_ind70_fee_display",
+    "existingText": "The public Update Address route displayed a ₹75 fee.",
+    "assessment": "confirmed_current_figure",
+    "corroboratingClaimIds": [
+      "claim_ind70_fee_addendum_online_address_75"
+    ],
+    "recommendedAction": "Retain the claim and ₹75 figure. Add the current My Aadhaar page as corroborating official evidence. Do not replace or reinterpret this claim with the free-until-14.06.2027 Document update schedule.",
+    "correctionNeeded": false
+  },
+  "droppedSeeds": [
+    {
+      "url": "https://old.uidai.gov.in/en/ecosystem/enrolment-ecosystem/aadhaar-seva-kendra.html",
+      "checkedAt": "2026-09-06",
+      "outcome": "404 Not Found",
+      "note": "Dropped and not repointed. A search index exposed fee text, but the seed itself did not return 200 and was not used as a source."
+    },
+    {
+      "url": "https://www.uidai.gov.in/en/122-english-uk/ecosystem/12174-aadhaar-seva-kendra.html",
+      "checkedAt": "2026-09-06",
+      "outcome": "404 Not Found",
+      "note": "Dropped and not repointed. It was not used as evidence for the centre fee."
+    },
+    {
+      "url": "https://uidai.gov.in/images/Aadhaar_Enrolment_and_Update_First_Amendment_Regulations_2026_pdf.pdf",
+      "checkedAt": "2026-09-06",
+      "outcome": "404 Not Found",
+      "note": "Dropped and not repointed. A stale search extract showed older ₹50 figures, but the seed was unavailable and was not used. The current UIDAI charge sheet retrieved on the access date states ₹75."
+    }
+  ],
+  "searchNotes": [
+    {
+      "route": "https://www.uidai.gov.in/en/my-aadhaar",
+      "result": "Current public UIDAI page returned content and displayed Address update and ₹ 75 fee."
+    },
+    {
+      "route": "https://www.uidai.gov.in/images/Aadhaar_Enrolment__and__Update__-__English.pdf",
+      "result": "Current public UIDAI PDF retrieved successfully; all one page was rendered and visually inspected. The address/demographic, biometric, and Document update rows were kept distinct."
+    },
+    {
+      "route": "UIDAI official-site searches for address update fee, demographic update charge, Aadhaar Seva Kendra charge, and Document update waiver",
+      "result": "The live My Aadhaar page and current charge PDF supplied actionable values. Dead specific URLs were dropped rather than replaced with a homepage. No authenticated route was entered."
+    }
+  ],
+  "proposedCostCell": {
+    "state": "stated",
+    "claimIds": [
+      "claim_ind70_fee_display",
+      "claim_ind70_fee_addendum_online_address_75"
+    ],
+    "searchedRoutes": [],
+    "note": "The primary online proof-of-address address-change route costs ₹75. UIDAI's centre schedule separately charges ₹75 when a demographic address update is done separately and makes the demographic component free when combined with a biometric update; neither that conditional centre zero nor the separate online Document update waiver changes the primary route's ₹75 fee."
+  }
+}

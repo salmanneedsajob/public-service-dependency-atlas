@@ -1,0 +1,17 @@
+[
+  {
+    "recordType": "claim",
+    "recordId": "claim_ind70_fee_display",
+    "fieldPath": "/jurisdiction",
+    "old": "India; nationally administered service, including Bengaluru residents",
+    "new": "Bengaluru, Karnataka, India (UIDAI national service)",
+    "reason": "Protocol section 7 requires Bengaluru/Karnataka-specific jurisdiction text for cited claims.",
+    "support": {
+      "sourceIds": [
+        "source_ind70_myaadhaar_ssup",
+        "source_ind70_fee_addendum_uidai_my_aadhaar_20260906"
+      ],
+      "auditNote": "Both cited UIDAI sources concern the national Aadhaar service as used by Bengaluru, Karnataka residents; this correction aligns the claim metadata with the ledger's standard jurisdiction wording without changing the claim substance."
+    }
+  }
+]

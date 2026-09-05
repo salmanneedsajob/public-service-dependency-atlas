@@ -1,0 +1,140 @@
+{
+  "handoffVersion": 2,
+  "issueId": "IND-77",
+  "serviceId": "occupancy-certificate",
+  "serviceTitle": "Occupancy certificate for a sanctioned residential building",
+  "pass": "citizen-evidence",
+  "asOf": "2026-09-05",
+  "primaryScenarioId": "scenario_occupancy_certificate_sanctioned_residential",
+  "encounteredBranchScenarioIds": [
+    "scenario_occupancy_certificate_deviation",
+    "scenario_occupancy_certificate_pending"
+  ],
+  "scope": {
+    "included": "Public first-person residential purchaser or owner accounts that mention an occupancy-certificate outcome, delay, or a possible mismatch with the approved plan.",
+    "excluded": [
+      "Official requirements, eligibility, document, fee, time, owner, and post-submission rules",
+      "Owner or professional registration",
+      "Building or property lookup",
+      "Plan upload, payment, application, or issued-certificate-list data"
+    ]
+  },
+  "sources": [
+    {
+      "sourceId": "source_ind77_citizen_reddit_oc_delay_2025",
+      "title": "Occupancy certificate delays",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1mnhd3i/occupancy_certificate_delays/",
+      "sourceType": "public first-person forum account",
+      "publisher": "Reddit / r/Bengaluru",
+      "jurisdiction": "Bengaluru, Karnataka; location is supplied by the account and not independently verified",
+      "publishedAt": "2025-08-11",
+      "accessedAt": "2026-09-05",
+      "evidenceGrade": "E",
+      "archiveSnapshotUrl": null,
+      "archiveLimitation": "A Wayback retrieval attempt on 2026-09-05 was blocked by the research browser's URL-safety control; no snapshot is represented as captured.",
+      "redaction": "No author handles, project/developer names, locality names, contact details, or other property-identifying details are reproduced in this handoff."
+    },
+    {
+      "sourceId": "source_ind77_citizen_reddit_plan_mismatch_2026",
+      "title": "Khata Bifurcation in Apartment",
+      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1ubym7b/khata_bifurcation_in_apartment/",
+      "sourceType": "public first-person forum account",
+      "publisher": "Reddit / r/BangaloreRealEstates",
+      "jurisdiction": "Bengaluru, Karnataka; location is supplied by the account and not independently verified",
+      "publishedAt": "2026-06-21",
+      "accessedAt": "2026-09-05",
+      "evidenceGrade": "E",
+      "archiveSnapshotUrl": null,
+      "archiveLimitation": "A Wayback retrieval attempt on 2026-09-05 was blocked by the research browser's URL-safety control; no snapshot is represented as captured.",
+      "redaction": "No author handle, builder/landowner details, property dimensions, unit configuration, floor number, or other property-identifying details are reproduced in this handoff."
+    }
+  ],
+  "claims": [
+    {
+      "claimId": "claim_ind77_citizen_oc_issued_after_reported_delay",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "sourceIds": [
+        "source_ind77_citizen_reddit_oc_delay_2025"
+      ],
+      "status": "citizen_reported",
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "claim": "A residential purchaser reported that an occupancy certificate was received after an earlier reported delay.",
+      "limitations": "This is one account of a property-specific outcome. It does not establish that the building was sanctioned, identify an official route, or establish a general processing time or issuance requirement.",
+      "redaction": "Project/developer, locality, author handle, dates more specific than month/year, and all other property-identifying details omitted."
+    },
+    {
+      "claimId": "claim_ind77_citizen_pending_oc_after_reported_application",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_pending"
+      ],
+      "sourceIds": [
+        "source_ind77_citizen_reddit_oc_delay_2025"
+      ],
+      "status": "citizen_reported",
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "claim": "A residential purchaser reported being told that an occupancy-certificate application had been made, while the certificate remained unissued several months later.",
+      "limitations": "The reported application and elapsed time are not independently verified. This cannot establish an official application route, deadline, service level, cause of delay, or who is responsible.",
+      "redaction": "Project/developer, locality, author handle, exact application and completion dates, and all other property-identifying details omitted."
+    },
+    {
+      "claimId": "claim_ind77_citizen_possible_plan_deviation_concern",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_deviation"
+      ],
+      "sourceIds": [
+        "source_ind77_citizen_reddit_plan_mismatch_2026"
+      ],
+      "status": "citizen_reported",
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "claim": "A purchaser reported observing construction that they believed differed from the plan they had seen, and expressed concern that this could affect the availability of an occupancy certificate.",
+      "limitations": "The claimed mismatch, the plan's status, and any consequence for the certificate are unverified. This account cannot establish a deviation, official compliance rule, eligibility decision, or recovery route.",
+      "redaction": "Author handle, builder/landowner details, locality, property dimensions, unit configuration, floor description, and all other property-identifying details omitted."
+    }
+  ],
+  "roadblocks": [
+    {
+      "roadblockId": "roadblock_ind77_citizen_pending_certificate",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_pending"
+      ],
+      "claimIds": [
+        "claim_ind77_citizen_pending_oc_after_reported_application"
+      ],
+      "status": "citizen_reported",
+      "description": "Reported delay between a claimed application and reported certificate issuance.",
+      "limitations": "Quarantined citizen signal only; no official cause, route, or resolution is asserted."
+    },
+    {
+      "roadblockId": "roadblock_ind77_citizen_possible_deviation",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_deviation"
+      ],
+      "claimIds": [
+        "claim_ind77_citizen_possible_plan_deviation_concern"
+      ],
+      "status": "citizen_reported",
+      "description": "Purchaser-reported concern about a possible mismatch between observed construction and a plan.",
+      "limitations": "Quarantined citizen signal only; it is not a finding that a deviation exists."
+    }
+  ],
+  "journeys": [],
+  "nodes": [],
+  "edges": [],
+  "expectations": null,
+  "portalRecords": [],
+  "unresolvedLimitations": [
+    "No public first-person account located that establishes the exact official occupancy-certificate route for a sanctioned residential building.",
+    "Citizen evidence has not been used to establish any official requirement or public workflow.",
+    "Archive retrieval was attempted but blocked by the research browser's URL-safety control; no archive snapshot is claimed."
+  ],
+  "validationNotes": [
+    "All claims are quarantined with status citizen_reported.",
+    "No names, handles, addresses, contacts, application/property/account identifiers, vehicle details, or identity data are retained in claim text or notes.",
+    "The deviation and pending branches are included only because public first-person accounts encountered those conditions."
+  ]
+}

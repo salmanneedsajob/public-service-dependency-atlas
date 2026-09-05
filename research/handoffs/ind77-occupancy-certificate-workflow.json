@@ -1,0 +1,543 @@
+{
+  "handoffVersion": 2,
+  "serviceId": "occupancy-certificate",
+  "title": "Occupancy certificate for a sanctioned residential building — public workflow",
+  "asOf": "2026-09-05",
+  "jurisdiction": "Bengaluru, Karnataka, India",
+  "primaryScenarioId": "scenario_occupancy_certificate_sanctioned_residential",
+  "predeclaredBranchScenarioIds": [
+    "scenario_occupancy_certificate_deviation",
+    "scenario_occupancy_certificate_pending"
+  ],
+  "encounteredBranchScenarioIds": [],
+  "assignedPass": "public-workflow",
+  "scope": "Unauthenticated public-only observation of the current Greater Bengaluru Authority/BPAS construction-permit surfaces and the supplied BBMP seeds. No login, owner or professional registration, property/building lookup, plan upload, payment, application submission, or certificate-list personal/address copying was performed.",
+  "safetyBoundary": "The public procedure is recorded only until the BPAS sign-in form. Case-specific fields, authenticated dashboards, real applications, payments, uploads, and certificate-list records remain unknown.",
+  "sources": [
+    {
+      "id": "source_ind77_bpas_seed_home",
+      "url": "https://bpas.bbmpgov.in/",
+      "title": "Greater Bengaluru Authority — BPAS seed",
+      "accessedAt": "2026-09-05",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "agency": "Greater Bengaluru Authority",
+      "grade": "B",
+      "basis": "observation",
+      "observation": "The seed opened successfully and resolved to https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx, titled Greater Bengaluru Authority.",
+      "archive": {
+        "status": "failed",
+        "attemptedUrl": "https://web.archive.org/web/20260905/https://bpas.bbmpgov.in/",
+        "note": "Wayback capture/open was unavailable in this pass; the live access date and failure are retained."
+      }
+    },
+    {
+      "id": "source_ind77_bpas_home",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+      "title": "Greater Bengaluru Authority — BPAS home",
+      "accessedAt": "2026-09-05",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "agency": "Greater Bengaluru Authority",
+      "grade": "B",
+      "basis": "observation",
+      "observation": "Current public page shows Nambike Nakshe, single-window construction permits, the Sign In form, public search/registration labels, a Digitized OC List label, support links, and the e-Khata mandatory message.",
+      "archive": {
+        "status": "failed",
+        "attemptedUrl": "https://web.archive.org/web/20260905/https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+        "note": "Wayback capture/open was unavailable in this pass."
+      }
+    },
+    {
+      "id": "source_ind77_bpas_downloads",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/download.aspx",
+      "title": "BPAS Download & Manuals",
+      "accessedAt": "2026-09-05",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "agency": "Greater Bengaluru Authority",
+      "grade": "B",
+      "basis": "observation",
+      "observation": "The current public downloads frame lists User Manual for OC and public Forms & Checklist headings including Plan Sanction-checklist, affidavits, bonds, Schedule-II and Schedule-III; it notes that affidavits and bonds should be on stamp paper.",
+      "archive": {
+        "status": "failed",
+        "attemptedUrl": "https://web.archive.org/web/20260905/https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/download.aspx",
+        "note": "Wayback capture/open was unavailable in this pass."
+      }
+    },
+    {
+      "id": "source_ind77_bpas_oc_manual",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/Downloads/OCManual.pdf",
+      "title": "Occupancy Certificate User Manual for BBMP",
+      "accessedAt": "2026-09-05",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "agency": "Greater Bengaluru Authority",
+      "grade": "B",
+      "basis": "observation",
+      "observation": "The public BPAS downloads route exposes this OC manual link and labels it for the occupancy-certificate workflow; the PDF was not opened because this pass did not need to cross the public guidance boundary.",
+      "archive": {
+        "status": "failed",
+        "attemptedUrl": "https://web.archive.org/web/20260905/https://bpas.bbmpgov.in/BPAMSClient4/Downloads/OCManual.pdf",
+        "note": "Wayback capture/open was unavailable in this pass."
+      }
+    },
+    {
+      "id": "source_ind77_bpas_faq",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+      "title": "BPAS FAQs",
+      "accessedAt": "2026-09-05",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "agency": "Greater Bengaluru Authority",
+      "grade": "B",
+      "basis": "observation",
+      "observation": "The current official FAQ route is indexed with public OC/BCC procedure text: a Licensed Surveyor/Architect submits the OC/BCC application after completion, requests joint site inspection and compliance, and the FAQ states Part/Full OCC/BCC is granted within 7 working days when required documents are submitted and work follows approval. The page has no visible update date in the observed material.",
+      "archive": {
+        "status": "failed",
+        "attemptedUrl": "https://web.archive.org/web/20260905/https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+        "note": "Wayback capture/open was unavailable in this pass."
+      }
+    },
+    {
+      "id": "source_ind77_bpas_helpdesk_kb",
+      "url": "https://bpas.bbmpgov.in/HelpDesk/KB",
+      "title": "Greater Bengaluru Authority Helpdesk — Knowledge base",
+      "accessedAt": "2026-09-05",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "agency": "Greater Bengaluru Authority",
+      "grade": "B",
+      "basis": "observation",
+      "observation": "A public Knowledge base route is exposed as a support/recovery surface; it provides browse and search controls without requiring this pass to sign in.",
+      "archive": {
+        "status": "failed",
+        "attemptedUrl": "https://web.archive.org/web/20260905/https://bpas.bbmpgov.in/HelpDesk/KB",
+        "note": "Wayback capture/open was unavailable in this pass."
+      }
+    },
+    {
+      "id": "source_ind77_bpas_contact",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/ContactUs.aspx",
+      "title": "BPAS Contact Us",
+      "accessedAt": "2026-09-05",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "agency": "Greater Bengaluru Authority",
+      "grade": "B",
+      "basis": "observation",
+      "observation": "The official contact route is publicly exposed and identifies Building Licence Cell head-office and zonal roles; no personal contact data is retained in this isolated handoff.",
+      "archive": {
+        "status": "failed",
+        "attemptedUrl": "https://web.archive.org/web/20260905/https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/ContactUs.aspx",
+        "note": "Wayback capture/open was unavailable in this pass."
+      }
+    },
+    {
+      "id": "source_ind77_legacy_seed_dead",
+      "url": "https://site.bbmp.gov.in/buildingplan.html",
+      "title": "BBMP Building Plan Approval — supplied legacy seed",
+      "accessedAt": "2026-09-05",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "agency": "Bruhat Bengaluru Mahanagara Palike / Greater Bengaluru Authority",
+      "grade": "B",
+      "basis": "observation",
+      "observation": "Direct browser navigation failed with ERR_CONNECTION_REFUSED and the visible error stated that site.bbmp.gov.in refused to connect. This supplied seed is not repointed to another live host.",
+      "archive": {
+        "status": "failed",
+        "attemptedUrl": "https://web.archive.org/web/20260905/https://site.bbmp.gov.in/buildingplan.html",
+        "note": "Wayback capture/open was unavailable in this pass; an older indexed copy exists but is not treated as current workflow evidence."
+      }
+    },
+    {
+      "id": "source_ind77_gba_seed_home",
+      "url": "https://bbmp.gov.in/",
+      "title": "Greater Bengaluru Authority — supplied BBMP seed",
+      "accessedAt": "2026-09-05",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "agency": "Greater Bengaluru Authority",
+      "grade": "B",
+      "basis": "observation",
+      "observation": "The seed opened successfully and redirected to https://bbmp.gov.in/home, whose public page names the Greater Bengaluru Authority and displays an e-Services Building Permission tile. The tile has no exposed target URL in the public DOM observed here, so no handoff to BPAS is inferred.",
+      "archive": {
+        "status": "failed",
+        "attemptedUrl": "https://web.archive.org/web/20260905/https://bbmp.gov.in/",
+        "note": "Wayback capture/open was unavailable in this pass."
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind77_bpas_public_identity",
+      "text": "The current BPAS public home identifies itself as Greater Bengaluru Authority and describes a single-window construction-permit system for Bengaluru.",
+      "status": "verified",
+      "grade": "B",
+      "basis": "observation",
+      "sourceIds": ["source_ind77_bpas_home"],
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"]
+    },
+    {
+      "id": "claim_ind77_bpas_signin_boundary",
+      "text": "The BPAS public home exposes a Sign In form with username, password, CAPTCHA-code input and a login submit control; this pass stops before authentication and case data.",
+      "status": "verified",
+      "grade": "B",
+      "basis": "observation",
+      "sourceIds": ["source_ind77_bpas_home"],
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"]
+    },
+    {
+      "id": "claim_ind77_ekhatta_required",
+      "text": "The BPAS public home displays an important message that e-Khata is mandatory for Building Licence, Plinth Certificate and Occupancy Certificate applications from 1 July 2025.",
+      "status": "verified",
+      "grade": "B",
+      "basis": "observation",
+      "sourceIds": ["source_ind77_bpas_home"],
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"]
+    },
+    {
+      "id": "claim_ind77_oc_manual_public",
+      "text": "The BPAS public Download & Manuals route lists a User Manual for OC and public forms/checklists including a plan-sanction checklist, affidavits, bonds, Schedule-II and Schedule-III; it notes that affidavits and bonds should be on stamp paper.",
+      "status": "verified",
+      "grade": "B",
+      "basis": "observation",
+      "sourceIds": ["source_ind77_bpas_downloads"],
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"]
+    },
+    {
+      "id": "claim_ind77_oc_submission_actor",
+      "text": "The official BPAS FAQ says an Occupancy Certificate/Building Completion Certificate application is submitted online by a Licensed Surveyor or Architect after building completion, with a request for joint site inspection and compliance of OCC/BCC conditions.",
+      "status": "verified",
+      "grade": "B",
+      "basis": "observation",
+      "sourceIds": ["source_ind77_bpas_faq"],
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"]
+    },
+    {
+      "id": "claim_ind77_oc_processing_window",
+      "text": "The official BPAS FAQ states that Part/Full OCC/BCC is granted within 7 working days after the OC/BCC application when the required documents are submitted and the work is executed as approved.",
+      "status": "verified",
+      "grade": "B",
+      "basis": "observation",
+      "sourceIds": ["source_ind77_bpas_faq"],
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"]
+    },
+    {
+      "id": "claim_ind77_oc_dashboard_output",
+      "text": "The official BPAS FAQ describes authenticated dashboard steps for viewing OCC/BCC status and certificate output through the approved OCC/BCC entry, Application Summary and Proposal Stages certificate column.",
+      "status": "verified",
+      "grade": "B",
+      "basis": "observation",
+      "sourceIds": ["source_ind77_bpas_faq"],
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"]
+    },
+    {
+      "id": "claim_ind77_public_support_surface",
+      "text": "BPAS exposes a public Helpdesk Knowledge base and a public Contact Us route as support surfaces; no case-specific recovery result was tested.",
+      "status": "verified",
+      "grade": "B",
+      "basis": "observation",
+      "sourceIds": ["source_ind77_bpas_helpdesk_kb", "source_ind77_bpas_contact"],
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"]
+    },
+    {
+      "id": "claim_ind77_legacy_route_dead",
+      "text": "The supplied site.bbmp.gov.in/buildingplan.html route was not live at access time and returned a browser ERR_CONNECTION_REFUSED observation; its older indexed content is not current workflow evidence.",
+      "status": "verified",
+      "grade": "B",
+      "basis": "observation",
+      "sourceIds": ["source_ind77_legacy_seed_dead"],
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"]
+    },
+    {
+      "id": "claim_ind77_gba_home_no_bpas_handoff",
+      "text": "The current bbmp.gov.in/home page exposes a Building Permission e-Service tile, but the public DOM observation did not expose a target URL; no link to BPAS is asserted.",
+      "status": "verified",
+      "grade": "B",
+      "basis": "observation",
+      "sourceIds": ["source_ind77_gba_seed_home"],
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"]
+    }
+  ],
+  "portalRecords": [
+    {
+      "portalId": "portal_ind77_bpas",
+      "host": "bpas.bbmpgov.in",
+      "observedAt": "2026-09-05T23:31:43+05:30",
+      "serviceOwner": "Greater Bengaluru Authority / Building Licence Cell",
+      "portalOperator": "BPAS / AutoDCR construction-permit portal (operator label shown in public manual as BPAS)",
+      "agencyNamingShown": ["Greater Bengaluru Authority", "Building Plan Approval System", "BBMP"],
+      "languages": ["English"],
+      "visibleVersionOrLastUpdated": "Copyright 2025; no visible page last-updated date",
+      "evidenceSourceIds": ["source_ind77_bpas_seed_home", "source_ind77_bpas_home", "source_ind77_bpas_downloads", "source_ind77_bpas_oc_manual", "source_ind77_bpas_faq", "source_ind77_bpas_helpdesk_kb", "source_ind77_bpas_contact"],
+      "routeObservations": [
+        {
+          "routeId": "route_ind77_bpas_public_entry",
+          "serviceId": "occupancy-certificate",
+          "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"],
+          "entryUrl": "https://bpas.bbmpgov.in/",
+          "finalUrl": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+          "redirects": ["https://bpas.bbmpgov.in/ -> https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx"],
+          "httpStatusObservation": "200-equivalent successful browser load; final page titled Greater Bengaluru Authority",
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": ["No authentication required to view the landing page; username, password and CAPTCHA are required by the visible Sign In form to continue."],
+          "publicToCaseDataBoundary": "Public landing page, public guidance labels and sign-in controls are visible. The procedure stops at the sign-in form; no case number, owner, property, building or application data was entered.",
+          "captchaJavascriptAppDependencies": ["CAPTCHA image/control is displayed in the sign-in form; JavaScript-rendered public navigation and an embedded downloads frame are present."],
+          "publicGuidanceSurfaces": ["Nambike Nakshe/single-window construction permits", "e-Khata mandatory message", "Download & Manuals", "FAQs", "Contact Us", "Helpdesk"],
+          "trackingSurfaces": ["Public page labels Proposal summary, Inspection summary, Pendency Report and Citizen Search, but no case-specific tracking was opened."],
+          "errorSurfaces": ["No application error was triggered; the login boundary is the observed blocker."],
+          "recoverySurfaces": ["Public Helpdesk Knowledge base and Contact Us routes are exposed."],
+          "evidenceIds": ["claim_ind77_bpas_public_identity", "claim_ind77_bpas_signin_boundary", "claim_ind77_ekhatta_required", "claim_ind77_public_support_surface"],
+          "limitations": ["No login, CAPTCHA solution, case lookup, owner/professional registration, plan upload, payment, submission or certificate-list inspection."],
+          "researchedNoSourceFound": []
+        },
+        {
+          "routeId": "route_ind77_bpas_public_manuals",
+          "serviceId": "occupancy-certificate",
+          "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"],
+          "entryUrl": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/download.aspx",
+          "finalUrl": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/download.aspx",
+          "redirects": [],
+          "httpStatusObservation": "200-equivalent successful browser load inside the public Download & Manuals frame",
+          "checkedLinkCount": 39,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": ["None observed for the public listing; the linked OC manual itself was not opened."],
+          "publicToCaseDataBoundary": "Public manuals and form labels only; no case data or upload control used.",
+          "captchaJavascriptAppDependencies": ["Embedded iframe #frm1; JavaScript-backed public page."],
+          "publicGuidanceSurfaces": ["User Manual for OC", "Forms & Checklist", "Plan Sanction-checklist", "Schedule-II", "Schedule-III"],
+          "trackingSurfaces": [],
+          "errorSurfaces": [],
+          "recoverySurfaces": ["The public Contact Us and Helpdesk routes remain available from BPAS navigation."],
+          "evidenceIds": ["claim_ind77_oc_manual_public"],
+          "limitations": ["The linked PDF manual was not opened and no form was downloaded or submitted."],
+          "researchedNoSourceFound": ["trackingSurfaces"]
+        },
+        {
+          "routeId": "route_ind77_bpas_faq",
+          "serviceId": "occupancy-certificate",
+          "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"],
+          "entryUrl": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "finalUrl": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "redirects": [],
+          "httpStatusObservation": "Official FAQ route publicly indexed/currently exposed; direct browser render timed out in this pass, so no stronger UI claim is made than the text shown by the official route.",
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": ["FAQ text is public; its dashboard instructions concern an authenticated application console."],
+          "publicToCaseDataBoundary": "Public procedural text is visible without case data. Dashboard status/certificate instructions are downstream of login and remain untested.",
+          "captchaJavascriptAppDependencies": ["Legacy ASP.NET FAQ route; direct render timed out during this pass."],
+          "publicGuidanceSurfaces": ["OC/BCC submission actor, joint inspection, compliance and 7-working-day statement; dashboard certificate-view instructions."],
+          "trackingSurfaces": ["FAQ describes authenticated Application Summary/Proposal Stages tracking, but no live case tracker was opened."],
+          "errorSurfaces": ["Direct render timeout only; not treated as an application error or no-record response."],
+          "recoverySurfaces": ["General BPAS Helpdesk and Contact Us routes."],
+          "evidenceIds": ["claim_ind77_oc_submission_actor", "claim_ind77_oc_processing_window", "claim_ind77_oc_dashboard_output"],
+          "limitations": ["FAQ content has no visible update date; no authenticated dashboard or certificate output was tested."],
+          "researchedNoSourceFound": []
+        }
+      ]
+    },
+    {
+      "portalId": "portal_ind77_legacy_site",
+      "host": "site.bbmp.gov.in",
+      "observedAt": "2026-09-05T23:31:43+05:30",
+      "serviceOwner": "BBMP legacy Building Plan Approval information site",
+      "portalOperator": "Unknown at access time",
+      "agencyNamingShown": [],
+      "languages": [],
+      "visibleVersionOrLastUpdated": null,
+      "evidenceSourceIds": ["source_ind77_legacy_seed_dead"],
+      "routeObservations": [
+        {
+          "routeId": "route_ind77_legacy_buildingplan_dead",
+          "serviceId": "occupancy-certificate",
+          "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"],
+          "entryUrl": "https://site.bbmp.gov.in/buildingplan.html",
+          "finalUrl": null,
+          "redirects": [],
+          "httpStatusObservation": "Non-200/unavailable in browser: ERR_CONNECTION_REFUSED",
+          "checkedLinkCount": 1,
+          "deadLinkCount": 1,
+          "authenticationPrerequisites": [],
+          "publicToCaseDataBoundary": "No public procedure reached.",
+          "captchaJavascriptAppDependencies": [],
+          "publicGuidanceSurfaces": [],
+          "trackingSurfaces": [],
+          "errorSurfaces": ["Browser displayed site.bbmp.gov.in refused to connect / ERR_CONNECTION_REFUSED."],
+          "recoverySurfaces": [],
+          "evidenceIds": ["claim_ind77_legacy_route_dead"],
+          "limitations": ["Older indexed content is retained only as stale context, not a current route; this dead seed is not repointed."],
+          "researchedNoSourceFound": ["publicGuidanceSurfaces", "trackingSurfaces", "recoverySurfaces"]
+        }
+      ]
+    },
+    {
+      "portalId": "portal_ind77_gba_home",
+      "host": "bbmp.gov.in",
+      "observedAt": "2026-09-05T23:31:43+05:30",
+      "serviceOwner": "Greater Bengaluru Authority",
+      "portalOperator": "Greater Bengaluru Authority; page footer says developed and hosted by Information Technology, Greater Bengaluru Authority",
+      "agencyNamingShown": ["Greater Bengaluru Authority", "GBA", "Government of Karnataka"],
+      "languages": ["English", "Kannada label present"],
+      "visibleVersionOrLastUpdated": "Current home page showed 2026 public updates; no page last-updated field observed",
+      "evidenceSourceIds": ["source_ind77_gba_seed_home"],
+      "routeObservations": [
+        {
+          "routeId": "route_ind77_gba_home",
+          "serviceId": "occupancy-certificate",
+          "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"],
+          "entryUrl": "https://bbmp.gov.in/",
+          "finalUrl": "https://bbmp.gov.in/home",
+          "redirects": ["https://bbmp.gov.in/ -> https://bbmp.gov.in/home"],
+          "httpStatusObservation": "200-equivalent successful browser load; final page titled GBA - Greater Bengaluru Authority",
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": ["None for the home page."],
+          "publicToCaseDataBoundary": "Home page only. The Building Permission tile is visible, but its target URL was not exposed in the public DOM and was not treated as a BPAS handoff.",
+          "captchaJavascriptAppDependencies": ["JavaScript-rendered home page; location/GIS modal appeared from an ambiguous tile click and was not used for property lookup."],
+          "publicGuidanceSurfaces": ["e-Services Building Permission tile", "GBA contact/helpline and department navigation"],
+          "trackingSurfaces": [],
+          "errorSurfaces": [],
+          "recoverySurfaces": ["General GBA contact/helpline surface on home page; no occupancy-specific recovery route identified."],
+          "evidenceIds": ["claim_ind77_gba_home_no_bpas_handoff"],
+          "limitations": ["No property lookup, building lookup, certificate list, or tile target navigation was used."],
+          "researchedNoSourceFound": ["trackingSurfaces"]
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_ind77_public_bpas_entry",
+      "label": "Public BPAS entry and prerequisites",
+      "kind": "entry",
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"],
+      "summary": "Unauthenticated visitor can see the GBA/BPAS public landing page, e-Khata message, manuals, support routes and sign-in controls.",
+      "checks": ["claim_ind77_bpas_public_identity", "claim_ind77_ekhatta_required", "claim_ind77_oc_manual_public"],
+      "failureSignals": ["claim_ind77_bpas_signin_boundary"],
+      "recoveries": ["claim_ind77_public_support_surface"],
+      "evidenceIds": ["source_ind77_bpas_home", "source_ind77_bpas_downloads"]
+    },
+    {
+      "id": "node_ind77_authenticated_oc_application",
+      "label": "Authenticated OC/BCC application and inspection",
+      "kind": "application",
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"],
+      "summary": "The FAQ describes a Licensed Surveyor/Architect submission after completion, compliance and joint site inspection, but this pass did not enter the authenticated console.",
+      "checks": ["claim_ind77_oc_submission_actor"],
+      "failureSignals": [],
+      "recoveries": [],
+      "researchedNoSourceFound": [],
+      "evidenceIds": ["source_ind77_bpas_faq"],
+      "unknownBoundary": "All case fields, upload requirements as rendered in the current console, fee demand, payment, submission acknowledgement and inspection scheduling remain unknown beyond the public FAQ/login boundary."
+    },
+    {
+      "id": "node_ind77_oc_review_and_certificate",
+      "label": "OC/BCC review, status and certificate output",
+      "kind": "outcome",
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"],
+      "summary": "The FAQ names authenticated dashboard status/certificate surfaces and a 7-working-day Part/Full OCC/BCC statement, but no real case result was observed.",
+      "checks": ["claim_ind77_oc_processing_window", "claim_ind77_oc_dashboard_output"],
+      "failureSignals": [],
+      "recoveries": [],
+      "researchedNoSourceFound": ["failureSignals", "recoveries"],
+      "researchedNoSourceFoundNotes": {
+        "failureSignals": "Searched the public BPAS FAQ, home, Helpdesk KB and Contact Us routes; no case-specific rejection/no-record/error surface was publicly actionable without login.",
+        "recoveries": "Searched the public BPAS FAQ, home, Helpdesk KB and Contact Us routes; no certificate-output recovery path for a failed case was public without login."
+      },
+      "evidenceIds": ["source_ind77_bpas_faq", "source_ind77_bpas_helpdesk_kb", "source_ind77_bpas_contact"],
+      "unknownBoundary": "No authenticated status, acknowledgement, rejection reason, demand note, payment result, inspection result or downloadable certificate was observed."
+    }
+  ],
+  "edges": [],
+  "crossLedgerHandoffCandidates": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind77_bpas_login_boundary",
+      "category": "authentication",
+      "label": "BPAS sign-in boundary",
+      "description": "The public route stops at username/password/CAPTCHA sign-in; no case procedure was continued.",
+      "claimIds": ["claim_ind77_bpas_signin_boundary"],
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"],
+      "recovery": "Use the public BPAS Helpdesk Knowledge base or Contact Us route for general support; do not infer case recovery without authentication.",
+      "evidenceIds": ["source_ind77_bpas_helpdesk_kb", "source_ind77_bpas_contact"]
+    },
+    {
+      "id": "roadblock_ind77_legacy_seed_unavailable",
+      "category": "dead-link",
+      "label": "Legacy BBMP building-plan seed unavailable",
+      "description": "The supplied site.bbmp.gov.in/buildingplan.html route returned ERR_CONNECTION_REFUSED and is not repointed.",
+      "claimIds": ["claim_ind77_legacy_route_dead"],
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"],
+      "recovery": "Retain BPAS as the observed live public construction-permit surface; treat the legacy route as unavailable rather than as a redirect.",
+      "evidenceIds": ["source_ind77_legacy_seed_dead"]
+    }
+  ],
+  "journeys": [
+    {
+      "id": "journey_ind77_public_oc_workflow",
+      "label": "Public path to sanctioned-residential OC/BCC boundary",
+      "scenarioIds": ["scenario_occupancy_certificate_sanctioned_residential"],
+      "steps": [
+        {
+          "step": 1,
+          "nodeId": "node_ind77_public_bpas_entry",
+          "action": "Open BPAS and inspect public OC guidance/manual/support surfaces.",
+          "expectedResult": "GBA/BPAS public landing page, e-Khata message, OC manual listing and support routes are visible.",
+          "claimIds": ["claim_ind77_bpas_public_identity", "claim_ind77_ekhatta_required", "claim_ind77_oc_manual_public", "claim_ind77_public_support_surface"]
+        },
+        {
+          "step": 2,
+          "nodeId": "node_ind77_authenticated_oc_application",
+          "action": "Stop at the visible BPAS Sign In form; do not enter credentials or CAPTCHA and do not open owner/professional registration or case lookup.",
+          "expectedResult": "Public procedure ends at the authentication boundary; application fields, uploads and case state remain unknown.",
+          "claimIds": ["claim_ind77_bpas_signin_boundary"]
+        },
+        {
+          "step": 3,
+          "nodeId": "node_ind77_oc_review_and_certificate",
+          "action": "Record only the public FAQ description of downstream OC/BCC submission, inspection, processing window and authenticated dashboard output.",
+          "expectedResult": "FAQ states Licensed Surveyor/Architect submission, joint inspection/compliance, up-to-7-working-day Part/Full OCC/BCC statement and dashboard certificate-view steps; no live result is claimed.",
+          "claimIds": ["claim_ind77_oc_submission_actor", "claim_ind77_oc_processing_window", "claim_ind77_oc_dashboard_output"]
+        }
+      ],
+      "limitations": ["No branch scenario was encountered; deviation and pending branches are not represented as evidence."]
+    }
+  ],
+  "expectations": {
+    "scenarioId": "scenario_occupancy_certificate_sanctioned_residential",
+    "cost": {
+      "state": "mentioned",
+      "claimIds": [],
+      "searchedRouteIds": ["route_ind77_bpas_public_entry", "route_ind77_bpas_public_manuals", "route_ind77_bpas_faq"],
+      "searchNote": "Public home and FAQ mention downstream demand/payment concepts but no actionable OC amount or fee schedule was established before login."
+    },
+    "documents": {
+      "state": "mentioned",
+      "claimIds": ["claim_ind77_oc_manual_public"],
+      "searchedRouteIds": ["route_ind77_bpas_public_manuals", "route_ind77_bpas_faq"],
+      "searchNote": "Public downloads expose an OC manual and general forms/checklists; the current authenticated OC checklist and exact case documents were not opened."
+    },
+    "eligibility": {
+      "state": "mentioned",
+      "claimIds": ["claim_ind77_ekhatta_required"],
+      "searchedRouteIds": ["route_ind77_bpas_public_entry", "route_ind77_bpas_faq"],
+      "searchNote": "e-Khata mandatory message is actionable as a prerequisite, but the complete sanctioned-residential eligibility rule was not exposed publicly."
+    },
+    "time": {
+      "state": "stated",
+      "claimIds": ["claim_ind77_oc_processing_window"],
+      "note": "Official FAQ gives a 7-working-day window for Part/Full OCC/BCC after OC/BCC application when required documents are submitted and work follows approval."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": ["claim_ind77_oc_submission_actor", "claim_ind77_public_support_surface"],
+      "note": "FAQ identifies Licensed Surveyor/Architect as online submission actor; public Contact Us identifies Building Licence Cell roles, without retaining contact details here."
+    },
+    "after-submission": {
+      "state": "mentioned",
+      "claimIds": ["claim_ind77_oc_dashboard_output"],
+      "searchedRouteIds": ["route_ind77_bpas_faq", "route_ind77_bpas_public_entry"],
+      "searchNote": "FAQ names authenticated status/certificate surfaces, but no live acknowledgement, tracker, rejection, payment result or certificate was observed."
+    }
+  },
+  "limitations": [
+    "BPAS login/CAPTCHA boundary prevented observation of real case fields, uploads, fee demand/payment, inspection scheduling, acknowledgement, rejection, status and certificate download.",
+    "The official FAQ has no visible update date in the observed material; its 7-working-day statement is retained with that limitation.",
+    "The legacy site.bbmp.gov.in building-plan seed was non-200/unavailable and was not repointed.",
+    "No safe cross-ledger handoff edge was recorded: the public material did not provide an explicit, schema-linked handoff to water-connection, new-electricity, khata or property-tax nodes, and those node IDs were not inspected under the isolated-pass boundary.",
+    "No deviation or pending branch was encountered; predeclared branches remain unrepresented."
+  ],
+  "waivers": []
+}

@@ -50,7 +50,7 @@ const normalizeHandoff = (handoff) => {
   }));
   return {
     _handoff: {
-      pass: handoff.pass ?? handoff.assignedPass ?? handoff.handoffType ?? 'unknown',
+      pass: handoff.pass ?? handoff.assignedPass ?? handoff.handoffType ?? handoff._handoff?.assignedPass ?? 'unknown',
       expectations: handoff.expectations,
     },
     meta: {
@@ -261,8 +261,9 @@ await writeFile(`ledger/${service}.json`, `${JSON.stringify(ledger, null, 2)}\n`
 const officialHandoff = handoffs.find((handoff) => handoff._handoff?.pass === 'official-source');
 if (officialHandoff?._handoff?.expectations) {
   const authored = officialHandoff._handoff.expectations;
+  const authoredCells = authored.cells ?? authored;
   const cells = Object.fromEntries(['cost', 'documents', 'eligibility', 'time', 'owner', 'after-submission'].map((column) => {
-    const cell = authored[column] ?? {};
+    const cell = authoredCells[column] ?? {};
     return [column, {
       state: cell.state,
       claimIds: cell.claimIds ?? [],

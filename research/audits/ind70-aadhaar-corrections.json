@@ -1,0 +1,699 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "aadhaar-address-update",
+  "atomic": true,
+  "corrections": [
+    {
+      "recordType": "meta",
+      "recordId": "aadhaar-address-update",
+      "fieldPath": "/asOf",
+      "old": "2026-09-04",
+      "new": "2026-09-05",
+      "reason": "The ledger uses three official FAQ sources accessed on 2026-09-05, so its visible as-of date cannot remain one day earlier.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_uidai_online_address_faq",
+          "source_ind70_uidai_registered_mobile",
+          "source_ind70_uidai_rejection_conditions"
+        ],
+        "auditNote": "All three source records have accessedAt 2026-09-05."
+      }
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_ind70_poa_required_and_upload",
+      "fieldPath": "/text",
+      "old": "UIDAI says completing the online address-update process requires upload of supporting proof-of-address documents, which will later be verified against the requested data.",
+      "new": "UIDAI says completing the online address-update process requires upload of a supporting proof-of-address document.",
+      "reason": "The old claim combines the upload requirement with a separate later-verification event; the latter is already recorded atomically in claim_ind70_quality_processing_team_review.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_uidai_updating_data"
+        ],
+        "auditNote": "Narrowing preserves the supported upload requirement without duplicating the review claim."
+      }
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_ind70_poa_required_and_upload",
+      "fieldPath": "/nodeIds",
+      "old": [
+        "node_aadhaar_poa_document",
+        "node_aadhaar_quality_review"
+      ],
+      "new": [
+        "node_aadhaar_poa_document"
+      ],
+      "reason": "After the atomicity correction, this claim supports the PoA-document node only; the separate review claim supports the quality-review node.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_uidai_updating_data"
+        ],
+        "auditNote": "This keeps node linkage aligned with the narrowed proposition."
+      }
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_ind70_citizen_online_poa_reported_success_2020",
+      "fieldPath": "/contradictsClaimIds",
+      "old": [
+        "claim_ind70_citizen_online_poa_reported_rejection_2020"
+      ],
+      "new": [],
+      "reason": "Separate citizens reporting success and rejection on the same general route are compatible outcomes, not contradictory propositions.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_citizen_online_poa_success_2020"
+        ],
+        "auditNote": "The source record expressly describes two separate participant outcomes."
+      }
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_ind70_citizen_online_poa_reported_rejection_2020",
+      "fieldPath": "/contradictsClaimIds",
+      "old": [
+        "claim_ind70_citizen_online_poa_reported_success_2020"
+      ],
+      "new": [],
+      "reason": "Separate citizens reporting success and rejection on the same general route are compatible outcomes, not contradictory propositions.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_citizen_online_poa_success_2020"
+        ],
+        "auditNote": "No universal rule is asserted by either citizen claim."
+      }
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_ind70_citizen_online_poa_reported_success_2026",
+      "fieldPath": "/contradictsClaimIds",
+      "old": [
+        "claim_ind70_citizen_online_poa_reported_rejection_2020"
+      ],
+      "new": [],
+      "reason": "The two individual reports are not logically contradictory and are not from a comparable period.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_citizen_online_poa_success_2026",
+          "source_ind70_citizen_online_poa_success_2020"
+        ],
+        "auditNote": "The reports are dated June 2026 and August 2020."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "aadhaar-address-update",
+      "fieldPath": "/cells/cost/state",
+      "old": "mentioned",
+      "new": "stated",
+      "reason": "A verified Grade B primary-scenario claim records an actionable ₹75 fee on the public service route.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_myaadhaar_ssup"
+        ],
+        "auditNote": "claim_ind70_fee_display meets the section 8 cost definition."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "aadhaar-address-update",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_ind70_online_submission_invoice"
+      ],
+      "new": [
+        "claim_ind70_fee_display"
+      ],
+      "reason": "The invoice claim gives no amount, while claim_ind70_fee_display directly supports the actionable fee value.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_myaadhaar_ssup"
+        ],
+        "auditNote": "The corrected claim is verified, Grade B, and tagged to the primary scenario."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "aadhaar-address-update",
+      "fieldPath": "/cells/cost/searchedRoutes",
+      "old": [
+        "https://uidai.gov.in/index.php?Itemid=2524&id=922&lang=en&option=com_content&view=category",
+        "https://uidai.gov.in/en/updating-data-on-aadhaar"
+      ],
+      "new": [],
+      "reason": "A stated cell is supported by claim IDs and an actionable note; the old searched-route list belongs to the superseded mentioned assessment.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_myaadhaar_ssup"
+        ],
+        "auditNote": "The integrated public-route observation supersedes the earlier absence search."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "aadhaar-address-update",
+      "fieldPath": "/cells/cost/note",
+      "old": "The retained Online Address Update FAQ names an invoice after successful submission but gives no amount; the current update page gives no online-address-update fee. Do not apply the separate document-update fee-relaxation notice to this address-change scenario.",
+      "new": "The public Update Address route displayed a ₹75 fee for the primary online proof-of-address route.",
+      "reason": "The old note predates and contradicts the integrated public-route observation.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_myaadhaar_ssup"
+        ],
+        "auditNote": "The replacement states only the observed actionable value."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "aadhaar-address-update",
+      "fieldPath": "/cells/time/state",
+      "old": "absent",
+      "new": "stated",
+      "reason": "A verified Grade B primary-scenario claim records an actionable 'Up to 30 days' duration on the public service route.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_myaadhaar_ssup"
+        ],
+        "auditNote": "claim_ind70_time_display meets the section 8 time definition."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "aadhaar-address-update",
+      "fieldPath": "/cells/time/claimIds",
+      "old": [],
+      "new": [
+        "claim_ind70_time_display"
+      ],
+      "reason": "The stated time cell must cite the verified primary-scenario claim that supplies its value.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_myaadhaar_ssup"
+        ],
+        "auditNote": "The claim is Grade B, verified, and primary-scenario tagged."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "aadhaar-address-update",
+      "fieldPath": "/cells/time/searchedRoutes",
+      "old": [
+        "https://uidai.gov.in/index.php?Itemid=2524&id=922&lang=en&option=com_content&view=category",
+        "https://uidai.gov.in/en/updating-data-on-aadhaar",
+        "https://uidai.gov.in/images/commdoc/List_of_Supporting_Document_for_Aadhaar_Enrolment_and_Update.pdf"
+      ],
+      "new": [],
+      "reason": "A stated cell is supported by claim IDs and an actionable note; the old searched-route list belongs to the superseded absent assessment.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_myaadhaar_ssup"
+        ],
+        "auditNote": "The integrated public-route observation supersedes the earlier absence search."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "aadhaar-address-update",
+      "fieldPath": "/cells/time/note",
+      "old": "The reviewed retained sources describe later verification but give no actionable processing duration, deadline, or service-level target for this online PoA address-update route.",
+      "new": "The public Update Address route displayed 'Up to 30 days'. This is an actionable route-level duration, but the unauthenticated observation did not establish the authenticated start and end events used to measure it.",
+      "reason": "The old note contradicts the integrated observation; the new note preserves the stage/scope limitation required by section 8.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_myaadhaar_ssup"
+        ],
+        "auditNote": "The correction records both the displayed value and its observation boundary."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "aadhaar-address-update",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [
+        "claim_ind70_online_submission_srn",
+        "claim_ind70_online_submission_invoice",
+        "claim_ind70_status_login",
+        "claim_ind70_rejection_invalid_poa",
+        "claim_ind70_rejection_holder_name",
+        "claim_ind70_rejection_address_mismatch",
+        "claim_ind70_rejection_scan_quality"
+      ],
+      "new": [
+        "claim_ind70_online_submission_srn",
+        "claim_ind70_online_submission_invoice",
+        "claim_ind70_status_login"
+      ],
+      "reason": "The expectation grid scores only the primary scenario; the four removed rejection claims are tagged only to the rejected branch.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_uidai_online_address_faq"
+        ],
+        "auditNote": "The retained claims independently support a stated after-submission cell for the primary scenario."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "aadhaar-address-update",
+      "fieldPath": "/cells/after-submission/note",
+      "old": "On successful submission, the FAQ states that an SRN is shown and sent by SMS, an invoice with the SRN can be downloaded, and status is available after login; it also states documented invalid-document rejection conditions.",
+      "new": "On successful submission, the FAQ states that an SRN is shown and sent by SMS, an invoice with the SRN can be downloaded, and status is available after login.",
+      "reason": "The removed sentence fragment describes the rejected branch rather than the primary scenario scored by this grid.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_uidai_online_address_faq"
+        ],
+        "auditNote": "The corrected note is actionable and primary-scenario specific."
+      }
+    },
+    {
+      "recordType": "source",
+      "recordId": "source_ind70_citizen_online_poa_success_2020",
+      "fieldPath": "/notes",
+      "old": "Two forum participants reported separate online address-update outcomes: one reported completion after aligning wording with a rental agreement, and one reported a data-mismatch rejection after submitting documents. Location, profile handles, and address details are omitted. Wayback capture was unavailable on access.",
+      "new": "Two forum participants reported separate online address-update outcomes: one reported completion after aligning wording with a rental agreement, and one reported a data-mismatch rejection after submitting documents. Location, profile handles, and address details are omitted. Wayback capture failed on 2026-09-04; no snapshot URL is available, so preservation is limited to the public page as accessed on that date.",
+      "reason": "Section 11 requires a failed capture to record the failure date and the resulting limitation explicitly.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_citizen_online_poa_success_2020"
+        ],
+        "auditNote": "The existing source already records accessedAt 2026-09-04 and that Wayback was unavailable."
+      }
+    },
+    {
+      "recordType": "source",
+      "recordId": "source_ind70_citizen_online_poa_success_2026",
+      "fieldPath": "/notes",
+      "old": "A now-deleted participant reported uploading a document in the Aadhaar portal and said the address update appeared the following day. Personal, policy, payment, and document-detail information is omitted. Wayback capture was unavailable on access.",
+      "new": "A now-deleted participant reported uploading a document in the Aadhaar portal and said the address update appeared the following day. Personal, policy, payment, and document-detail information is omitted. Wayback capture failed on 2026-09-04; no snapshot URL is available, so preservation is limited to the public page as accessed on that date.",
+      "reason": "Section 11 requires a failed capture to record the failure date and the resulting limitation explicitly.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_citizen_online_poa_success_2026"
+        ],
+        "auditNote": "The existing source already records accessedAt 2026-09-04 and that Wayback was unavailable."
+      }
+    },
+    {
+      "recordType": "source",
+      "recordId": "source_ind70_citizen_hof_rejection_2023",
+      "fieldPath": "/notes",
+      "old": "A participant reported using the online portal's Head of Family route, approving the request in that role, and receiving a relationship/gender-mismatch rejection for one household member. Handles, household relationships, and identity details are omitted. Wayback capture was unavailable on access.",
+      "new": "A participant reported using the online portal's Head of Family route, approving the request in that role, and receiving a relationship/gender-mismatch rejection for one household member. Handles, household relationships, and identity details are omitted. Wayback capture failed on 2026-09-04; no snapshot URL is available, so preservation is limited to the public page as accessed on that date.",
+      "reason": "Section 11 requires a failed capture to record the failure date and the resulting limitation explicitly.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_citizen_hof_rejection_2023"
+        ],
+        "auditNote": "The existing source already records accessedAt 2026-09-04 and that Wayback was unavailable."
+      }
+    },
+    {
+      "recordType": "node",
+      "recordId": "node_aadhaar_online_access",
+      "fieldPath": "/checks/0/url",
+      "old": "https://uidai.gov.in/en/updating-data-on-aadhaar",
+      "new": "https://uidai.gov.in/en/922-faqs/aadhaar-online-services/online-address-update-process/11608-what-details-can-i-update-in-self-service-update-portal-ssup.html",
+      "reason": "The detail cites claim_ind70_registered_mobile_requirement, whose retained claim-specific source is the registered-mobile FAQ, not the general updating-data page.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_uidai_registered_mobile"
+        ],
+        "auditNote": "The correction aligns the detail URL with its cited claim source."
+      }
+    },
+    {
+      "recordType": "node",
+      "recordId": "node_aadhaar_poa_document",
+      "fieldPath": "/failureSignals/0/url",
+      "old": "https://uidai.gov.in/index.php?Itemid=2524&id=922&lang=en&option=com_content&view=category",
+      "new": "https://uidai.gov.in/en/922-faqs/aadhaar-online-services/online-address-update-process/11973-my-update-request-got-rejected-for-invalid-documents-what-does-this-mean.html",
+      "reason": "The general category URL is not a specific citation; a retained claim-specific rejection FAQ supports every cited rejection claim.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_uidai_rejection_conditions"
+        ],
+        "auditNote": "Section 7 requires the specific page."
+      }
+    },
+    {
+      "recordType": "node",
+      "recordId": "node_aadhaar_poa_document",
+      "fieldPath": "/recoveries/0/url",
+      "old": "https://uidai.gov.in/index.php?Itemid=2524&id=922&lang=en&option=com_content&view=category",
+      "new": "https://uidai.gov.in/en/922-faqs/aadhaar-online-services/online-address-update-process/11973-my-update-request-got-rejected-for-invalid-documents-what-does-this-mean.html",
+      "reason": "The general category URL is not a specific citation; the retained rejection FAQ directly supports matching the entered address to the own-name PoA.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_uidai_rejection_conditions",
+          "source_ind70_uidai_acceptable_documents"
+        ],
+        "auditNote": "The claim IDs continue to expose the acceptable-document source for the remaining document conditions."
+      }
+    },
+    {
+      "recordType": "node",
+      "recordId": "node_aadhaar_post_submission",
+      "fieldPath": "/checks/0/url",
+      "old": "https://uidai.gov.in/index.php?Itemid=2524&id=922&lang=en&option=com_content&view=category",
+      "new": "https://uidai.gov.in/en/922-faqs/aadhaar-online-services/online-address-update-process/11972-q8-i-successfully-submitted-my-address-update-request-how-can-i-track-this.html",
+      "reason": "The general category URL is not a specific citation; the retained successful-submission FAQ supports the SRN detail.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_uidai_online_address_faq"
+        ],
+        "auditNote": "Section 7 requires the specific page."
+      }
+    },
+    {
+      "recordType": "node",
+      "recordId": "node_aadhaar_post_submission",
+      "fieldPath": "/failureSignals/0/url",
+      "old": "https://uidai.gov.in/index.php?Itemid=2524&id=922&lang=en&option=com_content&view=category",
+      "new": "https://uidai.gov.in/en/922-faqs/aadhaar-online-services/online-address-update-process/11973-my-update-request-got-rejected-for-invalid-documents-what-does-this-mean.html",
+      "reason": "The general category URL is not a specific citation; the retained rejection FAQ supports the listed rejection grounds.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_uidai_rejection_conditions"
+        ],
+        "auditNote": "Section 7 requires the specific page."
+      }
+    },
+    {
+      "recordType": "node",
+      "recordId": "node_aadhaar_post_submission",
+      "fieldPath": "/recoveries/0/url",
+      "old": "https://uidai.gov.in/index.php?Itemid=2524&id=922&lang=en&option=com_content&view=category",
+      "new": "https://uidai.gov.in/en/922-faqs/aadhaar-online-services/online-address-update-process/11972-q8-i-successfully-submitted-my-address-update-request-how-can-i-track-this.html",
+      "reason": "The general category URL is not a specific citation; the retained successful-submission FAQ supports the login-bound status route.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_uidai_online_address_faq"
+        ],
+        "auditNote": "Section 7 requires the specific page."
+      }
+    },
+    {
+      "recordType": "journey",
+      "recordId": "journey_ind70_online_own_poa",
+      "fieldPath": "/documentationQualityNotes/0",
+      "old": "All claims use current accessible UIDAI public sources; the retained online-address FAQ is visibly reviewed 2026-07-22 and the current update page is visibly updated 2026-07-03.",
+      "new": "The retained online-address FAQ pages had no visible date when accessed on 2026-09-05, so their currentness is limited to that access date; the current update page displayed a 2026-07-03 last-updated date.",
+      "reason": "The old note asserts a visible FAQ review date that contradicts the FAQ source records, which say no visible date was observed.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_uidai_online_address_faq",
+          "source_ind70_uidai_updating_data"
+        ],
+        "auditNote": "The replacement matches the source-date limitations already recorded in the ledger."
+      }
+    },
+    {
+      "recordType": "journey",
+      "recordId": "journey_ind70_online_own_poa",
+      "fieldPath": "/documentationQualityNotes/1",
+      "old": "The live MyAadhaar seed could not be observed, and no source in this pass gives a current actionable fee or processing duration for this primary route.",
+      "new": "The public myAadhaar Update Address route was observed on 2026-09-04 and displayed a ₹75 fee and 'Up to 30 days'; authenticated upload, payment, submission, and result surfaces were not observed.",
+      "reason": "The old integration note directly contradicts the retained public-route source and verified fee/time claims.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_myaadhaar_ssup"
+        ],
+        "auditNote": "The replacement preserves both the observed actionable values and the authentication boundary."
+      }
+    },
+    {
+      "recordType": "journey",
+      "recordId": "journey_ind70_online_own_poa",
+      "fieldPath": "/steps",
+      "old": [
+        {
+          "id": "step_ind70_access",
+          "label": "Meet online-access prerequisites",
+          "nodeId": "node_aadhaar_online_access",
+          "action": "Use the official myAadhaar route only if the Aadhaar mobile is registered; authenticate only in an authorised personal session.",
+          "expectedResult": "The holder can enter the account-bound address-update route.",
+          "claimIds": [
+            "claim_ind70_online_own_poa_route",
+            "claim_ind70_registered_mobile_requirement",
+            "claim_ind70_aadhaar_number_login",
+            "claim_ind70_registered_mobile_otp"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind70_poa",
+          "label": "Prepare own PoA",
+          "nodeId": "node_aadhaar_poa_document",
+          "action": "Select an applicable List IV own-name PoA document and ensure its address matches the intended address.",
+          "expectedResult": "A publishedly acceptable PoA candidate is ready for authorised upload.",
+          "claimIds": [
+            "claim_ind70_poa_required_and_upload",
+            "claim_ind70_update_poa_definition",
+            "claim_ind70_update_poa_current",
+            "claim_ind70_update_poa_issued_to_holder",
+            "claim_ind70_update_poa_verifiable"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind70_review",
+          "label": "Await later quality and processing review",
+          "nodeId": "node_aadhaar_quality_review",
+          "action": "Treat the later verification as case-specific; do not infer approval from public guidance.",
+          "expectedResult": "UIDAI's published quality and processing review boundary is understood.",
+          "claimIds": [
+            "claim_ind70_quality_processing_team_review"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind70_post",
+          "label": "Retain published post-submission references",
+          "nodeId": "node_aadhaar_post_submission",
+          "action": "After an authorised successful submission, retain the SRN and invoice, then use the official login-bound status route.",
+          "expectedResult": "The published acknowledgement and tracking surfaces are available without asserting a case outcome.",
+          "claimIds": [
+            "claim_ind70_online_submission_srn",
+            "claim_ind70_online_submission_invoice",
+            "claim_ind70_status_login"
+          ],
+          "status": "partial"
+        }
+      ],
+      "new": [
+        {
+          "id": "step_ind70_access",
+          "label": "Meet online-access prerequisites",
+          "nodeId": "node_aadhaar_online_access",
+          "action": "Use the official myAadhaar route only if the Aadhaar mobile is registered; authenticate only in an authorised personal session.",
+          "expectedResult": "The holder can enter the account-bound address-update route.",
+          "claimIds": [
+            "claim_ind70_online_own_poa_route",
+            "claim_ind70_registered_mobile_requirement",
+            "claim_ind70_aadhaar_number_login",
+            "claim_ind70_registered_mobile_otp"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind70_poa",
+          "label": "Prepare own PoA",
+          "nodeId": "node_aadhaar_poa_document",
+          "action": "Select an applicable List IV own-name PoA document and ensure its address matches the intended address.",
+          "expectedResult": "A publishedly acceptable PoA candidate is ready for authorised upload.",
+          "claimIds": [
+            "claim_ind70_poa_required_and_upload",
+            "claim_ind70_update_poa_definition",
+            "claim_ind70_update_poa_current",
+            "claim_ind70_update_poa_issued_to_holder",
+            "claim_ind70_update_poa_verifiable"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind70_post",
+          "label": "Retain published post-submission references",
+          "nodeId": "node_aadhaar_post_submission",
+          "action": "After an authorised successful submission, retain the SRN and invoice, then use the official login-bound status route.",
+          "expectedResult": "The published acknowledgement and tracking surfaces are available without asserting a case outcome.",
+          "claimIds": [
+            "claim_ind70_online_submission_srn",
+            "claim_ind70_online_submission_invoice",
+            "claim_ind70_status_login"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind70_review",
+          "label": "Await later quality and processing review",
+          "nodeId": "node_aadhaar_quality_review",
+          "action": "Treat the later verification as case-specific; do not infer approval from public guidance.",
+          "expectedResult": "UIDAI's published quality and processing review boundary is understood.",
+          "claimIds": [
+            "claim_ind70_quality_processing_team_review"
+          ],
+          "status": "partial"
+        }
+      ],
+      "reason": "Procedural journeys must preserve sequence: the SRN and invoice are immediate post-submission surfaces, while the quality-and-processing verification is explicitly later.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_uidai_online_address_faq",
+          "source_ind70_uidai_updating_data"
+        ],
+        "auditNote": "Only the two supported steps are reordered; their content and identities are preserved."
+      }
+    },
+    {
+      "recordType": "edge",
+      "recordId": "edge_ind70_submission_to_post",
+      "fieldPath": "/",
+      "old": {
+        "id": "edge_ind70_submission_to_post",
+        "fromNodeId": "node_aadhaar_quality_review",
+        "toNodeId": "node_aadhaar_post_submission",
+        "relationship": "produces",
+        "label": "A successful authorised submission has published SRN, invoice, and status surfaces.",
+        "scenarioIds": [
+          "scenario_aadhaar_address_update_online_poa"
+        ],
+        "claimIds": [
+          "claim_ind70_online_submission_srn",
+          "claim_ind70_online_submission_invoice",
+          "claim_ind70_status_login"
+        ],
+        "status": "partial"
+      },
+      "new": null,
+      "reason": "The cited claims support post-submission surfaces but do not support an edge from the later quality-review node to the post-submission node.",
+      "support": {
+        "sourceIds": [
+          "source_ind70_uidai_online_address_faq",
+          "source_ind70_uidai_updating_data"
+        ],
+        "auditNote": "Removing the unsupported direction preserves the separately supported claims and nodes."
+      }
+    },
+    {
+      "recordType": "portal",
+      "recordId": "portal_ind70_myaadhaar_entry",
+      "fieldPath": "/",
+      "old": {
+        "portalId": "portal_ind70_myaadhaar_entry",
+        "host": "myaadhaar.uidai.gov.in",
+        "observedAt": "2026-09-04T00:00:00+05:30",
+        "serviceId": "aadhaar-address-update",
+        "serviceOwner": "Unique Identification Authority of India",
+        "portalOperator": "Unique Identification Authority of India",
+        "agencyNamingShown": "Unique Identification Authority of India",
+        "languages": [
+          "English"
+        ],
+        "visibleVersionOrLastUpdated": "No visible version or last-updated date observed",
+        "evidenceSourceIds": [],
+        "routeObservations": [
+          {
+            "routeId": "route_ind70_myaadhaar_entry",
+            "serviceId": "aadhaar-address-update",
+            "scenarioIds": [
+              "scenario_aadhaar_address_update_online_poa",
+              "scenario_aadhaar_address_update_hof"
+            ],
+            "entryUrl": "https://myaadhaar.uidai.gov.in/",
+            "finalUrl": "https://myaadhaarbeta.uidai.gov.in/",
+            "redirects": [],
+            "finalStatus": 200,
+            "checkedLinkCount": 1,
+            "deadLinkCount": 0,
+            "authenticationPrerequisites": "None to view the public home and its Update Address card.",
+            "publicProcedureVsCaseDataBoundary": "The home is public; its card states that mobile OTP is required, while case-specific activity is not exposed here.",
+            "captchaDependencies": "None observed on the public home.",
+            "javascriptDependencies": "JavaScript-rendered public interface observed.",
+            "publicGuidanceSurfaces": [
+              "Update Address card",
+              "mobile OTP statement",
+              "₹75 fee statement"
+            ],
+            "trackingSurfaces": [
+              "Check Enrolment / Update Status card displayed on the public home"
+            ],
+            "errorSurfaces": [],
+            "recoverySurfaces": [
+              "Support control displayed"
+            ],
+            "evidenceIds": [],
+            "limitations": [
+              "The observation is retained as a portal-route limitation only: its available URL is a bare homepage and is not cited as evidence in this handoff.",
+              "Browser navigation from the 200 seed reached the beta host; a public HTTP header check did not expose an HTTP redirect status.",
+              "No case-specific service was opened from this route beyond the public Update Address choice."
+            ]
+          }
+        ]
+      },
+      "new": null,
+      "reason": "Both the portal and its route observation lack required evidence IDs, and the record itself states that the homepage was not retained as evidence; the auditor may not invent a source.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "Protocol section 10 requires evidence source IDs for each portal and route observation."
+      }
+    },
+    {
+      "recordType": "node",
+      "recordId": "node_ind70_update_address_public",
+      "fieldPath": "/ownerAgencyId",
+      "old": "agency_uidai",
+      "new": "agency_uidai_ind70",
+      "reason": "The two agency records represent the same UIDAI entity; references are consolidated on the service-specific published ID before deleting the duplicate.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "Both agency records have identical names, short names, and official URLs."
+      }
+    },
+    {
+      "recordType": "node",
+      "recordId": "node_ind70_otp_login_boundary",
+      "fieldPath": "/ownerAgencyId",
+      "old": "agency_uidai",
+      "new": "agency_uidai_ind70",
+      "reason": "The two agency records represent the same UIDAI entity; references are consolidated on the service-specific published ID before deleting the duplicate.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "Both agency records have identical names, short names, and official URLs."
+      }
+    },
+    {
+      "recordType": "roadblock",
+      "recordId": "roadblock_ind70_authentication_boundary",
+      "fieldPath": "/ownerAgencyIds",
+      "old": [
+        "agency_uidai"
+      ],
+      "new": [
+        "agency_uidai_ind70"
+      ],
+      "reason": "The two agency records represent the same UIDAI entity; references are consolidated on the service-specific published ID before deleting the duplicate.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "This is the last non-node reference to the duplicate agency ID."
+      }
+    },
+    {
+      "recordType": "agency",
+      "recordId": "agency_uidai",
+      "fieldPath": "/",
+      "old": {
+        "id": "agency_uidai",
+        "name": "Unique Identification Authority of India",
+        "shortName": "UIDAI",
+        "officialUrl": "https://uidai.gov.in/"
+      },
+      "new": null,
+      "reason": "After the three reference corrections, this record is an exact semantic duplicate of agency_uidai_ind70 and should be removed.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "The complete correction set preserves all agency references atomically."
+      }
+    }
+  ]
+}

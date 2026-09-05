@@ -3,58 +3,6 @@
   "serviceId": "aadhaar-address-update",
   "portals": [
     {
-      "portalId": "portal_ind70_myaadhaar_entry",
-      "host": "myaadhaar.uidai.gov.in",
-      "observedAt": "2026-09-04T00:00:00+05:30",
-      "serviceId": "aadhaar-address-update",
-      "serviceOwner": "Unique Identification Authority of India",
-      "portalOperator": "Unique Identification Authority of India",
-      "agencyNamingShown": "Unique Identification Authority of India",
-      "languages": [
-        "English"
-      ],
-      "visibleVersionOrLastUpdated": "No visible version or last-updated date observed",
-      "evidenceSourceIds": [],
-      "routeObservations": [
-        {
-          "routeId": "route_ind70_myaadhaar_entry",
-          "serviceId": "aadhaar-address-update",
-          "scenarioIds": [
-            "scenario_aadhaar_address_update_online_poa",
-            "scenario_aadhaar_address_update_hof"
-          ],
-          "entryUrl": "https://myaadhaar.uidai.gov.in/",
-          "finalUrl": "https://myaadhaarbeta.uidai.gov.in/",
-          "redirects": [],
-          "finalStatus": 200,
-          "checkedLinkCount": 1,
-          "deadLinkCount": 0,
-          "authenticationPrerequisites": "None to view the public home and its Update Address card.",
-          "publicProcedureVsCaseDataBoundary": "The home is public; its card states that mobile OTP is required, while case-specific activity is not exposed here.",
-          "captchaDependencies": "None observed on the public home.",
-          "javascriptDependencies": "JavaScript-rendered public interface observed.",
-          "publicGuidanceSurfaces": [
-            "Update Address card",
-            "mobile OTP statement",
-            "₹75 fee statement"
-          ],
-          "trackingSurfaces": [
-            "Check Enrolment / Update Status card displayed on the public home"
-          ],
-          "errorSurfaces": [],
-          "recoverySurfaces": [
-            "Support control displayed"
-          ],
-          "evidenceIds": [],
-          "limitations": [
-            "The observation is retained as a portal-route limitation only: its available URL is a bare homepage and is not cited as evidence in this handoff.",
-            "Browser navigation from the 200 seed reached the beta host; a public HTTP header check did not expose an HTTP redirect status.",
-            "No case-specific service was opened from this route beyond the public Update Address choice."
-          ]
-        }
-      ]
-    },
-    {
       "portalId": "portal_ind70_myaadhaarbeta",
       "host": "myaadhaarbeta.uidai.gov.in",
       "observedAt": "2026-09-04T00:00:00+05:30",

@@ -3,19 +3,13 @@
     "schemaVersion": "1.0.0",
     "title": "Bengaluru aadhaar address update evidence ledger v1",
     "jurisdiction": "Bengaluru, Karnataka, India (UIDAI national service)",
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "dataKind": "research",
     "disclaimer": "Independent research, not official advice. Public sources and known gaps are shown together; do not submit personal data through this ledger."
   },
   "agencies": [
     {
       "id": "agency_uidai_ind70",
-      "name": "Unique Identification Authority of India",
-      "shortName": "UIDAI",
-      "officialUrl": "https://uidai.gov.in/"
-    },
-    {
-      "id": "agency_uidai",
       "name": "Unique Identification Authority of India",
       "shortName": "UIDAI",
       "officialUrl": "https://uidai.gov.in/"
@@ -144,7 +138,7 @@
       "accessedAt": "2026-09-04",
       "publishedAt": "2020-08-03",
       "type": "citizen_evidence",
-      "notes": "Two forum participants reported separate online address-update outcomes: one reported completion after aligning wording with a rental agreement, and one reported a data-mismatch rejection after submitting documents. Location, profile handles, and address details are omitted. Wayback capture was unavailable on access."
+      "notes": "Two forum participants reported separate online address-update outcomes: one reported completion after aligning wording with a rental agreement, and one reported a data-mismatch rejection after submitting documents. Location, profile handles, and address details are omitted. Wayback capture failed on 2026-09-04; no snapshot URL is available, so preservation is limited to the public page as accessed on that date."
     },
     {
       "id": "source_ind70_citizen_online_poa_success_2026",
@@ -154,7 +148,7 @@
       "accessedAt": "2026-09-04",
       "publishedAt": "2026-06-06",
       "type": "citizen_evidence",
-      "notes": "A now-deleted participant reported uploading a document in the Aadhaar portal and said the address update appeared the following day. Personal, policy, payment, and document-detail information is omitted. Wayback capture was unavailable on access."
+      "notes": "A now-deleted participant reported uploading a document in the Aadhaar portal and said the address update appeared the following day. Personal, policy, payment, and document-detail information is omitted. Wayback capture failed on 2026-09-04; no snapshot URL is available, so preservation is limited to the public page as accessed on that date."
     },
     {
       "id": "source_ind70_citizen_hof_rejection_2023",
@@ -164,7 +158,7 @@
       "accessedAt": "2026-09-04",
       "publishedAt": "2023-11-21",
       "type": "citizen_evidence",
-      "notes": "A participant reported using the online portal's Head of Family route, approving the request in that role, and receiving a relationship/gender-mismatch rejection for one household member. Handles, household relationships, and identity details are omitted. Wayback capture was unavailable on access."
+      "notes": "A participant reported using the online portal's Head of Family route, approving the request in that role, and receiving a relationship/gender-mismatch rejection for one household member. Handles, household relationships, and identity details are omitted. Wayback capture failed on 2026-09-04; no snapshot URL is available, so preservation is limited to the public page as accessed on that date."
     }
   ],
   "claims": [
@@ -246,14 +240,13 @@
     },
     {
       "id": "claim_ind70_poa_required_and_upload",
-      "text": "UIDAI says completing the online address-update process requires upload of supporting proof-of-address documents, which will later be verified against the requested data.",
+      "text": "UIDAI says completing the online address-update process requires upload of a supporting proof-of-address document.",
       "jurisdiction": "Bengaluru, Karnataka, India (UIDAI national service)",
       "scenarioIds": [
         "scenario_aadhaar_address_update_online_poa"
       ],
       "nodeIds": [
-        "node_aadhaar_poa_document",
-        "node_aadhaar_quality_review"
+        "node_aadhaar_poa_document"
       ],
       "sourceIds": [
         "source_ind70_uidai_updating_data"
@@ -638,9 +631,7 @@
       "evidenceGrade": "E",
       "basis": "observation",
       "status": "partial",
-      "contradictsClaimIds": [
-        "claim_ind70_citizen_online_poa_reported_rejection_2020"
-      ],
+      "contradictsClaimIds": [],
       "notes": "One August 2020 account. It does not establish that this wording practice is required, that a rental agreement is currently accepted, or that an online request will complete within the reported time."
     },
     {
@@ -658,9 +649,7 @@
       "evidenceGrade": "E",
       "basis": "observation",
       "status": "partial",
-      "contradictsClaimIds": [
-        "claim_ind70_citizen_online_poa_reported_success_2020"
-      ],
+      "contradictsClaimIds": [],
       "notes": "One August 2020 account. The participant's thought about abbreviated address wording is not verified and is retained separately only as a possible lead."
     },
     {
@@ -695,9 +684,7 @@
       "evidenceGrade": "E",
       "basis": "observation",
       "status": "partial",
-      "contradictsClaimIds": [
-        "claim_ind70_citizen_online_poa_reported_rejection_2020"
-      ],
+      "contradictsClaimIds": [],
       "notes": "One June 2026 account. It does not establish current processing time, document acceptance, portal behavior, or an official procedure."
     },
     {
@@ -732,7 +719,7 @@
           "id": "detail_ind70_registered_mobile",
           "label": "Registered mobile and OTP",
           "description": "A registered mobile number and OTP authentication are published prerequisites for online access.",
-          "url": "https://uidai.gov.in/en/updating-data-on-aadhaar",
+          "url": "https://uidai.gov.in/en/922-faqs/aadhaar-online-services/online-address-update-process/11608-what-details-can-i-update-in-self-service-update-portal-ssup.html",
           "claimIds": [
             "claim_ind70_registered_mobile_requirement"
           ],
@@ -778,7 +765,7 @@
           "id": "detail_ind70_poa_rejection",
           "label": "Invalid-document conditions",
           "description": "The FAQ lists invalidity, holder-name, address-match, and scan-quality grounds for rejection.",
-          "url": "https://uidai.gov.in/index.php?Itemid=2524&id=922&lang=en&option=com_content&view=category",
+          "url": "https://uidai.gov.in/en/922-faqs/aadhaar-online-services/online-address-update-process/11973-my-update-request-got-rejected-for-invalid-documents-what-does-this-mean.html",
           "claimIds": [
             "claim_ind70_rejection_invalid_poa",
             "claim_ind70_rejection_holder_name",
@@ -793,7 +780,7 @@
           "id": "detail_ind70_poa_recovery",
           "label": "Correct PoA evidence",
           "description": "Use the current supporting-document list and ensure the entered address matches the own-name PoA before an authorised upload.",
-          "url": "https://uidai.gov.in/index.php?Itemid=2524&id=922&lang=en&option=com_content&view=category",
+          "url": "https://uidai.gov.in/en/922-faqs/aadhaar-online-services/online-address-update-process/11973-my-update-request-got-rejected-for-invalid-documents-what-does-this-mean.html",
           "claimIds": [
             "claim_ind70_rejection_address_mismatch",
             "claim_ind70_update_poa_definition",
@@ -865,7 +852,7 @@
           "id": "detail_ind70_srn",
           "label": "SRN after successful submission",
           "description": "Successful submission produces an on-screen and SMS SRN.",
-          "url": "https://uidai.gov.in/index.php?Itemid=2524&id=922&lang=en&option=com_content&view=category",
+          "url": "https://uidai.gov.in/en/922-faqs/aadhaar-online-services/online-address-update-process/11972-q8-i-successfully-submitted-my-address-update-request-how-can-i-track-this.html",
           "claimIds": [
             "claim_ind70_online_submission_srn"
           ],
@@ -877,7 +864,7 @@
           "id": "detail_ind70_rejected_request",
           "label": "Published rejection grounds",
           "description": "Invalid-document conditions can result in rejection.",
-          "url": "https://uidai.gov.in/index.php?Itemid=2524&id=922&lang=en&option=com_content&view=category",
+          "url": "https://uidai.gov.in/en/922-faqs/aadhaar-online-services/online-address-update-process/11973-my-update-request-got-rejected-for-invalid-documents-what-does-this-mean.html",
           "claimIds": [
             "claim_ind70_rejection_invalid_poa",
             "claim_ind70_rejection_holder_name",
@@ -892,7 +879,7 @@
           "id": "detail_ind70_status",
           "label": "Login-bound status check",
           "description": "UIDAI directs the holder to log in to Check Aadhaar Update Status.",
-          "url": "https://uidai.gov.in/index.php?Itemid=2524&id=922&lang=en&option=com_content&view=category",
+          "url": "https://uidai.gov.in/en/922-faqs/aadhaar-online-services/online-address-update-process/11972-q8-i-successfully-submitted-my-address-update-request-how-can-i-track-this.html",
           "claimIds": [
             "claim_ind70_status_login"
           ],
@@ -919,7 +906,7 @@
       "id": "node_ind70_update_address_public",
       "label": "Public Update Address route",
       "kind": "service",
-      "ownerAgencyId": "agency_uidai",
+      "ownerAgencyId": "agency_uidai_ind70",
       "summary": "Public choice surface for document or family-member address update.",
       "requiredState": "The visitor can view the public myAadhaar Update Address route.",
       "checks": [
@@ -962,7 +949,7 @@
       "id": "node_ind70_otp_login_boundary",
       "label": "OTP login boundary",
       "kind": "system",
-      "ownerAgencyId": "agency_uidai",
+      "ownerAgencyId": "agency_uidai_ind70",
       "summary": "The public document route ends at a resident OTP sign-in page before case data can be viewed or submitted.",
       "requiredState": "An Aadhaar number holder has a registered mobile number, as stated in the public FAQ.",
       "checks": [
@@ -1024,22 +1011,6 @@
       "status": "verified"
     },
     {
-      "id": "edge_ind70_submission_to_post",
-      "fromNodeId": "node_aadhaar_quality_review",
-      "toNodeId": "node_aadhaar_post_submission",
-      "relationship": "produces",
-      "label": "A successful authorised submission has published SRN, invoice, and status surfaces.",
-      "scenarioIds": [
-        "scenario_aadhaar_address_update_online_poa"
-      ],
-      "claimIds": [
-        "claim_ind70_online_submission_srn",
-        "claim_ind70_online_submission_invoice",
-        "claim_ind70_status_login"
-      ],
-      "status": "partial"
-    },
-    {
       "id": "edge_ind70_public_to_login",
       "fromNodeId": "node_ind70_update_address_public",
       "toNodeId": "node_ind70_otp_login_boundary",
@@ -1092,7 +1063,7 @@
       "likelyCause": "The route requires resident authentication before it reveals case-specific update activity.",
       "recovery": "This public-workflow pass does not proceed through the sign-in boundary; use the official route with the required registered mobile number.",
       "ownerAgencyIds": [
-        "agency_uidai"
+        "agency_uidai_ind70"
       ],
       "nodeIds": [
         "node_ind70_otp_login_boundary"
@@ -1144,17 +1115,6 @@
           "status": "partial"
         },
         {
-          "id": "step_ind70_review",
-          "label": "Await later quality and processing review",
-          "nodeId": "node_aadhaar_quality_review",
-          "action": "Treat the later verification as case-specific; do not infer approval from public guidance.",
-          "expectedResult": "UIDAI's published quality and processing review boundary is understood.",
-          "claimIds": [
-            "claim_ind70_quality_processing_team_review"
-          ],
-          "status": "partial"
-        },
-        {
           "id": "step_ind70_post",
           "label": "Retain published post-submission references",
           "nodeId": "node_aadhaar_post_submission",
@@ -1164,6 +1124,17 @@
             "claim_ind70_online_submission_srn",
             "claim_ind70_online_submission_invoice",
             "claim_ind70_status_login"
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "step_ind70_review",
+          "label": "Await later quality and processing review",
+          "nodeId": "node_aadhaar_quality_review",
+          "action": "Treat the later verification as case-specific; do not infer approval from public guidance.",
+          "expectedResult": "UIDAI's published quality and processing review boundary is understood.",
+          "claimIds": [
+            "claim_ind70_quality_processing_team_review"
           ],
           "status": "partial"
         }
@@ -1189,8 +1160,8 @@
         "No case status should be inferred from public guidance; status requires the official login-bound route."
       ],
       "documentationQualityNotes": [
-        "All claims use current accessible UIDAI public sources; the retained online-address FAQ is visibly reviewed 2026-07-22 and the current update page is visibly updated 2026-07-03.",
-        "The live MyAadhaar seed could not be observed, and no source in this pass gives a current actionable fee or processing duration for this primary route."
+        "The retained online-address FAQ pages had no visible date when accessed on 2026-09-05, so their currentness is limited to that access date; the current update page displayed a 2026-07-03 last-updated date.",
+        "The public myAadhaar Update Address route was observed on 2026-09-04 and displayed a ₹75 fee and 'Up to 30 days'; authenticated upload, payment, submission, and result surfaces were not observed."
       ],
       "status": "partial"
     },

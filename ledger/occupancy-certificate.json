@@ -30,28 +30,15 @@
       "status": "partial"
     },
     {
-      "id": "scenario_occupancy_certificate_deviation",
-      "label": "occupancy certificate deviation",
-      "summary": "Encountered published branch for Occupancy certificate for a sanctioned residential building.",
+      "id": "scenario_citizen_reported",
+      "label": "Citizen-reported occupancy-certificate accounts",
+      "summary": "Quarantined first-person accounts that may identify a failure mode or terminology but do not establish an official rule.",
       "tags": [
-        "branch"
+        "citizen_reported",
+        "quarantine"
       ],
-      "pathNodeIds": [
-        "node_occupancy_certificate_public_route"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "scenario_occupancy_certificate_pending",
-      "label": "occupancy certificate pending",
-      "summary": "Encountered published branch for Occupancy certificate for a sanctioned residential building.",
-      "tags": [
-        "branch"
-      ],
-      "pathNodeIds": [
-        "node_occupancy_certificate_public_route"
-      ],
-      "status": "partial"
+      "pathNodeIds": [],
+      "status": "contested"
     }
   ],
   "sources": [
@@ -89,7 +76,8 @@
       "publisher": "occupancy-certificate",
       "url": "https://bpas.bbmpgov.in/",
       "accessedAt": "2026-09-05",
-      "type": "official_guidance"
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
     },
     {
       "id": "source_ind77_bpas_home",
@@ -97,7 +85,8 @@
       "publisher": "occupancy-certificate",
       "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
       "accessedAt": "2026-09-05",
-      "type": "official_guidance"
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
     },
     {
       "id": "source_ind77_bpas_downloads",
@@ -105,7 +94,8 @@
       "publisher": "occupancy-certificate",
       "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/download.aspx",
       "accessedAt": "2026-09-05",
-      "type": "official_guidance"
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
     },
     {
       "id": "source_ind77_bpas_oc_manual",
@@ -113,7 +103,8 @@
       "publisher": "occupancy-certificate",
       "url": "https://bpas.bbmpgov.in/BPAMSClient4/Downloads/OCManual.pdf",
       "accessedAt": "2026-09-05",
-      "type": "official_guidance"
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
     },
     {
       "id": "source_ind77_bpas_faq",
@@ -121,7 +112,8 @@
       "publisher": "occupancy-certificate",
       "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
       "accessedAt": "2026-09-05",
-      "type": "official_guidance"
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
     },
     {
       "id": "source_ind77_bpas_helpdesk_kb",
@@ -129,7 +121,8 @@
       "publisher": "occupancy-certificate",
       "url": "https://bpas.bbmpgov.in/HelpDesk/KB",
       "accessedAt": "2026-09-05",
-      "type": "official_guidance"
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
     },
     {
       "id": "source_ind77_bpas_contact",
@@ -137,7 +130,8 @@
       "publisher": "occupancy-certificate",
       "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/ContactUs.aspx",
       "accessedAt": "2026-09-05",
-      "type": "official_guidance"
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
     },
     {
       "id": "source_ind77_legacy_seed_dead",
@@ -145,7 +139,8 @@
       "publisher": "occupancy-certificate",
       "url": "https://site.bbmp.gov.in/buildingplan.html",
       "accessedAt": "2026-09-05",
-      "type": "official_guidance"
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this inaccessible public route."
     },
     {
       "id": "source_ind77_gba_seed_home",
@@ -153,7 +148,8 @@
       "publisher": "occupancy-certificate",
       "url": "https://bbmp.gov.in/",
       "accessedAt": "2026-09-05",
-      "type": "official_guidance"
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
     },
     {
       "id": "source_ind77_citizen_reddit_oc_delay_2025",
@@ -577,25 +573,6 @@
       "notes": ""
     },
     {
-      "id": "claim_ind77_ekhatta_required",
-      "text": "The BPAS public home displays an important message that e-Khata is mandatory for Building Licence, Plinth Certificate and Occupancy Certificate applications from 1 July 2025.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": [
-        "scenario_occupancy_certificate_sanctioned_residential"
-      ],
-      "nodeIds": [
-        "node_occupancy_certificate_public_route"
-      ],
-      "sourceIds": [
-        "source_ind77_bpas_home"
-      ],
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "status": "verified",
-      "contradictsClaimIds": [],
-      "notes": ""
-    },
-    {
       "id": "claim_ind77_oc_manual_public",
       "text": "The BPAS public Download & Manuals route lists a User Manual for OC and public forms/checklists including a plan-sanction checklist, affidavits, bonds, Schedule-II and Schedule-III; it notes that affidavits and bonds should be on stamp paper.",
       "jurisdiction": "Bengaluru, Karnataka, India",
@@ -734,17 +711,15 @@
       "text": "A residential purchaser reported that an occupancy certificate was received after an earlier reported delay.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
-        "scenario_occupancy_certificate_sanctioned_residential"
+        "scenario_citizen_reported"
       ],
-      "nodeIds": [
-        "node_occupancy_certificate_public_route"
-      ],
+      "nodeIds": [],
       "sourceIds": [
         "source_ind77_citizen_reddit_oc_delay_2025"
       ],
       "evidenceGrade": "E",
       "basis": "observation",
-      "status": "citizen_reported",
+      "status": "contested",
       "contradictsClaimIds": [],
       "notes": "This is one account of a property-specific outcome. It does not establish that the building was sanctioned, identify an official route, or establish a general processing time or issuance requirement."
     },
@@ -753,17 +728,15 @@
       "text": "A residential purchaser reported being told that an occupancy-certificate application had been made, while the certificate remained unissued several months later.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
-        "scenario_occupancy_certificate_pending"
+        "scenario_citizen_reported"
       ],
-      "nodeIds": [
-        "node_occupancy_certificate_public_route"
-      ],
+      "nodeIds": [],
       "sourceIds": [
         "source_ind77_citizen_reddit_oc_delay_2025"
       ],
       "evidenceGrade": "E",
       "basis": "observation",
-      "status": "citizen_reported",
+      "status": "contested",
       "contradictsClaimIds": [],
       "notes": "The reported application and elapsed time are not independently verified. This cannot establish an official application route, deadline, service level, cause of delay, or who is responsible."
     },
@@ -772,17 +745,15 @@
       "text": "A purchaser reported observing construction that they believed differed from the plan they had seen, and expressed concern that this could affect the availability of an occupancy certificate.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
-        "scenario_occupancy_certificate_deviation"
+        "scenario_citizen_reported"
       ],
-      "nodeIds": [
-        "node_occupancy_certificate_public_route"
-      ],
+      "nodeIds": [],
       "sourceIds": [
         "source_ind77_citizen_reddit_plan_mismatch_2026"
       ],
       "evidenceGrade": "E",
       "basis": "observation",
-      "status": "citizen_reported",
+      "status": "contested",
       "contradictsClaimIds": [],
       "notes": "The claimed mismatch, the plan's status, and any consequence for the certificate are unverified. This account cannot establish a deviation, official compliance rule, eligibility decision, or recovery route."
     }
@@ -799,9 +770,7 @@
       "failureSignals": [],
       "recoveries": [],
       "scenarioIds": [
-        "scenario_occupancy_certificate_sanctioned_residential",
-        "scenario_occupancy_certificate_deviation",
-        "scenario_occupancy_certificate_pending"
+        "scenario_occupancy_certificate_sanctioned_residential"
       ],
       "claimIds": [
         "claim_ind77_owner_with_plan_sanction_eligible",
@@ -825,17 +794,13 @@
         "claim_ind77_e_khata_mandatory_for_oc_applications",
         "claim_ind77_bpas_public_identity",
         "claim_ind77_bpas_signin_boundary",
-        "claim_ind77_ekhatta_required",
         "claim_ind77_oc_manual_public",
         "claim_ind77_oc_submission_actor",
         "claim_ind77_oc_processing_window",
         "claim_ind77_oc_dashboard_output",
         "claim_ind77_public_support_surface",
         "claim_ind77_legacy_route_dead",
-        "claim_ind77_gba_home_no_bpas_handoff",
-        "claim_ind77_citizen_oc_issued_after_reported_delay",
-        "claim_ind77_citizen_pending_oc_after_reported_application",
-        "claim_ind77_citizen_possible_plan_deviation_concern"
+        "claim_ind77_gba_home_no_bpas_handoff"
       ],
       "status": "partial",
       "displayOrder": 1

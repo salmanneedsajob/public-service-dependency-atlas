@@ -41,9 +41,9 @@
           "authenticationPrerequisites": [
             "No authentication required to view the landing page; username, password and CAPTCHA are required by the visible Sign In form to continue."
           ],
-          "publicProcedureVsCaseDataBoundary": "",
-          "captchaDependencies": "",
-          "javascriptDependencies": "",
+          "publicProcedureVsCaseDataBoundary": "Public landing-page guidance is observable; sign-in, CAPTCHA, and any case data were not accessed.",
+          "captchaDependencies": "Username, password, and CAPTCHA are required by the visible Sign In form to continue.",
+          "javascriptDependencies": "Not assessed; unknown.",
           "publicGuidanceSurfaces": [
             "Nambike Nakshe/single-window construction permits",
             "e-Khata mandatory message",
@@ -61,7 +61,10 @@
           "recoverySurfaces": [
             "Public Helpdesk Knowledge base and Contact Us routes are exposed."
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "source_ind77_bpas_seed_home",
+            "source_ind77_bpas_home"
+          ],
           "limitations": [
             "No login, CAPTCHA solution, case lookup, owner/professional registration, plan upload, payment, submission or certificate-list inspection."
           ]
@@ -81,9 +84,9 @@
           "authenticationPrerequisites": [
             "None observed for the public listing; the linked OC manual itself was not opened."
           ],
-          "publicProcedureVsCaseDataBoundary": "",
-          "captchaDependencies": "",
-          "javascriptDependencies": "",
+          "publicProcedureVsCaseDataBoundary": "The public listing is observable; the linked manual and any authenticated or case-specific surface were not accessed.",
+          "captchaDependencies": "None observed for the public listing.",
+          "javascriptDependencies": "Not assessed; unknown.",
           "publicGuidanceSurfaces": [
             "User Manual for OC",
             "Forms & Checklist",
@@ -96,7 +99,9 @@
           "recoverySurfaces": [
             "The public Contact Us and Helpdesk routes remain available from BPAS navigation."
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "source_ind77_bpas_downloads"
+          ],
           "limitations": [
             "The linked PDF manual was not opened and no form was downloaded or submitted."
           ]
@@ -116,9 +121,9 @@
           "authenticationPrerequisites": [
             "FAQ text is public; its dashboard instructions concern an authenticated application console."
           ],
-          "publicProcedureVsCaseDataBoundary": "",
-          "captchaDependencies": "",
-          "javascriptDependencies": "",
+          "publicProcedureVsCaseDataBoundary": "FAQ text is public; authenticated dashboard status and certificate data were not accessed.",
+          "captchaDependencies": "Not observed on the public FAQ route; authenticated dashboard access was not tested.",
+          "javascriptDependencies": "Not assessed; unknown.",
           "publicGuidanceSurfaces": [
             "OC/BCC submission actor, joint inspection, compliance and 7-working-day statement; dashboard certificate-view instructions."
           ],
@@ -131,7 +136,9 @@
           "recoverySurfaces": [
             "General BPAS Helpdesk and Contact Us routes."
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "source_ind77_bpas_faq"
+          ],
           "limitations": [
             "FAQ content has no visible update date; no authenticated dashboard or certificate output was tested."
           ]
@@ -161,20 +168,21 @@
           "entryUrl": "https://site.bbmp.gov.in/buildingplan.html",
           "finalUrl": null,
           "redirects": [],
-          "finalStatus": 200,
           "checkedLinkCount": 1,
           "deadLinkCount": 1,
           "authenticationPrerequisites": [],
-          "publicProcedureVsCaseDataBoundary": "",
-          "captchaDependencies": "",
-          "javascriptDependencies": "",
+          "publicProcedureVsCaseDataBoundary": "No public procedure or case-data surface was available because the browser reported ERR_CONNECTION_REFUSED.",
+          "captchaDependencies": "Not observable because the route was inaccessible.",
+          "javascriptDependencies": "Not observable because the route was inaccessible.",
           "publicGuidanceSurfaces": [],
           "trackingSurfaces": [],
           "errorSurfaces": [
             "Browser displayed site.bbmp.gov.in refused to connect / ERR_CONNECTION_REFUSED."
           ],
           "recoverySurfaces": [],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "source_ind77_legacy_seed_dead"
+          ],
           "limitations": [
             "Older indexed content is retained only as stale context, not a current route; this dead seed is not repointed."
           ]
@@ -215,9 +223,9 @@
           "authenticationPrerequisites": [
             "None for the home page."
           ],
-          "publicProcedureVsCaseDataBoundary": "",
-          "captchaDependencies": "",
-          "javascriptDependencies": "",
+          "publicProcedureVsCaseDataBoundary": "The public home-page guidance is observable; no property, building, certificate, or case-data surface was accessed.",
+          "captchaDependencies": "None observed for the home page.",
+          "javascriptDependencies": "Not assessed; unknown.",
           "publicGuidanceSurfaces": [
             "e-Services Building Permission tile",
             "GBA contact/helpline and department navigation"
@@ -227,7 +235,9 @@
           "recoverySurfaces": [
             "General GBA contact/helpline surface on home page; no occupancy-specific recovery route identified."
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "source_ind77_gba_seed_home"
+          ],
           "limitations": [
             "No property lookup, building lookup, certificate list, or tile target navigation was used."
           ]

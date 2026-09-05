@@ -5,10 +5,7 @@
   "serviceTitle": "GBA property-tax payment",
   "asOf": "2026-09-05",
   "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
-  "encounteredBranchScenarioIds": [
-    "scenario_property_tax_payment_failed",
-    "scenario_property_tax_receipt_discrepancy"
-  ],
+  "encounteredBranchScenarioIds": [],
   "safetyBoundary": "No PID, SAS/application number, owner name, property address, tax calculation, payment, bank interaction, or receipt lookup was entered or requested. Public pages only.",
   "seedChecks": [
     {
@@ -32,25 +29,6 @@
   ],
   "sources": [
     {
-      "id": "source_ind72_official_portal",
-      "title": "BBMP Property Tax System — SAS Property Tax Payment",
-      "url": "https://bbmptax.karnataka.gov.in/",
-      "sourceType": "current official service portal",
-      "agencyNameDisplayed": "GBA - Government of Karnataka",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "accessedAt": "2026-09-05",
-      "publishedAt": "2026-04-01",
-      "publishedAtNote": "Portal footer displays Version 01-04-2026/13.1-1.",
-      "evidenceGrade": "B",
-      "archive": {
-        "attemptedAt": "2026-09-05",
-        "snapshotUrl": "https://web.archive.org/save/https://bbmptax.karnataka.gov.in/",
-        "status": "failed",
-        "failure": "The research browser rejected the Wayback save URL as unsafe before it could submit a capture request.",
-        "limitation": "No Wayback snapshot could be captured in this environment; the original official URL is retained."
-      }
-    },
-    {
       "id": "source_ind72_official_service_details",
       "title": "Service Details – Bengaluru City Corporation Property Tax",
       "url": "https://bbmptax.karnataka.gov.in/pages/service_details.aspx",
@@ -68,38 +46,9 @@
         "failure": "The research browser rejected the Wayback save URL as unsafe before it could submit a capture request.",
         "limitation": "No Wayback snapshot could be captured in this environment; the original official URL is retained."
       }
-    },
-    {
-      "id": "source_ind72_official_receipt_print",
-      "title": "BBMP Property Tax System — Receipt Print",
-      "url": "https://bbmptax.karnataka.gov.in/Forms/PrintForms.aspx?rptype=3",
-      "sourceType": "current official portal form",
-      "agencyNameDisplayed": "GBA - Government of Karnataka",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "accessedAt": "2026-09-05",
-      "publishedAt": "2026-04-01",
-      "publishedAtNote": "Portal footer displays Version 01-04-2026/13.1-1; the form itself does not show a separate publication date.",
-      "evidenceGrade": "B",
-      "archive": {
-        "attemptedAt": "2026-09-05",
-        "snapshotUrl": "https://web.archive.org/save/https://bbmptax.karnataka.gov.in/Forms/PrintForms.aspx?rptype=3",
-        "status": "failed",
-        "failure": "The research browser rejected the Wayback save URL as unsafe before it could submit a capture request.",
-        "limitation": "No Wayback snapshot could be captured in this environment; the original official URL is retained."
-      }
     }
   ],
   "claims": [
-    {
-      "id": "claim_ind72_sas_pid_entry",
-      "statement": "The public SAS Property Tax Payment page labels an entry field for a 10-digit application number or PID number.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_portal"],
-      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
-      "notes": "The field was observed only; no identifier or owner-name fragment was entered."
-    },
     {
       "id": "claim_ind72_service_eligibility",
       "statement": "The service-details page says the online Property Tax Payment Service is for property owners within Bengaluru City Corporation limits.",
@@ -108,180 +57,6 @@
       "basis": "observation",
       "sourceIds": ["source_ind72_official_service_details"],
       "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"]
-    },
-    {
-      "id": "claim_ind72_payment_modes",
-      "statement": "The service-details page names net banking as an integrated payment-gateway option.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_service_details"],
-      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"]
-    },
-    {
-      "id": "claim_ind72_confirmation_receipt",
-      "statement": "The service-details page states that the portal provides real-time payment confirmation and receipt generation.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_service_details"],
-      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"]
-    },
-    {
-      "id": "claim_ind72_tax_calendar",
-      "statement": "The portal lists the assessment-year 2026–27 rebate period as 01-04-2026 to 30-04-2026.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_portal"],
-      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"]
-    },
-    {
-      "id": "claim_ind72_revenue_office",
-      "statement": "The portal identifies the Joint Commissioner of Revenue as its Head Office.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_portal"],
-      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"]
-    },
-    {
-      "id": "claim_ind72_online_failure_bank_route",
-      "statement": "For failed online transactions and bank-initiated refunds, the portal advises taxpayers to contact their respective banks.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_portal"],
-      "scenarioIds": ["scenario_property_tax_payment_failed"]
-    },
-    {
-      "id": "claim_ind72_payment_grievance_route",
-      "statement": "The portal directs taxpayers with a payment-related issue to raise a ticket through its Grievance section.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_portal"],
-      "scenarioIds": ["scenario_property_tax_payment_failed"]
-    },
-    {
-      "id": "claim_ind72_receipt_discrepancy_aro",
-      "statement": "The portal directs users with receipt discrepancies to find their ARO and links to a complete list.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_portal"],
-      "scenarioIds": ["scenario_property_tax_receipt_discrepancy"]
-    },
-    {
-      "id": "claim_ind72_receipt_print_boundary",
-      "statement": "The public Receipt Print form asks for a 10-digit application number.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_receipt_print"],
-      "scenarioIds": ["scenario_property_tax_receipt_discrepancy"],
-      "notes": "No identifier, year, CAPTCHA, or receipt request was submitted."
-    },
-    {
-      "id": "claim_ind72_payment_debit_credit_cards",
-      "statement": "The service-details page names debit/credit cards as an integrated payment-gateway option.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_service_details"],
-      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"]
-    },
-    {
-      "id": "claim_ind72_payment_upi",
-      "statement": "The service-details page names UPI as an integrated payment-gateway option.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_service_details"],
-      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"]
-    },
-    {
-      "id": "claim_ind72_payment_other_digital_modes",
-      "statement": "The service-details page says that the integrated payment gateway supports other digital modes.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_service_details"],
-      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"]
-    },
-    {
-      "id": "claim_ind72_first_half_interest_date",
-      "statement": "The portal lists first-half interest from 01-06-2026.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_portal"],
-      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"]
-    },
-    {
-      "id": "claim_ind72_second_half_interest_date",
-      "statement": "The portal lists second-half interest from 01-12-2026.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_portal"],
-      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"]
-    },
-    {
-      "id": "claim_ind72_penalty_start_date",
-      "statement": "The portal lists penalty as starting on 29-11-2026.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_portal"],
-      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"]
-    },
-    {
-      "id": "claim_ind72_revenue_office_location",
-      "statement": "The portal lists NR Square as the Head Office location.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_portal"],
-      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"]
-    },
-    {
-      "id": "claim_ind72_revenue_office_telephone",
-      "statement": "The portal displays telephone contact routes for the Head Office.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_portal"],
-      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"]
-    },
-    {
-      "id": "claim_ind72_revenue_office_email",
-      "statement": "The portal displays an email contact route for the Head Office.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_portal"],
-      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"]
-    },
-    {
-      "id": "claim_ind72_receipt_print_assessment_year",
-      "statement": "The public Receipt Print form asks for an assessment year.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_receipt_print"],
-      "scenarioIds": ["scenario_property_tax_receipt_discrepancy"],
-      "notes": "No identifier, year, CAPTCHA, or receipt request was submitted."
-    },
-    {
-      "id": "claim_ind72_receipt_print_captcha",
-      "statement": "The public Receipt Print form asks for CAPTCHA text.",
-      "status": "verified",
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "sourceIds": ["source_ind72_official_receipt_print"],
-      "scenarioIds": ["scenario_property_tax_receipt_discrepancy"],
-      "notes": "No identifier, year, CAPTCHA, or receipt request was submitted."
     }
   ],
   "expectations": {
@@ -289,19 +64,16 @@
     "cost": {
       "state": "mentioned",
       "searchedRoutes": [
-        "https://bbmptax.karnataka.gov.in/",
         "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
       ],
-      "claimIds": ["claim_ind72_tax_calendar"],
-      "searchNote": "The current pages name property-tax payment, rebates, interest, and penalties but give no tax amount, fee, or actionable fee schedule for this scenario."
+      "searchNote": "The reviewed specific service page describes electronic property-tax payment but gives no tax amount, fee, or actionable fee schedule for this scenario."
     },
     "documents": {
       "state": "absent",
       "searchedRoutes": [
-        "https://bbmptax.karnataka.gov.in/",
         "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
       ],
-      "searchNote": "Neither reviewed current official page states a document to submit, upload, provide, produce, or attach for payment using a known SAS/PID."
+      "searchNote": "The reviewed specific service page states no document to submit, upload, provide, produce, or attach for payment using a known SAS/PID."
     },
     "eligibility": {
       "state": "stated",
@@ -309,20 +81,25 @@
       "actionableValue": "Property owners within Bengaluru City Corporation limits."
     },
     "time": {
-      "state": "stated",
-      "claimIds": ["claim_ind72_tax_calendar", "claim_ind72_first_half_interest_date", "claim_ind72_second_half_interest_date", "claim_ind72_penalty_start_date"],
-      "actionableValue": "For assessment year 2026–27, the portal lists the rebate period from 01-04-2026 through 30-04-2026; it separately lists first-half interest from 01-06-2026, second-half interest from 01-12-2026, and penalty from 29-11-2026.",
-      "note": "This is a payment-calendar rule, not a processing-time commitment."
+      "state": "mentioned",
+      "searchedRoutes": [
+        "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
+      ],
+      "searchNote": "The specific service page was searched for dates and processing timing; this handoff retains no direct time claim after citation-cap enforcement."
     },
     "owner": {
-      "state": "stated",
-      "claimIds": ["claim_ind72_revenue_office", "claim_ind72_revenue_office_location", "claim_ind72_revenue_office_telephone", "claim_ind72_revenue_office_email"],
-      "actionableValue": "Joint Commissioner of Revenue, head office at NR Square, GBA, Bengaluru, with portal-listed telephone and email contacts."
+      "state": "mentioned",
+      "searchedRoutes": [
+        "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
+      ],
+      "searchNote": "The specific service page was searched for the responsible office; this handoff retains no direct owner claim after citation-cap enforcement."
     },
     "after-submission": {
-      "state": "stated",
-      "claimIds": ["claim_ind72_confirmation_receipt"],
-      "actionableValue": "The service page states that a user receives real-time payment confirmation and receipt generation."
+      "state": "mentioned",
+      "searchedRoutes": [
+        "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
+      ],
+      "searchNote": "The specific service page was searched for a post-payment surface; this handoff retains no direct after-submission claim after citation-cap enforcement."
     }
   },
   "limitations": [

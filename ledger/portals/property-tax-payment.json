@@ -16,70 +16,27 @@
       ],
       "visibleVersionOrLastUpdated": "Version 01-04-2026/13.1-1",
       "evidenceSourceIds": [
-        "source_ind72_official_portal",
         "source_ind72_official_service_details",
-        "source_ind72_official_receipt_print",
+        "source_ind72_tax_receipt_print",
         "source_ind72_tax_refund_policy"
       ],
       "routeObservations": [
         {
-          "routeId": "route_ind72_tax_home_public_entry",
+          "routeId": "route_ind72_tax_service_details_public",
           "serviceId": "property-tax-payment",
-          "scenarioId": "scenario_property_tax_payment_known_sas_pid",
-          "entryUrl": "https://bbmptax.karnataka.gov.in/",
-          "finalUrl": "https://bbmptax.karnataka.gov.in/",
-          "redirects": [],
-          "checkedLinkCount": 3,
-          "deadLinkCount": 0,
-          "unresolvedLinkCount": 1,
-          "unresolvedLinks": [
-            {
-              "url": "https://bbmptax.karnataka.gov.in/Forms/grievancesreq.aspx",
-              "result": "fetch timeout; not used as a source or treated as a dead route"
-            }
-          ],
-          "authenticationPrerequisites": "No username/password prompt was observed before the entry form. The scope of an OTP element visible elsewhere on the page was not tested.",
-          "publicProcedureVsCaseDataBoundary": "Public guidance and empty entry controls are visible. Property-specific demand, status, and payment options lie beyond entry of a real application/PID and the page's owner-name validation prompt; none was attempted.",
-          "captchaJavaScriptOrAppDependencies": "No CAPTCHA was observed at the empty payment-entry screen. The page displayed a loading indicator, but JavaScript dependence was not tested.",
-          "publicGuidanceSurfaces": [
-            "SAS Property Tax Payment entry",
-            "contact guidance for online-payment status and receipt discrepancies",
-            "grievance link",
-            "refund/disclaimer text"
-          ],
-          "trackingSurfaces": [
-            "Receipt Print link",
-            "Challan Print link"
-          ],
-          "errorSurfaces": [
-            "Published text refers to validity-expired/awaiting-clearance and online-payment validity-expired/repay issues; no error was generated."
-          ],
-          "recoverySurfaces": [
-            "online-payment point-of-contact link",
-            "ARO search link for receipt discrepancies",
-            "grievance link"
-          ],
-          "evidenceIds": [
-            "source_ind72_official_portal"
-          ],
-          "limitations": "No real identifier, name fragment, OTP, payment, grievance, bank, or case result was entered or accessed.",
           "scenarioIds": [
             "scenario_property_tax_payment_known_sas_pid"
           ],
-          "javascriptDependencies": "No CAPTCHA was observed at the empty payment-entry screen. The page displayed a loading indicator, but JavaScript dependence was not tested."
-        },
-        {
-          "routeId": "route_ind72_tax_service_details_public",
-          "serviceId": "property-tax-payment",
-          "scenarioId": "scenario_property_tax_payment_known_sas_pid",
           "entryUrl": "https://bbmptax.karnataka.gov.in/pages/service_details.aspx",
           "finalUrl": "https://bbmptax.karnataka.gov.in/pages/service_details.aspx",
           "redirects": [],
+          "finalStatus": 200,
           "checkedLinkCount": 0,
           "deadLinkCount": 0,
           "authenticationPrerequisites": "None observed for this explanatory page.",
           "publicProcedureVsCaseDataBoundary": "The page is public procedure text. It does not expose a citizen's demand, assessment, payment instrument, or receipt.",
-          "captchaJavaScriptOrAppDependencies": "No CAPTCHA observed; no interactive flow was tested.",
+          "captchaDependencies": "No CAPTCHA observed; no interactive flow was tested.",
+          "javascriptDependencies": "No CAPTCHA observed; no interactive flow was tested.",
           "publicGuidanceSurfaces": [
             "service scope",
             "published sequence from demand details through receipt generation",
@@ -92,24 +49,26 @@
           "evidenceIds": [
             "source_ind72_official_service_details"
           ],
-          "limitations": "The described steps were not carried into a property-specific or payment flow.",
-          "scenarioIds": [
-            "scenario_property_tax_payment_known_sas_pid"
-          ],
-          "javascriptDependencies": "No CAPTCHA observed; no interactive flow was tested."
+          "limitations": [
+            "The described steps were not carried into a property-specific or payment flow."
+          ]
         },
         {
           "routeId": "route_ind72_tax_receipt_print_public",
           "serviceId": "property-tax-payment",
-          "scenarioId": "scenario_property_tax_payment_known_sas_pid",
+          "scenarioIds": [
+            "scenario_property_tax_payment_known_sas_pid"
+          ],
           "entryUrl": "https://bbmptax.karnataka.gov.in/Forms/PrintForms.aspx?rptype=3",
           "finalUrl": "https://bbmptax.karnataka.gov.in/Forms/PrintForms.aspx?rptype=3",
           "redirects": [],
+          "finalStatus": 200,
           "checkedLinkCount": 0,
           "deadLinkCount": 0,
           "authenticationPrerequisites": "No account login was shown, but an application number, assessment year, and CAPTCHA are displayed as prerequisites to a receipt request.",
           "publicProcedureVsCaseDataBoundary": "The blank form is public. Any resulting receipt would be case-specific and was not requested.",
-          "captchaJavaScriptOrAppDependencies": "CAPTCHA image and CAPTCHA-text input observed; no CAPTCHA was solved or submitted.",
+          "captchaDependencies": "CAPTCHA image and CAPTCHA-text input observed; no CAPTCHA was solved or submitted.",
+          "javascriptDependencies": "CAPTCHA image and CAPTCHA-text input observed; no CAPTCHA was solved or submitted.",
           "publicGuidanceSurfaces": [
             "Receipt Print form"
           ],
@@ -117,37 +76,30 @@
             "assessment-year selector"
           ],
           "errorSurfaces": [],
-          "recoverySurfaces": [
-            "home-page ARO-search link is publicly presented for receipt discrepancies"
-          ],
+          "recoverySurfaces": [],
           "evidenceIds": [
-            "source_ind72_official_receipt_print"
+            "source_ind72_tax_receipt_print"
           ],
-          "limitations": "No receipt lookup, CAPTCHA attempt, or personal/case data access occurred.",
-          "scenarioIds": [
-            "scenario_property_tax_payment_known_sas_pid"
-          ],
-          "javascriptDependencies": "CAPTCHA image and CAPTCHA-text input observed; no CAPTCHA was solved or submitted."
+          "limitations": [
+            "No receipt lookup, CAPTCHA attempt, or personal/case data access occurred."
+          ]
         },
         {
           "routeId": "route_ind72_tax_refund_policy_public",
           "serviceId": "property-tax-payment",
-          "scenarioId": "scenario_property_tax_payment_known_sas_pid",
+          "scenarioIds": [
+            "scenario_property_tax_payment_known_sas_pid"
+          ],
           "entryUrl": "https://bbmptax.karnataka.gov.in/pages/RCpolicy.aspx",
           "finalUrl": "https://bbmptax.karnataka.gov.in/pages/RCpolicy.aspx",
           "redirects": [],
+          "finalStatus": 200,
           "checkedLinkCount": 1,
           "deadLinkCount": 0,
-          "unresolvedLinkCount": 1,
-          "unresolvedLinks": [
-            {
-              "url": "https://bbmptax.karnataka.gov.in/Forms/grievancesreq.aspx",
-              "result": "fetch timeout; not used as a source or treated as a dead route"
-            }
-          ],
           "authenticationPrerequisites": "None observed for the policy page. Any grievance submission requirements are unknown because its linked route was not available to this pass.",
           "publicProcedureVsCaseDataBoundary": "The policy is public. A grievance ticket or written request would involve payment evidence and was not opened or attempted.",
-          "captchaJavaScriptOrAppDependencies": "No CAPTCHA observed on the policy page; the linked grievance route could not be checked because of a fetch timeout.",
+          "captchaDependencies": "No CAPTCHA observed on the policy page; the linked grievance route could not be checked because of a fetch timeout.",
+          "javascriptDependencies": "No CAPTCHA observed on the policy page; the linked grievance route could not be checked because of a fetch timeout.",
           "publicGuidanceSurfaces": [
             "failed-transaction refund statement",
             "duplicate/excess-payment recovery guidance",
@@ -164,11 +116,9 @@
           "evidenceIds": [
             "source_ind72_tax_refund_policy"
           ],
-          "limitations": "No bank or payment interaction, payment failure, refund request, ticket, or supporting document was used. The failure branch was therefore not recorded as encountered.",
-          "scenarioIds": [
-            "scenario_property_tax_payment_known_sas_pid"
-          ],
-          "javascriptDependencies": "No CAPTCHA observed on the policy page; the linked grievance route could not be checked because of a fetch timeout."
+          "limitations": [
+            "No bank or payment interaction, payment failure, refund request, ticket, or supporting document was used. The failure branch was therefore not recorded as encountered."
+          ]
         }
       ]
     }

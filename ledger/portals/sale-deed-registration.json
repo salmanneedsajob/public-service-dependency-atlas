@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "sale-deed-registration",
+  "portals": [
+    {
+      "portalId": "portal_ind78_kaveri_20260905",
+      "host": "kaveri.karnataka.gov.in",
+      "observedAt": "2026-09-05T23:39:51+05:30",
+      "serviceId": "sale-deed-registration",
+      "serviceOwner": "Department of Stamps and Registration, Government of Karnataka",
+      "portalOperator": "Government of Karnataka",
+      "agencyNamingShown": "Kaveri Online Services",
+      "languages": [],
+      "visibleVersionOrLastUpdated": "",
+      "evidenceSourceIds": [
+        "source_ind78_kaveri_landing_public_20260905"
+      ],
+      "routeObservations": [
+        {
+          "routeId": "route_ind78_kaveri_public_landing",
+          "serviceId": "sale-deed-registration",
+          "scenarioIds": [
+            "scenario_sale_deed_bengaluru_residential"
+          ],
+          "entryUrl": "https://kaveri.karnataka.gov.in/landing-page",
+          "finalUrl": "https://kaveri.karnataka.gov.in/landing-page",
+          "redirects": [],
+          "finalStatus": 200,
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": "unknown; no authentication prompt or control was reached in the bounded public observation",
+          "publicProcedureVsCaseDataBoundary": "",
+          "captchaDependencies": "",
+          "javascriptDependencies": "",
+          "publicGuidanceSurfaces": [],
+          "trackingSurfaces": [],
+          "errorSurfaces": [],
+          "recoverySurfaces": [],
+          "evidenceIds": [],
+          "limitations": [
+            "Browser navigation timed out after the tab title became visible; no public controls or textual guidance could be recorded.",
+            "No login, OTP, CAPTCHA solving, form entry, upload, payment, appointment, or submission was attempted."
+          ]
+        }
+      ]
+    },
+    {
+      "portalId": "portal_ind78_revenue_20260905",
+      "host": "revenue.karnataka.gov.in",
+      "observedAt": "2026-09-05T23:39:51+05:30",
+      "serviceId": "sale-deed-registration",
+      "serviceOwner": "Revenue Department, Government of Karnataka",
+      "portalOperator": "Government of Karnataka",
+      "agencyNamingShown": "",
+      "languages": [],
+      "visibleVersionOrLastUpdated": "",
+      "evidenceSourceIds": [
+        "source_ind78_revenue_home_public_20260905"
+      ],
+      "routeObservations": [
+        {
+          "routeId": "route_ind78_revenue_public_home",
+          "serviceId": "sale-deed-registration",
+          "scenarioIds": [
+            "scenario_sale_deed_bengaluru_residential"
+          ],
+          "entryUrl": "https://revenue.karnataka.gov.in/",
+          "finalUrl": "https://revenue.karnataka.gov.in/",
+          "redirects": [],
+          "finalStatus": 200,
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": "unknown",
+          "publicProcedureVsCaseDataBoundary": "",
+          "captchaDependencies": "",
+          "javascriptDependencies": "",
+          "publicGuidanceSurfaces": [],
+          "trackingSurfaces": [],
+          "errorSurfaces": [],
+          "recoverySurfaces": [],
+          "evidenceIds": [],
+          "limitations": [
+            "Navigation timed out; this is not a claim that the department route is permanently unavailable.",
+            "No alternate or undocumented route was substituted."
+          ]
+        }
+      ]
+    }
+  ]
+}

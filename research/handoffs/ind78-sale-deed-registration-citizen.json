@@ -1,0 +1,176 @@
+{
+  "handoffVersion": "1.0",
+  "issue": "IND-78",
+  "assignedPass": "citizen-evidence",
+  "serviceId": "sale-deed-registration",
+  "serviceTitle": "Bengaluru residential sale-deed registration through Kaveri 2.0",
+  "primaryScenarioId": "scenario_sale_deed_bengaluru_residential",
+  "encounteredBranchScenarioIds": [],
+  "asOf": "2026-09-05",
+  "jurisdiction": "Bengaluru, Karnataka, India",
+  "quarantine": {
+    "classification": "citizen_reported",
+    "rule": "All records in this handoff are public first-person accounts. They are Grade E and may identify a possible failure mode or recovery lead only; they cannot establish an official rule, required step, fee, timeline, system cause, or remedy.",
+    "integrationInstruction": "Keep these records in citizen_reported. Do not use them as official workflow, expectation-cell, portal-observation, or rule evidence. Do not resolve their uncertainty by inference.",
+    "redaction": {
+      "applied": true,
+      "removedCategories": [
+        "names",
+        "handles",
+        "vehicle identifiers",
+        "property identifiers",
+        "account identifiers",
+        "application identifiers",
+        "addresses",
+        "phone numbers",
+        "identity data"
+      ],
+      "note": "Summaries intentionally omit author handles, specific property/building/area details, bank/lender details, payment amounts, and any other identifying transaction details."
+    }
+  },
+  "safetyBoundary": {
+    "performed": [
+      "read public web pages without authentication"
+    ],
+    "notPerformed": [
+      "login",
+      "property or party search",
+      "deed drafting or upload",
+      "consideration-data handling",
+      "stamp-duty transaction",
+      "eKYC",
+      "appointment action",
+      "payment",
+      "SRO booking"
+    ]
+  },
+  "sources": [
+    {
+      "id": "source_ind78_citizen_sro_withdrawn_20260707",
+      "kind": "public-first-person-forum-account",
+      "title": "Redacted citizen account: registration could not proceed and displayed an SRO-withdrawn status",
+      "url": "https://www.reddit.com/r/LegalAdviceIndia/comments/1upgj0y/kaveri_20_property_registration_sro_withdrawn/",
+      "publishedAt": "2026-07-07",
+      "accessedAt": "2026-09-05",
+      "jurisdiction": "Karnataka, India; the writer did not establish Bengaluru-specific location in the retained summary.",
+      "archive": {
+        "status": "not-captured",
+        "limitation": "No archive snapshot was requested for a citizen post because archiving could retain the author's unredacted account content. The live public URL is retained solely as provenance."
+      },
+      "redactionApplied": true,
+      "limitations": [
+        "Self-report; no official corroboration.",
+        "Historical, time-bound public account; it is not current or general evidence of the service.",
+        "The account asks for help and does not verify a resolution.",
+        "The reported interface state and absence of a reschedule control are not independently observed.",
+        "It is not evidence of a general Kaveri rule, cause, fee consequence, or recovery path."
+      ]
+    },
+    {
+      "id": "source_ind78_citizen_registration_delay_20260417",
+      "kind": "public-first-person-forum-account",
+      "title": "Redacted citizen account: proposed Bengaluru registration date was later deferred",
+      "url": "https://www.reddit.com/r/indianrealestate/comments/1snuk4i/bengaluru_stuck_in_registration_limbo_should_i/",
+      "publishedAt": "2026-04-17",
+      "accessedAt": "2026-09-05",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "archive": {
+        "status": "not-captured",
+        "limitation": "No archive snapshot was requested for a citizen post because archiving could retain the author's unredacted account content. The live public URL is retained solely as provenance."
+      },
+      "redactionApplied": true,
+      "limitations": [
+        "Self-report; no official corroboration.",
+        "Historical, time-bound public account; it is not current or general evidence of the service.",
+        "The claimed technical cause and estimated timing were attributed to other people by the writer and are not retained as facts.",
+        "No completed registration or verified recovery is reported.",
+        "It is not evidence of a general Kaveri rule, cause, timeline, or remedy."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind78_citizen_sro_withdrawn_status_reported",
+      "scenarioIds": [
+        "scenario_sale_deed_bengaluru_residential"
+      ],
+      "classification": "citizen_reported",
+      "statement": "One public first-person account reported that a planned Karnataka property-registration visit did not proceed and that the account later displayed an SRO-withdrawn application status.",
+      "grade": "E",
+      "basis": "observation",
+      "status": "reported",
+      "sourceIds": [
+        "source_ind78_citizen_sro_withdrawn_20260707"
+      ],
+      "limitations": "This is one unverified account outside a retained Bengaluru-specific location. It cannot establish that an SRO status occurs generally, why it occurred, or what it means.",
+      "officialRuleUse": "prohibited"
+    },
+    {
+      "id": "claim_ind78_citizen_reschedule_control_absence_reported",
+      "scenarioIds": [
+        "scenario_sale_deed_bengaluru_residential"
+      ],
+      "classification": "citizen_reported",
+      "statement": "The same account reported seeing no reschedule option on its application-status page after that reported status change.",
+      "grade": "E",
+      "basis": "observation",
+      "status": "reported",
+      "sourceIds": [
+        "source_ind78_citizen_sro_withdrawn_20260707"
+      ],
+      "limitations": "A single account's interface report is not a current public-interface observation and cannot establish availability of any control or recovery route.",
+      "officialRuleUse": "prohibited"
+    },
+    {
+      "id": "claim_ind78_citizen_bengaluru_date_deferral_reported",
+      "scenarioIds": [
+        "scenario_sale_deed_bengaluru_residential"
+      ],
+      "classification": "citizen_reported",
+      "statement": "One public first-person Bengaluru account reported that a proposed registration date was deferred shortly before it was expected to occur.",
+      "grade": "E",
+      "basis": "observation",
+      "status": "reported",
+      "sourceIds": [
+        "source_ind78_citizen_registration_delay_20260417"
+      ],
+      "limitations": "The account's reported explanation for the delay is not independently verified and is excluded from this claim. This account cannot establish a system-wide delay, cause, timeline, or right to a particular outcome.",
+      "officialRuleUse": "prohibited"
+    }
+  ],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind78_citizen_reported_status_without_reschedule",
+      "scenarioIds": [
+        "scenario_sale_deed_bengaluru_residential"
+      ],
+      "classification": "citizen_reported",
+      "label": "Reported SRO-withdrawn status with no reported reschedule control",
+      "claimIds": [
+        "claim_ind78_citizen_sro_withdrawn_status_reported",
+        "claim_ind78_citizen_reschedule_control_absence_reported"
+      ],
+      "possibleRecovery": "Unknown. The account asked about submitting a fresh application, but did not verify that action or its consequences.",
+      "limitations": "Quarantined Grade E account; not a documented workflow or recovery route."
+    },
+    {
+      "id": "roadblock_ind78_citizen_reported_date_deferral",
+      "scenarioIds": [
+        "scenario_sale_deed_bengaluru_residential"
+      ],
+      "classification": "citizen_reported",
+      "label": "Reported late deferral of a Bengaluru registration date",
+      "claimIds": [
+        "claim_ind78_citizen_bengaluru_date_deferral_reported"
+      ],
+      "possibleRecovery": "Unknown. The account did not report a verified resolution.",
+      "limitations": "Quarantined Grade E account; not evidence of a general service delay or its cause."
+    }
+  ],
+  "unresolvedLimitations": [
+    "No official rule, eligibility, document, cost, timing, owner, or post-submission conclusion is supplied by this pass.",
+    "No branch scenario was recorded: the accounts did not establish the manifest's property-record-mismatch or document-returned branches.",
+    "No public first-person account in this handoff establishes a verified recovery path.",
+    "Citizen-source archive snapshots were not captured to avoid retaining unredacted personal account content."
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "handoffVersion": 2,
+  "issueId": "IND-78",
+  "serviceId": "sale-deed-registration",
+  "serviceTitle": "Bengaluru residential sale-deed registration through Kaveri 2.0",
+  "primaryScenarioId": "scenario_sale_deed_bengaluru_residential",
+  "declaredBranchScenarioIds": [
+    "scenario_sale_deed_property_record_mismatch",
+    "scenario_sale_deed_document_returned"
+  ],
+  "encounteredBranchScenarioIds": [],
+  "assignedPass": "public-workflow",
+  "asOf": "2026-09-05",
+  "jurisdiction": "Bengaluru, Karnataka, India",
+  "agency": "Department of Stamps and Registration, Government of Karnataka",
+  "disclaimer": "Public-only workflow observation. No login, OTP, property or party search, deed drafting or upload, consideration entry, stamp-duty transaction, eKYC, appointment, payment, or SRO booking was attempted.",
+  "sources": [
+    {
+      "id": "source_ind78_kaveri_landing_public_20260905",
+      "title": "Kaveri Online Services public landing page",
+      "url": "https://kaveri.karnataka.gov.in/landing-page",
+      "accessedAt": "2026-09-05T23:39:51+05:30",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "agency": "Department of Stamps and Registration, Government of Karnataka",
+      "grade": "B",
+      "basis": "observation",
+      "publishedAt": null,
+      "visibleDateNote": "No publication or last-updated date was visible in the captured browser tab.",
+      "archive": {
+        "snapshotUrl": null,
+        "captureStatus": "failed",
+        "captureFailure": "Wayback capture was not completed because the live route timed out during this run; no archived substitute was used."
+      }
+    },
+    {
+      "id": "source_ind78_revenue_home_public_20260905",
+      "title": "Revenue Department of Karnataka public home route",
+      "url": "https://revenue.karnataka.gov.in/",
+      "accessedAt": "2026-09-05T23:39:51+05:30",
+      "jurisdiction": "Karnataka, India",
+      "agency": "Revenue Department, Government of Karnataka",
+      "grade": "B",
+      "basis": "observation",
+      "publishedAt": null,
+      "visibleDateNote": "No page body, publication date, or last-updated date was captured because the public route timed out.",
+      "archive": {
+        "snapshotUrl": null,
+        "captureStatus": "failed",
+        "captureFailure": "Wayback capture was not completed because the live route timed out during this run; no archived substitute was used."
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind78_kaveri_public_title_and_boundary",
+      "statement": "Opening the official Kaveri landing URL produced a browser tab titled \"Kaveri Online Services\".",
+      "status": "partial",
+      "grade": "B",
+      "basis": "observation",
+      "sourceIds": ["source_ind78_kaveri_landing_public_20260905"],
+      "scenarioIds": ["scenario_sale_deed_bengaluru_residential"],
+      "notes": "This records the current public interface result only; no login or case-data stage was observed. Case-specific route was not observed."
+    },
+    {
+      "id": "claim_ind78_kaveri_public_boundary_unobserved",
+      "statement": "The login and case-data stage for the Kaveri sale-deed workflow was not observed in this public pass.",
+      "status": "unknown",
+      "grade": "Unknown",
+      "basis": "observation",
+      "sourceIds": ["source_ind78_kaveri_landing_public_20260905"],
+      "scenarioIds": ["scenario_sale_deed_bengaluru_residential"],
+      "notes": "The bounded observation stopped at the public landing page; no login, applicant, property, party, deed, payment, appointment, or case-data route was opened."
+    },
+    {
+      "id": "claim_ind78_sale_deed_public_next_route_unknown",
+      "statement": "The unauthenticated next route for Bengaluru residential sale-deed registration remains unknown from the public pass.",
+      "status": "unknown",
+      "grade": "Unknown",
+      "basis": "observation",
+      "sourceIds": ["source_ind78_kaveri_landing_public_20260905"],
+      "scenarioIds": ["scenario_sale_deed_bengaluru_residential"],
+      "notes": "No downstream route was exposed in the bounded observation; no account, applicant, property, party, deed, payment, appointment, or case data was entered or queried."
+    },
+    {
+      "id": "claim_ind78_revenue_public_route_unavailable",
+      "statement": "The supplied Revenue Department public home route did not return a usable page body during this pass because navigation timed out.",
+      "status": "partial",
+      "grade": "B",
+      "basis": "observation",
+      "sourceIds": ["source_ind78_revenue_home_public_20260905"],
+      "scenarioIds": ["scenario_sale_deed_bengaluru_residential"],
+      "notes": "A timeout is recorded as a current observation, not as proof that the department route is permanently unavailable. No alternate URL was substituted."
+    }
+  ],
+  "portals": [
+    {
+      "portalId": "portal_ind78_kaveri_20260905",
+      "host": "kaveri.karnataka.gov.in",
+      "observedAt": "2026-09-05T23:39:51+05:30",
+      "serviceOwner": "Department of Stamps and Registration, Government of Karnataka",
+      "portalOperator": "Government of Karnataka",
+      "agencyNamingShown": "Kaveri Online Services",
+      "languages": [],
+      "visibleVersionOrLastUpdated": null,
+      "evidenceSourceIds": ["source_ind78_kaveri_landing_public_20260905"],
+      "routeObservations": [
+        {
+          "routeId": "route_ind78_kaveri_public_landing",
+          "serviceId": "sale-deed-registration",
+          "scenarioIds": ["scenario_sale_deed_bengaluru_residential"],
+          "entryUrl": "https://kaveri.karnataka.gov.in/landing-page",
+          "finalUrl": "https://kaveri.karnataka.gov.in/landing-page",
+          "redirects": [],
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": "unknown; no authentication prompt or control was reached in the bounded public observation",
+          "publicProcedureBoundary": "Observation stopped at the public landing route after the tab title loaded.",
+          "caseDataBoundary": "No case-data, property-search, party-data, deed, payment, appointment, or SRO-booking surface was opened.",
+          "captchaDependency": "unknown",
+          "javascriptDependency": "unknown",
+          "appDependency": "unknown",
+          "publicGuidanceSurfaces": [],
+          "trackingSurfaces": [],
+          "errorSurfaces": [],
+          "recoverySurfaces": [],
+          "evidenceSourceIds": ["source_ind78_kaveri_landing_public_20260905"],
+          "limitations": [
+            "Browser navigation timed out after the tab title became visible; no public controls or textual guidance could be recorded.",
+            "No login, OTP, CAPTCHA solving, form entry, upload, payment, appointment, or submission was attempted."
+          ]
+        }
+      ]
+    },
+    {
+      "portalId": "portal_ind78_revenue_20260905",
+      "host": "revenue.karnataka.gov.in",
+      "observedAt": "2026-09-05T23:39:51+05:30",
+      "serviceOwner": "Revenue Department, Government of Karnataka",
+      "portalOperator": "Government of Karnataka",
+      "agencyNamingShown": null,
+      "languages": [],
+      "visibleVersionOrLastUpdated": null,
+      "evidenceSourceIds": ["source_ind78_revenue_home_public_20260905"],
+      "routeObservations": [
+        {
+          "routeId": "route_ind78_revenue_public_home",
+          "serviceId": "sale-deed-registration",
+          "scenarioIds": ["scenario_sale_deed_bengaluru_residential"],
+          "entryUrl": "https://revenue.karnataka.gov.in/",
+          "finalUrl": "https://revenue.karnataka.gov.in/",
+          "redirects": [],
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": "unknown",
+          "publicProcedureBoundary": "No usable public page body was reached in this pass.",
+          "caseDataBoundary": "No case-data or service route was opened.",
+          "captchaDependency": "unknown",
+          "javascriptDependency": "unknown",
+          "appDependency": "unknown",
+          "publicGuidanceSurfaces": [],
+          "trackingSurfaces": [],
+          "errorSurfaces": [],
+          "recoverySurfaces": [],
+          "evidenceSourceIds": ["source_ind78_revenue_home_public_20260905"],
+          "limitations": [
+            "Navigation timed out; this is not a claim that the department route is permanently unavailable.",
+            "No alternate or undocumented route was substituted."
+          ]
+        }
+      ]
+    }
+  ],
+  "nodes": [],
+  "journeys": [],
+  "edges": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind78_public_landing_timeout",
+      "category": "infrastructure",
+      "title": "Public landing did not expose a usable workflow control",
+      "status": "observed",
+      "claimIds": ["claim_ind78_kaveri_public_title_and_boundary", "claim_ind78_kaveri_public_boundary_unobserved"],
+      "scenarioIds": ["scenario_sale_deed_bengaluru_residential"],
+      "notes": "The Kaveri tab title loaded but the bounded public observation timed out before a usable body or next action could be captured."
+    }
+  ],
+  "limitations": [
+    "The public pass did not cross the authentication or case-data boundary.",
+    "No branch scenario was encountered.",
+    "Both Wayback capture attempts failed because the supplied live routes timed out; the original URLs are retained without repointing."
+  ]
+}

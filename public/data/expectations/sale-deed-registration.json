@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "sale-deed-registration",
+  "primaryScenarioId": "scenario_sale_deed_bengaluru_residential",
+  "cells": {
+    "cost": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_ind78_stamp_payer_rule",
+        "claim_ind78_kaveri_fee_calculation_feature",
+        "claim_ind78_kaveri_stamp_fee_calculation_feature",
+        "claim_ind78_kaveri_registration_fee_calculation_feature"
+      ],
+      "searchedRoutes": [
+        "https://kaveri.karnataka.gov.in/landing-page",
+        "https://tumkur.nic.in/en/stamps-and-registration/",
+        "https://www.indiacode.nic.in/bitstream/123456789/7744/1/34_of_1957_%28e%29_30_of_2025.pdf"
+      ],
+      "note": "The official law states who bears proper-stamp expense absent contrary agreement, and an official district page mentions automatic market-value, stamp-fee, and registration-fee calculations, but no current Bengaluru amount or fee schedule was found."
+    },
+    "documents": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_ind78_kaveri_sale_transaction"
+      ],
+      "searchedRoutes": [
+        "https://kaveri.karnataka.gov.in/landing-page",
+        "https://negd.gov.in/isl/Directory/statedata/416"
+      ],
+      "note": "Sale of immovable property is named as a Kaveri document-registration transaction, but no actionable current sale-deed document checklist was available; the checklist remains unknown in this pass."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind78_registration_act_rule"
+      ],
+      "searchedRoutes": [],
+      "note": "Registration Act section 17(1)(b) gives the actionable rule: qualifying non-testamentary instruments affecting immovable-property rights valued at ₹100 or more must be registered; case-specific Bengaluru facts remain untested."
+    },
+    "time": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_ind78_kaveri_time_historical"
+      ],
+      "searchedRoutes": [
+        "https://negd.gov.in/isl/Directory/statedata/416",
+        "https://revenue.karnataka.gov.in/uploads/media_to_upload1712395448.pdf"
+      ],
+      "note": "An official project record reports a historical 8-hours-to-50-minutes reduction, but no current service-level target or transaction duration is stated; the figure was not observed on a login- or case-data-bound route."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind78_department_owner",
+        "claim_ind78_sro_structure",
+        "claim_ind78_kaveri_project_owner",
+        "claim_ind78_kaveri_project_director_designation",
+        "claim_ind78_kaveri_project_director_department"
+      ],
+      "searchedRoutes": [],
+      "note": "The Registration and Stamps Department operates under the Revenue Department, Government of Karnataka, through District Registrar and Sub-Registrar offices; the Kaveri project record identifies the project-director role, its designation, and its department."
+    },
+    "after-submission": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_ind78_kaveri_sms_stage_notice",
+        "claim_ind78_kaveri2_bhoomi_integration",
+        "claim_ind78_kaveri2_bhoomi_system_integration",
+        "claim_ind78_kaveri2_eswathu_system_integration"
+      ],
+      "searchedRoutes": [
+        "https://tumkur.nic.in/en/stamps-and-registration/",
+        "https://revenue.karnataka.gov.in/uploads/media_to_upload1712395448.pdf"
+      ],
+      "note": "Official documentation mentions SMS messages on registration/mutation stages and Kaveri integration, but no current acknowledgement, tracker, rejection reason, downloadable result, or case-specific post-submission surface was observed."
+    }
+  }
+}

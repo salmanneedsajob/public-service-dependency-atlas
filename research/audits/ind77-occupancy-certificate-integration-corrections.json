@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "occupancy-certificate",
+  "auditDate": "2026-09-06",
+  "corrections": [
+    {
+      "id": "IND77-INTEGRATION-001",
+      "recordType": "node",
+      "recordId": "node_final_e_khata",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "node_final_e_khata",
+        "label": "Final e-Khata",
+        "kind": "record",
+        "ownerAgencyId": "agency_occupancy_certificate",
+        "summary": "Cross-ledger prerequisite represented by the existing khata ledger node ID node_final_e_khata.",
+        "requiredState": "A current e-Khata is mandatory before an Occupancy Certificate application under the public BPAS notice.",
+        "checks": [
+          {
+            "id": "detail_ind77_e_khata_requirement",
+            "label": "e-Khata prerequisite",
+            "description": "The BPAS public notice identifies e-Khata as mandatory for Occupancy Certificate applications from 1 July 2025.",
+            "url": "https://bpas.bbmpgov.in/",
+            "claimIds": [
+              "claim_ind77_e_khata_mandatory_for_oc_applications"
+            ],
+            "status": "verified"
+          }
+        ],
+        "failureSignals": [],
+        "recoveries": [],
+        "scenarioIds": [
+          "scenario_occupancy_certificate_sanctioned_residential"
+        ],
+        "claimIds": [
+          "claim_ind77_e_khata_mandatory_for_oc_applications"
+        ],
+        "status": "verified",
+        "displayOrder": 1
+      },
+      "reason": "The official BPAS notice establishes a cross-ledger e-Khata prerequisite; reuse the existing khata node ID instead of inventing a new dependency identity.",
+      "support": {"sourceIds":["source_ind77_bpas_home_e_khata_notice"],"auditNote":"The source explicitly names e-Khata as mandatory for Occupancy Certificate applications."}
+    },
+    {
+      "id": "IND77-INTEGRATION-002",
+      "recordType": "edge",
+      "recordId": "edge_ind77_e_khata_to_occupancy_certificate",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "edge_ind77_e_khata_to_occupancy_certificate",
+        "fromNodeId": "node_final_e_khata",
+        "toNodeId": "node_occupancy_certificate_public_route",
+        "relationship": "requires",
+        "label": "BPAS names e-Khata as mandatory for Occupancy Certificate applications.",
+        "scenarioIds": [
+          "scenario_occupancy_certificate_sanctioned_residential"
+        ],
+        "claimIds": [
+          "claim_ind77_e_khata_mandatory_for_oc_applications"
+        ],
+        "status": "verified"
+      },
+      "reason": "Record the evidenced prerequisite edge to the existing khata node ID with its supporting official claim.",
+      "support": {"sourceIds":["source_ind77_bpas_home_e_khata_notice"],"auditNote":"The BPAS landing page makes e-Khata mandatory for this application type."}
+    },
+    {
+      "id": "IND77-INTEGRATION-003",
+      "recordType": "scenario",
+      "recordId": "scenario_occupancy_certificate_sanctioned_residential",
+      "fieldPath": "/pathNodeIds",
+      "old": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "new": [
+        "node_final_e_khata",
+        "node_occupancy_certificate_public_route"
+      ],
+      "reason": "The primary scenario must include the documented cross-ledger prerequisite before the public service route.",
+      "support": {"sourceIds":["source_ind77_bpas_home_e_khata_notice"],"auditNote":"The published notice describes e-Khata as mandatory for the application."}
+    }
+  ]
+}

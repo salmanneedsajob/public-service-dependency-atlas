@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "occupancy-certificate",
+  "primaryScenarioId": "scenario_occupancy_certificate_sanctioned_residential",
+  "cells": {
+    "cost": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_ind77_compounding_fee_named_no_amount"
+      ],
+      "searchedRoutes": [
+        "https://site.bbmp.gov.in/PDF/buildingplanapproval/Occupancy%20Certificate%20%281%29.pdf"
+      ],
+      "note": ""
+    },
+    "documents": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind77_schedule_viii_required",
+        "claim_ind77_latest_khata_certificate_required",
+        "claim_ind77_latest_khata_extract_required",
+        "claim_ind77_tax_paid_receipt_required",
+        "claim_ind77_conditional_cfo_fire_documents_required",
+        "claim_ind77_as_built_drawings_required",
+        "claim_ind77_photographs_required"
+      ],
+      "searchedRoutes": [],
+      "note": ""
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind77_owner_with_plan_sanction_eligible"
+      ],
+      "searchedRoutes": [],
+      "note": ""
+    },
+    "time": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind77_thirty_working_days"
+      ],
+      "searchedRoutes": [],
+      "note": ""
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind77_town_planning_office_owner"
+      ],
+      "searchedRoutes": [],
+      "note": ""
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind77_oc_compounding_demand_note",
+        "claim_ind77_oc_certificate_issue",
+        "claim_ind77_submitted_proposal_in_process_and_flow"
+      ],
+      "searchedRoutes": [],
+      "note": ""
+    }
+  }
+}

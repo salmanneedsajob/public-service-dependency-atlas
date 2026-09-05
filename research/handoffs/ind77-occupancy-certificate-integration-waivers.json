@@ -1,0 +1,32 @@
+{
+  "lintWaivers": [
+    {"check":"compound-claim","recordId":"claim_ind77_compounding_fee_named_no_amount","reason":"The official-service-sheet claim pairs the named fee with the absence of an amount; its wording and support will be assessed by the fresh audit."},
+    {"check":"compound-claim","recordId":"claim_ind77_town_planning_office_owner","reason":"The official-service-sheet owner wording names the office and designated route together; the fresh audit will split it if the two assertions should ship separately."},
+    {"check":"compound-claim","recordId":"claim_ind77_submitted_proposal_in_process_and_flow","reason":"The authenticated-manual observation preserves both post-submission surfaces for audit review; no live login or case data was used."},
+    {"check":"login-boundary-overclaim","recordId":"claim_ind77_submitted_proposal_in_process_and_flow","reason":"Its notes expressly state that this is an authenticated architect-console manual and that no login or live availability was verified."},
+    {"check":"compound-claim","recordId":"claim_ind77_bpas_public_identity","reason":"Legacy workflow observation combines agency naming and the portal description; fresh audit will apply the atomicity rule."},
+    {"check":"compound-claim","recordId":"claim_ind77_bpas_signin_boundary","reason":"Legacy workflow observation lists the visible sign-in controls together; it does not claim an authenticated result."},
+    {"check":"login-boundary-overclaim","recordId":"claim_ind77_bpas_signin_boundary","reason":"The claim itself states that the pass stopped before authentication and case data."},
+    {"check":"compound-claim","recordId":"claim_ind77_oc_manual_public","reason":"Legacy workflow observation inventories public manual links; fresh audit will split it if needed."},
+    {"check":"compound-claim","recordId":"claim_ind77_oc_submission_actor","reason":"Legacy workflow observation preserves the public FAQ wording; fresh audit will split it if needed."},
+    {"check":"compound-claim","recordId":"claim_ind77_oc_processing_window","reason":"Legacy workflow observation preserves the FAQ's conditional time statement; fresh audit will assess atomicity."},
+    {"check":"login-boundary-overclaim","recordId":"claim_ind77_oc_dashboard_output","reason":"This is a published description of an authenticated surface, not an observation of a case result; fresh audit will assess its grade and wording."},
+    {"check":"compound-claim","recordId":"claim_ind77_public_support_surface","reason":"Legacy workflow observation groups the two public support surfaces; fresh audit will split it if required."},
+    {"check":"login-boundary-overclaim","recordId":"claim_ind77_public_support_surface","reason":"The claim states that no case-specific recovery result was tested."},
+    {"check":"compound-claim","recordId":"claim_ind77_legacy_route_dead","reason":"Legacy workflow observation pairs the current connection-refused result with a limitation on older indexed content; fresh audit will assess it."},
+    {"check":"compound-claim","recordId":"claim_ind77_gba_home_no_bpas_handoff","reason":"Legacy workflow observation records the tile and its missing target together to avoid a false BPAS handoff; fresh audit will assess it."},
+    {"check":"compound-claim","recordId":"claim_ind77_citizen_pending_oc_after_reported_application","reason":"Quarantined citizen wording preserves the reported application and pending outcome without establishing either as an official fact; fresh audit will split it if required."},
+    {"check":"source-date-quality","recordId":"source_ind77_bbmp_oc_service_sheet","reason":"The source notes say no visible publication date was established and state the current-hosted limitation; the lint's visible-date matcher does not recognize that phrasing."},
+    {"check":"source-date-quality","recordId":"source_ind77_bbmp_oc_manual","reason":"The 2024 revision history is stated in the source notes; the manual is limited to a login-bound documented workflow, not a current live observation."},
+    {"check":"source-date-quality","recordId":"source_ind77_bpas_home_e_khata_notice","reason":"The source notes preserve the dated e-Khata notice and archive-capture limitation; no separate page publication date was displayed."},
+    {"check":"source-date-quality","recordId":"source_ind77_bpas_seed_home","reason":"Legacy public-workflow seed observation did not expose a publication date; it will be assessed in the fresh audit."},
+    {"check":"source-date-quality","recordId":"source_ind77_bpas_home","reason":"Legacy direct public-interface observation did not expose a publication date; it will be assessed in the fresh audit."},
+    {"check":"source-date-quality","recordId":"source_ind77_bpas_downloads","reason":"Legacy direct public-interface observation did not expose a publication date; it will be assessed in the fresh audit."},
+    {"check":"source-date-quality","recordId":"source_ind77_bpas_oc_manual","reason":"Legacy public manual observation did not expose a publication date; it will be assessed in the fresh audit."},
+    {"check":"source-date-quality","recordId":"source_ind77_bpas_faq","reason":"Legacy direct public-interface observation did not expose a publication date; it will be assessed in the fresh audit."},
+    {"check":"source-date-quality","recordId":"source_ind77_bpas_helpdesk_kb","reason":"Legacy direct public-interface observation did not expose a publication date; it will be assessed in the fresh audit."},
+    {"check":"source-date-quality","recordId":"source_ind77_bpas_contact","reason":"Legacy direct public-interface observation did not expose a publication date; it will be assessed in the fresh audit."},
+    {"check":"source-date-quality","recordId":"source_ind77_legacy_seed_dead","reason":"The dropped seed is retained as a dated connection-refused observation, not repointed to a homepage."},
+    {"check":"source-date-quality","recordId":"source_ind77_gba_seed_home","reason":"Legacy direct public-interface observation did not expose a publication date; it will be assessed in the fresh audit."}
+  ]
+}

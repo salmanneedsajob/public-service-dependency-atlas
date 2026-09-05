@@ -1,0 +1,238 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "occupancy-certificate",
+  "portals": [
+    {
+      "portalId": "portal_ind77_bpas",
+      "host": "bpas.bbmpgov.in",
+      "observedAt": "2026-09-05T23:31:43+05:30",
+      "serviceId": "occupancy-certificate",
+      "serviceOwner": "Greater Bengaluru Authority / Building Licence Cell",
+      "portalOperator": "BPAS / AutoDCR construction-permit portal (operator label shown in public manual as BPAS)",
+      "agencyNamingShown": "Greater Bengaluru Authority; Building Plan Approval System; BBMP",
+      "languages": [
+        "English"
+      ],
+      "visibleVersionOrLastUpdated": "Copyright 2025; no visible page last-updated date",
+      "evidenceSourceIds": [
+        "source_ind77_bpas_seed_home",
+        "source_ind77_bpas_home",
+        "source_ind77_bpas_downloads",
+        "source_ind77_bpas_oc_manual",
+        "source_ind77_bpas_faq",
+        "source_ind77_bpas_helpdesk_kb",
+        "source_ind77_bpas_contact"
+      ],
+      "routeObservations": [
+        {
+          "routeId": "route_ind77_bpas_public_entry",
+          "serviceId": "occupancy-certificate",
+          "scenarioIds": [
+            "scenario_occupancy_certificate_sanctioned_residential"
+          ],
+          "entryUrl": "https://bpas.bbmpgov.in/",
+          "finalUrl": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+          "redirects": [
+            "https://bpas.bbmpgov.in/ -> https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx"
+          ],
+          "finalStatus": 200,
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": [
+            "No authentication required to view the landing page; username, password and CAPTCHA are required by the visible Sign In form to continue."
+          ],
+          "publicProcedureVsCaseDataBoundary": "",
+          "captchaDependencies": "",
+          "javascriptDependencies": "",
+          "publicGuidanceSurfaces": [
+            "Nambike Nakshe/single-window construction permits",
+            "e-Khata mandatory message",
+            "Download & Manuals",
+            "FAQs",
+            "Contact Us",
+            "Helpdesk"
+          ],
+          "trackingSurfaces": [
+            "Public page labels Proposal summary, Inspection summary, Pendency Report and Citizen Search, but no case-specific tracking was opened."
+          ],
+          "errorSurfaces": [
+            "No application error was triggered; the login boundary is the observed blocker."
+          ],
+          "recoverySurfaces": [
+            "Public Helpdesk Knowledge base and Contact Us routes are exposed."
+          ],
+          "evidenceIds": [],
+          "limitations": [
+            "No login, CAPTCHA solution, case lookup, owner/professional registration, plan upload, payment, submission or certificate-list inspection."
+          ]
+        },
+        {
+          "routeId": "route_ind77_bpas_public_manuals",
+          "serviceId": "occupancy-certificate",
+          "scenarioIds": [
+            "scenario_occupancy_certificate_sanctioned_residential"
+          ],
+          "entryUrl": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/download.aspx",
+          "finalUrl": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/download.aspx",
+          "redirects": [],
+          "finalStatus": 200,
+          "checkedLinkCount": 39,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": [
+            "None observed for the public listing; the linked OC manual itself was not opened."
+          ],
+          "publicProcedureVsCaseDataBoundary": "",
+          "captchaDependencies": "",
+          "javascriptDependencies": "",
+          "publicGuidanceSurfaces": [
+            "User Manual for OC",
+            "Forms & Checklist",
+            "Plan Sanction-checklist",
+            "Schedule-II",
+            "Schedule-III"
+          ],
+          "trackingSurfaces": [],
+          "errorSurfaces": [],
+          "recoverySurfaces": [
+            "The public Contact Us and Helpdesk routes remain available from BPAS navigation."
+          ],
+          "evidenceIds": [],
+          "limitations": [
+            "The linked PDF manual was not opened and no form was downloaded or submitted."
+          ]
+        },
+        {
+          "routeId": "route_ind77_bpas_faq",
+          "serviceId": "occupancy-certificate",
+          "scenarioIds": [
+            "scenario_occupancy_certificate_sanctioned_residential"
+          ],
+          "entryUrl": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "finalUrl": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+          "redirects": [],
+          "finalStatus": 200,
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": [
+            "FAQ text is public; its dashboard instructions concern an authenticated application console."
+          ],
+          "publicProcedureVsCaseDataBoundary": "",
+          "captchaDependencies": "",
+          "javascriptDependencies": "",
+          "publicGuidanceSurfaces": [
+            "OC/BCC submission actor, joint inspection, compliance and 7-working-day statement; dashboard certificate-view instructions."
+          ],
+          "trackingSurfaces": [
+            "FAQ describes authenticated Application Summary/Proposal Stages tracking, but no live case tracker was opened."
+          ],
+          "errorSurfaces": [
+            "Direct render timeout only; not treated as an application error or no-record response."
+          ],
+          "recoverySurfaces": [
+            "General BPAS Helpdesk and Contact Us routes."
+          ],
+          "evidenceIds": [],
+          "limitations": [
+            "FAQ content has no visible update date; no authenticated dashboard or certificate output was tested."
+          ]
+        }
+      ]
+    },
+    {
+      "portalId": "portal_ind77_legacy_site",
+      "host": "site.bbmp.gov.in",
+      "observedAt": "2026-09-05T23:31:43+05:30",
+      "serviceId": "occupancy-certificate",
+      "serviceOwner": "BBMP legacy Building Plan Approval information site",
+      "portalOperator": "Unknown at access time",
+      "agencyNamingShown": "",
+      "languages": [],
+      "visibleVersionOrLastUpdated": "",
+      "evidenceSourceIds": [
+        "source_ind77_legacy_seed_dead"
+      ],
+      "routeObservations": [
+        {
+          "routeId": "route_ind77_legacy_buildingplan_dead",
+          "serviceId": "occupancy-certificate",
+          "scenarioIds": [
+            "scenario_occupancy_certificate_sanctioned_residential"
+          ],
+          "entryUrl": "https://site.bbmp.gov.in/buildingplan.html",
+          "finalUrl": null,
+          "redirects": [],
+          "finalStatus": 200,
+          "checkedLinkCount": 1,
+          "deadLinkCount": 1,
+          "authenticationPrerequisites": [],
+          "publicProcedureVsCaseDataBoundary": "",
+          "captchaDependencies": "",
+          "javascriptDependencies": "",
+          "publicGuidanceSurfaces": [],
+          "trackingSurfaces": [],
+          "errorSurfaces": [
+            "Browser displayed site.bbmp.gov.in refused to connect / ERR_CONNECTION_REFUSED."
+          ],
+          "recoverySurfaces": [],
+          "evidenceIds": [],
+          "limitations": [
+            "Older indexed content is retained only as stale context, not a current route; this dead seed is not repointed."
+          ]
+        }
+      ]
+    },
+    {
+      "portalId": "portal_ind77_gba_home",
+      "host": "bbmp.gov.in",
+      "observedAt": "2026-09-05T23:31:43+05:30",
+      "serviceId": "occupancy-certificate",
+      "serviceOwner": "Greater Bengaluru Authority",
+      "portalOperator": "Greater Bengaluru Authority; page footer says developed and hosted by Information Technology, Greater Bengaluru Authority",
+      "agencyNamingShown": "Greater Bengaluru Authority; GBA; Government of Karnataka",
+      "languages": [
+        "English",
+        "Kannada label present"
+      ],
+      "visibleVersionOrLastUpdated": "Current home page showed 2026 public updates; no page last-updated field observed",
+      "evidenceSourceIds": [
+        "source_ind77_gba_seed_home"
+      ],
+      "routeObservations": [
+        {
+          "routeId": "route_ind77_gba_home",
+          "serviceId": "occupancy-certificate",
+          "scenarioIds": [
+            "scenario_occupancy_certificate_sanctioned_residential"
+          ],
+          "entryUrl": "https://bbmp.gov.in/",
+          "finalUrl": "https://bbmp.gov.in/home",
+          "redirects": [
+            "https://bbmp.gov.in/ -> https://bbmp.gov.in/home"
+          ],
+          "finalStatus": 200,
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": [
+            "None for the home page."
+          ],
+          "publicProcedureVsCaseDataBoundary": "",
+          "captchaDependencies": "",
+          "javascriptDependencies": "",
+          "publicGuidanceSurfaces": [
+            "e-Services Building Permission tile",
+            "GBA contact/helpline and department navigation"
+          ],
+          "trackingSurfaces": [],
+          "errorSurfaces": [],
+          "recoverySurfaces": [
+            "General GBA contact/helpline surface on home page; no occupancy-specific recovery route identified."
+          ],
+          "evidenceIds": [],
+          "limitations": [
+            "No property lookup, building lookup, certificate list, or tile target navigation was used."
+          ]
+        }
+      ]
+    }
+  ]
+}

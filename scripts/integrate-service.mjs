@@ -25,6 +25,9 @@ const sourceNotes = (source) => [
   source.archive?.failure,
   source.archiveSnapshot?.limitation,
   source.archiveSnapshot?.failure,
+  source.wayback?.snapshotUrl ? `Wayback snapshot: ${source.wayback.snapshotUrl}` : null,
+  source.wayback?.detail,
+  source.wayback?.limitation,
   source.redaction,
   ...(source.limitations ?? []),
 ].filter(Boolean).join(' ');
@@ -87,7 +90,14 @@ const normalizeHandoff = (handoff) => {
       contradictsClaimIds: claim.contradictsClaimIds ?? [],
       notes: [claim.notes, claim.limitations, claim.limitation, claim.use, claim.branch ? `Quarantine branch: ${claim.branch}.` : null].filter(Boolean).join(' '),
     })),
-    nodes: handoff.nodes ?? [],
+    // Earlier isolated workflow handoffs represented node details as bare
+    // claim IDs. They cannot satisfy the shared schema's detail contract, so
+    // let the integrator create its explicit public-route node instead of
+    // coercing those IDs into invented descriptions.
+    nodes: (handoff.nodes ?? []).filter((node) => (
+      typeof node.requiredState === 'string'
+      && [node.checks, node.failureSignals, node.recoveries].every((details) => Array.isArray(details) && details.every((detail) => detail && typeof detail === 'object' && !Array.isArray(detail)))
+    )),
     edges: handoff.edges ?? [],
     roadblocks: (handoff.roadblocks ?? []).filter((roadblock) => Array.isArray(roadblock.nodeIds) && Array.isArray(roadblock.scenarioIds)),
     journeys: (handoff.journeys ?? []).filter((journey) => typeof journey.scenarioId === 'string' && Array.isArray(journey.steps) && Array.isArray(journey.dependencies)),

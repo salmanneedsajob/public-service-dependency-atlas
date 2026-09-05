@@ -1,468 +1,367 @@
-[
-  {
-    "recordType": "agency",
-    "recordId": "agency_property_tax_payment",
-    "fieldPath": "/name",
-    "old": "Reddit / r/bangalore",
-    "new": "Bengaluru City Corporations",
-    "reason": "The node owner must identify the service authority, not the publisher of citizen evidence.",
-    "support": {
-      "sourceIds": ["source_ind72_official_portal"],
-      "auditNote": "The portal sidecar names Bengaluru City Corporations as serviceOwner and displays GBA/Government of Karnataka agency naming."
-    }
-  },
-  {
-    "recordType": "agency",
-    "recordId": "agency_property_tax_payment",
-    "fieldPath": "/shortName",
-    "old": "Reddit / r/bangalore",
-    "new": "Bengaluru City Corporations",
-    "reason": "The service-owner short name cannot identify a citizen forum.",
-    "support": {
-      "sourceIds": ["source_ind72_official_portal"],
-      "auditNote": "The exact service-owner naming available in the permitted portal record is reused without inventing an abbreviation."
-    }
-  },
-  {
-    "recordType": "agency",
-    "recordId": "agency_property_tax_payment",
-    "fieldPath": "/officialUrl",
-    "old": "https://www.reddit.com/r/bangalore/comments/n5zu4y/",
-    "new": "https://bbmptax.karnataka.gov.in/",
-    "reason": "The service owner must link to its official service portal rather than a citizen-evidence URL.",
-    "support": {
-      "sourceIds": ["source_ind72_official_portal"],
-      "auditNote": "The official portal is the observed public service entry and is already cited by the ledger."
-    }
-  },
-  {
-    "recordType": "source",
-    "recordId": "source_ind72_official_portal",
-    "fieldPath": "/notes",
-    "old": "Portal footer displays Version 01-04-2026/13.1-1. No Wayback snapshot could be captured in this environment; the original official URL is retained. The research browser rejected the Wayback save URL as unsafe before it could submit a capture request.",
-    "new": "Portal footer displays Version 01-04-2026/13.1-1. No Wayback snapshot could be captured in this environment; the original official URL is retained. The research browser rejected the Wayback save URL as unsafe before it could submit a capture request. Jurisdiction: Bengaluru, Karnataka, India.",
-    "reason": "Protocol section 7 requires source-level jurisdiction in addition to claim jurisdiction.",
-    "support": {
-      "sourceIds": ["source_ind72_official_portal"],
-      "auditNote": "The source title, publisher, portal record, and associated claims consistently identify the Bengaluru/Karnataka service."
-    }
-  },
-  {
-    "recordType": "source",
-    "recordId": "source_ind72_official_service_details",
-    "fieldPath": "/notes",
-    "old": "Portal footer displays Version 01-04-2026/13.1-1; the page itself does not show a separate publication date. No Wayback snapshot could be captured in this environment; the original official URL is retained. The research browser rejected the Wayback save URL as unsafe before it could submit a capture request.",
-    "new": "Portal footer displays Version 01-04-2026/13.1-1; the page itself does not show a separate publication date. No Wayback snapshot could be captured in this environment; the original official URL is retained. The research browser rejected the Wayback save URL as unsafe before it could submit a capture request. Jurisdiction: Bengaluru, Karnataka, India.",
-    "reason": "Protocol section 7 requires source-level jurisdiction in addition to claim jurisdiction.",
-    "support": {
-      "sourceIds": ["source_ind72_official_service_details"],
-      "auditNote": "The source title, publisher, portal record, and associated claims consistently identify the Bengaluru/Karnataka service."
-    }
-  },
-  {
-    "recordType": "source",
-    "recordId": "source_ind72_official_receipt_print",
-    "fieldPath": "/notes",
-    "old": "Portal footer displays Version 01-04-2026/13.1-1; the form itself does not show a separate publication date. No Wayback snapshot could be captured in this environment; the original official URL is retained. The research browser rejected the Wayback save URL as unsafe before it could submit a capture request.",
-    "new": "Portal footer displays Version 01-04-2026/13.1-1; the form itself does not show a separate publication date. No Wayback snapshot could be captured in this environment; the original official URL is retained. The research browser rejected the Wayback save URL as unsafe before it could submit a capture request. Jurisdiction: Bengaluru, Karnataka, India.",
-    "reason": "Protocol section 7 requires source-level jurisdiction in addition to claim jurisdiction.",
-    "support": {
-      "sourceIds": ["source_ind72_official_receipt_print"],
-      "auditNote": "The source title, publisher, portal record, and associated claims consistently identify the Bengaluru/Karnataka service."
-    }
-  },
-  {
-    "recordType": "source",
-    "recordId": "source_ind72_tax_refund_policy",
-    "fieldPath": "/notes",
-    "old": "Visible date: the footer displayed Version 01-04-2026/13.1-1 on this Refund and Cancellation Policy page. A Save Page Now request was made on 2026-09-05; no snapshot URL or confirming response header was returned, so archival capture is unconfirmed.",
-    "new": "Visible date: the footer displayed Version 01-04-2026/13.1-1 on this Refund and Cancellation Policy page. A Save Page Now request was made on 2026-09-05; no snapshot URL or confirming response header was returned, so archival capture is unconfirmed. Jurisdiction: Bengaluru, Karnataka, India.",
-    "reason": "Protocol section 7 requires source-level jurisdiction in addition to claim jurisdiction.",
-    "support": {
-      "sourceIds": ["source_ind72_tax_refund_policy"],
-      "auditNote": "The source title, publisher, portal record, and associated claims consistently identify the Bengaluru/Karnataka service."
-    }
-  },
-  {
-    "recordType": "source",
-    "recordId": "citizen_source_property_tax_forum_session_failure_2021",
-    "fieldPath": "/notes",
-    "old": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained.",
-    "new": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained. Jurisdiction: Bengaluru, Karnataka, India.",
-    "reason": "Protocol section 7 requires source-level jurisdiction in addition to claim jurisdiction.",
-    "support": {
-      "sourceIds": ["citizen_source_property_tax_forum_session_failure_2021"],
-      "auditNote": "The source title/community and associated claims consistently scope the account to Bengaluru property-tax payment."
-    }
-  },
-  {
-    "recordType": "source",
-    "recordId": "citizen_source_property_tax_browser_recovery_2023",
-    "fieldPath": "/notes",
-    "old": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained.",
-    "new": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained. Jurisdiction: Bengaluru, Karnataka, India.",
-    "reason": "Protocol section 7 requires source-level jurisdiction in addition to claim jurisdiction.",
-    "support": {
-      "sourceIds": ["citizen_source_property_tax_browser_recovery_2023"],
-      "auditNote": "The source title/community and associated claims consistently scope the account to Bengaluru property-tax payment."
-    }
-  },
-  {
-    "recordType": "source",
-    "recordId": "citizen_source_property_tax_wrong_property_payment_2025",
-    "fieldPath": "/notes",
-    "old": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained.",
-    "new": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained. Jurisdiction: Bengaluru, Karnataka, India.",
-    "reason": "Protocol section 7 requires source-level jurisdiction in addition to claim jurisdiction.",
-    "support": {
-      "sourceIds": ["citizen_source_property_tax_wrong_property_payment_2025"],
-      "auditNote": "The source title/community and associated claims consistently scope the account to Bengaluru property-tax payment."
-    }
-  },
-  {
-    "recordType": "source",
-    "recordId": "citizen_source_property_tax_receipt_missing_2026",
-    "fieldPath": "/notes",
-    "old": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained.",
-    "new": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained. Jurisdiction: Bengaluru, Karnataka, India.",
-    "reason": "Protocol section 7 requires source-level jurisdiction in addition to claim jurisdiction.",
-    "support": {
-      "sourceIds": ["citizen_source_property_tax_receipt_missing_2026"],
-      "auditNote": "The source title/community and associated claims consistently scope the account to Bengaluru property-tax payment."
-    }
-  },
-  {
-    "recordType": "expectation",
-    "recordId": "property-tax-payment",
-    "fieldPath": "/cells/cost/note",
-    "old": "",
-    "new": "The reviewed routes publish rebate, interest, and penalty timing but no amount a citizen pays and no actionable fee schedule.",
-    "reason": "A mentioned expectation cell must record a search note explaining why the evidence is not actionable enough for stated.",
-    "support": {
-      "sourceIds": ["source_ind72_official_portal", "source_ind72_official_service_details"],
-      "auditNote": "The cited Grade B calendar claim names a rebate period but supplies no payable amount or rate."
-    }
-  },
-  {
-    "recordType": "expectation",
-    "recordId": "property-tax-payment",
-    "fieldPath": "/cells/documents/note",
-    "old": "",
-    "new": "The reviewed home and service-details routes do not name any document the citizen must submit, provide, upload, produce, or attach.",
-    "reason": "An absent expectation cell must include the result of the recorded route search.",
-    "support": {
-      "sourceIds": ["source_ind72_official_portal", "source_ind72_official_service_details"],
-      "auditNote": "No ledger claim from the searched routes establishes an actionable document requirement."
-    }
-  },
-  {
-    "recordType": "expectation",
-    "recordId": "property-tax-payment",
-    "fieldPath": "/cells/eligibility/note",
-    "old": "",
-    "new": "The applicable group is property owners whose properties are within Bengaluru City Corporation limits.",
-    "reason": "A stated expectation cell must include an actionable-value note.",
-    "support": {
-      "sourceIds": ["source_ind72_official_service_details"],
-      "auditNote": "claim_ind72_service_eligibility supplies the route-deciding rule."
-    }
-  },
-  {
-    "recordType": "expectation",
-    "recordId": "property-tax-payment",
-    "fieldPath": "/cells/owner/note",
-    "old": "",
-    "new": "The portal identifies the Joint Commissioner of Revenue Head Office at NR Square and publishes telephone and email contact routes for that office.",
-    "reason": "A stated expectation cell must include an actionable-value note.",
-    "support": {
-      "sourceIds": ["source_ind72_official_portal"],
-      "auditNote": "The four cited Grade B claims identify an operational role, office location, and contact routes."
-    }
-  },
-  {
-    "recordType": "expectation",
-    "recordId": "property-tax-payment",
-    "fieldPath": "/cells/after-submission/note",
-    "old": "",
-    "new": "After payment, the published procedure identifies real-time confirmation and a generated receipt as citizen-visible outputs.",
-    "reason": "A stated expectation cell must include an actionable-value note and identify the post-submission surface.",
-    "support": {
-      "sourceIds": ["source_ind72_official_service_details"],
-      "auditNote": "The service-details claims describe two visible post-payment outputs while noting they were not accessed."
-    }
-  },
-  {
-    "recordType": "expectation",
-    "recordId": "property-tax-payment",
-    "fieldPath": "/cells/after-submission/claimIds",
-    "old": ["claim_ind72_confirmation_receipt"],
-    "new": ["claim_ind72_public_service_confirmation", "claim_ind72_public_service_receipt_generation"],
-    "reason": "The expectation should cite the existing atomic confirmation and receipt claims instead of a compound duplicate claim.",
-    "support": {
-      "sourceIds": ["source_ind72_official_service_details"],
-      "auditNote": "Both replacement claims are Grade B, verified, and tagged to the primary scenario."
-    }
-  },
-  {
-    "recordType": "claim",
-    "recordId": "claim_ind72_confirmation_receipt",
-    "fieldPath": "/",
-    "old": {
-      "id": "claim_ind72_confirmation_receipt",
-      "text": "The service-details page states that the portal provides real-time payment confirmation and receipt generation.",
-      "jurisdiction": "Bengaluru, Karnataka, India",
-      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
-      "nodeIds": ["node_property_tax_payment_public_route"],
-      "sourceIds": ["source_ind72_official_service_details"],
-      "evidenceGrade": "B",
-      "basis": "observation",
-      "status": "verified",
-      "contradictsClaimIds": [],
-      "notes": ""
-    },
-    "new": null,
-    "reason": "This compound claim duplicates two existing atomic claims and must be merged away.",
-    "support": {
-      "sourceIds": ["source_ind72_official_service_details"],
-      "auditNote": "claim_ind72_public_service_confirmation and claim_ind72_public_service_receipt_generation preserve both supported facts separately."
-    }
-  },
-  {
-    "recordType": "node",
-    "recordId": "node_property_tax_payment_public_route",
-    "fieldPath": "/claimIds/3",
-    "old": "claim_ind72_confirmation_receipt",
-    "new": null,
-    "reason": "Deleting the merged compound claim requires removing its exact node reference in the same atomic set.",
-    "support": {
-      "sourceIds": ["source_ind72_official_service_details"],
-      "auditNote": "The node already references both replacement atomic claims later in its claimIds array."
-    }
-  },
-  {
-    "recordType": "claim",
-    "recordId": "claim_ind72_online_failure_bank_route",
-    "fieldPath": "/text",
-    "old": "For failed online transactions and bank-initiated refunds, the portal advises taxpayers to contact their respective banks.",
-    "new": "For failed online transactions, the portal advises taxpayers to contact their respective banks.",
-    "reason": "The original wording combines two distinct circumstances in one claim.",
-    "support": {
-      "sourceIds": ["source_ind72_official_portal"],
-      "auditNote": "The narrower wording retains one checkable recovery statement and does not add evidence."
-    }
-  },
-  {
-    "recordType": "claim",
-    "recordId": "citizen_claim_property_tax_online_payment_and_receipt_2021",
-    "fieldPath": "/text",
-    "old": "A different participant in the same thread reported completing a property-tax payment on the website and generating receipts without a problem.",
-    "new": "A different participant in the same thread reported completing a property-tax payment on the website.",
-    "reason": "The original citizen claim combines payment completion with receipt generation.",
-    "support": {
-      "sourceIds": ["citizen_source_property_tax_forum_session_failure_2021"],
-      "auditNote": "The narrower wording keeps one anecdotal outcome and preserves the Grade E quarantine limitation."
-    }
-  },
-  {
-    "recordType": "node",
-    "recordId": "node_property_tax_payment_public_route",
-    "fieldPath": "/checks",
-    "old": [],
-    "new": [
-      {
-        "id": "detail_ind72_public_entry_identifier",
-        "label": "Provide the public entry identifier",
-        "description": "The public entry asks for a 10-digit application number or PID number before property-specific information is shown.",
-        "url": "https://bbmptax.karnataka.gov.in/",
-        "claimIds": ["claim_ind72_public_entry_identifier"],
-        "status": "verified"
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "property-tax-payment",
+  "auditDate": "2026-09-04",
+  "corrections": [
+    {
+      "recordType": "agency",
+      "recordId": "agency_property_tax_payment",
+      "fieldPath": "/name",
+      "old": "Reddit / r/bangalore",
+      "new": "Bengaluru City Corporations",
+      "reason": "The service node's owner must be the official service owner, not a citizen-evidence publisher.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "The portal record names Bengaluru City Corporations as service owner and shows Bengaluru City Corporations/GBA agency naming."
       }
-    ],
-    "reason": "The route search found a supported public check, so the field must not remain an unresearched empty array.",
-    "support": {
-      "sourceIds": ["source_ind72_official_portal"],
-      "auditNote": "The claim and route observation directly record the blank entry control; no identifier was entered."
-    }
-  },
-  {
-    "recordType": "node",
-    "recordId": "node_property_tax_payment_public_route",
-    "fieldPath": "/failureSignals",
-    "old": [],
-    "new": [
-      {
-        "id": "detail_ind72_failed_transaction_after_debit",
-        "label": "Transaction fails after debit",
-        "description": "The published policy identifies a network or technical failure after an amount is debited as a failed-transaction circumstance.",
-        "url": "https://bbmptax.karnataka.gov.in/pages/RCpolicy.aspx",
-        "claimIds": ["claim_ind72_failed_transaction_public_recovery"],
-        "status": "verified"
-      }
-    ],
-    "reason": "The public-workflow record found an official failure surface, so the field must not remain an unresearched empty array.",
-    "support": {
-      "sourceIds": ["source_ind72_tax_refund_policy"],
-      "auditNote": "This records published policy text only and does not imply that a live failure was created."
-    }
-  },
-  {
-    "recordType": "node",
-    "recordId": "node_property_tax_payment_public_route",
-    "fieldPath": "/recoveries",
-    "old": [],
-    "new": [
-      {
-        "id": "detail_ind72_failed_payment_bank_contact",
-        "label": "Contact the respective bank",
-        "description": "For a failed online transaction, the portal advises the taxpayer to contact the respective bank.",
-        "url": "https://bbmptax.karnataka.gov.in/",
-        "claimIds": ["claim_ind72_online_failure_bank_route"],
-        "status": "verified"
-      },
-      {
-        "id": "detail_ind72_payment_grievance_ticket",
-        "label": "Raise a payment grievance",
-        "description": "The portal directs a taxpayer with a payment-related issue to raise a ticket through the Grievance section.",
-        "url": "https://bbmptax.karnataka.gov.in/",
-        "claimIds": ["claim_ind72_payment_grievance_route"],
-        "status": "verified"
-      },
-      {
-        "id": "detail_ind72_receipt_discrepancy_aro",
-        "label": "Find the responsible ARO",
-        "description": "The portal directs a user with a receipt discrepancy to find the responsible ARO.",
-        "url": "https://bbmptax.karnataka.gov.in/",
-        "claimIds": ["claim_ind72_receipt_discrepancy_aro"],
-        "status": "verified"
-      }
-    ],
-    "reason": "The public-workflow record found official recovery surfaces, so the field must not remain an unresearched empty array.",
-    "support": {
-      "sourceIds": ["source_ind72_official_portal"],
-      "auditNote": "Only published official recovery routes are integrated; no citizen account is promoted into an official rule."
-    }
-  },
-  {
-    "recordType": "journey",
-    "recordId": "journey_ind72_property_tax_payment_public",
-    "fieldPath": "/",
-    "old": null,
-    "new": {
-      "id": "journey_ind72_property_tax_payment_public",
-      "title": "Published public property-tax payment path",
-      "scenarioId": "scenario_property_tax_payment_known_sas_pid",
-      "context": "Published procedure for a property owner within Bengaluru City Corporation limits who has a 10-digit application number or PID; property-specific and payment stages were not performed.",
-      "steps": [
-        {
-          "id": "step_ind72_enter_property_identifier",
-          "label": "Enter the property identifier",
-          "nodeId": "node_property_tax_payment_public_route",
-          "action": "Use the public entry field for a 10-digit application number or PID number.",
-          "expectedResult": "The published procedure says tax demand details are displayed after entry; no case-specific result was tested.",
-          "claimIds": ["claim_ind72_public_entry_identifier", "claim_ind72_public_service_flow"],
-          "status": "partial"
-        },
-        {
-          "id": "step_ind72_make_online_payment",
-          "label": "Use the integrated payment gateway",
-          "nodeId": "node_property_tax_payment_public_route",
-          "action": "Proceed through the published online-payment step using an available gateway mode.",
-          "expectedResult": "The published procedure identifies real-time confirmation; no gateway or payment instrument was opened.",
-          "claimIds": ["claim_ind72_public_service_online_payment", "claim_ind72_public_service_confirmation"],
-          "status": "partial"
-        },
-        {
-          "id": "step_ind72_obtain_receipt",
-          "label": "Obtain the post-payment receipt",
-          "nodeId": "node_property_tax_payment_public_route",
-          "action": "Use the receipt output described by the service or the public Receipt Print form.",
-          "expectedResult": "The published procedure identifies a generated receipt, while the public lookup remains case-data-bound behind identifier, year, and CAPTCHA inputs.",
-          "claimIds": ["claim_ind72_public_service_receipt_generation", "claim_ind72_public_receipt_boundary", "claim_ind72_public_receipt_assessment_year", "claim_ind72_public_receipt_captcha"],
-          "status": "partial"
-        }
-      ],
-      "dependencies": [],
-      "failureRoadblockIds": ["roadblock_ind72_failed_transaction_after_debit"],
-      "recoveryNotes": ["For a failed online transaction, use the published bank-contact or payment-grievance routes; do not infer a case result."],
-      "documentationQualityNotes": ["The sequence is published, but property-specific demand, payment, confirmation, and receipt results were not accessed."],
-      "status": "partial"
     },
-    "reason": "Protocol section 1 requires the published procedural sequence to be integrated into journeys rather than left only in claims and the portal sidecar.",
-    "support": {
-      "sourceIds": ["source_ind72_official_portal", "source_ind72_official_service_details", "source_ind72_official_receipt_print"],
-      "auditNote": "Every step cites existing primary-scenario claims and preserves the case-data and payment boundary."
-    }
-  },
-  {
-    "recordType": "roadblock",
-    "recordId": "roadblock_ind72_failed_transaction_after_debit",
-    "fieldPath": "/",
-    "old": null,
-    "new": {
-      "id": "roadblock_ind72_failed_transaction_after_debit",
-      "title": "Online transaction fails after debit",
-      "category": "infrastructure",
-      "symptom": "The payment transaction fails after the amount has been debited.",
-      "likelyCause": "The published policy identifies a network or technical error as the failed-transaction circumstance.",
-      "recovery": "The policy says the amount is automatically refunded under the relevant provider's policy; the portal also directs failed-transaction queries to the respective bank.",
-      "ownerAgencyIds": ["agency_property_tax_payment"],
-      "nodeIds": ["node_property_tax_payment_public_route"],
-      "scenarioIds": ["scenario_property_tax_payment_failed"],
-      "claimIds": ["claim_ind72_failed_transaction_public_recovery", "claim_ind72_failed_transaction_auto_refund", "claim_ind72_online_failure_bank_route"],
-      "status": "verified"
+    {
+      "recordType": "agency",
+      "recordId": "agency_property_tax_payment",
+      "fieldPath": "/shortName",
+      "old": "Reddit / r/bangalore",
+      "new": "GBA",
+      "reason": "The short name must identify the displayed official agency rather than a citizen forum.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "The official portal displays GBA - Government of Karnataka."
+      }
     },
-    "reason": "A user-visible blocker supported by current official policy must be integrated into roadblocks rather than left only in claims.",
-    "support": {
-      "sourceIds": ["source_ind72_tax_refund_policy", "source_ind72_official_portal"],
-      "auditNote": "The roadblock states the published condition and recovery without claiming that a live failure or refund was observed."
+    {
+      "recordType": "agency",
+      "recordId": "agency_property_tax_payment",
+      "fieldPath": "/officialUrl",
+      "old": "https://www.reddit.com/r/bangalore/comments/n5zu4y/",
+      "new": "https://bbmptax.karnataka.gov.in/pages/service_details.aspx",
+      "reason": "An official agency/service record cannot use a citizen forum URL as its official URL.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "The replacement is the cited official property-tax service-details route."
+      }
+    },
+    {
+      "recordType": "source",
+      "recordId": "source_ind72_tax_receipt_print",
+      "fieldPath": "/type",
+      "old": "official_guidance",
+      "new": "official_form",
+      "reason": "The source is a directly observed current official receipt-request form.",
+      "support": {
+        "sourceIds": ["source_ind72_tax_receipt_print"],
+        "auditNote": "The route displays application-number, assessment-year, and CAPTCHA inputs and is titled Receipt Print."
+      }
+    },
+    {
+      "recordType": "source",
+      "recordId": "source_ind72_official_service_details",
+      "fieldPath": "/publishedAt",
+      "old": "2026-04-01",
+      "new": null,
+      "reason": "The footer version date is not established as the page publication date.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "The source note expressly says the page does not show a separate publication date."
+      }
+    },
+    {
+      "recordType": "source",
+      "recordId": "source_ind72_official_service_details",
+      "fieldPath": "/notes",
+      "old": "Portal footer displays Version 01-04-2026/13.1-1; the page itself does not show a separate publication date. No Wayback snapshot could be captured in this environment; the original official URL is retained. The research browser rejected the Wayback save URL as unsafe before it could submit a capture request.",
+      "new": "Jurisdiction: Bengaluru, Karnataka, India. Portal footer displays Version 01-04-2026/13.1-1; the page itself does not show a separate publication date. No Wayback snapshot could be captured in this environment; the original official URL is retained. The research browser rejected the Wayback save URL as unsafe before it could submit a capture request.",
+      "reason": "The citation gate requires each source record to supply jurisdiction.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "The ledger meta and linked claims consistently identify Bengaluru, Karnataka, India."
+      }
+    },
+    {
+      "recordType": "source",
+      "recordId": "source_ind72_tax_receipt_print",
+      "fieldPath": "/notes",
+      "old": "Visible date: The footer displayed Version 01-04-2026/13.1-1. A Save Page Now request was made on 2026-09-05; no snapshot URL or confirming response header was returned, so archival capture is unconfirmed.",
+      "new": "Jurisdiction: Bengaluru, Karnataka, India. Visible date: The footer displayed Version 01-04-2026/13.1-1. A Save Page Now request was made on 2026-09-05; no snapshot URL or confirming response header was returned, so archival capture is unconfirmed.",
+      "reason": "The citation gate requires each source record to supply jurisdiction.",
+      "support": {
+        "sourceIds": ["source_ind72_tax_receipt_print"],
+        "auditNote": "The ledger meta and linked claims consistently identify Bengaluru, Karnataka, India."
+      }
+    },
+    {
+      "recordType": "source",
+      "recordId": "source_ind72_tax_refund_policy",
+      "fieldPath": "/notes",
+      "old": "Visible date: Visible date: the footer displayed Version 01-04-2026/13.1-1 on this Refund and Cancellation Policy page. A Save Page Now request was made on 2026-09-05; no snapshot URL or confirming response header was returned, so archival capture is unconfirmed.",
+      "new": "Jurisdiction: Bengaluru, Karnataka, India. Visible date: the footer displayed Version 01-04-2026/13.1-1 on this Refund and Cancellation Policy page. A Save Page Now request was made on 2026-09-05; no snapshot URL or confirming response header was returned, so archival capture is unconfirmed.",
+      "reason": "The citation gate requires each source record to supply jurisdiction; the duplicated label is also removed without changing the evidence meaning.",
+      "support": {
+        "sourceIds": ["source_ind72_tax_refund_policy"],
+        "auditNote": "The ledger meta and linked claims consistently identify Bengaluru, Karnataka, India."
+      }
+    },
+    {
+      "recordType": "source",
+      "recordId": "citizen_source_property_tax_forum_session_failure_2021",
+      "fieldPath": "/notes",
+      "old": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained.",
+      "new": "Jurisdiction: Bengaluru, Karnataka, India. The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained.",
+      "reason": "The citation gate requires each source record to supply jurisdiction.",
+      "support": {
+        "sourceIds": ["citizen_source_property_tax_forum_session_failure_2021"],
+        "auditNote": "The linked claims expressly limit the account to Bengaluru, Karnataka, India."
+      }
+    },
+    {
+      "recordType": "source",
+      "recordId": "citizen_source_property_tax_browser_recovery_2023",
+      "fieldPath": "/notes",
+      "old": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained.",
+      "new": "Jurisdiction: Bengaluru, Karnataka, India. The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained.",
+      "reason": "The citation gate requires each source record to supply jurisdiction.",
+      "support": {
+        "sourceIds": ["citizen_source_property_tax_browser_recovery_2023"],
+        "auditNote": "The linked claims expressly limit the account to Bengaluru, Karnataka, India."
+      }
+    },
+    {
+      "recordType": "source",
+      "recordId": "citizen_source_property_tax_wrong_property_payment_2025",
+      "fieldPath": "/notes",
+      "old": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained.",
+      "new": "Jurisdiction: Bengaluru, Karnataka, India. The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained.",
+      "reason": "The citation gate requires each source record to supply jurisdiction.",
+      "support": {
+        "sourceIds": ["citizen_source_property_tax_wrong_property_payment_2025"],
+        "auditNote": "The linked claims expressly limit the account to Bengaluru, Karnataka, India."
+      }
+    },
+    {
+      "recordType": "source",
+      "recordId": "citizen_source_property_tax_receipt_missing_2026",
+      "fieldPath": "/notes",
+      "old": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained.",
+      "new": "Jurisdiction: Bengaluru, Karnataka, India. The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained.",
+      "reason": "The citation gate requires each source record to supply jurisdiction.",
+      "support": {
+        "sourceIds": ["citizen_source_property_tax_receipt_missing_2026"],
+        "auditNote": "The linked claims expressly limit the account to Bengaluru, Karnataka, India."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [],
+      "new": ["claim_ind72_public_service_online_payment"],
+      "reason": "The mentioned cost topic should link the verified claim that establishes an online payment step while supplying no amount.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "A payment step without an amount is mentioned, not stated."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/cost/note",
+      "old": "",
+      "new": "The reviewed service-details route mentions online payment but provides no citizen-paid amount or actionable fee schedule.",
+      "reason": "A mentioned expectation cell must include a human-authored search note.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "The claim establishes the topic only, not an actionable cost value."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/documents/note",
+      "old": "",
+      "new": "The reviewed service-details route does not identify a document that the citizen must submit, provide, upload, produce, or attach.",
+      "reason": "An absent expectation cell must include a human-authored search note.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "The available inputs and CAPTCHA are not document requirements under the protocol definition."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/eligibility/note",
+      "old": "",
+      "new": "The actionable rule is that the online service is for property owners within Bengaluru City Corporation limits.",
+      "reason": "A stated expectation cell must include an actionable-value note.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "Verified Grade B claim claim_ind72_service_eligibility states the usable applicability rule."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/time/note",
+      "old": "",
+      "new": "The reviewed service-details route touches assessment-year timing but no actionable duration, deadline, processing period, or service-level target is captured.",
+      "reason": "A mentioned expectation cell must include a human-authored search note.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "The authorized records do not preserve a usable numeric or rule-based time value."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/owner/note",
+      "old": "",
+      "new": "The reviewed route names Bengaluru City Corporations/GBA and a head-office contact topic, but no claim identifies the office or operational role that holds or decides a case.",
+      "reason": "A mentioned expectation cell must include a human-authored search note.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "General agency naming alone does not meet the stated-owner definition."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/after-submission/state",
+      "old": "mentioned",
+      "new": "stated",
+      "reason": "Verified Grade B claims identify real-time confirmation and a generated receipt after payment, both qualifying post-submission surfaces.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "The section 8 definition expressly treats confirmation and receipt as stated after-submission evidence."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [],
+      "new": ["claim_ind72_public_service_confirmation", "claim_ind72_public_service_receipt_generation"],
+      "reason": "A stated expectation cell must cite the verified claims that provide its actionable value.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "Both claims are verified Grade B observations of published procedure text."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/after-submission/searchedRoutes",
+      "old": ["https://bbmptax.karnataka.gov.in/pages/service_details.aspx"],
+      "new": [],
+      "reason": "The cell is being converted from a searched-route limitation cell to a stated claim-supported cell.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "The stated-cell contract uses claim IDs and an actionable-value note."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/after-submission/note",
+      "old": "",
+      "new": "After payment, the published procedure says the citizen receives real-time payment confirmation and a generated receipt.",
+      "reason": "A stated expectation cell must include a human-authored actionable-value note.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "The note is limited to the published post-payment surfaces and does not claim they were accessed."
+      }
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_ind72_failed_transaction_public_recovery",
+      "fieldPath": "/scenarioIds",
+      "old": ["scenario_property_tax_payment_known_sas_pid"],
+      "new": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_payment_failed"],
+      "reason": "A claim defining a failed-transaction circumstance must be tagged to the declared failed-payment branch.",
+      "support": {
+        "sourceIds": ["source_ind72_tax_refund_policy"],
+        "auditNote": "The claim is directly applicable to scenario_property_tax_payment_failed."
+      }
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_ind72_failed_transaction_auto_refund",
+      "fieldPath": "/scenarioIds",
+      "old": ["scenario_property_tax_payment_known_sas_pid"],
+      "new": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_payment_failed"],
+      "reason": "A claim describing recovery from the declared failed-payment circumstance must be tagged to that branch.",
+      "support": {
+        "sourceIds": ["source_ind72_tax_refund_policy"],
+        "auditNote": "The recovery claim is directly applicable to scenario_property_tax_payment_failed."
+      }
+    },
+    {
+      "recordType": "portal",
+      "recordId": "portal_ind72_bengaluru_property_tax",
+      "fieldPath": "/routeObservations/2/scenarioIds",
+      "old": ["scenario_property_tax_payment_known_sas_pid"],
+      "new": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_payment_failed"],
+      "reason": "The refund-policy route observes the declared failed-payment branch and must carry that scenario ID.",
+      "support": {
+        "sourceIds": ["source_ind72_tax_refund_policy"],
+        "auditNote": "The route records a failed-transaction description and recovery surface."
+      }
+    },
+    {
+      "recordType": "portal",
+      "recordId": "portal_ind72_bengaluru_property_tax",
+      "fieldPath": "/routeObservations/0/javascriptDependencies",
+      "old": "No CAPTCHA observed; no interactive flow was tested.",
+      "new": "No JavaScript dependency was established because no interactive flow was tested.",
+      "reason": "The JavaScript field must report JavaScript dependency rather than repeat CAPTCHA status.",
+      "support": {
+        "sourceIds": ["source_ind72_official_service_details"],
+        "auditNote": "The route limitation supports an unknown/not-established JavaScript dependency."
+      }
+    },
+    {
+      "recordType": "portal",
+      "recordId": "portal_ind72_bengaluru_property_tax",
+      "fieldPath": "/routeObservations/1/javascriptDependencies",
+      "old": "CAPTCHA image and CAPTCHA-text input observed; no CAPTCHA was solved or submitted.",
+      "new": "No JavaScript dependency was established from the blank public form; no interactive request was submitted.",
+      "reason": "The JavaScript field must report JavaScript dependency rather than repeat CAPTCHA status.",
+      "support": {
+        "sourceIds": ["source_ind72_tax_receipt_print"],
+        "auditNote": "CAPTCHA remains correctly recorded in captchaDependencies."
+      }
+    },
+    {
+      "recordType": "portal",
+      "recordId": "portal_ind72_bengaluru_property_tax",
+      "fieldPath": "/routeObservations/2/javascriptDependencies",
+      "old": "No CAPTCHA observed on the policy page; the linked grievance route could not be checked because of a fetch timeout.",
+      "new": "No JavaScript dependency was established on the policy page; the linked grievance route could not be checked because of a fetch timeout.",
+      "reason": "The JavaScript field must report JavaScript dependency rather than repeat CAPTCHA status.",
+      "support": {
+        "sourceIds": ["source_ind72_tax_refund_policy"],
+        "auditNote": "The field retains the unobserved linked-route limitation."
+      }
+    },
+    {
+      "recordType": "portal",
+      "recordId": "portal_ind72_bengaluru_property_tax",
+      "fieldPath": "/routeObservations/1/trackingSurfaces",
+      "old": ["assessment-year selector"],
+      "new": [],
+      "reason": "An assessment-year selector is an input prerequisite, not a status or case-tracking surface.",
+      "support": {
+        "sourceIds": ["source_ind72_tax_receipt_print"],
+        "auditNote": "The selector remains recorded by the form observation and verified claim; only its tracking classification is removed."
+      }
+    },
+    {
+      "recordType": "portal",
+      "recordId": "portal_ind72_bengaluru_property_tax",
+      "fieldPath": "/routeObservations/2/limitations",
+      "old": ["No bank or payment interaction, payment failure, refund request, ticket, or supporting document was used. The failure branch was therefore not recorded as encountered."],
+      "new": ["No bank or payment interaction, payment failure, refund request, ticket, or supporting document was used. The failed-transaction route was observed only in published policy text, not through a live failure."],
+      "reason": "The existing limitation contradicts the ledger's recorded failed-payment branch; the corrected wording preserves the observation boundary.",
+      "support": {
+        "sourceIds": ["source_ind72_tax_refund_policy"],
+        "auditNote": "The branch is encountered in published policy, while no transaction was created or tested."
+      }
     }
-  },
-  {
-    "recordType": "portal",
-    "recordId": "portal_ind72_bengaluru_property_tax",
-    "fieldPath": "/routeObservations/0/scenarioIds",
-    "old": ["scenario_property_tax_payment_known_sas_pid"],
-    "new": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_payment_failed", "scenario_property_tax_receipt_discrepancy"],
-    "reason": "The observed home route records public failure and receipt-discrepancy recovery surfaces used by claims tagged to both declared branches.",
-    "support": {
-      "sourceIds": ["source_ind72_official_portal"],
-      "auditNote": "This adds only manifest-declared, ledger-present branch IDs and does not create a scenario alias."
-    }
-  },
-  {
-    "recordType": "portal",
-    "recordId": "portal_ind72_bengaluru_property_tax",
-    "fieldPath": "/routeObservations/2/scenarioIds",
-    "old": ["scenario_property_tax_payment_known_sas_pid"],
-    "new": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_receipt_discrepancy"],
-    "reason": "The Receipt Print route is evidence for ledger claims tagged to the declared receipt-discrepancy branch.",
-    "support": {
-      "sourceIds": ["source_ind72_official_receipt_print"],
-      "auditNote": "The blank form was observed, while the case-data boundary and unattempted CAPTCHA remain explicit."
-    }
-  },
-  {
-    "recordType": "portal",
-    "recordId": "portal_ind72_bengaluru_property_tax",
-    "fieldPath": "/routeObservations/3/scenarioIds",
-    "old": ["scenario_property_tax_payment_known_sas_pid"],
-    "new": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_payment_failed"],
-    "reason": "The refund-policy route directly records published failed-transaction guidance for the declared failed-payment branch.",
-    "support": {
-      "sourceIds": ["source_ind72_tax_refund_policy"],
-      "auditNote": "The branch tag describes published evidence and does not assert a performed failure or refund."
-    }
-  },
-  {
-    "recordType": "portal",
-    "recordId": "portal_ind72_bengaluru_property_tax",
-    "fieldPath": "/routeObservations/3/limitations",
-    "old": "No bank or payment interaction, payment failure, refund request, ticket, or supporting document was used. The failure branch was therefore not recorded as encountered.",
-    "new": "No bank or payment interaction, payment failure, refund request, ticket, or supporting document was used. This route records published failed-transaction guidance only; no live failure branch was performed or observed.",
-    "reason": "The existing limitation conflates encountering published branch evidence with performing a live failure and conflicts with the ledger's declared encountered branch.",
-    "support": {
-      "sourceIds": ["source_ind72_tax_refund_policy"],
-      "auditNote": "The revision preserves the safety boundary while accurately describing the evidence type."
-    }
-  }
-]
+  ]
+}

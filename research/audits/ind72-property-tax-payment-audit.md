@@ -1,52 +1,72 @@
 # IND-72 property-tax-payment audit
 
-Audit date: 2026-09-05  
-Service: `property-tax-payment`  
-Primary scenario: `scenario_property_tax_payment_known_sas_pid`  
-Verdict: **corrections required; not done**
+**Audit date:** 2026-09-04  
+**Input boundary:** `ledger/property-tax-payment.json`, `ledger/expectations/property-tax-payment.json`, `ledger/portals/property-tax-payment.json`, the `property-tax-payment` manifest entry, `ledger/schema.json`, `ledger/AGENT_PROTOCOL.md`, and its section 13 corrections contract only.  
+**Verdict:** **Not ready to ship; definition of done is not met.** The main ledger is schema-valid and its references resolve, but the evidence dates are future-dated relative to this audit, the actual primary payment route was not observed, and 30 atomic corrections remain unapplied.
 
-## Input boundary and method
+## Blocking findings
 
-This fresh audit used only the integrated ledger, its expectations and portal sidecars, the service's manifest entry, `ledger/schema.json`, and `ledger/AGENT_PROTOCOL.md`. No researcher handoff, issue discussion, other ledger, external page, or git state was used. The proposed changes are recorded in `ind72-property-tax-payment-corrections.json` and were not applied.
+### B1 — Evidence dates are not credible as of the audit date; no correction proposed
 
-The ledger parses as JSON and conforms to the supplied ledger schema on structural inspection. All claim-to-source, claim-to-node, claim-to-scenario, node-to-claim, and scenario-to-node references resolve. The ledger contains 8 sources, 43 claims (32 Grade B/verified and 11 Grade E/partial), 3 declared scenarios, 1 node, and no edges, roadblocks, or journeys. No duplicate source URL/access-date pairs were found.
+The ledger `meta.asOf`, all seven source `accessedAt` values, archive-attempt notes, and the portal `observedAt` are dated 2026-09-05, one day after this 2026-09-04 audit. Exact access dates are part of the citation gate and archive rule. The auditor cannot infer whether the intended date was 2026-09-04 or whether the audit is premature, so changing these values would invent evidence. The service remains blocked until the actual access/observation dates are established and all linked dates are made internally truthful.
 
-## Findings
+### B2 — The primary payment route is missing; no correction proposed
 
-### Blocking findings
+The manifest fixes `scenario_property_tax_payment_known_sas_pid` as the primary scenario, but the portal sidecar observes only the explanatory service-details page, the receipt-print form, and the refund-policy page. It does not contain the route where a known SAS/PID is entered, demand is retrieved, payment begins, or the public/case-data boundary of that route is observed. The ledger therefore does not substantiate the primary scenario's defining prerequisite or trace its actual entry route. The auditor cannot add an unobserved URL or route record.
 
-1. **The node's owner is a citizen forum, not the service authority.** `agency_property_tax_payment` is named “Reddit / r/bangalore,” uses a Reddit URL, and owns `node_property_tax_payment_public_route`. This conflicts with the official-source publishers and with the portal record, which names Bengaluru City Corporations as service owner and GBA/Government of Karnataka in the displayed agency naming. Corrections replace the agency's name, short name, and official URL while preserving its ID.
+### B3 — Service ownership is assigned to a citizen forum (corrections 1–3)
 
-2. **Five expectation cells lack the authored notes required by protocol section 9.** The substantive states are otherwise supported under section 8:
+The only agency record is named `Reddit / r/bangalore`, and the service node points to it as `ownerAgencyId`. Citizen evidence cannot establish the official service owner. The portal sidecar instead identifies Bengaluru City Corporations and shows GBA naming. Corrections 1–3 retain the published agency record ID while replacing its content with the official owner and official service URL.
 
-   - `cost: mentioned` is correct because the Grade B rebate/interest/penalty calendar touches cost but gives no amount or actionable fee schedule; its searched routes are present, but its search note is blank.
-   - `documents: absent` is correct because its reviewed routes are recorded and no claim names a document the citizen must submit, provide, upload, produce, or attach; its search note is blank.
-   - `eligibility: stated` is correct because `claim_ind72_service_eligibility` gives the usable rule “property owners within Bengaluru City Corporation limits”; the actionable-value note is blank.
-   - `time: stated` is correct. Four Grade B/verified claims give an actionable rebate window and interest/penalty start dates, and the existing note correctly limits the value to the payment calendar rather than processing time.
-   - `owner: stated` is correct because the Grade B claims identify the Joint Commissioner of Revenue Head Office, its location, and contact routes; the actionable-value note is blank.
-   - `after-submission: stated` is correct because the official procedure identifies real-time confirmation and receipt generation after payment; the actionable-value note is blank. Its current supporting claim is compound and is replaced by the two existing atomic claims.
+## Correctable findings
 
-3. **Claim atomicity is not clean.** `claim_ind72_confirmation_receipt` combines confirmation and receipt generation even though atomic claims for both facts already exist. It should be deleted, removed from the node, and replaced in the expectation cell by `claim_ind72_public_service_confirmation` and `claim_ind72_public_service_receipt_generation`. One other official claim and one citizen claim combine separable assertions; the corrections narrow each to one checkable statement without adding evidence. These are lint-blocking compound-claim findings under section 8.
+### C1 — Source metadata does not satisfy source-level specificity (corrections 4–12)
 
-4. **Public-route evidence was not integrated into the node or journey.** All three node detail arrays are empty and `researchedNoSourceFound` is omitted. Omitting the marker is correct—routes actually found public checks, failure signals, and recoveries, so a no-source marker would be false—but leaving all arrays empty incorrectly renders those fields as “not yet researched.” The corrections populate one supported check, one supported failure signal, and three supported recoveries. A partial primary-scenario journey and one official failed-transaction roadblock are added from existing Grade B claims; no citizen report is used to establish an official rule.
+- `source_ind72_tax_receipt_print` is an observed current official form but is typed as `official_guidance`; correction 4 changes it to `official_form`.
+- `source_ind72_official_service_details.publishedAt` treats a footer version date as the page's publication date even though its own note says the page has no separate publication date; correction 5 removes the unsupported date.
+- None of the seven source records supplies jurisdiction at source level. Corrections 6–12 append `Jurisdiction: Bengaluru, Karnataka, India.` to the source notes. Direct URLs, publisher names, access-date fields, and archival-failure explanations are otherwise present.
 
-5. **Portal route scenario tags omit the declared branches whose evidence they record.** The manifest and ledger consistently declare `scenario_property_tax_payment_failed` and `scenario_property_tax_receipt_discrepancy`, and ledger claims tie public home/receipt/refund sources to those branches. Yet every route observation lists only the primary scenario. Corrections add the failed-payment branch to the home and refund-policy route arrays, and the receipt-discrepancy branch to the home and receipt-print route arrays. The refund-route limitation is narrowed so it distinguishes a published branch from an unperformed live failure.
+### C2 — Expectation cells are not fully authored, and after-submission is understated (corrections 13–22)
 
-6. **Source-level jurisdiction is not explicit.** Every claim has the correct Bengaluru/Karnataka jurisdiction, and every non-Unknown claim has at least one resolving source ID, but protocol section 7 also requires the source to supply jurisdiction. Because the supplied source schema has no dedicated jurisdiction property, corrections append `Jurisdiction: Bengaluru, Karnataka, India.` to each source's notes. Direct URLs and ISO access dates are already present.
+All six cells exist and score the manifest primary scenario, but every required human-authored note is blank.
 
-7. **Definition of done is not met.** The primary scenario is fixed and present, the six cells exist, source archival outcomes are recorded, portal records exist, and this fresh audit is complete. However, the correction set is intentionally unapplied; no clean/waived pre-audit lint result, post-correction green validation, or finish comment is evidenced within the permitted audit inputs. The manifest also remains `published: false` and `reportIncluded: false`. These are explicit unresolved completion limitations, not grounds to infer success.
+| Cell | Current state | Audit state | Rationale |
+| --- | --- | --- | --- |
+| cost | mentioned | mentioned | Online payment is named, but no citizen-paid amount or actionable fee schedule is given. Correction 13 links the topic-only payment claim; correction 14 supplies the search note. |
+| documents | absent | absent | The reviewed route does not identify a document that must be submitted, provided, uploaded, produced, or attached. Correction 15 supplies the search note. |
+| eligibility | stated | stated | A verified Grade B claim limits the service to property owners within Bengaluru City Corporation limits. Correction 16 supplies the actionable-value note. |
+| time | mentioned | mentioned | Assessment-year timing is touched, but no actionable duration, deadline, processing period, or SLA is captured. Correction 17 supplies the search note. |
+| owner | mentioned | mentioned | Agency/head-office naming is present, but no claim identifies the office or operational role that holds or decides a case. Correction 18 supplies the search note. |
+| after-submission | mentioned | stated | Verified Grade B claims say the portal gives real-time payment confirmation and generates a receipt after payment—both expressly qualify as visible post-submission surfaces. Corrections 19–22 set the state, claims, routes, and actionable note. |
 
-### Checks that pass
+### C3 — The published failed-transaction branch is inconsistently tagged (corrections 23–25)
 
-- **Declared scenarios:** The primary scenario matches the manifest, and both ledger branches are predeclared in the manifest. No undeclared scenario alias appears.
-- **`researchedNoSourceFound`:** No marker is present, so there is no unsupported marker to remove. The corrections use the found route evidence rather than inventing a no-source result.
-- **Archive notes:** Every used source records either a Wayback capture failure/unconfirmed capture and its limitation. Original URLs and access dates are retained. No authenticated, payment, personal, or case-specific page was archived.
-- **Citizen quarantine and redaction:** Citizen sources are typed `citizen_evidence`; their claims use Grade E, `partial` status, `citizen_` IDs, and explicit `citizen_reported` quarantine notes. They contain no retained names, handles, property/account/application identifiers, addresses, phone numbers, or identity data. They do not support expectation cells, node details, the proposed official roadblock, or an official recovery rule. No unsupported contradiction link is present.
-- **Evidence grade and basis:** Current official portals, procedure text, form observation, and policy are Grade B. Citizen accounts are Grade E. Claims consistently distinguish page/form statements from unperformed case-bound actions in their notes. No inference is mislabeled as observation and no unexplained `mixed` basis appears.
-- **Citation linkage:** Every non-Unknown claim cites at least one existing source; source and portal evidence references resolve; dates use ISO format; links are specific service, form, policy, or forum pages rather than substitute department homepages.
-- **Portal record:** One portal record describes the observed host and includes timestamp, owner/operator, agency naming, languages, version, evidence, redirects/counts, authentication and case-data boundaries, CAPTCHA/JavaScript constraints, public guidance/tracking/error/recovery surfaces, and limitations. No login-bound or case-data result is inferred.
-- **Safety:** The disclaimer and `asOf` date are present. Claims and route limitations consistently state that no identifier, owner-name fragment, CAPTCHA, OTP, login, payment, grievance, receipt request, or case-data access was attempted. No private API, bypass, or sensitive personal data appears.
+The manifest declares `scenario_property_tax_payment_failed`, and the ledger records that scenario as encountered. Yet the two official failed-transaction claims and the refund-policy route observation are tagged only to the primary scenario. Corrections 23–25 add the applicable failed-payment branch while retaining the primary-scenario link.
 
-## Correction-set disposition
+### C4 — Portal fields contain semantic errors (corrections 26–30)
 
-The companion JSON contains 30 atomic corrections. They form one drift-checked set across the ledger and its two sidecars: 3 agency fixes, 8 source-jurisdiction note additions, 5 expectation-note fixes, 1 expectation citation replacement, 4 claim/reference atomicity fixes, 3 node-detail integrations, 2 new integrated records, and 4 portal-route fixes. The entire set remains unapplied as required. Until it is applied atomically and validation/lint are green, this service must remain not done.
+- All three `javascriptDependencies` fields repeat CAPTCHA text rather than reporting JavaScript dependency or the observation limitation. Corrections 26–28 separate these concepts.
+- The receipt form's assessment-year selector is an input prerequisite, not a tracking surface. Correction 29 removes it from `trackingSurfaces`; it remains described by the form guidance and claims.
+- The refund route says the failure branch was not recorded as encountered, contradicting the ledger's declared branch. Correction 30 limits the statement to the fact that no live failure was created and the route was observed only in policy text.
+
+## Protocol checks
+
+- **Schema and references:** Pass. AJV draft-2020 validation of the main ledger against `ledger/schema.json` returned valid with no errors. All claim, source, node, scenario, expectation, and portal evidence references resolve. No duplicate source URL/access-date pairs were found.
+- **Scenario declaration:** Partial. The manifest primary and both branch IDs exactly match the three ledger scenarios; no undeclared scenario ID is used. The primary route gap in B2 blocks completion, and failed-branch tagging needs corrections 23–25.
+- **Claim atomicity:** Pass. The 21 claims are individually checkable; citizen receipt/debit/status/grievance observations are split instead of bundled. No split correction is required.
+- **Grades and basis:** Pass. Current official pages/forms are Grade B observations; citizen accounts are Grade E observations with `partial` status and explicit non-universality. No inference is mislabeled as an observed end-to-end payment.
+- **Citation linkage and specificity:** Partial. Every non-Unknown claim has a resolving source and every claim has Bengaluru/Karnataka jurisdiction plus scenario tags. Direct page/post URLs are used rather than homepages. Source-level jurisdiction is missing until corrections 6–12 apply, and future access dates in B1 block the citation gate.
+- **Archive rule:** Partial. Every public source note records either a failed or unconfirmed Wayback capture and retains the original URL; no authenticated, personal, payment, or case page was archived. The archive attempts are future-dated under B1 and must be reconciled.
+- **Citizen quarantine and redaction:** Pass. Citizen records use `citizen_evidence`, Grade E, `partial`, citizen-prefixed IDs, and explicit `citizen_reported` quarantine notes. They retain no names, handles, property/account/application identifiers, addresses, phone numbers, or identity data. They do not support expectation cells or official rules. No contradiction link is required because the accounts do not establish the same route and comparable period strongly enough to satisfy section 12.
+- **Nodes, edges, roadblocks, and journeys:** Pass with visible incompleteness. The single node has empty `checks`, `failureSignals`, and `recoveries`; no edge is required for a one-node path. No end-to-end journey is inferred from published fragments. Citizen failure accounts remain quarantined claims rather than official roadblocks.
+- **`researchedNoSourceFound`:** Pass. No marker is present, so no unsupported marker must be removed. The three empty node fields must continue to render as **not yet researched**, not as evidence that no public source exists.
+- **Portal record:** Partial. One portal record includes host, observation timestamp, owner/operator, displayed agency naming, languages, version, source IDs, and three detailed route observations. B2 and corrections 25–30 prevent a clean result.
+- **Safety:** Pass. The ledger disclaimer and node/route limitations prohibit or avoid login, identifiers, CAPTCHA submission, payment, case lookup, and personal data. No claim presents the ledger as official advice.
+- **Pre-audit lint:** Not clean. The unsupported `publishedAt`, official-form type, scenario tagging, source jurisdiction, and future-date defects are unwaived in the authorized inputs.
+- **Derived Mapped status:** Not reached. The default-path node has empty detail arrays without `researchedNoSourceFound`; this is informational and is not itself a completion target.
+
+## Corrections and done assessment
+
+The companion JSON contains **30 proposed, 0 applied, 30 unapplied** atomic corrections. Applying them must be one drift-checked atomic operation. Separately, B1 and B2 require new truthful evidence and therefore have no correction objects.
+
+Definition of done is not met: the citation dates are not credible as of audit, the primary payment route is absent, lint is not clean or waived, this audit's corrections are unapplied, validation has not been rerun after correction application, and no finish comment can truthfully report completion. The existing main-ledger schema validation and six-cell presence are necessary but insufficient.

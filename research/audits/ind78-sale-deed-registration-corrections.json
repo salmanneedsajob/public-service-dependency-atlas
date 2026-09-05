@@ -1,0 +1,369 @@
+[
+  {
+    "recordType": "source",
+    "recordId": "source_ind78_registration_act_india_code",
+    "fieldPath": "/type",
+    "old": "official_guidance",
+    "new": "law",
+    "reason": "The cited source is the text of the Registration Act, 1908, which supports a Grade A legal claim.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_registration_act_india_code"
+      ],
+      "auditNote": "Align source type with the binding-law evidence actually cited."
+    }
+  },
+  {
+    "recordType": "source",
+    "recordId": "source_ind78_karnataka_stamp_act_india_code",
+    "fieldPath": "/type",
+    "old": "official_guidance",
+    "new": "law",
+    "reason": "The cited source is the text of the Karnataka Stamp Act, 1957, which supports a Grade A legal claim.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_karnataka_stamp_act_india_code"
+      ],
+      "auditNote": "Align source type with the binding-law evidence actually cited."
+    }
+  },
+  {
+    "recordType": "source",
+    "recordId": "source_ind78_kaveri_landing_public_20260905",
+    "fieldPath": "/type",
+    "old": "official_guidance",
+    "new": "firsthand_observation",
+    "reason": "The associated Grade B claim records a direct current observation of the public interface, not published guidance.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_kaveri_landing_public_20260905"
+      ],
+      "auditNote": "Protocol section 4 assigns direct current public-interface observation Grade B."
+    }
+  },
+  {
+    "recordType": "source",
+    "recordId": "source_ind78_revenue_home_public_20260905",
+    "fieldPath": "/type",
+    "old": "official_guidance",
+    "new": "firsthand_observation",
+    "reason": "The associated claim records the public navigation timeout observed in this pass, not published guidance.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_revenue_home_public_20260905"
+      ],
+      "auditNote": "The source notes and claim describe a direct bounded observation."
+    }
+  },
+  {
+    "recordType": "claim",
+    "recordId": "claim_ind78_property_registration_scope",
+    "fieldPath": "/text",
+    "old": "The Registration and Stamps Department is responsible for registering documents relating to property transactions under the Registration Act and maintaining registered-property public records.",
+    "new": "The Registration and Stamps Department is responsible for registering documents relating to property transactions under the Registration Act.",
+    "reason": "The original text combines two independently checkable propositions. Retaining the registration proposition makes the claim atomic without inventing a new split record.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_revenue_annual_report"
+      ],
+      "auditNote": "The claim notes cite the annual report's department-description page."
+    }
+  },
+  {
+    "recordType": "claim",
+    "recordId": "claim_ind78_kaveri_project_director_designation",
+    "fieldPath": "/notes",
+    "old": "The project record names Prabhakar H L in the same contact section.",
+    "new": "The project record displays the Project Director role and AIGR (Computers) designation in the same contact section.",
+    "reason": "The individual name is unnecessary to support the role/designation claim and should not be retained.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_kaveri_indiastack_local"
+      ],
+      "auditNote": "The claim concerns the public role and designation, not the individual's identity."
+    }
+  },
+  {
+    "recordType": "scenario",
+    "recordId": "scenario_sale_deed_bengaluru_residential",
+    "fieldPath": "/pathNodeIds",
+    "old": [
+      "node_sale_deed_registration_public_route"
+    ],
+    "new": [
+      "node_ind78_service_entry",
+      "node_ind78_property_transaction",
+      "node_ind78_sro_registration",
+      "node_ind78_post_registration"
+    ],
+    "reason": "The declared primary path references a nonexistent node. The replacement is the connected sequence of existing nodes tagged to this scenario.",
+    "support": {
+      "sourceIds": [],
+      "auditNote": "Reference-integrity repair based solely on the integrated ledger's existing nodes and edges."
+    }
+  },
+  {
+    "recordType": "node",
+    "recordId": "node_ind78_property_transaction",
+    "fieldPath": "/claimIds",
+    "old": [
+      "claim_ind78_registration_act_rule",
+      "claim_ind78_stamp_payer_rule",
+      "claim_ind78_live_workflow_unknown",
+      "claim_ind78_live_fee_unknown"
+    ],
+    "new": [
+      "claim_ind78_registration_act_rule",
+      "claim_ind78_stamp_payer_rule",
+      "claim_ind78_live_workflow_unknown",
+      "claim_ind78_live_fee_unknown",
+      "claim_ind78_live_document_checklist_unknown"
+    ],
+    "reason": "The node's failure signal cites the current-document-checklist unknown claim, but the aggregate node claim list omits it.",
+    "support": {
+      "sourceIds": [],
+      "auditNote": "Internal reference-integrity repair; no new evidence is asserted."
+    }
+  },
+  {
+    "recordType": "node",
+    "recordId": "node_ind78_post_registration",
+    "fieldPath": "/checks/0/claimIds",
+    "old": [
+      "claim_ind78_kaveri2_bhoomi_integration"
+    ],
+    "new": [
+      "claim_ind78_kaveri2_bhoomi_system_integration",
+      "claim_ind78_kaveri2_eswathu_system_integration"
+    ],
+    "reason": "The check describes Bhoomi and E-Swathu integration, while its old claim list cites only the separate Kaveri-used-for-registration claim.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_revenue_annual_report"
+      ],
+      "auditNote": "The two replacement claims are the integration claims already present in the node aggregate list."
+    }
+  },
+  {
+    "recordType": "roadblock",
+    "recordId": "roadblock_ind78_seed_unavailable",
+    "fieldPath": "/symptom",
+    "old": "The supplied Kaveri landing page and Revenue homepage timed out before a usable 200 response.",
+    "new": "The supplied Kaveri landing page and Revenue homepage timed out before a usable page body was captured.",
+    "reason": "Each route observation records final status 200; the supported limitation is the absence of usable captured content, not absence of a 200 response.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_kaveri_landing_public_20260905",
+        "source_ind78_revenue_home_public_20260905"
+      ],
+      "auditNote": "Matches both route-observation limitations."
+    }
+  },
+  {
+    "recordType": "roadblock",
+    "recordId": "roadblock_ind78_seed_unavailable",
+    "fieldPath": "/likelyCause",
+    "old": "The official hosts did not return a usable response during this pass.",
+    "new": "The pass did not obtain usable route content; the root cause was not established.",
+    "reason": "A timeout observation does not establish a host-side cause.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_kaveri_landing_public_20260905",
+        "source_ind78_revenue_home_public_20260905"
+      ],
+      "auditNote": "Preserves the observed limit and removes unsupported causation."
+    }
+  },
+  {
+    "recordType": "roadblock",
+    "recordId": "roadblock_ind78_seed_unavailable",
+    "fieldPath": "/claimIds",
+    "old": [
+      "claim_ind78_live_workflow_unknown"
+    ],
+    "new": [
+      "claim_ind78_live_workflow_unknown",
+      "claim_ind78_revenue_public_route_unavailable"
+    ],
+    "reason": "The roadblock addresses both Kaveri and Revenue routes but previously cited only the Kaveri unknown claim.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_revenue_home_public_20260905"
+      ],
+      "auditNote": "Adds the existing claim that records the Revenue timeout."
+    }
+  },
+  {
+    "recordType": "roadblock",
+    "recordId": "roadblock_ind78_seed_unavailable",
+    "fieldPath": "/status",
+    "old": "verified",
+    "new": "partial",
+    "reason": "The observed timeout is documented, but neither the root cause nor a live recovery route was established.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_kaveri_landing_public_20260905",
+        "source_ind78_revenue_home_public_20260905"
+      ],
+      "auditNote": "Status must reflect the bounded, incomplete public observation."
+    }
+  },
+  {
+    "recordType": "portal",
+    "recordId": "portal_ind78_kaveri_20260905",
+    "fieldPath": "/routeObservations/0/publicProcedureVsCaseDataBoundary",
+    "old": "",
+    "new": "Unknown; the bounded public observation did not reach a procedure control, login prompt, or case-data surface.",
+    "reason": "Protocol section 10 requires an explicit public-procedure versus case-data boundary; a blank string does not record one.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_kaveri_landing_public_20260905"
+      ],
+      "auditNote": "The route limitation says only the tab title became visible."
+    }
+  },
+  {
+    "recordType": "portal",
+    "recordId": "portal_ind78_kaveri_20260905",
+    "fieldPath": "/routeObservations/0/captchaDependencies",
+    "old": "",
+    "new": "Unknown; no CAPTCHA surface was reached in the bounded observation.",
+    "reason": "A blank dependency field does not distinguish not observed from no dependency.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_kaveri_landing_public_20260905"
+      ],
+      "auditNote": "No interactive control was captured."
+    }
+  },
+  {
+    "recordType": "portal",
+    "recordId": "portal_ind78_kaveri_20260905",
+    "fieldPath": "/routeObservations/0/javascriptDependencies",
+    "old": "",
+    "new": "Unknown; no route content was captured from which to assess JavaScript dependence.",
+    "reason": "A blank dependency field does not record the observed limitation.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_kaveri_landing_public_20260905"
+      ],
+      "auditNote": "The route timed out before public controls or text were recorded."
+    }
+  },
+  {
+    "recordType": "portal",
+    "recordId": "portal_ind78_kaveri_20260905",
+    "fieldPath": "/routeObservations/0/evidenceIds",
+    "old": [],
+    "new": [
+      "source_ind78_kaveri_landing_public_20260905"
+    ],
+    "reason": "The route observation must link its direct observation evidence.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_kaveri_landing_public_20260905"
+      ],
+      "auditNote": "This is the portal record's existing evidence source."
+    }
+  },
+  {
+    "recordType": "portal",
+    "recordId": "portal_ind78_kaveri_20260905",
+    "fieldPath": "/visibleVersionOrLastUpdated",
+    "old": "",
+    "new": "Not observed; no publication or last-updated date was visible in the captured browser tab.",
+    "reason": "Protocol section 10 requires the observation to preserve whether a version or last-updated value was visible.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_kaveri_landing_public_20260905"
+      ],
+      "auditNote": "Matches the source note."
+    }
+  },
+  {
+    "recordType": "portal",
+    "recordId": "portal_ind78_revenue_20260905",
+    "fieldPath": "/agencyNamingShown",
+    "old": "",
+    "new": "Not observed; navigation timed out before a page body or agency naming was captured.",
+    "reason": "The field must preserve the result of the naming observation rather than remain blank.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_revenue_home_public_20260905"
+      ],
+      "auditNote": "Matches the route and source limitation."
+    }
+  },
+  {
+    "recordType": "portal",
+    "recordId": "portal_ind78_revenue_20260905",
+    "fieldPath": "/visibleVersionOrLastUpdated",
+    "old": "",
+    "new": "Not observed; navigation timed out before a page body or last-updated value was captured.",
+    "reason": "The field must preserve the result of the version/date observation rather than remain blank.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_revenue_home_public_20260905"
+      ],
+      "auditNote": "Matches the route and source limitation."
+    }
+  },
+  {
+    "recordType": "portal",
+    "recordId": "portal_ind78_revenue_20260905",
+    "fieldPath": "/routeObservations/0/publicProcedureVsCaseDataBoundary",
+    "old": "",
+    "new": "Unknown; navigation timed out before a public procedure, login prompt, or case-data surface was reached.",
+    "reason": "Protocol section 10 requires an explicit public-procedure versus case-data boundary; a blank string does not record one.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_revenue_home_public_20260905"
+      ],
+      "auditNote": "The route timed out before page content was captured."
+    }
+  },
+  {
+    "recordType": "portal",
+    "recordId": "portal_ind78_revenue_20260905",
+    "fieldPath": "/routeObservations/0/captchaDependencies",
+    "old": "",
+    "new": "Unknown; navigation timed out before any CAPTCHA surface could be assessed.",
+    "reason": "A blank dependency field does not distinguish not observed from no dependency.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_revenue_home_public_20260905"
+      ],
+      "auditNote": "No page body was captured."
+    }
+  },
+  {
+    "recordType": "portal",
+    "recordId": "portal_ind78_revenue_20260905",
+    "fieldPath": "/routeObservations/0/javascriptDependencies",
+    "old": "",
+    "new": "Unknown; navigation timed out before route content could be assessed for JavaScript dependence.",
+    "reason": "A blank dependency field does not record the observed limitation.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_revenue_home_public_20260905"
+      ],
+      "auditNote": "No page body was captured."
+    }
+  },
+  {
+    "recordType": "portal",
+    "recordId": "portal_ind78_revenue_20260905",
+    "fieldPath": "/routeObservations/0/evidenceIds",
+    "old": [],
+    "new": [
+      "source_ind78_revenue_home_public_20260905"
+    ],
+    "reason": "The route observation must link its direct observation evidence.",
+    "support": {
+      "sourceIds": [
+        "source_ind78_revenue_home_public_20260905"
+      ],
+      "auditNote": "This is the portal record's existing evidence source."
+    }
+  }
+]

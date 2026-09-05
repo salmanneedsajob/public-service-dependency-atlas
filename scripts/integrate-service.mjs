@@ -28,6 +28,8 @@ const sourceNotes = (source) => [
   source.wayback?.snapshotUrl ? `Wayback snapshot: ${source.wayback.snapshotUrl}` : null,
   source.wayback?.detail,
   source.wayback?.limitation,
+  source.archiveSnapshotUrl ? `Wayback snapshot: ${source.archiveSnapshotUrl}` : null,
+  source.archiveLimitation,
   source.redaction,
   ...(source.limitations ?? []),
 ].filter(Boolean).join(' ');
@@ -68,7 +70,7 @@ const normalizeHandoff = (handoff) => {
     })),
     scenarios,
     sources: (handoff.sources ?? []).map((source) => ({
-      id: source.id,
+      id: source.id ?? source.sourceId,
       title: source.title,
       publisher: source.publisher ?? (Array.isArray(source.agencyNameDisplayed) ? source.agencyNameDisplayed.join('; ') : source.agencyNameDisplayed) ?? agencyName,
       url: source.url,
@@ -78,7 +80,7 @@ const normalizeHandoff = (handoff) => {
       ...(sourceNotes(source) ? { notes: sourceNotes(source) } : {}),
     })),
     claims: (handoff.claims ?? []).map((claim) => ({
-      id: claim.id,
+      id: claim.id ?? claim.claimId,
       text: claim.text ?? claim.statement ?? claim.claim,
       jurisdiction: claim.jurisdiction ?? handoffJurisdiction,
       scenarioIds: claim.scenarioIds ?? [serviceManifest.primaryScenarioId],

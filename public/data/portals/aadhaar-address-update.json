@@ -14,9 +14,7 @@
         "English"
       ],
       "visibleVersionOrLastUpdated": "No visible version or last-updated date observed",
-      "evidenceSourceIds": [
-        "source_ind70_myaadhaar_entry"
-      ],
+      "evidenceSourceIds": [],
       "routeObservations": [
         {
           "routeId": "route_ind70_myaadhaar_entry",
@@ -47,10 +45,9 @@
           "recoverySurfaces": [
             "Support control displayed"
           ],
-          "evidenceIds": [
-            "source_ind70_myaadhaar_entry"
-          ],
+          "evidenceIds": [],
           "limitations": [
+            "The observation is retained as a portal-route limitation only: its available URL is a bare homepage and is not cited as evidence in this handoff.",
             "Browser navigation from the 200 seed reached the beta host; a public HTTP header check did not expose an HTTP redirect status.",
             "No case-specific service was opened from this route beyond the public Update Address choice."
           ]

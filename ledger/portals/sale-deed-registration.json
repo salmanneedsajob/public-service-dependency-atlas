@@ -11,7 +11,7 @@
       "portalOperator": "Government of Karnataka",
       "agencyNamingShown": "Kaveri Online Services",
       "languages": [],
-      "visibleVersionOrLastUpdated": "",
+      "visibleVersionOrLastUpdated": "Not observed; no publication or last-updated date was visible in the captured browser tab.",
       "evidenceSourceIds": [
         "source_ind78_kaveri_landing_public_20260905"
       ],
@@ -29,14 +29,16 @@
           "checkedLinkCount": 1,
           "deadLinkCount": 0,
           "authenticationPrerequisites": "unknown; no authentication prompt or control was reached in the bounded public observation",
-          "publicProcedureVsCaseDataBoundary": "",
-          "captchaDependencies": "",
-          "javascriptDependencies": "",
+          "publicProcedureVsCaseDataBoundary": "Unknown; the bounded public observation did not reach a procedure control, login prompt, or case-data surface.",
+          "captchaDependencies": "Unknown; no CAPTCHA surface was reached in the bounded observation.",
+          "javascriptDependencies": "Unknown; no route content was captured from which to assess JavaScript dependence.",
           "publicGuidanceSurfaces": [],
           "trackingSurfaces": [],
           "errorSurfaces": [],
           "recoverySurfaces": [],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "source_ind78_kaveri_landing_public_20260905"
+          ],
           "limitations": [
             "Browser navigation timed out after the tab title became visible; no public controls or textual guidance could be recorded.",
             "No login, OTP, CAPTCHA solving, form entry, upload, payment, appointment, or submission was attempted."
@@ -51,9 +53,9 @@
       "serviceId": "sale-deed-registration",
       "serviceOwner": "Revenue Department, Government of Karnataka",
       "portalOperator": "Government of Karnataka",
-      "agencyNamingShown": "",
+      "agencyNamingShown": "Not observed; navigation timed out before a page body or agency naming was captured.",
       "languages": [],
-      "visibleVersionOrLastUpdated": "",
+      "visibleVersionOrLastUpdated": "Not observed; navigation timed out before a page body or last-updated value was captured.",
       "evidenceSourceIds": [
         "source_ind78_revenue_home_public_20260905"
       ],
@@ -71,14 +73,16 @@
           "checkedLinkCount": 1,
           "deadLinkCount": 0,
           "authenticationPrerequisites": "unknown",
-          "publicProcedureVsCaseDataBoundary": "",
-          "captchaDependencies": "",
-          "javascriptDependencies": "",
+          "publicProcedureVsCaseDataBoundary": "Unknown; navigation timed out before a public procedure, login prompt, or case-data surface was reached.",
+          "captchaDependencies": "Unknown; navigation timed out before any CAPTCHA surface could be assessed.",
+          "javascriptDependencies": "Unknown; navigation timed out before route content could be assessed for JavaScript dependence.",
           "publicGuidanceSurfaces": [],
           "trackingSurfaces": [],
           "errorSurfaces": [],
           "recoverySurfaces": [],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "source_ind78_revenue_home_public_20260905"
+          ],
           "limitations": [
             "Navigation timed out; this is not a claim that the department route is permanently unavailable.",
             "No alternate or undocumented route was substituted."

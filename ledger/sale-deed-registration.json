@@ -30,7 +30,10 @@
         "primary"
       ],
       "pathNodeIds": [
-        "node_sale_deed_registration_public_route"
+        "node_ind78_service_entry",
+        "node_ind78_property_transaction",
+        "node_ind78_sro_registration",
+        "node_ind78_post_registration"
       ],
       "status": "partial"
     }
@@ -69,7 +72,7 @@
       "publisher": "India Code, Government of India",
       "url": "https://upload.indiacode.nic.in/showfile?actid=AC_RJ_83_1113_00005_00005_1569314358167&filename=a1908-16.pdf&type=actfile",
       "accessedAt": "2026-09-05",
-      "type": "official_guidance",
+      "type": "law",
       "notes": "Visible date: not shown; the India Code document date is not shown. Section 17(1)(b) text states that non-testamentary instruments creating, declaring, assigning, limiting, or extinguishing rights, title, or interest of value Rs 100 and upwards in immovable property shall be registered. This is a legal applicability rule, not a live Kaveri workflow or fee schedule."
     },
     {
@@ -78,7 +81,7 @@
       "publisher": "India Code, Government of India",
       "url": "https://www.indiacode.nic.in/bitstream/123456789/7744/1/34_of_1957_%28e%29_30_of_2025.pdf",
       "accessedAt": "2026-09-05",
-      "type": "official_guidance",
+      "type": "law",
       "notes": "Visible date: not shown; the India Code consolidated-document publication date is not shown and the search record identifies amendments through 2025. Section 30(b) states that, absent an agreement to the contrary, in the case of a conveyance the expense of providing proper stamp is borne by the grantee. It does not supply a current Bengaluru amount for this case."
     },
     {
@@ -87,7 +90,7 @@
       "publisher": "Bengaluru residential sale-deed registration through Kaveri 2.0",
       "url": "https://kaveri.karnataka.gov.in/landing-page",
       "accessedAt": "2026-09-05",
-      "type": "official_guidance",
+      "type": "firsthand_observation",
       "notes": "Visible date: No publication or last-updated date was visible in the captured browser tab."
     },
     {
@@ -96,7 +99,7 @@
       "publisher": "Bengaluru residential sale-deed registration through Kaveri 2.0",
       "url": "https://revenue.karnataka.gov.in/",
       "accessedAt": "2026-09-05",
-      "type": "official_guidance",
+      "type": "firsthand_observation",
       "notes": "Visible date: No page body, publication date, or last-updated date was captured because the public route timed out."
     },
     {
@@ -140,7 +143,7 @@
     },
     {
       "id": "claim_ind78_property_registration_scope",
-      "text": "The Registration and Stamps Department is responsible for registering documents relating to property transactions under the Registration Act and maintaining registered-property public records.",
+      "text": "The Registration and Stamps Department is responsible for registering documents relating to property transactions under the Registration Act.",
       "jurisdiction": "Bengaluru, Karnataka",
       "scenarioIds": [
         "scenario_sale_deed_bengaluru_residential"
@@ -204,7 +207,7 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "The project record names Prabhakar H L in the same contact section."
+      "notes": "The project record displays the Project Director role and AIGR (Computers) designation in the same contact section."
     },
     {
       "id": "claim_ind78_kaveri_project_director_department",
@@ -695,7 +698,8 @@
         "claim_ind78_registration_act_rule",
         "claim_ind78_stamp_payer_rule",
         "claim_ind78_live_workflow_unknown",
-        "claim_ind78_live_fee_unknown"
+        "claim_ind78_live_fee_unknown",
+        "claim_ind78_live_document_checklist_unknown"
       ],
       "status": "partial",
       "displayOrder": 20
@@ -756,7 +760,8 @@
           "description": "The Revenue annual report documents Kaveri-2.0 integration with Bhoomi and E-Swathu.",
           "url": "https://revenue.karnataka.gov.in/uploads/media_to_upload1712395448.pdf",
           "claimIds": [
-            "claim_ind78_kaveri2_bhoomi_integration"
+            "claim_ind78_kaveri2_bhoomi_system_integration",
+            "claim_ind78_kaveri2_eswathu_system_integration"
           ],
           "status": "verified"
         },
@@ -850,8 +855,8 @@
       "id": "roadblock_ind78_seed_unavailable",
       "title": "Supplied official seeds unavailable",
       "category": "documentation",
-      "symptom": "The supplied Kaveri landing page and Revenue homepage timed out before a usable 200 response.",
-      "likelyCause": "The official hosts did not return a usable response during this pass.",
+      "symptom": "The supplied Kaveri landing page and Revenue homepage timed out before a usable page body was captured.",
+      "likelyCause": "The pass did not obtain usable route content; the root cause was not established.",
       "recovery": "Do not infer a live route or substitute a different landing URL from this handoff; retry the exact supplied seeds in a later public-workflow pass.",
       "ownerAgencyIds": [
         "agency_karnataka_stamps_registration_ind78"
@@ -864,9 +869,10 @@
         "scenario_sale_deed_bengaluru_residential"
       ],
       "claimIds": [
-        "claim_ind78_live_workflow_unknown"
+        "claim_ind78_live_workflow_unknown",
+        "claim_ind78_revenue_public_route_unavailable"
       ],
-      "status": "verified"
+      "status": "partial"
     },
     {
       "id": "roadblock_ind78_historical_feature_limit",

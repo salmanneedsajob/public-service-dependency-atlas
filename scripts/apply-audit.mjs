@@ -145,7 +145,8 @@ function applyCorrection(ledger, correction) {
 
 function applySidecarCorrection(sidecar, correction) {
   validateCorrection(correction);
-  const isDocumentExpectation = correction.recordType === 'expectations';
+  const isDocumentExpectation = correction.recordType === 'expectations'
+    || (correction.recordType === 'expectation' && correction.recordId === sidecar.serviceId && correction.fieldPath.startsWith('/cells/'));
   const record = isDocumentExpectation
     ? sidecar
     : correction.recordType === 'expectation'
@@ -226,11 +227,12 @@ function selfTest() {
     [
       { recordType: 'meta', recordId: 'ignored', fieldPath: '/asOf', old: '2026-09-04', new: '2026-09-05', reason: 'Refresh the source access date.', support: { auditNote: 'Self-test.' } },
       { recordType: 'expectations', recordId: 'service_sample', fieldPath: '/cells/time/state', old: 'absent', new: 'stated', reason: 'A duration is cited.', support: { auditNote: 'Self-test.' } },
+      { recordType: 'expectation', recordId: 'service_sample', fieldPath: '/cells/time/note', old: '', new: 'Published duration.', reason: 'Record the supporting observation.', support: { auditNote: 'Self-test.' } },
       { recordType: 'portal', recordId: 'portal_sample', fieldPath: '/', old: { portalId: 'portal_sample' }, new: null, reason: 'Remove an unsupported portal.', support: { auditNote: 'Self-test.' } },
     ],
-    { expectation: { cells: { time: { state: 'absent' } } }, portal: { portals: [{ portalId: 'portal_sample' }] } },
+    { expectation: { serviceId: 'service_sample', cells: { time: { state: 'absent', note: '' } } }, portal: { portals: [{ portalId: 'portal_sample' }] } },
   );
-  if (documentSidecarResult.unapplied.length || documentSidecarResult.ledger.meta.asOf !== '2026-09-05' || documentSidecarResult.sidecars.expectation.cells.time.state !== 'stated' || documentSidecarResult.sidecars.portal.portals.length) throw new Error('Apply-audit self-test failed document sidecar or meta corrections.');
+  if (documentSidecarResult.unapplied.length || documentSidecarResult.ledger.meta.asOf !== '2026-09-05' || documentSidecarResult.sidecars.expectation.cells.time.state !== 'stated' || documentSidecarResult.sidecars.expectation.cells.time.note !== 'Published duration.' || documentSidecarResult.sidecars.portal.portals.length) throw new Error('Apply-audit self-test failed document sidecar or meta corrections.');
   console.log('Generic audit application self-test verified.');
 }
 

@@ -1,0 +1,1034 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru property tax payment evidence ledger v1",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-09-05",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Public sources and known gaps are shown together; do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_property_tax_payment",
+      "name": "Reddit / r/bangalore",
+      "shortName": "Reddit / r/bangalore",
+      "officialUrl": "https://www.reddit.com/r/bangalore/comments/n5zu4y/"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_property_tax_payment_known_sas_pid",
+      "label": "GBA property-tax payment",
+      "summary": "Public evidence for GBA property-tax payment.",
+      "tags": [
+        "primary"
+      ],
+      "pathNodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_property_tax_payment_failed",
+      "label": "property tax payment failed",
+      "summary": "Encountered published branch for GBA property-tax payment.",
+      "tags": [
+        "branch"
+      ],
+      "pathNodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_property_tax_receipt_discrepancy",
+      "label": "property tax receipt discrepancy",
+      "summary": "Encountered published branch for GBA property-tax payment.",
+      "tags": [
+        "branch"
+      ],
+      "pathNodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind72_official_portal",
+      "title": "BBMP Property Tax System — SAS Property Tax Payment",
+      "publisher": "GBA - Government of Karnataka",
+      "url": "https://bbmptax.karnataka.gov.in/",
+      "accessedAt": "2026-09-05",
+      "publishedAt": "2026-04-01",
+      "type": "official_portal",
+      "notes": "Portal footer displays Version 01-04-2026/13.1-1. No Wayback snapshot could be captured in this environment; the original official URL is retained. The research browser rejected the Wayback save URL as unsafe before it could submit a capture request."
+    },
+    {
+      "id": "source_ind72_official_service_details",
+      "title": "Service Details – Bengaluru City Corporation Property Tax",
+      "publisher": "GBA - Government of Karnataka",
+      "url": "https://bbmptax.karnataka.gov.in/pages/service_details.aspx",
+      "accessedAt": "2026-09-05",
+      "publishedAt": "2026-04-01",
+      "type": "official_portal",
+      "notes": "Portal footer displays Version 01-04-2026/13.1-1; the page itself does not show a separate publication date. No Wayback snapshot could be captured in this environment; the original official URL is retained. The research browser rejected the Wayback save URL as unsafe before it could submit a capture request."
+    },
+    {
+      "id": "source_ind72_official_receipt_print",
+      "title": "BBMP Property Tax System — Receipt Print",
+      "publisher": "GBA - Government of Karnataka",
+      "url": "https://bbmptax.karnataka.gov.in/Forms/PrintForms.aspx?rptype=3",
+      "accessedAt": "2026-09-05",
+      "publishedAt": "2026-04-01",
+      "type": "official_form",
+      "notes": "Portal footer displays Version 01-04-2026/13.1-1; the form itself does not show a separate publication date. No Wayback snapshot could be captured in this environment; the original official URL is retained. The research browser rejected the Wayback save URL as unsafe before it could submit a capture request."
+    },
+    {
+      "id": "source_ind72_tax_refund_policy",
+      "title": "Refund and Cancellation Policy – Bengaluru City Corporations Property Tax Online Payment Services",
+      "publisher": "Bengaluru City Corporations; GBA - Government of Karnataka",
+      "url": "https://bbmptax.karnataka.gov.in/pages/RCpolicy.aspx",
+      "accessedAt": "2026-09-05",
+      "type": "official_guidance",
+      "notes": "Visible date: the footer displayed Version 01-04-2026/13.1-1 on this Refund and Cancellation Policy page. A Save Page Now request was made on 2026-09-05; no snapshot URL or confirming response header was returned, so archival capture is unconfirmed."
+    },
+    {
+      "id": "citizen_source_property_tax_forum_session_failure_2021",
+      "title": "Property Tax for 2021-22",
+      "publisher": "Reddit / r/bangalore",
+      "url": "https://www.reddit.com/r/bangalore/comments/n5zu4y/",
+      "accessedAt": "2026-09-05",
+      "publishedAt": "2021-05-06",
+      "type": "citizen_evidence",
+      "notes": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
+    },
+    {
+      "id": "citizen_source_property_tax_browser_recovery_2023",
+      "title": "BBMP Property Tax",
+      "publisher": "Reddit / r/bangalore",
+      "url": "https://www.reddit.com/r/bangalore/comments/183eqxc/",
+      "accessedAt": "2026-09-05",
+      "publishedAt": "2023-11-25",
+      "type": "citizen_evidence",
+      "notes": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
+    },
+    {
+      "id": "citizen_source_property_tax_wrong_property_payment_2025",
+      "title": "BBMP Property Tax Paid Online to Wrong Property Identifier",
+      "publisher": "Reddit / r/Bengaluru",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1jv5zc3/bbmp_property_tax_paid_online_to_wrong_pid/",
+      "accessedAt": "2026-09-05",
+      "publishedAt": "2025-04-09",
+      "type": "citizen_evidence",
+      "notes": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
+    },
+    {
+      "id": "citizen_source_property_tax_receipt_missing_2026",
+      "title": "Tax Issues",
+      "publisher": "Reddit / r/Bengaluru",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1tws54h/tax_issues/",
+      "accessedAt": "2026-09-05",
+      "publishedAt": "2026-06-04",
+      "type": "citizen_evidence",
+      "notes": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind72_sas_pid_entry",
+      "text": "The public SAS Property Tax Payment page labels an entry field for a 10-digit application number or PID number.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The field was observed only; no identifier or owner-name fragment was entered."
+    },
+    {
+      "id": "claim_ind72_service_eligibility",
+      "text": "The service-details page says the online Property Tax Payment Service is for property owners within Bengaluru City Corporation limits.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_service_details"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_payment_modes",
+      "text": "The service-details page names net banking as an integrated payment-gateway option.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_service_details"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_confirmation_receipt",
+      "text": "The service-details page states that the portal provides real-time payment confirmation and receipt generation.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_service_details"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_tax_calendar",
+      "text": "The portal lists the assessment-year 2026–27 rebate period as 01-04-2026 to 30-04-2026.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_revenue_office",
+      "text": "The portal identifies the Joint Commissioner of Revenue as its Head Office.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_online_failure_bank_route",
+      "text": "For failed online transactions and bank-initiated refunds, the portal advises taxpayers to contact their respective banks.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_failed"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_payment_grievance_route",
+      "text": "The portal directs taxpayers with a payment-related issue to raise a ticket through its Grievance section.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_failed"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_receipt_discrepancy_aro",
+      "text": "The portal directs users with receipt discrepancies to find their ARO and links to a complete list.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_receipt_discrepancy"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_receipt_print_boundary",
+      "text": "The public Receipt Print form asks for a 10-digit application number.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_receipt_discrepancy"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_receipt_print"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No identifier, year, CAPTCHA, or receipt request was submitted."
+    },
+    {
+      "id": "claim_ind72_payment_debit_credit_cards",
+      "text": "The service-details page names debit/credit cards as an integrated payment-gateway option.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_service_details"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_payment_upi",
+      "text": "The service-details page names UPI as an integrated payment-gateway option.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_service_details"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_payment_other_digital_modes",
+      "text": "The service-details page says that the integrated payment gateway supports other digital modes.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_service_details"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_first_half_interest_date",
+      "text": "The portal lists first-half interest from 01-06-2026.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_second_half_interest_date",
+      "text": "The portal lists second-half interest from 01-12-2026.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_penalty_start_date",
+      "text": "The portal lists penalty as starting on 29-11-2026.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_revenue_office_location",
+      "text": "The portal lists NR Square as the Head Office location.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_revenue_office_telephone",
+      "text": "The portal displays telephone contact routes for the Head Office.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_revenue_office_email",
+      "text": "The portal displays an email contact route for the Head Office.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind72_receipt_print_assessment_year",
+      "text": "The public Receipt Print form asks for an assessment year.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_receipt_discrepancy"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_receipt_print"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No identifier, year, CAPTCHA, or receipt request was submitted."
+    },
+    {
+      "id": "claim_ind72_receipt_print_captcha",
+      "text": "The public Receipt Print form asks for CAPTCHA text.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_receipt_discrepancy"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_receipt_print"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No identifier, year, CAPTCHA, or receipt request was submitted."
+    },
+    {
+      "id": "claim_ind72_public_entry_identifier",
+      "text": "The public SAS Property Tax Payment entry screen asks for a 10-digit application number or PID number before showing property-specific information.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The identifier field was not populated and no property-specific result was requested."
+    },
+    {
+      "id": "claim_ind72_public_service_flow",
+      "text": "The service-details page says the portal displays tax demand details.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_service_details"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is published procedure text. No property demand was accessed; demand details are case-data-bound beyond a real identifier and were not requested. No payment or confirmation was accessed; both are likewise case-data-bound."
+    },
+    {
+      "id": "claim_ind72_public_service_online_payment",
+      "text": "The service-details page says the portal supports online payment through integrated payment gateway services.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_service_details"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No payment gateway was opened and no payment method or instrument was selected."
+    },
+    {
+      "id": "claim_ind72_public_service_confirmation",
+      "text": "The service-details page says the portal provides real-time payment confirmation.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_service_details"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No payment was made and no confirmation was accessed."
+    },
+    {
+      "id": "claim_ind72_public_service_receipt_generation",
+      "text": "The service-details page says the portal generates a receipt after payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_service_details"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No payment was made and no receipt was generated or retrieved."
+    },
+    {
+      "id": "claim_ind72_public_receipt_boundary",
+      "text": "The public Receipt Print route displays an application-number input.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_receipt_print"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No identifier was entered and no receipt request was submitted."
+    },
+    {
+      "id": "claim_ind72_public_receipt_assessment_year",
+      "text": "The public Receipt Print route displays an assessment-year selector.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_receipt_print"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No assessment year was selected and no receipt request was submitted."
+    },
+    {
+      "id": "claim_ind72_public_receipt_captcha",
+      "text": "The public Receipt Print route displays a CAPTCHA-text input.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_receipt_print"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No CAPTCHA was solved or submitted."
+    },
+    {
+      "id": "claim_ind72_failed_transaction_public_recovery",
+      "text": "The public refund policy identifies an online transaction that fails because of a network or technical error after an amount has been debited as a failed-transaction circumstance.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_tax_refund_policy"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No failed transaction was created or observed; this is published policy text, not an encountered failure branch."
+    },
+    {
+      "id": "claim_ind72_failed_transaction_auto_refund",
+      "text": "For the policy's described failed-transaction circumstance, it says the amount is automatically refunded under the relevant provider's policy.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_tax_refund_policy"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "No bank, gateway, payment platform, debit, or refund was accessed or observed."
+    },
+    {
+      "id": "claim_ind72_receipt_discrepancy_contact_surface",
+      "text": "The portal's public contact area directs receipt discrepancies and name-related queries to an ARO search route.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_official_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The ARO search UI itself requires a case-related application number, PID, or ward name, and no search was performed."
+    },
+    {
+      "id": "citizen_claim_property_tax_session_timeout_2021",
+      "text": "One forum participant reported a session-timeout message before the payment gateway on the BBMP property-tax site.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid",
+        "scenario_property_tax_payment_failed"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "citizen_source_property_tax_forum_session_failure_2021"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single account from 2021; it does not establish current portal behavior or an official failure condition. Possible failure signal only. Quarantine branch: citizen_reported."
+    },
+    {
+      "id": "citizen_claim_property_tax_mobile_name_mismatch_2021",
+      "text": "The same participant separately reported a name-mismatch message when attempting the payment on a mobile device.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid",
+        "scenario_property_tax_payment_failed"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "citizen_source_property_tax_forum_session_failure_2021"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single account from 2021; no cause, eligibility implication, or official recovery path is established. Possible failure signal only. Quarantine branch: citizen_reported."
+    },
+    {
+      "id": "citizen_claim_property_tax_online_payment_and_receipt_2021",
+      "text": "A different participant in the same thread reported completing a property-tax payment on the website and generating receipts without a problem.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "citizen_source_property_tax_forum_session_failure_2021"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single, contemporaneous user report; it does not verify a route for other properties or periods. Anecdotal success outcome only. Quarantine branch: citizen_reported."
+    },
+    {
+      "id": "citizen_claim_property_tax_browser_specific_recovery_2023",
+      "text": "One participant reported that an attempted property-tax payment initially failed in two desktop browsers.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid",
+        "scenario_property_tax_payment_failed"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "citizen_source_property_tax_browser_recovery_2023"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The account does not establish a reproducible technical cause or official workaround. Possible failure mode only. Quarantine branch: citizen_reported."
+    },
+    {
+      "id": "citizen_claim_property_tax_browser_later_succeeded_2023",
+      "text": "The same participant later reported completing the payment in one desktop browser.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid",
+        "scenario_property_tax_payment_failed"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "citizen_source_property_tax_browser_recovery_2023"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single account does not establish a reliable browser-specific recovery route. Anecdotal recovery outcome only. Quarantine branch: citizen_reported."
+    },
+    {
+      "id": "citizen_claim_property_tax_wrong_property_payment_2025",
+      "text": "A participant reported making a property-tax payment associated with a different property.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid",
+        "scenario_property_tax_payment_failed"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "citizen_source_property_tax_wrong_property_payment_2025"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This is a single account of an incorrect-target payment. It does not establish identifier validation or refund availability. Possible wrong-target-payment risk and possible recovery terminology only. Quarantine branch: citizen_reported."
+    },
+    {
+      "id": "citizen_claim_property_tax_wrong_property_grievance_inquiry_2025",
+      "text": "The same participant asked whether an online grievance could be used to seek a refund.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid",
+        "scenario_property_tax_payment_failed"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "citizen_source_property_tax_wrong_property_payment_2025"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "An inquiry does not establish that a grievance route accepts, decides, or refunds an incorrect-target payment. Possible recovery terminology only. Quarantine branch: citizen_reported."
+    },
+    {
+      "id": "citizen_claim_property_tax_receipt_not_generated_2026",
+      "text": "One participant reported that no tax receipt was generated after a property-tax payment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid",
+        "scenario_property_tax_receipt_discrepancy"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "citizen_source_property_tax_receipt_missing_2026"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single unverified account. It does not establish receipt availability or a formal receipt-discrepancy route. Possible receipt-discrepancy failure signal only. Quarantine branch: citizen_reported."
+    },
+    {
+      "id": "citizen_claim_property_tax_payment_debit_reported_2026",
+      "text": "The same participant reported that funds for the payment had been debited.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid",
+        "scenario_property_tax_receipt_discrepancy"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "citizen_source_property_tax_receipt_missing_2026"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A citizen report of a debit does not establish settlement or the tax system's payment status. Possible receipt-discrepancy context only. Quarantine branch: citizen_reported."
+    },
+    {
+      "id": "citizen_claim_property_tax_validity_expired_2026",
+      "text": "The same participant reported an expired-validity status after more than two months.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid",
+        "scenario_property_tax_receipt_discrepancy"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "citizen_source_property_tax_receipt_missing_2026"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "A single displayed-status report does not establish a universal portal status or its meaning. Possible receipt-discrepancy failure signal only. Quarantine branch: citizen_reported."
+    },
+    {
+      "id": "citizen_claim_property_tax_grievance_unresolved_2026",
+      "text": "The same participant reported opening a grievance and receiving no response at the time of posting.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid",
+        "scenario_property_tax_receipt_discrepancy"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "citizen_source_property_tax_receipt_missing_2026"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "This does not prove a grievance procedure, service level, or an official recovery route. Possible recovery attempt terminology only. Quarantine branch: citizen_reported."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_property_tax_payment_public_route",
+      "label": "Public service route",
+      "kind": "service",
+      "ownerAgencyId": "agency_property_tax_payment",
+      "summary": "Publicly observable route and published guidance; personal and case-specific stages remain outside this research.",
+      "requiredState": "Use only the published public route; do not enter personal, case, or payment data.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid",
+        "scenario_property_tax_payment_failed",
+        "scenario_property_tax_receipt_discrepancy"
+      ],
+      "claimIds": [
+        "claim_ind72_sas_pid_entry",
+        "claim_ind72_service_eligibility",
+        "claim_ind72_payment_modes",
+        "claim_ind72_confirmation_receipt",
+        "claim_ind72_tax_calendar",
+        "claim_ind72_revenue_office",
+        "claim_ind72_online_failure_bank_route",
+        "claim_ind72_payment_grievance_route",
+        "claim_ind72_receipt_discrepancy_aro",
+        "claim_ind72_receipt_print_boundary",
+        "claim_ind72_payment_debit_credit_cards",
+        "claim_ind72_payment_upi",
+        "claim_ind72_payment_other_digital_modes",
+        "claim_ind72_first_half_interest_date",
+        "claim_ind72_second_half_interest_date",
+        "claim_ind72_penalty_start_date",
+        "claim_ind72_revenue_office_location",
+        "claim_ind72_revenue_office_telephone",
+        "claim_ind72_revenue_office_email",
+        "claim_ind72_receipt_print_assessment_year",
+        "claim_ind72_receipt_print_captcha",
+        "claim_ind72_public_entry_identifier",
+        "claim_ind72_public_service_flow",
+        "claim_ind72_public_service_online_payment",
+        "claim_ind72_public_service_confirmation",
+        "claim_ind72_public_service_receipt_generation",
+        "claim_ind72_public_receipt_boundary",
+        "claim_ind72_public_receipt_assessment_year",
+        "claim_ind72_public_receipt_captcha",
+        "claim_ind72_failed_transaction_public_recovery",
+        "claim_ind72_failed_transaction_auto_refund",
+        "claim_ind72_receipt_discrepancy_contact_surface",
+        "citizen_claim_property_tax_session_timeout_2021",
+        "citizen_claim_property_tax_mobile_name_mismatch_2021",
+        "citizen_claim_property_tax_online_payment_and_receipt_2021",
+        "citizen_claim_property_tax_browser_specific_recovery_2023",
+        "citizen_claim_property_tax_browser_later_succeeded_2023",
+        "citizen_claim_property_tax_wrong_property_payment_2025",
+        "citizen_claim_property_tax_wrong_property_grievance_inquiry_2025",
+        "citizen_claim_property_tax_receipt_not_generated_2026",
+        "citizen_claim_property_tax_payment_debit_reported_2026",
+        "citizen_claim_property_tax_validity_expired_2026",
+        "citizen_claim_property_tax_grievance_unresolved_2026"
+      ],
+      "status": "partial",
+      "displayOrder": 1
+    }
+  ],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "property-tax-payment",
+  "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
+  "cells": {
+    "cost": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_ind72_tax_calendar"
+      ],
+      "searchedRoutes": [
+        "https://bbmptax.karnataka.gov.in/",
+        "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
+      ],
+      "note": ""
+    },
+    "documents": {
+      "state": "absent",
+      "claimIds": [],
+      "searchedRoutes": [
+        "https://bbmptax.karnataka.gov.in/",
+        "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
+      ],
+      "note": ""
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind72_service_eligibility"
+      ],
+      "searchedRoutes": [],
+      "note": ""
+    },
+    "time": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind72_tax_calendar",
+        "claim_ind72_first_half_interest_date",
+        "claim_ind72_second_half_interest_date",
+        "claim_ind72_penalty_start_date"
+      ],
+      "searchedRoutes": [],
+      "note": "This is a payment-calendar rule, not a processing-time commitment."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind72_revenue_office",
+        "claim_ind72_revenue_office_location",
+        "claim_ind72_revenue_office_telephone",
+        "claim_ind72_revenue_office_email"
+      ],
+      "searchedRoutes": [],
+      "note": ""
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind72_confirmation_receipt"
+      ],
+      "searchedRoutes": [],
+      "note": ""
+    }
+  }
+}

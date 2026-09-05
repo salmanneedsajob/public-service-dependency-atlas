@@ -1,0 +1,304 @@
+{
+  "handoffVersion": 2,
+  "serviceId": "property-tax-payment",
+  "serviceName": "GBA property-tax payment",
+  "assignedPass": "public-workflow",
+  "asOf": "2026-09-05",
+  "observedAt": "2026-09-05T13:01:05Z",
+  "jurisdiction": "Bengaluru, Karnataka, India",
+  "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
+  "encounteredBranchScenarioIds": [],
+  "safetyBoundary": "Public, unauthenticated interfaces only. No PID/SAS/property/owner lookup, calculation, payment, bank interaction, receipt retrieval, CAPTCHA attempt, or reproduction of case data was performed.",
+  "seedTests": [
+    {
+      "url": "https://bbmptax.karnataka.gov.in/",
+      "result": "200 observed",
+      "usedAsSourceId": "source_ind72_tax_portal_home"
+    },
+    {
+      "url": "https://bbmptax.karnataka.gov.in/pages/service_details.aspx",
+      "result": "200 observed",
+      "usedAsSourceId": "source_ind72_tax_service_details"
+    },
+    {
+      "url": "https://bbmp.gov.in/",
+      "result": "dropped: fetch timed out with a 400 tool error; not substituted with a homepage or another source",
+      "usedAsSourceId": null
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind72_tax_portal_home",
+      "url": "https://bbmptax.karnataka.gov.in/",
+      "title": "BBMP Property Tax System",
+      "agencyNameDisplayed": "GBA - Government of Karnataka; Bengaluru City Corporations",
+      "agencyTier": "municipal",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "accessedAt": "2026-09-05",
+      "publishedAt": null,
+      "visibleDateNote": "The footer displayed Version 01-04-2026/13.1-1 and the page displayed 2026-27 payment dates.",
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "waybackSnapshotUrl": null,
+      "archiveNote": "A Save Page Now request was made on 2026-09-05; no snapshot URL or confirming response header was returned, so archival capture is unconfirmed."
+    },
+    {
+      "id": "source_ind72_tax_service_details",
+      "url": "https://bbmptax.karnataka.gov.in/pages/service_details.aspx",
+      "title": "Service Details – Bengaluru City Corporation Property Tax",
+      "agencyNameDisplayed": "Bengaluru City Corporation; GBA - Government of Karnataka",
+      "agencyTier": "municipal",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "accessedAt": "2026-09-05",
+      "publishedAt": null,
+      "visibleDateNote": "The footer displayed Version 01-04-2026/13.1-1.",
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "waybackSnapshotUrl": null,
+      "archiveNote": "A Save Page Now request was made on 2026-09-05; no snapshot URL or confirming response header was returned, so archival capture is unconfirmed."
+    },
+    {
+      "id": "source_ind72_tax_receipt_print",
+      "url": "https://bbmptax.karnataka.gov.in/Forms/PrintForms.aspx?rptype=3",
+      "title": "Receipt Print",
+      "agencyNameDisplayed": "GBA - Government of Karnataka",
+      "agencyTier": "municipal",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "accessedAt": "2026-09-05",
+      "publishedAt": null,
+      "visibleDateNote": "The footer displayed Version 01-04-2026/13.1-1.",
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "waybackSnapshotUrl": null,
+      "archiveNote": "A Save Page Now request was made on 2026-09-05; no snapshot URL or confirming response header was returned, so archival capture is unconfirmed."
+    },
+    {
+      "id": "source_ind72_tax_refund_policy",
+      "url": "https://bbmptax.karnataka.gov.in/pages/RCpolicy.aspx",
+      "title": "Refund and Cancellation Policy – Bengaluru City Corporations Property Tax Online Payment Services",
+      "agencyNameDisplayed": "Bengaluru City Corporations; GBA - Government of Karnataka",
+      "agencyTier": "municipal",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "accessedAt": "2026-09-05",
+      "publishedAt": null,
+      "visibleDateNote": "Visible date: the footer displayed Version 01-04-2026/13.1-1 on this Refund and Cancellation Policy page.",
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "waybackSnapshotUrl": null,
+      "archiveNote": "A Save Page Now request was made on 2026-09-05; no snapshot URL or confirming response header was returned, so archival capture is unconfirmed."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind72_public_entry_identifier",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+      "statement": "The public SAS Property Tax Payment entry screen asks for a 10-digit application number or PID number before showing property-specific information.",
+      "sourceIds": ["source_ind72_tax_portal_home"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "limitations": "The identifier field was not populated and no property-specific result was requested."
+    },
+    {
+      "id": "claim_ind72_public_service_flow",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+      "statement": "The service-details page says the portal displays tax demand details.",
+      "sourceIds": ["source_ind72_tax_service_details"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "limitations": "This is published procedure text. No property demand was accessed; demand details are case-data-bound beyond a real identifier and were not requested. No payment or confirmation was accessed; both are likewise case-data-bound."
+    },
+    {
+      "id": "claim_ind72_public_service_online_payment",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+      "statement": "The service-details page says the portal supports online payment through integrated payment gateway services.",
+      "sourceIds": ["source_ind72_tax_service_details"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "limitations": "No payment gateway was opened and no payment method or instrument was selected."
+    },
+    {
+      "id": "claim_ind72_public_service_confirmation",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+      "statement": "The service-details page says the portal provides real-time payment confirmation.",
+      "sourceIds": ["source_ind72_tax_service_details"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "limitations": "No payment was made and no confirmation was accessed."
+    },
+    {
+      "id": "claim_ind72_public_service_receipt_generation",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+      "statement": "The service-details page says the portal generates a receipt after payment.",
+      "sourceIds": ["source_ind72_tax_service_details"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "limitations": "No payment was made and no receipt was generated or retrieved."
+    },
+    {
+      "id": "claim_ind72_public_receipt_boundary",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+      "statement": "The public Receipt Print route displays an application-number input.",
+      "sourceIds": ["source_ind72_tax_receipt_print"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "limitations": "No identifier was entered and no receipt request was submitted."
+    },
+    {
+      "id": "claim_ind72_public_receipt_assessment_year",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+      "statement": "The public Receipt Print route displays an assessment-year selector.",
+      "sourceIds": ["source_ind72_tax_receipt_print"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "limitations": "No assessment year was selected and no receipt request was submitted."
+    },
+    {
+      "id": "claim_ind72_public_receipt_captcha",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+      "statement": "The public Receipt Print route displays a CAPTCHA-text input.",
+      "sourceIds": ["source_ind72_tax_receipt_print"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "limitations": "No CAPTCHA was solved or submitted."
+    },
+    {
+      "id": "claim_ind72_failed_transaction_public_recovery",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+      "statement": "The public refund policy identifies an online transaction that fails because of a network or technical error after an amount has been debited as a failed-transaction circumstance.",
+      "sourceIds": ["source_ind72_tax_refund_policy"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "limitations": "No failed transaction was created or observed; this is published policy text, not an encountered failure branch."
+    },
+    {
+      "id": "claim_ind72_failed_transaction_auto_refund",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+      "statement": "For the policy's described failed-transaction circumstance, it says the amount is automatically refunded under the relevant provider's policy.",
+      "sourceIds": ["source_ind72_tax_refund_policy"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "limitations": "No bank, gateway, payment platform, debit, or refund was accessed or observed."
+    },
+    {
+      "id": "claim_ind72_receipt_discrepancy_contact_surface",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+      "statement": "The portal's public contact area directs receipt discrepancies and name-related queries to an ARO search route.",
+      "sourceIds": ["source_ind72_tax_portal_home"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "limitations": "The ARO search UI itself requires a case-related application number, PID, or ward name, and no search was performed."
+    }
+  ],
+  "portals": [
+    {
+      "portalId": "portal_ind72_bengaluru_property_tax",
+      "host": "bbmptax.karnataka.gov.in",
+      "observedAt": "2026-09-05T13:01:05Z",
+      "serviceOwner": "Bengaluru City Corporations",
+      "portalOperator": "National Informatics Centre (NIC), Karnataka",
+      "agencyNamingShown": ["GBA - Government of Karnataka", "Bengaluru City Corporations"],
+      "languagesShown": ["English", "Kannada"],
+      "visibleVersionOrLastUpdated": "Version 01-04-2026/13.1-1",
+      "evidenceSourceIds": ["source_ind72_tax_portal_home", "source_ind72_tax_service_details", "source_ind72_tax_receipt_print", "source_ind72_tax_refund_policy"],
+      "routeObservations": [
+        {
+          "routeId": "route_ind72_tax_home_public_entry",
+          "serviceId": "property-tax-payment",
+          "scenarioId": "scenario_property_tax_payment_known_sas_pid",
+          "entryUrl": "https://bbmptax.karnataka.gov.in/",
+          "finalUrl": "https://bbmptax.karnataka.gov.in/",
+          "redirects": [],
+          "checkedLinkCount": 3,
+          "deadLinkCount": 0,
+          "unresolvedLinkCount": 1,
+          "unresolvedLinks": [{"url": "https://bbmptax.karnataka.gov.in/Forms/grievancesreq.aspx", "result": "fetch timeout; not used as a source or treated as a dead route"}],
+          "authenticationPrerequisites": "No username/password prompt was observed before the entry form. The scope of an OTP element visible elsewhere on the page was not tested.",
+          "publicProcedureVsCaseDataBoundary": "Public guidance and empty entry controls are visible. Property-specific demand, status, and payment options lie beyond entry of a real application/PID and the page's owner-name validation prompt; none was attempted.",
+          "captchaJavaScriptOrAppDependencies": "No CAPTCHA was observed at the empty payment-entry screen. The page displayed a loading indicator, but JavaScript dependence was not tested.",
+          "publicGuidanceSurfaces": ["SAS Property Tax Payment entry", "contact guidance for online-payment status and receipt discrepancies", "grievance link", "refund/disclaimer text"],
+          "trackingSurfaces": ["Receipt Print link", "Challan Print link"],
+          "errorSurfaces": ["Published text refers to validity-expired/awaiting-clearance and online-payment validity-expired/repay issues; no error was generated."],
+          "recoverySurfaces": ["online-payment point-of-contact link", "ARO search link for receipt discrepancies", "grievance link"],
+          "evidenceIds": ["source_ind72_tax_portal_home", "claim_ind72_public_entry_identifier", "claim_ind72_receipt_discrepancy_contact_surface"],
+          "limitations": "No real identifier, name fragment, OTP, payment, grievance, bank, or case result was entered or accessed."
+        },
+        {
+          "routeId": "route_ind72_tax_service_details_public",
+          "serviceId": "property-tax-payment",
+          "scenarioId": "scenario_property_tax_payment_known_sas_pid",
+          "entryUrl": "https://bbmptax.karnataka.gov.in/pages/service_details.aspx",
+          "finalUrl": "https://bbmptax.karnataka.gov.in/pages/service_details.aspx",
+          "redirects": [],
+          "checkedLinkCount": 0,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": "None observed for this explanatory page.",
+          "publicProcedureVsCaseDataBoundary": "The page is public procedure text. It does not expose a citizen's demand, assessment, payment instrument, or receipt.",
+          "captchaJavaScriptOrAppDependencies": "No CAPTCHA observed; no interactive flow was tested.",
+          "publicGuidanceSurfaces": ["service scope", "published sequence from demand details through receipt generation", "assessment-year dates", "head-office contact"],
+          "trackingSurfaces": [],
+          "errorSurfaces": [],
+          "recoverySurfaces": [],
+          "evidenceIds": ["source_ind72_tax_service_details", "claim_ind72_public_service_flow"],
+          "limitations": "The described steps were not carried into a property-specific or payment flow."
+        },
+        {
+          "routeId": "route_ind72_tax_receipt_print_public",
+          "serviceId": "property-tax-payment",
+          "scenarioId": "scenario_property_tax_payment_known_sas_pid",
+          "entryUrl": "https://bbmptax.karnataka.gov.in/Forms/PrintForms.aspx?rptype=3",
+          "finalUrl": "https://bbmptax.karnataka.gov.in/Forms/PrintForms.aspx?rptype=3",
+          "redirects": [],
+          "checkedLinkCount": 0,
+          "deadLinkCount": 0,
+          "authenticationPrerequisites": "No account login was shown, but an application number, assessment year, and CAPTCHA are displayed as prerequisites to a receipt request.",
+          "publicProcedureVsCaseDataBoundary": "The blank form is public. Any resulting receipt would be case-specific and was not requested.",
+          "captchaJavaScriptOrAppDependencies": "CAPTCHA image and CAPTCHA-text input observed; no CAPTCHA was solved or submitted.",
+          "publicGuidanceSurfaces": ["Receipt Print form"],
+          "trackingSurfaces": ["assessment-year selector"],
+          "errorSurfaces": [],
+          "recoverySurfaces": ["home-page ARO-search link is publicly presented for receipt discrepancies"],
+          "evidenceIds": ["source_ind72_tax_receipt_print", "claim_ind72_public_receipt_boundary"],
+          "limitations": "No receipt lookup, CAPTCHA attempt, or personal/case data access occurred."
+        },
+        {
+          "routeId": "route_ind72_tax_refund_policy_public",
+          "serviceId": "property-tax-payment",
+          "scenarioId": "scenario_property_tax_payment_known_sas_pid",
+          "entryUrl": "https://bbmptax.karnataka.gov.in/pages/RCpolicy.aspx",
+          "finalUrl": "https://bbmptax.karnataka.gov.in/pages/RCpolicy.aspx",
+          "redirects": [],
+          "checkedLinkCount": 1,
+          "deadLinkCount": 0,
+          "unresolvedLinkCount": 1,
+          "unresolvedLinks": [{"url": "https://bbmptax.karnataka.gov.in/Forms/grievancesreq.aspx", "result": "fetch timeout; not used as a source or treated as a dead route"}],
+          "authenticationPrerequisites": "None observed for the policy page. Any grievance submission requirements are unknown because its linked route was not available to this pass.",
+          "publicProcedureVsCaseDataBoundary": "The policy is public. A grievance ticket or written request would involve payment evidence and was not opened or attempted.",
+          "captchaJavaScriptOrAppDependencies": "No CAPTCHA observed on the policy page; the linked grievance route could not be checked because of a fetch timeout.",
+          "publicGuidanceSurfaces": ["failed-transaction refund statement", "duplicate/excess-payment recovery guidance", "dispute-recovery deadline"],
+          "trackingSurfaces": [],
+          "errorSurfaces": ["published failed-transaction description"],
+          "recoverySurfaces": ["bank/payment gateway policy for failed debits", "jurisdictional Revenue office or grievance ticket for duplicate payment"],
+          "evidenceIds": ["source_ind72_tax_refund_policy", "claim_ind72_failed_transaction_public_recovery"],
+          "limitations": "No bank or payment interaction, payment failure, refund request, ticket, or supporting document was used. The failure branch was therefore not recorded as encountered."
+        }
+      ]
+    }
+  ],
+  "researchedNoSourceFound": [],
+  "researchNotes": [
+    "No predeclared branch was recorded: the pass did not encounter a live payment failure or a live receipt discrepancy. Published policy/contact text is retained as public guidance only.",
+    "No searched-route marker was added because no node field was separately searched and found without a public source. The grievance-route timeout is a boundary, not evidence that a source does not exist.",
+    "This handoff is limited to public current observations and is not official advice."
+  ]
+}

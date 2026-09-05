@@ -1,0 +1,248 @@
+{
+  "handoffType": "citizen-evidence",
+  "serviceId": "property-tax-payment",
+  "serviceTitle": "GBA property-tax payment",
+  "asOf": "2026-09-05",
+  "jurisdiction": "Bengaluru, Karnataka, India",
+  "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
+  "predeclaredBranchScenarioIds": [
+    "scenario_property_tax_payment_failed",
+    "scenario_property_tax_receipt_discrepancy"
+  ],
+  "encounteredBranchScenarioIds": [
+    "scenario_property_tax_payment_failed",
+    "scenario_property_tax_receipt_discrepancy"
+  ],
+  "scope": {
+    "included": "Public, first-person accounts about BBMP/GBA property-tax payment for properties described as previously assessed or previously paid.",
+    "excluded": "Official requirements, real property or identifier lookups, payment attempts, bank interaction, receipt lookup, and owner/address reproduction."
+  },
+  "sources": [
+    {
+      "id": "citizen_source_property_tax_forum_session_failure_2021",
+      "title": "Property Tax for 2021-22",
+      "url": "https://www.reddit.com/r/bangalore/comments/n5zu4y/",
+      "sourceType": "public first-person forum account",
+      "publisher": "Reddit / r/bangalore",
+      "publishedAt": "2021-05-06",
+      "accessedAt": "2026-09-05",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "grade": "E",
+      "archiveSnapshot": {
+        "status": "failed",
+        "snapshotUrl": null,
+        "attemptedAt": "2026-09-05",
+        "failure": "Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe.",
+        "limitation": "The original public URL and access date are retained; no substitute source was used."
+      },
+      "redaction": "No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
+    },
+    {
+      "id": "citizen_source_property_tax_browser_recovery_2023",
+      "title": "BBMP Property Tax",
+      "url": "https://www.reddit.com/r/bangalore/comments/183eqxc/",
+      "sourceType": "public first-person forum account",
+      "publisher": "Reddit / r/bangalore",
+      "publishedAt": "2023-11-25",
+      "accessedAt": "2026-09-05",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "grade": "E",
+      "archiveSnapshot": {
+        "status": "failed",
+        "snapshotUrl": null,
+        "attemptedAt": "2026-09-05",
+        "failure": "Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe.",
+        "limitation": "The original public URL and access date are retained; no substitute source was used."
+      },
+      "redaction": "No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
+    },
+    {
+      "id": "citizen_source_property_tax_wrong_property_payment_2025",
+      "title": "BBMP Property Tax Paid Online to Wrong Property Identifier",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1jv5zc3/bbmp_property_tax_paid_online_to_wrong_pid/",
+      "sourceType": "public first-person forum account",
+      "publisher": "Reddit / r/Bengaluru",
+      "publishedAt": "2025-04-09",
+      "accessedAt": "2026-09-05",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "grade": "E",
+      "archiveSnapshot": {
+        "status": "failed",
+        "snapshotUrl": null,
+        "attemptedAt": "2026-09-05",
+        "failure": "Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe.",
+        "limitation": "The original public URL and access date are retained; no substitute source was used."
+      },
+      "redaction": "No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
+    },
+    {
+      "id": "citizen_source_property_tax_receipt_missing_2026",
+      "title": "Tax Issues",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1tws54h/tax_issues/",
+      "sourceType": "public first-person forum account",
+      "publisher": "Reddit / r/Bengaluru",
+      "publishedAt": "2026-06-04",
+      "accessedAt": "2026-09-05",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "grade": "E",
+      "archiveSnapshot": {
+        "status": "failed",
+        "snapshotUrl": null,
+        "attemptedAt": "2026-09-05",
+        "failure": "Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe.",
+        "limitation": "The original public URL and access date are retained; no substitute source was used."
+      },
+      "redaction": "No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
+    }
+  ],
+  "claims": [
+    {
+      "id": "citizen_claim_property_tax_session_timeout_2021",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_payment_failed"],
+      "branch": "citizen_reported",
+      "grade": "E",
+      "basis": "observation",
+      "status": "reported",
+      "sourceIds": ["citizen_source_property_tax_forum_session_failure_2021"],
+      "claim": "One forum participant reported a session-timeout message before the payment gateway on the BBMP property-tax site.",
+      "limitation": "A single account from 2021; it does not establish current portal behavior or an official failure condition.",
+      "use": "Possible failure signal only."
+    },
+    {
+      "id": "citizen_claim_property_tax_mobile_name_mismatch_2021",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_payment_failed"],
+      "branch": "citizen_reported",
+      "grade": "E",
+      "basis": "observation",
+      "status": "reported",
+      "sourceIds": ["citizen_source_property_tax_forum_session_failure_2021"],
+      "claim": "The same participant separately reported a name-mismatch message when attempting the payment on a mobile device.",
+      "limitation": "A single account from 2021; no cause, eligibility implication, or official recovery path is established.",
+      "use": "Possible failure signal only."
+    },
+    {
+      "id": "citizen_claim_property_tax_online_payment_and_receipt_2021",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+      "branch": "citizen_reported",
+      "grade": "E",
+      "basis": "observation",
+      "status": "reported",
+      "sourceIds": ["citizen_source_property_tax_forum_session_failure_2021"],
+      "claim": "A different participant in the same thread reported completing a property-tax payment on the website and generating receipts without a problem.",
+      "limitation": "A single, contemporaneous user report; it does not verify a route for other properties or periods.",
+      "use": "Anecdotal success outcome only."
+    },
+    {
+      "id": "citizen_claim_property_tax_browser_specific_recovery_2023",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_payment_failed"],
+      "branch": "citizen_reported",
+      "grade": "E",
+      "basis": "observation",
+      "status": "reported",
+      "sourceIds": ["citizen_source_property_tax_browser_recovery_2023"],
+      "claim": "One participant reported that an attempted property-tax payment initially failed in two desktop browsers.",
+      "limitation": "The account does not establish a reproducible technical cause or official workaround.",
+      "use": "Possible failure mode only."
+    },
+    {
+      "id": "citizen_claim_property_tax_browser_later_succeeded_2023",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_payment_failed"],
+      "branch": "citizen_reported",
+      "grade": "E",
+      "basis": "observation",
+      "status": "reported",
+      "sourceIds": ["citizen_source_property_tax_browser_recovery_2023"],
+      "claim": "The same participant later reported completing the payment in one desktop browser.",
+      "limitation": "A single account does not establish a reliable browser-specific recovery route.",
+      "use": "Anecdotal recovery outcome only."
+    },
+    {
+      "id": "citizen_claim_property_tax_wrong_property_payment_2025",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_payment_failed"],
+      "branch": "citizen_reported",
+      "grade": "E",
+      "basis": "observation",
+      "status": "reported",
+      "sourceIds": ["citizen_source_property_tax_wrong_property_payment_2025"],
+      "claim": "A participant reported making a property-tax payment associated with a different property.",
+      "limitation": "This is a single account of an incorrect-target payment. It does not establish identifier validation or refund availability.",
+      "use": "Possible wrong-target-payment risk and possible recovery terminology only."
+    },
+    {
+      "id": "citizen_claim_property_tax_wrong_property_grievance_inquiry_2025",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_payment_failed"],
+      "branch": "citizen_reported",
+      "grade": "E",
+      "basis": "observation",
+      "status": "reported",
+      "sourceIds": ["citizen_source_property_tax_wrong_property_payment_2025"],
+      "claim": "The same participant asked whether an online grievance could be used to seek a refund.",
+      "limitation": "An inquiry does not establish that a grievance route accepts, decides, or refunds an incorrect-target payment.",
+      "use": "Possible recovery terminology only."
+    },
+    {
+      "id": "citizen_claim_property_tax_receipt_not_generated_2026",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_receipt_discrepancy"],
+      "branch": "citizen_reported",
+      "grade": "E",
+      "basis": "observation",
+      "status": "reported",
+      "sourceIds": ["citizen_source_property_tax_receipt_missing_2026"],
+      "claim": "One participant reported that no tax receipt was generated after a property-tax payment.",
+      "limitation": "A single unverified account. It does not establish receipt availability or a formal receipt-discrepancy route.",
+      "use": "Possible receipt-discrepancy failure signal only."
+    },
+    {
+      "id": "citizen_claim_property_tax_payment_debit_reported_2026",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_receipt_discrepancy"],
+      "branch": "citizen_reported",
+      "grade": "E",
+      "basis": "observation",
+      "status": "reported",
+      "sourceIds": ["citizen_source_property_tax_receipt_missing_2026"],
+      "claim": "The same participant reported that funds for the payment had been debited.",
+      "limitation": "A citizen report of a debit does not establish settlement or the tax system's payment status.",
+      "use": "Possible receipt-discrepancy context only."
+    },
+    {
+      "id": "citizen_claim_property_tax_validity_expired_2026",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_receipt_discrepancy"],
+      "branch": "citizen_reported",
+      "grade": "E",
+      "basis": "observation",
+      "status": "reported",
+      "sourceIds": ["citizen_source_property_tax_receipt_missing_2026"],
+      "claim": "The same participant reported an expired-validity status after more than two months.",
+      "limitation": "A single displayed-status report does not establish a universal portal status or its meaning.",
+      "use": "Possible receipt-discrepancy failure signal only."
+    },
+    {
+      "id": "citizen_claim_property_tax_grievance_unresolved_2026",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid", "scenario_property_tax_receipt_discrepancy"],
+      "branch": "citizen_reported",
+      "grade": "E",
+      "basis": "observation",
+      "status": "reported",
+      "sourceIds": ["citizen_source_property_tax_receipt_missing_2026"],
+      "claim": "The same participant reported opening a grievance and receiving no response at the time of posting.",
+      "limitation": "This does not prove a grievance procedure, service level, or an official recovery route.",
+      "use": "Possible recovery attempt terminology only."
+    }
+  ],
+  "quarantine": {
+    "requiredBranch": "citizen_reported",
+    "rule": "All claims in this handoff remain quarantined. They may expose citizen-reported terminology, failure signals, and possible recovery attempts, but must not establish official requirements, a universal route, eligibility, cost, timing, payment methods, or receipt availability.",
+    "officialRequirementClaims": []
+  },
+  "contradictions": [],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": [],
+  "limitations": [
+    "All evidence is public forum testimony rather than official material and is retained at Grade E only.",
+    "The source accounts describe BBMP-era interfaces. The manifest labels the service GBA; no institutional continuity or current behavior is inferred.",
+    "Archive capture was attempted for each cited public source but was blocked by the available tool's URL-safety control; the source URLs and access dates are retained.",
+    "No real identifier, property, owner, account, payment, bank, or receipt interaction was performed."
+  ]
+}

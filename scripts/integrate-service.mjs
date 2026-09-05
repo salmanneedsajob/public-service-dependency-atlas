@@ -9,7 +9,83 @@ if (!serviceManifest) throw new Error(`Service ${service} is not declared in led
 
 const fields = ['agencies', 'scenarios', 'sources', 'claims', 'nodes', 'edges', 'roadblocks', 'journeys'];
 const readJson = async (file) => JSON.parse(await readFile(file, 'utf8'));
-const handoffs = await Promise.all(files.map(readJson));
+const sourceType = (source) => {
+  if (source.type) return source.type;
+  if ((source.evidenceGrade ?? source.grade) === 'E' || /citizen|forum|first-person/i.test(source.sourceType ?? '')) return 'citizen_evidence';
+  if (/form/i.test(source.sourceType ?? '')) return 'official_form';
+  if (/portal|service page|service portal/i.test(source.sourceType ?? '')) return 'official_portal';
+  return 'official_guidance';
+};
+const sourceNotes = (source) => [
+  source.visibleDateNote,
+  source.publishedAtNote,
+  source.archiveNote,
+  source.archive?.limitation,
+  source.archive?.failure,
+  source.archiveSnapshot?.limitation,
+  source.archiveSnapshot?.failure,
+  source.redaction,
+].filter(Boolean).join(' ');
+const normalizeHandoff = (handoff) => {
+  if (handoff.meta) return handoff;
+  const agencyName = Array.isArray(handoff.sources?.[0]?.agencyNameDisplayed)
+    ? handoff.sources[0].agencyNameDisplayed.join('; ')
+    : handoff.sources?.[0]?.agencyNameDisplayed ?? handoff.sources?.[0]?.publisher ?? handoff.serviceTitle ?? service;
+  const officialUrl = handoff.sources?.find((source) => /^https?:/u.test(source.url ?? ''))?.url ?? 'https://example.invalid/';
+  const agencyId = `agency_${service.replaceAll('-', '_')}`;
+  const encountered = [...new Set(handoff.encounteredBranchScenarioIds ?? [])].filter((id) => serviceManifest.branchScenarioIds.includes(id));
+  const scenarioIds = [serviceManifest.primaryScenarioId, ...encountered];
+  const genericNodeId = `node_${service.replaceAll('-', '_')}_public_route`;
+  const scenarios = handoff.scenarios ?? scenarioIds.map((id) => ({
+    id,
+    label: id === serviceManifest.primaryScenarioId ? handoff.serviceTitle ?? serviceManifest.title : id.replace(/^scenario_/u, '').replaceAll('_', ' '),
+    summary: id === serviceManifest.primaryScenarioId ? `Public evidence for ${handoff.serviceTitle ?? serviceManifest.title}.` : `Encountered published branch for ${handoff.serviceTitle ?? serviceManifest.title}.`,
+    tags: id === serviceManifest.primaryScenarioId ? ['primary'] : ['branch'],
+    pathNodeIds: [genericNodeId],
+    status: 'partial',
+  }));
+  return {
+    _handoff: {
+      pass: handoff.pass ?? handoff.assignedPass ?? handoff.handoffType ?? 'unknown',
+      expectations: handoff.expectations,
+    },
+    meta: {
+      jurisdiction: handoff.jurisdiction ?? 'Bengaluru, Karnataka, India',
+      asOf: handoff.asOf,
+    },
+    agencies: handoff.agencies ?? [{ id: agencyId, name: agencyName, shortName: agencyName.slice(0, 80), officialUrl }],
+    scenarios,
+    sources: (handoff.sources ?? []).map((source) => ({
+      id: source.id,
+      title: source.title,
+      publisher: source.publisher ?? (Array.isArray(source.agencyNameDisplayed) ? source.agencyNameDisplayed.join('; ') : source.agencyNameDisplayed) ?? agencyName,
+      url: source.url,
+      accessedAt: source.accessedAt ?? handoff.asOf,
+      ...(source.publishedAt ? { publishedAt: source.publishedAt } : {}),
+      type: sourceType(source),
+      ...(sourceNotes(source) ? { notes: sourceNotes(source) } : {}),
+    })),
+    claims: (handoff.claims ?? []).map((claim) => ({
+      id: claim.id,
+      text: claim.text ?? claim.statement ?? claim.claim,
+      jurisdiction: claim.jurisdiction ?? handoff.jurisdiction ?? 'Bengaluru, Karnataka, India',
+      scenarioIds: claim.scenarioIds ?? [serviceManifest.primaryScenarioId],
+      nodeIds: claim.nodeIds ?? [genericNodeId],
+      sourceIds: claim.sourceIds ?? [],
+      evidenceGrade: claim.evidenceGrade ?? claim.grade ?? 'Unknown',
+      basis: claim.basis ?? 'observation',
+      status: claim.status === 'reported' ? 'partial' : claim.status ?? 'partial',
+      contradictsClaimIds: claim.contradictsClaimIds ?? [],
+      notes: [claim.notes, claim.limitations, claim.limitation, claim.use, claim.branch ? `Quarantine branch: ${claim.branch}.` : null].filter(Boolean).join(' '),
+    })),
+    nodes: handoff.nodes ?? [],
+    edges: handoff.edges ?? [],
+    roadblocks: handoff.roadblocks ?? [],
+    journeys: handoff.journeys ?? [],
+    portalRecords: handoff.portalRecords ?? handoff.portals,
+  };
+};
+const handoffs = (await Promise.all(files.map(readJson))).map(normalizeHandoff);
 const handoffMeta = handoffs.find((handoff) => handoff.meta)?.meta;
 if (!handoffMeta) throw new Error(`No ledger metadata found for ${service}.`);
 
@@ -58,6 +134,31 @@ for (const field of fields) {
   const records = new Map();
   for (const handoff of handoffs) for (const record of handoff[field] ?? []) records.set(record.id, structuredClone(record));
   ledger[field] = [...records.values()];
+}
+
+// The v2 handoff contract permits a pass to supply evidence without a
+// presentation graph. Preserve those claims by creating one explicitly
+// marked public-route node during integration rather than discarding links.
+if (!ledger.nodes.length) {
+  const nodeId = `node_${service.replaceAll('-', '_')}_public_route`;
+  const agencyId = ledger.agencies[0]?.id;
+  ledger.nodes.push({
+    id: nodeId,
+    label: 'Public service route',
+    kind: 'service',
+    ...(agencyId ? { ownerAgencyId: agencyId } : {}),
+    summary: 'Publicly observable route and published guidance; personal and case-specific stages remain outside this research.',
+    requiredState: 'Use only the published public route; do not enter personal, case, or payment data.',
+    checks: [],
+    failureSignals: [],
+    recoveries: [],
+    scenarioIds: ledger.scenarios.map((scenario) => scenario.id),
+    claimIds: ledger.claims.map((claim) => claim.id),
+    status: 'partial',
+    displayOrder: 1,
+  });
+  for (const claim of ledger.claims) if (!claim.nodeIds?.length) claim.nodeIds = [nodeId];
+  for (const scenario of ledger.scenarios) if (!scenario.pathNodeIds?.length) scenario.pathNodeIds = [nodeId];
 }
 
 // Independent passes may observe the same public page on the same day using
@@ -162,7 +263,24 @@ if (officialHandoff?._handoff?.expectations) {
 }
 const workflowHandoff = handoffs.find((handoff) => handoff._handoff?.pass === 'public-workflow');
 if (workflowHandoff?.portalRecords) {
-  const portals = structuredClone(workflowHandoff.portalRecords);
+  const portals = structuredClone(workflowHandoff.portalRecords).map((portal) => ({
+    portalId: portal.portalId,
+    host: portal.host,
+    observedAt: portal.observedAt,
+    serviceId: portal.serviceId ?? service,
+    serviceOwner: portal.serviceOwner,
+    portalOperator: portal.portalOperator,
+    agencyNamingShown: Array.isArray(portal.agencyNamingShown) ? portal.agencyNamingShown.join('; ') : portal.agencyNamingShown,
+    languages: portal.languages ?? portal.languagesShown ?? [],
+    visibleVersionOrLastUpdated: portal.visibleVersionOrLastUpdated,
+    evidenceSourceIds: portal.evidenceSourceIds ?? [],
+    routeObservations: (portal.routeObservations ?? []).map((route) => ({
+      ...route,
+      scenarioIds: route.scenarioIds ?? (route.scenarioId ? [route.scenarioId] : [serviceManifest.primaryScenarioId]),
+      evidenceIds: (route.evidenceIds ?? []).filter((id) => id.startsWith('source_') || id.startsWith('citizen_source_')),
+      javascriptDependencies: route.javascriptDependencies ?? route.captchaJavaScriptOrAppDependencies ?? '',
+    })),
+  }));
   for (const portal of portals) {
     portal.evidenceSourceIds = portal.evidenceSourceIds.map((id) => duplicateSourceIds.get(id) ?? id);
     for (const route of portal.routeObservations) route.evidenceIds = route.evidenceIds.map((id) => duplicateSourceIds.get(id) ?? id);

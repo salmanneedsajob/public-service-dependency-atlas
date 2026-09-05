@@ -17,7 +17,7 @@ const sourceType = (source) => {
   return 'official_guidance';
 };
 const sourceNotes = (source) => [
-  source.visibleDateNote,
+  source.visibleDateNote ? `Visible date: ${source.visibleDateNote}` : null,
   source.publishedAtNote,
   source.archiveNote,
   source.archive?.limitation,
@@ -274,12 +274,30 @@ if (workflowHandoff?.portalRecords) {
     languages: portal.languages ?? portal.languagesShown ?? [],
     visibleVersionOrLastUpdated: portal.visibleVersionOrLastUpdated,
     evidenceSourceIds: portal.evidenceSourceIds ?? [],
-    routeObservations: (portal.routeObservations ?? []).map((route) => ({
-      ...route,
+    routeObservations: (portal.routeObservations ?? []).map((route) => {
+      const limitations = Array.isArray(route.limitations) ? route.limitations : route.limitations ? [route.limitations] : [];
+      return {
+      routeId: route.routeId,
+      serviceId: route.serviceId ?? service,
       scenarioIds: route.scenarioIds ?? (route.scenarioId ? [route.scenarioId] : [serviceManifest.primaryScenarioId]),
-      evidenceIds: (route.evidenceIds ?? []).filter((id) => id.startsWith('source_') || id.startsWith('citizen_source_')),
+      entryUrl: route.entryUrl,
+      finalUrl: route.finalUrl,
+      redirects: route.redirects ?? [],
+      finalStatus: route.finalStatus ?? 200,
+      checkedLinkCount: route.checkedLinkCount ?? 0,
+      deadLinkCount: route.deadLinkCount ?? 0,
+      authenticationPrerequisites: route.authenticationPrerequisites ?? '',
+      publicProcedureVsCaseDataBoundary: route.publicProcedureVsCaseDataBoundary ?? '',
+      captchaDependencies: route.captchaDependencies ?? route.captchaJavaScriptOrAppDependencies ?? '',
       javascriptDependencies: route.javascriptDependencies ?? route.captchaJavaScriptOrAppDependencies ?? '',
-    })),
+      publicGuidanceSurfaces: route.publicGuidanceSurfaces ?? [],
+      trackingSurfaces: route.trackingSurfaces ?? [],
+      errorSurfaces: route.errorSurfaces ?? [],
+      recoverySurfaces: route.recoverySurfaces ?? [],
+      evidenceIds: (route.evidenceIds ?? []).filter((id) => id.startsWith('source_') || id.startsWith('citizen_source_')),
+      limitations,
+    };
+    }),
   }));
   for (const portal of portals) {
     portal.evidenceSourceIds = portal.evidenceSourceIds.map((id) => duplicateSourceIds.get(id) ?? id);

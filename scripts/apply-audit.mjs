@@ -163,6 +163,12 @@ function applySidecarCorrection(sidecar, correction) {
   }
   const { target, key } = getTarget(record, correction.fieldPath);
   const actual = readValue(target, key);
+  if (correction.recordType === 'portal' && correction.fieldPath.endsWith('/limitations') && Array.isArray(actual) && actual.length === 1 && typeof correction.old === 'string') {
+    if (actual[0] !== correction.old) throw new Error(`Drift at ${correction.fieldPath}: expected ${JSON.stringify(correction.old)}, found ${JSON.stringify(actual)}.`);
+    if (correction.new === null) deleteValue(target, key);
+    else replaceValue(target, key, [structuredClone(correction.new)]);
+    return;
+  }
   if (correction.old === null) {
     if (actual !== undefined) throw new Error(`Drift at ${correction.fieldPath}: expected no value, found ${JSON.stringify(actual)}.`);
     if (correction.new === null) throw new Error('A correction cannot add and delete the same value.');

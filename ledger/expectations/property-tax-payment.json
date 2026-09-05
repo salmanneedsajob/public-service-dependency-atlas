@@ -5,11 +5,13 @@
   "cells": {
     "cost": {
       "state": "mentioned",
-      "claimIds": [],
+      "claimIds": [
+        "claim_ind72_public_service_online_payment"
+      ],
       "searchedRoutes": [
         "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
       ],
-      "note": ""
+      "note": "The reviewed service-details route mentions online payment but provides no citizen-paid amount or actionable fee schedule."
     },
     "documents": {
       "state": "absent",
@@ -17,7 +19,7 @@
       "searchedRoutes": [
         "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
       ],
-      "note": ""
+      "note": "The reviewed service-details route does not identify a document that the citizen must submit, provide, upload, produce, or attach."
     },
     "eligibility": {
       "state": "stated",
@@ -25,7 +27,7 @@
         "claim_ind72_service_eligibility"
       ],
       "searchedRoutes": [],
-      "note": ""
+      "note": "The actionable rule is that the online service is for property owners within Bengaluru City Corporation limits."
     },
     "time": {
       "state": "mentioned",
@@ -33,7 +35,7 @@
       "searchedRoutes": [
         "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
       ],
-      "note": ""
+      "note": "The reviewed service-details route touches assessment-year timing but no actionable duration, deadline, processing period, or service-level target is captured."
     },
     "owner": {
       "state": "mentioned",
@@ -41,15 +43,16 @@
       "searchedRoutes": [
         "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
       ],
-      "note": ""
+      "note": "The reviewed route names Bengaluru City Corporations/GBA and a head-office contact topic, but no claim identifies the office or operational role that holds or decides a case."
     },
     "after-submission": {
-      "state": "mentioned",
-      "claimIds": [],
-      "searchedRoutes": [
-        "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
+      "state": "stated",
+      "claimIds": [
+        "claim_ind72_public_service_confirmation",
+        "claim_ind72_public_service_receipt_generation"
       ],
-      "note": ""
+      "searchedRoutes": [],
+      "note": "After payment, the published procedure says the citizen receives real-time payment confirmation and a generated receipt."
     }
   }
 }

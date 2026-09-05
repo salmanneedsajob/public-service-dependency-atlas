@@ -8,6 +8,13 @@
   "jurisdiction": "Bengaluru, Karnataka, India",
   "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
   "encounteredBranchScenarioIds": [],
+  "lintWaivers": [
+    {
+      "recordId": "source_ind72_official_service_details",
+      "check": "source-date-quality",
+      "reason": "This specific page’s footer version date is recorded in its source notes, but the applied audit correction properly removed the unsupported publishedAt value; its current access date and archive limitation remain recorded."
+    }
+  ],
   "safetyBoundary": "Public, unauthenticated interfaces only. No PID/SAS/property/owner lookup, calculation, payment, bank interaction, receipt retrieval, CAPTCHA attempt, or reproduction of case data was performed.",
   "seedTests": [
     {

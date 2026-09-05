@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "property-tax-payment",
+  "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
+  "cells": {
+    "cost": {
+      "state": "mentioned",
+      "claimIds": [],
+      "searchedRoutes": [
+        "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
+      ],
+      "note": ""
+    },
+    "documents": {
+      "state": "absent",
+      "claimIds": [],
+      "searchedRoutes": [
+        "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
+      ],
+      "note": ""
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_ind72_service_eligibility"
+      ],
+      "searchedRoutes": [],
+      "note": ""
+    },
+    "time": {
+      "state": "mentioned",
+      "claimIds": [],
+      "searchedRoutes": [
+        "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
+      ],
+      "note": ""
+    },
+    "owner": {
+      "state": "mentioned",
+      "claimIds": [],
+      "searchedRoutes": [
+        "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
+      ],
+      "note": ""
+    },
+    "after-submission": {
+      "state": "mentioned",
+      "claimIds": [],
+      "searchedRoutes": [
+        "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
+      ],
+      "note": ""
+    }
+  }
+}

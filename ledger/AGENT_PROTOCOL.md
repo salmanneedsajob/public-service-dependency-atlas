@@ -122,6 +122,8 @@ Each portal record contains nested `routeObservations`. Every route observation 
 
 At access time, capture a Wayback snapshot for every public source used. Record the snapshot URL with the source. Never archive authenticated, personal, payment, or case-specific pages. If capture fails, record the access date, the failure, and a limitation. Archive failure does not permit a substitute homepage or an unsupported claim. If a link later dies, retain the original URL and point to its snapshot.
 
+Quarantine is represented as the scenario ID `scenario_citizen_reported`; claims, nodes, edges, and roadblocks attached to it are quarantined.
+
 ## 12. Auditor inputs and citizen-evidence quarantine
 
 The audit receives only the integrated ledger, the expectations sidecar, the portal sidecar, the service's entry from `ledger/services.manifest.json`, `ledger/schema.json`, this protocol, and the corrections contract. Nothing else. It checks expectation-cell states against the section 8 definitions and route observations against section 9. It must not receive researcher reasoning or pass handoffs.

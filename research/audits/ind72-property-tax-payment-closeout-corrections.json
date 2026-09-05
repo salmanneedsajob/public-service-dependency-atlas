@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "property-tax-payment",
+  "auditDate": "2026-09-06",
+  "corrections": [
+    {
+      "id": "IND72-CLOSEOUT-001",
+      "recordType": "roadblock",
+      "recordId": "roadblock_ind72_pid_case_data_boundary",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "roadblock_ind72_pid_case_data_boundary",
+        "title": "PID entry is the public-to-case-data boundary",
+        "category": "process",
+        "symptom": "The primary public route stops at PID entry and cannot be walked past that point without personal or case data.",
+        "likelyCause": "The next route stage requires a property identifier tied to a real assessment or property record.",
+        "recovery": "No case data was entered for this research; use the published public route only and do not infer any post-PID screen or result.",
+        "ownerAgencyIds": [
+          "agency_property_tax_payment"
+        ],
+        "nodeIds": [
+          "node_property_tax_payment_public_route"
+        ],
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "claimIds": [],
+        "status": "verified"
+      },
+      "reason": "Protocol section 9 treats the public/case-data boundary as a route observation; the audited primary scenario is complete without entering a real PID.",
+      "support": {
+        "sourceIds": [
+          "source_ind72_tax_receipt_print"
+        ],
+        "auditNote": "The integrated public workflow records PID and CAPTCHA inputs but no submission or case-data entry."
+      }
+    }
+  ]
+}

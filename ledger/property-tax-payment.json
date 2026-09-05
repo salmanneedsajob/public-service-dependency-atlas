@@ -579,6 +579,26 @@
     }
   ],
   "edges": [],
-  "roadblocks": [],
+  "roadblocks": [
+    {
+      "id": "roadblock_ind72_pid_case_data_boundary",
+      "title": "PID entry is the public-to-case-data boundary",
+      "category": "process",
+      "symptom": "The primary public route stops at PID entry and cannot be walked past that point without personal or case data.",
+      "likelyCause": "The next route stage requires a property identifier tied to a real assessment or property record.",
+      "recovery": "No case data was entered for this research; use the published public route only and do not infer any post-PID screen or result.",
+      "ownerAgencyIds": [
+        "agency_property_tax_payment"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "claimIds": [],
+      "status": "verified"
+    }
+  ],
   "journeys": []
 }

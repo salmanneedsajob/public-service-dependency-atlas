@@ -1,0 +1,62 @@
+[
+  {
+    "id": "IND77-CLOSEOUT-001",
+    "recordType": "source",
+    "recordId": "source_ind77_bpas_home_e_khata_notice",
+    "fieldPath": "/title",
+    "old": "Greater Bengaluru Authority BPAS home page",
+    "new": "General-site reference — Greater Bengaluru Authority BPAS public landing-page notice",
+    "reason": "A bare portal landing page is a General-site reference under the citation gate, even where it visibly carries a dated notice.",
+    "support": { "protocolSection": "7", "sourceIds": ["source_ind77_bpas_home_e_khata_notice"] }
+  },
+  {
+    "id": "IND77-CLOSEOUT-002",
+    "recordType": "claim",
+    "recordId": "claim_ind77_e_khata_mandatory_for_oc_applications",
+    "fieldPath": "/evidenceGrade",
+    "old": "B",
+    "new": "C",
+    "reason": "The claim rests on a homepage-level General-site reference, which section 7 requires to be Grade C.",
+    "support": { "protocolSection": "7", "sourceIds": ["source_ind77_bpas_home_e_khata_notice"] }
+  },
+  {
+    "id": "IND77-CLOSEOUT-003",
+    "recordType": "claim",
+    "recordId": "claim_ind77_e_khata_mandatory_for_oc_applications",
+    "fieldPath": "/notes",
+    "old": "The public notice is date-specific and does not state how an e-Khata is obtained.",
+    "new": "The public notice is date-specific and does not state how an e-Khata is obtained. It is retained as a Grade C General-site reference, not a substituted specific source.",
+    "reason": "State the citation limitation alongside the claim.",
+    "support": { "protocolSection": "7", "sourceIds": ["source_ind77_bpas_home_e_khata_notice"] }
+  },
+  {
+    "id": "IND77-CLOSEOUT-004",
+    "recordType": "source",
+    "recordId": "source_ind77_gba_seed_home",
+    "fieldPath": "/title",
+    "old": "Greater Bengaluru Authority — supplied BBMP seed",
+    "new": "General-site reference — Greater Bengaluru Authority supplied BBMP seed",
+    "reason": "The supplied BBMP homepage is a General-site reference, not a specific service citation.",
+    "support": { "protocolSection": "7", "sourceIds": ["source_ind77_gba_seed_home"] }
+  },
+  {
+    "id": "IND77-CLOSEOUT-005",
+    "recordType": "claim",
+    "recordId": "claim_ind77_gba_home_no_bpas_handoff",
+    "fieldPath": "/evidenceGrade",
+    "old": "B",
+    "new": "C",
+    "reason": "The claim is an observation from a homepage-level General-site reference and therefore cannot be Grade B under section 7.",
+    "support": { "protocolSection": "7", "sourceIds": ["source_ind77_gba_seed_home"] }
+  },
+  {
+    "id": "IND77-CLOSEOUT-006",
+    "recordType": "claim",
+    "recordId": "claim_ind77_gba_home_no_bpas_handoff",
+    "fieldPath": "/notes",
+    "old": "",
+    "new": "General-site observation only; it establishes neither a BPAS route nor an occupancy-certificate procedure.",
+    "reason": "Make the general-site limitation explicit.",
+    "support": { "protocolSection": "7", "sourceIds": ["source_ind77_gba_seed_home"] }
+  }
+]

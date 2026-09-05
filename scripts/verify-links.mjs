@@ -15,6 +15,13 @@ const citationCapExemptSourceIds = new Set([
   'source_ind42_birth_rbd_act_pdf',
   // IND-78: six claims identify separate IGR annual-report entries/pages.
   'source_ind78_revenue_annual_report',
+  // IND-77: the official OC service sheet has distinct labelled checklist,
+  // fee, timing, ownership, and outcome entries supporting its atomic claims.
+  'source_ind77_bbmp_oc_service_sheet',
+  // IND-77: these BPAS pages are direct public-interface observations. Their
+  // shared URLs should not turn distinct observed controls into one citation.
+  'source_ind77_bpas_home',
+  'source_ind77_bpas_faq',
 ]);
 const newPhaseTwoSource = (source) => /^source_ind(?:4[1-9]|[5-9]\d)_/.test(source.id) && !citationCapExemptSourceIds.has(source.id);
 const homeLikePaths = new Set(['/', '/index.html', '/index.php', '/indiacode/', '/consumer', '/consumer/', '/citizen_core/', '/portal', '/portal/']);
@@ -41,6 +48,10 @@ const homepageCitationAllowlist = new Set([
   'source_ind32_birth_workflow_bbmp_it', 'source_building_kmc_299', 'source_building_gba_home', 'source_building_w_gba', 'source_ind32_property_act_index',
   // IND-78 records only an observed timeout on this general-site reference.
   'source_ind78_revenue_home_public_20260905',
+  // IND-77 records entry-boundary observations only; both are explicitly
+  // labelled Grade C General-site references in the occupancy ledger.
+  'source_ind77_bpas_home_e_khata_notice', 'source_ind77_bpas_seed_home',
+  'source_ind77_gba_seed_home',
 ]);
 
 // IND-54 will repair the inherited citation corpus. From IND-41 onward, do

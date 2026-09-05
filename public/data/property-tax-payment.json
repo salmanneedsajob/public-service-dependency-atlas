@@ -10,9 +10,9 @@
   "agencies": [
     {
       "id": "agency_property_tax_payment",
-      "name": "Reddit / r/bangalore",
-      "shortName": "Reddit / r/bangalore",
-      "officialUrl": "https://www.reddit.com/r/bangalore/comments/n5zu4y/"
+      "name": "Bengaluru City Corporations",
+      "shortName": "GBA",
+      "officialUrl": "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
     }
   ],
   "scenarios": [
@@ -60,9 +60,8 @@
       "publisher": "GBA - Government of Karnataka",
       "url": "https://bbmptax.karnataka.gov.in/pages/service_details.aspx",
       "accessedAt": "2026-09-05",
-      "publishedAt": "2026-04-01",
       "type": "official_portal",
-      "notes": "Portal footer displays Version 01-04-2026/13.1-1; the page itself does not show a separate publication date. No Wayback snapshot could be captured in this environment; the original official URL is retained. The research browser rejected the Wayback save URL as unsafe before it could submit a capture request."
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Portal footer displays Version 01-04-2026/13.1-1; the page itself does not show a separate publication date. No Wayback snapshot could be captured in this environment; the original official URL is retained. The research browser rejected the Wayback save URL as unsafe before it could submit a capture request."
     },
     {
       "id": "source_ind72_tax_receipt_print",
@@ -70,8 +69,8 @@
       "publisher": "GBA - Government of Karnataka",
       "url": "https://bbmptax.karnataka.gov.in/Forms/PrintForms.aspx?rptype=3",
       "accessedAt": "2026-09-05",
-      "type": "official_guidance",
-      "notes": "Visible date: The footer displayed Version 01-04-2026/13.1-1. A Save Page Now request was made on 2026-09-05; no snapshot URL or confirming response header was returned, so archival capture is unconfirmed."
+      "type": "official_form",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Visible date: The footer displayed Version 01-04-2026/13.1-1. A Save Page Now request was made on 2026-09-05; no snapshot URL or confirming response header was returned, so archival capture is unconfirmed."
     },
     {
       "id": "source_ind72_tax_refund_policy",
@@ -80,7 +79,7 @@
       "url": "https://bbmptax.karnataka.gov.in/pages/RCpolicy.aspx",
       "accessedAt": "2026-09-05",
       "type": "official_guidance",
-      "notes": "Visible date: Visible date: the footer displayed Version 01-04-2026/13.1-1 on this Refund and Cancellation Policy page. A Save Page Now request was made on 2026-09-05; no snapshot URL or confirming response header was returned, so archival capture is unconfirmed."
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Visible date: the footer displayed Version 01-04-2026/13.1-1 on this Refund and Cancellation Policy page. A Save Page Now request was made on 2026-09-05; no snapshot URL or confirming response header was returned, so archival capture is unconfirmed."
     },
     {
       "id": "citizen_source_property_tax_forum_session_failure_2021",
@@ -90,7 +89,7 @@
       "accessedAt": "2026-09-05",
       "publishedAt": "2021-05-06",
       "type": "citizen_evidence",
-      "notes": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
     },
     {
       "id": "citizen_source_property_tax_browser_recovery_2023",
@@ -100,7 +99,7 @@
       "accessedAt": "2026-09-05",
       "publishedAt": "2023-11-25",
       "type": "citizen_evidence",
-      "notes": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
     },
     {
       "id": "citizen_source_property_tax_wrong_property_payment_2025",
@@ -110,7 +109,7 @@
       "accessedAt": "2026-09-05",
       "publishedAt": "2025-04-09",
       "type": "citizen_evidence",
-      "notes": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
     },
     {
       "id": "citizen_source_property_tax_receipt_missing_2026",
@@ -120,7 +119,7 @@
       "accessedAt": "2026-09-05",
       "publishedAt": "2026-06-04",
       "type": "citizen_evidence",
-      "notes": "The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. The original public URL and access date are retained; no substitute source was used. Wayback Save Page Now request could not be opened by the available research tool because the save URL was rejected as unsafe. No poster name, handle, property identifier, address, phone number, account data, or other identity data retained."
     }
   ],
   "claims": [
@@ -281,7 +280,8 @@
       "text": "The public refund policy identifies an online transaction that fails because of a network or technical error after an amount has been debited as a failed-transaction circumstance.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
-        "scenario_property_tax_payment_known_sas_pid"
+        "scenario_property_tax_payment_known_sas_pid",
+        "scenario_property_tax_payment_failed"
       ],
       "nodeIds": [
         "node_property_tax_payment_public_route"
@@ -300,7 +300,8 @@
       "text": "For the policy's described failed-transaction circumstance, it says the amount is automatically refunded under the relevant provider's policy.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
-        "scenario_property_tax_payment_known_sas_pid"
+        "scenario_property_tax_payment_known_sas_pid",
+        "scenario_property_tax_payment_failed"
       ],
       "nodeIds": [
         "node_property_tax_payment_public_route"

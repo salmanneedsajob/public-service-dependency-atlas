@@ -11,12 +11,13 @@ const fields = ['agencies', 'scenarios', 'sources', 'claims', 'nodes', 'edges', 
 const readJson = async (file) => JSON.parse(await readFile(file, 'utf8'));
 const sourceType = (source) => {
   if (source.type) return source.type;
-  if ((source.evidenceGrade ?? source.grade) === 'E' || /citizen|forum|first-person/i.test(source.sourceType ?? '')) return 'citizen_evidence';
+  if ((source.evidenceGrade ?? source.grade) === 'E' || /citizen|forum|first-person/i.test(`${source.sourceType ?? ''} ${source.kind ?? ''}`)) return 'citizen_evidence';
   if (/form/i.test(source.sourceType ?? '')) return 'official_form';
   if (/portal|service page|service portal/i.test(source.sourceType ?? '')) return 'official_portal';
   return 'official_guidance';
 };
 const sourceNotes = (source) => [
+  source.notes,
   source.visibleDateNote ? `Visible date: ${source.visibleDateNote}` : null,
   source.publishedAtNote,
   source.archiveNote,
@@ -25,9 +26,12 @@ const sourceNotes = (source) => [
   source.archiveSnapshot?.limitation,
   source.archiveSnapshot?.failure,
   source.redaction,
+  ...(source.limitations ?? []),
 ].filter(Boolean).join(' ');
 const normalizeHandoff = (handoff) => {
   if (handoff.meta) return handoff;
+  const handoffDate = handoff.asOf ?? handoff._handoff?.asOf ?? handoff._handoff?.generatedAt ?? handoff.sources?.[0]?.accessedAt?.slice(0, 10);
+  const handoffJurisdiction = handoff.jurisdiction ?? handoff._handoff?.jurisdiction ?? 'Bengaluru, Karnataka, India';
   const agencyName = Array.isArray(handoff.sources?.[0]?.agencyNameDisplayed)
     ? handoff.sources[0].agencyNameDisplayed.join('; ')
     : handoff.sources?.[0]?.agencyNameDisplayed ?? handoff.sources?.[0]?.publisher ?? handoff.serviceTitle ?? service;
@@ -50,17 +54,22 @@ const normalizeHandoff = (handoff) => {
       expectations: handoff.expectations,
     },
     meta: {
-      jurisdiction: handoff.jurisdiction ?? 'Bengaluru, Karnataka, India',
-      asOf: handoff.asOf,
+      jurisdiction: handoffJurisdiction,
+      asOf: handoffDate,
     },
-    agencies: handoff.agencies ?? [{ id: agencyId, name: agencyName, shortName: agencyName.slice(0, 80), officialUrl }],
+    agencies: (handoff.agencies?.length ? handoff.agencies : [{ id: agencyId, name: agencyName }]).map((agency) => ({
+      id: agency.id,
+      name: agency.name,
+      shortName: agency.shortName ?? agency.name.slice(0, 80),
+      officialUrl: agency.officialUrl ?? officialUrl,
+    })),
     scenarios,
     sources: (handoff.sources ?? []).map((source) => ({
       id: source.id,
       title: source.title,
       publisher: source.publisher ?? (Array.isArray(source.agencyNameDisplayed) ? source.agencyNameDisplayed.join('; ') : source.agencyNameDisplayed) ?? agencyName,
       url: source.url,
-      accessedAt: source.accessedAt ?? handoff.asOf,
+      accessedAt: (source.accessedAt ?? handoffDate).slice(0, 10),
       ...(source.publishedAt ? { publishedAt: source.publishedAt } : {}),
       type: sourceType(source),
       ...(sourceNotes(source) ? { notes: sourceNotes(source) } : {}),
@@ -68,7 +77,7 @@ const normalizeHandoff = (handoff) => {
     claims: (handoff.claims ?? []).map((claim) => ({
       id: claim.id,
       text: claim.text ?? claim.statement ?? claim.claim,
-      jurisdiction: claim.jurisdiction ?? handoff.jurisdiction ?? 'Bengaluru, Karnataka, India',
+      jurisdiction: claim.jurisdiction ?? handoffJurisdiction,
       scenarioIds: claim.scenarioIds ?? [serviceManifest.primaryScenarioId],
       nodeIds: claim.nodeIds ?? [genericNodeId],
       sourceIds: claim.sourceIds ?? [],
@@ -80,8 +89,8 @@ const normalizeHandoff = (handoff) => {
     })),
     nodes: handoff.nodes ?? [],
     edges: handoff.edges ?? [],
-    roadblocks: handoff.roadblocks ?? [],
-    journeys: handoff.journeys ?? [],
+    roadblocks: (handoff.roadblocks ?? []).filter((roadblock) => Array.isArray(roadblock.nodeIds) && Array.isArray(roadblock.scenarioIds)),
+    journeys: (handoff.journeys ?? []).filter((journey) => typeof journey.scenarioId === 'string' && Array.isArray(journey.steps) && Array.isArray(journey.dependencies)),
     portalRecords: handoff.portalRecords ?? handoff.portals,
   };
 };
@@ -132,7 +141,10 @@ const ledger = {
 
 for (const field of fields) {
   const records = new Map();
-  for (const handoff of handoffs) for (const record of handoff[field] ?? []) records.set(record.id, structuredClone(record));
+  for (const handoff of handoffs) for (const record of handoff[field] ?? []) {
+    if (field === 'agencies' && records.has(record.id)) continue;
+    records.set(record.id, structuredClone(record));
+  }
   ledger[field] = [...records.values()];
 }
 
@@ -270,9 +282,9 @@ if (workflowHandoff?.portalRecords) {
     serviceId: portal.serviceId ?? service,
     serviceOwner: portal.serviceOwner,
     portalOperator: portal.portalOperator,
-    agencyNamingShown: Array.isArray(portal.agencyNamingShown) ? portal.agencyNamingShown.join('; ') : portal.agencyNamingShown,
+    agencyNamingShown: Array.isArray(portal.agencyNamingShown) ? portal.agencyNamingShown.join('; ') : portal.agencyNamingShown ?? '',
     languages: portal.languages ?? portal.languagesShown ?? [],
-    visibleVersionOrLastUpdated: portal.visibleVersionOrLastUpdated,
+    visibleVersionOrLastUpdated: portal.visibleVersionOrLastUpdated ?? '',
     evidenceSourceIds: portal.evidenceSourceIds ?? [],
     routeObservations: (portal.routeObservations ?? []).map((route) => {
       const limitations = Array.isArray(route.limitations) ? route.limitations : route.limitations ? [route.limitations] : [];

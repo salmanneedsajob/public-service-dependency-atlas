@@ -1,0 +1,133 @@
+[
+  {
+    "id": "IND71-FEE-001",
+    "recordType": "source",
+    "recordId": "source_ind71_passport_fee_structure_20260906",
+    "fieldPath": "/",
+    "old": null,
+    "new": {
+      "id": "source_ind71_passport_fee_structure_20260906",
+      "title": "FEE STRUCTURE",
+      "publisher": "Ministry of External Affairs, Government of India",
+      "url": "https://www.passportindia.gov.in/psp/onlineHtml/feeDocument",
+      "accessedAt": "2026-09-06",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: India; applicable to Bengaluru, Karnataka, India. Agency name displayed by the indexed official page: Ministry of External Affairs, Government of India. A public index crawled the canonical page approximately three weeks before access and exposed the fee table. Direct navigation on 2026-09-06 rendered Passport Seva's maintenance shell, so this source is Grade C official but indirectly observed current guidance. Wayback Save Page Now was attempted on 2026-09-06, but the environment rejected the archive URL as unsafe; no snapshot URL was obtained and no substitute page was used."
+    },
+    "reason": "Add the current official fee-page record found by the scoped pass.",
+    "support": { "sourceIds": ["source_ind71_passport_fee_structure_20260906"], "handoff": "research/handoffs/ind71-passport-fee-addendum.json" }
+  },
+  {
+    "id": "IND71-FEE-002",
+    "recordType": "source",
+    "recordId": "source_ind71_passport_fee_revision_notification_20260906",
+    "fieldPath": "/",
+    "old": null,
+    "new": {
+      "id": "source_ind71_passport_fee_revision_notification_20260906",
+      "title": "Notifications",
+      "publisher": "Ministry of External Affairs, Government of India",
+      "url": "https://www.passportindia.gov.in/psp/Notification",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2026-06-25",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: India; applicable to Bengaluru, Karnataka, India. Agency name displayed by the indexed official page: Ministry of External Affairs, Government of India. The public notification index identifies 'Revision of fee for Passport related services (GSR 516 dated 25.06.2026)' and states that revised fees took effect on 1 July 2026. Direct retrieval could not resolve the host; the canonical URL is retained without repointing. Wayback Save Page Now was attempted on 2026-09-06, but the environment rejected the archive URL as unsafe; no snapshot URL was obtained."
+    },
+    "reason": "Add the official notification-index record establishing the revision date.",
+    "support": { "sourceIds": ["source_ind71_passport_fee_revision_notification_20260906"], "handoff": "research/handoffs/ind71-passport-fee-addendum.json" }
+  },
+  {
+    "id": "IND71-FEE-003",
+    "recordType": "claim",
+    "recordId": "claim_ind71_passport_fresh_adult_normal_fee_20260906",
+    "fieldPath": "/",
+    "old": null,
+    "new": {
+      "id": "claim_ind71_passport_fresh_adult_normal_fee_20260906",
+      "text": "Passport Seva's current indexed fee structure lists an application fee of Rs.2,500 for a fresh 36-page passport with ten-year validity.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "nodeIds": ["node_passport_payment_appointment"],
+      "sourceIds": ["source_ind71_passport_fee_structure_20260906"],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": ["claim_passport_normal_36_page_fee"],
+      "notes": "The claim is limited to the primary fresh-passport scenario. The live SPA rendered a maintenance shell; a recent public index of the canonical official page exposed the amount."
+    },
+    "reason": "Add the actionable current primary-scenario fee claim.",
+    "support": { "sourceIds": ["source_ind71_passport_fee_structure_20260906"], "handoff": "research/handoffs/ind71-passport-fee-addendum.json" }
+  },
+  {
+    "id": "IND71-FEE-004",
+    "recordType": "claim",
+    "recordId": "claim_ind71_passport_fee_revision_effective_20260701",
+    "fieldPath": "/",
+    "old": null,
+    "new": {
+      "id": "claim_ind71_passport_fee_revision_effective_20260701",
+      "text": "Passport Seva states that revised passport application fees took effect on 1 July 2026.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_passport_fresh_adult_normal"],
+      "nodeIds": ["node_passport_payment_appointment"],
+      "sourceIds": ["source_ind71_passport_fee_revision_notification_20260906"],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The notification index names GSR 516 dated 25.06.2026. This claim states only the effective date."
+    },
+    "reason": "Add the atomic fee-revision effective-date claim.",
+    "support": { "sourceIds": ["source_ind71_passport_fee_revision_notification_20260906"], "handoff": "research/handoffs/ind71-passport-fee-addendum.json" }
+  },
+  {
+    "id": "IND71-FEE-005",
+    "recordType": "claim",
+    "recordId": "claim_passport_normal_36_page_fee",
+    "fieldPath": "/contradictsClaimIds/-",
+    "old": null,
+    "new": "claim_ind71_passport_fresh_adult_normal_fee_20260906",
+    "reason": "Make the old Rs.1,500 and current Rs.2,500 contradiction reciprocal.",
+    "support": { "sourceIds": ["source_ind71_passport_fee_structure_20260906"], "handoff": "research/handoffs/ind71-passport-fee-addendum.json" }
+  },
+  {
+    "id": "IND71-FEE-006",
+    "recordType": "expectations",
+    "recordId": "passport",
+    "fieldPath": "/cells/cost/state",
+    "old": "mentioned",
+    "new": "stated",
+    "reason": "A current official fee page gives an actionable amount for the primary scenario.",
+    "support": { "sourceIds": ["source_ind71_passport_fee_structure_20260906"] }
+  },
+  {
+    "id": "IND71-FEE-007",
+    "recordType": "expectations",
+    "recordId": "passport",
+    "fieldPath": "/cells/cost/claimIds",
+    "old": ["claim_ind71_payment_appointment_guidance"],
+    "new": ["claim_ind71_passport_fresh_adult_normal_fee_20260906", "claim_ind71_passport_fee_revision_effective_20260701"],
+    "reason": "Point the cost cell to the actionable amount and its revision date.",
+    "support": { "sourceIds": ["source_ind71_passport_fee_structure_20260906", "source_ind71_passport_fee_revision_notification_20260906"] }
+  },
+  {
+    "id": "IND71-FEE-008",
+    "recordType": "expectations",
+    "recordId": "passport",
+    "fieldPath": "/cells/cost/searchedRoutes",
+    "old": ["route_ind71_passport_apply"],
+    "new": [],
+    "reason": "A stated cell does not rely on searched-route absence evidence.",
+    "support": { "sourceIds": ["source_ind71_passport_fee_structure_20260906"] }
+  },
+  {
+    "id": "IND71-FEE-009",
+    "recordType": "expectations",
+    "recordId": "passport",
+    "fieldPath": "/cells/cost/note",
+    "old": "The public guide makes payment mandatory before booking but gives no current amount or actionable fee schedule.",
+    "new": "The current official fee structure lists Rs.2,500 for a fresh ordinary 36-page passport with ten-year validity; revised passport fees took effect on 1 July 2026. The amount is Grade C because the live SPA showed a maintenance shell and the canonical page was observed through a recent public index.",
+    "reason": "Record the actionable current fee and evidence limitation.",
+    "support": { "sourceIds": ["source_ind71_passport_fee_structure_20260906", "source_ind71_passport_fee_revision_notification_20260906"] }
+  }
+]

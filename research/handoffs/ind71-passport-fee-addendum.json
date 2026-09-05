@@ -1,0 +1,122 @@
+{
+  "serviceId": "passport",
+  "primaryScenarioId": "scenario_passport_fresh_adult_normal",
+  "asOf": "2026-09-06",
+  "researchQuestion": "Does any current public official page state an actionable fee amount, fee schedule, or explicit zero fee for a fresh adult ordinary 36-page passport under the Normal route?",
+  "answer": "yes",
+  "newSources": [
+    {
+      "id": "source_ind71_passport_fee_structure_20260906",
+      "title": "FEE STRUCTURE",
+      "publisher": "Ministry of External Affairs, Government of India",
+      "url": "https://www.passportindia.gov.in/psp/onlineHtml/feeDocument",
+      "accessedAt": "2026-09-06",
+      "jurisdiction": "India; applicable to Bengaluru, Karnataka, India",
+      "type": "official_guidance",
+      "evidenceGrade": "C",
+      "notes": "Agency name displayed by the indexed official page: Ministry of External Affairs, Government of India. A public web-search index crawled the canonical Passport Seva page approximately three weeks before access and exposed the fee table. Row 1 displayed an application fee of Rs.2,500/- for a fresh passport or re-issue, including an additional booklet due to exhaustion of visa pages, containing 36 pages with ten-year validity. Direct browser navigation on 2026-09-06 retained the canonical URL but rendered Passport Seva's maintenance shell instead of the fee table, so this source is graded C as an official but indirectly observed current page. No login, personal data, calculation, payment, identifier, or undocumented API was used.",
+      "wayback": {
+        "attemptedAt": "2026-09-06",
+        "snapshotUrl": null,
+        "outcome": "failed",
+        "notes": "A public Internet Archive Save Page Now request was attempted for the canonical URL, but the browsing environment rejected the archive URL as unsafe. No snapshot URL is asserted and no substitute page was used."
+      }
+    },
+    {
+      "id": "source_ind71_passport_fee_revision_notification_20260906",
+      "title": "Notifications",
+      "publisher": "Ministry of External Affairs, Government of India",
+      "url": "https://www.passportindia.gov.in/psp/Notification",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2026-06-25",
+      "jurisdiction": "India; applicable to Bengaluru, Karnataka, India",
+      "type": "official_notification_index",
+      "evidenceGrade": "C",
+      "notes": "Agency name displayed by the indexed official page: Ministry of External Affairs, Government of India. The public notification index identified 'Revision of fee for Passport related services (GSR 516 dated 25.06.2026)' and displayed an advisory that passport application fees were revised with effect from 1 July 2026. The amount is not stated on this notification-index page; the actionable amount comes from source_ind71_passport_fee_structure_20260906. Direct shell retrieval could not complete because the execution environment could not resolve the host, while the public web index returned the canonical official page. No dead URL was repointed.",
+      "wayback": {
+        "attemptedAt": "2026-09-06",
+        "snapshotUrl": null,
+        "outcome": "failed",
+        "notes": "A public Internet Archive Save Page Now request was attempted for the canonical URL, but the browsing environment rejected the archive URL as unsafe. No snapshot URL is asserted and no substitute page was used."
+      }
+    }
+  ],
+  "newClaims": [
+    {
+      "id": "claim_ind71_passport_fresh_adult_normal_fee_20260906",
+      "text": "Passport Seva's current indexed fee structure lists an application fee of Rs.2,500 for a fresh 36-page passport with ten-year validity.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_payment_appointment"
+      ],
+      "sourceIds": [
+        "source_ind71_passport_fee_structure_20260906"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [
+        "claim_passport_normal_36_page_fee"
+      ],
+      "notes": "The row also covers re-issue and additional booklets, but this claim is limited to the fresh-passport application fee applicable to the primary scenario. The direct live SPA rendered a maintenance shell on the access date; the amount was exposed by a recent public index of the canonical official page."
+    },
+    {
+      "id": "claim_ind71_passport_fee_revision_effective_20260701",
+      "text": "Passport Seva states that revised passport application fees took effect on 1 July 2026.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_payment_appointment"
+      ],
+      "sourceIds": [
+        "source_ind71_passport_fee_revision_notification_20260906"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The notification index names GSR 516 dated 25.06.2026. This claim states only the effective date, not an amount."
+    }
+  ],
+  "droppedSeeds": [],
+  "searchNotes": [
+    {
+      "route": "https://www.passportindia.gov.in/psp/FeeCalculator",
+      "outcome": "The public search index showed the official Fee Calculator, an Application Type selector, and a Calculate Fee button, but no calculated amount. Direct browser navigation on 2026-09-06 rendered Passport Seva's maintenance shell and an explicit portal-down notice. No selections, personal data, calculation, login, or payment were attempted. The route was retained at its canonical URL and not repointed."
+    },
+    {
+      "route": "https://www.passportindia.gov.in/psp/Notification",
+      "outcome": "The current public index named the fee-revision notice as GSR 516 dated 25.06.2026 and stated that revised passport application fees took effect on 1 July 2026. The page did not itself expose the primary-scenario amount."
+    },
+    {
+      "route": "https://www.passportindia.gov.in/psp/onlineHtml/feeDocument",
+      "outcome": "A public index of the canonical official page, crawled about three weeks before access, exposed the current fee table and the Rs.2,500 row for a fresh/reissue 36-page passport with ten-year validity. The live SPA rendered only a maintenance shell on the access date."
+    },
+    {
+      "route": "Official-source searches beyond Passport Seva",
+      "outcome": "Searches of current Ministry of External Affairs and e-Gazette-facing results did not expose a more directly accessible India fee page in this environment. An Embassy of India, Kuwait page confirmed that GSR 516(E), dated 25 June 2026, revised passport and passport-related fees with effect from 1 July 2026, but its overseas context was not used to establish the Bengaluru amount and it was not added as a source."
+    },
+    {
+      "route": "Direct HTTP status probes",
+      "outcome": "Read-only shell probes returned transport status 000 because the execution environment could not resolve www.passportindia.gov.in; 000 is not an HTTP response. No non-200 response was repointed or used as evidence. Public web indexing and direct browser navigation independently retained the exact canonical URLs above."
+    },
+    {
+      "route": "Explicit-zero check",
+      "outcome": "No current official source reviewed stated zero fee for the primary scenario. The actionable finding is a positive application fee of Rs.2,500."
+    }
+  ],
+  "proposedCostCell": {
+    "state": "stated",
+    "claimIds": [
+      "claim_ind71_passport_fresh_adult_normal_fee_20260906",
+      "claim_ind71_passport_fee_revision_effective_20260701"
+    ],
+    "searchedRoutes": [],
+    "note": "For the primary scenario, the actionable current application fee is Rs.2,500 for a fresh ordinary 36-page passport with ten-year validity under the Normal route. Passport Seva states that revised fees took effect on 1 July 2026. No explicit zero fee applies. Because the live SPA was serving a maintenance shell on 2026-09-06, the amount is conservatively supported as Grade C from a recent public index of the canonical official fee page."
+  }
+}

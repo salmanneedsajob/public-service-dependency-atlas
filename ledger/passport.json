@@ -189,6 +189,25 @@
       "publishedAt": "2026-02-10",
       "type": "citizen_evidence",
       "notes": "Public first-person report of a post-police-verification Tatkal case; reported jurisdiction: Bengaluru, Karnataka, India. Username, police-station name, application/status identifiers, payment allegation details, and linked social-media account are omitted. Wayback availability was checked on 2026-09-04 and returned no archived snapshot; no authenticated or case-specific page was archived. Archive limitation: no snapshot was available on the access date. This is an unverified personal report, not a finding about any individual, agency practice, or official recovery route."
+    },
+    {
+      "id": "source_ind71_passport_fee_structure_20260906",
+      "title": "FEE STRUCTURE",
+      "publisher": "Ministry of External Affairs, Government of India",
+      "url": "https://www.passportindia.gov.in/psp/onlineHtml/feeDocument",
+      "accessedAt": "2026-09-06",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: India; applicable to Bengaluru, Karnataka, India. Agency name displayed by the indexed official page: Ministry of External Affairs, Government of India. Visible-date note: no publication or last-updated date was visible in the indexed fee table. A public index crawled the canonical page approximately three weeks before access and exposed the fee table. Direct navigation on 2026-09-06 rendered Passport Seva's maintenance shell, so this source is Grade C official but indirectly observed current guidance. Wayback Save Page Now was attempted on 2026-09-06, but the environment rejected the archive URL as unsafe; no snapshot URL was obtained and no substitute page was used."
+    },
+    {
+      "id": "source_ind71_passport_fee_revision_notification_20260906",
+      "title": "Notifications",
+      "publisher": "Ministry of External Affairs, Government of India",
+      "url": "https://www.passportindia.gov.in/psp/Notification",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2026-06-25",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: India; applicable to Bengaluru, Karnataka, India. Agency name displayed by the indexed official page: Ministry of External Affairs, Government of India. The public notification index identifies 'Revision of fee for Passport related services (GSR 516 dated 25.06.2026)' and states that revised fees took effect on 1 July 2026. Direct retrieval could not resolve the host; the canonical URL is retained without repointing. Wayback Save Page Now was attempted on 2026-09-06, but the environment rejected the archive URL as unsafe; no snapshot URL was obtained."
     }
   ],
   "claims": [
@@ -267,7 +286,9 @@
       "evidenceGrade": "C",
       "basis": "observation",
       "status": "contested",
-      "contradictsClaimIds": [],
+      "contradictsClaimIds": [
+        "claim_ind71_passport_fresh_adult_normal_fee_20260906"
+      ],
       "notes": "The cited booklet has no recorded visible publication date, so this amount may be outdated; verify a current official fee schedule before acting. No payment or calculation was performed."
     },
     {
@@ -902,6 +923,46 @@
       "status": "partial",
       "contradictsClaimIds": [],
       "notes": "No answers were selected, so no case-specific output or recovery behavior is asserted."
+    },
+    {
+      "id": "claim_ind71_passport_fresh_adult_normal_fee_20260906",
+      "text": "Passport Seva's current indexed fee structure lists an application fee of Rs.2,500 for a fresh 36-page passport with ten-year validity.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_payment_appointment"
+      ],
+      "sourceIds": [
+        "source_ind71_passport_fee_structure_20260906"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [
+        "claim_passport_normal_36_page_fee"
+      ],
+      "notes": "The claim is limited to the primary fresh-passport scenario. The live SPA rendered a maintenance shell; a recent public index of the canonical official page exposed the amount."
+    },
+    {
+      "id": "claim_ind71_passport_fee_revision_effective_20260701",
+      "text": "Passport Seva states that revised passport application fees took effect on 1 July 2026.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_passport_fresh_adult_normal"
+      ],
+      "nodeIds": [
+        "node_passport_payment_appointment"
+      ],
+      "sourceIds": [
+        "source_ind71_passport_fee_revision_notification_20260906"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The notification index names GSR 516 dated 25.06.2026. This claim states only the effective date."
     }
   ],
   "nodes": [

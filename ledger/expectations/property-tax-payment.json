@@ -4,14 +4,12 @@
   "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
   "cells": {
     "cost": {
-      "state": "mentioned",
+      "state": "stated",
       "claimIds": [
-        "claim_ind72_public_service_online_payment"
+        "claim_ind72_city_corporation_zero_additional_service_fee"
       ],
-      "searchedRoutes": [
-        "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
-      ],
-      "note": "The reviewed service-details route mentions online payment but provides no citizen-paid amount or actionable fee schedule."
+      "searchedRoutes": [],
+      "note": "The City Corporation-added service fee is explicitly zero beyond statutory property tax. Do not present the whole transaction as fee-free: the policy says bank or payment-gateway charges may exist, and no reviewed official route states their amount or an actionable schedule."
     },
     "documents": {
       "state": "absent",

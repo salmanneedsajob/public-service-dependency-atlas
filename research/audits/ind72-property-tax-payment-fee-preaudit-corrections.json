@@ -1,0 +1,22 @@
+[
+  {
+    "id": "IND72-FEE-PRELINT-001",
+    "recordType": "source",
+    "recordId": "source_ind72_refund_cancellation_pdf_fee_addendum",
+    "fieldPath": "/notes",
+    "old": "Jurisdiction: Bengaluru, Karnataka, India. Agency name as displayed: Bengaluru City Corporations. The official two-page PDF returned HTTP 200 and displayed no publication or revision date; currentness is limited to retrieval on 2026-09-06. Wayback Save Page Now was attempted for this exact PDF on 2026-09-06 and timed out after 30 seconds with zero response bytes; no snapshot URL was confirmed. The original official URL is retained without substitution.",
+    "new": "Jurisdiction: Bengaluru, Karnataka, India. Agency name as displayed: Bengaluru City Corporations. The official two-page PDF returned HTTP 200. Visible-date note: it displayed no publication or revision date; currentness is limited to retrieval on 2026-09-06. Wayback Save Page Now was attempted for this exact PDF on 2026-09-06 and timed out after 30 seconds with zero response bytes; no snapshot URL was confirmed. The original official URL is retained without substitution.",
+    "reason": "State the visible-date limitation in the exact pre-audit lint form.",
+    "support": { "sourceIds": ["source_ind72_refund_cancellation_pdf_fee_addendum"], "handoff": "research/handoffs/ind72-property-tax-payment-fee-addendum.json" }
+  },
+  {
+    "id": "IND72-FEE-PRELINT-002",
+    "recordType": "claim",
+    "recordId": "claim_ind72_bank_gateway_charges_if_any_nonrefundable",
+    "fieldPath": "/text",
+    "old": "The official refund policy says bank or payment-gateway charges, if any, are non-refundable.",
+    "new": "The official refund policy makes any bank/payment-gateway charge non-refundable.",
+    "reason": "Keep the accompanying gateway-charge limitation atomic.",
+    "support": { "sourceIds": ["source_ind72_refund_cancellation_pdf_fee_addendum"], "handoff": "research/handoffs/ind72-property-tax-payment-fee-addendum.json" }
+  }
+]

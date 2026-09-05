@@ -1,0 +1,10 @@
+{
+  "serviceId": "property-tax-payment",
+  "lintWaivers": [
+    {
+      "check": "source-date-quality",
+      "recordId": "source_ind72_official_service_details",
+      "reason": "Inherited source outside the cost-only addendum; it was retained by the completed IND-72 audit and is unchanged here. The fee sweep uses the newly dated refund-policy PDF instead."
+    }
+  ]
+}

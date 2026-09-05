@@ -1,0 +1,108 @@
+{
+  "serviceId": "property-tax-payment",
+  "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
+  "asOf": "2026-09-06",
+  "researchQuestion": "Does any current public official page state an actionable payment fee, convenience charge, or explicit zero fee for the primary property-tax-payment scenario?",
+  "answer": "Yes, narrowly. The Bengaluru City Corporations refund policy states that the City Corporation does not charge or retain an additional service fee beyond the applicable statutory property-tax amount. The same sentence preserves a material limitation: bank or payment-gateway charges may exist, but the reviewed official public routes give no amount or actionable schedule for those charges.",
+  "newSources": [
+    {
+      "id": "source_ind72_refund_cancellation_pdf_fee_addendum",
+      "title": "Refund and Cancellation Policy - Bengaluru City Corporations Property Tax Online Payment Services",
+      "publisher": "Bengaluru City Corporations",
+      "agencyNameAsDisplayed": "Bengaluru City Corporations",
+      "url": "https://bbmptax.karnataka.gov.in/documents/RefundCancellation.pdf",
+      "accessedAt": "2026-09-06",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "type": "official_guidance",
+      "evidenceGrade": "B",
+      "publishedAt": null,
+      "notes": "The official two-page PDF is publicly accessible and displayed no publication or revision date. It identifies the covered service as online Property Tax payment through https://bbmptax.karnataka.gov.in. The displayed agency wording is recorded verbatim. HTTP status check returned 200 on 2026-09-06. Wayback Save Page Now was attempted for this exact PDF URL on 2026-09-06; the request timed out after 30 seconds with zero response bytes, so no snapshot URL was confirmed. The original official URL is retained, and archive capture remains unconfirmed."
+    }
+  ],
+  "newClaims": [
+    {
+      "id": "claim_ind72_city_corporation_zero_additional_service_fee",
+      "text": "For online property-tax payment, the City Corporation does not charge or retain an additional service fee beyond the applicable statutory property-tax amount.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_refund_cancellation_pdf_fee_addendum"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is an explicit zero for a City Corporation-added service fee. It does not establish that the total transaction is free of bank or payment-gateway charges. The statutory property tax itself is outside the fee question."
+    },
+    {
+      "id": "claim_ind72_bank_gateway_charges_if_any_nonrefundable",
+      "text": "The official refund policy says bank or payment-gateway charges, if any, are non-refundable.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [
+        "node_property_tax_payment_public_route"
+      ],
+      "sourceIds": [
+        "source_ind72_refund_cancellation_pdf_fee_addendum"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The policy supplies no amount, percentage, payment-mode matrix, or rule that lets a citizen determine whether a bank or gateway charge applies before payment. This claim is a limitation and does not independently support a stated cost value."
+    }
+  ],
+  "droppedSeeds": [],
+  "searchNotes": [
+    {
+      "scope": "GBA property-tax portal first pass",
+      "routes": [
+        "https://bbmptax.karnataka.gov.in/pages/RCpolicy.aspx",
+        "https://bbmptax.karnataka.gov.in/documents/RefundCancellation.pdf",
+        "https://bbmptax.karnataka.gov.in/pages/Terms.aspx",
+        "https://bbmptax.karnataka.gov.in/pages/service_details.aspx"
+      ],
+      "httpStatus": {
+        "https://bbmptax.karnataka.gov.in/pages/RCpolicy.aspx": 200,
+        "https://bbmptax.karnataka.gov.in/documents/RefundCancellation.pdf": 200,
+        "https://bbmptax.karnataka.gov.in/pages/Terms.aspx": 200,
+        "https://bbmptax.karnataka.gov.in/pages/service_details.aspx": 200
+      },
+      "note": "The HTML refund-policy route and matching official PDF state zero City Corporation-added service fees and preserve an unspecified bank/gateway-charge caveat. The terms and service-details routes describe supported payment modes and gateways but do not publish a fee amount, convenience-charge schedule, or broader zero-fee promise. No identifier was entered and no payment gateway was opened."
+    },
+    {
+      "scope": "GBA public-site pass",
+      "routes": [
+        "https://gba.karnataka.gov.in/"
+      ],
+      "httpStatus": {
+        "https://gba.karnataka.gov.in/": 200
+      },
+      "note": "The Greater Bengaluru Authority public homepage links or refers to Property Tax but did not expose an actionable payment fee, convenience charge, or zero-fee statement in the reviewed public content."
+    },
+    {
+      "scope": "Beyond GBA/BBMP property-tax pages",
+      "searchedRoutes": [
+        "site:karnatakaone.gov.in BBMP property tax service charge fee",
+        "site:karnataka.gov.in BBMP property tax convenience charge payment gateway",
+        "site:bbmp.gov.in property tax convenience fee transaction fee service charge no fee"
+      ],
+      "note": "No current official result supplied an actionable bank or gateway charge for this primary property-tax-payment scenario. Search results that used 'service charge' as part of the property-tax liability for exempt properties were excluded because that amount is part of the statutory property-tax regime, not a payment-processing fee. An official e-Aasthi convenience-charge table was also excluded because it applies to online Khatha Transfer, a different service."
+    }
+  ],
+  "proposedCostCell": {
+    "state": "stated",
+    "claimIds": [
+      "claim_ind72_city_corporation_zero_additional_service_fee"
+    ],
+    "searchedRoutes": [],
+    "note": "Actionable value: the City Corporation-added service fee is zero beyond the statutory property-tax amount. Do not present the whole transaction as fee-free: the policy says bank or payment-gateway charges may exist, and no reviewed official public route states their amount or an actionable schedule."
+  }
+}

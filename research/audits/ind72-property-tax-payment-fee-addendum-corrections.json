@@ -1,0 +1,104 @@
+[
+  {
+    "id": "IND72-FEE-001",
+    "recordType": "source",
+    "recordId": "source_ind72_refund_cancellation_pdf_fee_addendum",
+    "fieldPath": "/",
+    "old": null,
+    "new": {
+      "id": "source_ind72_refund_cancellation_pdf_fee_addendum",
+      "title": "Refund and Cancellation Policy - Bengaluru City Corporations Property Tax Online Payment Services",
+      "publisher": "Bengaluru City Corporations",
+      "url": "https://bbmptax.karnataka.gov.in/documents/RefundCancellation.pdf",
+      "accessedAt": "2026-09-06",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency name as displayed: Bengaluru City Corporations. The official two-page PDF returned HTTP 200 and displayed no publication or revision date; currentness is limited to retrieval on 2026-09-06. Wayback Save Page Now was attempted for this exact PDF on 2026-09-06 and timed out after 30 seconds with zero response bytes; no snapshot URL was confirmed. The original official URL is retained without substitution."
+    },
+    "reason": "Add the official refund-policy PDF containing the explicit zero municipal service fee.",
+    "support": { "sourceIds": ["source_ind72_refund_cancellation_pdf_fee_addendum"], "handoff": "research/handoffs/ind72-property-tax-payment-fee-addendum.json" }
+  },
+  {
+    "id": "IND72-FEE-002",
+    "recordType": "claim",
+    "recordId": "claim_ind72_city_corporation_zero_additional_service_fee",
+    "fieldPath": "/",
+    "old": null,
+    "new": {
+      "id": "claim_ind72_city_corporation_zero_additional_service_fee",
+      "text": "For online property-tax payment, the City Corporation charges no additional service fee beyond statutory property tax.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+      "nodeIds": ["node_property_tax_payment_public_route"],
+      "sourceIds": ["source_ind72_refund_cancellation_pdf_fee_addendum"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This explicit zero applies only to a City Corporation-added service fee. It does not establish that the transaction is free of bank or gateway charges; statutory property tax is outside the fee question."
+    },
+    "reason": "Add the actionable explicit-zero fee claim for the primary scenario.",
+    "support": { "sourceIds": ["source_ind72_refund_cancellation_pdf_fee_addendum"], "handoff": "research/handoffs/ind72-property-tax-payment-fee-addendum.json" }
+  },
+  {
+    "id": "IND72-FEE-003",
+    "recordType": "claim",
+    "recordId": "claim_ind72_bank_gateway_charges_if_any_nonrefundable",
+    "fieldPath": "/",
+    "old": null,
+    "new": {
+      "id": "claim_ind72_bank_gateway_charges_if_any_nonrefundable",
+      "text": "The official refund policy says bank or payment-gateway charges, if any, are non-refundable.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+      "nodeIds": ["node_property_tax_payment_public_route"],
+      "sourceIds": ["source_ind72_refund_cancellation_pdf_fee_addendum"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The policy gives no amount, percentage, mode matrix, or rule showing whether such a charge applies before payment. This claim does not independently support a stated cost value."
+    },
+    "reason": "Add the atomic limitation accompanying the explicit zero municipal fee.",
+    "support": { "sourceIds": ["source_ind72_refund_cancellation_pdf_fee_addendum"], "handoff": "research/handoffs/ind72-property-tax-payment-fee-addendum.json" }
+  },
+  {
+    "id": "IND72-FEE-004",
+    "recordType": "expectations",
+    "recordId": "property-tax-payment",
+    "fieldPath": "/cells/cost/state",
+    "old": "mentioned",
+    "new": "stated",
+    "reason": "The official policy states an explicit zero City Corporation-added service fee.",
+    "support": { "sourceIds": ["source_ind72_refund_cancellation_pdf_fee_addendum"] }
+  },
+  {
+    "id": "IND72-FEE-005",
+    "recordType": "expectations",
+    "recordId": "property-tax-payment",
+    "fieldPath": "/cells/cost/claimIds",
+    "old": ["claim_ind72_public_service_online_payment"],
+    "new": ["claim_ind72_city_corporation_zero_additional_service_fee"],
+    "reason": "Point the cost cell to the explicit-zero claim.",
+    "support": { "sourceIds": ["source_ind72_refund_cancellation_pdf_fee_addendum"] }
+  },
+  {
+    "id": "IND72-FEE-006",
+    "recordType": "expectations",
+    "recordId": "property-tax-payment",
+    "fieldPath": "/cells/cost/searchedRoutes",
+    "old": ["https://bbmptax.karnataka.gov.in/pages/service_details.aspx"],
+    "new": [],
+    "reason": "A stated cell no longer relies on an absence search.",
+    "support": { "sourceIds": ["source_ind72_refund_cancellation_pdf_fee_addendum"] }
+  },
+  {
+    "id": "IND72-FEE-007",
+    "recordType": "expectations",
+    "recordId": "property-tax-payment",
+    "fieldPath": "/cells/cost/note",
+    "old": "The reviewed service-details route mentions online payment but provides no citizen-paid amount or actionable fee schedule.",
+    "new": "The City Corporation-added service fee is explicitly zero beyond statutory property tax. Do not present the whole transaction as fee-free: the policy says bank or payment-gateway charges may exist, and no reviewed official route states their amount or an actionable schedule.",
+    "reason": "Record the actionable zero and the unresolved gateway-charge limitation.",
+    "support": { "sourceIds": ["source_ind72_refund_cancellation_pdf_fee_addendum"] }
+  }
+]

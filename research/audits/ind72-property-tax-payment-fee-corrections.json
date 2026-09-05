@@ -1,0 +1,30 @@
+[
+  {
+    "recordType": "claim",
+    "recordId": "claim_ind72_city_corporation_zero_additional_service_fee",
+    "fieldPath": "/evidenceGrade",
+    "old": "B",
+    "new": "C",
+    "reason": "Protocol section 4 requires Grade C for undated official material; the sole cited PDF has no visible publication or revision date.",
+    "support": {
+      "sourceIds": [
+        "source_ind72_refund_cancellation_pdf_fee_addendum"
+      ],
+      "auditNote": "The source note documents the missing visible date and limits currentness to retrieval on 2026-09-06. Official status and successful retrieval do not override the protocol's undated-material rule."
+    }
+  },
+  {
+    "recordType": "claim",
+    "recordId": "claim_ind72_bank_gateway_charges_if_any_nonrefundable",
+    "fieldPath": "/evidenceGrade",
+    "old": "B",
+    "new": "C",
+    "reason": "Protocol section 4 requires Grade C for undated official material; the sole cited PDF has no visible publication or revision date.",
+    "support": {
+      "sourceIds": [
+        "source_ind72_refund_cancellation_pdf_fee_addendum"
+      ],
+      "auditNote": "The source note documents the missing visible date and limits currentness to retrieval on 2026-09-06. The claim remains verified and observational, but its evidence grade must reflect the source's undated status."
+    }
+  }
+]

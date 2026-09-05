@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "sale-deed-registration",
+  "auditDate": "2026-09-06",
+  "corrections": [
+    {
+      "id": "IND78-CLOSEOUT-CITATION-001",
+      "recordType": "source",
+      "recordId": "source_ind78_revenue_home_public_20260905",
+      "fieldPath": "/title",
+      "old": "Revenue Department of Karnataka public home route",
+      "new": "General-site reference — Revenue Department of Karnataka",
+      "reason": "A bare department homepage is a general-site reference, not a specific citation.",
+      "support": {"sourceIds":["source_ind78_revenue_home_public_20260905"],"auditNote":"Protocol section 4 assigns general-site references Grade C and section 7 prohibits presenting them as specific citations."}
+    },
+    {
+      "id": "IND78-CLOSEOUT-CITATION-002",
+      "recordType": "source",
+      "recordId": "source_ind78_revenue_home_public_20260905",
+      "fieldPath": "/notes",
+      "old": "Visible date: No page body, publication date, or last-updated date was captured because the public route timed out.",
+      "new": "General-site reference only; not a specific citation. Visible date: No page body, publication date, or last-updated date was captured because the public route timed out.",
+      "reason": "Preserve the bounded homepage observation while preventing presentation as a specific departmental citation.",
+      "support": {"sourceIds":["source_ind78_revenue_home_public_20260905"],"auditNote":"The public-route timeout remains the only supported observation."}
+    },
+    {
+      "id": "IND78-CLOSEOUT-CITATION-003",
+      "recordType": "claim",
+      "recordId": "claim_ind78_revenue_public_route_unavailable",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "The claim rests only on a General-site reference and must be Grade C.",
+      "support": {"sourceIds":["source_ind78_revenue_home_public_20260905"],"auditNote":"Protocol section 4 sets a department homepage/general-site reference to Grade C."}
+    },
+    {
+      "id": "IND78-CLOSEOUT-CITATION-004",
+      "recordType": "claim",
+      "recordId": "claim_ind78_department_owner",
+      "fieldPath": "/notes",
+      "old": "Annual Report 2023-24, PDF page 96.",
+      "new": "Annual Report 2023-24, IGR departmental-ownership entry, PDF page 96.",
+      "reason": "Pinpoint the distinct report entry supporting this claim for the per-source citation-cap exemption.",
+      "support": {"sourceIds":["source_ind78_revenue_annual_report"],"auditNote":"The claim concerns the departmental-ownership entry on page 96."}
+    },
+    {
+      "id": "IND78-CLOSEOUT-CITATION-005",
+      "recordType": "claim",
+      "recordId": "claim_ind78_property_registration_scope",
+      "fieldPath": "/notes",
+      "old": "Annual Report 2023-24, PDF page 96.",
+      "new": "Annual Report 2023-24, IGR registration-functions entry, PDF page 96.",
+      "reason": "Pinpoint the distinct report entry supporting this claim for the per-source citation-cap exemption.",
+      "support": {"sourceIds":["source_ind78_revenue_annual_report"],"auditNote":"The claim concerns the registration-functions entry on page 96."}
+    },
+    {
+      "id": "IND78-CLOSEOUT-CITATION-006",
+      "recordType": "claim",
+      "recordId": "claim_ind78_kaveri2_bhoomi_integration",
+      "fieldPath": "/notes",
+      "old": "Annual Report 2023-24, PDF page 96.",
+      "new": "Annual Report 2023-24, IGR Kaveri-2.0 use entry, PDF page 96.",
+      "reason": "Pinpoint the distinct report entry supporting this claim for the per-source citation-cap exemption.",
+      "support": {"sourceIds":["source_ind78_revenue_annual_report"],"auditNote":"The claim concerns the Kaveri-2.0 use entry on page 96."}
+    },
+    {
+      "id": "IND78-CLOSEOUT-CITATION-007",
+      "recordType": "claim",
+      "recordId": "claim_ind78_kaveri2_bhoomi_system_integration",
+      "fieldPath": "/notes",
+      "old": "Annual Report 2023-24, PDF page 96; department-level documentation, not observation of a particular property.",
+      "new": "Annual Report 2023-24, IGR Kaveri-2.0 integration list (Bhoomi entry), PDF page 96; department-level documentation, not observation of a particular property.",
+      "reason": "Pinpoint the distinct report entry supporting this claim for the per-source citation-cap exemption.",
+      "support": {"sourceIds":["source_ind78_revenue_annual_report"],"auditNote":"The claim concerns the Bhoomi item in the integration list on page 96."}
+    },
+    {
+      "id": "IND78-CLOSEOUT-CITATION-008",
+      "recordType": "claim",
+      "recordId": "claim_ind78_kaveri2_eswathu_system_integration",
+      "fieldPath": "/notes",
+      "old": "Annual Report 2023-24, PDF page 96; department-level documentation, not observation of a particular property.",
+      "new": "Annual Report 2023-24, IGR Kaveri-2.0 integration list (E-Swathu entry), PDF page 96; department-level documentation, not observation of a particular property.",
+      "reason": "Pinpoint the distinct report entry supporting this claim for the per-source citation-cap exemption.",
+      "support": {"sourceIds":["source_ind78_revenue_annual_report"],"auditNote":"The claim concerns the E-Swathu item in the integration list on page 96."}
+    },
+    {
+      "id": "IND78-CLOSEOUT-CITATION-009",
+      "recordType": "claim",
+      "recordId": "claim_ind78_sro_structure",
+      "fieldPath": "/notes",
+      "old": "Annual Report 2023-24, PDF page 95. It does not identify the correct SRO for any unprovided Bengaluru property.",
+      "new": "Annual Report 2023-24, IGR office-structure entry, PDF page 95. It does not identify the correct SRO for any unprovided Bengaluru property.",
+      "reason": "Pinpoint the distinct report entry supporting this claim for the per-source citation-cap exemption.",
+      "support": {"sourceIds":["source_ind78_revenue_annual_report"],"auditNote":"The claim concerns the office-structure entry on page 95."}
+    }
+  ]
+}

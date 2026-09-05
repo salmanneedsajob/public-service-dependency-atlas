@@ -8,9 +8,14 @@ const ledgerFiles = (await readdir('ledger'))
   .filter((file) => file.endsWith('.json') && !['schema.json', 'example.json', 'demo.synthetic.json', 'services.manifest.json'].includes(file))
   .map((file) => `ledger/${file}`);
 const ledgers = await Promise.all(ledgerFiles.map(async (file) => JSON.parse(await readFile(file, 'utf8'))));
-// This direct Census Act PDF predates the per-URL cap and is deliberately
-// shared for the Act's individual sections; it is not a homepage exception.
-const citationCapExemptSourceIds = new Set(['source_ind42_birth_rbd_act_pdf']);
+// These direct PDFs are deliberately shared only where each atomic claim
+// pinpoints a distinct section or entry in the source; neither is a homepage
+// exception.
+const citationCapExemptSourceIds = new Set([
+  'source_ind42_birth_rbd_act_pdf',
+  // IND-78: six claims identify separate IGR annual-report entries/pages.
+  'source_ind78_revenue_annual_report',
+]);
 const newPhaseTwoSource = (source) => /^source_ind(?:4[1-9]|[5-9]\d)_/.test(source.id) && !citationCapExemptSourceIds.has(source.id);
 const homeLikePaths = new Set(['/', '/index.html', '/index.php', '/indiacode/', '/consumer', '/consumer/', '/citizen_core/', '/portal', '/portal/']);
 
@@ -34,6 +39,8 @@ const homepageCitationAllowlist = new Set([
   'source_trade_w_gba', 'source_trade_w_manual', 'source_trade_w_otls', 'source_trade_w_faq', 'source_ind32_water_account_act',
   'source_ind32_eaasthi_citizen_home', 'source_ind32_property_workflow_citizen_home', 'source_ind32_water_account_consumer', 'source_ind40_water_public_entry',
   'source_ind32_birth_workflow_bbmp_it', 'source_building_kmc_299', 'source_building_gba_home', 'source_building_w_gba', 'source_ind32_property_act_index',
+  // IND-78 records only an observed timeout on this general-site reference.
+  'source_ind78_revenue_home_public_20260905',
 ]);
 
 // IND-54 will repair the inherited citation corpus. From IND-41 onward, do

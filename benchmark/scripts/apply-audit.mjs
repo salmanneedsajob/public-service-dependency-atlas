@@ -1,5 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import process from 'node:process';
+import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 const recordTypeCollections = new Map([
   ['agency', 'agencies'],
@@ -249,9 +251,11 @@ function selfTest() {
   console.log('Generic audit application self-test verified.');
 }
 
-const args = process.argv.slice(2);
-if (args[0] === '--self-test') selfTest();
-else {
+async function runApplyAuditCli(args, { defaultSidecarPath = null } = {}) {
+  if (args[0] === '--self-test') {
+    selfTest();
+    return;
+  }
   const [ledgerPath, correctionsPath] = args;
   const dryRun = args.includes('--dry-run');
   const expectationIndex = args.indexOf('--expectations');
@@ -264,7 +268,7 @@ else {
   for (const type of new Set([...sidecarRecordTypes].map(canonicalRecordType))) {
     if (!corrections.some((correction) => canonicalRecordType(correction.recordType) === type)) continue;
     const correction = corrections.find((candidate) => canonicalRecordType(candidate.recordType) === type);
-    const targetPath = correction.targetFile ?? (type === 'expectation' ? args[expectationIndex + 1] : args[portalIndex + 1]);
+    const targetPath = correction.targetFile ?? (type === 'expectation' ? args[expectationIndex + 1] : args[portalIndex + 1]) ?? defaultSidecarPath?.(type, ledgerPath);
     if (!targetPath) throw new Error(`A ${type} correction requires --${type === 'expectation' ? 'expectations' : 'portals'} <sidecar.json> or correction.targetFile.`);
     sidecars[type] = await readJson(targetPath);
     sidecars[type]._targetPath = targetPath;
@@ -284,4 +288,6 @@ else {
   }
 }
 
-export { applyCorrections };
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) await runApplyAuditCli(process.argv.slice(2));
+
+export { applyCorrections, runApplyAuditCli };

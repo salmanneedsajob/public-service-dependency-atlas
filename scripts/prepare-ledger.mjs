@@ -4,10 +4,13 @@ import process from 'node:process';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import YAML from 'yaml';
+import { generateScorecards } from '../benchmark/scripts/generate-scorecards.mjs';
 
 const projectRoot = process.cwd();
 const inputPath = path.resolve(projectRoot, process.env.LEDGER_PATH ?? 'ledger/research.json');
-const schemaPath = path.resolve(projectRoot, 'ledger/schema.json');
+const schemaPath = path.resolve(projectRoot, 'benchmark/schemas/ledger.json');
+const manifestPath = path.resolve(projectRoot, 'ledger/services.manifest.json');
+const manifestSchemaPath = path.resolve(projectRoot, 'benchmark/schemas/manifest.json');
 const outputPath = path.resolve(projectRoot, 'public/data/ledger.json');
 const serviceOutputPath = path.resolve(projectRoot, 'public/data/bescom.json');
 const expectationsDirectory = path.resolve(projectRoot, 'ledger/expectations');
@@ -44,9 +47,11 @@ function normalizePortalSidecarForExport(sidecar) {
   };
 }
 
-const [rawInput, rawSchema] = await Promise.all([
+const [rawInput, rawSchema, rawManifest, rawManifestSchema] = await Promise.all([
   readFile(inputPath, 'utf8'),
   readFile(schemaPath, 'utf8'),
+  readFile(manifestPath, 'utf8'),
+  readFile(manifestSchemaPath, 'utf8'),
 ]);
 
 const extension = path.extname(inputPath).toLowerCase();
@@ -55,6 +60,8 @@ const schema = JSON.parse(rawSchema);
 const ajv = new Ajv2020({ allErrors: true, strict: false });
 addFormats(ajv);
 const validate = ajv.compile(schema);
+const validateManifest = ajv.compile(JSON.parse(rawManifestSchema));
+if (!validateManifest(JSON.parse(rawManifest))) throw new Error(`services.manifest.json does not satisfy benchmark manifest schema: ${(validateManifest.errors ?? []).map((error) => `${error.instancePath} ${error.message}`).join('; ')}`);
 
 if (!validate(ledger)) {
   const errors = (validate.errors ?? [])
@@ -74,7 +81,7 @@ for (const filename of (await readdir(path.resolve(projectRoot, 'ledger'))).filt
   await writeFile(path.resolve(projectRoot, 'public/data', filename), `${JSON.stringify(serviceLedger, null, 2)}\n`);
 }
 try {
-  const expectationsSchema = JSON.parse(await readFile(path.resolve(expectationsDirectory, 'schema.json'), 'utf8'));
+  const expectationsSchema = JSON.parse(await readFile(path.resolve(projectRoot, 'benchmark/schemas/expectations.json'), 'utf8'));
   const validateExpectations = ajv.compile(expectationsSchema);
   await mkdir(expectationsOutputDirectory, { recursive: true });
   for (const filename of (await readdir(expectationsDirectory)).filter((name) => name.endsWith('.json') && name !== 'schema.json')) {
@@ -90,7 +97,7 @@ try {
   if (error.code !== 'ENOENT') throw error;
 }
 try {
-  const portalsSchema = JSON.parse(await readFile(path.resolve(portalsDirectory, 'schema.json'), 'utf8'));
+  const portalsSchema = JSON.parse(await readFile(path.resolve(projectRoot, 'benchmark/schemas/portals.json'), 'utf8'));
   const validatePortals = ajv.compile(portalsSchema);
   await mkdir(portalsOutputDirectory, { recursive: true });
   for (const filename of (await readdir(portalsDirectory)).filter((name) => name.endsWith('.json') && name !== 'schema.json')) {
@@ -109,4 +116,5 @@ try {
 } catch (error) {
   if (error.code !== 'ENOENT') throw error;
 }
+await generateScorecards();
 console.log(`Prepared ${path.relative(projectRoot, inputPath)} for the site.`);

@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
+import { pathToFileURL } from 'node:url';
 
 const protocolChecks = [
   'compound-claim',
@@ -129,16 +130,19 @@ async function runSelfTest() {
   console.log('Pre-audit lint self-test verified.');
 }
 
-const args = process.argv.slice(2);
-if (args[0] === '--self-test') await runSelfTest();
-else {
+async function runLintCli(args, { defaultManifestPath = null } = {}) {
+  if (args[0] === '--self-test') {
+    await runSelfTest();
+    return;
+  }
   const [ledgerPath] = args;
   const serviceIndex = args.indexOf('--service');
   const handoffIndex = args.indexOf('--handoff');
   const manifestIndex = args.indexOf('--manifest');
-  if (!ledgerPath || manifestIndex === -1 || !args[manifestIndex + 1]) throw new Error('Usage: node benchmark/scripts/pre-audit-lint.mjs <ledger.json> --manifest <manifest.json> [--service <serviceId>] [--handoff <handoff.json>]');
+  const manifestPath = manifestIndex === -1 ? defaultManifestPath : args[manifestIndex + 1];
+  if (!ledgerPath || !manifestPath) throw new Error('Usage: node benchmark/scripts/pre-audit-lint.mjs <ledger.json> --manifest <manifest.json> [--service <serviceId>] [--handoff <handoff.json>]');
   const [manifest, ledger, handoff] = await Promise.all([
-    readJson(args[manifestIndex + 1]),
+    readJson(manifestPath),
     readJson(ledgerPath),
     handoffIndex === -1 ? Promise.resolve({}) : readJson(args[handoffIndex + 1]),
   ]);
@@ -149,4 +153,6 @@ else {
   if (result.unwaived.length) process.exitCode = 1;
 }
 
-export { lintLedger };
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) await runLintCli(process.argv.slice(2));
+
+export { lintLedger, runLintCli };

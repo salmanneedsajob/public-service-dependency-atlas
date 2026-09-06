@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "property-tax-payment",
+  "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimIds": [
+        "claim_mumbai_ptax_residential_rate_table",
+        "claim_mumbai_ptax_residential_rate_table_2",
+        "claim_mumbai_ptax_residential_rate_table_3",
+        "claim_mumbai_ptax_residential_rate_table_4",
+        "claim_mumbai_ptax_residential_rate_table_5",
+        "claim_mumbai_ptax_residential_rate_table_6",
+        "claim_mumbai_ptax_residential_rate_table_7",
+        "claim_mumbai_ptax_residential_rate_table_8",
+        "claim_mumbai_ptax_residential_rate_table_9",
+        "claim_mumbai_ptax_residential_rate_table_10",
+        "claim_mumbai_ptax_user_category_determines_rate"
+      ],
+      "searchedRoutes": [],
+      "note": "An actionable fee schedule is published and readable: ten rate components for the residential user category, expressed as percentages of capital value, which a citizen can apply once the capital value is known. Two limits are recorded rather than resolved. The schedule takes effect from 1 April 2015 and nothing later is published on the same route, where the companion capital-value rules stop at 2019-20, so the rate for the current financial year is not confirmed. And the amount actually payable on a given property is returned only by the instant-payment route after a property account number is entered, which this run did not do."
+    },
+    "documents": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_mumbai_ptax_account_number_from_bill_2"
+      ],
+      "searchedRoutes": [
+        "https://ptaxportal.mcgm.gov.in/CitizenPortal/",
+        "https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/instantPayment",
+        "https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/faq",
+        "https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/contactus",
+        "https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/taxducument"
+      ],
+      "note": "The topic is touched, but no requirement is given. The portal names one concrete document, the property tax bill, as the place the Property Account No. is printed, and offers a Search route for an owner who does not have it to hand. That is a reference to a document, not a requirement to submit, provide, upload, produce or attach anything: nothing on any reviewed route tells an owner paying on a known account number what to supply, and the portal's own FAQ route rendered empty. No reviewed route states an explicit zero either, so section 3 does not apply."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_mumbai_ptax_account_number_from_bill",
+        "claim_mumbai_ptax_account_number_from_bill_2",
+        "claim_mumbai_ptax_account_number_from_bill_3",
+        "claim_mumbai_ptax_user_category_determines_rate",
+        "claim_mumbai_ptax_first_in_first_out_rule_3"
+      ],
+      "searchedRoutes": [],
+      "note": "Usable rules decide which route applies: the citizen enters the property account number printed on the upper portion of the property tax bill, with a search route for finding it; the rate that applies turns on the property's user category, residential in this scenario; and a payment is applied oldest bill first, so paying against a specific bill requires the ward Assessment and Collection department instead."
+    },
+    "time": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_mumbai_ptax_first_in_first_out_rule",
+        "claim_mumbai_ptax_first_in_first_out_rule_2"
+      ],
+      "searchedRoutes": [
+        "https://ptaxportal.mcgm.gov.in/CitizenPortal/",
+        "https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/instantPayment",
+        "https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/faq",
+        "https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/taxducument",
+        "https://portal.mcgm.gov.in/irj/portal/anonymous/qlcitizenchar"
+      ],
+      "note": "The topic is touched only as processing sequence. The Instant Payment route states that an online payment is applied first-in first-out, oldest bill first, which is a rule about the order in which payments are processed and carries no figure and no usable time rule. Nothing else follows: there is no due date, no instalment period, no rebate or penalty deadline and no service-level target for the payment route anywhere on the portal, so the cell falls well short of stated. The instant-payment route's discount and advance fields are amount fields and are not read here as timing evidence. BMC's Citizen Charter route was searched and is a folder of ward-level documents rather than a service-standards table. That when the tax falls due is unestablished is recorded as an Unknown claim, which is a limitation and not a cell value."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_mumbai_ptax_ward_assessor_email_table",
+        "claim_mumbai_ptax_first_in_first_out_rule_3"
+      ],
+      "searchedRoutes": [],
+      "note": "The citizen can identify and reach the role that holds the case: the payment portal's public entry page publishes a ward-by-ward table of e-mail addresses for the Assistant Assessor and Collector, and the instant-payment route names the Assessment and Collection department of the respective ward as the office to contact when a payment must be applied to a specific bill. Recorded against this: the portal's separate Contact Us route gives only a headquarters address and a feedback mailbox."
+    },
+    "after-submission": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_mumbai_ptax_first_in_first_out_rule",
+        "claim_mumbai_ptax_first_in_first_out_rule_2",
+        "claim_mumbai_ptax_first_in_first_out_rule_3"
+      ],
+      "searchedRoutes": [
+        "https://ptaxportal.mcgm.gov.in/CitizenPortal/",
+        "https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/instantPayment",
+        "https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/faq",
+        "https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/contactus"
+      ],
+      "note": "The topic is touched, but no post-submission surface is identified. The Instant Payment route states what becomes of the money after it is paid, that an online payment is applied first-in first-out with the oldest bill adjusted first, and it names the ward Assessment and Collection department as the route for a citizen who wanted it applied to a specific bill instead; both are outcomes and recourse after payment, not steps at or before it. Against that, nothing public says the citizen receives a receipt, an acknowledgement, a transaction reference or a status route after paying, and no downloadable result is named, so no visible or actionable post-submission surface exists on the reviewed evidence. The outstanding-bill display on the instant-payment route is what the citizen sees before paying, not after, and the account view that would hold receipts sits behind a property account number and a CAPTCHA that this run did not cross; that boundary is recorded as a limitation, not as a positive finding."
+    }
+  }
+}

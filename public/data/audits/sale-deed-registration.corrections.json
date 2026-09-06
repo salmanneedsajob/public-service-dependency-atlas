@@ -1,0 +1,646 @@
+{
+  "runs": [
+    {
+      "file": "ind78-sale-deed-registration-closeout-archive-corrections.json",
+      "data": {
+        "schemaVersion": "1.0.0",
+        "serviceId": "sale-deed-registration",
+        "auditDate": "2026-09-06",
+        "corrections": [
+          {
+            "id": "IND78-CLOSEOUT-ARCHIVE-001",
+            "recordType": "source",
+            "recordId": "source_ind78_revenue_annual_report",
+            "fieldPath": "/notes",
+            "old": "Visible date: not shown; report period is 2023-24. Official annual report; the document publication date is not shown. Relevant text is the IGR section, PDF pages 95-101: department ownership, property-transaction registration, Kaveri-2.0, SROs, and acts/rules. Historical report; not a current citizen procedure or SLA.",
+            "new": "Visible date: not shown; report period is 2023-24. Official annual report; the document publication date is not shown. Relevant text is the IGR section, PDF pages 95-101: department ownership, property-transaction registration, Kaveri-2.0, SROs, and acts/rules. Historical report; not a current citizen procedure or SLA. Archive capture not attempted during the official pass on 2026-09-05; limitation.",
+            "reason": "Record the missing archive-attempt limitation without asserting that an attempt failed.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_revenue_annual_report"
+              ],
+              "auditNote": "The source was accessed on 2026-09-05 and has no prior archive note."
+            }
+          },
+          {
+            "id": "IND78-CLOSEOUT-ARCHIVE-002",
+            "recordType": "source",
+            "recordId": "source_ind78_kaveri_indiastack_local",
+            "fieldPath": "/notes",
+            "old": "Visible date: not shown. Official government project directory record; the page publication date is not shown. It identifies Kaveri online document registration and explicitly lists sale of immovable-property transactions. It also reports a historical 8-hours-to-50-minutes benefit and integrations; those are not current guarantees. The page names Prabhakar H L as AIGR (Computers) and Project Director (KAVERI), Department of Stamps and Registration, Government of Karnataka.",
+            "new": "Visible date: not shown. Official government project directory record; the page publication date is not shown. It identifies Kaveri online document registration and explicitly lists sale of immovable-property transactions. It also reports a historical 8-hours-to-50-minutes benefit and integrations; those are not current guarantees. The page names Prabhakar H L as AIGR (Computers) and Project Director (KAVERI), Department of Stamps and Registration, Government of Karnataka. Archive capture not attempted during the official pass on 2026-09-05; limitation.",
+            "reason": "Record the missing archive-attempt limitation without asserting that an attempt failed.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_kaveri_indiastack_local"
+              ],
+              "auditNote": "The source was accessed on 2026-09-05 and has no prior archive note."
+            }
+          },
+          {
+            "id": "IND78-CLOSEOUT-ARCHIVE-003",
+            "recordType": "source",
+            "recordId": "source_ind78_tumkur_stamps_page",
+            "fieldPath": "/notes",
+            "old": "Visible date: 2026-09-01 in the page's last-updated footer; publication date is not shown. Official district page. It lists the Acts and Rules administered, Kaveri features, and Kaveri/Bhoomi integration. The page contains historical references (including 2011-2013 rollout details), so current Bengaluru routing, fees, and timing remain unestablished.",
+            "new": "Visible date: 2026-09-01 in the page's last-updated footer; publication date is not shown. Official district page. It lists the Acts and Rules administered, Kaveri features, and Kaveri/Bhoomi integration. The page contains historical references (including 2011-2013 rollout details), so current Bengaluru routing, fees, and timing remain unestablished. Archive capture not attempted during the official pass on 2026-09-05; limitation.",
+            "reason": "Record the missing archive-attempt limitation without asserting that an attempt failed.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_tumkur_stamps_page"
+              ],
+              "auditNote": "The source was accessed on 2026-09-05 and has no prior archive note."
+            }
+          },
+          {
+            "id": "IND78-CLOSEOUT-ARCHIVE-004",
+            "recordType": "source",
+            "recordId": "source_ind78_registration_act_india_code",
+            "fieldPath": "/notes",
+            "old": "Visible date: not shown; the India Code document date is not shown. Section 17(1)(b) text states that non-testamentary instruments creating, declaring, assigning, limiting, or extinguishing rights, title, or interest of value Rs 100 and upwards in immovable property shall be registered. This is a legal applicability rule, not a live Kaveri workflow or fee schedule.",
+            "new": "Visible date: not shown; the India Code document date is not shown. Section 17(1)(b) text states that non-testamentary instruments creating, declaring, assigning, limiting, or extinguishing rights, title, or interest of value Rs 100 and upwards in immovable property shall be registered. This is a legal applicability rule, not a live Kaveri workflow or fee schedule. Archive capture not attempted during the official pass on 2026-09-05; limitation.",
+            "reason": "Record the missing archive-attempt limitation without asserting that an attempt failed.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_registration_act_india_code"
+              ],
+              "auditNote": "The source was accessed on 2026-09-05 and has no prior archive note."
+            }
+          },
+          {
+            "id": "IND78-CLOSEOUT-ARCHIVE-005",
+            "recordType": "source",
+            "recordId": "source_ind78_karnataka_stamp_act_india_code",
+            "fieldPath": "/notes",
+            "old": "Visible date: not shown; the India Code consolidated-document publication date is not shown and the search record identifies amendments through 2025. Section 30(b) states that, absent an agreement to the contrary, in the case of a conveyance the expense of providing proper stamp is borne by the grantee. It does not supply a current Bengaluru amount for this case.",
+            "new": "Visible date: not shown; the India Code consolidated-document publication date is not shown and the search record identifies amendments through 2025. Section 30(b) states that, absent an agreement to the contrary, in the case of a conveyance the expense of providing proper stamp is borne by the grantee. It does not supply a current Bengaluru amount for this case. Archive capture not attempted during the official pass on 2026-09-05; limitation.",
+            "reason": "Record the missing archive-attempt limitation without asserting that an attempt failed.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_karnataka_stamp_act_india_code"
+              ],
+              "auditNote": "The source was accessed on 2026-09-05 and has no prior archive note."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "ind78-sale-deed-registration-closeout-citation-corrections.json",
+      "data": {
+        "schemaVersion": "1.0.0",
+        "serviceId": "sale-deed-registration",
+        "auditDate": "2026-09-06",
+        "corrections": [
+          {
+            "id": "IND78-CLOSEOUT-CITATION-001",
+            "recordType": "source",
+            "recordId": "source_ind78_revenue_home_public_20260905",
+            "fieldPath": "/title",
+            "old": "Revenue Department of Karnataka public home route",
+            "new": "General-site reference — Revenue Department of Karnataka",
+            "reason": "A bare department homepage is a general-site reference, not a specific citation.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_revenue_home_public_20260905"
+              ],
+              "auditNote": "Protocol section 4 assigns general-site references Grade C and section 7 prohibits presenting them as specific citations."
+            }
+          },
+          {
+            "id": "IND78-CLOSEOUT-CITATION-002",
+            "recordType": "source",
+            "recordId": "source_ind78_revenue_home_public_20260905",
+            "fieldPath": "/notes",
+            "old": "Visible date: No page body, publication date, or last-updated date was captured because the public route timed out.",
+            "new": "General-site reference only; not a specific citation. Visible date: No page body, publication date, or last-updated date was captured because the public route timed out.",
+            "reason": "Preserve the bounded homepage observation while preventing presentation as a specific departmental citation.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_revenue_home_public_20260905"
+              ],
+              "auditNote": "The public-route timeout remains the only supported observation."
+            }
+          },
+          {
+            "id": "IND78-CLOSEOUT-CITATION-003",
+            "recordType": "claim",
+            "recordId": "claim_ind78_revenue_public_route_unavailable",
+            "fieldPath": "/evidenceGrade",
+            "old": "B",
+            "new": "C",
+            "reason": "The claim rests only on a General-site reference and must be Grade C.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_revenue_home_public_20260905"
+              ],
+              "auditNote": "Protocol section 4 sets a department homepage/general-site reference to Grade C."
+            }
+          },
+          {
+            "id": "IND78-CLOSEOUT-CITATION-004",
+            "recordType": "claim",
+            "recordId": "claim_ind78_department_owner",
+            "fieldPath": "/notes",
+            "old": "Annual Report 2023-24, PDF page 96.",
+            "new": "Annual Report 2023-24, IGR departmental-ownership entry, PDF page 96.",
+            "reason": "Pinpoint the distinct report entry supporting this claim for the per-source citation-cap exemption.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_revenue_annual_report"
+              ],
+              "auditNote": "The claim concerns the departmental-ownership entry on page 96."
+            }
+          },
+          {
+            "id": "IND78-CLOSEOUT-CITATION-005",
+            "recordType": "claim",
+            "recordId": "claim_ind78_property_registration_scope",
+            "fieldPath": "/notes",
+            "old": "Annual Report 2023-24, PDF page 96.",
+            "new": "Annual Report 2023-24, IGR registration-functions entry, PDF page 96.",
+            "reason": "Pinpoint the distinct report entry supporting this claim for the per-source citation-cap exemption.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_revenue_annual_report"
+              ],
+              "auditNote": "The claim concerns the registration-functions entry on page 96."
+            }
+          },
+          {
+            "id": "IND78-CLOSEOUT-CITATION-006",
+            "recordType": "claim",
+            "recordId": "claim_ind78_kaveri2_bhoomi_integration",
+            "fieldPath": "/notes",
+            "old": "Annual Report 2023-24, PDF page 96.",
+            "new": "Annual Report 2023-24, IGR Kaveri-2.0 use entry, PDF page 96.",
+            "reason": "Pinpoint the distinct report entry supporting this claim for the per-source citation-cap exemption.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_revenue_annual_report"
+              ],
+              "auditNote": "The claim concerns the Kaveri-2.0 use entry on page 96."
+            }
+          },
+          {
+            "id": "IND78-CLOSEOUT-CITATION-007",
+            "recordType": "claim",
+            "recordId": "claim_ind78_kaveri2_bhoomi_system_integration",
+            "fieldPath": "/notes",
+            "old": "Annual Report 2023-24, PDF page 96; department-level documentation, not observation of a particular property.",
+            "new": "Annual Report 2023-24, IGR Kaveri-2.0 integration list (Bhoomi entry), PDF page 96; department-level documentation, not observation of a particular property.",
+            "reason": "Pinpoint the distinct report entry supporting this claim for the per-source citation-cap exemption.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_revenue_annual_report"
+              ],
+              "auditNote": "The claim concerns the Bhoomi item in the integration list on page 96."
+            }
+          },
+          {
+            "id": "IND78-CLOSEOUT-CITATION-008",
+            "recordType": "claim",
+            "recordId": "claim_ind78_kaveri2_eswathu_system_integration",
+            "fieldPath": "/notes",
+            "old": "Annual Report 2023-24, PDF page 96; department-level documentation, not observation of a particular property.",
+            "new": "Annual Report 2023-24, IGR Kaveri-2.0 integration list (E-Swathu entry), PDF page 96; department-level documentation, not observation of a particular property.",
+            "reason": "Pinpoint the distinct report entry supporting this claim for the per-source citation-cap exemption.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_revenue_annual_report"
+              ],
+              "auditNote": "The claim concerns the E-Swathu item in the integration list on page 96."
+            }
+          },
+          {
+            "id": "IND78-CLOSEOUT-CITATION-009",
+            "recordType": "claim",
+            "recordId": "claim_ind78_sro_structure",
+            "fieldPath": "/notes",
+            "old": "Annual Report 2023-24, PDF page 95. It does not identify the correct SRO for any unprovided Bengaluru property.",
+            "new": "Annual Report 2023-24, IGR office-structure entry, PDF page 95. It does not identify the correct SRO for any unprovided Bengaluru property.",
+            "reason": "Pinpoint the distinct report entry supporting this claim for the per-source citation-cap exemption.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_revenue_annual_report"
+              ],
+              "auditNote": "The claim concerns the office-structure entry on page 95."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "ind78-sale-deed-registration-corrections.json",
+      "data": [
+        {
+          "recordType": "source",
+          "recordId": "source_ind78_registration_act_india_code",
+          "fieldPath": "/type",
+          "old": "official_guidance",
+          "new": "law",
+          "reason": "The cited source is the text of the Registration Act, 1908, which supports a Grade A legal claim.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_registration_act_india_code"
+            ],
+            "auditNote": "Align source type with the binding-law evidence actually cited."
+          }
+        },
+        {
+          "recordType": "source",
+          "recordId": "source_ind78_karnataka_stamp_act_india_code",
+          "fieldPath": "/type",
+          "old": "official_guidance",
+          "new": "law",
+          "reason": "The cited source is the text of the Karnataka Stamp Act, 1957, which supports a Grade A legal claim.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_karnataka_stamp_act_india_code"
+            ],
+            "auditNote": "Align source type with the binding-law evidence actually cited."
+          }
+        },
+        {
+          "recordType": "source",
+          "recordId": "source_ind78_kaveri_landing_public_20260905",
+          "fieldPath": "/type",
+          "old": "official_guidance",
+          "new": "firsthand_observation",
+          "reason": "The associated Grade B claim records a direct current observation of the public interface, not published guidance.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_kaveri_landing_public_20260905"
+            ],
+            "auditNote": "Protocol section 4 assigns direct current public-interface observation Grade B."
+          }
+        },
+        {
+          "recordType": "source",
+          "recordId": "source_ind78_revenue_home_public_20260905",
+          "fieldPath": "/type",
+          "old": "official_guidance",
+          "new": "firsthand_observation",
+          "reason": "The associated claim records the public navigation timeout observed in this pass, not published guidance.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_revenue_home_public_20260905"
+            ],
+            "auditNote": "The source notes and claim describe a direct bounded observation."
+          }
+        },
+        {
+          "recordType": "claim",
+          "recordId": "claim_ind78_property_registration_scope",
+          "fieldPath": "/text",
+          "old": "The Registration and Stamps Department is responsible for registering documents relating to property transactions under the Registration Act and maintaining registered-property public records.",
+          "new": "The Registration and Stamps Department is responsible for registering documents relating to property transactions under the Registration Act.",
+          "reason": "The original text combines two independently checkable propositions. Retaining the registration proposition makes the claim atomic without inventing a new split record.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_revenue_annual_report"
+            ],
+            "auditNote": "The claim notes cite the annual report's department-description page."
+          }
+        },
+        {
+          "recordType": "claim",
+          "recordId": "claim_ind78_kaveri_project_director_designation",
+          "fieldPath": "/notes",
+          "old": "The project record names Prabhakar H L in the same contact section.",
+          "new": "The project record displays the Project Director role and AIGR (Computers) designation in the same contact section.",
+          "reason": "The individual name is unnecessary to support the role/designation claim and should not be retained.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_kaveri_indiastack_local"
+            ],
+            "auditNote": "The claim concerns the public role and designation, not the individual's identity."
+          }
+        },
+        {
+          "recordType": "scenario",
+          "recordId": "scenario_sale_deed_bengaluru_residential",
+          "fieldPath": "/pathNodeIds",
+          "old": [
+            "node_sale_deed_registration_public_route"
+          ],
+          "new": [
+            "node_ind78_service_entry",
+            "node_ind78_property_transaction",
+            "node_ind78_sro_registration",
+            "node_ind78_post_registration"
+          ],
+          "reason": "The declared primary path references a nonexistent node. The replacement is the connected sequence of existing nodes tagged to this scenario.",
+          "support": {
+            "sourceIds": [],
+            "auditNote": "Reference-integrity repair based solely on the integrated ledger's existing nodes and edges."
+          }
+        },
+        {
+          "recordType": "node",
+          "recordId": "node_ind78_property_transaction",
+          "fieldPath": "/claimIds",
+          "old": [
+            "claim_ind78_registration_act_rule",
+            "claim_ind78_stamp_payer_rule",
+            "claim_ind78_live_workflow_unknown",
+            "claim_ind78_live_fee_unknown"
+          ],
+          "new": [
+            "claim_ind78_registration_act_rule",
+            "claim_ind78_stamp_payer_rule",
+            "claim_ind78_live_workflow_unknown",
+            "claim_ind78_live_fee_unknown",
+            "claim_ind78_live_document_checklist_unknown"
+          ],
+          "reason": "The node's failure signal cites the current-document-checklist unknown claim, but the aggregate node claim list omits it.",
+          "support": {
+            "sourceIds": [],
+            "auditNote": "Internal reference-integrity repair; no new evidence is asserted."
+          }
+        },
+        {
+          "recordType": "node",
+          "recordId": "node_ind78_post_registration",
+          "fieldPath": "/checks/0/claimIds",
+          "old": [
+            "claim_ind78_kaveri2_bhoomi_integration"
+          ],
+          "new": [
+            "claim_ind78_kaveri2_bhoomi_system_integration",
+            "claim_ind78_kaveri2_eswathu_system_integration"
+          ],
+          "reason": "The check describes Bhoomi and E-Swathu integration, while its old claim list cites only the separate Kaveri-used-for-registration claim.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_revenue_annual_report"
+            ],
+            "auditNote": "The two replacement claims are the integration claims already present in the node aggregate list."
+          }
+        },
+        {
+          "recordType": "roadblock",
+          "recordId": "roadblock_ind78_seed_unavailable",
+          "fieldPath": "/symptom",
+          "old": "The supplied Kaveri landing page and Revenue homepage timed out before a usable 200 response.",
+          "new": "The supplied Kaveri landing page and Revenue homepage timed out before a usable page body was captured.",
+          "reason": "Each route observation records final status 200; the supported limitation is the absence of usable captured content, not absence of a 200 response.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_kaveri_landing_public_20260905",
+              "source_ind78_revenue_home_public_20260905"
+            ],
+            "auditNote": "Matches both route-observation limitations."
+          }
+        },
+        {
+          "recordType": "roadblock",
+          "recordId": "roadblock_ind78_seed_unavailable",
+          "fieldPath": "/likelyCause",
+          "old": "The official hosts did not return a usable response during this pass.",
+          "new": "The pass did not obtain usable route content; the root cause was not established.",
+          "reason": "A timeout observation does not establish a host-side cause.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_kaveri_landing_public_20260905",
+              "source_ind78_revenue_home_public_20260905"
+            ],
+            "auditNote": "Preserves the observed limit and removes unsupported causation."
+          }
+        },
+        {
+          "recordType": "roadblock",
+          "recordId": "roadblock_ind78_seed_unavailable",
+          "fieldPath": "/claimIds",
+          "old": [
+            "claim_ind78_live_workflow_unknown"
+          ],
+          "new": [
+            "claim_ind78_live_workflow_unknown",
+            "claim_ind78_revenue_public_route_unavailable"
+          ],
+          "reason": "The roadblock addresses both Kaveri and Revenue routes but previously cited only the Kaveri unknown claim.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_revenue_home_public_20260905"
+            ],
+            "auditNote": "Adds the existing claim that records the Revenue timeout."
+          }
+        },
+        {
+          "recordType": "roadblock",
+          "recordId": "roadblock_ind78_seed_unavailable",
+          "fieldPath": "/status",
+          "old": "verified",
+          "new": "partial",
+          "reason": "The observed timeout is documented, but neither the root cause nor a live recovery route was established.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_kaveri_landing_public_20260905",
+              "source_ind78_revenue_home_public_20260905"
+            ],
+            "auditNote": "Status must reflect the bounded, incomplete public observation."
+          }
+        },
+        {
+          "recordType": "portal",
+          "recordId": "portal_ind78_kaveri_20260905",
+          "fieldPath": "/routeObservations/0/publicProcedureVsCaseDataBoundary",
+          "old": "",
+          "new": "Unknown; the bounded public observation did not reach a procedure control, login prompt, or case-data surface.",
+          "reason": "Protocol section 10 requires an explicit public-procedure versus case-data boundary; a blank string does not record one.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_kaveri_landing_public_20260905"
+            ],
+            "auditNote": "The route limitation says only the tab title became visible."
+          }
+        },
+        {
+          "recordType": "portal",
+          "recordId": "portal_ind78_kaveri_20260905",
+          "fieldPath": "/routeObservations/0/captchaDependencies",
+          "old": "",
+          "new": "Unknown; no CAPTCHA surface was reached in the bounded observation.",
+          "reason": "A blank dependency field does not distinguish not observed from no dependency.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_kaveri_landing_public_20260905"
+            ],
+            "auditNote": "No interactive control was captured."
+          }
+        },
+        {
+          "recordType": "portal",
+          "recordId": "portal_ind78_kaveri_20260905",
+          "fieldPath": "/routeObservations/0/javascriptDependencies",
+          "old": "",
+          "new": "Unknown; no route content was captured from which to assess JavaScript dependence.",
+          "reason": "A blank dependency field does not record the observed limitation.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_kaveri_landing_public_20260905"
+            ],
+            "auditNote": "The route timed out before public controls or text were recorded."
+          }
+        },
+        {
+          "recordType": "portal",
+          "recordId": "portal_ind78_kaveri_20260905",
+          "fieldPath": "/routeObservations/0/evidenceIds",
+          "old": [],
+          "new": [
+            "source_ind78_kaveri_landing_public_20260905"
+          ],
+          "reason": "The route observation must link its direct observation evidence.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_kaveri_landing_public_20260905"
+            ],
+            "auditNote": "This is the portal record's existing evidence source."
+          }
+        },
+        {
+          "recordType": "portal",
+          "recordId": "portal_ind78_kaveri_20260905",
+          "fieldPath": "/visibleVersionOrLastUpdated",
+          "old": "",
+          "new": "Not observed; no publication or last-updated date was visible in the captured browser tab.",
+          "reason": "Protocol section 10 requires the observation to preserve whether a version or last-updated value was visible.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_kaveri_landing_public_20260905"
+            ],
+            "auditNote": "Matches the source note."
+          }
+        },
+        {
+          "recordType": "portal",
+          "recordId": "portal_ind78_revenue_20260905",
+          "fieldPath": "/agencyNamingShown",
+          "old": "",
+          "new": "Not observed; navigation timed out before a page body or agency naming was captured.",
+          "reason": "The field must preserve the result of the naming observation rather than remain blank.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_revenue_home_public_20260905"
+            ],
+            "auditNote": "Matches the route and source limitation."
+          }
+        },
+        {
+          "recordType": "portal",
+          "recordId": "portal_ind78_revenue_20260905",
+          "fieldPath": "/visibleVersionOrLastUpdated",
+          "old": "",
+          "new": "Not observed; navigation timed out before a page body or last-updated value was captured.",
+          "reason": "The field must preserve the result of the version/date observation rather than remain blank.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_revenue_home_public_20260905"
+            ],
+            "auditNote": "Matches the route and source limitation."
+          }
+        },
+        {
+          "recordType": "portal",
+          "recordId": "portal_ind78_revenue_20260905",
+          "fieldPath": "/routeObservations/0/publicProcedureVsCaseDataBoundary",
+          "old": "",
+          "new": "Unknown; navigation timed out before a public procedure, login prompt, or case-data surface was reached.",
+          "reason": "Protocol section 10 requires an explicit public-procedure versus case-data boundary; a blank string does not record one.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_revenue_home_public_20260905"
+            ],
+            "auditNote": "The route timed out before page content was captured."
+          }
+        },
+        {
+          "recordType": "portal",
+          "recordId": "portal_ind78_revenue_20260905",
+          "fieldPath": "/routeObservations/0/captchaDependencies",
+          "old": "",
+          "new": "Unknown; navigation timed out before any CAPTCHA surface could be assessed.",
+          "reason": "A blank dependency field does not distinguish not observed from no dependency.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_revenue_home_public_20260905"
+            ],
+            "auditNote": "No page body was captured."
+          }
+        },
+        {
+          "recordType": "portal",
+          "recordId": "portal_ind78_revenue_20260905",
+          "fieldPath": "/routeObservations/0/javascriptDependencies",
+          "old": "",
+          "new": "Unknown; navigation timed out before route content could be assessed for JavaScript dependence.",
+          "reason": "A blank dependency field does not record the observed limitation.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_revenue_home_public_20260905"
+            ],
+            "auditNote": "No page body was captured."
+          }
+        },
+        {
+          "recordType": "portal",
+          "recordId": "portal_ind78_revenue_20260905",
+          "fieldPath": "/routeObservations/0/evidenceIds",
+          "old": [],
+          "new": [
+            "source_ind78_revenue_home_public_20260905"
+          ],
+          "reason": "The route observation must link its direct observation evidence.",
+          "support": {
+            "sourceIds": [
+              "source_ind78_revenue_home_public_20260905"
+            ],
+            "auditNote": "This is the portal record's existing evidence source."
+          }
+        }
+      ]
+    },
+    {
+      "file": "ind78-sale-deed-registration-public-workflow-archive-corrections.json",
+      "data": {
+        "schemaVersion": "1.0.0",
+        "serviceId": "sale-deed-registration",
+        "auditDate": "2026-09-06",
+        "corrections": [
+          {
+            "id": "IND78-PUBLIC-ARCHIVE-001",
+            "recordType": "source",
+            "recordId": "source_ind78_kaveri_landing_public_20260905",
+            "fieldPath": "/notes",
+            "old": "Visible date: No publication or last-updated date was visible in the captured browser tab.",
+            "new": "Visible date: No publication or last-updated date was visible in the captured browser tab. Archive capture not attempted during the public-workflow pass on 2026-09-05; limitation.",
+            "reason": "Record the missing archive-attempt limitation for the public-workflow source without claiming a failed capture.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_kaveri_landing_public_20260905"
+              ],
+              "auditNote": "The source was accessed during the public-workflow pass on 2026-09-05 and had no archive note."
+            }
+          },
+          {
+            "id": "IND78-PUBLIC-ARCHIVE-002",
+            "recordType": "source",
+            "recordId": "source_ind78_revenue_home_public_20260905",
+            "fieldPath": "/notes",
+            "old": "General-site reference only; not a specific citation. Visible date: No page body, publication date, or last-updated date was captured because the public route timed out.",
+            "new": "General-site reference only; not a specific citation. Visible date: No page body, publication date, or last-updated date was captured because the public route timed out. Archive capture not attempted during the public-workflow pass on 2026-09-05; limitation.",
+            "reason": "Record the missing archive-attempt limitation for the public-workflow source without claiming a failed capture.",
+            "support": {
+              "sourceIds": [
+                "source_ind78_revenue_home_public_20260905"
+              ],
+              "auditNote": "The source was accessed during the public-workflow pass on 2026-09-05 and had no archive note."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

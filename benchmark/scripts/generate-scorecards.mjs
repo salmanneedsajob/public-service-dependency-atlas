@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile, access } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, access, copyFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 import { pathToFileURL } from 'node:url';
@@ -19,6 +19,19 @@ const auditFiles = {
   'property-tax-payment': 'research/audits/ind72-property-tax-payment-closeout-audit.md',
   'sale-deed-registration': 'research/audits/ind78-sale-deed-registration-audit.md',
   'occupancy-certificate': 'research/audits/ind77-occupancy-certificate-audit.md',
+};
+const auditCorrectionPrefixes = {
+  passport: ['ind71-passport-'],
+  'aadhaar-address-update': ['ind70-aadhaar-address-update-fee-'],
+  'property-tax-payment': ['ind72-property-tax-payment-'],
+  'sale-deed-registration': ['ind78-sale-deed-registration-'],
+  'occupancy-certificate': ['ind77-occupancy-certificate-'],
+};
+const auditExportFiles = {
+  ...auditFiles,
+  // The scorecard records the closeout audit label, but the checked-in audit
+  // markdown is the corresponding IND-72 audit file.
+  'property-tax-payment': 'research/audits/ind72-property-tax-payment-audit.md',
 };
 
 async function readJson(file) {
@@ -110,9 +123,48 @@ async function generateJurisdictionScorecards({ manifestPath = jurisdictionManif
   return results;
 }
 
+async function exportJurisdictionEvidence({ manifestPath = jurisdictionManifestPath } = {}) {
+  const manifest = await optionalDirectoryJson(manifestPath);
+  if (!manifest || !Array.isArray(manifest.entries) || manifest.entries.length === 0) return [];
+  const manifestDirectory = path.dirname(manifestPath);
+  const outputRoot = path.join(projectRoot, 'public/data/jurisdictions');
+  for (const entry of manifest.entries) {
+    const ledgerPath = resolveJurisdictionPath(manifestDirectory, entry.ledgerFile);
+    const expectationsPath = resolveJurisdictionPath(manifestDirectory, entry.expectationsFile);
+    const auditPath = resolveJurisdictionPath(manifestDirectory, entry.auditFile);
+    const correctionPath = auditPath.replace(/\.md$/u, '.corrections.json');
+    const destination = path.join(outputRoot, entry.jurisdictionSlug);
+    await Promise.all([
+      mkdir(path.join(destination, 'expectations'), { recursive: true }),
+      mkdir(path.join(destination, 'audits'), { recursive: true }),
+    ]);
+    await Promise.all([
+      copyFile(ledgerPath, path.join(destination, `${entry.serviceId}.json`)),
+      copyFile(expectationsPath, path.join(destination, 'expectations', `${entry.serviceId}.json`)),
+      copyFile(auditPath, path.join(destination, 'audits', `${entry.serviceId}.md`)),
+      copyFile(correctionPath, path.join(destination, 'audits', `${entry.serviceId}.corrections.json`)),
+    ]);
+  }
+  return manifest.entries;
+}
+
+async function exportBengaluruEvidence() {
+  const auditDirectory = path.join(projectRoot, 'research/audits');
+  const outputDirectory = path.join(projectRoot, 'public/data/audits');
+  const auditNames = await readdir(auditDirectory);
+  await mkdir(outputDirectory, { recursive: true });
+  for (const [serviceId, auditFile] of Object.entries(auditExportFiles)) {
+    const correctionFiles = auditNames.filter((name) => name.endsWith('.json') && auditCorrectionPrefixes[serviceId].some((prefix) => name.startsWith(prefix))).sort();
+    await copyFile(path.join(projectRoot, auditFile), path.join(outputDirectory, `${serviceId}.md`));
+    const runs = await Promise.all(correctionFiles.map(async (filename) => ({ file: filename, data: await readJson(path.join(auditDirectory, filename)) })));
+    await writeFile(path.join(outputDirectory, `${serviceId}.corrections.json`), `${JSON.stringify({ runs }, null, 2)}\n`);
+  }
+  return Object.keys(auditFiles);
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   const [results, jurisdictionResults] = await Promise.all([generateScorecards(), generateJurisdictionScorecards()]);
   console.log(`Generated ${results.length} Bengaluru scorecards and ${jurisdictionResults.length} jurisdiction scorecards.`);
 }
 
-export { generateScorecards, generateJurisdictionScorecards, reviewedExpectations };
+export { auditFiles, exportBengaluruEvidence, exportJurisdictionEvidence, generateScorecards, generateJurisdictionScorecards, reviewedExpectations };

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "birth-certificate",
+  "primaryScenarioId": "scenario_ind32_birth_copy_workflow",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimIds": [
+        "claim_delhi_birth_additional_copy_fee",
+        "claim_delhi_birth_first_copy_free",
+        "claim_delhi_birth_first_copy_free_2"
+      ],
+      "searchedRoutes": [],
+      "note": "An amount the citizen pays is published: Rs. 20 per additional copy of a birth certificate under section 17, and the first copy free to the informant under section 12. The figure comes from the Chief Registrar's citizen charter, which is graded C because it still names the pre-2022 corporations; no current MCD page restates the copy fee."
+    },
+    "documents": {
+      "state": "stated",
+      "claimIds": [
+        "claim_delhi_birth_application_plain_paper",
+        "claim_delhi_birth_application_particulars",
+        "claim_delhi_birth_application_particulars_2"
+      ],
+      "searchedRoutes": [],
+      "note": "A concrete document is named with a requirement to submit it: an application on plain paper to the concerned area Registrar or Sub-Registrar, with five listed particulars. Note the boundary: this is the application itself; no reviewed official route publishes a supporting proof-of-identity list for a copy of an already registered birth, unlike the document table MCD publishes for registration."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_delhi_birth_place_of_occurrence_rule",
+        "claim_delhi_birth_issue_within_seven_days_2",
+        "claim_delhi_birth_mcd_zone_routing"
+      ],
+      "searchedRoutes": [],
+      "note": "Usable rules decide who qualifies and which route applies: the birth must already be registered, registration and therefore issue happen only at the place of occurrence so an event outside Delhi cannot be handled here, and the request must go to the zone in which the event took place or it may be rejected. The second audit removed the two MCD citizen-charter rows previously cited here. The institutional row describes processing by the health unit where the child was born, a hospital-side registration step this scenario excludes, and reading it as a route rule for a copy request would conflict with the FAQ's plain-paper application to the concerned area Registrar. The domiciliary row describes parents applying on the MCD portal for a home birth, which is the registration application rather than a request for a copy of a birth already on the register. Both are retained in the ledger as partial, scope-limited claims."
+    },
+    "time": {
+      "state": "stated",
+      "claimIds": [
+        "claim_delhi_birth_issue_within_seven_days",
+        "claim_delhi_birth_issue_within_seven_days_2",
+        "claim_delhi_birth_delivery_time_schedule",
+        "claim_delhi_birth_mcd_sla_one_week"
+      ],
+      "searchedRoutes": [],
+      "note": "An actionable service-level target is published: 7 days from the date of receipt of the application, expressly for a birth that has already been registered, and a delivery schedule of 3 days for a new record against 7 days for an old manual record. The figure covers issue of the certificate only, not any counter queue or collection step. MCD's citizen charter corroborates the order of magnitude as 'Variable (Max timeline - 1 week)' from a source not tied to the pre-2022 corporations, but that charter carries no visible publication or revision date and its row is not specific to a copy of an already registered birth, so the second audit graded it C. Limitation: every figure in this cell now comes from official material that is undated, and in the Chief Registrar charter's case also visibly outdated, so the cell is stated on Grade C evidence."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_delhi_birth_registrar_designation",
+        "claim_delhi_birth_collection_point",
+        "claim_delhi_birth_registrar_directory_published",
+        "claim_delhi_birth_chief_registrar_not_issuer"
+      ],
+      "searchedRoutes": [],
+      "note": "The citizen can identify the office that holds the case: the Deputy Health Officer of the municipal zone is the Registrar for events in that zone, the certificate is obtained from the registration centre or zonal office, an area-wise registrar and sub-registrar directory is published, and the Chief Registrar's office is expressly not the issuer. Recorded against this: the 'Key Contacts' heading in the birth and death section of MCD's own citizen charter is published empty, so the owner cell rests entirely on the Chief Registrar's material and not on MCD's."
+    },
+    "after-submission": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_delhi_birth_mcd_certificate_printout",
+        "claim_delhi_birth_collection_point"
+      ],
+      "searchedRoutes": [
+        "https://mcdonline.nic.in/rbd/web/citizen/info",
+        "https://des.delhi.gov.in/des/frequently-asked-questions-faq",
+        "https://des.delhi.gov.in/sites/default/files/DES/generic_multiple_files/link_5.pdf",
+        "https://rbd.mcdonline.nic.in/"
+      ],
+      "note": "The topic is named without an actionable value for this scenario. MCD's public guidelines mention a printout of the certificate after officials approve, but that sits in the registration sequence, not the route for a birth already on the register; the charter and FAQ describe collection at a counter and give no acknowledgement, application number, tracker, receipt or rejection-reason surface for a copy request. MCD's citizen search-and-download surface is behind portal signup with a registered mobile number and was not entered; that boundary is recorded as a limitation, not as a positive finding."
+    }
+  }
+}

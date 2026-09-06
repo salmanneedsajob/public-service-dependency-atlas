@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "water-connection",
+  "primaryScenarioId": "scenario_ind32_water_residential",
+  "cells": {
+    "cost": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_bengaluru_grid_water_rate_components_published",
+        "claim_bengaluru_grid_water_rate_components_published_2",
+        "claim_bengaluru_grid_water_rate_components_published_3",
+        "claim_bengaluru_grid_water_rate_components_published_4",
+        "claim_bengaluru_grid_water_rate_components_published_5",
+        "claim_bengaluru_grid_water_rate_components_published_6",
+        "claim_bengaluru_grid_water_rate_components_published_7",
+        "claim_bengaluru_grid_water_rate_components_published_8",
+        "claim_bengaluru_grid_water_rate_components_published_9",
+        "claim_bengaluru_grid_water_rate_components_published_10",
+        "claim_bengaluru_grid_water_rate_components_published_11",
+        "claim_bengaluru_grid_water_rate_documents_unreadable",
+        "claim_bengaluru_grid_water_rate_documents_unreadable_2",
+        "claim_bengaluru_grid_water_know_your_fees_empty",
+        "claim_bengaluru_grid_water_tentative_charges_after_entry",
+        "claim_bengaluru_grid_water_tentative_charges_after_entry_2",
+        "claim_bengaluru_grid_water_application_form_purchased_3"
+      ],
+      "searchedRoutes": [
+        "https://owcv2.bwssb.gov.in/consumer",
+        "https://owc.bwssb.gov.in/important-docs",
+        "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+        "https://bwssb.karnataka.gov.in/storage/pdf-files/WaterTariff-2025.pdf",
+        "https://owcv2.bwssb.gov.in/general_download/download_file/uiv2/Know_your_connection_fees.pdf"
+      ],
+      "note": "The topic is named exhaustively and answered nowhere. The board names every component of the charge — application fee, attachment fee, inspection charges, three months minimum deposit, meter cost, sanitary point charges, GBWASP and BCC charges, prorata charges for residential buildings, and line cost as per actuals — and publishes a separate document for each. Every one of those documents is a one-page scan with no text layer. The route titled Know Your Connection Fees returns a zero-byte file. The application form itself must be bought, with no price given. The only place a figure appears is the tentative-charges screen inside the application, past the login. The one readable amount anywhere, Rs. 1,000, is the entry payment for the instalment option rather than the cost of the connection, and is not cited here."
+    },
+    "documents": {
+      "state": "stated",
+      "claimIds": [
+        "claim_bengaluru_grid_water_documents_required",
+        "claim_bengaluru_grid_water_documents_required_2",
+        "claim_bengaluru_grid_water_documents_required_3",
+        "claim_bengaluru_grid_water_documents_required_4",
+        "claim_bengaluru_grid_water_documents_required_5",
+        "claim_bengaluru_grid_water_documents_required_6",
+        "claim_bengaluru_grid_water_mandatory_documents_manual",
+        "claim_bengaluru_grid_water_mandatory_documents_manual_2",
+        "claim_bengaluru_grid_water_mandatory_documents_manual_3",
+        "claim_bengaluru_grid_water_mandatory_documents_manual_4",
+        "claim_bengaluru_grid_water_rwh_threshold"
+      ],
+      "searchedRoutes": [],
+      "note": "An enumerated document list is published on the public entry page and repeated in the current consumer manual: a lease-cum-sale deed or sale deed, a khata certificate, a building plan or sanction plan, photographs of the building with the owner, a rainwater harvesting adoption document for premises of 1200 square feet and above, and a road cutting endorsement where applicable, with upload limits of five files per type and 5 MB each. The two lists agree; the manual adds the road cutting endorsement."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_bengaluru_grid_water_application_types",
+        "claim_bengaluru_grid_water_application_types_3",
+        "claim_bengaluru_grid_water_rwh_threshold"
+      ],
+      "searchedRoutes": [],
+      "note": "Usable rules decide which route and which charge set apply: the applicant chooses a regular application, an instalment application, or a 110-village application where the property lies in one of the villages integrated into the city network, to which zone, layout and ETP charges attach; and the rainwater harvesting requirement turns on whether the premises measure 1200 square feet or more. What is not published on any reviewed route is a technical-feasibility or network-availability condition of the kind other utilities in this pilot state."
+    },
+    "time": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer",
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer_2"
+      ],
+      "searchedRoutes": [
+        "https://owcv2.bwssb.gov.in/consumer",
+        "https://owc.bwssb.gov.in/",
+        "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+        "https://owc.bwssb.gov.in/important-docs"
+      ],
+      "note": "The topic is touched without a figure. The board counts stages and shows how many are complete, which is a reference to sequence and progress rather than a duration; no reviewed route gives a period for any stage, a total, a deadline binding on the applicant or a service-level target. The only dated statement on any reviewed route is a notice about demand-note validity that expired in July 2021."
+    },
+    "owner": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_bengaluru_grid_water_toll_free_and_helpdesk",
+        "claim_bengaluru_grid_water_toll_free_and_helpdesk_2",
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer_3"
+      ],
+      "searchedRoutes": [
+        "https://owcv2.bwssb.gov.in/consumer",
+        "https://owc.bwssb.gov.in/",
+        "https://bwssb.karnataka.gov.in/en",
+        "https://bwssb.karnataka.gov.in/info-2/BWSSB+Office+location/en",
+        "https://bwssb.karnataka.gov.in/page/Contact+Us/Contact+Info/en"
+      ],
+      "note": "The topic is named without an actionable value. The board is reachable — a toll-free number, a contact document, a plumber list, a grievance form — but no reviewed route names the office, officer or role that sanctions a new connection, or lets an applicant move from an address to the division that will handle it. The board does name an assigned officer, but only to the individual applicant inside the application after login, which is a private case surface rather than published documentation and names the topic without giving a value a citizen can act on. The corporate site's English, contact and office-location routes were searched; the claim recording that the English route did not carry through to the contact and office-location pages cites a source that does not cover those pages, so audit marked it contested and it no longer supports this cell."
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimIds": [
+        "claim_bengaluru_grid_water_public_status_routes",
+        "claim_bengaluru_grid_water_public_status_routes_2",
+        "claim_bengaluru_grid_water_public_status_routes_3",
+        "claim_bengaluru_grid_water_acknowledgement_and_demand_note",
+        "claim_bengaluru_grid_water_acknowledgement_and_demand_note_2",
+        "claim_bengaluru_grid_water_acknowledgement_and_demand_note_3",
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer",
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer_2",
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer_3"
+      ],
+      "searchedRoutes": [],
+      "note": "Several surfaces the citizen sees after submitting are identified, and two of them are public: an application-status lookup by application number on the consumer entry page and a status route on the current portal, neither needing a login. The board also describes a downloadable acknowledgement, a demand note generated on approval, and a payment receipt after payment. The status routes were read, not queried; no application number was entered."
+    }
+  }
+}

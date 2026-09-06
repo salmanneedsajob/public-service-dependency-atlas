@@ -1,0 +1,609 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Hyderabad property-tax payment (current year, residential, known PTIN) grid-only evidence ledger",
+    "jurisdiction": "Hyderabad, Telangana, India",
+    "asOf": "2026-09-06",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Grid-only benchmark run: sources and claims only, no nodes, edges, roadblocks or journeys. Desk research, no counter visited. Limitations: the corporation's only published rate notification covers non-residential buildings and states on its face that there is no revision of property tax on residential buildings, so no reviewed route publishes a rate or amount a residential owner can apply; the payment and receipt routes are public but were read only, with no property tax identification number or mobile number entered and no payment begun; the corporation's Citizen's Charter, which supplies the circle-office structure, states on its face that it was prepared on 10 May 2013 and would be revised on or before 13 May 2014, so claims from it are graded C. Do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_hyderabad_ghmc_revenue",
+      "name": "Greater Hyderabad Municipal Corporation",
+      "shortName": "GHMC",
+      "officialUrl": "https://www.ghmc.gov.in/Propertytax.aspx"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_property_tax_payment_known_sas_pid",
+      "label": "Hyderabad property-tax payment on a known PTIN",
+      "summary": "An individual owner pays the current year's property tax on a residential property already on the municipal register with a known identifier, by the municipal payment route, online portal first and counter or bank route second. First-time assessment, name transfer or mutation, arrears disputes, rebate eligibility beyond what the payment route itself states, and commercial property are excluded.",
+      "tags": [
+        "primary"
+      ],
+      "pathNodeIds": [],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_hyderabad_ptax_ghmc_page",
+      "title": "Property Tax - Greater Hyderabad Municipal Corporation",
+      "publisher": "Greater Hyderabad Municipal Corporation",
+      "url": "https://www.ghmc.gov.in/Propertytax.aspx",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: 'Greater Hyderabad Municipal Corporation', with the footer reading 'Content owned, maintained and updated by Greater Hyderabad Municipal Corporation, Government of Telangana' and a copyright line of 2024. The page shows no visible last-updated date. Limitation: the page is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260420034031/https://ghmc.gov.in/Propertytax.aspx (2026-04-20); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the page as reviewed on 2026-09-06."
+    },
+    {
+      "id": "source_hyderabad_ptax_payment_portal",
+      "title": "Property Tax Payment - Core Urban Region Economy online payments portal",
+      "publisher": "Greater Hyderabad Municipal Corporation / Core Urban Region Economy, Government of Telangana",
+      "url": "https://onlinepayments.ghmc.gov.in/",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: 'Core Urban Region Economy (CURE)', with the footer reading 'Content owned, maintained and updated by Core Urban Region Economy (CURE), Government of Telangana' and 'Designed and Developed by CGG', copyright 2026. Visible date: none is shown beyond that copyright line. Direct current observation of a public official interface reachable without login. The route was read only: no property tax identification number or mobile number was entered and no payment was begun. Limitation: the portal is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260505182832/https://onlinepayments.ghmc.gov.in/ (2026-05-05); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the portal as reviewed on 2026-09-06."
+    },
+    {
+      "id": "source_hyderabad_ptax_receipt_route",
+      "title": "Property Tax Payment Receipts route - Core Urban Region Economy online payments portal",
+      "publisher": "Greater Hyderabad Municipal Corporation / Core Urban Region Economy, Government of Telangana",
+      "url": "https://onlinepayments.ghmc.gov.in/PTax/PT_Recipts_Main",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: 'Core Urban Region Economy (CURE)', copyright 2026. Visible date: none is shown beyond that copyright line. Direct current observation of a public official interface reachable without login, taking a property tax identification number or a registered mobile number. The route was read only and nothing was entered. Limitation: the route is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260514193750/https://onlinepayments.ghmc.gov.in/PTax/PT_Recipts_Main (2026-05-14); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the route as reviewed on 2026-09-06."
+    },
+    {
+      "id": "source_hyderabad_ptax_rate_notification_2008",
+      "title": "New System of Assessment of Property Tax - gist of final notification of monthly rent per square foot of plinth area for non-residential buildings",
+      "publisher": "Greater Hyderabad Municipal Corporation",
+      "url": "https://ghmc.gov.in/Property_Tax/first.pdf",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2008-02-01",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: 'GREATER HYDERABAD MUNICIPAL CORPORATION'. Twelve pages, headed Roc.No.1479/CT1/CTS/GHMC/2007-08 dated 01-02-2008, recorded as publishedAt; it recites publication of the final notification in the Hyderabad District Gazette No. 21 dated 29 January 2008. Claims from it are graded C as visibly outdated official material, eighteen years old on the access date. Limitation: the notification is eighteen years old and no later rate document was found on any reviewed route, so what it fixes may no longer be in force. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20190614222026/https://www.ghmc.gov.in/Property_Tax/first.pdf (2019-06-14); no new capture was pushed from this run. Limitation: that snapshot long predates the access date, so it does not preserve the file as retrieved on 2026-09-06."
+    },
+    {
+      "id": "source_hyderabad_ptax_key_contacts",
+      "title": "Key Contacts - Greater Hyderabad Municipal Corporation",
+      "publisher": "Greater Hyderabad Municipal Corporation",
+      "url": "https://www.ghmc.gov.in/KeyContacts.aspx",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: 'Greater Hyderabad Municipal Corporation'. Direct current observation of the corporation's contact page, giving the head office address, a helpline and a switchboard number, and an officers contacts table with columns for name, designation, contact number and email. The page shows no visible last-updated date. Limitation: the page is undated and at least one row of the officers table displayed a placeholder rather than a name on the access date, so the table cannot be relied on as complete. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260420033843/https://ghmc.gov.in/KeyContacts.aspx (2026-04-20); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the page as reviewed on 2026-09-06."
+    },
+    {
+      "id": "source_hyderabad_ptax_citizen_charter",
+      "title": "Citizen's Charter - Greater Hyderabad Municipal Corporation, office structure and property tax section",
+      "publisher": "Greater Hyderabad Municipal Corporation",
+      "url": "https://www.ghmc.gov.in/Menu_Files/citizen-charter-19-06_compress.pdf",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2013-05-10",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: 'Greater Hyderabad Municipal Corporation'. The document states of itself that it was prepared by the department on 10 May 2013 and would be revised on or before 13 May 2014; the 2013 date is recorded as publishedAt and claims from it are graded C as visibly outdated official material. Limitation: the charter is twelve years past its own stated revision date, so its figures and designations may no longer be in force. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260420030903/https://ghmc.gov.in/Menu_Files/citizen-charter-19-06_compress.pdf (2026-04-20); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the file as retrieved on 2026-09-06."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_hyderabad_ptax_ptin_or_mobile_required",
+      "text": "The corporation's online payments portal opens property tax payment with a form requiring either a property tax identification number or a registered mobile number.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_payment_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Matches this scenario's premise of a known property identifier, and gives a second way in for an owner who does not have it."
+    },
+    {
+      "id": "claim_hyderabad_ptax_ptin_or_mobile_required_2",
+      "text": "That portal offers a Know Your PTI Number route beside the payment form.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_payment_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split at audit from claim_hyderabad_ptax_ptin_or_mobile_required. The way in for an owner who does not hold the identifier is separately checkable from what the payment form requires. The route was read only; nothing was entered and no payment was begun."
+    },
+    {
+      "id": "claim_hyderabad_ptax_no_manual_transactions",
+      "text": "The corporation's property tax page states that there are no manual transactions in tax assessment or issue of special notice or issue of annual demand notices and receipts.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Names an annual demand notice as the instrument by which the liability reaches the owner, without stating when it is issued or when the tax falls due. Split during IND-91 part B lint remediation; the computerisation statement is asserted separately."
+    },
+    {
+      "id": "claim_hyderabad_ptax_no_manual_transactions_2",
+      "text": "The same page describes assessment, notice and collection as fully computerised.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_ptax_no_manual_transactions. What the corporation says its systems do is separately checkable from what it says they do not do manually."
+    },
+    {
+      "id": "claim_hyderabad_ptax_public_receipt_route",
+      "text": "The corporation's online payments portal publishes a Property Tax Payment Receipts route that is reachable without login.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_receipt_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The route's own fields, action and scope notice were observed; nothing was entered and no login was used, so no claim is made about what it returns. Split during IND-91 part B lint remediation into the route, its inputs and its scope notice."
+    },
+    {
+      "id": "claim_hyderabad_ptax_public_receipt_route_2",
+      "text": "That route takes a property tax identification number or a registered mobile number.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_receipt_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_ptax_public_receipt_route. The inputs are separately checkable from the existence of the route. Nothing was entered and no login was used."
+    },
+    {
+      "id": "claim_hyderabad_ptax_public_receipt_route_3",
+      "text": "That route states that only online paid transactions after 1 April 2016 can be downloaded.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_receipt_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_ptax_public_receipt_route. The scope notice is separately checkable from the route and its inputs."
+    },
+    {
+      "id": "claim_hyderabad_ptax_rate_notification_excludes_residential",
+      "text": "The corporation's published notification on the new system of assessment of property tax fixes the monthly rent per square foot of plinth area for non-residential buildings.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_rate_notification_2008"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The one rate document the corporation publishes is expressly not about the category this scenario covers. Split during IND-91 part B lint remediation; the residential disclaimer is asserted separately."
+    },
+    {
+      "id": "claim_hyderabad_ptax_rate_notification_excludes_residential_2",
+      "text": "That notification states on its face that there is no revision of property tax on residential buildings.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_rate_notification_2008"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_ptax_rate_notification_excludes_residential. The residential disclaimer is separately checkable from what the notification does fix, and it is the half that matters to this scenario."
+    },
+    {
+      "id": "claim_hyderabad_ptax_assessment_method_named",
+      "text": "The corporation's published notification cites sections 197 to 238 and 264 to 289 of the Hyderabad Municipal Corporations Act, 1955 for assessing property tax.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_rate_notification_2008"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The method is named and its statutory source cited; no residential rate or zone value is given on any reviewed route. Split during IND-91 part B lint remediation into the two statutory sources and the two steps of the method."
+    },
+    {
+      "id": "claim_hyderabad_ptax_assessment_method_named_2",
+      "text": "That notification also cites the Hyderabad Municipal Corporations (Assessment of Property Tax) Rules, 1990 as amended.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_rate_notification_2008"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_ptax_assessment_method_named. The Rules are a separately checkable source from the Act."
+    },
+    {
+      "id": "claim_hyderabad_ptax_assessment_method_named_3",
+      "text": "That notification states that the method proceeds by dividing the corporation into territorial zones.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_rate_notification_2008"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_ptax_assessment_method_named. One step of the method, separately checkable."
+    },
+    {
+      "id": "claim_hyderabad_ptax_assessment_method_named_4",
+      "text": "That notification states that the method classifies buildings by construction.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_rate_notification_2008"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_ptax_assessment_method_named. One step of the method, separately checkable."
+    },
+    {
+      "id": "claim_hyderabad_ptax_circle_office_dc",
+      "text": "The corporation's Citizen's Charter states that the circle office is headed by a Deputy Commissioner.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A designation tied to a jurisdiction rule: the circle in which the property falls. Graded C because the charter is twelve years past the revision date it states for itself."
+    },
+    {
+      "id": "claim_hyderabad_ptax_circle_office_dc_2",
+      "text": "That charter states that the circle office handles all services related to property tax and other municipal taxes and fees.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split at audit from claim_hyderabad_ptax_circle_office_dc. The office's scope of business is separately checkable from the designation that heads it, and it is the half that establishes which office holds a property tax case. Graded C because the charter is twelve years past the revision date it states for itself."
+    },
+    {
+      "id": "claim_hyderabad_ptax_thirty_circles",
+      "text": "The corporation's property tax page states that property tax can be paid at citizen service centres in all 30 circles.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Confirms from a current page the circle structure the charter describes."
+    },
+    {
+      "id": "claim_hyderabad_ptax_thirty_circles_2",
+      "text": "The same page states that property tax can be paid at the corporation head office.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split at audit from claim_hyderabad_ptax_thirty_circles, which bundled a distributed counter network with a single office. One payment venue per claim, as the other payment channels on the same page already are."
+    },
+    {
+      "id": "claim_hyderabad_ptax_head_office_contacts",
+      "text": "The corporation's key contacts page gives the head office address as CC Complex Tank Bund Road at Lower Tank Bund in Hyderabad 500063.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_key_contacts"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Institutional contact details only. At least one row of the officers table displayed a placeholder rather than a name on the access date. Split during IND-91 part B lint remediation into the address, the telephone numbers and the officers table."
+    },
+    {
+      "id": "claim_hyderabad_ptax_head_office_contacts_2",
+      "text": "That page gives a helpline number 21111111 and a telephone number 040-23225397.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_key_contacts"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_ptax_head_office_contacts. Institutional contact details only."
+    },
+    {
+      "id": "claim_hyderabad_ptax_head_office_contacts_3",
+      "text": "That page publishes an officers contacts table with columns for name and designation and contact number and email.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_key_contacts"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_ptax_head_office_contacts. At least one row of that table displayed a placeholder rather than a name on the access date. Institutional contact details only."
+    },
+    {
+      "id": "claim_hyderabad_ptax_zone_and_circle_maps",
+      "text": "The corporation's online payments portal links published zone and circle maps and circle and ward maps as image files.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_payment_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A route from a property's location to the circle whose office handles it."
+    },
+    {
+      "id": "claim_hyderabad_ptax_residential_amount_unknown",
+      "text": "The amount of property tax payable on a residential property is not established by any reviewed public page.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related: the payment route is public and would return the amount, but exercising it requires entering a real property identifier, which is outside the safety boundary. Split during IND-91 part B lint remediation into the two unknowns and the observed reason behind them."
+    },
+    {
+      "id": "claim_hyderabad_ptax_residential_amount_unknown_2",
+      "text": "The rate or slab from which that amount is derived is not established by any reviewed public page.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_ptax_residential_amount_unknown. Retained because the uncertainty itself matters to the journey."
+    },
+    {
+      "id": "claim_hyderabad_ptax_due_date_unknown",
+      "text": "When property tax falls due is not established by any reviewed public page.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related. Split during IND-91 part B lint remediation; the rebate and penalty unknown is asserted separately."
+    },
+    {
+      "id": "claim_hyderabad_ptax_due_date_unknown_2",
+      "text": "Whether any rebate or penalty attaches to paying early or late is not established by any reviewed public page.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_ptax_due_date_unknown. Retained because the uncertainty itself matters to the journey. Not login-related."
+    },
+    {
+      "id": "claim_hyderabad_ptax_documents_for_payment_unknown",
+      "text": "What a resident owner must produce to pay property tax on a known identifier is not established by any reviewed public page.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related. Split during IND-91 part B lint remediation; the observed reason for the gap is asserted separately."
+    },
+    {
+      "id": "claim_hyderabad_ptax_documents_for_payment_unknown_2",
+      "text": "The document lists the corporation publishes belong to new assessment and mutation, which this scope excludes.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_ptax_documents_for_payment_unknown. The observed reason for the gap is separately checkable from the unknown it produces."
+    },
+    {
+      "id": "claim_hyderabad_ptax_payment_mode_handheld",
+      "text": "The corporation's property tax page states that property tax can be paid through handheld machines of bill collectors integrated with a central server.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "One payment channel, split from the compound payment-modes claim at audit. No count attaches to this channel on the page."
+    },
+    {
+      "id": "claim_hyderabad_ptax_payment_mode_meeseva",
+      "text": "The corporation's property tax page states that property tax can be paid at 72 Mee-Seva centres within corporation limits.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "One payment channel, split from the compound payment-modes claim at audit. The count of 72 is now separately checkable."
+    },
+    {
+      "id": "claim_hyderabad_ptax_payment_mode_online_neft_rtgs",
+      "text": "The corporation's property tax page states that property tax can be paid online or by NEFT and RTGS.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "One payment channel, split from the compound payment-modes claim at audit. This is the channel the primary scenario takes first."
+    },
+    {
+      "id": "claim_hyderabad_ptax_payment_mode_banks",
+      "text": "The corporation's property tax page states that property tax can be paid at 537 branches of 8 banks.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_ptax_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "One payment channel, split from the compound payment-modes claim at audit. The counts of 537 and 8 are now separately checkable; the page does not name the banks."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

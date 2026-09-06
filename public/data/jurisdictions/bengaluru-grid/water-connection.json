@@ -1,0 +1,1153 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru new domestic water connection grid-only re-score evidence ledger",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-09-06",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Grid-only benchmark run: sources and claims only, no nodes, edges, roadblocks or journeys. This is a second, independently gathered row for Bengaluru, produced by the same method as the twelve city rows so that the pilot site is measured the way the comparison cities were; it does not reuse and did not read the deep pilot ledger for this service. Desk research, no counter visited. Limitations: every one of the board's published rate documents for a new connection is a one-page scan with no text layer, so no figure could be read from any of them; the board's own Know Your Connection Fees route returned a zero-byte file; the amount payable is computed inside the application after login, which was not crossed; a statement that the board's English-language route does not carry through to its contact and office-location pages was recorded during the pass, and the audit found it uncited under protocol section 7 because the ledger holds no source record for the corporate site those pages sit on; it is retained as a contested claim, supports no cell, and should not be read as an established finding; four of the five source URLs have no Wayback snapshot. Do not submit personal data through this ledger. One audit limitation ships unresolved: the corporate site's English landing page, contact information page and office location page were searched during the pass but have no source record in this ledger, which is why the claim that the English route did not carry through to those pages is retained as contested and supports no cell. The source record for the board's rate documents carries no publication date but does carry a visible-date note stating that none is shown on the route or on the files it links, so no source-date limitation remains open."
+  },
+  "agencies": [
+    {
+      "id": "agency_bengaluru_bwssb",
+      "name": "Bangalore Water Supply and Sewerage Board",
+      "shortName": "BWSSB",
+      "officialUrl": "https://owcv2.bwssb.gov.in/consumer"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind32_water_residential",
+      "label": "Bengaluru new domestic water connection",
+      "summary": "The individual owner of a built residential property with no connection applies to the city's water utility for a new domestic water supply, with sewer only where the same application covers it. Bulk or high-rise connections, commercial use, regularisation of unauthorised connections, name transfer on an existing account and tanker supply are excluded.",
+      "tags": [
+        "primary"
+      ],
+      "pathNodeIds": [],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_bengaluru_grid_water_owcv2_consumer",
+      "title": "BWSSB online water connection consumer entry page - information, rates for new connection and status lookup",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'BWSSB - Bangalore Water Supply and Sewerage Board', with a toll-free number 1916. Direct current observation of a public official interface reachable without login. The page shows no visible last-updated date and carries a notice about demand-note validity dated to 2021, which is recorded as a limitation on its currency. Archive: the Wayback availability API returned no snapshot for this page on the access date, so no archive copy exists to point to; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    },
+    {
+      "id": "source_bengaluru_grid_water_owc_portal",
+      "title": "BWSSB Jaladhare consumer portal - login, important documents and application status",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Bangalore Water Supply and Sewerage Board'. Direct current observation of the board's current consumer portal, reachable without login, offering OTP login, consumer user manuals in English and Kannada, an important documents route and a public application-status route. Shows no visible last-updated date. Limitation: the portal is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260217062507/https://owc.bwssb.gov.in/ (2026-02-17); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the portal as reviewed on 2026-09-06."
+    },
+    {
+      "id": "source_bengaluru_grid_water_consumer_manual",
+      "title": "Jaladhare Application Consumer User Manual, version 1.0",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2025-09-23",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: served from the board's own consumer portal as its English consumer user manual. Twenty-five pages; the file metadata records a creation date of 2025-09-23, recorded as publishedAt. Archive: the Wayback availability API returned no snapshot for this file on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    },
+    {
+      "id": "source_bengaluru_grid_water_fee_documents",
+      "title": "Important documents - the board's published rate documents for a new connection",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/important-docs",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Bangalore Water Supply and Sewerage Board'. Visible date: none is shown on the route or on the files it links. Direct current observation of the route that lists the board's rate documents and links each as a PDF. Each linked file was retrieved and each is a one-page scan with no extractable text layer, so no figure could be read from any of them; that is recorded as a limitation on this run's reach rather than as a claim about their contents. Archive: the Wayback availability API returned no snapshot for this route on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    },
+    {
+      "id": "source_bengaluru_grid_water_tariff_2025",
+      "title": "Revised Water Tariff Ready Reckoner, consumption with effect from 01-04-2025",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://bwssb.karnataka.gov.in/storage/pdf-files/WaterTariff-2025.pdf",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2025-04-01",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'BANGALORE WATER SUPPLY AND SEWERAGE BOARD'. Twelve pages, headed 'REVISED WATER TARIFF CONSUMPTION W.E.F. 01-04-2025, BILLING W.E.F. 01-05-2025'; the effective date is recorded as publishedAt. It states the recurring tariff after connection, not the charge for obtaining one. Archive: the Wayback availability API returned no snapshot for this file on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_bengaluru_grid_water_documents_required",
+      "text": "The board's online water connection consumer page states the documents required for a new connection.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "An enumerated document list published on the public entry page, with one item conditioned on the size of the premises. Split during IND-91 part B lint remediation into one claim per required document."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_documents_required_2",
+      "text": "One required document is a lease-cum-sale deed or sale deed.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_documents_required; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_documents_required_3",
+      "text": "One required document is a khata certificate.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_documents_required; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_documents_required_4",
+      "text": "One required document is a building plan or sanction plan.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_documents_required; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_documents_required_5",
+      "text": "One required document is photographs of the building with the owner.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_documents_required; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_documents_required_6",
+      "text": "One required document is a rainwater harvesting adoption document for premises measuring 1200 square feet and above.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_documents_required; one published item, one claim. This item is conditioned on the size of the premises."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_mandatory_documents_manual",
+      "text": "The board's consumer user manual states that mandatory documents include the building plan or a building photo with the owner or the lease-cum-sale deed or the khata.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The manual's list agrees with the entry page's and adds the road cutting endorsement and the upload limits. Split during IND-91 part B lint remediation into the list, the additional document and the two upload limits."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_mandatory_documents_manual_2",
+      "text": "The manual adds a road cutting endorsement if applicable.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_mandatory_documents_manual; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_mandatory_documents_manual_3",
+      "text": "The manual states that up to five documents may be uploaded per document type.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_mandatory_documents_manual; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_mandatory_documents_manual_4",
+      "text": "The manual states that each file is limited to 5 MB.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_mandatory_documents_manual; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rwh_threshold",
+      "text": "The board's online water connection consumer page states that a rainwater harvesting adoption document is required for premises measuring 1200 square feet and above.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A usable rule that turns on a measurable property of the applicant's premises."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_application_types",
+      "text": "The board's consumer user manual states that the applicant chooses between a Regular Application, an EMI Based Application and a 110 Village Based Application.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A rule that decides which route and which charge set apply, turning on where the property is and how the applicant wishes to pay. Split during IND-91 part B lint remediation into the choice, the EMI terms, the 110 village scope and the charges that attach to it."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_application_types_2",
+      "text": "Under the EMI Based Application the water connection charges are paid in instalments after an initial payment of Rs. 1,000 with the balance billed monthly.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_application_types; one published item, one claim. The Rs. 1,000 is an instalment entry payment, not the connection charge."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_application_types_3",
+      "text": "The 110 Village Based Application covers the 110 villages integrated into the city network.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_application_types; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_application_types_4",
+      "text": "Zone charges and layout charges and ETP charges apply to the 110 Village Based Application.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_application_types; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_application_form_purchased",
+      "text": "The board's online water connection consumer page states that the applicant logs in with a mobile number.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The application form is bought rather than free; no amount is given on this or any reviewed route. No login was used, no OTP was requested and no personal data was entered. Split during IND-91 part B lint remediation into one claim per step."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_application_form_purchased_2",
+      "text": "The page states that the applicant provides an email address and mobile number.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_application_form_purchased; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_application_form_purchased_3",
+      "text": "The page states that the applicant makes payment to buy the application form.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_application_form_purchased; one published item, one claim. The form is bought rather than free; no amount is given on this or any reviewed route."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_application_form_purchased_4",
+      "text": "The page states that the applicant then fills the application and uploads the documents.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_application_form_purchased; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rate_components_published",
+      "text": "The board publishes each component of the connection charge as a separate document on its consumer routes.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_fee_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Every component of the charge is named and given its own published document; what those documents say could not be read. Split during IND-91 part B lint remediation into one claim per published component."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rate_components_published_2",
+      "text": "One such document covers the application fee.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_fee_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rate_components_published_3",
+      "text": "One such document covers the attachment fee.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_fee_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rate_components_published_4",
+      "text": "One such document covers the inspection charges.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_fee_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rate_components_published_5",
+      "text": "One such document covers the three months minimum deposit.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_fee_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rate_components_published_6",
+      "text": "One such document covers the meter cost for mechanical and AMR meters.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_fee_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rate_components_published_7",
+      "text": "One such document covers the sanitary point charges.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_fee_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rate_components_published_8",
+      "text": "One such document covers the GBWASP and BCC charges.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_fee_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rate_components_published_9",
+      "text": "One such document covers the revised prorata charges for residential buildings.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_fee_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rate_components_published_10",
+      "text": "One such document covers the prorata charges for other buildings.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_fee_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rate_components_published_11",
+      "text": "The board states that line cost is charged as per actuals.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_fee_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. A formula rather than a figure."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rate_documents_unreadable",
+      "text": "Each of the board's linked rate documents for a new connection is a one-page scan with no extractable text layer.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_fee_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Recorded as a limitation on this run's reach, not as a claim about what the documents contain. Split during IND-91 part B lint remediation; the consequence is asserted separately."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rate_documents_unreadable_2",
+      "text": "No figure could be read from any of those documents.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_fee_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_documents_unreadable; one published item, one claim. A limitation on this run's reach, not a claim about what the documents contain."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_know_your_fees_empty",
+      "text": "The board's Know Your Connection Fees route published on its consumer entry page returned a zero-byte file on the access date.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Recorded as observed. This is the one route whose title promises the citizen the total they would pay."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_tentative_charges_after_entry",
+      "text": "The board's consumer user manual states that on the final review screen the system displays the tentative charges payable for the water connection based on the information entered.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The amount is computed inside the application rather than published, and the screen that shows it sits past the login. No login was used, no OTP was requested and no personal data was entered. Split during IND-91 part B lint remediation; the payment choice is asserted separately."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_tentative_charges_after_entry_2",
+      "text": "The manual states that the applicant then chooses to pay in full or opt for an EMI.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_tentative_charges_after_entry; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_recurring_tariff",
+      "text": "The board's revised water tariff ready reckoner for consumption with effect from 1 April 2025 gives the domestic slab tariff.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_tariff_2025"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "What the household pays once connected, not what the connection costs; recorded for completeness and not used for the cost cell. Split during IND-91 part B lint remediation into one claim per published band."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_recurring_tariff_2",
+      "text": "That tariff is Rs. 8.5 per kilolitre for a minimum of 0 to 8 kilolitres.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_tariff_2025"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_recurring_tariff; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_recurring_tariff_3",
+      "text": "That tariff is Rs. 14 per kilolitre from 8 to 25 kilolitres.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_tariff_2025"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_recurring_tariff; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_recurring_tariff_4",
+      "text": "That tariff is Rs. 34 per kilolitre from 25 to 50 kilolitres.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_tariff_2025"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_recurring_tariff; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_recurring_tariff_5",
+      "text": "That tariff is Rs. 55 per kilolitre from 50 to 100 kilolitres and above.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_tariff_2025"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_recurring_tariff; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_recurring_tariff_6",
+      "text": "Sanitary charges for a domestic connection are Rs. 14 flat for consumption up to 8,000 litres.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_tariff_2025"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_recurring_tariff; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_recurring_tariff_7",
+      "text": "Above that consumption sanitary charges are 25 per cent of water supply charges per month.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_tariff_2025"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_recurring_tariff; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_public_status_routes",
+      "text": "The board publishes two public application-status routes reachable without login.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_owc_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The routes and their fields were observed; nothing was entered and no login was used, so no claim is made about what they return. Split during IND-91 part B lint remediation into the two routes."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_public_status_routes_2",
+      "text": "One route is on its online water connection consumer page and takes an application number.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_owc_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_public_status_routes; one published item, one claim. Nothing was entered and no login was used."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_public_status_routes_3",
+      "text": "One route is on its Jaladhare consumer portal to check the status of the application.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_owc_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_public_status_routes; one published item, one claim. Nothing was entered and no login was used."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_acknowledgement_and_demand_note",
+      "text": "The board's consumer user manual states that after submission the applicant can view and download an acknowledgement from the Acknowledgement tab.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Three distinct surfaces the applicant sees after submitting: an acknowledgement, a demand note on approval, and a payment receipt. Split during IND-91 part B lint remediation into one claim per surface."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_acknowledgement_and_demand_note_2",
+      "text": "The manual states that on successful approval of the connection a demand note is generated and appears in the payment section of the application.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_acknowledgement_and_demand_note; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_acknowledgement_and_demand_note_3",
+      "text": "The manual states that once payment is completed a payment receipt is generated which can be saved.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_acknowledgement_and_demand_note; one published item, one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_status_shows_stage_and_officer",
+      "text": "The board's consumer user manual states that the Status tab shows the current status of the application.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Stages are counted rather than dated, and the officer is named to the individual applicant inside the application rather than published. Split during IND-91 part B lint remediation into the three things the tab shows, which three different cells were citing as one claim."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_status_shows_stage_and_officer_2",
+      "text": "The manual states that the Status tab shows the number of stages completed.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_status_shows_stage_and_officer; one published item, one claim. Stages are counted rather than dated; this is the fragment the time cell rests on."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_status_shows_stage_and_officer_3",
+      "text": "The manual states that the Status tab shows the assigned officer for that stage.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_status_shows_stage_and_officer; one published item, one claim. The officer is named to the individual applicant inside the application rather than published; this is the fragment the owner cell rests on."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_toll_free_and_helpdesk",
+      "text": "The board publishes a toll-free number 1916 on its consumer routes for help or complaints or support related to a water connection application.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Institutional contact only. A helpline is a route into the board, not a route to the office or role that decides an application. Split during IND-91 part B lint remediation; the linked routes are asserted separately."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_toll_free_and_helpdesk_2",
+      "text": "The board links a contact document and a plumber list and a grievance form and a frequently asked questions route.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_toll_free_and_helpdesk; one published item, one claim. Institutional contact only."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_english_route_not_carried",
+      "text": "The board's corporate site offers an English language route, and on the access date that route did not carry through to its contact information and office location pages, which rendered in Kannada.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owc_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [],
+      "notes": "Recorded as observed. It bears on whether an English-reading applicant can reach the office list; a Kannada-reading applicant may be able to. Audit 2026-09-06: the only cited source is source_bengaluru_grid_water_owc_portal, the Jaladhare consumer portal at owc.bwssb.gov.in, whose source record describes that portal's login, consumer manuals, important-documents and application-status routes; it does not cover the corporate site at bwssb.karnataka.gov.in or its contact and office-location pages, and the ledger holds no source record for those pages. The observation is retained and marked contested pending a source record for the pages actually observed, and it supports no expectation cell. No login was used, no OTP was requested and no personal data was entered."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_stale_notice",
+      "text": "The board's online water connection consumer page carries a notice stating that all demand notes cancelled since 3 May 2021 will be valid up to 31 July 2021.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A notice five years past its own expiry, still displayed on the page as its only notice."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_login_boundary",
+      "text": "The board's application route requires login with a mobile number and an OTP.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owc_portal",
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The status routes beside it need no login, which is why the after-submission evidence does not rest on the gated surface. No login was used, no OTP was requested and no personal data was entered. Split during IND-91 part B lint remediation into the boundary and the three surfaces behind it."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_login_boundary_2",
+      "text": "The application form sits past that login boundary.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owc_portal",
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_login_boundary; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_login_boundary_3",
+      "text": "The tentative charges screen sits past that login boundary.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owc_portal",
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_login_boundary; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_login_boundary_4",
+      "text": "The assigned-officer view sits past that login boundary.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owc_portal",
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_login_boundary; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_connection_charge_unknown",
+      "text": "What a resident owner pays for a new domestic water connection is not established by any reviewed public page.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Part of the reason is a login boundary, and part is that the published documents cannot be read at all. No login was used, no OTP was requested and no personal data was entered. The three observed reasons behind this unknown are carried by sourced claims rather than by fragments of this one: every rate document is an unreadable scan (claim_bengaluru_grid_water_rate_documents_unreadable), the route that would give the total returns an empty file (claim_bengaluru_grid_water_know_your_fees_empty), and the computed amount appears only past the login (claim_bengaluru_grid_water_tentative_charges_after_entry and claim_bengaluru_grid_water_login_boundary_3)."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_timeline_unknown",
+      "text": "How long a new domestic water connection takes at any stage or in total is not established by any reviewed public page.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related: the stage count is described in a public manual and carries no days. The observed reason is carried by claim_bengaluru_grid_water_status_shows_stage_and_officer_2, which records that the Status tab shows a count of stages completed."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_deciding_office_unknown",
+      "text": "Which office or officer sanctions a new domestic water connection is not established by any reviewed public page.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Partly login-related: the assigned officer is shown to the applicant past the boundary. No login was used, no OTP was requested and no personal data was entered. The two observed reasons behind this unknown are carried by sourced claims: the assigned-officer view sits past the login boundary (claim_bengaluru_grid_water_login_boundary_4), and the published contact routes give a helpline and a general contact document (claim_bengaluru_grid_water_toll_free_and_helpdesk and claim_bengaluru_grid_water_toll_free_and_helpdesk_2)."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

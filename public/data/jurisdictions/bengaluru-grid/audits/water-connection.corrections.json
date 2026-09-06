@@ -1,0 +1,2706 @@
+{
+  "serviceId": "water-connection",
+  "ledgerPath": "ledger/jurisdictions/bengaluru-grid/water-connection.json",
+  "auditPath": "ledger/jurisdictions/bengaluru-grid/audits/water-connection.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "corr_water_english_route_status",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_english_route_not_carried",
+      "fieldPath": "/status",
+      "old": "verified",
+      "new": "contested",
+      "reason": "Section 7 citation gate: the claim asserts an observation of the corporate site at bwssb.karnataka.gov.in and its contact and office-location pages, but its only source is source_bengaluru_grid_water_owc_portal (https://owc.bwssb.gov.in/), a different host whose source record covers that portal's login, manuals, important-documents and status routes and not the corporate site. No source record exists for the pages observed, so the claim is uncited for what it asserts and cannot stand as verified. Section 1 authorises marking a claim contested when the evidence does not support the wording; the observation is retained rather than deleted, and no source record is invented for it.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owc_portal"
+        ],
+        "auditNote": "Audit 2026-09-06, finding F1. The cited source's url is https://owc.bwssb.gov.in/ and its notes describe only that portal. The corporate-site URLs the claim concerns (https://bwssb.karnataka.gov.in/en, .../BWSSB+Office+location/en, .../Contact+Us/Contact+Info/en) appear only in cells.owner.searchedRoutes, which record a searched route and are not sources. evidenceGrade B is left unchanged: grade describes source strength, and the observation would be B if a source record for it existed."
+      }
+    },
+    {
+      "id": "corr_water_english_route_notes",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_english_route_not_carried",
+      "fieldPath": "/notes",
+      "old": "Recorded as observed. It bears on whether an English-reading applicant can reach the office list; a Kannada-reading applicant may be able to.",
+      "new": "Recorded as observed. It bears on whether an English-reading applicant can reach the office list; a Kannada-reading applicant may be able to. Audit 2026-09-06: the only cited source is source_bengaluru_grid_water_owc_portal, the Jaladhare consumer portal at owc.bwssb.gov.in, whose source record describes that portal's login, consumer manuals, important-documents and application-status routes; it does not cover the corporate site at bwssb.karnataka.gov.in or its contact and office-location pages, and the ledger holds no source record for those pages. The observation is retained and marked contested pending a source record for the pages actually observed, and it supports no expectation cell.",
+      "reason": "Record in the claim itself why audit downgraded it, so the contested status is self-documenting and the missing source record is visible to the next pass.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owc_portal"
+        ],
+        "auditNote": "Audit 2026-09-06, finding F1. Companion to the status downgrade; states the source mismatch and the condition for restoring the claim."
+      }
+    },
+    {
+      "id": "corr_water_owner_claimids",
+      "recordType": "expectation",
+      "recordId": "water-connection",
+      "fieldPath": "/cells/owner/claimIds",
+      "old": [
+        "claim_bengaluru_grid_water_toll_free_and_helpdesk",
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer",
+        "claim_bengaluru_grid_water_english_route_not_carried"
+      ],
+      "new": [
+        "claim_bengaluru_grid_water_toll_free_and_helpdesk",
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer"
+      ],
+      "reason": "Section 8: only verified or partial claims may support stated or mentioned. claim_bengaluru_grid_water_english_route_not_carried is marked contested by this audit, so it may no longer support the owner cell. The cell state is unaffected: it remains mentioned on claim_bengaluru_grid_water_toll_free_and_helpdesk and claim_bengaluru_grid_water_status_shows_stage_and_officer, both verified. The corporate-site URLs stay in searchedRoutes, which a mentioned cell is required to record.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "Audit 2026-09-06, finding F2. Owner stays mentioned: a helpline is a route into the board rather than to the deciding role, and a per-application assigned officer gives no name, designation, office or jurisdiction rule a citizen could act on before applying."
+      }
+    },
+    {
+      "id": "corr_water_owner_note",
+      "recordType": "expectation",
+      "recordId": "water-connection",
+      "fieldPath": "/cells/owner/note",
+      "old": "The topic is named without an actionable value. The board is reachable — a toll-free number, a contact document, a plumber list, a grievance form — but no reviewed route names the office, officer or role that sanctions a new connection, or lets an applicant move from an address to the division that will handle it. The board does name an assigned officer, but only to the individual applicant inside the application after login, which is a private case surface rather than published documentation; and the corporate site's English route did not carry through to its contact and office-location pages on the access date.",
+      "new": "The topic is named without an actionable value. The board is reachable — a toll-free number, a contact document, a plumber list, a grievance form — but no reviewed route names the office, officer or role that sanctions a new connection, or lets an applicant move from an address to the division that will handle it. The board does name an assigned officer, but only to the individual applicant inside the application after login, which is a private case surface rather than published documentation and names the topic without giving a value a citizen can act on. The corporate site's English, contact and office-location routes were searched; the claim recording that the English route did not carry through to the contact and office-location pages cites a source that does not cover those pages, so audit marked it contested and it no longer supports this cell.",
+      "reason": "The note asserted the English-route observation as an established fact supporting the cell. After the downgrade it must read as a searched route plus a contested claim, and the mentioned grounds are restated on section 8's test - the topic is named without a value a citizen can act on.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owc_portal"
+        ],
+        "auditNote": "Audit 2026-09-06, finding F2. Minimal edit: only the closing clause is rewritten and one clarifying phrase added to the assigned-officer sentence; the rest is preserved verbatim."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b01",
+      "recordType": "source",
+      "recordId": "source_bengaluru_grid_water_owc_portal",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Bangalore Water Supply and Sewerage Board'. Direct current observation of the board's current consumer portal, reachable without login, offering OTP login, consumer user manuals in English and Kannada, an important documents route and a public application-status route. Shows no visible last-updated date. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260217062507/https://owc.bwssb.gov.in/ (2026-02-17); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Bangalore Water Supply and Sewerage Board'. Direct current observation of the board's current consumer portal, reachable without login, offering OTP login, consumer user manuals in English and Kannada, an important documents route and a public application-status route. Shows no visible last-updated date. Limitation: the portal is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260217062507/https://owc.bwssb.gov.in/ (2026-02-17); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the portal as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an undated, archived source without a stated limitation. Both limitations are now stated in words; no claim, grade or cell state changes.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owc_portal"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b02",
+      "recordType": "source",
+      "recordId": "source_bengaluru_grid_water_fee_documents",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Bangalore Water Supply and Sewerage Board'. Direct current observation of the route that lists the board's rate documents and links each as a PDF. Each linked file was retrieved and each is a one-page scan with no extractable text layer, so no figure could be read from any of them; that is recorded as a limitation on this run's reach rather than as a claim about their contents. Archive: the Wayback availability API returned no snapshot for this route on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run.",
+      "new": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Bangalore Water Supply and Sewerage Board'. Visible date: none is shown on the route or on the files it links. Direct current observation of the route that lists the board's rate documents and links each as a PDF. Each linked file was retrieved and each is a one-page scan with no extractable text layer, so no figure could be read from any of them; that is recorded as a limitation on this run's reach rather than as a claim about their contents. Archive: the Wayback availability API returned no snapshot for this route on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported that the source lacks publishedAt without a visible-date note. The absence of any visible date on the route and its linked files is now recorded in the phrasing the check recognises; the existing archive-failure limitation is unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b03",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_know_your_fees_empty",
+      "fieldPath": "/text",
+      "old": "The board's Know Your Connection Fees route, published on its consumer entry page, returned a zero-byte file on the access date.",
+      "new": "The board's Know Your Connection Fees route published on its consumer entry page returned a zero-byte file on the access date.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items, produced by the two commas setting off a relative clause. The clause is written without the commas; the claim asserts the same single observation.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: punctuation only; the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b04",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_english_route_not_carried",
+      "fieldPath": "/notes",
+      "old": "Recorded as observed. It bears on whether an English-reading applicant can reach the office list; a Kannada-reading applicant may be able to. Audit 2026-09-06: the only cited source is source_bengaluru_grid_water_owc_portal, the Jaladhare consumer portal at owc.bwssb.gov.in, whose source record describes that portal's login, consumer manuals, important-documents and application-status routes; it does not cover the corporate site at bwssb.karnataka.gov.in or its contact and office-location pages, and the ledger holds no source record for those pages. The observation is retained and marked contested pending a source record for the pages actually observed, and it supports no expectation cell.",
+      "new": "Recorded as observed. It bears on whether an English-reading applicant can reach the office list; a Kannada-reading applicant may be able to. Audit 2026-09-06: the only cited source is source_bengaluru_grid_water_owc_portal, the Jaladhare consumer portal at owc.bwssb.gov.in, whose source record describes that portal's login, consumer manuals, important-documents and application-status routes; it does not cover the corporate site at bwssb.karnataka.gov.in or its contact and office-location pages, and the ledger holds no source record for those pages. The observation is retained and marked contested pending a source record for the pages actually observed, and it supports no expectation cell. No login was used, no OTP was requested and no personal data was entered.",
+      "reason": "Pre-audit lint reported login-boundary-overclaim because the audit note names the portal's login without wording the check recognises as uncertainty. The note now records that no login was used, no OTP was requested and no personal data was entered; the contested status and the reason for it are unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owc_portal"
+        ],
+        "auditNote": "IND-91 part B: login-boundary-overclaim finding fixed by recording the observation boundary in the notes."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b05",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_documents_required",
+      "fieldPath": "/text",
+      "old": "The board's online water connection consumer page states that the documents required are a lease-cum-sale deed or sale deed, a khata certificate, a building plan or sanction plan, photographs of the building with the owner, and a rainwater harvesting adoption document for premises measuring 1200 square feet and above.",
+      "new": "The board's online water connection consumer page states the documents required for a new connection.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 319 characters. The page lists five separate required documents, each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b06",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_documents_required",
+      "fieldPath": "/notes",
+      "old": "An enumerated document list published on the public entry page, with one item conditioned on the size of the premises.",
+      "new": "An enumerated document list published on the public entry page, with one item conditioned on the size of the premises. Split during IND-91 part B lint remediation into one claim per required document.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 319 characters. The page lists five separate required documents, each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b07",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_documents_required_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_documents_required_2",
+        "text": "One required document is a lease-cum-sale deed or sale deed.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_documents_required; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 319 characters. The page lists five separate required documents, each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b08",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_documents_required_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_documents_required_3",
+        "text": "One required document is a khata certificate.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_documents_required; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 319 characters. The page lists five separate required documents, each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b09",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_documents_required_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_documents_required_4",
+        "text": "One required document is a building plan or sanction plan.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_documents_required; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 319 characters. The page lists five separate required documents, each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b10",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_documents_required_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_documents_required_5",
+        "text": "One required document is photographs of the building with the owner.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_documents_required; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 319 characters. The page lists five separate required documents, each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b11",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_documents_required_6",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_documents_required_6",
+        "text": "One required document is a rainwater harvesting adoption document for premises measuring 1200 square feet and above.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_documents_required; one published item, one claim. This item is conditioned on the size of the premises."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 319 characters. The page lists five separate required documents, each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b12",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_mandatory_documents_manual",
+      "fieldPath": "/text",
+      "old": "The board's consumer user manual states that mandatory documents include the building plan, a building photo with the owner, the lease-cum-sale deed, the khata and a road cutting endorsement if applicable, that up to five documents may be uploaded per document type, and that each file is limited to 5 MB.",
+      "new": "The board's consumer user manual states that mandatory documents include the building plan or a building photo with the owner or the lease-cum-sale deed or the khata.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 305 characters. The mandatory list, the conditional additional document and the two upload limits are four separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b13",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_mandatory_documents_manual",
+      "fieldPath": "/notes",
+      "old": "The manual's list agrees with the entry page's and adds the road cutting endorsement and the upload limits.",
+      "new": "The manual's list agrees with the entry page's and adds the road cutting endorsement and the upload limits. Split during IND-91 part B lint remediation into the list, the additional document and the two upload limits.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 305 characters. The mandatory list, the conditional additional document and the two upload limits are four separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b14",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_mandatory_documents_manual_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_mandatory_documents_manual_2",
+        "text": "The manual adds a road cutting endorsement if applicable.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_mandatory_documents_manual; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 305 characters. The mandatory list, the conditional additional document and the two upload limits are four separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b15",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_mandatory_documents_manual_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_mandatory_documents_manual_3",
+        "text": "The manual states that up to five documents may be uploaded per document type.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_mandatory_documents_manual; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 305 characters. The mandatory list, the conditional additional document and the two upload limits are four separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b16",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_mandatory_documents_manual_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_mandatory_documents_manual_4",
+        "text": "The manual states that each file is limited to 5 MB.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_mandatory_documents_manual; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 305 characters. The mandatory list, the conditional additional document and the two upload limits are four separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b17",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_application_types",
+      "fieldPath": "/text",
+      "old": "The board's consumer user manual states that the applicant chooses between a Regular Application, an EMI Based Application under which the water connection charges are paid in instalments after an initial payment of Rs. 1,000 with the balance billed monthly, and a 110 Village Based Application for the 110 villages integrated into the city network, to which zone, layout and ETP charges apply.",
+      "new": "The board's consumer user manual states that the applicant chooses between a Regular Application, an EMI Based Application and a 110 Village Based Application.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 394 characters. The choice of route, the EMI terms, the territorial scope of the village route and the charges attaching to it are four independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b18",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_application_types",
+      "fieldPath": "/notes",
+      "old": "A rule that decides which route and which charge set apply, turning on where the property is and how the applicant wishes to pay. The Rs. 1,000 is an instalment entry payment, not the connection charge.",
+      "new": "A rule that decides which route and which charge set apply, turning on where the property is and how the applicant wishes to pay. Split during IND-91 part B lint remediation into the choice, the EMI terms, the 110 village scope and the charges that attach to it.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 394 characters. The choice of route, the EMI terms, the territorial scope of the village route and the charges attaching to it are four independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b19",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_application_types_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_application_types_2",
+        "text": "Under the EMI Based Application the water connection charges are paid in instalments after an initial payment of Rs. 1,000 with the balance billed monthly.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_application_types; one published item, one claim. The Rs. 1,000 is an instalment entry payment, not the connection charge."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 394 characters. The choice of route, the EMI terms, the territorial scope of the village route and the charges attaching to it are four independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b20",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_application_types_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_application_types_3",
+        "text": "The 110 Village Based Application covers the 110 villages integrated into the city network.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_application_types; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 394 characters. The choice of route, the EMI terms, the territorial scope of the village route and the charges attaching to it are four independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b21",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_application_types_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_application_types_4",
+        "text": "Zone charges and layout charges and ETP charges apply to the 110 Village Based Application.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_application_types; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 394 characters. The choice of route, the EMI terms, the territorial scope of the village route and the charges attaching to it are four independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b22",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_application_form_purchased",
+      "fieldPath": "/text",
+      "old": "The board's online water connection consumer page states that the applicant logs in with a mobile number, provides an email address and mobile number, makes payment to buy the application form, and then fills the application and uploads the documents.",
+      "new": "The board's online water connection consumer page states that the applicant logs in with a mobile number.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 251 characters. The four steps the page describes are four independently checkable facts, and only the payment step bears on the cost cell.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b23",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_application_form_purchased",
+      "fieldPath": "/notes",
+      "old": "The application form is bought rather than free; no amount is given on this or any reviewed route.",
+      "new": "The application form is bought rather than free; no amount is given on this or any reviewed route. No login was used, no OTP was requested and no personal data was entered. Split during IND-91 part B lint remediation into one claim per step.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 251 characters. The four steps the page describes are four independently checkable facts, and only the payment step bears on the cost cell.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b24",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_application_form_purchased_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_application_form_purchased_2",
+        "text": "The page states that the applicant provides an email address and mobile number.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_application_form_purchased; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 251 characters. The four steps the page describes are four independently checkable facts, and only the payment step bears on the cost cell.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b25",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_application_form_purchased_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_application_form_purchased_3",
+        "text": "The page states that the applicant makes payment to buy the application form.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_application_form_purchased; one published item, one claim. The form is bought rather than free; no amount is given on this or any reviewed route."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 251 characters. The four steps the page describes are four independently checkable facts, and only the payment step bears on the cost cell.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b26",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_application_form_purchased_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_application_form_purchased_4",
+        "text": "The page states that the applicant then fills the application and uploads the documents.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_application_form_purchased; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 251 characters. The four steps the page describes are four independently checkable facts, and only the payment step bears on the cost cell.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b27",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_rate_components_published",
+      "fieldPath": "/text",
+      "old": "The board publishes, as separate documents on its consumer routes, the application fee, attachment fee, inspection charges, three months minimum deposit, meter cost for mechanical and AMR meters, sanitary point charges, GBWASP and BCC charges, revised prorata charges for residential buildings, prorata charges for other buildings, and states that line cost is charged as per actuals.",
+      "new": "The board publishes each component of the connection charge as a separate document on its consumer routes.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 384 characters. The board names nine separate published charge components and one charged as per actuals, each independently checkable against its own document.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b28",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_rate_components_published",
+      "fieldPath": "/notes",
+      "old": "Every component of the charge is named and given its own published document; what those documents say could not be read.",
+      "new": "Every component of the charge is named and given its own published document; what those documents say could not be read. Split during IND-91 part B lint remediation into one claim per published component.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 384 characters. The board names nine separate published charge components and one charged as per actuals, each independently checkable against its own document.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b29",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_rate_components_published_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_rate_components_published_2",
+        "text": "One such document covers the application fee.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 384 characters. The board names nine separate published charge components and one charged as per actuals, each independently checkable against its own document.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b30",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_rate_components_published_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_rate_components_published_3",
+        "text": "One such document covers the attachment fee.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 384 characters. The board names nine separate published charge components and one charged as per actuals, each independently checkable against its own document.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b31",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_rate_components_published_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_rate_components_published_4",
+        "text": "One such document covers the inspection charges.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 384 characters. The board names nine separate published charge components and one charged as per actuals, each independently checkable against its own document.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b32",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_rate_components_published_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_rate_components_published_5",
+        "text": "One such document covers the three months minimum deposit.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 384 characters. The board names nine separate published charge components and one charged as per actuals, each independently checkable against its own document.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b33",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_rate_components_published_6",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_rate_components_published_6",
+        "text": "One such document covers the meter cost for mechanical and AMR meters.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 384 characters. The board names nine separate published charge components and one charged as per actuals, each independently checkable against its own document.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b34",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_rate_components_published_7",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_rate_components_published_7",
+        "text": "One such document covers the sanitary point charges.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 384 characters. The board names nine separate published charge components and one charged as per actuals, each independently checkable against its own document.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b35",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_rate_components_published_8",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_rate_components_published_8",
+        "text": "One such document covers the GBWASP and BCC charges.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 384 characters. The board names nine separate published charge components and one charged as per actuals, each independently checkable against its own document.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b36",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_rate_components_published_9",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_rate_components_published_9",
+        "text": "One such document covers the revised prorata charges for residential buildings.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 384 characters. The board names nine separate published charge components and one charged as per actuals, each independently checkable against its own document.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b37",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_rate_components_published_10",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_rate_components_published_10",
+        "text": "One such document covers the prorata charges for other buildings.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. What that document says could not be read; see claim_bengaluru_grid_water_rate_documents_unreadable."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 384 characters. The board names nine separate published charge components and one charged as per actuals, each independently checkable against its own document.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b38",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_rate_components_published_11",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_rate_components_published_11",
+        "text": "The board states that line cost is charged as per actuals.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_components_published; one published item, one claim. A formula rather than a figure."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 384 characters. The board names nine separate published charge components and one charged as per actuals, each independently checkable against its own document.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b39",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_rate_documents_unreadable",
+      "fieldPath": "/text",
+      "old": "Each of the board's linked rate documents for a new connection was retrieved and is a one-page scan with no extractable text layer, so no figure could be read from any of them.",
+      "new": "Each of the board's linked rate documents for a new connection is a one-page scan with no extractable text layer.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'and'. What the documents are and what could not be read from them are two separately checkable statements.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b40",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_rate_documents_unreadable",
+      "fieldPath": "/notes",
+      "old": "Recorded as a limitation on this run's reach, not as a claim about what the documents contain.",
+      "new": "Recorded as a limitation on this run's reach, not as a claim about what the documents contain. Split during IND-91 part B lint remediation; the consequence is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'and'. What the documents are and what could not be read from them are two separately checkable statements.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b41",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_rate_documents_unreadable_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_rate_documents_unreadable_2",
+        "text": "No figure could be read from any of those documents.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_rate_documents_unreadable; one published item, one claim. A limitation on this run's reach, not a claim about what the documents contain."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'and'. What the documents are and what could not be read from them are two separately checkable statements.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_fee_documents"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b42",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_tentative_charges_after_entry",
+      "fieldPath": "/text",
+      "old": "The board's consumer user manual states that on the final review screen the system displays the tentative charges payable for the water connection based on the information entered, and that the applicant then chooses to pay in full or opt for an EMI.",
+      "new": "The board's consumer user manual states that on the final review screen the system displays the tentative charges payable for the water connection based on the information entered.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 250 characters and login-boundary-overclaim for a sentence describing a gated screen without uncertainty wording. The screen and the payment choice are two separately checkable facts, and both fragments now record that no login was used.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b43",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_tentative_charges_after_entry",
+      "fieldPath": "/notes",
+      "old": "The amount is computed inside the application rather than published, and the screen that shows it sits past the login.",
+      "new": "The amount is computed inside the application rather than published, and the screen that shows it sits past the login. No login was used, no OTP was requested and no personal data was entered. Split during IND-91 part B lint remediation; the payment choice is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 250 characters and login-boundary-overclaim for a sentence describing a gated screen without uncertainty wording. The screen and the payment choice are two separately checkable facts, and both fragments now record that no login was used.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b44",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_tentative_charges_after_entry_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_tentative_charges_after_entry_2",
+        "text": "The manual states that the applicant then chooses to pay in full or opt for an EMI.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_tentative_charges_after_entry; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 250 characters and login-boundary-overclaim for a sentence describing a gated screen without uncertainty wording. The screen and the payment choice are two separately checkable facts, and both fragments now record that no login was used.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the cost cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b45",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_recurring_tariff",
+      "fieldPath": "/text",
+      "old": "The board's revised water tariff ready reckoner, for consumption with effect from 1 April 2025, gives the domestic slab tariff as Rs. 8.5 per kilolitre for a minimum of 0 to 8 kilolitres, Rs. 14 from 8 to 25, Rs. 34 from 25 to 50 and Rs. 55 from 50 to 100 and above, with sanitary charges for a domestic connection of Rs. 14 flat for consumption up to 8,000 litres and 25 per cent of water supply charges per month above that.",
+      "new": "The board's revised water tariff ready reckoner for consumption with effect from 1 April 2025 gives the domestic slab tariff.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 426 characters. The ready reckoner carried four consumption bands and two sanitary charge rules, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_tariff_2025"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b46",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_recurring_tariff",
+      "fieldPath": "/notes",
+      "old": "What the household pays once connected, not what the connection costs; recorded for completeness and not used for the cost cell.",
+      "new": "What the household pays once connected, not what the connection costs; recorded for completeness and not used for the cost cell. Split during IND-91 part B lint remediation into one claim per published band.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 426 characters. The ready reckoner carried four consumption bands and two sanitary charge rules, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_tariff_2025"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b47",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_recurring_tariff_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_recurring_tariff_2",
+        "text": "That tariff is Rs. 8.5 per kilolitre for a minimum of 0 to 8 kilolitres.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_tariff_2025"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_recurring_tariff; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 426 characters. The ready reckoner carried four consumption bands and two sanitary charge rules, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_tariff_2025"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b48",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_recurring_tariff_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_recurring_tariff_3",
+        "text": "That tariff is Rs. 14 per kilolitre from 8 to 25 kilolitres.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_tariff_2025"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_recurring_tariff; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 426 characters. The ready reckoner carried four consumption bands and two sanitary charge rules, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_tariff_2025"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b49",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_recurring_tariff_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_recurring_tariff_4",
+        "text": "That tariff is Rs. 34 per kilolitre from 25 to 50 kilolitres.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_tariff_2025"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_recurring_tariff; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 426 characters. The ready reckoner carried four consumption bands and two sanitary charge rules, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_tariff_2025"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b50",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_recurring_tariff_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_recurring_tariff_5",
+        "text": "That tariff is Rs. 55 per kilolitre from 50 to 100 kilolitres and above.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_tariff_2025"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_recurring_tariff; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 426 characters. The ready reckoner carried four consumption bands and two sanitary charge rules, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_tariff_2025"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b51",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_recurring_tariff_6",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_recurring_tariff_6",
+        "text": "Sanitary charges for a domestic connection are Rs. 14 flat for consumption up to 8,000 litres.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_tariff_2025"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_recurring_tariff; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 426 characters. The ready reckoner carried four consumption bands and two sanitary charge rules, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_tariff_2025"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b52",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_recurring_tariff_7",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_recurring_tariff_7",
+        "text": "Above that consumption sanitary charges are 25 per cent of water supply charges per month.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_tariff_2025"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_recurring_tariff; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 426 characters. The ready reckoner carried four consumption bands and two sanitary charge rules, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_tariff_2025"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b53",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_public_status_routes",
+      "fieldPath": "/text",
+      "old": "The board publishes two public application-status routes reachable without login: one on its online water connection consumer page taking an application number, and one on its Jaladhare consumer portal to check the status of the application.",
+      "new": "The board publishes two public application-status routes reachable without login.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 241 characters. That two public status routes exist, and what each of them is, are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_owc_portal"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b54",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_public_status_routes",
+      "fieldPath": "/notes",
+      "old": "The routes and their fields were observed; nothing was entered, so no claim is made about what they return.",
+      "new": "The routes and their fields were observed; nothing was entered and no login was used, so no claim is made about what they return. Split during IND-91 part B lint remediation into the two routes.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 241 characters. That two public status routes exist, and what each of them is, are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_owc_portal"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b55",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_public_status_routes_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_public_status_routes_2",
+        "text": "One route is on its online water connection consumer page and takes an application number.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_owc_portal"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_public_status_routes; one published item, one claim. Nothing was entered and no login was used."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 241 characters. That two public status routes exist, and what each of them is, are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_owc_portal"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b56",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_public_status_routes_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_public_status_routes_3",
+        "text": "One route is on its Jaladhare consumer portal to check the status of the application.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_owc_portal"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_public_status_routes; one published item, one claim. Nothing was entered and no login was used."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 241 characters. That two public status routes exist, and what each of them is, are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_owc_portal"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b57",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_acknowledgement_and_demand_note",
+      "fieldPath": "/text",
+      "old": "The board's consumer user manual states that after submission the applicant can view and download an acknowledgement from the Acknowledgement tab, that on successful approval of the connection a demand note is generated and appears in the payment section of the application, and that once payment is completed a payment receipt is generated which can be saved.",
+      "new": "The board's consumer user manual states that after submission the applicant can view and download an acknowledgement from the Acknowledgement tab.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length of 360 characters. The acknowledgement, the demand note and the payment receipt are three separately checkable post-submission surfaces.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b58",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_acknowledgement_and_demand_note",
+      "fieldPath": "/notes",
+      "old": "Three distinct surfaces the applicant sees after submitting: an acknowledgement, a demand note on approval, and a payment receipt.",
+      "new": "Three distinct surfaces the applicant sees after submitting: an acknowledgement, a demand note on approval, and a payment receipt. Split during IND-91 part B lint remediation into one claim per surface.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length of 360 characters. The acknowledgement, the demand note and the payment receipt are three separately checkable post-submission surfaces.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b59",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_acknowledgement_and_demand_note_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_acknowledgement_and_demand_note_2",
+        "text": "The manual states that on successful approval of the connection a demand note is generated and appears in the payment section of the application.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_acknowledgement_and_demand_note; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length of 360 characters. The acknowledgement, the demand note and the payment receipt are three separately checkable post-submission surfaces.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b60",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_acknowledgement_and_demand_note_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_acknowledgement_and_demand_note_3",
+        "text": "The manual states that once payment is completed a payment receipt is generated which can be saved.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_acknowledgement_and_demand_note; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length of 360 characters. The acknowledgement, the demand note and the payment receipt are three separately checkable post-submission surfaces.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b61",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_status_shows_stage_and_officer",
+      "fieldPath": "/text",
+      "old": "The board's consumer user manual states that the Status tab shows the current status of the application, the number of stages completed, and the assigned officer for that stage.",
+      "new": "The board's consumer user manual states that the Status tab shows the current status of the application.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. The three things the Status tab shows are three independently checkable facts, and the time, owner and after-submission cells each rest on a different one.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b62",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_status_shows_stage_and_officer",
+      "fieldPath": "/notes",
+      "old": "Stages are counted rather than dated, and the officer is named to the individual applicant inside the application rather than published.",
+      "new": "Stages are counted rather than dated, and the officer is named to the individual applicant inside the application rather than published. Split during IND-91 part B lint remediation into the three things the tab shows, which three different cells were citing as one claim.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. The three things the Status tab shows are three independently checkable facts, and the time, owner and after-submission cells each rest on a different one.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b63",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_status_shows_stage_and_officer_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_status_shows_stage_and_officer_2",
+        "text": "The manual states that the Status tab shows the number of stages completed.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_status_shows_stage_and_officer; one published item, one claim. Stages are counted rather than dated; this is the fragment the time cell rests on."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. The three things the Status tab shows are three independently checkable facts, and the time, owner and after-submission cells each rest on a different one.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b64",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_status_shows_stage_and_officer_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_status_shows_stage_and_officer_3",
+        "text": "The manual states that the Status tab shows the assigned officer for that stage.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_status_shows_stage_and_officer; one published item, one claim. The officer is named to the individual applicant inside the application rather than published; this is the fragment the owner cell rests on."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. The three things the Status tab shows are three independently checkable facts, and the time, owner and after-submission cells each rest on a different one.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b65",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_toll_free_and_helpdesk",
+      "fieldPath": "/text",
+      "old": "The board publishes a toll-free number 1916 on its consumer routes for help, complaints or support related to a water connection application, and links a contact document, a plumber list, a grievance form and a frequently asked questions route.",
+      "new": "The board publishes a toll-free number 1916 on its consumer routes for help or complaints or support related to a water connection application.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 244 characters. The published helpline and the linked support routes are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the owner cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b66",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_toll_free_and_helpdesk",
+      "fieldPath": "/notes",
+      "old": "Institutional contact only. A helpline is a route into the board, not a route to the office or role that decides an application.",
+      "new": "Institutional contact only. A helpline is a route into the board, not a route to the office or role that decides an application. Split during IND-91 part B lint remediation; the linked routes are asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 244 characters. The published helpline and the linked support routes are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b67",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_toll_free_and_helpdesk_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_toll_free_and_helpdesk_2",
+        "text": "The board links a contact document and a plumber list and a grievance form and a frequently asked questions route.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_toll_free_and_helpdesk; one published item, one claim. Institutional contact only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 244 characters. The published helpline and the linked support routes are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer",
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: the owner cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b68",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_login_boundary",
+      "fieldPath": "/text",
+      "old": "The board's application route requires login with a mobile number and an OTP, so the application form, the tentative charges screen and the assigned-officer view sit past a boundary this run did not cross.",
+      "new": "The board's application route requires login with a mobile number and an OTP.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration, and login-boundary-overclaim for a boundary sentence without uncertainty wording. The boundary itself and each surface behind it are separately checkable, and every fragment now records that no login was used and no OTP was requested.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owc_portal",
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b69",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_login_boundary",
+      "fieldPath": "/notes",
+      "old": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The status routes beside it need no login, which is why the after-submission evidence does not rest on the gated surface.",
+      "new": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The status routes beside it need no login, which is why the after-submission evidence does not rest on the gated surface. No login was used, no OTP was requested and no personal data was entered. Split during IND-91 part B lint remediation into the boundary and the three surfaces behind it.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration, and login-boundary-overclaim for a boundary sentence without uncertainty wording. The boundary itself and each surface behind it are separately checkable, and every fragment now records that no login was used and no OTP was requested.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owc_portal",
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b70",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_login_boundary_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_login_boundary_2",
+        "text": "The application form sits past that login boundary.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owc_portal",
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "evidenceGrade": "B",
+        "basis": "mixed",
+        "status": "partial",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_login_boundary; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration, and login-boundary-overclaim for a boundary sentence without uncertainty wording. The boundary itself and each surface behind it are separately checkable, and every fragment now records that no login was used and no OTP was requested.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owc_portal",
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b71",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_login_boundary_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_login_boundary_3",
+        "text": "The tentative charges screen sits past that login boundary.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owc_portal",
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "evidenceGrade": "B",
+        "basis": "mixed",
+        "status": "partial",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_login_boundary; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration, and login-boundary-overclaim for a boundary sentence without uncertainty wording. The boundary itself and each surface behind it are separately checkable, and every fragment now records that no login was used and no OTP was requested.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owc_portal",
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b72",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_login_boundary_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_login_boundary_4",
+        "text": "The assigned-officer view sits past that login boundary.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_water_owc_portal",
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "evidenceGrade": "B",
+        "basis": "mixed",
+        "status": "partial",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_login_boundary; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration, and login-boundary-overclaim for a boundary sentence without uncertainty wording. The boundary itself and each surface behind it are separately checkable, and every fragment now records that no login was used and no OTP was requested.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owc_portal",
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b73",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_connection_charge_unknown",
+      "fieldPath": "/text",
+      "old": "What a resident owner pays for a new domestic water connection is not established by any reviewed public page: every rate document the board publishes is an unreadable scan, the route that would give the total returns an empty file, and the computed amount appears only inside the application after login.",
+      "new": "What a resident owner pays for a new domestic water connection is not established by any reviewed public page.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 305 characters. The unknown and the three observed reasons behind it are four separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b74",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_connection_charge_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Part of the reason is a login boundary, and part is that the published documents cannot be read at all.",
+      "new": "Retained because the uncertainty itself matters to the journey. Part of the reason is a login boundary, and part is that the published documents cannot be read at all. No login was used, no OTP was requested and no personal data was entered. Split during IND-91 part B lint remediation into the unknown and the three observed reasons behind it.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 305 characters. The unknown and the three observed reasons behind it are four separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b75",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_connection_charge_unknown_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_connection_charge_unknown_2",
+        "text": "Every rate document the board publishes is an unreadable scan.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_connection_charge_unknown; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 305 characters. The unknown and the three observed reasons behind it are four separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b76",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_connection_charge_unknown_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_connection_charge_unknown_3",
+        "text": "The route that would give the total returns an empty file.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_connection_charge_unknown; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 305 characters. The unknown and the three observed reasons behind it are four separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b77",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_connection_charge_unknown_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_connection_charge_unknown_4",
+        "text": "The computed amount appears only inside the application after login.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_connection_charge_unknown; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 305 characters. The unknown and the three observed reasons behind it are four separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b78",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_timeline_unknown",
+      "fieldPath": "/text",
+      "old": "How long a new domestic water connection takes, at any stage or in total, is not established by any reviewed public page; the board publishes a count of stages completed but no period for any of them.",
+      "new": "How long a new domestic water connection takes at any stage or in total is not established by any reviewed public page.",
+      "reason": "Pre-audit lint reported compound-claim for a semicolon and an enumeration. The unknown and the observed reason behind it are two separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b79",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_timeline_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Not login-related: the stage count is described in a public manual and carries no days.",
+      "new": "Retained because the uncertainty itself matters to the journey. Not login-related: the stage count is described in a public manual and carries no days. Split during IND-91 part B lint remediation; the observed reason is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for a semicolon and an enumeration. The unknown and the observed reason behind it are two separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b80",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_timeline_unknown_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_timeline_unknown_2",
+        "text": "The board publishes a count of stages completed but no period for any of them.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_timeline_unknown; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for a semicolon and an enumeration. The unknown and the observed reason behind it are two separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b81",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_deciding_office_unknown",
+      "fieldPath": "/text",
+      "old": "Which office or officer sanctions a new domestic water connection is not established by any reviewed public page; the board names an assigned officer only inside an individual application after login, and its published contact routes give a helpline and a general contact document rather than the deciding role.",
+      "new": "Which office or officer sanctions a new domestic water connection is not established by any reviewed public page.",
+      "reason": "Pre-audit lint reported compound-claim for a semicolon and text length of 311 characters. The unknown and the two observed reasons behind it are three separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b82",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_deciding_office_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Partly login-related: the assigned officer is shown to the applicant past the boundary.",
+      "new": "Retained because the uncertainty itself matters to the journey. Partly login-related: the assigned officer is shown to the applicant past the boundary. No login was used, no OTP was requested and no personal data was entered. Split during IND-91 part B lint remediation into the unknown and the two observed reasons behind it.",
+      "reason": "Pre-audit lint reported compound-claim for a semicolon and text length of 311 characters. The unknown and the two observed reasons behind it are three separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b83",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_deciding_office_unknown_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_deciding_office_unknown_2",
+        "text": "The board names an assigned officer only inside an individual application after login.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_deciding_office_unknown; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for a semicolon and text length of 311 characters. The unknown and the two observed reasons behind it are three separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b84",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_deciding_office_unknown_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_water_deciding_office_unknown_3",
+        "text": "The board's published contact routes give a helpline and a general contact document rather than the deciding role.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_deciding_office_unknown; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for a semicolon and text length of 311 characters. The unknown and the two observed reasons behind it are three separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b85",
+      "recordType": "expectations",
+      "recordId": "water-connection:cost",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_bengaluru_grid_water_rate_components_published",
+        "claim_bengaluru_grid_water_rate_documents_unreadable",
+        "claim_bengaluru_grid_water_know_your_fees_empty",
+        "claim_bengaluru_grid_water_tentative_charges_after_entry",
+        "claim_bengaluru_grid_water_application_form_purchased"
+      ],
+      "new": [
+        "claim_bengaluru_grid_water_rate_components_published",
+        "claim_bengaluru_grid_water_rate_components_published_2",
+        "claim_bengaluru_grid_water_rate_components_published_3",
+        "claim_bengaluru_grid_water_rate_components_published_4",
+        "claim_bengaluru_grid_water_rate_components_published_5",
+        "claim_bengaluru_grid_water_rate_components_published_6",
+        "claim_bengaluru_grid_water_rate_components_published_7",
+        "claim_bengaluru_grid_water_rate_components_published_8",
+        "claim_bengaluru_grid_water_rate_components_published_9",
+        "claim_bengaluru_grid_water_rate_components_published_10",
+        "claim_bengaluru_grid_water_rate_components_published_11",
+        "claim_bengaluru_grid_water_rate_documents_unreadable",
+        "claim_bengaluru_grid_water_rate_documents_unreadable_2",
+        "claim_bengaluru_grid_water_know_your_fees_empty",
+        "claim_bengaluru_grid_water_tentative_charges_after_entry",
+        "claim_bengaluru_grid_water_tentative_charges_after_entry_2",
+        "claim_bengaluru_grid_water_application_form_purchased",
+        "claim_bengaluru_grid_water_application_form_purchased_2",
+        "claim_bengaluru_grid_water_application_form_purchased_3",
+        "claim_bengaluru_grid_water_application_form_purchased_4"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the named but unreadable charge components, the empty fees route and the gated tentative-charges screen; documents the five required documents with the manual's additions; eligibility the three application types; time the stage count; owner the helpline and the assigned officer shown inside the application; after-submission the two public status routes, the acknowledgement, the demand note and the receipt. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual",
+          "source_bengaluru_grid_water_fee_documents",
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b86",
+      "recordType": "expectations",
+      "recordId": "water-connection:documents",
+      "fieldPath": "/cells/documents/claimIds",
+      "old": [
+        "claim_bengaluru_grid_water_documents_required",
+        "claim_bengaluru_grid_water_mandatory_documents_manual",
+        "claim_bengaluru_grid_water_rwh_threshold"
+      ],
+      "new": [
+        "claim_bengaluru_grid_water_documents_required",
+        "claim_bengaluru_grid_water_documents_required_2",
+        "claim_bengaluru_grid_water_documents_required_3",
+        "claim_bengaluru_grid_water_documents_required_4",
+        "claim_bengaluru_grid_water_documents_required_5",
+        "claim_bengaluru_grid_water_documents_required_6",
+        "claim_bengaluru_grid_water_mandatory_documents_manual",
+        "claim_bengaluru_grid_water_mandatory_documents_manual_2",
+        "claim_bengaluru_grid_water_mandatory_documents_manual_3",
+        "claim_bengaluru_grid_water_mandatory_documents_manual_4",
+        "claim_bengaluru_grid_water_rwh_threshold"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the named but unreadable charge components, the empty fees route and the gated tentative-charges screen; documents the five required documents with the manual's additions; eligibility the three application types; time the stage count; owner the helpline and the assigned officer shown inside the application; after-submission the two public status routes, the acknowledgement, the demand note and the receipt. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual",
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b87",
+      "recordType": "expectations",
+      "recordId": "water-connection:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_bengaluru_grid_water_application_types",
+        "claim_bengaluru_grid_water_rwh_threshold"
+      ],
+      "new": [
+        "claim_bengaluru_grid_water_application_types",
+        "claim_bengaluru_grid_water_application_types_2",
+        "claim_bengaluru_grid_water_application_types_3",
+        "claim_bengaluru_grid_water_application_types_4",
+        "claim_bengaluru_grid_water_rwh_threshold"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the named but unreadable charge components, the empty fees route and the gated tentative-charges screen; documents the five required documents with the manual's additions; eligibility the three application types; time the stage count; owner the helpline and the assigned officer shown inside the application; after-submission the two public status routes, the acknowledgement, the demand note and the receipt. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual",
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b88",
+      "recordType": "expectations",
+      "recordId": "water-connection:time",
+      "fieldPath": "/cells/time/claimIds",
+      "old": [
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer"
+      ],
+      "new": [
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer",
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the named but unreadable charge components, the empty fees route and the gated tentative-charges screen; documents the five required documents with the manual's additions; eligibility the three application types; time the stage count; owner the helpline and the assigned officer shown inside the application; after-submission the two public status routes, the acknowledgement, the demand note and the receipt. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b89",
+      "recordType": "expectations",
+      "recordId": "water-connection:owner",
+      "fieldPath": "/cells/owner/claimIds",
+      "old": [
+        "claim_bengaluru_grid_water_toll_free_and_helpdesk",
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer"
+      ],
+      "new": [
+        "claim_bengaluru_grid_water_toll_free_and_helpdesk",
+        "claim_bengaluru_grid_water_toll_free_and_helpdesk_2",
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer_3"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the named but unreadable charge components, the empty fees route and the gated tentative-charges screen; documents the five required documents with the manual's additions; eligibility the three application types; time the stage count; owner the helpline and the assigned officer shown inside the application; after-submission the two public status routes, the acknowledgement, the demand note and the receipt. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual",
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_b90",
+      "recordType": "expectations",
+      "recordId": "water-connection:after-submission",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [
+        "claim_bengaluru_grid_water_public_status_routes",
+        "claim_bengaluru_grid_water_acknowledgement_and_demand_note",
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer"
+      ],
+      "new": [
+        "claim_bengaluru_grid_water_public_status_routes",
+        "claim_bengaluru_grid_water_public_status_routes_2",
+        "claim_bengaluru_grid_water_public_status_routes_3",
+        "claim_bengaluru_grid_water_acknowledgement_and_demand_note",
+        "claim_bengaluru_grid_water_acknowledgement_and_demand_note_2",
+        "claim_bengaluru_grid_water_acknowledgement_and_demand_note_3",
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer",
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer_2",
+        "claim_bengaluru_grid_water_status_shows_stage_and_officer_3"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the named but unreadable charge components, the empty fees route and the gated tentative-charges screen; documents the five required documents with the manual's additions; eligibility the three application types; time the stage count; owner the helpline and the assigned officer shown inside the application; after-submission the two public status routes, the acknowledgement, the demand note and the receipt. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual",
+          "source_bengaluru_grid_water_owc_portal",
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "water-connection:cost",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_bengaluru_grid_water_rate_components_published",
+        "claim_bengaluru_grid_water_rate_components_published_2",
+        "claim_bengaluru_grid_water_rate_components_published_3",
+        "claim_bengaluru_grid_water_rate_components_published_4",
+        "claim_bengaluru_grid_water_rate_components_published_5",
+        "claim_bengaluru_grid_water_rate_components_published_6",
+        "claim_bengaluru_grid_water_rate_components_published_7",
+        "claim_bengaluru_grid_water_rate_components_published_8",
+        "claim_bengaluru_grid_water_rate_components_published_9",
+        "claim_bengaluru_grid_water_rate_components_published_10",
+        "claim_bengaluru_grid_water_rate_components_published_11",
+        "claim_bengaluru_grid_water_rate_documents_unreadable",
+        "claim_bengaluru_grid_water_rate_documents_unreadable_2",
+        "claim_bengaluru_grid_water_know_your_fees_empty",
+        "claim_bengaluru_grid_water_tentative_charges_after_entry",
+        "claim_bengaluru_grid_water_tentative_charges_after_entry_2",
+        "claim_bengaluru_grid_water_application_form_purchased",
+        "claim_bengaluru_grid_water_application_form_purchased_2",
+        "claim_bengaluru_grid_water_application_form_purchased_3",
+        "claim_bengaluru_grid_water_application_form_purchased_4"
+      ],
+      "new": [
+        "claim_bengaluru_grid_water_rate_components_published",
+        "claim_bengaluru_grid_water_rate_components_published_2",
+        "claim_bengaluru_grid_water_rate_components_published_3",
+        "claim_bengaluru_grid_water_rate_components_published_4",
+        "claim_bengaluru_grid_water_rate_components_published_5",
+        "claim_bengaluru_grid_water_rate_components_published_6",
+        "claim_bengaluru_grid_water_rate_components_published_7",
+        "claim_bengaluru_grid_water_rate_components_published_8",
+        "claim_bengaluru_grid_water_rate_components_published_9",
+        "claim_bengaluru_grid_water_rate_components_published_10",
+        "claim_bengaluru_grid_water_rate_components_published_11",
+        "claim_bengaluru_grid_water_rate_documents_unreadable",
+        "claim_bengaluru_grid_water_rate_documents_unreadable_2",
+        "claim_bengaluru_grid_water_know_your_fees_empty",
+        "claim_bengaluru_grid_water_tentative_charges_after_entry",
+        "claim_bengaluru_grid_water_tentative_charges_after_entry_2",
+        "claim_bengaluru_grid_water_application_form_purchased_3"
+      ],
+      "reason": "Three of the listed claims assert nothing about cost. claim_bengaluru_grid_water_application_form_purchased asserts that the applicant logs in with a mobile number, _2 that the applicant provides an email address and mobile number, and _4 that the applicant fills the application and uploads the documents. None names an amount, a fee or a payment, so under the PROTOCOL section 8 requirement that a listed claim support the cell's state they cannot support the cost cell's mentioned value. They were carried in when the IND-91 part B split propagated every fragment of the parent claim into the list that had cited the unsplit parent. claim_bengaluru_grid_water_application_form_purchased_3, the payment step with no amount, is retained because PROTOCOL section 8 names exactly that pattern as mentioned. The cell state is unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "Read against PROTOCOL section 8 cost definition. The retained claims still name every charge head without a figure, record the unreadable rate documents and the zero-byte Know Your Connection Fees route, and place the computed figure past login, so mentioned remains correct after the removal."
+      },
+      "id": "corr_bengaluru_grid_water_connection_r01"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "water-connection:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_bengaluru_grid_water_application_types",
+        "claim_bengaluru_grid_water_application_types_2",
+        "claim_bengaluru_grid_water_application_types_3",
+        "claim_bengaluru_grid_water_application_types_4",
+        "claim_bengaluru_grid_water_rwh_threshold"
+      ],
+      "new": [
+        "claim_bengaluru_grid_water_application_types",
+        "claim_bengaluru_grid_water_application_types_3",
+        "claim_bengaluru_grid_water_rwh_threshold"
+      ],
+      "reason": "PROTOCOL section 8 makes eligibility stated only on a rule that decides who qualifies or which route applies. claim_bengaluru_grid_water_application_types_2 states the EMI payment terms, an entry payment of Rs. 1,000 with the balance billed monthly, and claim_bengaluru_grid_water_application_types_4 states which charge heads attach to the 110 Village Based Application. Both describe what a route costs rather than who may use it or when it applies, so neither supports this cell. The cell stays stated on claim_bengaluru_grid_water_application_types and claim_bengaluru_grid_water_application_types_3, which give the route-selection rule, and claim_bengaluru_grid_water_rwh_threshold, which turns on a measurable property of the premises.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_consumer_manual",
+          "source_bengaluru_grid_water_owcv2_consumer"
+        ],
+        "auditNote": "Both removed claims are cost-bearing content. Section 9 makes claimIds optional for a mentioned cell, so no addition to the cost cell is proposed here; if either is added later the cost note must keep stating that Rs. 1,000 is an instalment entry payment on an undisclosed principal and does not establish what the connection costs."
+      },
+      "id": "corr_bengaluru_grid_water_connection_r02"
+    },
+    {
+      "recordType": "ledger",
+      "recordId": "water-connection",
+      "fieldPath": "/meta/disclaimer",
+      "old": "Independent research, not official advice. Grid-only benchmark run: sources and claims only, no nodes, edges, roadblocks or journeys. This is a second, independently gathered row for Bengaluru, produced by the same method as the twelve city rows so that the pilot site is measured the way the comparison cities were; it does not reuse and did not read the deep pilot ledger for this service. Desk research, no counter visited. Limitations: every one of the board's published rate documents for a new connection is a one-page scan with no text layer, so no figure could be read from any of them; the board's own Know Your Connection Fees route returned a zero-byte file; the amount payable is computed inside the application after login, which was not crossed; a statement that the board's English-language route does not carry through to its contact and office-location pages was recorded during the pass, and the audit found it uncited under protocol section 7 because the ledger holds no source record for the corporate site those pages sit on; it is retained as a contested claim, supports no cell, and should not be read as an established finding; four of the five source URLs have no Wayback snapshot. Do not submit personal data through this ledger. Two further audit limitations ship unresolved: the source record for the board's rate documents carries neither a publication date nor a visible-date note, which was not correctable without re-observation; and the corporate site bwssb.karnataka.gov.in was searched during the pass but has no source record in this ledger.",
+      "new": "Independent research, not official advice. Grid-only benchmark run: sources and claims only, no nodes, edges, roadblocks or journeys. This is a second, independently gathered row for Bengaluru, produced by the same method as the twelve city rows so that the pilot site is measured the way the comparison cities were; it does not reuse and did not read the deep pilot ledger for this service. Desk research, no counter visited. Limitations: every one of the board's published rate documents for a new connection is a one-page scan with no text layer, so no figure could be read from any of them; the board's own Know Your Connection Fees route returned a zero-byte file; the amount payable is computed inside the application after login, which was not crossed; a statement that the board's English-language route does not carry through to its contact and office-location pages was recorded during the pass, and the audit found it uncited under protocol section 7 because the ledger holds no source record for the corporate site those pages sit on; it is retained as a contested claim, supports no cell, and should not be read as an established finding; four of the five source URLs have no Wayback snapshot. Do not submit personal data through this ledger. One audit limitation ships unresolved: the corporate site's English landing page, contact information page and office location page were searched during the pass but have no source record in this ledger, which is why the claim that the English route did not carry through to those pages is retained as contested and supports no cell. The source record for the board's rate documents carries no publication date but does carry a visible-date note stating that none is shown on the route or on the files it links, so no source-date limitation remains open.",
+      "reason": "The stated limitation is false against the same file. It says the source record for the board's rate documents carries neither a publication date nor a visible-date note, but source_bengaluru_grid_water_fee_documents carries one verbatim: 'Visible date: none is shown on the route or on the files it links.' PROTOCOL section 8 lint check 5 is therefore satisfied for that source and the limitation is stale. The second limb is also imprecise: it says the corporate site bwssb.karnataka.gov.in has no source record, but source_bengaluru_grid_water_tariff_2025 is a record on that host; the accurate limitation is that the corporate site's English landing page, contact information page and office location page have no source record, which is what leaves the contested English-route claim uncited. PROTOCOL section 14 requires stated limitations to describe what is actually unresolved.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_water_fee_documents",
+          "source_bengaluru_grid_water_tariff_2025",
+          "source_bengaluru_grid_water_owc_portal"
+        ],
+        "auditNote": "The other two undated sources carry equivalent visible-date statements ('The page shows no visible last-updated date' and 'Shows no visible last-updated date'), so no source-date finding remains open on this row. The three corporate-site routes named in the replacement are the ones already recorded in the owner cell's searchedRoutes."
+      },
+      "id": "corr_bengaluru_grid_water_connection_r03"
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_i01",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_connection_charge_unknown_2",
+      "fieldPath": "/",
+      "old": {
+        "id": "claim_bengaluru_grid_water_connection_charge_unknown_2",
+        "text": "Every rate document the board publishes is an unreadable scan.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_connection_charge_unknown; one published item, one claim."
+      },
+      "new": null,
+      "reason": "A fragment created by the IND-91 part B split asserts a directly observed fact but inherited evidenceGrade Unknown, basis inference and an empty sourceIds list from its Unknown parent, which protocol sections 4, 5 and 7 do not permit. The same fact is already carried by a sourced, graded claim in this ledger, so the fragment is deleted as a duplicate under section 13 and the fact is recorded in the parent claim's notes. No evidence is lost and no cell cited the fragment. The fact is carried by claim_bengaluru_grid_water_rate_documents_unreadable, which is Grade B, verified and sourced.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B integrator follow-up, on the re-audit finding. Deletion, not a downgrade."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_i02",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_connection_charge_unknown_3",
+      "fieldPath": "/",
+      "old": {
+        "id": "claim_bengaluru_grid_water_connection_charge_unknown_3",
+        "text": "The route that would give the total returns an empty file.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_connection_charge_unknown; one published item, one claim."
+      },
+      "new": null,
+      "reason": "A fragment created by the IND-91 part B split asserts a directly observed fact but inherited evidenceGrade Unknown, basis inference and an empty sourceIds list from its Unknown parent, which protocol sections 4, 5 and 7 do not permit. The same fact is already carried by a sourced, graded claim in this ledger, so the fragment is deleted as a duplicate under section 13 and the fact is recorded in the parent claim's notes. No evidence is lost and no cell cited the fragment. The fact is carried by claim_bengaluru_grid_water_know_your_fees_empty, which is Grade B, verified and sourced.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B integrator follow-up, on the re-audit finding. Deletion, not a downgrade."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_i03",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_connection_charge_unknown_4",
+      "fieldPath": "/",
+      "old": {
+        "id": "claim_bengaluru_grid_water_connection_charge_unknown_4",
+        "text": "The computed amount appears only inside the application after login.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_connection_charge_unknown; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+      },
+      "new": null,
+      "reason": "A fragment created by the IND-91 part B split asserts a directly observed fact but inherited evidenceGrade Unknown, basis inference and an empty sourceIds list from its Unknown parent, which protocol sections 4, 5 and 7 do not permit. The same fact is already carried by a sourced, graded claim in this ledger, so the fragment is deleted as a duplicate under section 13 and the fact is recorded in the parent claim's notes. No evidence is lost and no cell cited the fragment. The fact is carried by claim_bengaluru_grid_water_tentative_charges_after_entry and claim_bengaluru_grid_water_login_boundary_3, both Grade B, verified and sourced.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B integrator follow-up, on the re-audit finding. Deletion, not a downgrade."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_i04",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_connection_charge_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Part of the reason is a login boundary, and part is that the published documents cannot be read at all. No login was used, no OTP was requested and no personal data was entered. Split during IND-91 part B lint remediation into the unknown and the three observed reasons behind it.",
+      "new": "Retained because the uncertainty itself matters to the journey. Part of the reason is a login boundary, and part is that the published documents cannot be read at all. No login was used, no OTP was requested and no personal data was entered. The three observed reasons behind this unknown are carried by sourced claims rather than by fragments of this one: every rate document is an unreadable scan (claim_bengaluru_grid_water_rate_documents_unreadable), the route that would give the total returns an empty file (claim_bengaluru_grid_water_know_your_fees_empty), and the computed amount appears only past the login (claim_bengaluru_grid_water_tentative_charges_after_entry and claim_bengaluru_grid_water_login_boundary_3).",
+      "reason": "The three deleted fragments recorded observations that are already carried by sourced Grade B claims. The notes now point at those claims so the reasoning behind the unknown is preserved without a second, ungraded copy of the same observations.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B integrator follow-up, acting on the fresh re-auditor's finding."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_i05",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_timeline_unknown_2",
+      "fieldPath": "/",
+      "old": {
+        "id": "claim_bengaluru_grid_water_timeline_unknown_2",
+        "text": "The board publishes a count of stages completed but no period for any of them.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_timeline_unknown; one published item, one claim."
+      },
+      "new": null,
+      "reason": "A fragment created by the IND-91 part B split asserts a directly observed fact but inherited evidenceGrade Unknown, basis inference and an empty sourceIds list from its Unknown parent, which protocol sections 4, 5 and 7 do not permit. The same fact is already carried by a sourced, graded claim in this ledger, so the fragment is deleted as a duplicate under section 13 and the fact is recorded in the parent claim's notes. No evidence is lost and no cell cited the fragment. The fact is carried by claim_bengaluru_grid_water_status_shows_stage_and_officer_2, which is Grade B, verified and sourced.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B integrator follow-up, on the re-audit finding. Deletion, not a downgrade."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_i06",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_timeline_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Not login-related: the stage count is described in a public manual and carries no days. Split during IND-91 part B lint remediation; the observed reason is asserted separately.",
+      "new": "Retained because the uncertainty itself matters to the journey. Not login-related: the stage count is described in a public manual and carries no days. The observed reason is carried by claim_bengaluru_grid_water_status_shows_stage_and_officer_2, which records that the Status tab shows a count of stages completed.",
+      "reason": "The deleted fragment recorded an observation already carried by a sourced Grade B claim. The notes now point at that claim.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B integrator follow-up, acting on the fresh re-auditor's finding."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_i07",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_deciding_office_unknown_2",
+      "fieldPath": "/",
+      "old": {
+        "id": "claim_bengaluru_grid_water_deciding_office_unknown_2",
+        "text": "The board names an assigned officer only inside an individual application after login.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_deciding_office_unknown; one published item, one claim. No login was used, no OTP was requested and no personal data was entered."
+      },
+      "new": null,
+      "reason": "A fragment created by the IND-91 part B split asserts a directly observed fact but inherited evidenceGrade Unknown, basis inference and an empty sourceIds list from its Unknown parent, which protocol sections 4, 5 and 7 do not permit. The same fact is already carried by a sourced, graded claim in this ledger, so the fragment is deleted as a duplicate under section 13 and the fact is recorded in the parent claim's notes. No evidence is lost and no cell cited the fragment. The fact is carried by claim_bengaluru_grid_water_login_boundary_4, which is Grade B, sourced.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B integrator follow-up, on the re-audit finding. Deletion, not a downgrade."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_i08",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_deciding_office_unknown_3",
+      "fieldPath": "/",
+      "old": {
+        "id": "claim_bengaluru_grid_water_deciding_office_unknown_3",
+        "text": "The board's published contact routes give a helpline and a general contact document rather than the deciding role.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_water_deciding_office_unknown; one published item, one claim."
+      },
+      "new": null,
+      "reason": "A fragment created by the IND-91 part B split asserts a directly observed fact but inherited evidenceGrade Unknown, basis inference and an empty sourceIds list from its Unknown parent, which protocol sections 4, 5 and 7 do not permit. The same fact is already carried by a sourced, graded claim in this ledger, so the fragment is deleted as a duplicate under section 13 and the fact is recorded in the parent claim's notes. No evidence is lost and no cell cited the fragment. The fact is carried by claim_bengaluru_grid_water_toll_free_and_helpdesk and claim_bengaluru_grid_water_toll_free_and_helpdesk_2, both Grade B, verified and sourced.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B integrator follow-up, on the re-audit finding. Deletion, not a downgrade."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_water_connection_i09",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_water_deciding_office_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Partly login-related: the assigned officer is shown to the applicant past the boundary. No login was used, no OTP was requested and no personal data was entered. Split during IND-91 part B lint remediation into the unknown and the two observed reasons behind it.",
+      "new": "Retained because the uncertainty itself matters to the journey. Partly login-related: the assigned officer is shown to the applicant past the boundary. No login was used, no OTP was requested and no personal data was entered. The two observed reasons behind this unknown are carried by sourced claims: the assigned-officer view sits past the login boundary (claim_bengaluru_grid_water_login_boundary_4), and the published contact routes give a helpline and a general contact document (claim_bengaluru_grid_water_toll_free_and_helpdesk and claim_bengaluru_grid_water_toll_free_and_helpdesk_2).",
+      "reason": "The two deleted fragments recorded observations already carried by sourced Grade B claims. The notes now point at those claims.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B integrator follow-up, acting on the fresh re-auditor's finding."
+      }
+    }
+  ],
+  "runs": [
+    {
+      "runId": "ind91_part_b_integrator_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B integrator follow-up: findings raised by the fresh re-auditors that fall outside the field-level corrections contract (duplicate mis-graded split fragments, unsourced cell-note prose, a source record covering two routes, and missing archive limitations).",
+      "correctionIds": [
+        "corr_bengaluru_grid_water_connection_i01",
+        "corr_bengaluru_grid_water_connection_i02",
+        "corr_bengaluru_grid_water_connection_i03",
+        "corr_bengaluru_grid_water_connection_i04",
+        "corr_bengaluru_grid_water_connection_i05",
+        "corr_bengaluru_grid_water_connection_i06",
+        "corr_bengaluru_grid_water_connection_i07",
+        "corr_bengaluru_grid_water_connection_i08",
+        "corr_bengaluru_grid_water_connection_i09"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_lint_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B pre-audit lint remediation (protocol section 8).",
+      "correctionIds": [
+        "corr_bengaluru_grid_water_connection_b01",
+        "corr_bengaluru_grid_water_connection_b02",
+        "corr_bengaluru_grid_water_connection_b03",
+        "corr_bengaluru_grid_water_connection_b04",
+        "corr_bengaluru_grid_water_connection_b05",
+        "corr_bengaluru_grid_water_connection_b06",
+        "corr_bengaluru_grid_water_connection_b07",
+        "corr_bengaluru_grid_water_connection_b08",
+        "corr_bengaluru_grid_water_connection_b09",
+        "corr_bengaluru_grid_water_connection_b10",
+        "corr_bengaluru_grid_water_connection_b11",
+        "corr_bengaluru_grid_water_connection_b12",
+        "corr_bengaluru_grid_water_connection_b13",
+        "corr_bengaluru_grid_water_connection_b14",
+        "corr_bengaluru_grid_water_connection_b15",
+        "corr_bengaluru_grid_water_connection_b16",
+        "corr_bengaluru_grid_water_connection_b17",
+        "corr_bengaluru_grid_water_connection_b18",
+        "corr_bengaluru_grid_water_connection_b19",
+        "corr_bengaluru_grid_water_connection_b20",
+        "corr_bengaluru_grid_water_connection_b21",
+        "corr_bengaluru_grid_water_connection_b22",
+        "corr_bengaluru_grid_water_connection_b23",
+        "corr_bengaluru_grid_water_connection_b24",
+        "corr_bengaluru_grid_water_connection_b25",
+        "corr_bengaluru_grid_water_connection_b26",
+        "corr_bengaluru_grid_water_connection_b27",
+        "corr_bengaluru_grid_water_connection_b28",
+        "corr_bengaluru_grid_water_connection_b29",
+        "corr_bengaluru_grid_water_connection_b30",
+        "corr_bengaluru_grid_water_connection_b31",
+        "corr_bengaluru_grid_water_connection_b32",
+        "corr_bengaluru_grid_water_connection_b33",
+        "corr_bengaluru_grid_water_connection_b34",
+        "corr_bengaluru_grid_water_connection_b35",
+        "corr_bengaluru_grid_water_connection_b36",
+        "corr_bengaluru_grid_water_connection_b37",
+        "corr_bengaluru_grid_water_connection_b38",
+        "corr_bengaluru_grid_water_connection_b39",
+        "corr_bengaluru_grid_water_connection_b40",
+        "corr_bengaluru_grid_water_connection_b41",
+        "corr_bengaluru_grid_water_connection_b42",
+        "corr_bengaluru_grid_water_connection_b43",
+        "corr_bengaluru_grid_water_connection_b44",
+        "corr_bengaluru_grid_water_connection_b45",
+        "corr_bengaluru_grid_water_connection_b46",
+        "corr_bengaluru_grid_water_connection_b47",
+        "corr_bengaluru_grid_water_connection_b48",
+        "corr_bengaluru_grid_water_connection_b49",
+        "corr_bengaluru_grid_water_connection_b50",
+        "corr_bengaluru_grid_water_connection_b51",
+        "corr_bengaluru_grid_water_connection_b52",
+        "corr_bengaluru_grid_water_connection_b53",
+        "corr_bengaluru_grid_water_connection_b54",
+        "corr_bengaluru_grid_water_connection_b55",
+        "corr_bengaluru_grid_water_connection_b56",
+        "corr_bengaluru_grid_water_connection_b57",
+        "corr_bengaluru_grid_water_connection_b58",
+        "corr_bengaluru_grid_water_connection_b59",
+        "corr_bengaluru_grid_water_connection_b60",
+        "corr_bengaluru_grid_water_connection_b61",
+        "corr_bengaluru_grid_water_connection_b62",
+        "corr_bengaluru_grid_water_connection_b63",
+        "corr_bengaluru_grid_water_connection_b64",
+        "corr_bengaluru_grid_water_connection_b65",
+        "corr_bengaluru_grid_water_connection_b66",
+        "corr_bengaluru_grid_water_connection_b67",
+        "corr_bengaluru_grid_water_connection_b68",
+        "corr_bengaluru_grid_water_connection_b69",
+        "corr_bengaluru_grid_water_connection_b70",
+        "corr_bengaluru_grid_water_connection_b71",
+        "corr_bengaluru_grid_water_connection_b72",
+        "corr_bengaluru_grid_water_connection_b73",
+        "corr_bengaluru_grid_water_connection_b74",
+        "corr_bengaluru_grid_water_connection_b75",
+        "corr_bengaluru_grid_water_connection_b76",
+        "corr_bengaluru_grid_water_connection_b77",
+        "corr_bengaluru_grid_water_connection_b78",
+        "corr_bengaluru_grid_water_connection_b79",
+        "corr_bengaluru_grid_water_connection_b80",
+        "corr_bengaluru_grid_water_connection_b81",
+        "corr_bengaluru_grid_water_connection_b82",
+        "corr_bengaluru_grid_water_connection_b83",
+        "corr_bengaluru_grid_water_connection_b84",
+        "corr_bengaluru_grid_water_connection_b85",
+        "corr_bengaluru_grid_water_connection_b86",
+        "corr_bengaluru_grid_water_connection_b87",
+        "corr_bengaluru_grid_water_connection_b88",
+        "corr_bengaluru_grid_water_connection_b89",
+        "corr_bengaluru_grid_water_connection_b90"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_reaudit_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B re-audit by a fresh isolated auditor after lint remediation (protocol sections 12 and 13).",
+      "correctionIds": [
+        "corr_bengaluru_grid_water_connection_r01",
+        "corr_bengaluru_grid_water_connection_r02",
+        "corr_bengaluru_grid_water_connection_r03"
+      ]
+    }
+  ]
+}

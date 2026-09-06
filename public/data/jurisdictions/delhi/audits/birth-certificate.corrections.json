@@ -1,0 +1,980 @@
+{
+  "serviceId": "birth-certificate",
+  "ledgerPath": "ledger/jurisdictions/delhi/birth-certificate.json",
+  "auditPath": "ledger/jurisdictions/delhi/audits/birth-certificate.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "corr_delhi_birth_01",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_sla_one_week",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades undated official material C; the C row is disjunctive, so undated alone is sufficient. The source's own note records that MCD's citizen charter is served as a page-flip reader and shows no publication or revision date, and this claim asserts a prescribed service-delivery timeline whose currency cannot be established from an undated document.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F1. Grade C still supports a stated cell under section 8, so the time cell state does not change."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_02",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_sla_one_week",
+      "fieldPath": "/notes",
+      "old": "A current MCD statement of the same order as the Chief Registrar charter's 7-day figure, from a source that is not tied to the pre-2022 corporations.",
+      "new": "An MCD statement of the same order as the Chief Registrar charter's 7-day figure, from a source that is not tied to the pre-2022 corporations. Graded C by the second audit because the charter carries no visible publication or revision date. The row is generic to issuance of a birth and death certificate and is not specific to a copy of an already registered birth, so it corroborates the order of magnitude rather than supplying the scenario's own figure.",
+      "reason": "The note called the charter a current source, which section 4 does not permit for material carrying no visible publication or revision date, and it did not record that the row is generic to certificate issuance rather than specific to a copy of an already registered birth.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F1 and F5. The word 'current' was not established for an undated document."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_03",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_sla_institutional_instant",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades undated official material C. MCD's citizen charter shows no publication or revision date, and this claim asserts a prescribed timeline rather than the page's present visible state.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F1."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_04",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_sla_institutional_instant",
+      "fieldPath": "/status",
+      "old": "verified",
+      "new": "partial",
+      "reason": "The row is scoped to an institutional event, which the primary scenario excludes as a hospital-side registration step, and the scenario covers a birth already on the register. Recorded as partial for this scenario, following the treatment already applied to claim_delhi_birth_mcd_certificate_printout.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F3. The claim carries no cell weight; the status change is for scope consistency across the three institutional and domiciliary charter rows."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_05",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_sla_institutional_instant",
+      "fieldPath": "/notes",
+      "old": "The scoped scenario covers a birth already registered; this row applies where the event was institutional.",
+      "new": "The scoped scenario covers a birth already registered; this row applies where the event was institutional, which the scenario excludes as a hospital-side registration step. Recorded as partial for this scenario by the second audit and cited in no expectation cell. Graded C because the charter carries no visible publication or revision date.",
+      "reason": "The note recorded the scope mismatch but not that the institutional route is an excluded hospital-side registration step, nor the grade rationale; it must match the corrected status and grade.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F1 and F3."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_06",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_institutional_processing",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades undated official material C. MCD's citizen charter shows no publication or revision date, and this claim asserts a prescribed routing rule rather than the page's present visible state.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F1."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_07",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_institutional_processing",
+      "fieldPath": "/status",
+      "old": "verified",
+      "new": "partial",
+      "reason": "Processing by the health unit where the child is born is a hospital-side registration step, which the primary scenario expressly excludes, and it describes handling at the time of the event rather than a request for a copy of a birth already on the register. Retained as evidence but scoped, following claim_delhi_birth_mcd_certificate_printout.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F3. Read as a route rule for this scenario it would also conflict with the FAQ's plain-paper application to the concerned area Registrar and with MCD's own zone-routing instruction."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_08",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_institutional_processing",
+      "fieldPath": "/notes",
+      "old": "A routing rule that identifies which body handles the case.",
+      "new": "A routing rule that identifies which body handles the case at the time of an institutional event. Recorded as partial for this scenario by the second audit: the primary scenario excludes hospital-side registration steps and covers a birth already on the register, so this row is not a route rule for a copy request and was removed from the eligibility cell. Graded C because the charter carries no visible publication or revision date.",
+      "reason": "The note presented the row as a routing rule for this scenario without recording that it describes an excluded hospital-side step at the time of the event; it must match the corrected status and grade.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F1 and F3."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_09",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_domiciliary_route",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades undated official material C. MCD's citizen charter shows no publication or revision date, and this claim asserts a prescribed route rather than the page's present visible state.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F1."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_10",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_domiciliary_route",
+      "fieldPath": "/status",
+      "old": "verified",
+      "new": "partial",
+      "reason": "Parents applying on the MCD portal for a home or other delivery event is the initial application for a birth not yet on the register, whereas the primary scenario is scoped to a birth already registered. Retained as evidence but scoped, following claim_delhi_birth_mcd_certificate_printout.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F3. The reviewed public pages do not show a citizen surface for a copy of an already registered birth; that surface sits behind portal signup, per claim_delhi_birth_mcd_citizen_surface_behind_signup."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_11",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_domiciliary_route",
+      "fieldPath": "/notes",
+      "old": "Matches the scoped applicant type, a parent resident in the city.",
+      "new": "Matches the scoped applicant type, a parent resident in the city, but not the scenario's trigger: the row describes the application made for a home or other delivery event, which is the registration application rather than a request for a copy of a birth already on the register. Recorded as partial for this scenario by the second audit and removed from the eligibility cell. Graded C because the charter carries no visible publication or revision date.",
+      "reason": "The note asserted that the row matches the scoped scenario. It matches the applicant type only; the row describes the registration application for a birth not yet on the register, and the note must match the corrected status and grade.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F1 and F3."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_12",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_registrar_directory_published",
+      "fieldPath": "/text",
+      "old": "The Chief Registrar's births and deaths page publishes a downloadable Directory of Area Wise Registrar and Sub-Registrar and gives the directorate's office contact address jddes.delhi@gov.in and telephone 23812851.",
+      "new": "The Chief Registrar's births and deaths page publishes a downloadable Directory of Area Wise Registrar and Sub-Registrar.",
+      "reason": "Section 1 requires one claim to assert one checkable thing, and section 13 permits the auditor to split compound claims. The claim asserted both a published directory and a published contact route, two separately checkable things that were carrying two different prongs of the section 8 owner definition at once. The contact route moves to claim_delhi_birth_directorate_office_contact.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_des_registration_page"
+        ],
+        "auditNote": "F4. No evidence is added or removed; the parent ID is retained for the directory half, following the precedent recorded in claim_delhi_birth_subregistrar_designation."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_13",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_registrar_directory_published",
+      "fieldPath": "/notes",
+      "old": "Institutional contact details published by the agency; no personal data recorded.",
+      "new": "Atomic after the second audit split the published office contact route out into claim_delhi_birth_directorate_office_contact; this claim now asserts only that the area-wise directory is published.",
+      "reason": "The note described the contact details, which have moved to the new claim.",
+      "support": {
+        "auditNote": "F4."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_14",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_directorate_office_contact",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_birth_directorate_office_contact",
+        "text": "The Chief Registrar's births and deaths page gives the directorate's office contact address jddes.delhi@gov.in and telephone 23812851.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_birth_des_registration_page"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split by the second audit from claim_delhi_birth_registrar_directory_published for atomicity; that claim asserted a published directory and a published contact route, two separately checkable things. Institutional contact details published by the agency; no personal data recorded."
+      },
+      "reason": "The separated half of the compound claim, carrying the contact-route prong of the section 8 owner definition. Same source, grade, basis and status as the record it was split from.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_des_registration_page"
+        ],
+        "auditNote": "F4. Addition of an existing assertion under its own ID, not new evidence."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_15",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_delhi_birth_place_of_occurrence_rule",
+        "claim_delhi_birth_issue_within_seven_days",
+        "claim_delhi_birth_mcd_zone_routing",
+        "claim_delhi_birth_mcd_domiciliary_route",
+        "claim_delhi_birth_mcd_institutional_processing"
+      ],
+      "new": [
+        "claim_delhi_birth_place_of_occurrence_rule",
+        "claim_delhi_birth_issue_within_seven_days",
+        "claim_delhi_birth_mcd_zone_routing"
+      ],
+      "reason": "Section 2 scores the grid on the primary scenario only. The two MCD citizen-charter rows removed here belong to the registration stage: the institutional row describes processing by the health unit where the child was born, a hospital-side step the scenario excludes, and the domiciliary row describes the application made for a home birth, not a request for a copy of a birth already on the register.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F3. The cell remains stated on the two on-route Grade B rules: registration and therefore issue only at the place of occurrence, and the request must go to the zone where the event took place or it may be rejected."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_16",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/eligibility/note",
+      "old": "Usable rules decide which route applies: the birth must already be registered, registration and therefore issue happen only at the place of occurrence, and the request must go to the zone in which the event took place or it may be rejected. MCD's citizen charter adds the split that decides the route: an institutional event is processed by the health unit where the child was born, while for home and other delivery events the parents apply directly on the MCD portal.",
+      "new": "Usable rules decide who qualifies and which route applies: the birth must already be registered, registration and therefore issue happen only at the place of occurrence so an event outside Delhi cannot be handled here, and the request must go to the zone in which the event took place or it may be rejected. The second audit removed the two MCD citizen-charter rows previously cited here. The institutional row describes processing by the health unit where the child was born, a hospital-side registration step this scenario excludes, and reading it as a route rule for a copy request would conflict with the FAQ's plain-paper application to the concerned area Registrar. The domiciliary row describes parents applying on the MCD portal for a home birth, which is the registration application rather than a request for a copy of a birth already on the register. Both are retained in the ledger as partial, scope-limited claims.",
+      "reason": "The note stated the removed institutional and domiciliary rows as the split that decides the route for this scenario. It must record the copy-route rules the cell actually rests on, and why the registration-stage evidence was removed.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_des_faq",
+          "source_delhi_birth_mcd_rbd_instructions",
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F3."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_17",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/time/note",
+      "old": "An actionable service-level target is published: 7 days from receipt of the application, and a delivery schedule of 3 days for a new record against 7 days for an old manual record. The figure covers issue of the certificate only, not any counter queue or collection step. A second, current MCD source, its citizen charter, publishes the same order of figure as 'Variable (Max timeline - 1 week)', which does not depend on the potentially outdated Chief Registrar charter.",
+      "new": "An actionable service-level target is published: 7 days from the date of receipt of the application, expressly for a birth that has already been registered, and a delivery schedule of 3 days for a new record against 7 days for an old manual record. The figure covers issue of the certificate only, not any counter queue or collection step. MCD's citizen charter corroborates the order of magnitude as 'Variable (Max timeline - 1 week)' from a source not tied to the pre-2022 corporations, but that charter carries no visible publication or revision date and its row is not specific to a copy of an already registered birth, so the second audit graded it C. Limitation: every figure in this cell now comes from official material that is undated, and in the Chief Registrar charter's case also visibly outdated, so the cell is stated on Grade C evidence.",
+      "reason": "Section 4 requires the date and limitation to be stated for undated material, and the note described that undated charter as a 'current' source. The single-stage caveat the section 8 definition requires is preserved.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter",
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F5 and F7. The cell state is upheld: Grade C supports stated under section 8, and the 7-day figure is expressly conditioned on the birth already being registered."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_18",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/owner/claimIds",
+      "old": [
+        "claim_delhi_birth_registrar_designation",
+        "claim_delhi_birth_collection_point",
+        "claim_delhi_birth_registrar_directory_published",
+        "claim_delhi_birth_chief_registrar_not_issuer"
+      ],
+      "new": [
+        "claim_delhi_birth_registrar_designation",
+        "claim_delhi_birth_collection_point",
+        "claim_delhi_birth_registrar_directory_published",
+        "claim_delhi_birth_directorate_office_contact",
+        "claim_delhi_birth_chief_registrar_not_issuer"
+      ],
+      "reason": "Consequential on the atomicity split: the contact-route prong of the section 8 owner definition now lives in claim_delhi_birth_directorate_office_contact and must be cited alongside the directory claim it was separated from.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_des_registration_page"
+        ],
+        "auditNote": "F4. No change to the cell state or to the evidence behind it."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b01",
+      "recordType": "source",
+      "recordId": "source_delhi_birth_citizen_charter",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Delhi, NCT of Delhi, India. Agency naming as displayed on the access date: 'Office of Chief Registrar (B&D), GNCT of Delhi'. The document carries no visible publication or revision date and names North/South/East Delhi Municipal Corporation, bodies unified into MCD in 2022, so it is treated as potentially outdated official material and graded C. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240809191301/https://des.delhi.gov.in/sites/default/files/DES/generic_multiple_files/link_5.pdf (2024-08-09); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Delhi, NCT of Delhi, India. Agency naming as displayed on the access date: 'Office of Chief Registrar (B&D), GNCT of Delhi'. Visible date: none is shown; the document carries no publication or revision date, and it names North/South/East Delhi Municipal Corporation, bodies unified into MCD in 2022, so it is treated as potentially outdated official material and graded C. Limitation: the document is undated and visibly outdated, so its figures may not be current. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240809191301/https://des.delhi.gov.in/sites/default/files/DES/generic_multiple_files/link_5.pdf (2024-08-09); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the document as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported that the source lacks publishedAt without a visible-date note, and that an undated and outdated source carried no stated limitation. Both are recorded in words; the document, its grade and every claim on it are unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b02",
+      "recordType": "source",
+      "recordId": "source_delhi_birth_des_faq",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Delhi, NCT of Delhi, India. The page footer displays 'Last Updated: 17/08/2026', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260103074854/https://des.delhi.gov.in/des/frequently-asked-questions-faq (2026-01-03); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Delhi, NCT of Delhi, India. The page footer displays 'Last Updated: 17/08/2026', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260103074854/https://des.delhi.gov.in/des/frequently-asked-questions-faq (2026-01-03); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the page as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an archived source without a stated limitation. The archive limitation is now stated: the only snapshot predates the access date.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_des_faq"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b03",
+      "recordType": "source",
+      "recordId": "source_delhi_birth_des_registration_page",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Delhi, NCT of Delhi, India. The page footer displays 'Last Updated: 17/08/2026', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20251021161118/https://des.delhi.gov.in/des/registration-births-and-deaths-0 (2025-10-21); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Delhi, NCT of Delhi, India. The page footer displays 'Last Updated: 17/08/2026', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20251021161118/https://des.delhi.gov.in/des/registration-births-and-deaths-0 (2025-10-21); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the page as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an archived source without a stated limitation. The archive limitation is now stated: the only snapshot predates the access date.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_des_registration_page"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b04",
+      "recordType": "source",
+      "recordId": "source_delhi_birth_mcd_rbd_instructions",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Delhi, NCT of Delhi, India. Agency naming as displayed on the access date: 'Municipal Corporation of Delhi'. The page shows no visible last-updated or version date and requires JavaScript. Everything beyond these public instructions is reached through citizen signup with a registered mobile number, which this run did not cross. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260109122524/https://mcdonline.nic.in/rbd/web/citizen/info (2026-01-09); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Delhi, NCT of Delhi, India. Agency naming as displayed on the access date: 'Municipal Corporation of Delhi'. The page shows no visible last-updated or version date and requires JavaScript. Limitation: the page is undated, so its currency cannot be checked. Everything beyond these public instructions is reached through citizen signup with a registered mobile number, which this run did not cross. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260109122524/https://mcdonline.nic.in/rbd/web/citizen/info (2026-01-09); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the page as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an undated and archived source without a stated limitation. Both limitations are now stated; the visible-date note the page already carried is unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_rbd_instructions"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b05",
+      "recordType": "source",
+      "recordId": "source_delhi_birth_mcd_citizen_charter",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Delhi, NCT of Delhi, India. Agency naming as displayed on the access date: 'Municipal Corporation of Delhi, Civic Center, JLN Marg, New Delhi'. The document is served as a page-flip reader and shows no publication or revision date. Found after the first audit run and added before re-audit. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260213080503/https://mcdonline.nic.in/portal/citizenCharter (2026-02-13); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Delhi, NCT of Delhi, India. Agency naming as displayed on the access date: 'Municipal Corporation of Delhi, Civic Center, JLN Marg, New Delhi'. Visible date: none is shown; the document is served as a page-flip reader and carries no publication or revision date. Limitation: the document is undated, so its currency cannot be checked, which is why claims resting on it are graded C. Found after the first audit run and added before re-audit. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260213080503/https://mcdonline.nic.in/portal/citizenCharter (2026-02-13); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the document as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported that the source lacks publishedAt without a visible-date note and that an undated, archived source carried no stated limitation. Both are recorded in words; the grade C already assigned for undatedness is unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b06",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_issuing_local_bodies",
+      "fieldPath": "/text",
+      "old": "The Delhi Chief Registrar's citizen charter states that birth certificates are issued by the local bodies, namely North, South and East Delhi Municipal Corporation, the New Delhi Municipal Council and the Delhi Cantonment Board.",
+      "new": "The Delhi Chief Registrar's citizen charter names the issuing local bodies as North, South and East Delhi Municipal Corporation, the New Delhi Municipal Council and the Delhi Cantonment Board.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters and for a comma list. The length is removed by dropping the redundant framing; the list itself is the single published list of issuing bodies and is waived, with the waiver reason recorded on the manifest entry.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: wording only. The claim asserts the same single fact, which local bodies the charter names as issuers, and it supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b07",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_application_particulars",
+      "fieldPath": "/text",
+      "old": "The Chief Registrar's FAQ states that the plain-paper application must give the date of birth, the sex, the place of birth as the name of the hospital, nursing home or medical institution or the residential address for a domiciliary birth, the father's name and the mother's name.",
+      "new": "The Chief Registrar's FAQ states that the plain-paper application must give five particulars: date of birth, sex, place of birth, father's name and mother's name.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters and for a comma list. The place-of-birth detail that made the sentence long is split into claim_delhi_birth_application_particulars_2; the remaining comma list is the single published list of particulars and is waived, with the reason recorded on the manifest entry.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_des_faq"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b08",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_post_submission_surface_unknown",
+      "fieldPath": "/text",
+      "old": "Whether an applicant who asks for a copy of an already registered birth receives an acknowledgement, an application number, or a public status route is not established by any reviewed public page.",
+      "new": "No reviewed public page establishes what an applicant who asks for a copy of an already registered birth sees after submitting the request.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. The enumeration of the surfaces searched for is moved to the notes; the claim now asserts the single fact that no public page establishes the post-submission surface.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim that supports no cell; wording only."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b09",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_charter_key_contacts_empty",
+      "fieldPath": "/text",
+      "old": "The 'Key Contacts' heading in the birth and death certificate section of MCD's citizen charter is followed by no contact, name, designation or telephone number.",
+      "new": "The 'Key Contacts' heading in the birth and death certificate section of MCD's citizen charter is published with no contact details beneath it.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. The list of what is absent is moved to the notes; the claim now asserts the single fact that the heading is published empty.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: wording only; the claim supports no expectation cell and is recorded against the owner cell in prose."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b10",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_directorate_office_contact",
+      "fieldPath": "/notes",
+      "old": "Split by the second audit from claim_delhi_birth_registrar_directory_published for atomicity; that claim asserted a published directory and a published contact route, two separately checkable things. Institutional contact details published by the agency; no personal data recorded.",
+      "new": "Split by the second audit from claim_delhi_birth_registrar_directory_published for atomicity; that claim asserted a published directory and a published contact route, two separately checkable things. Institutional contact details published by the agency. The page was read without a login and no personal data was entered.",
+      "reason": "Pre-audit lint reported login-boundary-overclaim because the note used the phrase 'personal data' without uncertainty wording. The note now records the observation boundary explicitly: the page is public, it was read without a login, and no personal data was entered. The claim asserts published institutional contact details and crosses no authentication boundary.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_des_registration_page"
+        ],
+        "auditNote": "IND-91 part B: login-boundary-overclaim finding fixed by recording the observation boundary in the notes."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b11",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_post_submission_surface_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Login-related, so it is stripped from the login-stripped Unknown share.",
+      "new": "Retained because the uncertainty itself matters to the journey. Login-related, so it is stripped from the login-stripped Unknown share. Searched for and not found on any reviewed public page: an acknowledgement, an application number, and a public status route.",
+      "reason": "The enumeration removed from the claim text during lint remediation is recorded here so the search record is preserved.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: login-boundary-overclaim finding fixed by recording the observation boundary in the notes."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b12",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_charter_key_contacts_empty",
+      "fieldPath": "/notes",
+      "old": "The same empty heading appears in the other service sections of the charter reviewed on the access date.",
+      "new": "No contact, name, designation or telephone number appears beneath the heading. The same empty heading appears in the other service sections of the charter reviewed on the access date.",
+      "reason": "The enumeration removed from the claim text during lint remediation is recorded here so the observation is preserved in full.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: login-boundary-overclaim finding fixed by recording the observation boundary in the notes."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b13",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_first_copy_free",
+      "fieldPath": "/text",
+      "old": "The Delhi Chief Registrar's citizen charter states that a single copy of the birth certificate in Form No. 5 is given free of cost to the informant under section 12 of the RBD Act immediately after the registration procedure is completed.",
+      "new": "The Delhi Chief Registrar's citizen charter states that a single copy of the birth certificate in Form No. 5 is given free of cost under section 12 of the RBD Act.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried two independently checkable facts: that the first copy is free under section 12, and that it goes to the informant immediately after registration is completed. Splitting keeps both on the record and lets the cost cell be read against each.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b14",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_first_copy_free",
+      "fieldPath": "/notes",
+      "old": "An explicit zero, recorded as a stated value under protocol section 3.",
+      "new": "An explicit zero, recorded as a stated value under protocol section 3. Split during IND-91 part B lint remediation; the recipient and the moment of issue are asserted separately by claim_delhi_birth_first_copy_free_2.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried two independently checkable facts: that the first copy is free under section 12, and that it goes to the informant immediately after registration is completed. Splitting keeps both on the record and lets the cost cell be read against each.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b15",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_first_copy_free_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_birth_first_copy_free_2",
+        "text": "The Delhi Chief Registrar's citizen charter states that the free Form No. 5 copy is given to the informant immediately after the registration procedure is completed.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_birth_first_copy_free, which carried both the zero fee and the recipient and timing of the free copy. This fragment carries the recipient and timing, which bear on whether the explicit zero reaches an applicant asking for a copy of an already registered birth."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried two independently checkable facts: that the first copy is free under section 12, and that it goes to the informant immediately after registration is completed. Splitting keeps both on the record and lets the cost cell be read against each.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b16",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_issue_within_seven_days",
+      "fieldPath": "/text",
+      "old": "The Delhi Chief Registrar's citizen charter states that birth certificates are issued by the local bodies within 7 days from the date of receipt of the application from the applicant, provided the birth has already been registered.",
+      "new": "The Delhi Chief Registrar's citizen charter states that birth certificates are issued by the local bodies within 7 days from the date of receipt of the application.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried a rule and its condition, cited by two different cells: the time cell rests on the 7-day period and the eligibility cell on the proviso that the birth is already registered. Splitting lets each cell cite the fragment that actually supports it.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the time and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b17",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_issue_within_seven_days",
+      "fieldPath": "/notes",
+      "old": "The proviso 'provided the birth and death has already been registered' matches this scenario's trigger.",
+      "new": "Split during IND-91 part B lint remediation; the proviso that the birth must already be registered is asserted separately by claim_delhi_birth_issue_within_seven_days_2.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried a rule and its condition, cited by two different cells: the time cell rests on the 7-day period and the eligibility cell on the proviso that the birth is already registered. Splitting lets each cell cite the fragment that actually supports it.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b18",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_issue_within_seven_days_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_birth_issue_within_seven_days_2",
+        "text": "The Delhi Chief Registrar's citizen charter states that the 7-day issue period applies provided the birth has already been registered.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_birth_issue_within_seven_days. The proviso 'provided the birth and death has already been registered' matches this scenario's trigger and is the part of the sentence the eligibility cell rests on."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried a rule and its condition, cited by two different cells: the time cell rests on the 7-day period and the eligibility cell on the proviso that the birth is already registered. Splitting lets each cell cite the fragment that actually supports it.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the time and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b19",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_application_particulars",
+      "fieldPath": "/text",
+      "old": "The Chief Registrar's FAQ states that the plain-paper application must give five particulars: date of birth, sex, place of birth, father's name and mother's name.",
+      "new": "The Chief Registrar's FAQ states that the plain-paper application must give five particulars: date of birth, sex, place of birth, father's name and mother's name.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters and for a comma list. The place-of-birth rule is an independently checkable fact and is split out; the remaining comma list is the single published list of particulars and is waived.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_des_faq"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b20",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_application_particulars_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_birth_application_particulars_2",
+        "text": "The Chief Registrar's FAQ states that for a domiciliary birth the place of birth to be given is the residential address rather than the name of a hospital or medical institution.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_birth_des_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_birth_application_particulars, which carried both the list of particulars and the rule for what counts as the place of birth."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters and for a comma list. The place-of-birth rule is an independently checkable fact and is split out; the remaining comma list is the single published list of particulars and is waived.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_des_faq"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b21",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_subregistrar_designation",
+      "fieldPath": "/text",
+      "old": "The Delhi Chief Registrar's citizen charter states that vaccinators of vaccination centres or paramedical staff of health centres are designated Sub-Registrars of Births and Deaths.",
+      "new": "The Delhi Chief Registrar's citizen charter designates vaccinators of vaccination centres as Sub-Registrars of Births and Deaths.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'or'. The sentence designated two different staff categories as Sub-Registrars, which are two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b22",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_subregistrar_designation",
+      "fieldPath": "/notes",
+      "old": "Split by audit from claim_delhi_birth_registrar_designation for atomicity; the charter sentence carried two separate designations. Graded C for the same reason as its parent: the charter is undated and names the pre-2022 trifurcated corporations. Relevant to the copy route because the FAQ directs the plain-paper application to the concerned area Registrar or Sub-Registrar.",
+      "new": "Split by audit from claim_delhi_birth_registrar_designation for atomicity; the charter sentence carried two separate designations. Split again during IND-91 part B lint remediation, which separated the two staff categories the charter designates. Graded C for the same reason as its parent: the charter is undated and names the pre-2022 trifurcated corporations. Relevant to the copy route because the FAQ directs the plain-paper application to the concerned area Registrar or Sub-Registrar.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'or'. The sentence designated two different staff categories as Sub-Registrars, which are two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b23",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_subregistrar_designation_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_birth_subregistrar_designation_2",
+        "text": "The Delhi Chief Registrar's citizen charter designates paramedical staff of health centres as Sub-Registrars of Births and Deaths.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_birth_subregistrar_designation, which named two staff categories in one sentence. Graded C for the same reason as its parent: the charter is undated and names the pre-2022 trifurcated corporations."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'or'. The sentence designated two different staff categories as Sub-Registrars, which are two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b24",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_citizen_surface_behind_signup",
+      "fieldPath": "/text",
+      "old": "MCD's public instructions direct the citizen to sign up on the portal with a preferably Aadhaar-linked mobile number, so the certificate search and download surface for an already registered birth is not visible on any reviewed public page.",
+      "new": "MCD's public instructions direct the citizen to sign up on the portal with a preferably Aadhaar-linked mobile number.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried an observation, that the instructions direct the citizen to sign up, and an inference from it, that the certificate surface is not publicly visible. Splitting keeps the observation and the inference separately checkable, as protocol section 5 requires.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_rbd_instructions"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b25",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_citizen_surface_behind_signup",
+      "fieldPath": "/notes",
+      "old": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is that the public page offers signup and instructions only; the inference is that the citizen certificate surface lies past that boundary. The boundary was not crossed.",
+      "new": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The boundary was not crossed. Split during IND-91 part B lint remediation; the consequence for the public surface is asserted separately by claim_delhi_birth_mcd_citizen_surface_behind_signup_2.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried an observation, that the instructions direct the citizen to sign up, and an inference from it, that the certificate surface is not publicly visible. Splitting keeps the observation and the inference separately checkable, as protocol section 5 requires.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_rbd_instructions"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b26",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_citizen_surface_behind_signup_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_birth_mcd_citizen_surface_behind_signup_2",
+        "text": "The certificate search and download surface for an already registered birth is not visible on any reviewed public MCD page.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_birth_mcd_rbd_instructions"
+        ],
+        "evidenceGrade": "B",
+        "basis": "mixed",
+        "status": "partial",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_birth_mcd_citizen_surface_behind_signup. Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is that the public page offers signup and instructions only; the inference is that the citizen certificate surface lies past that boundary. The boundary was not crossed and no login was used."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried an observation, that the instructions direct the citizen to sign up, and an inference from it, that the certificate surface is not publicly visible. Splitting keeps the observation and the inference separately checkable, as protocol section 5 requires.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_rbd_instructions"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b27",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:cost",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_delhi_birth_additional_copy_fee",
+        "claim_delhi_birth_first_copy_free"
+      ],
+      "new": [
+        "claim_delhi_birth_additional_copy_fee",
+        "claim_delhi_birth_first_copy_free",
+        "claim_delhi_birth_first_copy_free_2"
+      ],
+      "reason": "Claims cited by these cells were split during IND-91 part B lint remediation. Each cell now lists the fragments that actually assert the fact it rests on: cost the zero fee and its recipient, documents the list of particulars and the place-of-birth rule, eligibility the proviso that the birth is already registered, time the 7-day issue period.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b28",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:documents",
+      "fieldPath": "/cells/documents/claimIds",
+      "old": [
+        "claim_delhi_birth_application_plain_paper",
+        "claim_delhi_birth_application_particulars"
+      ],
+      "new": [
+        "claim_delhi_birth_application_plain_paper",
+        "claim_delhi_birth_application_particulars",
+        "claim_delhi_birth_application_particulars_2"
+      ],
+      "reason": "Claims cited by these cells were split during IND-91 part B lint remediation. Each cell now lists the fragments that actually assert the fact it rests on: cost the zero fee and its recipient, documents the list of particulars and the place-of-birth rule, eligibility the proviso that the birth is already registered, time the 7-day issue period.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_des_faq"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_certificate_b29",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_delhi_birth_place_of_occurrence_rule",
+        "claim_delhi_birth_issue_within_seven_days",
+        "claim_delhi_birth_mcd_zone_routing"
+      ],
+      "new": [
+        "claim_delhi_birth_place_of_occurrence_rule",
+        "claim_delhi_birth_issue_within_seven_days_2",
+        "claim_delhi_birth_mcd_zone_routing"
+      ],
+      "reason": "Claims cited by these cells were split during IND-91 part B lint remediation. Each cell now lists the fragments that actually assert the fact it rests on: cost the zero fee and its recipient, documents the list of particulars and the place-of-birth rule, eligibility the proviso that the birth is already registered, time the 7-day issue period.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter",
+          "source_delhi_birth_des_faq",
+          "source_delhi_birth_mcd_rbd_instructions"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_citizen_surface_behind_signup",
+      "fieldPath": "/basis",
+      "old": "mixed",
+      "new": "observation",
+      "reason": "Protocol section 5 requires a 'mixed' basis to explain the observation/inference boundary in notes. After the IND-91 part B split, this claim's text asserts only what MCD's public instructions display (sign up on the portal with a preferably Aadhaar-linked mobile number), and its notes explain no boundary. The inferential half moved to claim_delhi_birth_mcd_citizen_surface_behind_signup_2, whose notes do explain the boundary and which correctly remains 'mixed'.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_rbd_instructions"
+        ],
+        "auditNote": "Text is a direct reading of the cited public page; no conclusion is drawn from it in this record. Grade B and status partial are unaffected, and the claim continues to support no expectation cell value."
+      },
+      "id": "corr_delhi_birth_certificate_r01"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_charter_key_contacts_empty",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Protocol section 4 assigns Grade C to archived, undated, or visibly outdated official material. The cited source records 'Visible date: none is shown' and states in its own notes that 'the document is undated, so its currency cannot be checked, which is why claims resting on it are graded C'. The four sibling claims resting on the same source are all graded C on that stated ground; Grade B here is inconsistent with the source record and with section 4.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "Section 4's B row for direct current observation of a public official interface cannot distinguish this claim from claim_delhi_birth_mcd_sla_one_week, claim_delhi_birth_mcd_sla_institutional_instant, claim_delhi_birth_mcd_institutional_processing and claim_delhi_birth_mcd_domiciliary_route, which come from the same undated page-flip document and are graded C. The claim is cited in no cell's claimIds, so no expectation-cell state depends on this change."
+      },
+      "id": "corr_delhi_birth_certificate_r02"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "birth-certificate:time",
+      "fieldPath": "/cells/time/claimIds",
+      "old": [
+        "claim_delhi_birth_issue_within_seven_days",
+        "claim_delhi_birth_delivery_time_schedule",
+        "claim_delhi_birth_mcd_sla_one_week"
+      ],
+      "new": [
+        "claim_delhi_birth_issue_within_seven_days",
+        "claim_delhi_birth_issue_within_seven_days_2",
+        "claim_delhi_birth_delivery_time_schedule",
+        "claim_delhi_birth_mcd_sla_one_week"
+      ],
+      "reason": "The time cell note asserts that the 7-day period applies 'expressly for a birth that has already been registered', but the claim that carries that proviso, claim_delhi_birth_issue_within_seven_days_2, is not listed among the cell's claimIds. Protocol section 9 requires a stated cell to record its claimIds together with its actionable-value note, and the proviso is part of the actionable value because it tells the citizen which applicants the figure covers.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter"
+        ],
+        "auditNote": "claim_delhi_birth_issue_within_seven_days_2 is verified, Grade C, and was split out of claim_delhi_birth_issue_within_seven_days precisely to carry this proviso. Listing a claim under more than one cell is already the sidecar's pattern (claim_delhi_birth_collection_point appears under owner and after-submission). The cell state stays 'stated'; the figure itself still comes from claim_delhi_birth_issue_within_seven_days."
+      },
+      "id": "corr_delhi_birth_certificate_r03"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "birth-certificate:owner",
+      "fieldPath": "/cells/owner/claimIds",
+      "old": [
+        "claim_delhi_birth_registrar_designation",
+        "claim_delhi_birth_collection_point",
+        "claim_delhi_birth_registrar_directory_published",
+        "claim_delhi_birth_directorate_office_contact",
+        "claim_delhi_birth_chief_registrar_not_issuer"
+      ],
+      "new": [
+        "claim_delhi_birth_registrar_designation",
+        "claim_delhi_birth_collection_point",
+        "claim_delhi_birth_registrar_directory_published",
+        "claim_delhi_birth_chief_registrar_not_issuer"
+      ],
+      "reason": "Protocol section 8 admits a contact route for the owner cell only where it is a contact route for the role that holds or decides the case. claim_delhi_birth_directorate_office_contact gives the Directorate's email and telephone, but claim_delhi_birth_chief_registrar_not_issuer, listed in the same cell, establishes that the Office of Chief Registrar (B&D) does not itself issue birth certificates. The contact therefore routes the citizen to an office that expressly does not hold this case, and does not support the cell's state.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_des_registration_page",
+          "source_delhi_birth_des_faq"
+        ],
+        "auditNote": "The cell note enumerates only four items and does not mention the directorate contact, and the claim was created by the previous audit as an atomicity split out of claim_delhi_birth_registrar_directory_published, so its cell membership appears inherited rather than judged. The owner cell remains 'stated' on claim_delhi_birth_registrar_designation, a designation tied to a jurisdiction rule, plus the published area-wise registrar and sub-registrar directory. The claim is retained in the ledger unchanged."
+      },
+      "id": "corr_delhi_birth_certificate_r04"
+    }
+  ],
+  "runs": [
+    {
+      "runId": "ind91_part_b_lint_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B pre-audit lint remediation (protocol section 8).",
+      "correctionIds": [
+        "corr_delhi_birth_certificate_b01",
+        "corr_delhi_birth_certificate_b02",
+        "corr_delhi_birth_certificate_b03",
+        "corr_delhi_birth_certificate_b04",
+        "corr_delhi_birth_certificate_b05",
+        "corr_delhi_birth_certificate_b06",
+        "corr_delhi_birth_certificate_b07",
+        "corr_delhi_birth_certificate_b08",
+        "corr_delhi_birth_certificate_b09",
+        "corr_delhi_birth_certificate_b10",
+        "corr_delhi_birth_certificate_b11",
+        "corr_delhi_birth_certificate_b12",
+        "corr_delhi_birth_certificate_b13",
+        "corr_delhi_birth_certificate_b14",
+        "corr_delhi_birth_certificate_b15",
+        "corr_delhi_birth_certificate_b16",
+        "corr_delhi_birth_certificate_b17",
+        "corr_delhi_birth_certificate_b18",
+        "corr_delhi_birth_certificate_b19",
+        "corr_delhi_birth_certificate_b20",
+        "corr_delhi_birth_certificate_b21",
+        "corr_delhi_birth_certificate_b22",
+        "corr_delhi_birth_certificate_b23",
+        "corr_delhi_birth_certificate_b24",
+        "corr_delhi_birth_certificate_b25",
+        "corr_delhi_birth_certificate_b26",
+        "corr_delhi_birth_certificate_b27",
+        "corr_delhi_birth_certificate_b28",
+        "corr_delhi_birth_certificate_b29"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_reaudit_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B re-audit by a fresh isolated auditor after lint remediation (protocol sections 12 and 13).",
+      "correctionIds": [
+        "corr_delhi_birth_certificate_r01",
+        "corr_delhi_birth_certificate_r02",
+        "corr_delhi_birth_certificate_r03",
+        "corr_delhi_birth_certificate_r04"
+      ]
+    }
+  ]
+}

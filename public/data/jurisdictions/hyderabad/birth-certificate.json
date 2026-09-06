@@ -1,0 +1,661 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Hyderabad birth certificate (copy of a registered birth) grid-only evidence ledger",
+    "jurisdiction": "Hyderabad, Telangana, India",
+    "asOf": "2026-09-06",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Grid-only benchmark run: sources and claims only, no nodes, edges, roadblocks or journeys. Desk research, no counter visited. Limitations: the corporation's Citizen's Charter, still published on its live homepage, states on its face that it was prepared on 10 May 2013 and would be revised on or before 13 May 2014, so every claim taken from it is graded C and its figures are twelve years past the revision date the document set for itself; the corporation's current birth and death page gives a MeeSeva fee of Rs. 45 while that charter gives Rs. 20 per certificate; the audit held these to be one fact told twice under protocol section 1, cross-linked them, and resolved the conflict against the older figure, so the Rs. 20 claim is contested and supports no cell; the printable application form's file metadata dates it to 2010; the certificate search route was read but never queried with an acknowledgement or application number, and the birth and death login is behind a password and an OTP that were not crossed. Do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_hyderabad_ghmc",
+      "name": "Greater Hyderabad Municipal Corporation",
+      "shortName": "GHMC",
+      "officialUrl": "https://www.ghmc.gov.in/Birth.aspx"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind32_birth_copy_workflow",
+      "label": "Hyderabad birth certificate copy",
+      "summary": "A parent resident in Hyderabad seeks a certified copy or first certificate of a birth already registered in the city's civil register, by the municipal civil-registration route, public entry, online where offered and counter route otherwise. Delayed registration, name inclusion, corrections, births outside the city and hospital-side registration steps are excluded.",
+      "tags": [
+        "primary"
+      ],
+      "pathNodeIds": [],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_hyderabad_birth_ghmc_page",
+      "title": "Birth and Death - Greater Hyderabad Municipal Corporation",
+      "publisher": "Greater Hyderabad Municipal Corporation",
+      "url": "https://www.ghmc.gov.in/Birth.aspx",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: 'Greater Hyderabad Municipal Corporation', with the footer reading 'Content owned, maintained and updated by Greater Hyderabad Municipal Corporation, Government of Telangana' and a copyright line of 2024. The page shows no visible last-updated date. Limitation: the page is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250321142610/https://ghmc.gov.in/Birth.aspx (2025-03-21); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the page as reviewed on 2026-09-06."
+    },
+    {
+      "id": "source_hyderabad_birth_ghmc_citizen_charter",
+      "title": "Citizen's Charter - Greater Hyderabad Municipal Corporation",
+      "publisher": "Greater Hyderabad Municipal Corporation",
+      "url": "https://www.ghmc.gov.in/Menu_Files/citizen-charter-19-06_compress.pdf",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2013-05-10",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: 'Greater Hyderabad Municipal Corporation'. Twelve pages, linked from the corporation's live homepage menu. The document states of itself: 'This Citizen's Charter has been prepared by the Department on 10th May 2013 and this will be revised on or before 13th May 2014', and is signed for the Principal Secretary to Government (MA). The 2013 preparation date is recorded as publishedAt, and every claim drawn from it is graded C as visibly outdated official material, since the document is twelve years past the revision date it set for itself. Limitation: the charter is twelve years past its own stated revision date, so its fees, time frames and officer designations may no longer be in force. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260420030903/https://ghmc.gov.in/Menu_Files/citizen-charter-19-06_compress.pdf (2026-04-20); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the file as retrieved on 2026-09-06."
+    },
+    {
+      "id": "source_hyderabad_birth_application_form",
+      "title": "Application for Birth Certificate - Greater Hyderabad Municipal Corporation",
+      "publisher": "Greater Hyderabad Municipal Corporation",
+      "url": "https://www.ghmc.gov.in/CSC_Applications/BIRTHREQAPP.pdf",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2010-04-02",
+      "type": "official_form",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: the file is served from the corporation's own CSC_Applications directory and its footer fields refer to a CSC transaction number and date. One page. It carries no visible date on its face; the PDF metadata records a creation date of 2010-04-02, recorded as publishedAt and carried as a stated limitation. Claims from it are graded B as an observed current official form under protocol section 4, the form being the one the corporation currently serves for this service and having been directly observed on the access date; the earlier Grade C reading was corrected on audit under pre-audit lint item 4. It was read only: nothing was filled in or submitted. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260517060637/https://ghmc.gov.in/CSC_Applications/BIRTHREQAPP.pdf (2026-05-17); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the file as retrieved on 2026-09-06."
+    },
+    {
+      "id": "source_hyderabad_birth_certificate_search",
+      "title": "Birth Certificate search by acknowledgement or application number - GHMC births and deaths portal",
+      "publisher": "Greater Hyderabad Municipal Corporation",
+      "url": "https://bnd.ghmc.gov.in/Birth_Certificate.aspx",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: 'GHMC', with the page footer crediting the Centre for Good Governance and a copyright line of 2024. Visible date: none is shown beyond that copyright line. Direct current observation of a public official interface reachable without login, offering a single field labelled 'Acknowledgement/Application Number' and a Search action. The route was read only: no number was entered and no case data was retrieved. Limitation: the route is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240529160204/https://bnd.ghmc.gov.in/Birth_Certificate.aspx (2024-05-29); no new capture was pushed from this run. Limitation: that snapshot long predates the access date, so it does not preserve the route as reviewed on 2026-09-06."
+    },
+    {
+      "id": "source_hyderabad_birth_certificate_template",
+      "title": "Birth certificate output template, issued under section 12/17 - GHMC births and deaths portal",
+      "publisher": "Greater Hyderabad Municipal Corporation",
+      "url": "https://bnd.ghmc.gov.in/Birth_Certificate_Download.aspx",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: 'GREATER HYDERABAD MUNICIPAL CORPORATION'. Visible date: none is shown on the template. Direct current observation of the certificate layout the portal produces, headed 'BIRTH CERTIFICATE (Issued Under Section 12/17)' and reciting that the information is taken from the original record of birth which is the register for a named ward and circle of the corporation. No case data was retrieved; only the empty template's own wording was read. Limitation: the template is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20230428161006/https://bnd.ghmc.gov.in/Birth_Certificate_Download.aspx (2023-04-28); no new capture was pushed from this run. Limitation: that snapshot long predates the access date, so it does not preserve the template as reviewed on 2026-09-06."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_hyderabad_birth_meeseva_fee_45",
+      "text": "The corporation's birth and death page states that for a certificate the citizen approaches any Mee-Seva centre and pays a fee of Rs. 45.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [
+        "claim_hyderabad_birth_charter_fee_20"
+      ],
+      "notes": "An amount the citizen pays for a certificate, from the corporation's current page, directly observed. The corporation's 2013 Citizen's Charter gives Rs. 20 for the same output; neither source states that it prices a channel to the exclusion of the other, so the two are cross-linked as contradictory under protocol section 1 rather than treated as separate routes. This claim is the stronger evidence, being current, Grade B and observed on the corporation's live page, and is retained as verified; the charter figure is marked contested."
+    },
+    {
+      "id": "claim_hyderabad_birth_meeseva_fee_45_2",
+      "text": "The same page states that the certificate is dispatched through Mee-Seva to the applicant.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split on re-audit from claim_hyderabad_birth_meeseva_fee_45 for atomicity. How the certificate reaches the applicant is separately checkable from the amount paid, and it is a post-submission delivery rather than a price."
+    },
+    {
+      "id": "claim_hyderabad_birth_charter_fee_20",
+      "text": "The corporation's Citizen's Charter gives the fee for issue of a birth or death certificate as Rs. 20 per certificate, and the fee for supply of extra copies of a birth or death certificate as Rs. 20.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [
+        "claim_hyderabad_birth_meeseva_fee_45"
+      ],
+      "notes": "The charter's own service table, which names the AMOH as the officer rendering the service but does not state that this fee is confined to a counter channel; the counter-route scoping was an inference, not an observation of the source. Graded C because the document is twelve years past the revision date it states for itself. Marked contested on audit: it gives a different amount for the same output as the corporation's current page, which gives Rs. 45, and claim_hyderabad_birth_current_fee_and_timeframe_unknown records that whether this figure is still in force is not established by any reviewed public page."
+    },
+    {
+      "id": "claim_hyderabad_birth_charter_time_frames",
+      "text": "The corporation's Citizen's Charter gives a time frame of 7 days for issue of a birth or death certificate.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Service-level targets stated against the two rows that cover this scenario."
+    },
+    {
+      "id": "claim_hyderabad_birth_charter_time_frames_2",
+      "text": "The same charter gives a time frame of 3 days for supply of extra copies of a birth or death certificate.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split on re-audit from claim_hyderabad_birth_charter_time_frames. The extra-copies row is separately checkable from the issue row. Graded C because the charter is twelve years past the revision date it states for itself; whether the figure is still in force is recorded as unknown in claim_hyderabad_birth_current_fee_and_timeframe_unknown."
+    },
+    {
+      "id": "claim_hyderabad_birth_charter_officers",
+      "text": "The corporation's Citizen's Charter names the AMOH as the officer rendering the service for issue of a birth certificate and for supply of extra copies.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The charter's table carries a dedicated column for the officer to approach when the service is late or refused, which is a route to the deciding role rather than a general agency name. Split during IND-91 part B lint remediation; the escalation officer is asserted separately."
+    },
+    {
+      "id": "claim_hyderabad_birth_charter_officers_2",
+      "text": "The same charter names the DC as the officer to be contacted for delay or default in that service.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_birth_charter_officers. The escalation officer is separately checkable from the officer who renders the service."
+    },
+    {
+      "id": "claim_hyderabad_birth_charter_application_prescribed_format",
+      "text": "The corporation's Citizen's Charter gives the documents required for issue of a birth certificate as an application in the prescribed format.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The only entry in the documents column for this row is the application itself; no supporting document is named. Split during IND-91 part B lint remediation into the issue row, the extra-copies row and the table heading."
+    },
+    {
+      "id": "claim_hyderabad_birth_charter_application_prescribed_format_2",
+      "text": "The charter gives the same requirement for supply of extra copies.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_birth_charter_application_prescribed_format. The extra-copies row is separately checkable from the issue row."
+    },
+    {
+      "id": "claim_hyderabad_birth_charter_application_prescribed_format_3",
+      "text": "The table heading states that all copies are to be attested by a Gazetted Officer.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_birth_charter_application_prescribed_format. The heading applies to the whole table and is separately checkable from either row."
+    },
+    {
+      "id": "claim_hyderabad_birth_meeseva_instant_issue",
+      "text": "The corporation's birth and death page states that certificates are issued instantly from Mee-Seva centres after approval by the Registrar or AMOH.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The timing figure covers the Mee-Seva counter step only and is expressly conditioned on prior approval by the Registrar or AMOH, for which no period is published. The intake sentence this record previously carried was split out on audit as claim_hyderabad_birth_meeseva_noninstitutional_intake; this record keeps its published identity under protocol section 1."
+    },
+    {
+      "id": "claim_hyderabad_birth_institutional_route",
+      "text": "The corporation's birth and death page states that for an institutional delivery the request comes through the hospital online to the Sub-Registrar or AMC.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A rule that decides which route applies according to where the birth took place. Split during IND-91 part B lint remediation into the routing rule, the hospital's data entry and the collection point."
+    },
+    {
+      "id": "claim_hyderabad_birth_institutional_route_2",
+      "text": "The same page states that hospitals enter the events online.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_birth_institutional_route. What the hospital does is separately checkable from where the request goes."
+    },
+    {
+      "id": "claim_hyderabad_birth_institutional_route_3",
+      "text": "The same page states that citizens can take such certificates from Mee-Seva centres only, after the Registrars of Births and Deaths verify and approve them.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_birth_institutional_route. Where the citizen collects the certificate is separately checkable from the routing of the request, and it is the fragment the owner cell rests on."
+    },
+    {
+      "id": "claim_hyderabad_birth_hospital_reporting_seven_days",
+      "text": "The corporation's birth and death page states that each hospital has to submit Form 1 for a birth to the corporation within 7 days from the date of occurrence of the event.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A duty on the hospital rather than on the family; recorded for the route and not used for the time cell, since hospital-side registration steps are outside this scenario. Split during IND-91 part B lint remediation; the signing requirement is asserted separately."
+    },
+    {
+      "id": "claim_hyderabad_birth_hospital_reporting_seven_days_2",
+      "text": "That Form 1 must be signed and stamped.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_birth_hospital_reporting_seven_days. The form's execution requirement is separately checkable from the reporting period."
+    },
+    {
+      "id": "claim_hyderabad_birth_sms_alert_after_approval",
+      "text": "The corporation's births and deaths page states that an SMS alert is sent to the citizen after approval by the Registrar or the AMOH.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A surface the applicant sees after the decision is taken."
+    },
+    {
+      "id": "claim_hyderabad_birth_public_search_route",
+      "text": "The corporation's births and deaths portal publishes a birth certificate route reachable without login that takes an acknowledgement or application number and offers a search action.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_certificate_search"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The route's own field label and action were observed; no number was entered, so nothing is claimed about what it returns."
+    },
+    {
+      "id": "claim_hyderabad_birth_certificate_template_wording",
+      "text": "The corporation's births and deaths portal serves a birth certificate layout headed 'BIRTH CERTIFICATE (Issued Under Section 12/17)'.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_certificate_template"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Identifies the document the citizen ends up with, and the statutory sections it is issued under. Split during IND-91 part B lint remediation into the heading, the recital and the fields."
+    },
+    {
+      "id": "claim_hyderabad_birth_certificate_template_wording_2",
+      "text": "That layout recites that the information is taken from the original record of birth in the register for a named ward and circle of the Greater Hyderabad Municipal Corporation.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_certificate_template"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_birth_certificate_template_wording. What the certificate recites is separately checkable from its heading."
+    },
+    {
+      "id": "claim_hyderabad_birth_certificate_template_wording_3",
+      "text": "That layout carries fields for name, gender, date of birth, place of birth, parents' names and registration number.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_certificate_template"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_birth_certificate_template_wording. This fragment carries the template's own set of printed fields, one published set, waived on the manifest entry."
+    },
+    {
+      "id": "claim_hyderabad_birth_form_particulars",
+      "text": "The corporation's application for a birth certificate asks for the circle or locality, the date of birth, the sex, the child's name, the father's name, the mother's name and the place of birth.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Particulars the applicant supplies on the form; the form names no supporting document to attach. Split during IND-91 part B lint remediation into the particulars, the number of copies and the courier option."
+    },
+    {
+      "id": "claim_hyderabad_birth_form_particulars_2",
+      "text": "The same form asks for the number of copies required.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_birth_form_particulars. The number of copies is separately checkable from the identifying particulars."
+    },
+    {
+      "id": "claim_hyderabad_birth_form_particulars_3",
+      "text": "The same form asks whether the certificate is wanted by courier with a delivery name and address.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_birth_form_particulars. The delivery option is separately checkable from the identifying particulars."
+    },
+    {
+      "id": "claim_hyderabad_birth_form_registration_proviso",
+      "text": "The corporation's application for a birth certificate carries the note that the birth certificate will be issued subject to the entry being found registered with GHMC records.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The qualifying rule that matches this scenario's trigger, a birth already on the register."
+    },
+    {
+      "id": "claim_hyderabad_birth_charter_self_expired",
+      "text": "The Citizen's Charter published on the corporation's live homepage states on its face that it was prepared by the department on 10.05.2013.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Recorded because it is the document every fee, time frame and officer designation in this ledger's counter route depends on. Split during IND-91 part B lint remediation into the preparation date and the revision date the charter set for itself."
+    },
+    {
+      "id": "claim_hyderabad_birth_charter_self_expired_2",
+      "text": "The same charter states that it would be revised on or before 13.05.2014.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_birth_charter_self_expired. The revision date the charter set for itself is separately checkable from its preparation date. Dates are written numerically because the lint's verb pattern matches the month name 'May'."
+    },
+    {
+      "id": "claim_hyderabad_birth_login_boundary",
+      "text": "The corporation's births and deaths portal offers a login using a password and an OTP sent to a registered mobile number, and that surface was not entered in this run.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_certificate_search"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The certificate search route beside it needs no login, which is why the after-submission evidence does not rest on the gated surface."
+    },
+    {
+      "id": "claim_hyderabad_birth_current_fee_and_timeframe_unknown",
+      "text": "Whether the Rs. 20 fee and the 7-day and 3-day time frames the corporation's charter sets for its own counter route are still in force is not established by any reviewed public page.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related. Split during IND-91 part B lint remediation; the observed reason for the uncertainty is asserted separately."
+    },
+    {
+      "id": "claim_hyderabad_birth_current_fee_and_timeframe_unknown_2",
+      "text": "No current corporation page reviewed in this run restates the charter's Rs. 20 fee or its 7-day and 3-day time frames.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_birth_current_fee_and_timeframe_unknown. The observed reason for the uncertainty is separately checkable from the uncertainty itself."
+    },
+    {
+      "id": "claim_hyderabad_birth_copy_documents_unknown",
+      "text": "Which supporting documents a parent must produce at a Mee-Seva centre to obtain a copy of an already registered birth is not established by any reviewed public page.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related. Split during IND-91 part B lint remediation; the two observed gaps behind the uncertainty are asserted separately."
+    },
+    {
+      "id": "claim_hyderabad_birth_copy_documents_unknown_2",
+      "text": "The corporation's page refers to 'all required documents' without naming them.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_birth_copy_documents_unknown. The observed wording is separately checkable from the unknown it produces."
+    },
+    {
+      "id": "claim_hyderabad_birth_copy_documents_unknown_3",
+      "text": "The corporation's printable application form names no supporting document.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_hyderabad_birth_copy_documents_unknown. The observed absence on the form is separately checkable from the unknown it produces."
+    },
+    {
+      "id": "claim_hyderabad_birth_meeseva_noninstitutional_intake",
+      "text": "The corporation's birth and death page states that for a non-institutional birth the citizen approaches the Mee-Seva centre with all required documents including Form 1.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_birth_ghmc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split from claim_hyderabad_birth_meeseva_instant_issue on audit for atomicity. The documents are described only as 'all required documents including form-1', without a list, which is why the documents cell is mentioned rather than stated. This sentence describes intake for a birth not yet on the register and so sits at the edge of a scenario scoped to a birth already registered; it is retained because the corporation's page presents Mee-Seva intake and certificate issue as one counter flow, and because the only cell it supports is mentioned rather than stated."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

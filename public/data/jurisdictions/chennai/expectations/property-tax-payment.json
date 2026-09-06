@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "property-tax-payment",
+  "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimIds": [
+        "claim_chennai_ptax_online_nil_transaction_fee"
+      ],
+      "searchedRoutes": [
+        "https://chennaicorporation.gov.in/gcc/online-services/property-tax/tax-assessment/",
+        "https://chennaicorporation.gov.in/gcc/online-services/property-tax/",
+        "http://coc-staging.egovernments.org:9980/ptis/citizen/citizenCalc.action"
+      ],
+      "note": "The topic is named and one real charge is quantified, but no amount a citizen pays for this service is given. The corporation states a 'Nil' transaction fee for online payment, which is an explicit zero on the channel charge and is retained here under protocol section 3 so that the cell is not scored absent. It is not the amount the citizen pays: the tax itself cannot be derived from any public page, because the corporation's own method points to a percentage table 'given above' and to an annexure of location-wise basic rates, neither of which is on the page, which ends with the text 'TO BE UPDATED'; the calculator that would supply them points at an unreachable staging host. That gap is carried as a separate unknown claim rather than folded into this cell. Under the section 8 cost definition the payment route is a payment step without an amount, which is mentioned."
+    },
+    "documents": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_chennai_ptax_assessment_documents_are_other_route",
+        "claim_chennai_ptax_assessment_documents_are_other_route_2",
+        "claim_chennai_ptax_assessment_documents_are_other_route_3",
+        "claim_chennai_ptax_revenue_officer_is_payee"
+      ],
+      "searchedRoutes": [
+        "https://chennaicorporation.gov.in/gcc/online-services/property-tax/rules-procedure/",
+        "https://chennaicorporation.gov.in/new_site/property-tax-online-payment/",
+        "https://chennaicorporation.gov.in/new_site/property-tax-receipt/",
+        "https://chennaicorporation.gov.in/gcc/online-services/property-tax/"
+      ],
+      "note": "The topic is named without an actionable value for this scenario. The only instrument the payment route names is a cheque or demand draft drawn in a particular favour, which is a payment method rather than a document the citizen must produce. The corporation does publish a real document list on the same page, comprising registered documents, a filled Form-6 and the last tax paid receipt, but it is given for applying for assessment, which this scope excludes, and it is not counted here."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_chennai_ptax_bill_number_required",
+        "claim_chennai_ptax_bill_number_required_2",
+        "claim_chennai_ptax_payment_modes",
+        "claim_chennai_ptax_payment_modes_2",
+        "claim_chennai_ptax_payment_modes_3",
+        "claim_chennai_ptax_payment_modes_4",
+        "claim_chennai_ptax_payment_modes_5",
+        "claim_chennai_ptax_payment_modes_6",
+        "claim_chennai_ptax_half_yearly_basis"
+      ],
+      "searchedRoutes": [],
+      "note": "Usable rules decide which route applies: the citizen must have the property tax bill number, given as a zone number, division code, bill number and sub number, and is told to confirm it before paying; the payment may be made through tax collectors, eleven named banks, e-seva centres or online; and the liability is a half-yearly tax on a property inside Chennai city limits."
+    },
+    "time": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_chennai_ptax_half_yearly_basis"
+      ],
+      "searchedRoutes": [
+        "https://chennaicorporation.gov.in/gcc/online-services/property-tax/rules-procedure/",
+        "https://chennaicorporation.gov.in/gcc/online-services/property-tax/tax-assessment/",
+        "https://chennaicorporation.gov.in/new_site/property-tax-online-payment/",
+        "https://chennaicorporation.gov.in/gcc/online-services/property-tax/"
+      ],
+      "note": "The topic is named without an actionable value. The tax is described as half-yearly, which tells the citizen there is a cycle but not when a half year's tax falls due; no reviewed route gives a due date, a penalty date, a rebate deadline or a service-level target for the payment route. The timelines the corporation does publish belong to the assessment procedure, which this scope excludes."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_chennai_ptax_revenue_officer_contact",
+        "claim_chennai_ptax_revenue_officer_contact_2",
+        "claim_chennai_ptax_revenue_officer_is_payee"
+      ],
+      "searchedRoutes": [],
+      "note": "The citizen can identify and reach the role that holds the case: the Revenue Officer, Corporation of Chennai, named as the payee for a cheque or demand draft on one route and, on the payment and receipt routes themselves, as the officer to whom a discrepancy in the property tax should be taken, with two telephone numbers and an extension published beside the form."
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimIds": [
+        "claim_chennai_ptax_public_receipt_route",
+        "claim_chennai_ptax_public_receipt_route_2",
+        "claim_chennai_ptax_payment_status_route"
+      ],
+      "searchedRoutes": [],
+      "note": "A visible post-payment surface exists and is public: a Property Tax Online Payment Receipt route that returns a receipt for a property identified by its four-part bill number, without login, alongside published payment-status routes. The routes were read, not exercised; no identifier was entered and no case data was retrieved, which is why the receipt claim is recorded as mixed and partial rather than as a verified observation of what it returns."
+    }
+  }
+}

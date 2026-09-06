@@ -4,7 +4,7 @@ import process from 'node:process';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import YAML from 'yaml';
-import { generateJurisdictionScorecards, generateScorecards } from '../benchmark/scripts/generate-scorecards.mjs';
+import { exportBengaluruEvidence, exportJurisdictionEvidence, generateJurisdictionScorecards, generateScorecards } from '../benchmark/scripts/generate-scorecards.mjs';
 import { generateJurisdictionTable } from '../benchmark/scripts/jurisdiction-table.mjs';
 
 const projectRoot = process.cwd();
@@ -119,5 +119,7 @@ try {
 }
 await generateScorecards();
 await generateJurisdictionScorecards();
+await exportJurisdictionEvidence();
+await exportBengaluruEvidence();
 await generateJurisdictionTable();
 console.log(`Prepared ${path.relative(projectRoot, inputPath)} for the site.`);

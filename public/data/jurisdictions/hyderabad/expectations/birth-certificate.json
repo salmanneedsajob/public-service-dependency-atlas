@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "birth-certificate",
+  "primaryScenarioId": "scenario_ind32_birth_copy_workflow",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimIds": [
+        "claim_hyderabad_birth_meeseva_fee_45"
+      ],
+      "searchedRoutes": [],
+      "note": "The corporation's current birth and death page gives Rs. 45 at any Mee-Seva centre, an amount the citizen pays, directly observed and graded B. The corporation's Citizen's Charter gives Rs. 20 per certificate, and Rs. 20 per extra copy, for the same output. Neither source states that it prices a channel to the exclusion of the other, so the two are cross-linked as contradictory under protocol section 1 rather than treated as separate routes; the charter figure is contested and therefore does not support this cell. The cell is stated on the Rs. 45 figure alone. The charter is twelve years past the revision date it states for itself, and whether its Rs. 20 figure is still in force is recorded separately as unknown."
+    },
+    "documents": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_hyderabad_birth_charter_application_prescribed_format",
+        "claim_hyderabad_birth_charter_application_prescribed_format_2",
+        "claim_hyderabad_birth_charter_application_prescribed_format_3",
+        "claim_hyderabad_birth_meeseva_noninstitutional_intake",
+        "claim_hyderabad_birth_form_particulars",
+        "claim_hyderabad_birth_form_particulars_2",
+        "claim_hyderabad_birth_form_particulars_3"
+      ],
+      "searchedRoutes": [
+        "https://www.ghmc.gov.in/Birth.aspx",
+        "https://www.ghmc.gov.in/Menu_Files/citizen-charter-19-06_compress.pdf",
+        "https://www.ghmc.gov.in/CSC_Applications/BIRTHREQAPP.pdf",
+        "https://bnd.ghmc.gov.in/Birth_Certificate.aspx"
+      ],
+      "note": "The topic is named without an actionable value. The corporation's page tells the citizen to bring 'all required documents' and names none for this route; the charter's documents column for both relevant rows contains only the application in the prescribed format, under a heading requiring copies to be attested by a Gazetted Officer; and the printable application form asks for particulars about the birth rather than for any document to attach."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_hyderabad_birth_form_registration_proviso",
+        "claim_hyderabad_birth_institutional_route",
+        "claim_hyderabad_birth_institutional_route_2",
+        "claim_hyderabad_birth_institutional_route_3",
+        "claim_hyderabad_birth_meeseva_instant_issue",
+        "claim_hyderabad_birth_meeseva_noninstitutional_intake"
+      ],
+      "searchedRoutes": [],
+      "note": "Usable rules decide who qualifies and which route applies: the certificate is issued only where the entry is found registered with corporation records; a birth in a hospital reaches the register through the hospital's own online submission and the certificate is then taken from a Mee-Seva centre; and a birth at home is brought to a Mee-Seva centre by the family, with the certificate issued there after the Registrar or AMOH approves."
+    },
+    "time": {
+      "state": "stated",
+      "claimIds": [
+        "claim_hyderabad_birth_charter_time_frames",
+        "claim_hyderabad_birth_charter_time_frames_2",
+        "claim_hyderabad_birth_meeseva_instant_issue"
+      ],
+      "searchedRoutes": [],
+      "note": "Actionable periods are published for both routes: 7 days for issue of a certificate and 3 days for supply of extra copies in the corporation's charter, and issue instantly at the Mee-Seva counter on the corporation's current page. The charter figures rest on a document twelve years past its own revision date, and that doubt is carried as a separate unknown claim. The instant figure covers the counter step, not the prior approval by the Registrar or AMOH, for which no period is published."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_hyderabad_birth_charter_officers",
+        "claim_hyderabad_birth_charter_officers_2",
+        "claim_hyderabad_birth_institutional_route",
+        "claim_hyderabad_birth_institutional_route_3",
+        "claim_hyderabad_birth_meeseva_instant_issue"
+      ],
+      "searchedRoutes": [],
+      "note": "The citizen can identify the role that decides and the one to escalate to: the corporation's charter names the AMOH as the officer rendering the service for both the issue of a certificate and extra copies, and names the DC as the officer to be contacted for delay or default; the current page names the Registrar or AMOH as the approver, and names the Registrars of Births and Deaths as the authority whose verification and approval precede a certificate being taken from a Mee-Seva centre. The page's naming of the Sub-Registrar or AMC as the recipient of a hospital's online request is not relied on here, because hospital-side registration steps are excluded from this scenario. What is not published on any reviewed route is a circle-level office list or a contact number for that role."
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimIds": [
+        "claim_hyderabad_birth_sms_alert_after_approval",
+        "claim_hyderabad_birth_public_search_route",
+        "claim_hyderabad_birth_certificate_template_wording",
+        "claim_hyderabad_birth_certificate_template_wording_2",
+        "claim_hyderabad_birth_certificate_template_wording_3",
+        "claim_hyderabad_birth_meeseva_fee_45_2"
+      ],
+      "searchedRoutes": [],
+      "note": "Surfaces the citizen sees after applying are identified: an SMS alert once the Registrar or AMOH approves, a public route on the corporation's births and deaths portal that takes an acknowledgement or application number, and a certificate layout the portal itself serves, headed as issued under section 12 or 17 and reciting the ward and circle register it is drawn from. The search route was read, not queried; no number was entered."
+    }
+  }
+}

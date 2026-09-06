@@ -1,0 +1,1185 @@
+{
+  "serviceId": "birth-certificate",
+  "ledgerPath": "ledger/jurisdictions/bengaluru-grid/birth-certificate.json",
+  "auditPath": "ledger/jurisdictions/bengaluru-grid/audits/birth-certificate.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "correction_birth_rule13_split_text",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_rule_13_extract_fee",
+      "fieldPath": "/text",
+      "old": "Rule 13(1) of the Karnataka Registration of Births and Deaths Rules, 1999 fixes the fee for granting an extract relating to each birth or death at Rs. 5.00, the fee for a search for a single entry in the first year at Rs. 2.00 and for every additional year at Rs. 2.00, and the fee for a non-availability certificate at Rs. 2.00.",
+      "new": "Rule 13(1) of the Karnataka Registration of Births and Deaths Rules, 1999 fixes the fee for granting an extract relating to each birth or death at Rs. 5.00.",
+      "reason": "Compound claim. Protocol section 1 requires one claim to assert one checkable thing, and section 8 lint item 1 flags compound or list claims; this sentence asserted three separately checkable statutory fees. Narrowed to the extract fee, which is the figure the cost cell uses. The record ID is retained per section 1's rule that content changes and identity does not. The other two fees are added as separate claims in this correction set with wording, source, grade, basis and status unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "auditNote": "Audit finding F11. No evidence added or removed; the split redistributes the existing sentence across three atomic claims. Cost cell state unchanged."
+      }
+    },
+    {
+      "id": "correction_birth_rule13_split_notes",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_rule_13_extract_fee",
+      "fieldPath": "/notes",
+      "old": "The statutory figure behind the service card's Rs. 5 application fee. The reviewed copy carries no amendment history, so whether these figures have been revised since 1999 is not established here.",
+      "new": "The statutory figure behind the service card's Rs. 5 application fee. The reviewed copy carries no amendment history, so whether this figure has been revised since 1999 is not established here. The other fees fixed by the same rule are recorded separately at claim_bengaluru_grid_birth_rule_13_search_fee and claim_bengaluru_grid_birth_rule_13_nonavailability_fee following the audit split.",
+      "reason": "The note referred to 'these figures' in the plural, which no longer matches the narrowed claim text, and the reader needs a pointer to the two claims split out of it.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "auditNote": "Audit finding F11. Housekeeping consequent on the text split; the amendment-history limitation is preserved verbatim."
+      }
+    },
+    {
+      "id": "correction_birth_rule13_add_search_fee",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_rule_13_search_fee",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_rule_13_search_fee",
+        "text": "Rule 13(1) of the Karnataka Registration of Births and Deaths Rules, 1999 fixes the fee for a search for a single entry in the first year at Rs. 2.00 and for every additional year at Rs. 2.00.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "evidenceGrade": "A",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split from claim_bengaluru_grid_birth_rule_13_extract_fee by audit under protocol section 13. Wording, source, grade, basis and status are unchanged from the compound original; nothing was added. One search-fee schedule with a first-year figure and a per-additional-year increment, so it remains one checkable fee item. The reviewed copy of the rules carries no amendment history, so whether this figure has been revised since 1999 is not established here."
+      },
+      "reason": "Second limb of the compound claim corrected above, recorded as its own atomic claim under protocol section 13, which permits the auditor to split compound claims.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "auditNote": "Audit finding F11. The wording is taken verbatim from claim_bengaluru_grid_birth_rule_13_extract_fee as it stood before this correction set; no evidence is invented."
+      }
+    },
+    {
+      "id": "correction_birth_rule13_add_nonavailability_fee",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_rule_13_nonavailability_fee",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_rule_13_nonavailability_fee",
+        "text": "Rule 13(1) of the Karnataka Registration of Births and Deaths Rules, 1999 fixes the fee for a non-availability certificate at Rs. 2.00.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "evidenceGrade": "A",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split from claim_bengaluru_grid_birth_rule_13_extract_fee by audit under protocol section 13. Wording, source, grade, basis and status are unchanged from the compound original. A non-availability certificate is a different output from the certified copy this scenario covers, so this claim is deliberately not cited in the cost cell. The reviewed copy of the rules carries no amendment history, so whether this figure has been revised since 1999 is not established here."
+      },
+      "reason": "Third limb of the compound claim corrected above, recorded as its own atomic claim under protocol section 13.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "auditNote": "Audit finding F11. Wording taken verbatim from the compound original. Retained rather than dropped because removing published statutory content would lose evidence, but kept out of the cost cell because it prices a different output."
+      }
+    },
+    {
+      "id": "correction_birth_cost_claimids_after_split",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_bengaluru_grid_birth_application_fee_5",
+        "claim_bengaluru_grid_birth_service_charge_20",
+        "claim_bengaluru_grid_birth_rule_13_extract_fee"
+      ],
+      "new": [
+        "claim_bengaluru_grid_birth_application_fee_5",
+        "claim_bengaluru_grid_birth_service_charge_20",
+        "claim_bengaluru_grid_birth_rule_13_extract_fee",
+        "claim_bengaluru_grid_birth_rule_13_search_fee"
+      ],
+      "reason": "The cost cell note cites 'Rs. 2.00 for a first-year search'. After the atomicity split that figure lives in claim_bengaluru_grid_birth_rule_13_search_fee, so the new claim must be cited for the note to remain supported by the cell's own claimIds under protocol section 9. The non-availability fee claim is deliberately not added: it prices a different output.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "auditNote": "Audit finding F11. Consequential on the split only. The cell state remains stated and is carried by the service card's Rs. 5 and Rs. 20 amounts regardless of this addition."
+      }
+    },
+    {
+      "id": "correction_birth_manual_split_text",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_user_manual_published",
+      "fieldPath": "/text",
+      "old": "The Chief Registrar's download route links a user manual to download a birth certificate, and the Seva Sindhu service card links an application user manual and a direct apply route for the service.",
+      "new": "The Chief Registrar's download route links a user manual to download a birth certificate.",
+      "reason": "Compound claim joining observations of two different official interfaces, each with its own source, in one sentence. Protocol section 1 requires one claim to assert one checkable thing and section 8 lint item 1 flags compound claims. Narrowed to the download-route observation; the Seva Sindhu card's links are added as a separate claim in this correction set.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_download_route"
+        ],
+        "auditNote": "Audit finding F12. This claim supports no expectation cell, so no cell state moves; corrected so the shipped ledger carries no unwaived lint failure."
+      }
+    },
+    {
+      "id": "correction_birth_manual_split_sourceids",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_user_manual_published",
+      "fieldPath": "/sourceIds",
+      "old": [
+        "source_bengaluru_grid_birth_download_route",
+        "source_bengaluru_grid_birth_seva_sindhu"
+      ],
+      "new": [
+        "source_bengaluru_grid_birth_download_route"
+      ],
+      "reason": "Consequent on the text narrowing above. The narrowed claim asserts only what the eJanMa download route shows, so the Seva Sindhu card is no longer a source for it; under protocol section 7 a citation must resolve to the page bearing the claimed content.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_download_route"
+        ],
+        "auditNote": "Audit finding F12. The Seva Sindhu card is carried over as the source of the new claim claim_bengaluru_grid_birth_seva_sindhu_manual_and_apply, so no source linkage is lost."
+      }
+    },
+    {
+      "id": "correction_birth_manual_split_notes",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_user_manual_published",
+      "fieldPath": "/notes",
+      "old": "The manuals were observed as published links; their contents were not read.",
+      "new": "The manual was observed as a published link on the download route on the access date; its contents were not read. The Seva Sindhu card's application user manual and apply route are recorded separately at claim_bengaluru_grid_birth_seva_sindhu_manual_and_apply following the audit split.",
+      "reason": "The note referred to 'the manuals' in the plural, which no longer matches the narrowed claim text, and the reader needs a pointer to the claim split out of it.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_download_route"
+        ],
+        "auditNote": "Audit finding F12. Housekeeping consequent on the text split; the 'contents were not read' limitation is preserved."
+      }
+    },
+    {
+      "id": "correction_birth_add_seva_sindhu_manual_claim",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_seva_sindhu_manual_and_apply",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_seva_sindhu_manual_and_apply",
+        "text": "The Seva Sindhu service card for a birth certificate links an application user manual and a direct apply route for the service.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_birth_seva_sindhu"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split from claim_bengaluru_grid_birth_user_manual_published by audit under protocol section 13, which had joined two different official interfaces in one sentence. Wording, source, grade, basis and status are unchanged from the compound original. Both links were observed as published on the card on the access date; the manual's contents were not read and the apply route was not entered, so nothing is asserted here about what either returns. The pairing is one observation of a single card's published entry points, not a compound requirement."
+      },
+      "reason": "Second limb of the compound claim corrected above, recorded as its own claim against its own source under protocol section 13.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_seva_sindhu"
+        ],
+        "auditNote": "Audit finding F12. Wording taken verbatim from claim_bengaluru_grid_birth_user_manual_published as it stood before this correction set; no evidence is invented. Supports no expectation cell."
+      }
+    },
+    {
+      "id": "correction_birth_verification_route_text",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_public_verification_route",
+      "fieldPath": "/text",
+      "old": "The Chief Registrar's portal publishes, alongside the download route, a Birth and Death Verification route and a Registration Details route, both reachable without login.",
+      "new": "The Chief Registrar's portal home page publishes navigation links to a Birth and Death Verification route and a Registration Details route.",
+      "reason": "The claim asserted that two routes are 'both reachable without login' while its own note records that neither was exercised, so that property was inferred rather than observed, contrary to protocol section 5. It also asserted properties of two pages that have their own URLs while citing only the portal root, which is the general-site reference protocol section 7 forbids as a specific citation. Narrowed to what the cited page directly shows, which leaves the claim a true observation at Grade B rather than requiring a downgrade.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "Audit finding F13. The after-submission cell is unaffected: it is carried by claim_bengaluru_grid_birth_public_status_route, whose route has its own source record and was directly read, and by the downloadable-result claim. This claim is supporting only, and the cell remains stated."
+      }
+    },
+    {
+      "id": "correction_birth_verification_route_notes",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_public_verification_route",
+      "fieldPath": "/notes",
+      "old": "Observed as published navigation links on the access date; neither was exercised.",
+      "new": "Observed as published navigation links on the portal home page on the access date; neither route was opened. Nothing is asserted here about whether either route is reachable without login, what either requires, or what either returns; the earlier wording asserted properties of pages that were not visited and that the cited home-page source could not support. Recording either route's own behaviour would need that route captured as its own source.",
+      "reason": "Protocol section 5 requires the observation boundary to be explicit. The narrowed claim needs a note that states what was and was not seen, and that names the missing source records, so the limitation is visible to the renderer and to any later pass.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "Audit finding F13. No source is invented for the two routes; the gap is recorded instead."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b01",
+      "recordType": "source",
+      "recordId": "source_bengaluru_grid_birth_ejanma_home",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Bengaluru, Karnataka, India; the portal is state-wide and its own text addresses the BBMP area specifically. Agency naming as displayed on the access date: 'Office of the Chief Registrar of Births and Deaths, Government Of Karnataka', with the footer 'CONTENT OWNED AND MAINTAINED BY : DIRECTORATE OF ECONOMICS AND STATISTICS' and 'Designed & developed by NATIONAL INFORMATICS CENTRE (NIC) Karnataka'. The footer displays 'Last Update Date : 09/02/2026 1.30 PM' and 'Version : eJanMa 3.0/3'; the date is recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240611195411/https://ejanma.karnataka.gov.in/ (2024-06-11); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Bengaluru, Karnataka, India; the portal is state-wide and its own text addresses the BBMP area specifically. Agency naming as displayed on the access date: 'Office of the Chief Registrar of Births and Deaths, Government Of Karnataka', with the footer 'CONTENT OWNED AND MAINTAINED BY : DIRECTORATE OF ECONOMICS AND STATISTICS' and 'Designed & developed by NATIONAL INFORMATICS CENTRE (NIC) Karnataka'. The footer displays 'Last Update Date : 09/02/2026 1.30 PM' and 'Version : eJanMa 3.0/3'; the date is recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240611195411/https://ejanma.karnataka.gov.in/ (2024-06-11); no new capture was pushed from this run. Limitation: that snapshot is two years older than the access date and predates the portal version recorded here, so it does not preserve the page as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an archived source without a stated limitation. The archive limitation is now stated: the only snapshot predates both the access date and the recorded portal version.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b02",
+      "recordType": "source",
+      "recordId": "source_bengaluru_grid_birth_download_route",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Office of the Chief Registrar of Births and Deaths, Government Of Karnataka'. Direct current observation of a public route reachable without login, which states where certificates are downloaded and links user manuals for birth and death certificates. The footer displays 'Last Update Date : 09/02/2026 1.30 PM', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240529072356/https://ejanma.karnataka.gov.in/frmDownloadCertificate.aspx (2024-05-29); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Office of the Chief Registrar of Births and Deaths, Government Of Karnataka'. Direct current observation of a public route reachable without login, which states where certificates are downloaded and links user manuals for birth and death certificates. The footer displays 'Last Update Date : 09/02/2026 1.30 PM', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240529072356/https://ejanma.karnataka.gov.in/frmDownloadCertificate.aspx (2024-05-29); no new capture was pushed from this run. Limitation: that snapshot is two years older than the access date, so it does not preserve the route as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an archived source without a stated limitation. The archive limitation is now stated: the only snapshot long predates the access date.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_download_route"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b03",
+      "recordType": "source",
+      "recordId": "source_bengaluru_grid_birth_status_route",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Office of the Chief Registrar of Births and Deaths, Government Of Karnataka'. Direct current observation of a public route reachable without login, offering a type selector and fields for a registration number and a Sakala number. The route was read only: nothing was entered and no case data was retrieved. The footer displays 'Last Update Date : 09/02/2026 1.30 PM', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240610080224/https://ejanma.karnataka.gov.in/frmApplicationStatus.aspx (2024-06-10); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Office of the Chief Registrar of Births and Deaths, Government Of Karnataka'. Direct current observation of a public route reachable without login, offering a type selector and fields for a registration number and a Sakala number. The route was read only: nothing was entered and no case data was retrieved. The footer displays 'Last Update Date : 09/02/2026 1.30 PM', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240610080224/https://ejanma.karnataka.gov.in/frmApplicationStatus.aspx (2024-06-10); no new capture was pushed from this run. Limitation: that snapshot is two years older than the access date, so it does not preserve the route as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an archived source without a stated limitation. The archive limitation is now stated: the only snapshot long predates the access date.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_status_route"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b04",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_no_documents_required",
+      "fieldPath": "/text",
+      "old": "The Seva Sindhu service card for a birth certificate states, under what you need to know, that the documents to be submitted with the application are NIL.",
+      "new": "The Seva Sindhu service card for a birth certificate states under 'what you need to know' that the documents to be submitted with the application are NIL.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items, produced by the two commas setting off the quoted heading. The heading is quoted without the commas; the claim asserts the same single fact, the explicit zero on the service card.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_seva_sindhu"
+        ],
+        "auditNote": "IND-91 part B: punctuation only. The documents cell is stated on this claim, so the row is re-audited even though nothing asserted has changed."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b05",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma",
+      "fieldPath": "/text",
+      "old": "The Chief Registrar's download route states that birth and death certificates for the events which are registered in eJanMa can be downloaded from the Seva Sindhu portal by paying a specific fee.",
+      "new": "The Chief Registrar's download route states that a birth certificate for an event registered in eJanMa can be downloaded from the Seva Sindhu portal.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'and'. The route rule and the fee condition attached to it are two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_download_route"
+        ],
+        "auditNote": "IND-91 part B: the eligibility and after-submission cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b06",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma",
+      "fieldPath": "/notes",
+      "old": "A rule that decides which route applies, by whether the event is on the electronic register. The route names a fee without giving its amount; the amount is on the Seva Sindhu card.",
+      "new": "A rule that decides which route applies, by whether the event is on the electronic register. The route's own wording covers birth and death certificates together; this claim carries the birth limb, which is this scenario's service. Split during IND-91 part B lint remediation; the fee condition is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'and'. The route rule and the fee condition attached to it are two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_download_route"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b07",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma_2",
+        "text": "That route states that the download requires payment of a specific fee.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_birth_download_route"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_download_requires_registration_in_ejanma. The route names a fee without giving its amount; the amount is on the Seva Sindhu card."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'and'. The route rule and the fee condition attached to it are two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_download_route"
+        ],
+        "auditNote": "IND-91 part B: the eligibility and after-submission cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b08",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_bbmp_registrars",
+      "fieldPath": "/text",
+      "old": "The Chief Registrar's portal states that births, deaths and still births occurring in urban local body areas and in the BBMP area are registered in eJanMa by Health Officers and Health Inspectors in their respective areas.",
+      "new": "The Chief Registrar's portal states that births occurring in the BBMP area are registered in eJanMa.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length of 222 characters. Where the event is registered, who registers it and the wider territorial limb are three independently checkable facts cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "IND-91 part B: the eligibility and owner cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b09",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_bbmp_registrars",
+      "fieldPath": "/notes",
+      "old": "A designation tied to a jurisdiction rule, specific to the city this row scores.",
+      "new": "A designation tied to a jurisdiction rule, specific to the city this row scores. The portal's own wording covers births, deaths and still births together; this claim carries the birth limb, which is this scenario's service. Split during IND-91 part B lint remediation into the BBMP rule, the officers who register, and the urban local body areas.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length of 222 characters. Where the event is registered, who registers it and the wider territorial limb are three independently checkable facts cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b10",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_bbmp_registrars_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_bbmp_registrars_2",
+        "text": "That portal states that Health Officers and Health Inspectors register those events in their respective areas.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_bbmp_registrars. Who registers the event is separately checkable from where it is registered, and it is the fragment the owner cell rests on."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length of 222 characters. Where the event is registered, who registers it and the wider territorial limb are three independently checkable facts cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "IND-91 part B: the eligibility and owner cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b11",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_bbmp_registrars_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_bbmp_registrars_3",
+        "text": "That portal applies the same rule to births occurring in urban local body areas.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_bbmp_registrars. The wider territorial limb is separately checkable from the BBMP limb."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length of 222 characters. Where the event is registered, who registers it and the wider territorial limb are three independently checkable facts cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "IND-91 part B: the eligibility and owner cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b12",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_additional_copies_contact",
+      "fieldPath": "/text",
+      "old": "The Chief Registrar's portal states that for additional copies of the birth or death certificate, and for any corrections, the citizen should contact the data entry operators of the concerned Nadakacheri and the respective birth and death registration centres.",
+      "new": "The Chief Registrar's portal states that for additional copies of the birth certificate the citizen should contact the data entry operators of the concerned Nadakacheri.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 260 characters. Two named contact routes and the corrections limb are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b13",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_additional_copies_contact",
+      "fieldPath": "/notes",
+      "old": "A contact route named for exactly the request this scenario covers.",
+      "new": "A contact route named for exactly the request this scenario covers. Split during IND-91 part B lint remediation into the Nadakacheri contact, the registration centres and the corrections limb.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 260 characters. Two named contact routes and the corrections limb are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b14",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_additional_copies_contact_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_additional_copies_contact_2",
+        "text": "That portal also names the respective birth and death registration centres as a contact for additional copies.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_additional_copies_contact. The second contact route is separately checkable from the first."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 260 characters. Two named contact routes and the corrections limb are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b15",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_additional_copies_contact_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_additional_copies_contact_3",
+        "text": "That portal gives the same contacts for any corrections.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_additional_copies_contact. The corrections limb is outside this scenario's scope and is recorded for completeness."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 260 characters. Two named contact routes and the corrections limb are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b16",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_rule_13_issuer_and_form",
+      "fieldPath": "/text",
+      "old": "Rule 13(2) of the Karnataka Registration of Births and Deaths Rules, 1999 provides that an extract in regard to a birth is issued by the Registrar or the Tahsildar or the Commissioner or Chief Officer of the Municipal Corporation or Municipal Council, in Form No. 5, certified in the manner provided for in section 76 of the Indian Evidence Act, 1872.",
+      "new": "Rule 13(2) of the Karnataka Registration of Births and Deaths Rules, 1999 provides that an extract in regard to a birth is issued by the Registrar or the Tahsildar.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 351 characters. Who issues the extract, which municipal officers may issue it, the form it takes and the manner of its certification are four independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b17",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_rule_13_issuer_and_form",
+      "fieldPath": "/notes",
+      "old": "Identifies both the office that issues the extract and the document the citizen receives.",
+      "new": "Identifies the office that issues the extract. Split during IND-91 part B lint remediation into the two groups of issuers, the form and the certification.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 351 characters. Who issues the extract, which municipal officers may issue it, the form it takes and the manner of its certification are four independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b18",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_rule_13_issuer_and_form_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_rule_13_issuer_and_form_2",
+        "text": "Rule 13(2) also names the Commissioner or Chief Officer of the Municipal Corporation or Municipal Council as an issuer of that extract.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "evidenceGrade": "A",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_rule_13_issuer_and_form. The municipal issuers are separately checkable from the Registrar and Tahsildar, and they are the ones that apply in a city corporation area."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 351 characters. Who issues the extract, which municipal officers may issue it, the form it takes and the manner of its certification are four independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b19",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_rule_13_issuer_and_form_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_rule_13_issuer_and_form_3",
+        "text": "Rule 13(2) provides that the extract is issued in Form No. 5.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "evidenceGrade": "A",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_rule_13_issuer_and_form. The form of the extract is separately checkable from who issues it."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 351 characters. Who issues the extract, which municipal officers may issue it, the form it takes and the manner of its certification are four independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b20",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_rule_13_issuer_and_form_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_rule_13_issuer_and_form_4",
+        "text": "Rule 13(2) provides that the extract is certified in the manner provided for in section 76 of the Indian Evidence Act, 1872.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "evidenceGrade": "A",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_rule_13_issuer_and_form. The manner of certification is separately checkable from the form."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 351 characters. Who issues the extract, which municipal officers may issue it, the form it takes and the manner of its certification are four independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b21",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_public_status_route",
+      "fieldPath": "/text",
+      "old": "The Chief Registrar's portal publishes an Application Status route, reachable without login, offering a type selector and fields for a registration number and a Sakala number.",
+      "new": "The Chief Registrar's portal publishes an Application Status route that is reachable without login.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. The existence of a public status route and the fields it offers are two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_status_route"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b22",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_public_status_route",
+      "fieldPath": "/notes",
+      "old": "The route's own fields were observed; nothing was entered, so no claim is made about what it returns. The Sakala field indicates the service is tracked under the state's service-guarantee scheme.",
+      "new": "The route's own fields were observed; nothing was entered, no login was used, so no claim is made about what it returns. Split during IND-91 part B lint remediation; the route's fields are asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. The existence of a public status route and the fields it offers are two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_status_route"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b23",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_public_status_route_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_public_status_route_2",
+        "text": "That route offers a type selector and fields for a registration number and a Sakala number.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_birth_status_route"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_public_status_route. The route's fields are separately checkable from its existence. The Sakala field indicates the service is tracked under the state's service-guarantee scheme. Nothing was entered and no login was used."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. The existence of a public status route and the fields it offers are two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_status_route"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b24",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_fee_currency_unknown",
+      "fieldPath": "/text",
+      "old": "Whether the Rs. 5.00 extract fee fixed by rule in 1999 has since been revised is not established by any reviewed public page; the copy of the rules published by the Chief Registrar carries no amendment history.",
+      "new": "Whether the Rs. 5.00 extract fee fixed by rule in 1999 has since been revised is not established by any reviewed public page.",
+      "reason": "Pre-audit lint reported compound-claim for a semicolon. The unknown and the observed absence behind it are two separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b25",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_fee_currency_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Not login-related. The current service card's Rs. 5 figure is consistent with the 1999 rule, which is some evidence that it stands.",
+      "new": "Retained because the uncertainty itself matters to the journey. Not login-related. The current service card's Rs. 5 figure is consistent with the 1999 rule, which is some evidence that it stands. Split during IND-91 part B lint remediation; the observed reason for the uncertainty is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for a semicolon. The unknown and the observed absence behind it are two separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b26",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_fee_currency_unknown_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_fee_currency_unknown_2",
+        "text": "The copy of the rules published by the Chief Registrar carries no amendment history.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_fee_currency_unknown. The observed absence is separately checkable from the unknown it produces."
+      },
+      "reason": "Pre-audit lint reported compound-claim for a semicolon. The unknown and the observed absence behind it are two separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b27",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma",
+        "claim_bengaluru_grid_birth_bbmp_registrars",
+        "claim_bengaluru_grid_birth_eligibility_citizens"
+      ],
+      "new": [
+        "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma",
+        "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma_2",
+        "claim_bengaluru_grid_birth_bbmp_registrars",
+        "claim_bengaluru_grid_birth_bbmp_registrars_2",
+        "claim_bengaluru_grid_birth_bbmp_registrars_3",
+        "claim_bengaluru_grid_birth_eligibility_citizens"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: eligibility the eJanMa registration rule with the officers and territories it covers, owner the statutory issuers with the form of the extract and the named contact routes, after-submission the public status route with its fields and the download route. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_download_route",
+          "source_bengaluru_grid_birth_ejanma_home",
+          "source_bengaluru_grid_birth_seva_sindhu"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b28",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:owner",
+      "fieldPath": "/cells/owner/claimIds",
+      "old": [
+        "claim_bengaluru_grid_birth_rule_13_issuer_and_form",
+        "claim_bengaluru_grid_birth_bbmp_registrars",
+        "claim_bengaluru_grid_birth_additional_copies_contact",
+        "claim_bengaluru_grid_birth_clarifications_contact"
+      ],
+      "new": [
+        "claim_bengaluru_grid_birth_rule_13_issuer_and_form",
+        "claim_bengaluru_grid_birth_rule_13_issuer_and_form_2",
+        "claim_bengaluru_grid_birth_rule_13_issuer_and_form_3",
+        "claim_bengaluru_grid_birth_rule_13_issuer_and_form_4",
+        "claim_bengaluru_grid_birth_bbmp_registrars",
+        "claim_bengaluru_grid_birth_bbmp_registrars_2",
+        "claim_bengaluru_grid_birth_additional_copies_contact",
+        "claim_bengaluru_grid_birth_additional_copies_contact_2",
+        "claim_bengaluru_grid_birth_additional_copies_contact_3",
+        "claim_bengaluru_grid_birth_clarifications_contact"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: eligibility the eJanMa registration rule with the officers and territories it covers, owner the statutory issuers with the form of the extract and the named contact routes, after-submission the public status route with its fields and the download route. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home",
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_b29",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:after-submission",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [
+        "claim_bengaluru_grid_birth_public_status_route",
+        "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma",
+        "claim_bengaluru_grid_birth_public_verification_route"
+      ],
+      "new": [
+        "claim_bengaluru_grid_birth_public_status_route",
+        "claim_bengaluru_grid_birth_public_status_route_2",
+        "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma",
+        "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma_2",
+        "claim_bengaluru_grid_birth_public_verification_route"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: eligibility the eJanMa registration rule with the officers and territories it covers, owner the statutory issuers with the form of the extract and the named contact routes, after-submission the public status route with its fields and the download route. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_download_route",
+          "source_bengaluru_grid_birth_ejanma_home",
+          "source_bengaluru_grid_birth_status_route"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "birth-certificate:after-submission",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [
+        "claim_bengaluru_grid_birth_public_status_route",
+        "claim_bengaluru_grid_birth_public_status_route_2",
+        "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma",
+        "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma_2",
+        "claim_bengaluru_grid_birth_public_verification_route"
+      ],
+      "new": [
+        "claim_bengaluru_grid_birth_public_status_route",
+        "claim_bengaluru_grid_birth_public_status_route_2",
+        "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma"
+      ],
+      "reason": "Two cited claims cannot support this cell. claim_bengaluru_grid_birth_download_requires_registration_in_ejanma_2 asserts a payment requirement, and protocol section 8 states that a step at or before submission, including payment, is not after-submission evidence. claim_bengaluru_grid_birth_public_verification_route asserts only that navigation links exist and expressly disclaims knowing what either route requires or returns, so it names an outcome without a demonstrated post-submission surface, which is mentioned level at best. The cell remains stated on the public Application Status route and the downloadable certificate, both named in the section 8 list.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_status_route",
+          "source_bengaluru_grid_birth_download_route",
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "Finding F10 and F11. Section 8 after-submission bullet excludes payment by name; the verification-route claim's own note records that neither route was opened. The cell note still refers to the removed routes and to all surfaces having been read, and must be rewritten; that note edit is outside this audit's declared correction field paths and is carried as a stated limitation."
+      },
+      "id": "corr_bengaluru_grid_birth_certificate_r01"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "birth-certificate:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma",
+        "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma_2",
+        "claim_bengaluru_grid_birth_bbmp_registrars",
+        "claim_bengaluru_grid_birth_bbmp_registrars_2",
+        "claim_bengaluru_grid_birth_bbmp_registrars_3",
+        "claim_bengaluru_grid_birth_eligibility_citizens"
+      ],
+      "new": [
+        "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma",
+        "claim_bengaluru_grid_birth_bbmp_registrars",
+        "claim_bengaluru_grid_birth_bbmp_registrars_2",
+        "claim_bengaluru_grid_birth_bbmp_registrars_3",
+        "claim_bengaluru_grid_birth_eligibility_citizens"
+      ],
+      "reason": "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma_2 asserts that the download requires payment of a fee. Under protocol section 8 that is cost-topic evidence at mentioned level, since no amount is given; it decides neither who qualifies nor which route applies, and the cell note makes no use of it. The cell remains stated on the eJanMa registration route rule and the BBMP and urban-local-body registration rules.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_download_route",
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "Finding F4. Not added to /cells/cost/claimIds: a stated cell's claimIds should carry the claims that support stated, and a payment step without an amount is mentioned level under the section 8 cost bullet."
+      },
+      "id": "corr_bengaluru_grid_birth_certificate_r02"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "birth-certificate:owner",
+      "fieldPath": "/cells/owner/claimIds",
+      "old": [
+        "claim_bengaluru_grid_birth_rule_13_issuer_and_form",
+        "claim_bengaluru_grid_birth_rule_13_issuer_and_form_2",
+        "claim_bengaluru_grid_birth_rule_13_issuer_and_form_3",
+        "claim_bengaluru_grid_birth_rule_13_issuer_and_form_4",
+        "claim_bengaluru_grid_birth_bbmp_registrars",
+        "claim_bengaluru_grid_birth_bbmp_registrars_2",
+        "claim_bengaluru_grid_birth_additional_copies_contact",
+        "claim_bengaluru_grid_birth_additional_copies_contact_2",
+        "claim_bengaluru_grid_birth_additional_copies_contact_3",
+        "claim_bengaluru_grid_birth_clarifications_contact"
+      ],
+      "new": [
+        "claim_bengaluru_grid_birth_rule_13_issuer_and_form",
+        "claim_bengaluru_grid_birth_rule_13_issuer_and_form_2",
+        "claim_bengaluru_grid_birth_bbmp_registrars",
+        "claim_bengaluru_grid_birth_bbmp_registrars_2",
+        "claim_bengaluru_grid_birth_additional_copies_contact",
+        "claim_bengaluru_grid_birth_additional_copies_contact_2",
+        "claim_bengaluru_grid_birth_clarifications_contact",
+        "claim_bengaluru_grid_birth_clarifications_contact_2"
+      ],
+      "reason": "Three cited claims assert nothing about the office, officer or operational role that holds or decides the case, which is what the section 8 owner bullet requires: claim_bengaluru_grid_birth_rule_13_issuer_and_form_3 states the form of the extract, claim_bengaluru_grid_birth_rule_13_issuer_and_form_4 states the manner of certification, and claim_bengaluru_grid_birth_additional_copies_contact_3 adds no contact beyond the two already cited and covers corrections, which the scenario excludes. The cell note references none of the three. claim_bengaluru_grid_birth_clarifications_contact_2 is added because it carries the published helpline limb of the compound claim split by this audit, which the cell note relies on.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules",
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "Findings F9 and F12. The cell stays stated on the Health Officer and Health Inspector designation tied to the BBMP jurisdiction rule and on the Nadakacheri, registration-centre, District Statistical Officer and helpline contact routes; the Rule 13 statutory designations alone would be mentioned under section 8."
+      },
+      "id": "corr_bengaluru_grid_birth_certificate_r03"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_clarifications_contact",
+      "fieldPath": "/text",
+      "old": "The Chief Registrar's portal states that for any clarifications the citizen should contact the District Statistical Officer of the concerned district, and publishes a toll-free number 1800-425-6578.",
+      "new": "The Chief Registrar's portal states that for any clarifications the citizen should contact the District Statistical Officer of the concerned district.",
+      "reason": "Compound claim under protocol section 8, lint check 1: a routing instruction to a named district office and the publication of a toll-free number are two separately checkable assertions. Section 13 permits the auditor to split compound claims. Wording of the retained limb, source, grade, basis and status are unchanged; nothing was added.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "Finding F12. Every neighbouring compound in this ledger was split under IND-91 part B; this one was missed. The helpline limb is added as claim_bengaluru_grid_birth_clarifications_contact_2."
+      },
+      "id": "corr_bengaluru_grid_birth_certificate_r04"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_clarifications_contact_2",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_clarifications_contact_2",
+        "text": "That portal publishes a toll-free number 1800-425-6578.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split from claim_bengaluru_grid_birth_clarifications_contact by audit under protocol section 13. Wording, source, grade, basis and status are unchanged from the compound original; nothing was added. The published helpline is separately checkable from the instruction to contact the District Statistical Officer, and it is a contact route the owner cell rests on."
+      },
+      "reason": "True addition carrying the second limb of the compound claim split under protocol section 8, lint check 1, and section 13. The new record reuses no existing identifier and follows the sibling naming already used for splits in this ledger.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "Finding F12. Cited in the corrected owner claimIds so the contact route the cell note relies on remains fully cited after the split."
+      },
+      "id": "corr_bengaluru_grid_birth_certificate_r05"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_clarifications_contact",
+      "fieldPath": "/notes",
+      "old": "Institutional contact only; a named office plus a published helpline.",
+      "new": "Institutional contact only: a named office tied to the concerned district. The published toll-free helpline is recorded separately at claim_bengaluru_grid_birth_clarifications_contact_2 following the audit split under protocol section 13.",
+      "reason": "The existing note describes the record as a pairing ('a named office plus a published helpline'), which no longer matches the claim after the split and was itself the evidence of the atomicity defect.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ejanma_home"
+        ],
+        "auditNote": "Finding F12. Note text is aligned with the split and points to the sibling record, matching how the other IND-91 splits in this ledger are documented."
+      },
+      "id": "corr_bengaluru_grid_birth_certificate_r06"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma_2",
+      "fieldPath": "/text",
+      "old": "That route states that the download requires payment of a specific fee.",
+      "new": "That route states that the download requires payment of a fee, without giving the amount.",
+      "reason": "The word 'specific' implies the route names an amount. The claim's own note states the opposite: 'The route names a fee without giving its amount; the amount is on the Seva Sindhu card.' Protocol section 5 requires observation wording to record what the source directly shows, and section 8's cost bullet turns on whether an amount is given.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_download_route"
+        ],
+        "auditNote": "Finding F13. The corrected wording is also what places this claim as cost-topic evidence at mentioned level rather than as eligibility or after-submission support."
+      },
+      "id": "corr_bengaluru_grid_birth_certificate_r07"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_fee_currency_unknown_2",
+      "fieldPath": "/basis",
+      "old": "inference",
+      "new": "observation",
+      "reason": "The claim records an absence directly observed in the reviewed PDF, which source_bengaluru_grid_birth_ka_rbd_rules also records in its own notes ('the document carries no visible amendment history'), and the claim's note calls it 'the observed absence'. Protocol section 5 reserves 'inference' for a conclusion drawn from a source and requires 'observation' for what a source directly shows.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "auditNote": "Finding F14. The parent claim_bengaluru_grid_birth_fee_currency_unknown is correctly left as Unknown and inference: whether the fee has been revised genuinely is not established."
+      },
+      "id": "corr_bengaluru_grid_birth_certificate_r08"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_fee_currency_unknown_2",
+      "fieldPath": "/evidenceGrade",
+      "old": "Unknown",
+      "new": "A",
+      "reason": "Protocol section 4 grades source strength, not claim type. This claim rests on the Chief Registrar's published copy of the Karnataka Registration of Births and Deaths Rules, 1999, the same regulation source graded A by the four Rule 13 claims. 'Unknown' is reserved for a claim with no usable source, which is not the case here.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "auditNote": "Finding F14. Grade C would be defensible under the section 4 row for undated official material, but consistency of grading on a single source governs. The claim is cited by no expectation cell, so no cell state moves either way."
+      },
+      "id": "corr_bengaluru_grid_birth_certificate_r09"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_fee_currency_unknown_2",
+      "fieldPath": "/sourceIds",
+      "old": [],
+      "new": [
+        "source_bengaluru_grid_birth_ka_rbd_rules"
+      ],
+      "reason": "Protocol section 7 requires every non-Unknown claim to cite at least one source, and schemas/ledger.json enforces minItems 1 on sourceIds once evidenceGrade is not Unknown. The document whose absence of amendment history is asserted is already recorded as a source.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "auditNote": "Finding F14. Grading the claim Unknown with an empty sourceIds sidestepped the citation gate on a claim that does have a specific source."
+      },
+      "id": "corr_bengaluru_grid_birth_certificate_r10"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_fee_currency_unknown_2",
+      "fieldPath": "/status",
+      "old": "unknown",
+      "new": "verified",
+      "reason": "The absence of amendment history in the reviewed copy was directly observed and is corroborated by the source note, so the record is not an open uncertainty. The uncertainty it feeds, whether the 1999 figure still stands, remains recorded as unknown at claim_bengaluru_grid_birth_fee_currency_unknown.",
+      "support": {
+        "sourceIds": [
+          "source_bengaluru_grid_birth_ka_rbd_rules"
+        ],
+        "auditNote": "Finding F14. Protocol section 1 requires the auditor to preserve unknowns; the genuine unknown is preserved on the parent claim, while the observed fact underneath it is recorded as verified."
+      },
+      "id": "corr_bengaluru_grid_birth_certificate_r11"
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_i01",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:eligibility",
+      "fieldPath": "/cells/eligibility/note",
+      "old": "Usable rules decide which route applies: a certificate can be downloaded through Seva Sindhu only where the event is registered in eJanMa, and events in the BBMP area are registered in eJanMa by Health Officers and Health Inspectors for their areas, so an applicant knows both whether the online route is open to them and which office holds the record otherwise. The service card's own eligibility line, citizens of India, is a broad category rather than a route rule and is cited only for completeness.",
+      "new": "Usable rules decide which route applies: a birth certificate for an event registered in eJanMa can be downloaded from the Seva Sindhu portal, and events in the BBMP area are registered in eJanMa by Health Officers and Health Inspectors for their areas, so an applicant can tell whether the online route reaches their record and which officers hold it. The service card's own eligibility line, citizens of India, is a broad category rather than a route rule and is cited only for completeness.",
+      "reason": "The note said the certificate can be downloaded 'only where' the event is registered in eJanMa. claim_bengaluru_grid_birth_download_requires_registration_in_ejanma states that a certificate for an event registered in eJanMa can be downloaded; it does not state the exclusive form. The note is brought back to what the claim says. The state stays stated.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B integrator follow-up, acting on the fresh re-auditor's finding."
+      }
+    },
+    {
+      "id": "corr_bengaluru_grid_birth_certificate_i02",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:after-submission",
+      "fieldPath": "/cells/after-submission/note",
+      "old": "Surfaces the citizen sees after applying are identified and public: an Application Status route taking a registration number or a Sakala number, a downloadable certificate from the Seva Sindhu portal, and verification and registration-details routes beside them. The Sakala field indicates the application is tracked under the state's service-guarantee scheme. All were read, none queried; no number was entered.",
+      "new": "Surfaces the citizen sees after applying are identified and public: an Application Status route reachable without login, taking a type selector with a registration number and a Sakala number, and a downloadable certificate from the Seva Sindhu portal for an event registered in eJanMa. The Sakala field indicates the application is tracked under the state's service-guarantee scheme. The status route's own fields were read; nothing was entered, no number was queried and no login was used. The portal also publishes navigation links to a Birth and Death Verification route and a Registration Details route, recorded at claim_bengaluru_grid_birth_public_verification_route; neither was opened, so neither is counted towards this cell.",
+      "reason": "The note said 'All were read' and counted the verification and registration-details routes among the cell's support, while claim_bengaluru_grid_birth_public_verification_route records that neither of those routes was opened; the re-audit also removed that claim from the cell. The note now matches the claims: the status route's fields were read, and the two unopened navigation links are recorded without being counted. The state stays stated on the status route and the download route.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B integrator follow-up, acting on the fresh re-auditor's finding."
+      }
+    }
+  ],
+  "runs": [
+    {
+      "runId": "ind91_part_b_integrator_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B integrator follow-up: findings raised by the fresh re-auditors that fall outside the field-level corrections contract (duplicate mis-graded split fragments, unsourced cell-note prose, a source record covering two routes, and missing archive limitations).",
+      "correctionIds": [
+        "corr_bengaluru_grid_birth_certificate_i01",
+        "corr_bengaluru_grid_birth_certificate_i02"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_lint_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B pre-audit lint remediation (protocol section 8).",
+      "correctionIds": [
+        "corr_bengaluru_grid_birth_certificate_b01",
+        "corr_bengaluru_grid_birth_certificate_b02",
+        "corr_bengaluru_grid_birth_certificate_b03",
+        "corr_bengaluru_grid_birth_certificate_b04",
+        "corr_bengaluru_grid_birth_certificate_b05",
+        "corr_bengaluru_grid_birth_certificate_b06",
+        "corr_bengaluru_grid_birth_certificate_b07",
+        "corr_bengaluru_grid_birth_certificate_b08",
+        "corr_bengaluru_grid_birth_certificate_b09",
+        "corr_bengaluru_grid_birth_certificate_b10",
+        "corr_bengaluru_grid_birth_certificate_b11",
+        "corr_bengaluru_grid_birth_certificate_b12",
+        "corr_bengaluru_grid_birth_certificate_b13",
+        "corr_bengaluru_grid_birth_certificate_b14",
+        "corr_bengaluru_grid_birth_certificate_b15",
+        "corr_bengaluru_grid_birth_certificate_b16",
+        "corr_bengaluru_grid_birth_certificate_b17",
+        "corr_bengaluru_grid_birth_certificate_b18",
+        "corr_bengaluru_grid_birth_certificate_b19",
+        "corr_bengaluru_grid_birth_certificate_b20",
+        "corr_bengaluru_grid_birth_certificate_b21",
+        "corr_bengaluru_grid_birth_certificate_b22",
+        "corr_bengaluru_grid_birth_certificate_b23",
+        "corr_bengaluru_grid_birth_certificate_b24",
+        "corr_bengaluru_grid_birth_certificate_b25",
+        "corr_bengaluru_grid_birth_certificate_b26",
+        "corr_bengaluru_grid_birth_certificate_b27",
+        "corr_bengaluru_grid_birth_certificate_b28",
+        "corr_bengaluru_grid_birth_certificate_b29"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_reaudit_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B re-audit by a fresh isolated auditor after lint remediation (protocol sections 12 and 13).",
+      "correctionIds": [
+        "corr_bengaluru_grid_birth_certificate_r01",
+        "corr_bengaluru_grid_birth_certificate_r02",
+        "corr_bengaluru_grid_birth_certificate_r03",
+        "corr_bengaluru_grid_birth_certificate_r04",
+        "corr_bengaluru_grid_birth_certificate_r05",
+        "corr_bengaluru_grid_birth_certificate_r06",
+        "corr_bengaluru_grid_birth_certificate_r07",
+        "corr_bengaluru_grid_birth_certificate_r08",
+        "corr_bengaluru_grid_birth_certificate_r09",
+        "corr_bengaluru_grid_birth_certificate_r10",
+        "corr_bengaluru_grid_birth_certificate_r11"
+      ]
+    }
+  ]
+}

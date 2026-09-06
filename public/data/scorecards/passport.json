@@ -1,0 +1,48 @@
+{
+  "serviceId": "passport",
+  "jurisdiction": "Bengaluru, Karnataka, India",
+  "primaryScenarioId": "scenario_passport_fresh_adult_normal",
+  "asOf": "2026-09-04",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimCount": 2
+    },
+    "documents": {
+      "state": "stated",
+      "claimCount": 2
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimCount": 1
+    },
+    "time": {
+      "state": "stated",
+      "claimCount": 1
+    },
+    "owner": {
+      "state": "stated",
+      "claimCount": 2
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimCount": 2
+    }
+  },
+  "statedCount": 6,
+  "loginStrippedUnknownShare": 0,
+  "portalFriction": {
+    "deadLinkRate": 0,
+    "undated": false,
+    "captcha": false,
+    "jsOnly": false,
+    "appOnly": false,
+    "languages": [
+      "English",
+      "Hindi"
+    ]
+  },
+  "auditFile": "research/audits/ind71-passport-audit.md",
+  "benchmarkVersion": "0.1",
+  "source": "authored"
+}

@@ -1,0 +1,48 @@
+{
+  "serviceId": "property-tax-payment",
+  "jurisdiction": "Bengaluru, Karnataka, India",
+  "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
+  "asOf": "2026-09-05",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimCount": 1
+    },
+    "documents": {
+      "state": "absent",
+      "claimCount": 0
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimCount": 1
+    },
+    "time": {
+      "state": "mentioned",
+      "claimCount": 0
+    },
+    "owner": {
+      "state": "mentioned",
+      "claimCount": 0
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimCount": 2
+    }
+  },
+  "statedCount": 3,
+  "loginStrippedUnknownShare": 0,
+  "portalFriction": {
+    "deadLinkRate": 0,
+    "undated": false,
+    "captcha": false,
+    "jsOnly": true,
+    "appOnly": false,
+    "languages": [
+      "English",
+      "Kannada"
+    ]
+  },
+  "auditFile": "research/audits/ind72-property-tax-payment-closeout-audit.md",
+  "benchmarkVersion": "0.1",
+  "source": "authored"
+}

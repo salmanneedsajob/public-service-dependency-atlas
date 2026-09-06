@@ -1,0 +1,47 @@
+{
+  "serviceId": "aadhaar-address-update",
+  "jurisdiction": "Bengaluru, Karnataka, India",
+  "primaryScenarioId": "scenario_aadhaar_address_update_online_poa",
+  "asOf": "2026-09-05",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimCount": 2
+    },
+    "documents": {
+      "state": "stated",
+      "claimCount": 5
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimCount": 4
+    },
+    "time": {
+      "state": "stated",
+      "claimCount": 1
+    },
+    "owner": {
+      "state": "stated",
+      "claimCount": 1
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimCount": 3
+    }
+  },
+  "statedCount": 6,
+  "loginStrippedUnknownShare": 0,
+  "portalFriction": {
+    "deadLinkRate": 0,
+    "undated": false,
+    "captcha": true,
+    "jsOnly": true,
+    "appOnly": false,
+    "languages": [
+      "English"
+    ]
+  },
+  "auditFile": "research/audits/ind70-aadhaar-address-update-fee-audit.md",
+  "benchmarkVersion": "0.1",
+  "source": "authored"
+}

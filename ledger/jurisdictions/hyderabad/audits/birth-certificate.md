@@ -134,3 +134,10 @@ The disclaimer states that the Rs. 45 and Rs. 20 figures "are recorded as differ
 ## Verdict
 
 Cell states accepted after corrections: **`cost` stated** (on the Rs. 45 figure alone; the Rs. 20 charter figure contested and cross-linked, not reconciled), **`documents` mentioned**, **`eligibility` stated**, **`time` stated**, **`owner` stated** (excluded hospital-side support removed from the note), **`after-submission` stated**. **Stated count: 5 of 6.** Corrections proposed: 16.
+
+
+## Re-audit — 2026-09-06 (IND-91 part B)
+
+A fresh isolated auditor re-audited this row after pre-audit lint remediation, on the section 12 inputs only. 16 corrections were proposed and 16 applied; none unapplied.
+
+(no findings file written)

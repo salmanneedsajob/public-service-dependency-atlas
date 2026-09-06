@@ -4,12 +4,16 @@
   "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
   "cells": {
     "cost": {
-      "state": "mentioned",
+      "state": "stated",
       "claimIds": [
         "claim_delhi_ptax_fee_variable_only",
         "claim_delhi_ptax_advance_rebate_deadline",
         "claim_delhi_ptax_online_payment_rebate",
-        "claim_delhi_ptax_rate_schedule_latest_is_2025_26"
+        "claim_delhi_ptax_rate_schedule_latest_is_2025_26",
+        "claim_delhi_ptax_rate_schedule_latest_is_2025_26_2",
+        "claim_delhi_ptax_residential_rate_schedule",
+        "claim_delhi_ptax_residential_rate_schedule_2",
+        "claim_delhi_ptax_residential_rate_schedule_3"
       ],
       "searchedRoutes": [
         "https://mcdonline.nic.in/portal/citizenCharter",
@@ -18,7 +22,7 @@
         "https://mcdonline.nic.in/ptrmcd/web/citizen/property/downloadPdfFile/Tax_Rate_and_Use_factor_applicable_for_FY_2026-2027",
         "https://mcdonline.nic.in/ptrmcd/web/citizen/property/doDownloadPtrRulebook"
       ],
-      "note": "The topic is named without an actionable value for the current year. The charter gives the fee only as 'Variable fees - according to area and annual value of the property'. Rebate percentages are published, but a rebate is a discount on an amount the reviewed routes never state. A rate schedule is published, and it would be an actionable fee schedule, except that the latest one on the portal is for FY 2025-2026 rather than the current FY 2026-2027, and it is a scanned image with no text layer, so no rate could be read from it; the equivalent 2026-2027 route returned a page, not a schedule. The Property Tax Calculation Parameters download is likewise a scanned file. Reading a value would require entering a real property identifier in the portal's calculator or crossing the login boundary, both outside the safety boundary."
+      "note": "An actionable fee schedule is published: the Municipal Corporation of Delhi's Schedule of Taxes 2025-26 gives the residential rate of tax as 12 per cent of annual value for colonies in categories A and B, 11 per cent for C to E and 7 per cent for F to H. Two limitations qualify it. The schedule is for FY 2025-2026 while the current financial year is 2026-2027, and the portal's route for the current year returns a page rather than a schedule, so the most recent published rates are a year old; they are graded C for that reason, which section 8 still admits for stated. And a rate is not an amount: the annual value itself depends on unit area values and multiplicative factors that no reviewed route publishes in readable form, so a citizen can apply the rate but cannot arrive at a rupee figure without entering a real property identifier, which is outside the safety boundary. The charter's 'Variable fees - according to area and annual value of the property' and the published rebate percentages remain what they were, a fee named without an amount. The file is a scanned image with no text layer; its pages were rendered as images and read during IND-91 part C, and only the residential rate row was read."
     },
     "documents": {
       "state": "mentioned",

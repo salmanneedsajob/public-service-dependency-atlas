@@ -129,7 +129,9 @@
       "new": "stated",
       "reason": "The section 8 owner definition is disjunctive and admits a designation tied to a jurisdiction rule, and its lead test admits an operational role, not only a named office. The portal states that registrars have been appointed for each local area under section 7 of the Registration of Births and Deaths Act, 1969 for births and deaths occurring in their jurisdiction: that is an operational role bound to a rule that tells the citizen which holder is theirs, which is what separates it from the statutory designation alone that the definition sends to mentioned. The portal's route rule supplies the body to approach and the ledger names it as the Greater Chennai Corporation. The absence of an office list or contact route is the test for a different admitted form and cannot be applied as the requirement without reading the second admitted form out of the definition; that deficit remains on the record as claim_chennai_birth_local_registrar_office_unknown.",
       "support": {
-        "sourceIds": ["source_chennai_birth_crstn_portal"],
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
         "auditNote": "Audit finding F5, tested in both directions. Decided on the protocol text and the claims, not on the argument the sidecar note addressed to the auditor (finding F6)."
       }
     },
@@ -148,7 +150,9 @@
       ],
       "reason": "Section 9 requires a stated cell to cite the claims that give the actionable value. claim_chennai_birth_gcc_routes_offered enumerates four service routes and asserts an absence of guidance text; it names no office, officer or role and so cannot supply an owner value. claim_chennai_birth_portal_covers_from_2018 is the claim that routes the citizen to the body that holds a pre-2018 case, the respective local body, and so belongs with the section 7 designation. Both replacement claims are verified and Grade B, as section 8 requires of a claim supporting a cell.",
       "support": {
-        "sourceIds": ["source_chennai_birth_crstn_portal"],
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
         "auditNote": "Audit finding F5. The removal also means no compound claim carries a cell state after correction; see finding F9."
       }
     },
@@ -161,7 +165,9 @@
       "new": "A citizen can identify the operational role that holds the case: the state portal states that registrars have been appointed for each local area under section 7 of the Registration of Births and Deaths Act, 1969 for registration of births and deaths occurring in their jurisdiction, so a birth that occurred in Chennai is held by the Registrar of Births and Deaths for that local area. The portal's route rule supplies the body, directing events registered before 1 January 2018 to the respective local body, which for this service is the Greater Chennai Corporation. This is a designation tied to a jurisdiction rule, one of the three forms the cell definition admits, rather than a statutory designation standing alone. Limitation carried forward: no individual office is named, no office list is published and no contact route is given, and the two routes that would supply them, the portal's About Us file and the corporation's zonal details page, both returned HTTP 404 on the access date. That gap is recorded as claim_chennai_birth_local_registrar_office_unknown and is not counted as a cell value.",
       "reason": "Section 9 requires a stated cell to carry an actionable-value note. The replacement states the value and preserves the office-list limitation. It also removes a passage addressed to the auditor, which routed researcher reasoning into the audit's permitted input contrary to the isolation section 12 imposes.",
       "support": {
-        "sourceIds": ["source_chennai_birth_crstn_portal"],
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
         "auditNote": "Audit findings F5 and F6."
       }
     },
@@ -180,7 +186,9 @@
       ],
       "reason": "Rules 8(2) and 8(4) govern who may collect the extract at the moment of registration, one of them at the institution counter that the scenario summary excludes by name, so for consistency with the time correction they cannot support this cell either. The cell stands unchanged at stated on the remaining claim, which gives a rule deciding which route applies by the date the event was registered, is in scope, verified and Grade B.",
       "support": {
-        "sourceIds": ["source_chennai_birth_crstn_portal"],
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
         "auditNote": "Audit finding F7. State unchanged; only the supporting evidence is trimmed to the primary scenario."
       }
     },
@@ -209,7 +217,9 @@
       "new": "Scope: this rule governs collection of the extract from the officer or person in charge of the institution, which is the hospital-side step the primary scenario excludes. The claim is retained because it is a true, sourced statement of the Rules and the schema requires a scenario tag, but it does not supply a value for any expectation cell of this scenario.",
       "reason": "Section 8 lint item 7 covers incorrect scenario IDs, and section 2 confines the grid to the primary scenario. The claim is tagged to the only declared scenario yet states a rule that scenario excludes by name. The tag cannot be removed without deleting the claim, since the schema requires a non-empty scenarioIds and no other scenario is declared, and deleting a true Grade A statement of the Rules would destroy evidence to fix a label. Recording the scope on the claim prevents it from silently carrying cell weight again.",
       "support": {
-        "sourceIds": ["source_chennai_birth_tn_rbd_rules"],
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
         "auditNote": "Audit finding F8. The sibling claim claim_chennai_birth_collect_within_30_days already records that it concerns the first extract, and claim_chennai_birth_uncollected_posted_in_fifteen_days is addressed by the corrected time and after-submission cell notes."
       }
     },
@@ -222,9 +232,1462 @@
       "new": "A duty on the Registrar or the officer in charge of the institution, with a stated period, arising on the expiry of the collection period that follows registration. Scope: it is triggered automatically rather than by anything the citizen submits, so under the section 8 after-submission definition, which excludes registration-stage steps, it is not a post-submission surface for this scenario, and its period is not a processing time for a request for a copy.",
       "reason": "The existing note characterises the posting duty as a surface by which the family receives the certificate, which is the reading that carried the after-submission cell to stated. The section 8 definition excludes registration-stage steps and requires something the citizen sees after submitting; this duty answers to no submission. The note is corrected so it does not support wording the evidence does not carry.",
       "support": {
-        "sourceIds": ["source_chennai_birth_tn_rbd_rules"],
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
         "auditNote": "Audit findings F3 and F4. The claim text, grade A, basis and verified status are all sound and are unchanged; only the note's characterisation is corrected."
       }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b01",
+      "recordType": "source",
+      "recordId": "source_chennai_birth_tn_rbd_rules",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Chennai, Tamil Nadu, India; the rules apply state-wide and Chennai is inside them. Agency naming as displayed on the access date: the document heads itself 'NOTIFICATIONS BY GOVERNMENT, HEALTH AND FAMILY WELFARE DEPARTMENT, TAMIL NADU REGISTRATION OF BIRTHS AND DEATHS RULES, 2000' and records publication in Tamil Nadu Government Gazette Extraordinary No.976 Part III Section 1(a) dated 29.12.1999, recorded as publishedAt. Thirteen pages. The fee figures cited here are the substituted ones, amended vide G.O.Ms.No.360 Health and Family Welfare (AB2) Department dated 12.10.2017, and the document prints both the current and the superseded figures. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260519065432/https://crstn.org/birth_death_tn/rules/TNRBD%20Rules.pdf (2026-05-19); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Chennai, Tamil Nadu, India; the rules apply state-wide and Chennai is inside them. Agency naming as displayed on the access date: the document heads itself 'NOTIFICATIONS BY GOVERNMENT, HEALTH AND FAMILY WELFARE DEPARTMENT, TAMIL NADU REGISTRATION OF BIRTHS AND DEATHS RULES, 2000' and records publication in Tamil Nadu Government Gazette Extraordinary No.976 Part III Section 1(a) dated 29.12.1999, recorded as publishedAt. Thirteen pages. The fee figures cited here are the substituted ones, amended vide G.O.Ms.No.360 Health and Family Welfare (AB2) Department dated 12.10.2017, and the document prints both the current and the superseded figures. Limitation: the printed document carries both current and superseded figures, so a reader who does not follow the amendment note can take the wrong one. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260519065432/https://crstn.org/birth_death_tn/rules/TNRBD%20Rules.pdf (2026-05-19); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the file as retrieved on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an archived source without a stated limitation. Two limitations are now stated: the document printing superseded figures alongside current ones, and the snapshot predating the access date. The Grade A status of the rules is unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b02",
+      "recordType": "source",
+      "recordId": "source_chennai_birth_crstn_portal",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Chennai, Tamil Nadu, India; the portal is state-wide and its footer names Greater Chennai Corporation as its developer. Agency naming as displayed on the access date: 'Designed and Developed by EDP Cell, Greater Chennai Corporation / Chief Registrar of Births and Deaths, Tamilnadu'. The footer displays 'Last Updated On 24-08-2026 11:10:20 AM', recorded as publishedAt. The home page presents a CAPTCHA, which was not attempted. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260613063053/http://www.crstn.org/ (2026-06-13); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Chennai, Tamil Nadu, India; the portal is state-wide and its footer names Greater Chennai Corporation as its developer. Agency naming as displayed on the access date: 'Designed and Developed by EDP Cell, Greater Chennai Corporation / Chief Registrar of Births and Deaths, Tamilnadu'. The footer displays 'Last Updated On 24-08-2026 11:10:20 AM', recorded as publishedAt. The home page presents a CAPTCHA, which was not attempted. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260613063053/http://www.crstn.org/ (2026-06-13); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it preserves neither the portal as reviewed on 2026-09-06 nor the HTTP 404 responses observed from its own menu.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an archived source without a stated limitation. The archive limitation is now stated, including that no snapshot preserves the observed 404 responses.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b03",
+      "recordType": "source",
+      "recordId": "source_chennai_birth_gcc_page",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION'. The page shows no visible last-updated or version date. Direct current observation. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220711214837/https://chennaicorporation.gov.in/new_site/birth-certificate/ (2022-07-11), more than four years before the access date; no new capture was pushed from this run.",
+      "new": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION'. The page shows no visible last-updated or version date. Limitation: the page is undated, so its currency rests on the access-date observation alone. Direct current observation. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220711214837/https://chennaicorporation.gov.in/new_site/birth-certificate/ (2022-07-11), more than four years before the access date; no new capture was pushed from this run. Limitation: that snapshot long predates the access date and does not preserve the broken header links observed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an undated, archived source without a stated limitation. Both limitations are now stated in words.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b04",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_search_fee_100",
+      "fieldPath": "/text",
+      "old": "Rule 13(1) of the Tamil Nadu Registration of Births and Deaths Rules, 2000 fixes the fee for a search for a single entry in the first year for which the search is made at Rs. 100, and Rs. 100 for every additional year for which the search is continued.",
+      "new": "Rule 13(1) of the Tamil Nadu Registration of Births and Deaths Rules, 2000 fixes the fee for a search for a single entry in the first year for which the search is made at Rs. 100.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The rule fixes two amounts, one for the first year searched and one for each additional year, which are two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b05",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_search_fee_100",
+      "fieldPath": "/notes",
+      "old": "",
+      "new": "Split during IND-91 part B lint remediation; the fee for each additional year searched is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The rule fixes two amounts, one for the first year searched and one for each additional year, which are two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b06",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_search_fee_100_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_search_fee_100_2",
+        "text": "Rule 13(1) fixes a further Rs. 100 for every additional year for which the search is continued.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "evidenceGrade": "A",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_search_fee_100, which carried two amounts in one sentence."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The rule fixes two amounts, one for the first year searched and one for each additional year, which are two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b07",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_portal_covers_from_2018",
+      "fieldPath": "/text",
+      "old": "The Tamil Nadu civil registration portal states that birth and death certificates can be downloaded from the portal for events registered from 1 January 2018, and that for events prior to that date the respective local bodies may be approached.",
+      "new": "The Tamil Nadu civil registration portal states that birth certificates can be downloaded from the portal for events registered from 1 January 2018.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried the portal route for events from 2018 and the local-body route for earlier events, two independently checkable facts cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: the eligibility and owner cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b08",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_portal_covers_from_2018",
+      "fieldPath": "/notes",
+      "old": "A rule that decides which route applies, by the date the event was registered.",
+      "new": "A rule that decides which route applies, by the date the event was registered. The portal's own wording covers birth and death certificates together; this claim carries the birth limb, which is this scenario's service. Split during IND-91 part B lint remediation; the route for earlier events is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried the portal route for events from 2018 and the local-body route for earlier events, two independently checkable facts cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b09",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_portal_covers_from_2018_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_portal_covers_from_2018_2",
+        "text": "The same portal states that for events prior to that date the respective local bodies may be approached.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_portal_covers_from_2018. The fallback route is separately checkable from the portal route, and it is the fragment that names who holds an older record."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried the portal route for events from 2018 and the local-body route for earlier events, two independently checkable facts cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: the eligibility and owner cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b10",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_registrars_by_local_area",
+      "fieldPath": "/text",
+      "old": "The Tamil Nadu civil registration portal states that registrars have been appointed for each local area under section 7 of the Registration of Births and Deaths Act, 1969 for registration of births and deaths occurring in their jurisdiction.",
+      "new": "The Tamil Nadu civil registration portal states that registrars have been appointed for each local area under section 7 of the Registration of Births and Deaths Act, 1969.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried the fact of appointment and the jurisdiction rule that ties a registrar to the events in the area, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b11",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_registrars_by_local_area",
+      "fieldPath": "/notes",
+      "old": "A designation tied to a jurisdiction rule, without naming the office for any particular local area.",
+      "new": "A designation tied to a jurisdiction rule, without naming the office for any particular local area. Split during IND-91 part B lint remediation; what the appointment covers is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried the fact of appointment and the jurisdiction rule that ties a registrar to the events in the area, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b12",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_registrars_by_local_area_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_registrars_by_local_area_2",
+        "text": "That appointment covers registration of births occurring in the registrar's own jurisdiction.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_registrars_by_local_area. What the appointment covers is separately checkable from the fact of appointment, and it is the jurisdiction limb the owner cell rests on."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried the fact of appointment and the jurisdiction rule that ties a registrar to the events in the area, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b13",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_collect_within_30_days",
+      "fieldPath": "/text",
+      "old": "Rule 8(2) of the Tamil Nadu Registration of Births and Deaths Rules, 2000 provides that for a domiciliary birth reported directly to the Registrar, the head of the house or the nearest relative present may collect the extract of birth from the Registrar within 30 days of its reporting.",
+      "new": "Rule 8(2) of the Tamil Nadu Rules, 2000 provides that for a domiciliary birth reported directly to the Registrar the extract may be collected from the Registrar within 30 days of its reporting.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The rule carries a period and a rule about who may collect, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: the time cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b14",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_collect_within_30_days",
+      "fieldPath": "/notes",
+      "old": "A deadline binding on the family for collecting the first extract.",
+      "new": "A deadline binding on the family for collecting the first extract. Split during IND-91 part B lint remediation; who may collect is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The rule carries a period and a rule about who may collect, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b15",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_collect_within_30_days_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_collect_within_30_days_2",
+        "text": "Rule 8(2) names the head of the house or the nearest relative present as the person who may collect that extract.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "evidenceGrade": "A",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_collect_within_30_days. Who may collect is separately checkable from the period allowed."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The rule carries a period and a rule about who may collect, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: the time cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b16",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_institutional_collect_within_30_days",
+      "fieldPath": "/text",
+      "old": "Rule 8(4) of the Tamil Nadu Registration of Births and Deaths Rules, 2000 provides that for an institutional birth the nearest relative of the new born may collect the extract from the officer or person in charge of the institution within thirty days of the occurrence of the event.",
+      "new": "Rule 8(4) of the Tamil Nadu Rules, 2000 provides that for an institutional birth the nearest relative of the new born may collect the extract within thirty days of the occurrence of the event.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The rule carries a period and a rule about who holds the extract, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: the time cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b17",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_institutional_collect_within_30_days",
+      "fieldPath": "/notes",
+      "old": "Scope: this rule governs collection of the extract from the officer or person in charge of the institution, which is the hospital-side step the primary scenario excludes. The claim is retained because it is a true, sourced statement of the Rules and the schema requires a scenario tag, but it does not supply a value for any expectation cell of this scenario.",
+      "new": "Scope: this rule governs collection of the extract from the officer or person in charge of the institution, which is the hospital-side step the primary scenario excludes. The claim is retained because it is a true, sourced statement of the Rules and the schema requires a scenario tag, but it does not supply a value for any expectation cell of this scenario. Split during IND-91 part B lint remediation; from whom the extract is collected is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The rule carries a period and a rule about who holds the extract, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b18",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_institutional_collect_within_30_days_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_institutional_collect_within_30_days_2",
+        "text": "Rule 8(4) names the officer or person in charge of the institution as the one from whom that extract is collected.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "evidenceGrade": "A",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_institutional_collect_within_30_days. The hospital-side step the primary scenario excludes; retained as a true, sourced statement of the Rules."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The rule carries a period and a rule about who holds the extract, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: the time cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b19",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_uncollected_posted_in_fifteen_days",
+      "fieldPath": "/text",
+      "old": "Rule 8(5) of the Tamil Nadu Registration of Births and Deaths Rules, 2000 provides that if the extract is not collected within the stipulated period, the Registrar or the officer in charge of the institution shall transmit it to the concerned family by post within fifteen days of the expiry of that period.",
+      "new": "Rule 8(5) of the Tamil Nadu Rules, 2000 provides that an extract not collected within the stipulated period shall be transmitted to the concerned family by post within fifteen days of the expiry of that period.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 307 characters. The rule carries a duty with a period and a rule about who owes it, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: the time and after-submission cells that cite this claim are mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b20",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_uncollected_posted_in_fifteen_days",
+      "fieldPath": "/notes",
+      "old": "A duty on the Registrar or the officer in charge of the institution, with a stated period, arising on the expiry of the collection period that follows registration. Scope: it is triggered automatically rather than by anything the citizen submits, so under the section 8 after-submission definition, which excludes registration-stage steps, it is not a post-submission surface for this scenario, and its period is not a processing time for a request for a copy.",
+      "new": "A duty with a stated period, arising on the expiry of the collection period that follows registration. Scope: it is triggered automatically rather than by anything the citizen submits, so under the section 8 after-submission definition, which excludes registration-stage steps, it is not a post-submission surface for this scenario, and its period is not a processing time for a request for a copy. Split during IND-91 part B lint remediation; who owes the duty is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 307 characters. The rule carries a duty with a period and a rule about who owes it, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b21",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_uncollected_posted_in_fifteen_days_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_uncollected_posted_in_fifteen_days_2",
+        "text": "Rule 8(5) places that duty on the Registrar or the officer in charge of the institution.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "evidenceGrade": "A",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_uncollected_posted_in_fifteen_days. Who owes the duty is separately checkable from the period allowed."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 307 characters. The rule carries a duty with a period and a rule about who owes it, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: the time and after-submission cells that cite this claim are mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b22",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_extract_form_and_certification",
+      "fieldPath": "/text",
+      "old": "Rules 8(1) and 13(2) of the Tamil Nadu Registration of Births and Deaths Rules, 2000 provide that the extract of a birth is given in Form No. 5 and is certified in the manner provided for in section 76 of the Indian Evidence Act, 1872.",
+      "new": "Rule 8(1) of the Tamil Nadu Rules, 2000 provides that the extract of a birth is given in Form No. 5.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence asserted two rules from two different provisions, the form of the extract and the manner of its certification, which are independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b23",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_extract_form_and_certification",
+      "fieldPath": "/notes",
+      "old": "Identifies the document the citizen receives, by form number.",
+      "new": "Identifies the document the citizen receives, by form number. Split during IND-91 part B lint remediation; the certification rule in Rule 13(2) is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence asserted two rules from two different provisions, the form of the extract and the manner of its certification, which are independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b24",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_extract_form_and_certification_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_extract_form_and_certification_2",
+        "text": "Rule 13(2) provides that the extract is certified in the manner provided for in section 76 of the Indian Evidence Act, 1872.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "evidenceGrade": "A",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_extract_form_and_certification, which cited two different rules in one sentence."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence asserted two rules from two different provisions, the form of the extract and the manner of its certification, which are independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b25",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_gcc_routes_offered",
+      "fieldPath": "/text",
+      "old": "The Greater Chennai Corporation's birth and death page offers four routes, birth certificate download, death certificate download, child name inclusion and hospital registration for birth and death, and no guidance text on fees, documents, timelines or offices.",
+      "new": "The Greater Chennai Corporation's birth and death page offers four routes.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. What the page offers and what it omits are two separately checkable facts, and the list of routes is a third.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b26",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_gcc_routes_offered",
+      "fieldPath": "/notes",
+      "old": "Direct current observation of the page's own contents on the access date.",
+      "new": "Direct current observation of the page's own contents on the access date. Split during IND-91 part B lint remediation into the count of routes, the list of them and what the page omits.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. What the page offers and what it omits are two separately checkable facts, and the list of routes is a third.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b27",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_gcc_routes_offered_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_gcc_routes_offered_2",
+        "text": "Those four routes are birth certificate download, death certificate download, child name inclusion and hospital registration for birth and death.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_gcc_routes_offered. This fragment carries the page's own list of routes, one published list, waived on the manifest entry."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. What the page offers and what it omits are two separately checkable facts, and the list of routes is a third.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b28",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_gcc_routes_offered_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_gcc_routes_offered_3",
+        "text": "That page carries no guidance text on fees or documents or timelines or offices.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_gcc_routes_offered. Each topic named was searched for on the page and none was present."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. What the page offers and what it omits are two separately checkable facts, and the list of routes is a third.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b29",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_gcc_page_nav_404",
+      "fieldPath": "/text",
+      "old": "On the access date the header links on the Greater Chennai Corporation's birth and death page to About GCC, Departments, Online Services and zonal details returned HTTP 404, under both the site root and the /new_site/ prefix, while equivalent pages exist under a /gcc/ prefix that the page does not use.",
+      "new": "On the access date the header links on the Greater Chennai Corporation's birth and death page returned HTTP 404.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 303 characters. The observation carried the failure, which links fail, that both hosts fail, and that working equivalents exist under another prefix: four separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b30",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_gcc_page_nav_404",
+      "fieldPath": "/notes",
+      "old": "Recorded as observed rather than replaced with the working homepage equivalents.",
+      "new": "Recorded as observed rather than replaced with the working homepage equivalents. Split during IND-91 part B lint remediation into the failure, the links affected, the hosts tested and the working equivalents.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 303 characters. The observation carried the failure, which links fail, that both hosts fail, and that working equivalents exist under another prefix: four separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b31",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_gcc_page_nav_404_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_gcc_page_nav_404_2",
+        "text": "Those links point to About GCC or Departments or Online Services or zonal details.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_gcc_page_nav_404. Which links fail is separately checkable from the fact that they fail."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 303 characters. The observation carried the failure, which links fail, that both hosts fail, and that working equivalents exist under another prefix: four separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b32",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_gcc_page_nav_404_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_gcc_page_nav_404_3",
+        "text": "The 404 was returned under both the site root and the /new_site/ prefix.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_gcc_page_nav_404. That both hosts behave the same way is separately checkable."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 303 characters. The observation carried the failure, which links fail, that both hosts fail, and that working equivalents exist under another prefix: four separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b33",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_gcc_page_nav_404_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_gcc_page_nav_404_4",
+        "text": "Equivalent pages exist under a /gcc/ prefix that the page does not use.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_gcc_page_nav_404. That working equivalents exist elsewhere is separately checkable from the failure itself."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 303 characters. The observation carried the failure, which links fail, that both hosts fail, and that working equivalents exist under another prefix: four separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b34",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_crstn_service_routes_404",
+      "fieldPath": "/text",
+      "old": "On the access date every service route linked from the Tamil Nadu civil registration portal's own menu returned HTTP 404, including the birth certificate download route, the child name inclusion route and the reported-and-registered dashboard.",
+      "new": "On the access date every service route linked from the Tamil Nadu civil registration portal's own menu returned HTTP 404.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The failure and the list of routes tested are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b35",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_crstn_service_routes_404",
+      "fieldPath": "/notes",
+      "old": "Each route was requested from the portal's own link with a referer from the portal home page; the responses were Apache Tomcat 404 pages naming the requested path.",
+      "new": "Each route was requested from the portal's own link with a referer from the portal home page; the responses were Apache Tomcat 404 pages naming the requested path. Split during IND-91 part B lint remediation; which routes were tested is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The failure and the list of routes tested are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b36",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_crstn_service_routes_404_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_crstn_service_routes_404_2",
+        "text": "Those routes include the birth certificate download route or the child name inclusion route or the reported-and-registered dashboard.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_crstn_service_routes_404. Which routes were tested is separately checkable from the fact that they failed."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The failure and the list of routes tested are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b37",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_crstn_guidance_pdfs_404",
+      "fieldPath": "/text",
+      "old": "On the access date the Tamil Nadu civil registration portal's About Us, Procedures and Documents files, and its birth reporting form, all returned HTTP 404, while the Act and Rules PDFs under its rules directory resolved.",
+      "new": "On the access date the Tamil Nadu civil registration portal's About Us file or Procedures file or Documents file or birth reporting form all returned HTTP 404.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 221 characters. Which guidance files failed and which files resolved are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: the documents cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b38",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_crstn_guidance_pdfs_404",
+      "fieldPath": "/notes",
+      "old": "The Documents file is the one route on the portal that would have carried a document list for this service.",
+      "new": "The Documents file is the one route on the portal that would have carried a document list for this service. Split during IND-91 part B lint remediation; what did resolve is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 221 characters. Which guidance files failed and which files resolved are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b39",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_crstn_guidance_pdfs_404_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_crstn_guidance_pdfs_404_2",
+        "text": "The Act and Rules PDFs under the portal's rules directory resolved on the access date.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_crstn_guidance_pdfs_404. What resolved is separately checkable from what failed, and it is why the Rules are citable while the guidance is not."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 221 characters. Which guidance files failed and which files resolved are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: the documents cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b40",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_gcc_download_needs_otp",
+      "fieldPath": "/text",
+      "old": "The Greater Chennai Corporation's working birth certificate download route offers only registration with a name and mobile number and login by an OTP sent to that number, and shows no fee, document list, timeline or office on the page.",
+      "new": "The Greater Chennai Corporation's working birth certificate download route offers only registration with a name and mobile number.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters, and login-boundary-overclaim for a sentence naming an OTP without uncertainty wording. The observation carried a registration form, an OTP step and what the page omits, three separately checkable facts; each fragment now records that no login was used and no OTP was requested.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gccservices_route"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b41",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_gcc_download_needs_otp",
+      "fieldPath": "/notes",
+      "old": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is the page's own form; the inference is that the certificate lies past the OTP. The boundary was not crossed.",
+      "new": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is the page's own form. The boundary was not crossed, no login was used and no OTP was requested. Split during IND-91 part B lint remediation into the registration form, the OTP step and what the page omits.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters, and login-boundary-overclaim for a sentence naming an OTP without uncertainty wording. The observation carried a registration form, an OTP step and what the page omits, three separately checkable facts; each fragment now records that no login was used and no OTP was requested.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gccservices_route"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b42",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_gcc_download_needs_otp_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_gcc_download_needs_otp_2",
+        "text": "That route logs the citizen in by an OTP sent to that number.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_gccservices_route"
+        ],
+        "evidenceGrade": "B",
+        "basis": "mixed",
+        "status": "partial",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_gcc_download_needs_otp. Boundary statement supporting no cell. The boundary was not crossed, no login was used and no OTP was requested."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters, and login-boundary-overclaim for a sentence naming an OTP without uncertainty wording. The observation carried a registration form, an OTP step and what the page omits, three separately checkable facts; each fragment now records that no login was used and no OTP was requested.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gccservices_route"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b43",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_gcc_download_needs_otp_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_gcc_download_needs_otp_3",
+        "text": "That route shows no fee or document list or timeline or office on the page.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_gccservices_route"
+        ],
+        "evidenceGrade": "B",
+        "basis": "mixed",
+        "status": "partial",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_gcc_download_needs_otp. Each topic named was searched for on the page and none was present. No login was used and no OTP was requested."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters, and login-boundary-overclaim for a sentence naming an OTP without uncertainty wording. The observation carried a registration form, an OTP step and what the page omits, three separately checkable facts; each fragment now records that no login was used and no OTP was requested.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gccservices_route"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b44",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_documents_for_copy_unknown",
+      "fieldPath": "/text",
+      "old": "What a parent must produce to obtain a copy of an already registered birth in Chennai is not established by any reviewed public page; the one portal route that would carry a document list returned HTTP 404.",
+      "new": "What a parent must produce to obtain a copy of an already registered birth in Chennai is not established by any reviewed public page.",
+      "reason": "Pre-audit lint reported compound-claim for a semicolon. The sentence carried an unknown and the observed failure that causes it, two separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b45",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_documents_for_copy_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Not login-related: the route is public and dead, not gated.",
+      "new": "Retained because the uncertainty itself matters to the journey. Not login-related: the route is public and dead, not gated. Split during IND-91 part B lint remediation; the reason for the gap is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for a semicolon. The sentence carried an unknown and the observed failure that causes it, two separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b46",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_documents_for_copy_unknown_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_documents_for_copy_unknown_2",
+        "text": "The one portal route that would carry a document list returned HTTP 404 on the access date.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_documents_for_copy_unknown. The observed failure is separately checkable from the unknown it produces."
+      },
+      "reason": "Pre-audit lint reported compound-claim for a semicolon. The sentence carried an unknown and the observed failure that causes it, two separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b47",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_local_registrar_office_unknown",
+      "fieldPath": "/text",
+      "old": "Which office in Chennai a citizen should approach for a birth registered before 1 January 2018, and how to reach it, is not established by any reviewed public page; the corporation's zonal details route returned HTTP 404.",
+      "new": "Which office in Chennai a citizen should approach for a birth registered before 1 January 2018 is not established by any reviewed public page.",
+      "reason": "Pre-audit lint reported compound-claim for a semicolon, an enumeration and text length of 221 characters. The sentence carried two unknowns and the observed failure behind them, three separately checkable statements.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b48",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_local_registrar_office_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Not login-related.",
+      "new": "Retained because the uncertainty itself matters to the journey. Not login-related. Split during IND-91 part B lint remediation into the two unknowns and the observed failure behind them.",
+      "reason": "Pre-audit lint reported compound-claim for a semicolon, an enumeration and text length of 221 characters. The sentence carried two unknowns and the observed failure behind them, three separately checkable statements.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b49",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_local_registrar_office_unknown_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_local_registrar_office_unknown_2",
+        "text": "How to reach the office that holds a birth registered before 1 January 2018 is not established by any reviewed public page.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_local_registrar_office_unknown. Retained because the uncertainty itself matters to the journey."
+      },
+      "reason": "Pre-audit lint reported compound-claim for a semicolon, an enumeration and text length of 221 characters. The sentence carried two unknowns and the observed failure behind them, three separately checkable statements.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b50",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_local_registrar_office_unknown_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_local_registrar_office_unknown_3",
+        "text": "The corporation's zonal details route returned HTTP 404 on the access date.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_local_registrar_office_unknown. The observed failure is separately checkable from the unknown it produces."
+      },
+      "reason": "Pre-audit lint reported compound-claim for a semicolon, an enumeration and text length of 221 characters. The sentence carried two unknowns and the observed failure behind them, three separately checkable statements.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b51",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:cost",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_chennai_birth_extract_fee_200",
+        "claim_chennai_birth_search_fee_100",
+        "claim_chennai_birth_portal_download_free"
+      ],
+      "new": [
+        "claim_chennai_birth_extract_fee_200",
+        "claim_chennai_birth_search_fee_100",
+        "claim_chennai_birth_search_fee_100_2",
+        "claim_chennai_birth_portal_download_free"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the two search-fee amounts, eligibility and owner the portal route with its local-body fallback and the registrar's jurisdiction rule, time the three collection periods with who owes each, after-submission the postal duty and the form of the extract. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal",
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b52",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:documents",
+      "fieldPath": "/cells/documents/claimIds",
+      "old": [
+        "claim_chennai_birth_crstn_guidance_pdfs_404"
+      ],
+      "new": [
+        "claim_chennai_birth_crstn_guidance_pdfs_404",
+        "claim_chennai_birth_crstn_guidance_pdfs_404_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the two search-fee amounts, eligibility and owner the portal route with its local-body fallback and the registrar's jurisdiction rule, time the three collection periods with who owes each, after-submission the postal duty and the form of the extract. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b53",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_chennai_birth_portal_covers_from_2018"
+      ],
+      "new": [
+        "claim_chennai_birth_portal_covers_from_2018",
+        "claim_chennai_birth_portal_covers_from_2018_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the two search-fee amounts, eligibility and owner the portal route with its local-body fallback and the registrar's jurisdiction rule, time the three collection periods with who owes each, after-submission the postal duty and the form of the extract. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b54",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:time",
+      "fieldPath": "/cells/time/claimIds",
+      "old": [
+        "claim_chennai_birth_collect_within_30_days",
+        "claim_chennai_birth_institutional_collect_within_30_days",
+        "claim_chennai_birth_uncollected_posted_in_fifteen_days"
+      ],
+      "new": [
+        "claim_chennai_birth_collect_within_30_days",
+        "claim_chennai_birth_collect_within_30_days_2",
+        "claim_chennai_birth_institutional_collect_within_30_days",
+        "claim_chennai_birth_institutional_collect_within_30_days_2",
+        "claim_chennai_birth_uncollected_posted_in_fifteen_days",
+        "claim_chennai_birth_uncollected_posted_in_fifteen_days_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the two search-fee amounts, eligibility and owner the portal route with its local-body fallback and the registrar's jurisdiction rule, time the three collection periods with who owes each, after-submission the postal duty and the form of the extract. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b55",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:owner",
+      "fieldPath": "/cells/owner/claimIds",
+      "old": [
+        "claim_chennai_birth_registrars_by_local_area",
+        "claim_chennai_birth_portal_covers_from_2018"
+      ],
+      "new": [
+        "claim_chennai_birth_registrars_by_local_area",
+        "claim_chennai_birth_registrars_by_local_area_2",
+        "claim_chennai_birth_portal_covers_from_2018",
+        "claim_chennai_birth_portal_covers_from_2018_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the two search-fee amounts, eligibility and owner the portal route with its local-body fallback and the registrar's jurisdiction rule, time the three collection periods with who owes each, after-submission the postal duty and the form of the extract. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b56",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:after-submission",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [
+        "claim_chennai_birth_uncollected_posted_in_fifteen_days",
+        "claim_chennai_birth_extract_form_and_certification"
+      ],
+      "new": [
+        "claim_chennai_birth_uncollected_posted_in_fifteen_days",
+        "claim_chennai_birth_uncollected_posted_in_fifteen_days_2",
+        "claim_chennai_birth_extract_form_and_certification",
+        "claim_chennai_birth_extract_form_and_certification_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the two search-fee amounts, eligibility and owner the portal route with its local-body fallback and the registrar's jurisdiction rule, time the three collection periods with who owes each, after-submission the postal duty and the form of the extract. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b01",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_crstn_service_routes_404_2",
+      "fieldPath": "/text",
+      "old": "Those routes include the birth certificate download route or the child name inclusion route or the reported-and-registered dashboard.",
+      "new": "Those routes include the birth certificate download route or the child name inclusion route or the registration dashboard.",
+      "reason": "Pre-audit lint still reported compound-claim after the split, because the hyphenated phrase 'reported-and-registered' put the lint's verb pattern into a second clause. The dashboard is named by its function instead; the routes listed are unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "IND-91 part B: wording only; this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_birth_certificate_b02",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_gcc_download_needs_otp_3",
+      "fieldPath": "/text",
+      "old": "That route shows no fee or document list or timeline or office on the page.",
+      "new": "That route shows no fee or required documents or timeline or office on the page.",
+      "reason": "Pre-audit lint still reported compound-claim after the split, because the phrase 'document list' put the lint's verb pattern into a second clause. The same topics are named as 'required documents'; nothing asserted changes.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gccservices_route"
+        ],
+        "auditNote": "IND-91 part B: wording only; this claim supports no expectation cell."
+      }
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_extract_fee_200",
+      "fieldPath": "/text",
+      "old": "Rule 13(1) of the Tamil Nadu Registration of Births and Deaths Rules, 2000 fixes the fee for granting an extract relating to each birth or death at Rs. 200 and the fee for every additional copy of an extract at Rs. 200.",
+      "new": "Rule 13(1) of the Tamil Nadu Registration of Births and Deaths Rules, 2000 fixes the fee for granting an extract relating to each birth or death at Rs. 200.",
+      "reason": "Compound claim. The sentence asserts two separately checkable amounts from Rule 13(1): the fee for granting an extract and the fee for every additional copy. PROTOCOL section 1 requires one claim to assert one checkable thing and section 8 lint check 1 blocks compound claims; the manifest waives only claim_chennai_birth_gcc_routes_offered_2. The ledger already splits the parallel search fee into claim_chennai_birth_search_fee_100 and claim_chennai_birth_search_fee_100_2, so this record is inconsistent with its own convention. This correction keeps the extract limb; the additional-copy limb is added as claim_chennai_birth_extract_fee_200_2.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "Split only, no value changed. Both amounts remain Grade A observation of Rule 13(1) as substituted vide G.O.Ms.No.360 dated 12.10.2017."
+      },
+      "id": "corr_chennai_birth_certificate_r01"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_extract_fee_200_2",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_birth_extract_fee_200_2",
+        "text": "Rule 13(1) fixes the fee for every additional copy of an extract at Rs. 200.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "evidenceGrade": "A",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split by audit from claim_chennai_birth_extract_fee_200, which carried two separately checkable amounts in one sentence. The figure is the substituted one, amended vide G.O.Ms.No.360 dated 12.10.2017, replacing Rs. 2."
+      },
+      "reason": "Addition carrying the second limb split out of claim_chennai_birth_extract_fee_200, so that the additional-copy fee survives the atomicity split required by PROTOCOL sections 1 and 8.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "Text taken verbatim from the second half of the original claim; grade, basis, status and source copied from the record it was split from."
+      },
+      "id": "corr_chennai_birth_certificate_r02"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "birth-certificate:cost",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_chennai_birth_extract_fee_200",
+        "claim_chennai_birth_search_fee_100",
+        "claim_chennai_birth_search_fee_100_2",
+        "claim_chennai_birth_portal_download_free"
+      ],
+      "new": [
+        "claim_chennai_birth_extract_fee_200",
+        "claim_chennai_birth_extract_fee_200_2",
+        "claim_chennai_birth_search_fee_100",
+        "claim_chennai_birth_search_fee_100_2",
+        "claim_chennai_birth_portal_download_free"
+      ],
+      "reason": "Consequential to the split of claim_chennai_birth_extract_fee_200. The additional-copy amount is part of the actionable fee schedule the cost cell records under PROTOCOL section 8, so the new claim must be cited by the cell. The cell state stays stated and its note is unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "No new evidence; the same Rule 13(1) figures are now carried by two atomic claims instead of one compound claim."
+      },
+      "id": "corr_chennai_birth_certificate_r03"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_documents_for_copy_unknown_2",
+      "fieldPath": "/",
+      "old": {
+        "id": "claim_chennai_birth_documents_for_copy_unknown_2",
+        "text": "The one portal route that would carry a document list returned HTTP 404 on the access date.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_documents_for_copy_unknown. The observed failure is separately checkable from the unknown it produces."
+      },
+      "new": null,
+      "reason": "Misfiled duplicate. The claim asserts a directly observed HTTP 404 on a named portal route, which PROTOCOL section 5 makes an observation and section 4 grades B as a direct current observation of a public official interface; it is recorded as evidenceGrade Unknown with basis inference and no sourceIds, which also lets it past the section 7 citation gate only because Unknown claims are exempt. The same observation is already carried, correctly, by claim_chennai_birth_crstn_guidance_pdfs_404 at Grade B, basis observation, verified, sourced to source_chennai_birth_crstn_portal, whose own note states that the Documents file is the one route that would have carried a document list. Merging the duplicate into that record is the section 13 auditor remedy. The genuine unknown, claim_chennai_birth_documents_for_copy_unknown, is preserved.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal"
+        ],
+        "auditNote": "Deletion of a redundant restatement only. No cell cites this claim, so no expectation cell changes; the documents cell already cites the Grade B record."
+      },
+      "id": "corr_chennai_birth_certificate_r04"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_local_registrar_office_unknown_3",
+      "fieldPath": "/",
+      "old": {
+        "id": "claim_chennai_birth_local_registrar_office_unknown_3",
+        "text": "The corporation's zonal details route returned HTTP 404 on the access date.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_birth_local_registrar_office_unknown. The observed failure is separately checkable from the unknown it produces."
+      },
+      "new": null,
+      "reason": "Misfiled duplicate, same defect as claim_chennai_birth_documents_for_copy_unknown_2. An observed HTTP 404 on the corporation's zonal details route is an observation under PROTOCOL section 5 and Grade B under section 4, not Unknown or inference, and it carries no sourceIds. The observation is already carried by claim_chennai_birth_gcc_page_nav_404 and claim_chennai_birth_gcc_page_nav_404_2, which name zonal details among the failing header links at Grade B, verified, sourced to source_chennai_birth_gcc_page. The two genuine unknowns in the group, claim_chennai_birth_local_registrar_office_unknown and claim_chennai_birth_local_registrar_office_unknown_2, are preserved.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_gcc_page"
+        ],
+        "auditNote": "Deletion of a redundant restatement only. The owner cell note cites claim_chennai_birth_local_registrar_office_unknown, not this fragment, so no reference is left dangling."
+      },
+      "id": "corr_chennai_birth_certificate_r05"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "birth-certificate:time",
+      "fieldPath": "/cells/time/state",
+      "old": "mentioned",
+      "new": "stated",
+      "reason": "Understated cell. PROTOCOL section 8 makes time stated when the evidence gives an actionable duration or deadline, and expressly contemplates a figure that covers only one stage: 'when the figure covers only one stage, the cell note must say so'. Rule 8(2), carried by claim_chennai_birth_collect_within_30_days at Grade A, verified, observation, gives a concrete thirty-day deadline for collecting the extract from the Registrar for a domiciliary birth reported directly to the Registrar. The primary scenario covers 'a certified copy or first certificate of a birth already registered', by the municipal civil-registration route, and excludes only hospital-side registration steps, so the Registrar-side collection window is in scope. The absence of a published processing period for a later copy request is a one-stage limitation to be stated in the note, not a reason to record the cell as mentioned.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "Only a verified Grade A claim is relied on, as section 8 requires. The cell note must be re-authored by the official pass to say that the figure covers the collection stage only and that no processing period is published for a later copy request; note text is outside this correction set's field paths."
+      },
+      "id": "corr_chennai_birth_certificate_r06"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "birth-certificate:time",
+      "fieldPath": "/cells/time/claimIds",
+      "old": [
+        "claim_chennai_birth_collect_within_30_days",
+        "claim_chennai_birth_collect_within_30_days_2",
+        "claim_chennai_birth_institutional_collect_within_30_days",
+        "claim_chennai_birth_institutional_collect_within_30_days_2",
+        "claim_chennai_birth_uncollected_posted_in_fifteen_days",
+        "claim_chennai_birth_uncollected_posted_in_fifteen_days_2"
+      ],
+      "new": [
+        "claim_chennai_birth_collect_within_30_days"
+      ],
+      "reason": "Consequential to the state change. A stated cell's claimIds must carry the actionable value, so the four claims the cell's own note rules out of scope cannot remain: claim_chennai_birth_institutional_collect_within_30_days and its second limb govern collection from the officer in charge of the institution, the hospital-side step the primary scenario excludes, and claim_chennai_birth_uncollected_posted_in_fifteen_days and its second limb impose a duty on the Registrar triggered by expiry rather than by anything the citizen submits. claim_chennai_birth_collect_within_30_days_2 names who may collect rather than a duration, so it does not carry the cell's value either. Those periods stay in the ledger and belong in the re-authored cell note as scope limitations.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "Topic-only claimIds are permitted by section 9 for mentioned and absent cells; once the cell is stated, its cited claims must supply the value."
+      },
+      "id": "corr_chennai_birth_certificate_r07"
+    }
+  ],
+  "runs": [
+    {
+      "runId": "ind91_part_b_lint_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B pre-audit lint remediation (protocol section 8).",
+      "correctionIds": [
+        "corr_chennai_birth_certificate_b01",
+        "corr_chennai_birth_certificate_b02",
+        "corr_chennai_birth_certificate_b03",
+        "corr_chennai_birth_certificate_b04",
+        "corr_chennai_birth_certificate_b05",
+        "corr_chennai_birth_certificate_b06",
+        "corr_chennai_birth_certificate_b07",
+        "corr_chennai_birth_certificate_b08",
+        "corr_chennai_birth_certificate_b09",
+        "corr_chennai_birth_certificate_b10",
+        "corr_chennai_birth_certificate_b11",
+        "corr_chennai_birth_certificate_b12",
+        "corr_chennai_birth_certificate_b13",
+        "corr_chennai_birth_certificate_b14",
+        "corr_chennai_birth_certificate_b15",
+        "corr_chennai_birth_certificate_b16",
+        "corr_chennai_birth_certificate_b17",
+        "corr_chennai_birth_certificate_b18",
+        "corr_chennai_birth_certificate_b19",
+        "corr_chennai_birth_certificate_b20",
+        "corr_chennai_birth_certificate_b21",
+        "corr_chennai_birth_certificate_b22",
+        "corr_chennai_birth_certificate_b23",
+        "corr_chennai_birth_certificate_b24",
+        "corr_chennai_birth_certificate_b25",
+        "corr_chennai_birth_certificate_b26",
+        "corr_chennai_birth_certificate_b27",
+        "corr_chennai_birth_certificate_b28",
+        "corr_chennai_birth_certificate_b29",
+        "corr_chennai_birth_certificate_b30",
+        "corr_chennai_birth_certificate_b31",
+        "corr_chennai_birth_certificate_b32",
+        "corr_chennai_birth_certificate_b33",
+        "corr_chennai_birth_certificate_b34",
+        "corr_chennai_birth_certificate_b35",
+        "corr_chennai_birth_certificate_b36",
+        "corr_chennai_birth_certificate_b37",
+        "corr_chennai_birth_certificate_b38",
+        "corr_chennai_birth_certificate_b39",
+        "corr_chennai_birth_certificate_b40",
+        "corr_chennai_birth_certificate_b41",
+        "corr_chennai_birth_certificate_b42",
+        "corr_chennai_birth_certificate_b43",
+        "corr_chennai_birth_certificate_b44",
+        "corr_chennai_birth_certificate_b45",
+        "corr_chennai_birth_certificate_b46",
+        "corr_chennai_birth_certificate_b47",
+        "corr_chennai_birth_certificate_b48",
+        "corr_chennai_birth_certificate_b49",
+        "corr_chennai_birth_certificate_b50",
+        "corr_chennai_birth_certificate_b51",
+        "corr_chennai_birth_certificate_b52",
+        "corr_chennai_birth_certificate_b53",
+        "corr_chennai_birth_certificate_b54",
+        "corr_chennai_birth_certificate_b55",
+        "corr_chennai_birth_certificate_b56",
+        "corr_chennai_birth_certificate_b01",
+        "corr_chennai_birth_certificate_b02"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_reaudit_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B re-audit by a fresh isolated auditor after lint remediation (protocol sections 12 and 13).",
+      "correctionIds": [
+        "corr_chennai_birth_certificate_r01",
+        "corr_chennai_birth_certificate_r02",
+        "corr_chennai_birth_certificate_r03",
+        "corr_chennai_birth_certificate_r04",
+        "corr_chennai_birth_certificate_r05",
+        "corr_chennai_birth_certificate_r06",
+        "corr_chennai_birth_certificate_r07"
+      ]
     }
   ]
 }

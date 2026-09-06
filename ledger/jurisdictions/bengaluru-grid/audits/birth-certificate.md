@@ -194,3 +194,113 @@ Every cell state in the sidecar is accepted as scored. Eleven corrections are pr
 **Accepted cell states:** `cost` = stated; `documents` = stated; `eligibility` = stated; `time` = stated; `owner` = stated; `after-submission` = stated. **Stated count: 6 of 6.**
 
 **Unresolved limitations for the integrator:** (1) four cells rest on an undated service card with no archive capture (F9); (2) the eJanMa snapshots pre-date the access date by two to four years and `meta.disclaimer` does not yet say so — `meta` is not an addressable record type, so this must be applied by hand (F10); (3) the row's municipal specificity is concentrated in a single home-page paragraph (F18); (4) the FAQ document is described but not recorded as a source, and the missing URL cannot be supplied without inventing evidence (F15).
+
+
+## Re-audit — 2026-09-06 (IND-91 part B)
+
+A fresh isolated auditor re-audited this row after pre-audit lint remediation, on the section 12 inputs only. 11 corrections were proposed and 11 applied; none unapplied.
+
+# Re-audit: bengaluru-grid / birth-certificate
+
+**Row:** `ledger/jurisdictions/bengaluru-grid/birth-certificate.json` (grid-only, `asOf` 2026-09-06)
+**Sidecar:** `ledger/jurisdictions/bengaluru-grid/expectations/birth-certificate.json`
+**Manifest entry:** jurisdictionSlug `bengaluru-grid`, serviceId `birth-certificate`, mode `grid-only`, primaryScenarioId `scenario_ind32_birth_copy_workflow`
+**Protocol:** v0.1. Inputs limited to the six listed records; no URL was opened and no other ledger, audit, or corrections file was read.
+
+Verdict in one line: all six cells survive the hard reading of section 8 and no cell state changes; the defects are in cell membership (claims cited under cells they do not support), one unsplit compound claim, one overclaiming claim text, one misgraded limitation claim, and two cell notes that say more than their cited claims do.
+
+---
+
+## Cell-by-cell
+
+### F1 — `cost` = `stated` is correct (section 8, `cost` bullet)
+`claim_bengaluru_grid_birth_application_fee_5` (Grade B, `verified`) records the Seva Sindhu card's application fee of Rs. 5, and `claim_bengaluru_grid_birth_rule_13_extract_fee` (Grade A, `verified`) records the Rs. 5.00 statutory extract fee. Both are amounts a citizen pays, from `verified` claims of Grade A/B, so the cell clears the "amount a citizen pays" test and the "only `verified` or `partial` claims may support `stated`" gate. `claim_bengaluru_grid_birth_service_charge_20` correctly qualifies a second amount by channel rather than contradicting the first.
+
+### F2 — `cost` claim set is correctly bounded (section 8, `cost` bullet)
+`claim_bengaluru_grid_birth_rule_13_search_fee` is properly in the cell: a register search is a fee incurred in obtaining the extract this scenario covers, and the claim gives an actionable schedule (Rs. 2.00 first year, Rs. 2.00 per additional year). `claim_bengaluru_grid_birth_rule_13_nonavailability_fee` is correctly excluded, since a non-availability certificate is a different output; the claim's own note states that reasoning. No correction.
+
+### F3 — `documents` = `stated` is correct (section 3 and section 8, `documents` bullet)
+`claim_bengaluru_grid_birth_no_documents_required` records that the card answers "documents to be submitted with application" with NIL. Section 3 makes an explicit zero a stated value, and the zero is said by the applicable evidence — the state service card that is also the apply route for this service — rather than inferred from silence. The cell note correctly discloses that no municipal route reviewed adds a requirement. Single-claim, single-source dependency is noted but is not a protocol defect.
+
+### F4 — `eligibility` = `stated` is correct, but one cited claim does not support it (section 8, `eligibility` bullet)
+The state is right: `claim_bengaluru_grid_birth_download_requires_registration_in_ejanma` plus `claim_bengaluru_grid_birth_bbmp_registrars` and `..._bbmp_registrars_3` give a rule that decides which route applies (event on the eJanMa register → Seva Sindhu download; BBMP-area and urban-local-body births are on that register). `claim_bengaluru_grid_birth_download_requires_registration_in_ejanma_2` ("the download requires payment of a specific fee") decides neither who qualifies nor which route applies — under the section 8 `cost` bullet a payment step without an amount is `cost` evidence at `mentioned` level. The cell note makes no use of it. **Correction C2** removes it from `/cells/eligibility/claimIds`. It is not added to `cost`, because a stated cell's `claimIds` should carry the claims that support `stated`, and this claim gives no amount.
+
+### F5 — the `eligibility` note asserts a necessity the cited claim does not (section 5, section 9)
+The note reads "a certificate can be downloaded through Seva Sindhu **only** where the event is registered in eJanMa". The cited claim asserts sufficiency ("a birth certificate for an event registered in eJanMa can be downloaded from the Seva Sindhu portal"), not necessity. The inversion is an inference presented as the observed rule. The cell still qualifies as `stated` without it, because the sufficiency reading plus the BBMP registration rule still tells a Bengaluru applicant which route is open. No correction is filed: this audit's declared correction field paths for expectations records are `/cells/<cell>/state` and `/cells/<cell>/claimIds`, so the note rewrite is recorded here as a required follow-up rather than as a correction object.
+
+### F6 — a topic-only claim sits inside a `stated` cell (section 8, `eligibility` bullet; section 9)
+`claim_bengaluru_grid_birth_eligibility_citizens` ("eligibility for the service is citizens of India") is an applicant category without a usable rule — `mentioned`-level content by the section 8 definition. Section 9 permits optional topic-only `claimIds` for `mentioned` and `absent` cells only. It is retained without correction because it is genuinely on-topic for this cell, the cell note discloses exactly this ("a broad category rather than a route rule and is cited only for completeness"), and no cell state turns on it. Flagged for consistency with F4, where the offending claim was not eligibility content at all.
+
+### F7 — `time` = `stated` is correct (section 8, `time` bullet; section 3)
+`claim_bengaluru_grid_birth_service_time_immediate` records the card's own "service time in days" field answered as "Immediate". That is a usable time rule, which section 8 accepts as an alternative to a figure, and it is an explicit zero-wait value said by the applicable evidence rather than read into a blank field, which is what section 3 requires. The section 8 requirement that "when the figure covers only one stage, the cell note must say so" is met: the note states it covers issue once the event is on the register, not any earlier registration step. This was the closest call among the six and it survives.
+
+### F8 — `owner` = `stated` is correct, but not on the statutory claims (section 8, `owner` bullet)
+Section 8 says a statutory designation or general agency name alone is `mentioned`. `claim_bengaluru_grid_birth_rule_13_issuer_and_form` and `..._2` are exactly that. The cell reaches `stated` on the other limbs: `claim_bengaluru_grid_birth_bbmp_registrars_2` is a designation tied to a jurisdiction rule (Health Officers and Health Inspectors register in their respective areas), and `claim_bengaluru_grid_birth_additional_copies_contact`, `..._2` and `claim_bengaluru_grid_birth_clarifications_contact` are contact routes for that role. This makes `..._bbmp_registrars_2` load-bearing for the cell, which the ledger's own `meta.disclaimer` already carries as an unresolved audit limitation ("the sole municipal anchor for both the eligibility and owner cells"). Correctly disclosed; no correction.
+
+### F9 — `owner` cites three claims that assert nothing about who holds or decides the case (section 8, `owner` bullet)
+`claim_bengaluru_grid_birth_rule_13_issuer_and_form_3` (the extract is issued in Form No. 5) and `..._4` (certification per section 76 of the Indian Evidence Act) are facts about the document's form and certification, not about an office, officer, or operational role. `claim_bengaluru_grid_birth_additional_copies_contact_3` ("the same contacts for any corrections") adds no contact beyond `..._contact` and `..._contact_2` and covers corrections, which the scenario summary and the claim's own note place outside scope. The cell note references none of the three. **Correction C3** removes all three.
+
+### F10 — `after-submission` cites a payment step, which section 8 excludes by name (section 8, `after-submission` bullet)
+`claim_bengaluru_grid_birth_download_requires_registration_in_ejanma_2` asserts that the download requires payment of a fee. Section 8 states that "a step at or before submission — including registration, document presentation, **payment**, appointment booking, or the act of submission — is not after-submission evidence." This is the clearest membership defect in the row. **Correction C1** removes it.
+
+### F11 — `after-submission` cites a claim about links only, and the cell note contradicts that claim (section 8, `after-submission` bullet; section 9)
+`claim_bengaluru_grid_birth_public_verification_route` asserts only that the home page publishes navigation links to a Birth and Death Verification route and a Registration Details route, and its note expressly disclaims knowing whether either route is reachable without login, what either requires, or what either returns. A named link whose behaviour is unestablished is an outcome named without a demonstrated post-submission surface — `mentioned` level at best — so it cannot support `stated`. **Correction C1** removes it. Separately, the cell note says of the listed surfaces "All were read, none queried", which contradicts the cited claim's note that neither route was opened; the note must be rewritten to drop the verification and registration-details routes. Recorded as a required follow-up, not as a correction object, for the field-path reason given in F5.
+
+The cell state survives both removals: `claim_bengaluru_grid_birth_public_status_route` and `..._2` identify a public Application Status route taking a registration or Sakala number (a tracker), and `claim_bengaluru_grid_birth_download_requires_registration_in_ejanma` identifies a downloadable result. Both are named in the section 8 list.
+
+---
+
+## Claim-level findings
+
+### F12 — one compound claim escaped the earlier split (section 8, lint check 1; section 13)
+`claim_bengaluru_grid_birth_clarifications_contact` asserts two separately checkable things: that the portal directs clarifications to the District Statistical Officer of the concerned district, and that it publishes the toll-free number 1800-425-6578. A routing instruction and a published helpline number are checked independently; the claim's own note describes it as "a named office **plus** a published helpline". Every neighbouring compound in this ledger was split under IND-91 part B; this one was not. **Corrections C4, C5 and C6** split it, carrying wording, source, grade, basis and status through unchanged and adding nothing, and **C3** adds the new limb to `/cells/owner/claimIds` so the contact route the cell relies on stays fully cited.
+
+### F13 — claim text overclaims against its own note (section 5; section 8, lint check 1)
+`claim_bengaluru_grid_birth_download_requires_registration_in_ejanma_2` reads "the download requires payment of a **specific** fee", which implies the route names an amount. The claim's note says the opposite: "The route names a fee without giving its amount; the amount is on the Seva Sindhu card." **Correction C7** aligns the text with what was observed. This is also what makes the claim `cost`-topic rather than `eligibility` or `after-submission` evidence (F4, F10).
+
+### F14 — an observed absence is recorded as an `Unknown` inference with no source (section 5; section 7)
+`claim_bengaluru_grid_birth_fee_currency_unknown_2` ("the copy of the rules published by the Chief Registrar carries no amendment history") is graded `Unknown`, `basis: inference`, `status: unknown`, `sourceIds: []`. It is none of those things. The absence was directly observed in the reviewed PDF — `source_bengaluru_grid_birth_ka_rbd_rules` records in its own notes that "the document carries no visible amendment history" — and the claim's note calls it "the observed absence". Section 5 requires `observation` for what a source directly shows, and grading it `Unknown` sidesteps the section 7 citation gate on a claim that does have a source. **Corrections C8–C11** set `basis` to `observation`, `evidenceGrade` to `A` (matching the four sibling claims on the same regulation source; Grade C would be defensible if the row prefers to grade an undated copy down, but consistency on one source governs), `sourceIds` to the rules source, and `status` to `verified`. The parent `claim_bengaluru_grid_birth_fee_currency_unknown` is correctly left as `Unknown`/`inference`: whether the fee has been revised genuinely is not established. The claim is cited by no cell, so nothing in the grid moves.
+
+### F15 — home-page citation: tension between the section 4 B and C rows, resolved without downgrade (section 4; section 7)
+Nine claims rest on `source_bengaluru_grid_birth_ejanma_home`, whose URL is the portal root, at Grade B. Section 7 says a department homepage is a general-site reference and claims resting on it are Grade C, and the section 4 C row repeats "never use it as a specific citation". Read against the section 4 B row ("direct current observation of a public official interface"), the prohibition targets a homepage used as a proxy for content that lives on some other page. Here the cited text — the BBMP registration rule, the Nadakacheri and registration-centre contacts, the DSO and helpline — is stated on the root page itself, and the source note records that ("the portal is state-wide and its own text addresses the BBMP area specifically"). No downgrade is proposed. Nothing turns on it either way: section 8 admits Grade C for `stated`, so `eligibility`, `owner` and `after-submission` would hold at C. Recommendation for the row, not a correction: record the on-page section or anchor in the source note so the citation visibly resolves to specific text.
+
+### F16 — Grade A on a 2003 copy with no amendment history (section 4)
+The four Rule 13 claims are Grade A on a regulation, which the section 4 A row allows on its face, while the section 4 C row reaches "potentially outdated material". The row already records the uncertainty as its own claim and in the source note and `meta.disclaimer`, and the `cost` cell does not depend on the statutory figure — `claim_bengaluru_grid_birth_application_fee_5` (Grade B, current card) carries it independently. No downgrade proposed; disclosure is adequate.
+
+### F17 — a claim about the FAQ file cites the page that links it (section 7)
+`claim_bengaluru_grid_birth_faq_unreadable` asserts properties of a 76-page PDF (page count, that it is a scan with no text layer) but cites `source_bengaluru_grid_birth_ejanma_home`. Section 7 requires citations to resolve to the specific page the claim rests on. The FAQ document should be recorded as its own source with its URL and access date. No correction is filed, because writing that source record here would mean supplying a URL and access date this audit did not observe, and section 13 forbids inventing evidence.
+
+---
+
+## Checks that pass
+
+### F18 — archive records comply (section 11)
+`source_bengaluru_grid_birth_seva_sindhu` has no snapshot; the failure, the access date and the limitation are all recorded on the source and in `meta.disclaimer`, which is exactly what section 11 requires on capture failure, and no substitute homepage was used for it. The four other sources record existing Wayback URLs with dates, and the three eJanMa sources state the staleness limitation explicitly. The 2022 snapshot of the rules PDF carries its own limitation via the creation-date and amendment-history note.
+
+### F19 — the support gate holds (section 8, expectation-cell definitions)
+Every claim cited by every cell has `status: verified`. No `Unknown`-grade claim and no boundary/limitation claim (`..._fee_currency_unknown`, `..._fee_currency_unknown_2`, `..._faq_unreadable`) is cited in any cell, and the two login/unqueried boundaries (`..._public_status_route`, `..._public_verification_route`) are stated as observations of route existence rather than of route behaviour — although F11 shows the second was still leaned on for a positive cell value.
+
+### F20 — identity, references and mode are consistent (section 2; section 12; `schemas/ledger.json`)
+`primaryScenarioId` is `scenario_ind32_birth_copy_workflow` in the manifest entry, the sidecar and the ledger's single scenario. Every claim is tagged to that scenario, and every `sourceIds` and every sidecar `claimIds` entry resolves to a record that exists. Grid-only mode is consistently expressed: `nodes`, `edges`, `roadblocks`, `journeys` and `pathNodeIds` are empty, every claim's `nodeIds` is empty, and no `researchedNoSourceFound` marker exists to verify under section 6. All six cells are present with `state`, `claimIds` and a note.
+
+### F21 — the remaining list-shaped claim is acceptable (section 8, lint check 1)
+`claim_bengaluru_grid_birth_public_verification_route` names two navigation links in one sentence. It is left unsplit on the same reasoning the row already applies at `claim_bengaluru_grid_birth_seva_sindhu_manual_and_apply`: one observation of one navigation surface on one page is not a compound requirement. This differs from F12, where an instruction and a published number are two different kinds of assertion.
+
+---
+
+## Corrections summary
+
+Eleven corrections, in `reaudit-bengaluru-grid-birth-certificate.corrections.json`:
+
+| # | Record | Field | Effect |
+| --- | --- | --- | --- |
+| C1 | expectations `birth-certificate:after-submission` | `/cells/after-submission/claimIds` | drop the payment claim and the links-only verification claim (F10, F11) |
+| C2 | expectations `birth-certificate:eligibility` | `/cells/eligibility/claimIds` | drop the payment claim (F4) |
+| C3 | expectations `birth-certificate:owner` | `/cells/owner/claimIds` | drop form, certification and corrections claims; add the split helpline claim (F9, F12) |
+| C4 | claim `..._clarifications_contact` | `/text` | keep the DSO limb only (F12) |
+| C5 | claim `..._clarifications_contact_2` | `/` | add the helpline limb as its own claim (F12) |
+| C6 | claim `..._clarifications_contact` | `/notes` | record the split (F12) |
+| C7 | claim `..._download_requires_registration_in_ejanma_2` | `/text` | drop "specific", state that no amount is given (F13) |
+| C8–C11 | claim `..._fee_currency_unknown_2` | `/basis`, `/evidenceGrade`, `/sourceIds`, `/status` | record the observed absence as an observation on its source (F14) |
+
+**No cell state changes.** All six cells remain `stated`. Two cell notes (`eligibility`, `after-submission`) need rewriting to match their surviving claims; those are outside this audit's declared correction field paths and are carried as stated limitations under section 14.

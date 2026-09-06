@@ -53,7 +53,7 @@
       "url": "https://djb.gov.in/DJBRMSPortal/portal/newConnection.html",
       "accessedAt": "2026-09-06",
       "type": "official_form",
-      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. Observed current official form, reachable without login. It was read only: no field was filled, no file uploaded and nothing submitted. The page shows no visible last-updated or version date, re-observed on 2026-09-06 by the official-source pass after the audit noted the omission; its currency rests on it being a live official interface on the access date. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250809154416/https://djb.gov.in/DJBRMSPortal/portal/newConnection.html (2025-08-09); no new capture was pushed from this run."
+      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. Observed current official form, reachable without login. It was read only: no field was filled, no file uploaded and nothing submitted. The page shows no visible last-updated or version date, re-observed on 2026-09-06 by the official-source pass after the audit noted the omission; its currency rests on it being a live official interface on the access date. Limitation: the form is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250809154416/https://djb.gov.in/DJBRMSPortal/portal/newConnection.html (2025-08-09); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the form as reviewed on 2026-09-06."
     },
     {
       "id": "source_delhi_water_djb_track_status",
@@ -62,7 +62,7 @@
       "url": "https://djb.gov.in/DJBRMSPortal/portal/arnStatus.html",
       "accessedAt": "2026-09-06",
       "type": "official_portal",
-      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. A public route reachable without login. It was read only: no application reference number was entered and no case data was retrieved. The page shows no visible last-updated or version date, re-observed on 2026-09-06 by the official-source pass after the audit noted the omission; its currency rests on it being a live official interface on the access date. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260215222512/https://djb.gov.in/DJBRMSPortal/portal/arnStatus.html (2026-02-15); no new capture was pushed from this run."
+      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. A public route reachable without login. It was read only: no application reference number was entered and no case data was retrieved. The page shows no visible last-updated or version date, re-observed on 2026-09-06 by the official-source pass after the audit noted the omission; its currency rests on it being a live official interface on the access date. Limitation: the route is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260215222512/https://djb.gov.in/DJBRMSPortal/portal/arnStatus.html (2026-02-15); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the route as reviewed on 2026-09-06."
     },
     {
       "id": "source_delhi_water_djb_contact_directory",
@@ -71,13 +71,13 @@
       "url": "https://djb.gov.in/StaticContent/ContactUs.pdf",
       "accessedAt": "2026-09-06",
       "type": "official_guidance",
-      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. A zone-by-zone directory of designated offices with office addresses and the assembly constituencies each covers. Individual officers' names and mobile numbers appear in the file; they are deliberately not recorded in this ledger, and only the existence and structure of the directory is claimed. The file shows no visible issue date. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250704064455/https://djb.gov.in/StaticContent/ContactUs.pdf (2025-07-04); no new capture was pushed from this run."
+      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. A zone-by-zone directory of designated offices with office addresses and the assembly constituencies each covers. Individual officers' names and mobile numbers appear in the file; they are deliberately not recorded in this ledger, and only the existence and structure of the directory is claimed. Visible date: none is shown; the file carries no issue or revision date. Limitation: the file is undated, so the directory's currency cannot be checked. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250704064455/https://djb.gov.in/StaticContent/ContactUs.pdf (2025-07-04); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the file as retrieved on 2026-09-06."
     }
   ],
   "claims": [
     {
       "id": "claim_delhi_water_who_can_apply",
-      "text": "The Delhi Jal Board FAQ states that any resident of Delhi who is the owner of the premises or a tenant and who has valid proof of identity and property ownership can apply for a new water and sewer connection, except in the areas under the control of NDMC and the Delhi Cantonment Board.",
+      "text": "The Delhi Jal Board FAQ states that a resident of Delhi who owns the premises can apply for a new water connection.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -90,11 +90,62 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A rule that decides who qualifies and where the route does not run."
+      "notes": "A rule that decides who qualifies. Split during IND-91 part B lint remediation into the owner limb, the tenant limb, the proof condition and the territorial exception."
+    },
+    {
+      "id": "claim_delhi_water_who_can_apply_2",
+      "text": "The Delhi Jal Board FAQ states that a tenant of the premises may equally apply for a new water connection.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_who_can_apply. The tenant limb is separately checkable from the owner limb."
+    },
+    {
+      "id": "claim_delhi_water_who_can_apply_3",
+      "text": "The Delhi Jal Board FAQ requires the applicant to hold valid proof of identity together with proof of property ownership.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_who_can_apply. The proof condition is separately checkable from who may apply."
+    },
+    {
+      "id": "claim_delhi_water_who_can_apply_4",
+      "text": "The Delhi Jal Board FAQ excepts the areas under the control of NDMC and the Delhi Cantonment Board from the new-connection route.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_who_can_apply. The territorial exception tells the applicant where the route does not run and is separately checkable from the rule it excepts."
     },
     {
       "id": "claim_delhi_water_network_precondition",
-      "text": "The Delhi Jal Board FAQ states that a new water connection may be sanctioned only where the Board has provided or extended the water distribution system in the applicant's area or colony, or has taken it over for water supply and sewer maintenance.",
+      "text": "The Delhi Jal Board FAQ states that a new connection may be sanctioned only where the Board has provided or extended the water distribution system in the applicant's area.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -107,7 +158,24 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": ""
+      "notes": "Split during IND-91 part B lint remediation; the take-over limb of the same precondition is asserted separately by claim_delhi_water_network_precondition_2."
+    },
+    {
+      "id": "claim_delhi_water_network_precondition_2",
+      "text": "The Delhi Jal Board FAQ extends that precondition to an area the Board has taken over for water supply and sewer maintenance.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_network_precondition, which carried two ways the network precondition can be met."
     },
     {
       "id": "claim_delhi_water_no_arrears_precondition",
@@ -128,7 +196,7 @@
     },
     {
       "id": "claim_delhi_water_completed_authorised_construction",
-      "text": "The Delhi Jal Board FAQ states that an application may be made by the owner or occupier once construction is completed, provided the construction is authorised, and that no regular connection will be allowed on a vacant plot or piece of land.",
+      "text": "The Delhi Jal Board FAQ states that an application may be made once construction is completed.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -141,11 +209,45 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "Matches this scenario's trigger, an existing built residential property."
+      "notes": "Matches this scenario's trigger, an existing built residential property. The FAQ puts this limb on the owner or occupier, who are covered by claim_delhi_water_who_can_apply and claim_delhi_water_who_can_apply_2. Split during IND-91 part B lint remediation into the completion rule, the authorisation condition and the vacant-plot exclusion."
+    },
+    {
+      "id": "claim_delhi_water_completed_authorised_construction_2",
+      "text": "The Delhi Jal Board FAQ requires the completed construction to be authorised.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_completed_authorised_construction. The authorisation condition is separately checkable from the completion rule."
+    },
+    {
+      "id": "claim_delhi_water_completed_authorised_construction_3",
+      "text": "The Delhi Jal Board FAQ states that no regular connection will be allowed on a vacant plot.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_completed_authorised_construction. The FAQ's wording is 'a vacant plot or piece of land'; both describe the same excluded case."
     },
     {
       "id": "claim_delhi_water_one_connection_per_dwelling",
-      "text": "The Delhi Jal Board FAQ states that only one water connection is sanctioned per dwelling unit and that individual connections may be sanctioned only for dwelling units within a building height of up to 15 metres.",
+      "text": "The Delhi Jal Board FAQ states that only one water connection is sanctioned per dwelling unit.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -158,7 +260,24 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "The height rule marks the boundary with the excluded high-rise and bulk routes."
+      "notes": "Split during IND-91 part B lint remediation; the building-height rule is asserted separately by claim_delhi_water_one_connection_per_dwelling_2."
+    },
+    {
+      "id": "claim_delhi_water_one_connection_per_dwelling_2",
+      "text": "The Delhi Jal Board FAQ states that individual connections may be sanctioned only for dwelling units within a building height of up to 15 metres.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_one_connection_per_dwelling. The height rule marks the boundary with the excluded high-rise and bulk routes."
     },
     {
       "id": "claim_delhi_water_identity_and_ownership_documents",
@@ -179,7 +298,7 @@
     },
     {
       "id": "claim_delhi_water_simplified_document_list",
-      "text": "The Delhi Jal Board citizens charter states that in unauthorised or regularised colonies, urban and rural villages and slum katras a connection may be sanctioned to an applicant who submits any proof of identity of the present address, namely a voter ID card, ration card, passport, PAN card, driving licence, Aadhaar card, bank passbook or a photo identity card issued by a government agency, together with the last three months' paid electricity bills in the applicant's name, and an undertaking where ownership documents are not available and ownership is undisputed.",
+      "text": "The Delhi Jal Board citizens charter publishes a simplified document list for unauthorised or regularised colonies, urban or rural villages and slum katras.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -192,7 +311,58 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "An actionable document list for the colony categories named. It does not state the list for a property outside those categories, where the FAQ's identity-and-ownership condition applies instead."
+      "notes": "An actionable document list for the colony categories named. It does not state the list for a property outside those categories, where the FAQ's identity-and-ownership condition applies instead. Split during IND-91 part B lint remediation into the scope of the list and its three requirements."
+    },
+    {
+      "id": "claim_delhi_water_simplified_document_list_2",
+      "text": "Under that list proof of identity of the present address may be a voter ID card, ration card, passport, PAN card, driving licence, Aadhaar card, bank passbook or a government photo identity card.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_citizens_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_simplified_document_list. This fragment carries the charter's published list of accepted identity proofs, which is one published list and is waived on the manifest entry."
+    },
+    {
+      "id": "claim_delhi_water_simplified_document_list_3",
+      "text": "Under that list the applicant must also submit the last three months' paid electricity bills in the applicant's name.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_citizens_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_simplified_document_list. A separately checkable document requirement."
+    },
+    {
+      "id": "claim_delhi_water_simplified_document_list_4",
+      "text": "Under that list an undertaking replaces ownership documents that are not available, where ownership is undisputed.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_citizens_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_simplified_document_list. A separately checkable document requirement."
     },
     {
       "id": "claim_delhi_water_form_photo_and_id_upload",
@@ -213,7 +383,7 @@
     },
     {
       "id": "claim_delhi_water_domestic_charges_table",
-      "text": "The Delhi Jal Board FAQ publishes a table of charges applicable to a new water and sewer connection for a domestic property giving an application fee for water of Rs. 10, an opening fee of Rs. 250 for water and Rs. 250 for sewer, a trade advance of Rs. 5,000, an occupier security of Rs. 500 for water and Rs. 500 for sewer, and road restoration charges of Rs. 1,600 for water and Rs. 3,200 for sewer where the distance from the property to the DJB network is up to 5 metres.",
+      "text": "The Delhi Jal Board FAQ publishes a table of charges applicable to a new water and sewer connection for a domestic property.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -226,11 +396,96 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "Amounts a citizen pays, listed line by line for the domestic category, which is this scenario's category."
+      "notes": "Amounts a citizen pays, listed line by line for the domestic category, which is this scenario's category. Split during IND-91 part B lint remediation into one claim per charge line."
+    },
+    {
+      "id": "claim_delhi_water_domestic_charges_table_2",
+      "text": "That table gives an application fee for water of Rs. 10.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_domestic_charges_table; one charge line, one claim."
+    },
+    {
+      "id": "claim_delhi_water_domestic_charges_table_3",
+      "text": "That table gives an opening fee of Rs. 250 for water and Rs. 250 for sewer.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_domestic_charges_table; one charge line, one claim."
+    },
+    {
+      "id": "claim_delhi_water_domestic_charges_table_4",
+      "text": "That table gives a trade advance of Rs. 5,000.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_domestic_charges_table; one charge line, one claim."
+    },
+    {
+      "id": "claim_delhi_water_domestic_charges_table_5",
+      "text": "That table gives an occupier security of Rs. 500 for water and Rs. 500 for sewer.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_domestic_charges_table; one charge line, one claim."
+    },
+    {
+      "id": "claim_delhi_water_domestic_charges_table_6",
+      "text": "That table gives road restoration charges of Rs. 1,600 for water and Rs. 3,200 for sewer where the distance from the property to the DJB network is up to 5 metres.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_domestic_charges_table; one charge line, one claim. The distance condition is part of this line as published."
     },
     {
       "id": "claim_delhi_water_development_charges_unauthorised_colonies",
-      "text": "The Delhi Jal Board FAQ states a fixed development charge for water and sewer in unauthorised regularised colonies of Rs. 45,000 where the plot size is up to 50 square metres and Rs. 1,00,000 where it is beyond 50 square metres.",
+      "text": "The Delhi Jal Board FAQ states a fixed development charge of Rs. 45,000 for water plus sewer in unauthorised regularised colonies where the plot size is up to 50 square metres.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -243,11 +498,28 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A charge that turns on the colony's status, not on regularising an unauthorised connection, which this scenario excludes."
+      "notes": "A charge that turns on the colony's status, not on regularising an unauthorised connection, which this scenario excludes. Split during IND-91 part B lint remediation into the two published amounts."
+    },
+    {
+      "id": "claim_delhi_water_development_charges_unauthorised_colonies_2",
+      "text": "The Delhi Jal Board FAQ states the same development charge as Rs. 1,00,000 where the plot size is beyond 50 square metres.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_development_charges_unauthorised_colonies, which carried two amounts in one sentence."
     },
     {
       "id": "claim_delhi_water_application_form_fee",
-      "text": "The Delhi Jal Board FAQ states that the application form is available at every office of the Zonal Revenue Officer at a nominal fee of Rs. 10 towards the cost of the form and the processing fee, and can also be downloaded from the consumer portal.",
+      "text": "The Delhi Jal Board FAQ states that the application form is available at every office of the Zonal Revenue Officer at a nominal fee of Rs. 10.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -260,11 +532,45 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": ""
+      "notes": "Split during IND-91 part B lint remediation into the counter availability and fee, what the fee covers, and the download route."
+    },
+    {
+      "id": "claim_delhi_water_application_form_fee_2",
+      "text": "The Delhi Jal Board FAQ states that the Rs. 10 covers the cost of the form together with the processing fee.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_application_form_fee. What the fee covers is separately checkable from its amount."
+    },
+    {
+      "id": "claim_delhi_water_application_form_fee_3",
+      "text": "The Delhi Jal Board FAQ states that the application form can also be downloaded from the consumer portal.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_application_form_fee. The download route is separately checkable from the counter route."
     },
     {
       "id": "claim_delhi_water_doorstep_fee",
-      "text": "The Delhi Jal Board citizens charter states that doorstep delivery of the sanction of a new water or sewer connection is available through the toll-free number 1076 and that a fee of Rs. 50 is charged for providing the doorstep service.",
+      "text": "The Delhi Jal Board citizens charter states that doorstep delivery of the sanction of a new water connection is available through the toll-free number 1076.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -277,7 +583,24 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": ""
+      "notes": "The charter's wording covers a new water or sewer connection; this scenario is the water limb. Split during IND-91 part B lint remediation into the availability of the service and its fee."
+    },
+    {
+      "id": "claim_delhi_water_doorstep_fee_2",
+      "text": "The Delhi Jal Board citizens charter states that a fee of Rs. 50 is charged for providing the doorstep service.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_citizens_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_doorstep_fee. The amount is separately checkable from the availability of the service."
     },
     {
       "id": "claim_delhi_water_charter_delivery_time_fifteen_days",
@@ -315,7 +638,7 @@
     },
     {
       "id": "claim_delhi_water_demand_payment_deadline",
-      "text": "The Delhi Jal Board FAQ states that the applicant must pay the demand raised by the ZRO office within fifteen days or by the due date of the new connection bill, failing which the sanction is withdrawn.",
+      "text": "The Delhi Jal Board FAQ states that the applicant must pay the demand raised by the ZRO office within fifteen days.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -328,7 +651,41 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A deadline binding on the applicant after sanction, distinct from the Board's own delivery time."
+      "notes": "A deadline binding on the applicant after sanction, distinct from the Board's own delivery time. Split during IND-91 part B lint remediation into the fifteen-day period, the alternative deadline and the consequence of missing it."
+    },
+    {
+      "id": "claim_delhi_water_demand_payment_deadline_2",
+      "text": "The Delhi Jal Board FAQ gives the due date of the new connection bill as the alternative deadline for that payment.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_demand_payment_deadline. The alternative deadline is separately checkable from the fifteen-day period."
+    },
+    {
+      "id": "claim_delhi_water_demand_payment_deadline_3",
+      "text": "The Delhi Jal Board FAQ states that the sanction is withdrawn where the demand is not paid by then.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_demand_payment_deadline. The consequence of missing the deadline is separately checkable from the deadline itself."
     },
     {
       "id": "claim_delhi_water_officer_responsible_zro",
@@ -375,7 +732,7 @@
       "sourceIds": [
         "source_delhi_water_djb_contact_directory"
       ],
-      "evidenceGrade": "B",
+      "evidenceGrade": "C",
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
@@ -383,7 +740,7 @@
     },
     {
       "id": "claim_delhi_water_application_submission_routes",
-      "text": "The Delhi Jal Board FAQ states that a new connection application can be submitted online on the consumer portal or in the office of the concerned Zonal Revenue Office on all working days.",
+      "text": "The Delhi Jal Board FAQ states that a new connection application can be submitted online on the consumer portal.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -396,11 +753,28 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A step at submission, not after it; recorded for the route, not for the after-submission cell."
+      "notes": "A step at submission, not after it; recorded for the route, not for the after-submission cell. Split by audit into the online route and the counter route, the latter carried by claim_delhi_water_application_submission_routes_2."
+    },
+    {
+      "id": "claim_delhi_water_application_submission_routes_2",
+      "text": "The Delhi Jal Board FAQ states that a new connection application can also be submitted in the office of the concerned Zonal Revenue Office on all working days.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split by audit from claim_delhi_water_application_submission_routes, with the source, grade, basis and status unchanged and the wording carried over from the same FAQ sentence. The counter route and its working-days condition are separately checkable from the online route. A step at submission, not after it; recorded for the route, not for the after-submission cell."
     },
     {
       "id": "claim_delhi_water_public_status_tracking_route",
-      "text": "The Delhi Jal Board portal publishes a Track Application Status route, reachable without login, that takes an application reference number for a new connection and returns the applicant's details, the application status, and a dated list of actions performed with remarks.",
+      "text": "The Delhi Jal Board portal publishes a Track Application Status route that takes an application reference number for a new connection.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -413,7 +787,58 @@
       "basis": "mixed",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "The route's own field labels were observed; no reference number was entered and no case data was retrieved."
+      "notes": "The route's own field labels were observed; no reference number was entered, no login was used and no case data was retrieved. Split during IND-91 part B lint remediation into the route, its public reachability and what it returns."
+    },
+    {
+      "id": "claim_delhi_water_public_status_tracking_route_2",
+      "text": "That Track Application Status route is reachable without login.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_track_status"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_public_status_tracking_route. The route was observed without a login; no reference number was entered and no case data was retrieved."
+    },
+    {
+      "id": "claim_delhi_water_public_status_tracking_route_3",
+      "text": "That route returns the applicant's details and the application status.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_track_status"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_public_status_tracking_route. Read from the route's own field labels; no reference number was entered and no case data was retrieved."
+    },
+    {
+      "id": "claim_delhi_water_public_status_tracking_route_4",
+      "text": "That route returns a dated list of actions performed with remarks.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_track_status"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_public_status_tracking_route. Read from the route's own field labels; no reference number was entered and no case data was retrieved."
     },
     {
       "id": "claim_delhi_water_portal_tracking_facility_listed",
@@ -434,7 +859,7 @@
     },
     {
       "id": "claim_delhi_water_registered_consumer_boundary",
-      "text": "The Delhi Jal Board FAQ states that only registered consumers can apply online for disconnection, lodge a grievance, update a profile and view previous bills and receipts, which places those surfaces past a login boundary that this run did not cross.",
+      "text": "The Delhi Jal Board FAQ states that only registered consumers can apply online for disconnection.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -447,11 +872,79 @@
       "basis": "mixed",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is the FAQ's own list; the inference is that those surfaces sit past the boundary. Applying for a new connection is not in that list, which is why the new-connection form and the status route are reachable publicly."
+      "notes": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is the FAQ's own list. No login was used and no personal data was entered. Applying for a new connection is not in that list, which is why the new-connection form and the status route are reachable publicly. Split during IND-91 part B lint remediation into the four surfaces the FAQ names and the inference drawn from them."
+    },
+    {
+      "id": "claim_delhi_water_registered_consumer_boundary_2",
+      "text": "The Delhi Jal Board FAQ states that only registered consumers can lodge a grievance online.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_registered_consumer_boundary. Boundary statement supporting no cell. No login was used and no personal data was entered."
+    },
+    {
+      "id": "claim_delhi_water_registered_consumer_boundary_3",
+      "text": "The Delhi Jal Board FAQ states that only registered consumers can update a profile online.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_registered_consumer_boundary. Boundary statement supporting no cell. No login was used and no personal data was entered."
+    },
+    {
+      "id": "claim_delhi_water_registered_consumer_boundary_4",
+      "text": "The Delhi Jal Board FAQ states that only registered consumers can view previous bills and receipts online.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_registered_consumer_boundary. Boundary statement supporting no cell. No login was used and no personal data was entered."
+    },
+    {
+      "id": "claim_delhi_water_registered_consumer_boundary_5",
+      "text": "Those registered-consumer surfaces sit past a boundary that this run did not cross.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_water_djb_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "inference",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_registered_consumer_boundary. This is the inference drawn from the FAQ's list. No login was used and no personal data was entered, so what lies past the boundary is unknown."
     },
     {
       "id": "claim_delhi_water_sanction_outcome_notice_unknown",
-      "text": "What the applicant is shown or sent at the moment a new connection is sanctioned or refused, and whether a refusal states its reason, is not established by any reviewed public page.",
+      "text": "What the applicant is shown at the moment a new connection is sanctioned is not established by any reviewed public page.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -462,7 +955,22 @@
       "basis": "inference",
       "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related: the status route is public and was simply not queried, because entering a real application reference number is outside the safety boundary."
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related: the status route is public and was simply not queried, because entering a real application reference number is outside the safety boundary. Split during IND-91 part B lint remediation; whether a refusal states its reason is asserted separately."
+    },
+    {
+      "id": "claim_delhi_water_sanction_outcome_notice_unknown_2",
+      "text": "Whether a refusal of a new connection states its reason is not established by any reviewed public page.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_sanction_outcome_notice_unknown. Retained because the uncertainty itself matters to the journey. Not login-related: the status route is public and was simply not queried."
     },
     {
       "id": "claim_delhi_water_executive_engineer_scope",

@@ -118,3 +118,160 @@ No blocking findings. Four correction-severity findings (F-01 to F-04), carried 
 Accepted cell states: `cost` **stated**, `documents` **mentioned**, `eligibility` **stated**, `time` **mentioned**, `owner` **stated**, `after-submission` **mentioned**. **Stated count: 3 of 6.**
 
 The corrections change three cells from `absent` to `mentioned` and leave the stated count unchanged. What they change is the claim the scorecard makes about the government: not that Mumbai's payment route is silent on documents, timing and what follows a payment, but that it gestures at each — a bill where your number is printed, an order in which your money is applied, a rule for where it lands and whom to ask if it lands wrong — and gives an actionable value for none of them.
+
+
+## Re-audit — 2026-09-06 (IND-91 part B)
+
+A fresh isolated auditor re-audited this row after pre-audit lint remediation, on the section 12 inputs only. 3 corrections were proposed and 3 applied; none unapplied.
+
+# Re-audit: Mumbai / property-tax-payment (grid-only)
+
+Inputs: ledger `ledger/jurisdictions/mumbai/property-tax-payment.json`, expectations sidecar
+`ledger/jurisdictions/mumbai/expectations/property-tax-payment.json`, the mumbai/property-tax-payment
+manifest entry, `benchmark/schemas/ledger.json`, `benchmark/PROTOCOL.md`, `benchmark/schemas/corrections.json`.
+Grid-only row: no nodes, edges, roadblocks or journeys, so sections 6 and 10 are not in scope.
+No URL was opened; every judgement below is from the recorded text.
+
+## Cell-by-cell verdicts
+
+### F1 — `cost` = `stated` is correct (PROTOCOL §8, cost definition; §4 grade table)
+The eleven listed claims are all `verified` and Grade C, and Grade C is admissible support for
+`stated` ("a Grade A, B, or C claim gives a value a citizen can act on"). Ten rate lines expressed as
+percentages of capital value for the residential user category, plus the rule that the residential
+table is the applicable one, constitute an actionable fee schedule, which the cost definition
+accepts alongside a bare amount. The 2015 effective date and the absent current-year rate are a
+currency limitation; §4 puts exactly that material at Grade C rather than removing it from support,
+and the cell note states the limitation as §8's cost row requires of partial coverage. No change.
+
+### F2 — `cost` claim list is complete for the state it records (PROTOCOL §8 limitation rule; §9)
+`claim_mumbai_ptax_rate_documents_stop_at_2019_20`, `_2` and `_3` are recited in the cost note but are
+not listed, and that is right: they record what the corporation does *not* publish, and §8 says a
+limitation is not a positive cell value. `claim_mumbai_ptax_public_instant_payment_route_4` (the
+route's amount labels) and `_5` (an online payment action) are payment-step-without-an-amount
+evidence, i.e. `mentioned`-grade topic material that §9 makes optional and only for
+`mentioned`/`absent` cells. No change.
+
+### F3 — `documents` = `mentioned` is correct (PROTOCOL §8, documents definition; §3)
+`claim_mumbai_ptax_account_number_from_bill_2` names one concrete document — the property tax bill —
+as where the Property Account No. is printed, with no requirement to submit, provide, upload, produce
+or attach it. That is the definition's "reference to documents without telling the citizen what is
+required". The note correctly rules out §3 (no reviewed route states an explicit zero), so `stated`
+is not reachable that way either. No change.
+
+### F4 — two cell notes assert published material that no source or claim in this ledger records (PROTOCOL §7; §9)
+The `documents` note asserts that "Document requirements do appear on the corporation's circular for
+change of name in the property-tax record", and the `time` note asserts that the portal publishes a
+"real-time or three days" timeline for change of name. Both are statements about what the corporation
+publishes, both are used to justify an exclusion, and neither is backed by any source record or claim
+in the ledger — no change-of-name circular is among the five sources. Under §7 every assertion about
+published official material needs a citation that resolves to a specific page. Because the exclusion
+does not change either cell's state, no correction is emitted; the researcher should either record
+the circular as a source with a scoped-out claim or drop the assertion from the note.
+
+### F5 — `eligibility` = `stated` is correct, but the claim list is wrong in both directions (PROTOCOL §8, eligibility definition; audit check 2)
+The state is sound: `claim_mumbai_ptax_account_number_from_bill` (+`_2`, `_3`) gives the identifier
+route a citizen must use, and `claim_mumbai_ptax_user_category_determines_rate` is a rule that decides
+which rate route applies to this residential property. The list, however, carries
+`claim_mumbai_ptax_first_in_first_out_rule` and `_2`, which assert only that an online payment is
+applied first-in first-out and that the oldest bill is adjusted first. Those are processing-sequence
+facts — the row's own `time` note classifies them exactly that way ("a rule about the order in which
+payments are processed") — and neither decides who qualifies or which route applies. Meanwhile the
+note's third sentence ("paying against a specific bill requires the ward Assessment and Collection
+department instead") is asserted by `claim_mumbai_ptax_first_in_first_out_rule_3`, which is a
+self-contained route rule and is absent from the list. Correction 1 removes the two sequence claims
+and adds `_3`. The state remains `stated` on the identifier and user-category rules regardless.
+
+### F6 — `time` = `mentioned` is correct (PROTOCOL §8, time definition)
+First-in first-out ordering is a reference to sequence with no figure and no usable time rule, which
+the definition places at `mentioned`. `claim_mumbai_ptax_due_date_unknown` and `_2` are Grade
+`Unknown` and correctly kept out of the list: §8 says an `Unknown` claim records a limitation, never
+a positive cell value, and the note says so in terms. Searched routes are recorded as §9 requires for
+a `mentioned` cell. No change.
+
+### F7 — `owner` = `stated` is correct (PROTOCOL §8, owner definition)
+`claim_mumbai_ptax_ward_assessor_email_table` is a specific office list with a contact route for the
+role that assesses and collects, indexed by ward — the definition's central case, well past "a
+statutory designation or general agency name alone". `claim_mumbai_ptax_first_in_first_out_rule_3`
+names the ward Assessment & Collection department as the office to approach, supporting the same
+state. `claim_mumbai_ptax_contact_page_headquarters_only` and `_2` are recited in the note but are
+counter-evidence (what the Contact Us route omits) rather than support, so their absence from the
+list is correct under the same §8 limitation rule applied in F2. No change.
+
+### F8 — `after-submission` = `mentioned` is correct, one supporting claim is missing (PROTOCOL §8, after-submission definition; audit check 2)
+The state is right: the FIFO claims name an outcome of the money after payment while no receipt,
+acknowledgement, transaction reference, status route or downloadable result is identified, which is
+precisely "an outcome named without a visible or actionable post-submission surface". The three
+`claim_mumbai_ptax_payment_receipt_surface_unknown*` claims are Grade `Unknown` and correctly
+excluded, as is the boundary claim about the login. But the note's own reasoning rests on
+`claim_mumbai_ptax_first_in_first_out_rule_3` ("it names the ward Assessment and Collection
+department as the route for a citizen who wanted it applied to a specific bill instead; both are
+outcomes and recourse after payment") and that claim is not in the list. Correction 2 adds it. State
+unchanged.
+
+## Claim, grade and basis findings
+
+### F9 — `claim_mumbai_ptax_login_behind_captcha` records `basis: "mixed"` but now asserts only an observation (PROTOCOL §5)
+Its text — "the citizen login requires a property account number and a CAPTCHA" — is what the login
+form directly shows, and its own notes say "The observation is the login form" and that the claim was
+split "into the observation and the inference drawn from it", with the inference now living in
+`claim_mumbai_ptax_login_behind_captcha_2`. §5 reserves `mixed` for a claim that carries both and
+requires the boundary to be explained in notes; after the split there is no inference left in this
+record, so `basis` should be `observation`. Correction 3. Its `status: "partial"` is left alone: the
+claim supports no cell, so nothing turns on it, and an auditor should not upgrade a status.
+`claim_mumbai_ptax_login_behind_captcha_2` keeps `mixed` legitimately — an absence across reviewed
+pages plus the inference from the form — and its notes explain that boundary.
+
+### F10 — `claim_mumbai_ptax_public_instant_payment_route_2` is an unwaived list claim of the shape the manifest waives twice (PROTOCOL §8 lint check 1 and the waiver rule)
+The claim asserts that the Instant Payment route "displays the property account number, the billing
+name and the property address" — three comma-listed field labels read from one route in one
+observation. `_3` (breakdown heads) and `_4` (amount labels) are the identical shape and each carries
+a `compound-claim` waiver on the manifest entry with the reasoning that a comma list of one route's
+own field labels is a single published list. `_2` has no waiver, and §8 says an unwaived lint finding
+blocks audit. The consistent remedy is to extend the manifest waiver to `_2` on the same reasoning,
+not to split three field labels into three claims. No ledger correction is emitted because the waiver
+lives in the manifest entry rather than in a ledger or expectations record.
+
+### F11 — two further two-part claims, accepted as atomic (PROTOCOL §8 lint check 1)
+`claim_mumbai_ptax_contact_page_headquarters_only` ("only the corporation's headquarters address …
+and a portal feedback e-mail address") and `claim_mumbai_ptax_login_behind_captcha` ("a property
+account number and a CAPTCHA") each pair two items. Each pair is one page's contact block and one
+login gate respectively, checkable in one look, so both pass the "one claim asserts one checkable
+thing" test. Recorded so that a reviewer acting on F10 treats these consistently and does not split
+them.
+
+### F12 — one source record covers two distinct routes, and a claim rests on the route that is not the record's `url` (PROTOCOL §7; §11)
+`source_mumbai_ptax_contact_and_faq` carries `url` `…/index.html#/contactus` but its notes state that
+it also covers `…/index.html#/faq`, and `claim_mumbai_ptax_faq_route_empty` — the claim that the FAQ
+route rendered a heading and no content, a finding this row leans on in its `meta.disclaimer` and in
+the `documents` and `time` notes — rests on the FAQ route, not on the recorded URL. §7 requires
+citations to resolve to specific pages. The remedy is to split this into two source records, each
+with its own URL, access date, agency naming, archive outcome and limitation, and to repoint
+`claim_mumbai_ptax_faq_route_empty` at the FAQ record. No correction is emitted: creating the second
+source record means authoring archive and limitation text, which is researcher work rather than an
+auditor's field-level correction. The row should not be signed off until it is done.
+
+### F13 — evidence grades and the archive rule are otherwise sound (PROTOCOL §1, §4, §7, §11)
+Direct current observations of the public portal routes are Grade B, as §1 directs for the
+public-workflow pass and §4 confirms; the 2015 rate schedule is Grade C with the outdated-material
+limitation stated on both the source and every claim resting on it, matching §4's C rows.
+`source_mumbai_ptax_portal_home` is the specific page carrying the observed login field, ward e-mail
+table, KYC text and calculator description, not a general-site homepage reference, so B is right
+there too. Every non-`Unknown` claim carries at least one source and the six `Unknown` claims carry
+none, satisfying the §7 gate and the schema's conditional. All five sources record either a Wayback
+snapshot or a documented capture failure plus a limitation, as §11 requires, with no substitute
+homepage anywhere. Access dates are ISO and the jurisdiction string is specific on every source and
+claim. Every claim is tagged to the single manifest-declared primary scenario.
+
+### F14 — the boundary discipline of §8 holds across the grid (PROTOCOL §8, final sentence)
+No cell list contains an `Unknown` claim or a boundary statement. The two `partial` boundary claims
+about the login and the account view, and the six `Unknown` claims about receipts, status routes, the
+due date and rebates or penalties, appear in no cell and are described as limitations in the
+`cost`, `time` and `after-submission` notes. This is the rule most often broken and it is kept here.
+
+## Summary
+
+Fourteen findings. Three corrections, all confined to record fields whose current values are exact.
+No cell state changes: `cost`, `eligibility` and `owner` remain `stated`; `documents`, `time` and
+`after-submission` remain `mentioned`. Two findings (F10, F12) are blocking in the sense of §8 and §7
+but their remedies fall outside the field-level corrections contract, so they are recorded here for
+the researcher and belong in the unresolved-limitations line of the finish comment.

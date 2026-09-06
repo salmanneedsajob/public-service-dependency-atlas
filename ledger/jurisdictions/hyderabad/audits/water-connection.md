@@ -244,3 +244,10 @@ Unused claims: `claim_hyderabad_water_online_application_route` and `claim_hyder
 Cell states accepted: **cost `stated`; documents `stated`; eligibility `stated`; time `mentioned`; owner `stated`; after-submission `stated` — 5 of 6 stated.**
 
 Corrections proposed: 14 (1 blocking cell-state change expressed across 4 sidecar fields, 4 evidence-grade downgrades with 4 matching note amendments, and 1 compound-claim split across 2 records). Unresolved limitations for the integrator: the visible-date note missing on `source_hyderabad_water_status_route` (F-15); archive captures queried but never pushed for four sources (F-16); and the sanctioning office for a 15mm connection not named by the reviewed evidence (F-12).
+
+
+## Re-audit — 2026-09-06 (IND-91 part B)
+
+A fresh isolated auditor re-audited this row after pre-audit lint remediation, on the section 12 inputs only. 5 corrections were proposed and 5 applied; none unapplied.
+
+(no findings file written)

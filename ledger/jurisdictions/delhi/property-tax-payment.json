@@ -35,7 +35,7 @@
       "url": "https://mcdonline.nic.in/portal/citizenCharter",
       "accessedAt": "2026-09-06",
       "type": "official_guidance",
-      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. Agency naming as displayed on the access date: 'Municipal Corporation of Delhi, Civic Center, JLN Marg, New Delhi'. The document is presented as a page-flip reader and shows no publication or revision date. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260213080503/https://mcdonline.nic.in/portal/citizenCharter (2026-02-13); no new capture was pushed from this run."
+      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. Agency naming as displayed on the access date: 'Municipal Corporation of Delhi, Civic Center, JLN Marg, New Delhi'. Visible date: none is shown; the document is presented as a page-flip reader and carries no publication or revision date. Limitation: the document is undated, so its currency cannot be checked. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260213080503/https://mcdonline.nic.in/portal/citizenCharter (2026-02-13); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the document as reviewed on 2026-09-06."
     },
     {
       "id": "source_delhi_ptax_ptr_portal_info",
@@ -53,7 +53,7 @@
       "url": "https://mcdonline.nic.in/ptrmcd/web/citizen/property/downloadPdfFile/Tax_Rate_and_Use_factor_applicable_for_FY_2025-2026",
       "accessedAt": "2026-09-06",
       "type": "official_guidance",
-      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. Agency naming as displayed on the access date: the download route returns the file directly and has no page of its own; the route is published on https://mcdonline.nic.in/ptrmcd/web/citizen/info, whose footer reads 'Website Content Managed by Municipal Corporation of Delhi'. Any naming printed inside the schedule itself could not be read, for the reason given next. Re-observed on 2026-09-06 by the official-source pass after the audit found the naming missing. The route returned a 13.85 MB PDF made of scanned page images with no extractable text layer, so its figures could not be read in this environment; only the existence, title and financial year of the schedule are recorded, never its contents. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260518093013/https://mcdonline.nic.in/ptrmcd/web/citizen/property/downloadPdfFile/Tax_Rate_and_Use_factor_applicable_for_FY_2025-2026 (2026-05-18); no new capture was pushed from this run."
+      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. Agency naming as displayed on the access date: the download route returns the file directly and has no page of its own; the route is published on https://mcdonline.nic.in/ptrmcd/web/citizen/info, whose footer reads 'Website Content Managed by Municipal Corporation of Delhi'. The file is an 11-page scan of the Municipal Corporation of Delhi Schedule of Taxes 2025-26, carrying Resolution No. 377 of 13.02.2025 on the Commissioner's proposal of 10-2-2025 for the levy of municipal taxes, rates and cesses for FY 2025-26. Re-observed on 2026-09-06 by the official-source pass after the audit found the naming missing. The route returned a 16.6 MB PDF made of scanned page images with no extractable text layer; during IND-91 part C its pages were rendered as images and read, and the Property Taxes table on page 2 is legible. Limitation: the schedule is for FY 2025-2026 while the current financial year on the access date is 2026-2027, so it is the most recent published schedule rather than the applicable one; only the residential rate row was read, and nothing else in the file is recorded. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260518093013/https://mcdonline.nic.in/ptrmcd/web/citizen/property/downloadPdfFile/Tax_Rate_and_Use_factor_applicable_for_FY_2025-2026 (2026-05-18); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the file as retrieved on 2026-09-06."
     },
     {
       "id": "source_delhi_ptax_rbd_page_taxpayer_block",
@@ -62,7 +62,7 @@
       "url": "https://mcdonline.nic.in/rbd/web/citizen/info",
       "accessedAt": "2026-09-06",
       "type": "official_portal",
-      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. Agency naming as displayed on the access date: the page footer reads 'Website Content Managed by Municipal Corporation Of Delhi' and its header logo carries the title 'Municipal Corporation Of Delhi'. Re-observed on 2026-09-06 by the official-source pass after the audit found the naming missing. This births-and-deaths citizen page also serves a property-tax instruction block, which is why it is cited in a property-tax ledger. The page shows no visible last-updated or version date and requires JavaScript. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260109122524/https://mcdonline.nic.in/rbd/web/citizen/info (2026-01-09); no new capture was pushed from this run."
+      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. Agency naming as displayed on the access date: the page footer reads 'Website Content Managed by Municipal Corporation Of Delhi' and its header logo carries the title 'Municipal Corporation Of Delhi'. Re-observed on 2026-09-06 by the official-source pass after the audit found the naming missing. This births-and-deaths citizen page also serves a property-tax instruction block, which is why it is cited in a property-tax ledger. The page shows no visible last-updated or version date and requires JavaScript. Limitation: the page is undated, so its currency cannot be checked. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260109122524/https://mcdonline.nic.in/rbd/web/citizen/info (2026-01-09); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the page as reviewed on 2026-09-06."
     }
   ],
   "claims": [
@@ -244,7 +244,7 @@
     },
     {
       "id": "claim_delhi_ptax_rate_schedule_latest_is_2025_26",
-      "text": "On the access date the property-tax portal's list of rate schedules offered 'Tax Rate and Use factor applicable for' the financial years 2025-2026, 2024-2025 and 2023-2024, and the equivalent route for 2026-2027 returned an HTML page rather than a schedule.",
+      "text": "On the access date the property-tax portal's list of rate schedules offered 'Tax Rate and Use factor applicable for' the financial years 2025-2026, 2024-2025 and 2023-2024.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -258,7 +258,76 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "Checkable from the portal page's own link list and the responses of the two download routes. The current financial year on the access date is 2026-2027."
+      "notes": "Checkable from the portal page's own link list. The current financial year on the access date is 2026-2027. Split during IND-91 part B lint remediation; the response of the 2026-2027 download route is asserted separately by claim_delhi_ptax_rate_schedule_latest_is_2025_26_2."
+    },
+    {
+      "id": "claim_delhi_ptax_rate_schedule_latest_is_2025_26_2",
+      "text": "On the access date the portal's download route for the 2026-2027 rate schedule returned an HTML page rather than a schedule.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_ptax_ptr_portal_info",
+        "source_delhi_ptax_rate_schedule_2025_26"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_ptax_rate_schedule_latest_is_2025_26, which reported both which years the portal lists and what the current year's route returned. Checkable from the response of that download route."
+    },
+    {
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_ptax_rate_schedule_2025_26"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "id": "claim_delhi_ptax_residential_rate_schedule",
+      "text": "The Municipal Corporation of Delhi's Schedule of Taxes 2025-26 sets the residential rate of tax at 12 per cent of annual value for colonies in categories A and B.",
+      "notes": "Read from page 2 of the schedule during IND-91 part C, the pages having been rendered as images because the file carries no text layer. Graded C under section 4 because the schedule is for FY 2025-2026 while the current financial year on the access date is 2026-2027, and the portal's route for the current year returns no schedule; the rate is therefore the most recent published one rather than the applicable one."
+    },
+    {
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_ptax_rate_schedule_2025_26"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "id": "claim_delhi_ptax_residential_rate_schedule_2",
+      "text": "That schedule sets the residential rate at 11 per cent of annual value for colonies in categories C to E.",
+      "notes": "Read from page 2 of the schedule during IND-91 part C, the pages having been rendered as images because the file carries no text layer. Graded C under section 4 because the schedule is for FY 2025-2026 while the current financial year on the access date is 2026-2027, and the portal's route for the current year returns no schedule; the rate is therefore the most recent published one rather than the applicable one."
+    },
+    {
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_ptax_rate_schedule_2025_26"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "id": "claim_delhi_ptax_residential_rate_schedule_3",
+      "text": "That schedule sets the residential rate at 7 per cent of annual value for colonies in categories F to H.",
+      "notes": "Read from page 2 of the schedule during IND-91 part C, the pages having been rendered as images because the file carries no text layer. Graded C under section 4 because the schedule is for FY 2025-2026 while the current financial year on the access date is 2026-2027, and the portal's route for the current year returns no schedule; the rate is therefore the most recent published one rather than the applicable one."
     },
     {
       "id": "claim_delhi_ptax_rate_schedule_not_machine_readable",
@@ -330,7 +399,7 @@
     },
     {
       "id": "claim_delhi_ptax_charter_key_contacts_empty",
-      "text": "The 'Key Contacts' heading in the property tax return filing section of MCD's citizen charter is followed by no contact, name, designation or telephone number.",
+      "text": "The 'Key Contacts' heading in the property tax return filing section of MCD's citizen charter is published with no contact details beneath it.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -343,7 +412,7 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "The same empty heading appears in the other service sections of the charter reviewed on the access date."
+      "notes": "No contact, name, designation or telephone number appears beneath the heading. The same empty heading appears in the other service sections of the charter reviewed on the access date."
     },
     {
       "id": "claim_delhi_ptax_zone_ward_mapping_published",
@@ -377,7 +446,7 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A portal helpdesk address, not a contact route for the office or role that decides a case. Institutional contact only; no personal data recorded."
+      "notes": "A portal helpdesk address, not a contact route for the office or role that decides a case. Institutional contact only. The page was read without a login and no personal data was entered."
     },
     {
       "id": "claim_delhi_ptax_know_your_corporation_dead",
@@ -398,7 +467,7 @@
     },
     {
       "id": "claim_delhi_ptax_payment_behind_login_and_captcha",
-      "text": "MCD's property-tax portal reaches the pay-tax action only after citizen login by registered mobile number and OTP or by user ID and password, with a CAPTCHA on the login form, so the payment surface itself is not visible on any reviewed public page.",
+      "text": "MCD's property-tax portal reaches the pay-tax action only after citizen login by registered mobile number and OTP.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -411,11 +480,62 @@
       "basis": "mixed",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is the login form and its stated instructions; the inference is that the pay-tax action lies past that boundary. The boundary was not crossed and no CAPTCHA was attempted."
+      "notes": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is the login form and its stated instructions. The boundary was not crossed, no login was used, and no CAPTCHA was attempted. Split during IND-91 part B lint remediation into the two login methods, the CAPTCHA, and the consequence for the public surface."
+    },
+    {
+      "id": "claim_delhi_ptax_payment_behind_login_and_captcha_2",
+      "text": "MCD's property-tax portal also offers citizen login by user ID and password.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_ptax_ptr_portal_info"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_ptax_payment_behind_login_and_captcha. Boundary statement, recorded as a limitation and not used to support any positive cell value. The boundary was not crossed, no login was used, and no credentials were entered."
+    },
+    {
+      "id": "claim_delhi_ptax_payment_behind_login_and_captcha_3",
+      "text": "The login form on MCD's property-tax portal carries a CAPTCHA.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_ptax_ptr_portal_info"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_ptax_payment_behind_login_and_captcha. Boundary statement, recorded as a limitation and not used to support any positive cell value. The boundary was not crossed, no login was used, and no CAPTCHA was attempted."
+    },
+    {
+      "id": "claim_delhi_ptax_payment_behind_login_and_captcha_4",
+      "text": "The pay-tax payment surface is not visible on any reviewed public MCD page.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_ptax_ptr_portal_info"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_delhi_ptax_payment_behind_login_and_captcha. This is the inference drawn from the observed login form; the boundary was not crossed and no login was used, so what lies past it is unknown."
     },
     {
       "id": "claim_delhi_ptax_current_year_amount_unknown",
-      "text": "The amount of property tax payable on a residential property for the current financial year is not established by any reviewed public page; the portal's own calculator and the pay-tax action both require a property identifier to be entered.",
+      "text": "The amount of property tax payable on a residential property for the current financial year is not established by any reviewed public page.",
       "jurisdiction": "Delhi, NCT of Delhi, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -426,7 +546,7 @@
       "basis": "inference",
       "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related: the calculator route is public and was simply not exercised, because entering a real property identifier is outside the safety boundary."
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related: the calculator route is public and was simply not exercised, because entering a real property identifier is outside the safety boundary. The portal's own calculator and the pay-tax action both require a property identifier to be entered, which is why the amount could not be established."
     },
     {
       "id": "claim_delhi_ptax_portal_only_filing",

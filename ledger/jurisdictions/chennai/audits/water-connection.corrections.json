@@ -90,6 +90,3311 @@
         ],
         "auditNote": "Findings F-05, F-06 and F-07. The cited claims are retained: each reports what a public official page states, is attributed, verified and Grade B on observation of that page, and none is an observation of a logged-in interface. Disclosure is the proportionate remedy. The cell state is unchanged and remains stated, carried by claim_chennai_water_public_status_route and claim_chennai_water_status_published_periodically."
       }
+    },
+    {
+      "id": "corr_chennai_water_connection_b01",
+      "recordType": "source",
+      "recordId": "source_chennai_water_citizen_charter",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. The page footer displays 'Last reviewed and updated on 08-04-2024', recorded as publishedAt; the charter identifies itself as the Citizen Charter 2021, revising a charter first published in 1998 under Government Order No.58, Municipal Administration and Water Supply Department, dated 16 April 1998. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250427164610/https://cmwssb.tn.gov.in/citizencharter (2025-04-27); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. The page footer displays 'Last reviewed and updated on 08-04-2024', recorded as publishedAt; the charter identifies itself as the Citizen Charter 2021, revising a charter first published in 1998 under Government Order No.58, Municipal Administration and Water Supply Department, dated 16 April 1998. Limitation: the charter is dated 2021 and was last reviewed in April 2024, so its standards and rates may have moved since. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250427164610/https://cmwssb.tn.gov.in/citizencharter (2025-04-27); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the page as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an archived source without a stated limitation. The currency limitation and the archive limitation are now stated in words; no claim, grade or cell state changes.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b02",
+      "recordType": "source",
+      "recordId": "source_chennai_water_area_office_list",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. Direct current observation: a table giving, for each area, the area number, the location, the office address and a telephone number. Shows no separate last-updated date beyond the site footer. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250417233511/https://cmwssb.tn.gov.in/area-office (2025-04-17); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. Direct current observation: a table giving, for each area, the area number, the location, the office address and a telephone number. Shows no separate last-updated date beyond the site footer. Limitation: the table carries no date of its own, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250417233511/https://cmwssb.tn.gov.in/area-office (2025-04-17); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the table as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an undated, archived source without a stated limitation. Both limitations are now stated in words.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_area_office_list"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b03",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_status_published_periodically",
+      "fieldPath": "/text",
+      "old": "The board's citizen charter states that the status of registered water and sewer applications is published periodically on the board's official website.",
+      "new": "The board's citizen charter states that the status of registered applications is published periodically on the board's official website.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'and'. The lint tripped on the conjunction inside the noun phrase 'water and sewer applications'; the phrase is replaced by 'registered applications', which is what the whole ledger is about, and the single fact asserted is unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b04",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_online_application_needs_login",
+      "fieldPath": "/notes",
+      "old": "Boundary statement, recorded as a limitation and not used to support any positive cell value. Basis boundary as required by protocol section 5: the observed element is the citizen charter's own text stating that the consumer must first create an applicant login with a mobile number, email id and password before applying on the revised online route; the inferred element is the reading that the counter route needs no login and is where the published charges, enclosures and timelines apply, which is drawn from the application form's counter registration instructions rather than stated as such by either source. Nothing behind the login was observed.",
+      "new": "Boundary statement, recorded as a limitation and not used to support any positive cell value. Basis boundary as required by protocol section 5: the observed element is the citizen charter's own text stating that the consumer must first create an applicant login with a mobile number, email id and password before applying on the revised online route; the inferred element is the reading that the counter route needs no login and is where the published charges, enclosures and timelines apply, which is drawn from the application form's counter registration instructions rather than stated as such by either source. Nothing behind the login was observed: no login was used, no account was created and no personal data was entered.",
+      "reason": "Pre-audit lint reported login-boundary-overclaim because the claim names a login without wording the check recognises as uncertainty. The note now records explicitly that no login was used, no account was created and no personal data was entered, so nothing past the boundary is asserted.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: login-boundary-overclaim finding fixed by recording the observation boundary in the notes."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b05",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_connection_charge_table",
+      "fieldPath": "/text",
+      "old": "The board's application form for a water or sewer connection publishes a table of connection charges per equivalent dwelling unit for residential independent houses: Rs. 100 for water and Rs. 100 for sewer up to 500 square feet, that is 46.47 square metres; Rs. 5,000 and Rs. 5,000 for a building up to G+1 with a dwelling unit area above 46.47 and up to 100 square metres; and Rs. 7,500 and Rs. 7,500 above 100 and up to 200 square metres, the same rate applying to all other residential buildings and flats.",
+      "new": "The board's application form for a water or sewer connection publishes a table of connection charges per equivalent dwelling unit for residential independent houses.",
+      "reason": "Pre-audit lint reported compound-claim for a semicolon and text length of 509 characters. The table carried three separate charge bands and a rule extending the top band, each an amount a citizen pays and each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b06",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_connection_charge_table",
+      "fieldPath": "/notes",
+      "old": "Amounts the citizen pays, banded by the dwelling unit area of the property, for the residential categories this scenario covers.",
+      "new": "Amounts the citizen pays, banded by the dwelling unit area of the property, for the residential categories this scenario covers. Split during IND-91 part B lint remediation into one claim per published band.",
+      "reason": "Pre-audit lint reported compound-claim for a semicolon and text length of 509 characters. The table carried three separate charge bands and a rule extending the top band, each an amount a citizen pays and each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b07",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_connection_charge_table_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_connection_charge_table_2",
+        "text": "That table gives Rs. 100 for water and Rs. 100 for sewer up to 500 square feet, that is 46.47 square metres.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_connection_charge_table; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for a semicolon and text length of 509 characters. The table carried three separate charge bands and a rule extending the top band, each an amount a citizen pays and each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b08",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_connection_charge_table_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_connection_charge_table_3",
+        "text": "That table gives Rs. 5,000 for water and Rs. 5,000 for sewer for a building up to G+1 with a dwelling unit area above 46.47 and up to 100 square metres.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_connection_charge_table; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for a semicolon and text length of 509 characters. The table carried three separate charge bands and a rule extending the top band, each an amount a citizen pays and each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b09",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_connection_charge_table_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_connection_charge_table_4",
+        "text": "That table gives Rs. 7,500 for water and Rs. 7,500 for sewer above 100 and up to 200 square metres.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_connection_charge_table; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for a semicolon and text length of 509 characters. The table carried three separate charge bands and a rule extending the top band, each an amount a citizen pays and each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b10",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_connection_charge_table_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_connection_charge_table_5",
+        "text": "The same rate applies to all other residential buildings and flats.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_connection_charge_table; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for a semicolon and text length of 509 characters. The table carried three separate charge bands and a rule extending the top band, each an amount a citizen pays and each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b11",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_meter_testing_charges",
+      "fieldPath": "/text",
+      "old": "The board's application form guidelines publish meter testing charges by equivalent dwelling units: Rs. 100 up to 6 units, Rs. 200 for 7 to 20, Rs. 300 for 21 to 40, Rs. 400 for 41 to 70 and Rs. 500 above 70, alongside the bore size for the water connection and the size of the sewer connection for each band.",
+      "new": "The board's application form guidelines publish meter testing charges by equivalent dwelling units.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 309 characters. The table carried five separate charge bands and a separate column of connection sizes, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b12",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_meter_testing_charges",
+      "fieldPath": "/notes",
+      "old": "",
+      "new": "Split during IND-91 part B lint remediation into one claim per published band.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 309 characters. The table carried five separate charge bands and a separate column of connection sizes, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b13",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_meter_testing_charges_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_meter_testing_charges_2",
+        "text": "Those charges are Rs. 100 up to 6 units.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_meter_testing_charges; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 309 characters. The table carried five separate charge bands and a separate column of connection sizes, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b14",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_meter_testing_charges_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_meter_testing_charges_3",
+        "text": "Those charges are Rs. 200 for 7 to 20 units.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_meter_testing_charges; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 309 characters. The table carried five separate charge bands and a separate column of connection sizes, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b15",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_meter_testing_charges_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_meter_testing_charges_4",
+        "text": "Those charges are Rs. 300 for 21 to 40 units.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_meter_testing_charges; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 309 characters. The table carried five separate charge bands and a separate column of connection sizes, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b16",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_meter_testing_charges_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_meter_testing_charges_5",
+        "text": "Those charges are Rs. 400 for 41 to 70 units.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_meter_testing_charges; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 309 characters. The table carried five separate charge bands and a separate column of connection sizes, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b17",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_meter_testing_charges_6",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_meter_testing_charges_6",
+        "text": "Those charges are Rs. 500 above 70 units.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_meter_testing_charges; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 309 characters. The table carried five separate charge bands and a separate column of connection sizes, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b18",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_meter_testing_charges_7",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_meter_testing_charges_7",
+        "text": "The same table gives the bore size for the water connection and the size of the sewer connection for each band.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_meter_testing_charges; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 309 characters. The table carried five separate charge bands and a separate column of connection sizes, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b19",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_amount_payable_components",
+      "fieldPath": "/text",
+      "old": "The board's application form sets out the components of the amount payable as connection charges for water, connection charges for sewer, advance tax where applicable, meter testing charges, a deposit amount for water, a deposit amount for sewer, a caution deposit for a temporary connection and any penalty, with a total to be computed by the applicant.",
+      "new": "The board's application form sets out the components of the amount payable.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 354 characters. The components the form names and the rule that the applicant computes the total are separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b20",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_amount_payable_components",
+      "fieldPath": "/notes",
+      "old": "The form names every component, and gives figures for the connection charges and meter testing charges; the deposit amounts are not printed on the reviewed pages.",
+      "new": "The form names every component, and gives figures for the connection charges and meter testing charges; the deposit amounts are not printed on the reviewed pages. Split during IND-91 part B lint remediation into the components and the rule about the total.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 354 characters. The components the form names and the rule that the applicant computes the total are separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b21",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_amount_payable_components_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_amount_payable_components_2",
+        "text": "Those components are connection charges for water or connection charges for sewer or advance tax where applicable or meter testing charges.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_amount_payable_components; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 354 characters. The components the form names and the rule that the applicant computes the total are separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b22",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_amount_payable_components_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_amount_payable_components_3",
+        "text": "Those components also include a deposit amount for water or a deposit amount for sewer or a caution deposit for a temporary connection or any penalty.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_amount_payable_components; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 354 characters. The components the form names and the rule that the applicant computes the total are separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b23",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_amount_payable_components_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_amount_payable_components_4",
+        "text": "The form leaves the total to be computed by the applicant.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_amount_payable_components; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 354 characters. The components the form names and the rule that the applicant computes the total are separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b24",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_self_assessment_no_plumber",
+      "fieldPath": "/text",
+      "old": "The board's citizen charter states that it has dispensed with the system of licensed plumbers for submitting water and sewer applications, and that connection proposals, connection charges and deposits can be self assessed and self certified by the applicant as per the guidelines and instructions issued with the application form.",
+      "new": "The board's citizen charter states that it has dispensed with the system of licensed plumbers for submitting water and sewer applications.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 331 characters. That the plumber requirement is gone, that the applicant may self assess and that the applicant may self certify are three independently checkable rules.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b25",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_self_assessment_no_plumber",
+      "fieldPath": "/notes",
+      "old": "A rule about who may lodge the application, and the reason the charge table has to be published for the citizen to use.",
+      "new": "A rule about who may lodge the application, and the reason the charge table has to be published for the citizen to use. Split during IND-91 part B lint remediation into the removal of the plumber requirement, self assessment and self certification.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 331 characters. That the plumber requirement is gone, that the applicant may self assess and that the applicant may self certify are three independently checkable rules.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b26",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_self_assessment_no_plumber_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_self_assessment_no_plumber_2",
+        "text": "The charter states that the applicant may self assess the connection proposal, the connection charges and the deposits.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_self_assessment_no_plumber; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 331 characters. That the plumber requirement is gone, that the applicant may self assess and that the applicant may self certify are three independently checkable rules.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b27",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_self_assessment_no_plumber_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_self_assessment_no_plumber_3",
+        "text": "The charter states that the applicant may self certify those items as per the guidelines and instructions issued with the application form.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_self_assessment_no_plumber; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 331 characters. That the plumber requirement is gone, that the applicant may self assess and that the applicant may self certify are three independently checkable rules.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b28",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_application_free_and_where",
+      "fieldPath": "/text",
+      "old": "The board's citizen charter states that application forms are available free of cost at the head office at No.1, Pumping Station Road, Chintadripet, Chennai 600 002, at 15 area offices and at 200 depot offices, and can also be downloaded from the board's official website.",
+      "new": "The board's citizen charter states that application forms are available free of cost.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 272 characters. The explicit zero and each place the form can be obtained are independently checkable facts, and only the zero supports the cost cell.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b29",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_application_free_and_where",
+      "fieldPath": "/notes",
+      "old": "An explicit zero for the form itself, recorded under protocol section 3.",
+      "new": "An explicit zero for the form itself, recorded under protocol section 3. Split during IND-91 part B lint remediation into the zero fee and the places the form can be had.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 272 characters. The explicit zero and each place the form can be obtained are independently checkable facts, and only the zero supports the cost cell.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b30",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_application_free_and_where_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_application_free_and_where_2",
+        "text": "Those forms are available at the head office at No.1 Pumping Station Road in Chintadripet, Chennai 600 002.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_application_free_and_where; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 272 characters. The explicit zero and each place the form can be obtained are independently checkable facts, and only the zero supports the cost cell.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b31",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_application_free_and_where_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_application_free_and_where_3",
+        "text": "Those forms are also available at 15 area offices and at 200 depot offices.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_application_free_and_where; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 272 characters. The explicit zero and each place the form can be obtained are independently checkable facts, and only the zero supports the cost cell.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b32",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_application_free_and_where_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_application_free_and_where_4",
+        "text": "Those forms can also be downloaded from the board's official website.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_application_free_and_where; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 272 characters. The explicit zero and each place the form can be obtained are independently checkable facts, and only the zero supports the cost cell.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b33",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_enclosure_list",
+      "fieldPath": "/text",
+      "old": "The board's application form guidelines list the documents to be attached with the application, including a true copy of the plans sanctioned by CMDA, the Corporation of Chennai or the local authority, a copy of the notice issued for assessment of property with floor-wise assessment details, copies of acknowledged letters seeking assessment of property tax and water and sewerage tax where not assessed, drawings showing internal plumbing work and the connection to the public main signed by the owner, proof of having paid taxes and charges up to date, a true copy of the completion certificate where applicable, proof of having paid infrastructure development charges where applicable, and floor-wise area details for each dwelling.",
+      "new": "The board's application form guidelines list the documents to be attached with the application.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 736 characters. The guidelines list eight separate enclosures, each independently checkable against the form, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b34",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_enclosure_list",
+      "fieldPath": "/notes",
+      "old": "An actionable enclosure list published on the form itself.",
+      "new": "An actionable enclosure list published on the form itself. Split during IND-91 part B lint remediation into one claim per required enclosure.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 736 characters. The guidelines list eight separate enclosures, each independently checkable against the form, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b35",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_enclosure_list_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_enclosure_list_2",
+        "text": "That list includes a true copy of the plans sanctioned by CMDA or the Corporation of Chennai or the local authority.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 736 characters. The guidelines list eight separate enclosures, each independently checkable against the form, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b36",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_enclosure_list_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_enclosure_list_3",
+        "text": "That list includes a copy of the notice issued for assessment of property with floor-wise assessment details.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 736 characters. The guidelines list eight separate enclosures, each independently checkable against the form, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b37",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_enclosure_list_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_enclosure_list_4",
+        "text": "That list includes copies of acknowledged letters seeking assessment of property tax and water and sewerage tax where not assessed.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 736 characters. The guidelines list eight separate enclosures, each independently checkable against the form, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b38",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_enclosure_list_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_enclosure_list_5",
+        "text": "That list includes drawings showing internal plumbing work and the connection to the public main signed by the owner.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 736 characters. The guidelines list eight separate enclosures, each independently checkable against the form, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b39",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_enclosure_list_6",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_enclosure_list_6",
+        "text": "That list includes proof of having paid taxes and charges up to date.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 736 characters. The guidelines list eight separate enclosures, each independently checkable against the form, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b40",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_enclosure_list_7",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_enclosure_list_7",
+        "text": "That list includes a true copy of the completion certificate where applicable.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 736 characters. The guidelines list eight separate enclosures, each independently checkable against the form, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b41",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_enclosure_list_8",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_enclosure_list_8",
+        "text": "That list includes proof of having paid infrastructure development charges where applicable.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 736 characters. The guidelines list eight separate enclosures, each independently checkable against the form, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b42",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_enclosure_list_9",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_enclosure_list_9",
+        "text": "That list includes floor-wise area details for each dwelling.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 736 characters. The guidelines list eight separate enclosures, each independently checkable against the form, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b43",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_small_house_document_relief",
+      "fieldPath": "/text",
+      "old": "The board's application form guidelines state that an applicant seeking a water or sewer connection for a residential independent house up to 500 square feet need not enclose the drawing showing internal plumbing works but must furnish a built-up area statement with a signature, must enclose a copy of the ration card as address proof, and need not pay advance tax.",
+      "new": "The board's application form guidelines state that an applicant for a residential independent house up to 500 square feet need not enclose the drawing showing internal plumbing works.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 366 characters. The sentence carried one enclosure relieved, two enclosures required and an explicit zero for advance tax, cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost and documents cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b44",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_small_house_document_relief",
+      "fieldPath": "/notes",
+      "old": "A rule that decides which enclosures and which charges apply to the smallest residential category, including an explicit zero for advance tax.",
+      "new": "A rule that decides which enclosures and which charges apply to the smallest residential category. Split during IND-91 part B lint remediation into the enclosure relieved, the two enclosures still required and the explicit zero for advance tax.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 366 characters. The sentence carried one enclosure relieved, two enclosures required and an explicit zero for advance tax, cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b45",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_small_house_document_relief_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_small_house_document_relief_2",
+        "text": "That applicant must furnish a built-up area statement with a signature.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_small_house_document_relief; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 366 characters. The sentence carried one enclosure relieved, two enclosures required and an explicit zero for advance tax, cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost and documents cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b46",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_small_house_document_relief_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_small_house_document_relief_3",
+        "text": "That applicant must enclose a copy of the ration card as address proof.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_small_house_document_relief; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 366 characters. The sentence carried one enclosure relieved, two enclosures required and an explicit zero for advance tax, cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost and documents cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b47",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_small_house_document_relief_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_small_house_document_relief_4",
+        "text": "That applicant need not pay advance tax.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_small_house_document_relief; one published item, one claim. An explicit zero, recorded as a stated value under protocol section 3; this is the fragment the cost cell rests on."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 366 characters. The sentence carried one enclosure relieved, two enclosures required and an explicit zero for advance tax, cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: the cost and documents cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b48",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_completion_certificate_exemption",
+      "fieldPath": "/text",
+      "old": "The board's citizen charter states that residential buildings up to 12 metres in height not exceeding 3 dwelling units or 750 square metres, and all types of industrial buildings, are exempted from producing a completion certificate for availing a water or sewer connection.",
+      "new": "The board's citizen charter states that residential buildings up to 12 metres in height are exempted from producing a completion certificate for a water connection.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 274 characters. The height condition, the size condition and the separate industrial exemption are three independently checkable rules.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the documents and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b49",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_completion_certificate_exemption",
+      "fieldPath": "/notes",
+      "old": "A usable rule that decides whether the hardest enclosure applies to a given house.",
+      "new": "A usable rule that decides whether the hardest enclosure applies to a given house. Split during IND-91 part B lint remediation into the height limb, the size limb and the industrial limb.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 274 characters. The height condition, the size condition and the separate industrial exemption are three independently checkable rules.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b50",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_completion_certificate_exemption_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_completion_certificate_exemption_2",
+        "text": "That exemption applies where the building does not exceed 3 dwelling units or 750 square metres.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_completion_certificate_exemption; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 274 characters. The height condition, the size condition and the separate industrial exemption are three independently checkable rules.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the documents and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b51",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_completion_certificate_exemption_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_completion_certificate_exemption_3",
+        "text": "The charter also exempts all types of industrial buildings from producing a completion certificate.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_completion_certificate_exemption; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 274 characters. The height condition, the size condition and the separate industrial exemption are three independently checkable rules.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the documents and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b52",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_six_particulars",
+      "fieldPath": "/text",
+      "old": "The board's citizen charter states that a single sheet application form can be used for a new water or sewer connection and that only six particulars are required to be filled up, namely the name and address of the applicant, the address of the premises, whether a rainwater harvesting structure is provided, the Metro Water area, zone or division number, the calculation of equivalent dwelling units and connection charges, and the amount payable.",
+      "new": "The board's citizen charter states that a single sheet application form can be used for a new water or sewer connection.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 448 characters. That a single sheet form is used, that six particulars are required and what those particulars are, are three separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b53",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_six_particulars",
+      "fieldPath": "/notes",
+      "old": "",
+      "new": "Split during IND-91 part B lint remediation into the single-sheet form, the number of particulars and the list of them.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 448 characters. That a single sheet form is used, that six particulars are required and what those particulars are, are three separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b54",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_six_particulars_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_six_particulars_2",
+        "text": "The charter states that only six particulars are required to be filled up.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_six_particulars; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 448 characters. That a single sheet form is used, that six particulars are required and what those particulars are, are three separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b55",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_six_particulars_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_six_particulars_3",
+        "text": "The six particulars are the applicant's name and address, the premises address, the rainwater harvesting structure, the Metro Water zone number, the dwelling unit calculation and the amount payable.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_six_particulars. This fragment carries the charter's own list of the form's particulars, one published list, waived on the manifest entry."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 448 characters. That a single sheet form is used, that six particulars are required and what those particulars are, are three separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b56",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_performance_standards_table",
+      "fieldPath": "/text",
+      "old": "The board's citizen charter publishes performance standards for a water connection: intimation to the applicant in case of a deficiency in the application form within 3 days from the date of registration, issue of the sanction order within 5 days from the date of registration, and effecting the house service connection within 15 days from the date of registration on its merits.",
+      "new": "The board's citizen charter publishes performance standards for a water connection.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 380 characters. The charter publishes three separate service-level targets, each a figure a citizen can act on and each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b57",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_performance_standards_table",
+      "fieldPath": "/notes",
+      "old": "Service-level targets stated against named activities.",
+      "new": "Service-level targets stated against named activities. Split during IND-91 part B lint remediation into one claim per published standard.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 380 characters. The charter publishes three separate service-level targets, each a figure a citizen can act on and each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b58",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_performance_standards_table_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_performance_standards_table_2",
+        "text": "One standard is intimation to the applicant of a deficiency in the application form within 3 days from the date of registration.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_performance_standards_table; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 380 characters. The charter publishes three separate service-level targets, each a figure a citizen can act on and each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b59",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_performance_standards_table_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_performance_standards_table_3",
+        "text": "One standard is issue of the sanction order within 5 days from the date of registration.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_performance_standards_table; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 380 characters. The charter publishes three separate service-level targets, each a figure a citizen can act on and each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b60",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_performance_standards_table_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_performance_standards_table_4",
+        "text": "One standard is effecting the house service connection within 15 days from the date of registration on its merits.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_performance_standards_table; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 380 characters. The charter publishes three separate service-level targets, each a figure a citizen can act on and each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b61",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_stage_timeline_table",
+      "fieldPath": "/text",
+      "old": "The board's citizen charter publishes a stage-by-stage timeline totalling 15 days: scheduling and site inspection 3 days, processing, verification and approval of the application 5 days, payment to be made by the consumer 3 days, issue of the work order to the contractor 2 days, and effecting the connection and raising the demand 2 days.",
+      "new": "The board's citizen charter publishes a stage-by-stage timeline totalling 15 days.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 339 characters. The timeline carried five separate published stage limits, each independently checkable and one of them a deadline on the citizen.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b62",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_stage_timeline_table",
+      "fieldPath": "/notes",
+      "old": "The stages sum to the headline figure, and one of the five is a deadline on the citizen rather than the board.",
+      "new": "The stages sum to the headline figure, and one of the five is a deadline on the citizen rather than the board. Split during IND-91 part B lint remediation into one claim per published stage.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 339 characters. The timeline carried five separate published stage limits, each independently checkable and one of them a deadline on the citizen.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b63",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_stage_timeline_table_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_stage_timeline_table_2",
+        "text": "That timeline allows 3 days for scheduling and site inspection.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_stage_timeline_table; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 339 characters. The timeline carried five separate published stage limits, each independently checkable and one of them a deadline on the citizen.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b64",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_stage_timeline_table_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_stage_timeline_table_3",
+        "text": "That timeline allows 5 days for processing, verification and approval of the application.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_stage_timeline_table; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 339 characters. The timeline carried five separate published stage limits, each independently checkable and one of them a deadline on the citizen.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b65",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_stage_timeline_table_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_stage_timeline_table_4",
+        "text": "That timeline allows 3 days for payment to be made by the consumer.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_stage_timeline_table; one published item, one claim. This stage is a deadline on the citizen rather than on the board."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 339 characters. The timeline carried five separate published stage limits, each independently checkable and one of them a deadline on the citizen.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b66",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_stage_timeline_table_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_stage_timeline_table_5",
+        "text": "That timeline allows 2 days for issue of the work order to the contractor.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_stage_timeline_table; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 339 characters. The timeline carried five separate published stage limits, each independently checkable and one of them a deadline on the citizen.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b67",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_stage_timeline_table_6",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_stage_timeline_table_6",
+        "text": "That timeline allows 2 days for effecting the connection and raising the demand.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_stage_timeline_table; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 339 characters. The timeline carried five separate published stage limits, each independently checkable and one of them a deadline on the citizen.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b68",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_officer_roles_in_process",
+      "fieldPath": "/text",
+      "old": "The board's citizen charter names the officers who handle a new connection at each stage: the Depot Engineer receives the application, schedules and conducts the inspection and completes the connection, the Deputy Area Engineer verifies the estimate, and the Area Engineer approves the connection and issues the work order.",
+      "new": "The board's citizen charter names the officers who handle a new connection at each stage.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 323 characters. Three officers with different steps are three independently checkable facts about who holds the case.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b69",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_officer_roles_in_process",
+      "fieldPath": "/notes",
+      "old": "",
+      "new": "Split during IND-91 part B lint remediation into one claim per named officer.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 323 characters. Three officers with different steps are three independently checkable facts about who holds the case.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b70",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_officer_roles_in_process_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_officer_roles_in_process_2",
+        "text": "The Depot Engineer receives the application and schedules and conducts the inspection and completes the connection.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_officer_roles_in_process; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 323 characters. Three officers with different steps are three independently checkable facts about who holds the case.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b71",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_officer_roles_in_process_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_officer_roles_in_process_3",
+        "text": "The Deputy Area Engineer verifies the estimate.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_officer_roles_in_process; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 323 characters. Three officers with different steps are three independently checkable facts about who holds the case.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b72",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_officer_roles_in_process_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_officer_roles_in_process_4",
+        "text": "The Area Engineer approves the connection and issues the work order.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_officer_roles_in_process; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 323 characters. Three officers with different steps are three independently checkable facts about who holds the case.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b73",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_escalation_matrix",
+      "fieldPath": "/text",
+      "old": "The board's citizen charter publishes a complaint escalation matrix for grievances about an application for a new water or sewer connection, allowing 7 days at the Depot Engineer, 4 days at the Deputy Area Engineer, 3 days at the Area Engineer and 2 days at the Superintendent Engineer, after which notification is sent to the Chief Engineer.",
+      "new": "The board's citizen charter publishes a complaint escalation matrix for grievances about an application for a new water or sewer connection.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 342 characters. Each escalation level with its own period is an independently checkable fact.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b74",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_escalation_matrix",
+      "fieldPath": "/notes",
+      "old": "A named escalation path with a period at each level, specific to this service rather than to supply complaints.",
+      "new": "A named escalation path with a period at each level, specific to this service rather than to supply complaints. Split during IND-91 part B lint remediation into one claim per level.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 342 characters. Each escalation level with its own period is an independently checkable fact.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b75",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_escalation_matrix_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_escalation_matrix_2",
+        "text": "That matrix allows 7 days at the Depot Engineer.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_escalation_matrix; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 342 characters. Each escalation level with its own period is an independently checkable fact.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b76",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_escalation_matrix_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_escalation_matrix_3",
+        "text": "That matrix allows 4 days at the Deputy Area Engineer.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_escalation_matrix; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 342 characters. Each escalation level with its own period is an independently checkable fact.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b77",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_escalation_matrix_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_escalation_matrix_4",
+        "text": "That matrix allows 3 days at the Area Engineer.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_escalation_matrix; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 342 characters. Each escalation level with its own period is an independently checkable fact.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b78",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_escalation_matrix_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_escalation_matrix_5",
+        "text": "That matrix allows 2 days at the Superintendent Engineer.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_escalation_matrix; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 342 characters. Each escalation level with its own period is an independently checkable fact.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b79",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_escalation_matrix_6",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_escalation_matrix_6",
+        "text": "After those levels notification is sent to the Chief Engineer.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_escalation_matrix; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 342 characters. Each escalation level with its own period is an independently checkable fact.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b80",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_area_office_directory",
+      "fieldPath": "/text",
+      "old": "The board publishes a table of its area offices giving, for each area, the area number, the location, the office address and a telephone number.",
+      "new": "The board publishes a table of its area offices.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. That the table exists and what each row gives are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_area_office_list"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b81",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_area_office_directory",
+      "fieldPath": "/notes",
+      "old": "A specific office list a citizen can use to find the office that holds their case. Institutional contact details only.",
+      "new": "A specific office list a citizen can use to find the office that holds their case. Institutional contact details only. Split during IND-91 part B lint remediation; what the table gives is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. That the table exists and what each row gives are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_area_office_list"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b82",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_area_office_directory_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_area_office_directory_2",
+        "text": "That table gives for each area the area number and the location and the office address and a telephone number.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_area_office_list"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_area_office_directory; one published item, one claim. Institutional contact details only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. That the table exists and what each row gives are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_area_office_list"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b83",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_registration_acknowledgement",
+      "fieldPath": "/text",
+      "old": "The board's application form guidelines state that the filled application, with the receipt for payment of the connection charges and the necessary enclosures, must be registered at the registration counter of the head office in person, by an authorised person or by post before 3.00 p.m. on working days, and that applicants are requested to get the acknowledgment from the registration counter on submission of the application.",
+      "new": "The board's application form guidelines state that the filled application must be registered at the registration counter of the head office.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 429 characters. Where the application is registered, by what modes, by when, with what, and what the applicant is told to collect are five independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b84",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_registration_acknowledgement",
+      "fieldPath": "/notes",
+      "old": "The acknowledgment is given at the counter on submission; recorded for the route rather than for the after-submission cell.",
+      "new": "The acknowledgment is given at the counter on submission; recorded for the route rather than for the after-submission cell. Split during IND-91 part B lint remediation into the counter, the modes, the cut-off, what must accompany the application and the acknowledgment.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 429 characters. Where the application is registered, by what modes, by when, with what, and what the applicant is told to collect are five independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b85",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_registration_acknowledgement_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_registration_acknowledgement_2",
+        "text": "That registration may be done in person or by an authorised person or by post.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_acknowledgement; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 429 characters. Where the application is registered, by what modes, by when, with what, and what the applicant is told to collect are five independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b86",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_registration_acknowledgement_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_registration_acknowledgement_3",
+        "text": "The registration counter accepts applications before 3.00 p.m. on working days.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_acknowledgement; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 429 characters. Where the application is registered, by what modes, by when, with what, and what the applicant is told to collect are five independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b87",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_registration_acknowledgement_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_registration_acknowledgement_4",
+        "text": "The filled application must carry the receipt for payment of the connection charges and the necessary enclosures.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_acknowledgement; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 429 characters. Where the application is registered, by what modes, by when, with what, and what the applicant is told to collect are five independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b88",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_registration_acknowledgement_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_registration_acknowledgement_5",
+        "text": "Applicants are requested to get the acknowledgment from the registration counter on submission of the application.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_acknowledgement; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 429 characters. Where the application is registered, by what modes, by when, with what, and what the applicant is told to collect are five independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b89",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_registration_id_and_sms",
+      "fieldPath": "/text",
+      "old": "The board's citizen charter states that on a successful online transaction a unique registration ID is generated and displayed on the screen and emailed or sent by SMS to the consumer, that a slot allotted for verification of the premises is intimated by SMS, that discrepancies are notified by email or SMS, and that the date allotted for issue of the connection is intimated by email or SMS.",
+      "new": "The board's citizen charter states that on a successful online transaction a unique registration ID is generated and displayed on the screen.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 393 characters. The charter names five separate post-submission surfaces, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b90",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_registration_id_and_sms",
+      "fieldPath": "/notes",
+      "old": "Surfaces the applicant sees after submitting: an identifier, and dated intimations at each subsequent step.",
+      "new": "Surfaces the applicant sees after submitting: an identifier, and dated intimations at each subsequent step. Split during IND-91 part B lint remediation into one claim per surface.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 393 characters. The charter names five separate post-submission surfaces, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b91",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_registration_id_and_sms_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_registration_id_and_sms_2",
+        "text": "The charter states that the registration ID is emailed or sent by SMS to the consumer.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_id_and_sms; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 393 characters. The charter names five separate post-submission surfaces, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b92",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_registration_id_and_sms_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_registration_id_and_sms_3",
+        "text": "The charter states that a slot allotted for verification of the premises is intimated by SMS.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_id_and_sms; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 393 characters. The charter names five separate post-submission surfaces, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b93",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_registration_id_and_sms_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_registration_id_and_sms_4",
+        "text": "The charter states that discrepancies are notified by email or SMS.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_id_and_sms; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 393 characters. The charter names five separate post-submission surfaces, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b94",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_registration_id_and_sms_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_registration_id_and_sms_5",
+        "text": "The charter states that the date allotted for issue of the connection is intimated by email or SMS.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_id_and_sms; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 393 characters. The charter names five separate post-submission surfaces, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b95",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_sanction_order_after_payment",
+      "fieldPath": "/text",
+      "old": "The board's citizen charter states that on approval by the Area Engineer an intimation is sent to the applicant to make payment, and that after payment the sanction order is generated and intimation is given to the applicant by SMS.",
+      "new": "The board's citizen charter states that on approval by the Area Engineer an intimation is sent to the applicant to make payment.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length of 232 characters. Three separate steps the applicant sees after submitting are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b96",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_sanction_order_after_payment",
+      "fieldPath": "/notes",
+      "old": "",
+      "new": "Split during IND-91 part B lint remediation into the payment intimation, the sanction order and its intimation.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length of 232 characters. Three separate steps the applicant sees after submitting are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b97",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_sanction_order_after_payment_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_sanction_order_after_payment_2",
+        "text": "The charter states that after payment the sanction order is generated.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_sanction_order_after_payment; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length of 232 characters. Three separate steps the applicant sees after submitting are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b98",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_sanction_order_after_payment_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_sanction_order_after_payment_3",
+        "text": "The charter states that intimation of the sanction order is given to the applicant by SMS.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_sanction_order_after_payment; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length of 232 characters. Three separate steps the applicant sees after submitting are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b99",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_public_status_route",
+      "fieldPath": "/text",
+      "old": "The board's water and sewer connection online services route, a page reachable without login, publishes two links, one to apply for a new water or sewer connection and one to know the status of a new water or sewer connection; neither link was exercised, so whether either destination requires authentication is not established by this observation.",
+      "new": "The board's water and sewer connection online services route is a page reachable without login.",
+      "reason": "Pre-audit lint reported compound-claim for a semicolon, an enumeration and text length of 348 characters. The page, each of its two links and the limit of the observation are four separately checkable statements, and protocol section 5 keeps the observation separate from what was not established.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_online_route"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b100",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_public_status_route",
+      "fieldPath": "/notes",
+      "old": "The links were observed on the access date; neither was exercised and no application reference was entered.",
+      "new": "The links were observed on the access date; neither was exercised, no login was used and no application reference was entered. Split during IND-91 part B lint remediation into the page, its two links and the limit of the observation.",
+      "reason": "Pre-audit lint reported compound-claim for a semicolon, an enumeration and text length of 348 characters. The page, each of its two links and the limit of the observation are four separately checkable statements, and protocol section 5 keeps the observation separate from what was not established.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_online_route"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b101",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_public_status_route_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_public_status_route_2",
+        "text": "That route publishes a link to apply for a new water or sewer connection.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_online_route"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_public_status_route; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for a semicolon, an enumeration and text length of 348 characters. The page, each of its two links and the limit of the observation are four separately checkable statements, and protocol section 5 keeps the observation separate from what was not established.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_online_route"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b102",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_public_status_route_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_public_status_route_3",
+        "text": "That route publishes a link to know the status of a new water or sewer connection.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_online_route"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_public_status_route; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for a semicolon, an enumeration and text length of 348 characters. The page, each of its two links and the limit of the observation are four separately checkable statements, and protocol section 5 keeps the observation separate from what was not established.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_online_route"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b103",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_public_status_route_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_public_status_route_4",
+        "text": "Whether either destination requires authentication is not established by this observation.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_online_route"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_public_status_route. Neither link was exercised, no login was used and no application reference was entered, so what lies behind either link is unknown."
+      },
+      "reason": "Pre-audit lint reported compound-claim for a semicolon, an enumeration and text length of 348 characters. The page, each of its two links and the limit of the observation are four separately checkable statements, and protocol section 5 keeps the observation separate from what was not established.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_online_route"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b104",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_domestic_tariff",
+      "fieldPath": "/text",
+      "old": "The board's general tariff publishes the metered domestic residential rate as Rs. 8 per kilolitre up to 10 kilolitres, Rs. 20 from 11 to 15, Rs. 32 from 16 to 25 and Rs. 51 above 25, with a minimum chargeable rate including sewerage charges of Rs. 100 per month per dwelling unit, billed monthly.",
+      "new": "The board's general tariff publishes the metered domestic residential rate as Rs. 8 per kilolitre up to 10 kilolitres.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 296 characters. The tariff carried four separate consumption bands and a minimum charge, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_general_tariff"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b105",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_domestic_tariff",
+      "fieldPath": "/notes",
+      "old": "What the household pays once connected, not what the connection costs; recorded for completeness.",
+      "new": "What the household pays once connected, not what the connection costs; recorded for completeness. Split during IND-91 part B lint remediation into one claim per published band.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 296 characters. The tariff carried four separate consumption bands and a minimum charge, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_general_tariff"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b106",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_domestic_tariff_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_domestic_tariff_2",
+        "text": "That tariff gives Rs. 20 per kilolitre from 11 to 15 kilolitres.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_general_tariff"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_domestic_tariff; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 296 characters. The tariff carried four separate consumption bands and a minimum charge, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_general_tariff"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b107",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_domestic_tariff_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_domestic_tariff_3",
+        "text": "That tariff gives Rs. 32 per kilolitre from 16 to 25 kilolitres.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_general_tariff"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_domestic_tariff; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 296 characters. The tariff carried four separate consumption bands and a minimum charge, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_general_tariff"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b108",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_domestic_tariff_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_domestic_tariff_4",
+        "text": "That tariff gives Rs. 51 per kilolitre above 25 kilolitres.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_general_tariff"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_domestic_tariff; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 296 characters. The tariff carried four separate consumption bands and a minimum charge, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_general_tariff"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b109",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_domestic_tariff_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_water_domestic_tariff_5",
+        "text": "That tariff sets a minimum chargeable rate including sewerage charges of Rs. 100 per month per dwelling unit, billed monthly.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_water_general_tariff"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_domestic_tariff; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 296 characters. The tariff carried four separate consumption bands and a minimum charge, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_general_tariff"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b110",
+      "recordType": "expectations",
+      "recordId": "water-connection:cost",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_chennai_water_connection_charge_table",
+        "claim_chennai_water_meter_testing_charges",
+        "claim_chennai_water_application_free_and_where",
+        "claim_chennai_water_small_house_document_relief",
+        "claim_chennai_water_amount_payable_components"
+      ],
+      "new": [
+        "claim_chennai_water_connection_charge_table",
+        "claim_chennai_water_connection_charge_table_2",
+        "claim_chennai_water_connection_charge_table_3",
+        "claim_chennai_water_connection_charge_table_4",
+        "claim_chennai_water_connection_charge_table_5",
+        "claim_chennai_water_meter_testing_charges",
+        "claim_chennai_water_meter_testing_charges_2",
+        "claim_chennai_water_meter_testing_charges_3",
+        "claim_chennai_water_meter_testing_charges_4",
+        "claim_chennai_water_meter_testing_charges_5",
+        "claim_chennai_water_meter_testing_charges_6",
+        "claim_chennai_water_meter_testing_charges_7",
+        "claim_chennai_water_application_free_and_where",
+        "claim_chennai_water_application_free_and_where_2",
+        "claim_chennai_water_application_free_and_where_3",
+        "claim_chennai_water_application_free_and_where_4",
+        "claim_chennai_water_small_house_document_relief_4",
+        "claim_chennai_water_amount_payable_components",
+        "claim_chennai_water_amount_payable_components_2",
+        "claim_chennai_water_amount_payable_components_3",
+        "claim_chennai_water_amount_payable_components_4"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the charge bands, meter testing bands, the free form and the components of the amount payable; documents the eight enclosures with the small-house relief and the completion-certificate exemption; eligibility the exemption and the self-assessment rule; time the three performance standards and the five stage limits; owner the named officers, the area-office table and the escalation levels; after-submission the registration ID and intimations, the sanction order and the public status route. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form",
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b111",
+      "recordType": "expectations",
+      "recordId": "water-connection:documents",
+      "fieldPath": "/cells/documents/claimIds",
+      "old": [
+        "claim_chennai_water_enclosure_list",
+        "claim_chennai_water_small_house_document_relief",
+        "claim_chennai_water_completion_certificate_exemption"
+      ],
+      "new": [
+        "claim_chennai_water_enclosure_list",
+        "claim_chennai_water_enclosure_list_2",
+        "claim_chennai_water_enclosure_list_3",
+        "claim_chennai_water_enclosure_list_4",
+        "claim_chennai_water_enclosure_list_5",
+        "claim_chennai_water_enclosure_list_6",
+        "claim_chennai_water_enclosure_list_7",
+        "claim_chennai_water_enclosure_list_8",
+        "claim_chennai_water_enclosure_list_9",
+        "claim_chennai_water_small_house_document_relief",
+        "claim_chennai_water_small_house_document_relief_2",
+        "claim_chennai_water_small_house_document_relief_3",
+        "claim_chennai_water_completion_certificate_exemption",
+        "claim_chennai_water_completion_certificate_exemption_2",
+        "claim_chennai_water_completion_certificate_exemption_3"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the charge bands, meter testing bands, the free form and the components of the amount payable; documents the eight enclosures with the small-house relief and the completion-certificate exemption; eligibility the exemption and the self-assessment rule; time the three performance standards and the five stage limits; owner the named officers, the area-office table and the escalation levels; after-submission the registration ID and intimations, the sanction order and the public status route. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form",
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b112",
+      "recordType": "expectations",
+      "recordId": "water-connection:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_chennai_water_completion_certificate_exemption",
+        "claim_chennai_water_self_assessment_no_plumber",
+        "claim_chennai_water_connection_charge_table"
+      ],
+      "new": [
+        "claim_chennai_water_completion_certificate_exemption",
+        "claim_chennai_water_completion_certificate_exemption_2",
+        "claim_chennai_water_completion_certificate_exemption_3",
+        "claim_chennai_water_self_assessment_no_plumber",
+        "claim_chennai_water_self_assessment_no_plumber_2",
+        "claim_chennai_water_self_assessment_no_plumber_3",
+        "claim_chennai_water_connection_charge_table"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the charge bands, meter testing bands, the free form and the components of the amount payable; documents the eight enclosures with the small-house relief and the completion-certificate exemption; eligibility the exemption and the self-assessment rule; time the three performance standards and the five stage limits; owner the named officers, the area-office table and the escalation levels; after-submission the registration ID and intimations, the sanction order and the public status route. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form",
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b113",
+      "recordType": "expectations",
+      "recordId": "water-connection:time",
+      "fieldPath": "/cells/time/claimIds",
+      "old": [
+        "claim_chennai_water_performance_standards_table",
+        "claim_chennai_water_stage_timeline_table"
+      ],
+      "new": [
+        "claim_chennai_water_performance_standards_table",
+        "claim_chennai_water_performance_standards_table_2",
+        "claim_chennai_water_performance_standards_table_3",
+        "claim_chennai_water_performance_standards_table_4",
+        "claim_chennai_water_stage_timeline_table",
+        "claim_chennai_water_stage_timeline_table_2",
+        "claim_chennai_water_stage_timeline_table_3",
+        "claim_chennai_water_stage_timeline_table_4",
+        "claim_chennai_water_stage_timeline_table_5",
+        "claim_chennai_water_stage_timeline_table_6"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the charge bands, meter testing bands, the free form and the components of the amount payable; documents the eight enclosures with the small-house relief and the completion-certificate exemption; eligibility the exemption and the self-assessment rule; time the three performance standards and the five stage limits; owner the named officers, the area-office table and the escalation levels; after-submission the registration ID and intimations, the sanction order and the public status route. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b114",
+      "recordType": "expectations",
+      "recordId": "water-connection:owner",
+      "fieldPath": "/cells/owner/claimIds",
+      "old": [
+        "claim_chennai_water_form_addressed_to_area_engineer",
+        "claim_chennai_water_officer_roles_in_process",
+        "claim_chennai_water_area_office_directory",
+        "claim_chennai_water_escalation_matrix"
+      ],
+      "new": [
+        "claim_chennai_water_form_addressed_to_area_engineer",
+        "claim_chennai_water_officer_roles_in_process",
+        "claim_chennai_water_officer_roles_in_process_2",
+        "claim_chennai_water_officer_roles_in_process_3",
+        "claim_chennai_water_officer_roles_in_process_4",
+        "claim_chennai_water_area_office_directory",
+        "claim_chennai_water_area_office_directory_2",
+        "claim_chennai_water_escalation_matrix",
+        "claim_chennai_water_escalation_matrix_2",
+        "claim_chennai_water_escalation_matrix_3",
+        "claim_chennai_water_escalation_matrix_4",
+        "claim_chennai_water_escalation_matrix_5",
+        "claim_chennai_water_escalation_matrix_6"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the charge bands, meter testing bands, the free form and the components of the amount payable; documents the eight enclosures with the small-house relief and the completion-certificate exemption; eligibility the exemption and the self-assessment rule; time the three performance standards and the five stage limits; owner the named officers, the area-office table and the escalation levels; after-submission the registration ID and intimations, the sanction order and the public status route. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form",
+          "source_chennai_water_area_office_list",
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_chennai_water_connection_b115",
+      "recordType": "expectations",
+      "recordId": "water-connection:after-submission",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [
+        "claim_chennai_water_registration_id_and_sms",
+        "claim_chennai_water_sanction_order_after_payment",
+        "claim_chennai_water_public_status_route",
+        "claim_chennai_water_status_published_periodically"
+      ],
+      "new": [
+        "claim_chennai_water_registration_id_and_sms",
+        "claim_chennai_water_registration_id_and_sms_2",
+        "claim_chennai_water_registration_id_and_sms_3",
+        "claim_chennai_water_registration_id_and_sms_4",
+        "claim_chennai_water_registration_id_and_sms_5",
+        "claim_chennai_water_sanction_order_after_payment",
+        "claim_chennai_water_sanction_order_after_payment_2",
+        "claim_chennai_water_sanction_order_after_payment_3",
+        "claim_chennai_water_public_status_route",
+        "claim_chennai_water_public_status_route_2",
+        "claim_chennai_water_public_status_route_3",
+        "claim_chennai_water_public_status_route_4",
+        "claim_chennai_water_status_published_periodically"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the charge bands, meter testing bands, the free form and the components of the amount payable; documents the eight enclosures with the small-house relief and the completion-certificate exemption; eligibility the exemption and the self-assessment rule; time the three performance standards and the five stage limits; owner the named officers, the area-office table and the escalation levels; after-submission the registration ID and intimations, the sanction order and the public status route. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter",
+          "source_chennai_water_online_route"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "water-connection:cost",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_chennai_water_connection_charge_table",
+        "claim_chennai_water_connection_charge_table_2",
+        "claim_chennai_water_connection_charge_table_3",
+        "claim_chennai_water_connection_charge_table_4",
+        "claim_chennai_water_connection_charge_table_5",
+        "claim_chennai_water_meter_testing_charges",
+        "claim_chennai_water_meter_testing_charges_2",
+        "claim_chennai_water_meter_testing_charges_3",
+        "claim_chennai_water_meter_testing_charges_4",
+        "claim_chennai_water_meter_testing_charges_5",
+        "claim_chennai_water_meter_testing_charges_6",
+        "claim_chennai_water_meter_testing_charges_7",
+        "claim_chennai_water_application_free_and_where",
+        "claim_chennai_water_application_free_and_where_2",
+        "claim_chennai_water_application_free_and_where_3",
+        "claim_chennai_water_application_free_and_where_4",
+        "claim_chennai_water_small_house_document_relief_4",
+        "claim_chennai_water_amount_payable_components",
+        "claim_chennai_water_amount_payable_components_2",
+        "claim_chennai_water_amount_payable_components_3",
+        "claim_chennai_water_amount_payable_components_4"
+      ],
+      "new": [
+        "claim_chennai_water_connection_charge_table",
+        "claim_chennai_water_connection_charge_table_2",
+        "claim_chennai_water_connection_charge_table_3",
+        "claim_chennai_water_connection_charge_table_4",
+        "claim_chennai_water_connection_charge_table_5",
+        "claim_chennai_water_meter_testing_charges",
+        "claim_chennai_water_meter_testing_charges_2",
+        "claim_chennai_water_meter_testing_charges_3",
+        "claim_chennai_water_meter_testing_charges_4",
+        "claim_chennai_water_meter_testing_charges_5",
+        "claim_chennai_water_meter_testing_charges_6",
+        "claim_chennai_water_application_free_and_where",
+        "claim_chennai_water_application_free_and_where_2",
+        "claim_chennai_water_application_free_and_where_3",
+        "claim_chennai_water_application_free_and_where_4",
+        "claim_chennai_water_small_house_document_relief_4",
+        "claim_chennai_water_amount_payable_components",
+        "claim_chennai_water_amount_payable_components_2",
+        "claim_chennai_water_amount_payable_components_3",
+        "claim_chennai_water_amount_payable_components_4"
+      ],
+      "reason": "PROTOCOL section 8, cost cell and the second audit check: claim_chennai_water_meter_testing_charges_7 asserts that the table gives the bore size of the water connection and the size of the sewer connection for each band. That is a technical specification, not an amount the citizen pays or a fee schedule, so it cannot support a cost cell state. The cell remains stated on the connection-charge bands and the meter-testing amounts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "Claim text contains no monetary figure and no fee rule; the claim was split out of the meter-testing family during IND-91 part B but asserts pipe sizing rather than charges."
+      },
+      "id": "corr_chennai_water_connection_r01"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "water-connection:documents",
+      "fieldPath": "/cells/documents/claimIds",
+      "old": [
+        "claim_chennai_water_enclosure_list",
+        "claim_chennai_water_enclosure_list_2",
+        "claim_chennai_water_enclosure_list_3",
+        "claim_chennai_water_enclosure_list_4",
+        "claim_chennai_water_enclosure_list_5",
+        "claim_chennai_water_enclosure_list_6",
+        "claim_chennai_water_enclosure_list_7",
+        "claim_chennai_water_enclosure_list_8",
+        "claim_chennai_water_enclosure_list_9",
+        "claim_chennai_water_small_house_document_relief",
+        "claim_chennai_water_small_house_document_relief_2",
+        "claim_chennai_water_small_house_document_relief_3",
+        "claim_chennai_water_completion_certificate_exemption",
+        "claim_chennai_water_completion_certificate_exemption_2",
+        "claim_chennai_water_completion_certificate_exemption_3"
+      ],
+      "new": [
+        "claim_chennai_water_enclosure_list",
+        "claim_chennai_water_enclosure_list_2",
+        "claim_chennai_water_enclosure_list_3",
+        "claim_chennai_water_enclosure_list_4",
+        "claim_chennai_water_enclosure_list_5",
+        "claim_chennai_water_enclosure_list_6",
+        "claim_chennai_water_enclosure_list_7",
+        "claim_chennai_water_enclosure_list_8",
+        "claim_chennai_water_enclosure_list_9",
+        "claim_chennai_water_small_house_document_relief",
+        "claim_chennai_water_small_house_document_relief_2",
+        "claim_chennai_water_small_house_document_relief_3",
+        "claim_chennai_water_completion_certificate_exemption",
+        "claim_chennai_water_completion_certificate_exemption_2",
+        "claim_chennai_water_registration_acknowledgement_4"
+      ],
+      "reason": "PROTOCOL section 8, documents cell, plus sections 2 and 12 on scoring the primary scenario only. claim_chennai_water_completion_certificate_exemption_3 exempts all types of industrial buildings, which is outside scenario_ind32_water_residential (an individual owner of a built residential property; commercial and bulk use are excluded), so it asserts nothing about the scored case. claim_chennai_water_registration_acknowledgement_4 does support the cell and was missing: it names a concrete document, the receipt for payment of the connection charges, with a requirement that the filled application carry it together with the necessary enclosures.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter",
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "Industrial limb is out of scenario scope; the receipt requirement is a concrete document with an attach obligation, which is exactly the section 8 documents test."
+      },
+      "id": "corr_chennai_water_connection_r02"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "water-connection:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_chennai_water_completion_certificate_exemption",
+        "claim_chennai_water_completion_certificate_exemption_2",
+        "claim_chennai_water_completion_certificate_exemption_3",
+        "claim_chennai_water_self_assessment_no_plumber",
+        "claim_chennai_water_self_assessment_no_plumber_2",
+        "claim_chennai_water_self_assessment_no_plumber_3",
+        "claim_chennai_water_connection_charge_table"
+      ],
+      "new": [
+        "claim_chennai_water_completion_certificate_exemption",
+        "claim_chennai_water_completion_certificate_exemption_2",
+        "claim_chennai_water_self_assessment_no_plumber",
+        "claim_chennai_water_self_assessment_no_plumber_2",
+        "claim_chennai_water_self_assessment_no_plumber_3"
+      ],
+      "reason": "PROTOCOL section 8, eligibility cell and the second audit check. claim_chennai_water_completion_certificate_exemption_3 is the industrial-building limb, outside the residential primary scenario. claim_chennai_water_connection_charge_table asserts only that a table of connection charges per equivalent dwelling unit is published; it states no rule about who qualifies or which route applies, so it does not support the eligibility state. The reading that the charge and the enclosures turn on equivalent dwelling units appears in the cell note but is not asserted by that claim. The cell remains stated on the completion-certificate exemption rule and the self-assessment and no-licensed-plumber rules.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form",
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "A published fee table is a cost artefact; it decides no applicant category and no route. Removal does not change the cell state."
+      },
+      "id": "corr_chennai_water_connection_r03"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "water-connection:time",
+      "fieldPath": "/cells/time/claimIds",
+      "old": [
+        "claim_chennai_water_performance_standards_table",
+        "claim_chennai_water_performance_standards_table_2",
+        "claim_chennai_water_performance_standards_table_3",
+        "claim_chennai_water_performance_standards_table_4",
+        "claim_chennai_water_stage_timeline_table",
+        "claim_chennai_water_stage_timeline_table_2",
+        "claim_chennai_water_stage_timeline_table_3",
+        "claim_chennai_water_stage_timeline_table_4",
+        "claim_chennai_water_stage_timeline_table_5",
+        "claim_chennai_water_stage_timeline_table_6"
+      ],
+      "new": [
+        "claim_chennai_water_performance_standards_table",
+        "claim_chennai_water_performance_standards_table_2",
+        "claim_chennai_water_performance_standards_table_3",
+        "claim_chennai_water_performance_standards_table_4",
+        "claim_chennai_water_stage_timeline_table",
+        "claim_chennai_water_stage_timeline_table_2",
+        "claim_chennai_water_stage_timeline_table_3",
+        "claim_chennai_water_stage_timeline_table_4",
+        "claim_chennai_water_stage_timeline_table_5",
+        "claim_chennai_water_stage_timeline_table_6",
+        "claim_chennai_water_registration_acknowledgement_3"
+      ],
+      "reason": "PROTOCOL section 8, time cell, and the second audit check on claims that support a cell but are missing from its list. claim_chennai_water_registration_acknowledgement_3 states that the registration counter accepts applications before 3.00 p.m. on working days, which is an actionable deadline the citizen must meet on the counter route that the cost, documents and eligibility cells are scored from.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "A stated cut-off time on working days is a usable time rule under the section 8 time definition, distinct from the 15-day service-level target already cited."
+      },
+      "id": "corr_chennai_water_connection_r04"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "water-connection:after-submission",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [
+        "claim_chennai_water_registration_id_and_sms",
+        "claim_chennai_water_registration_id_and_sms_2",
+        "claim_chennai_water_registration_id_and_sms_3",
+        "claim_chennai_water_registration_id_and_sms_4",
+        "claim_chennai_water_registration_id_and_sms_5",
+        "claim_chennai_water_sanction_order_after_payment",
+        "claim_chennai_water_sanction_order_after_payment_2",
+        "claim_chennai_water_sanction_order_after_payment_3",
+        "claim_chennai_water_public_status_route",
+        "claim_chennai_water_public_status_route_2",
+        "claim_chennai_water_public_status_route_3",
+        "claim_chennai_water_public_status_route_4",
+        "claim_chennai_water_status_published_periodically"
+      ],
+      "new": [
+        "claim_chennai_water_registration_id_and_sms",
+        "claim_chennai_water_registration_id_and_sms_2",
+        "claim_chennai_water_registration_id_and_sms_3",
+        "claim_chennai_water_registration_id_and_sms_4",
+        "claim_chennai_water_registration_id_and_sms_5",
+        "claim_chennai_water_sanction_order_after_payment",
+        "claim_chennai_water_sanction_order_after_payment_2",
+        "claim_chennai_water_sanction_order_after_payment_3",
+        "claim_chennai_water_public_status_route",
+        "claim_chennai_water_public_status_route_3",
+        "claim_chennai_water_status_published_periodically"
+      ],
+      "reason": "PROTOCOL section 8. Two listed claims cannot support this cell. claim_chennai_water_public_status_route_2 records that the online services route publishes a link to apply for a new water or sewer connection, which is a step at or before submission and is expressly excluded from after-submission evidence. claim_chennai_water_public_status_route_4 states that whether either destination requires authentication is not established by the observation; that is a boundary statement, which section 8 says records a limitation and never a positive cell value. The cell remains stated on the status link, the charter's periodic publication of the status of registered applications, and the sanction-order and registration-ID surfaces.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_online_route"
+        ],
+        "auditNote": "The apply link is pre-submission; the authentication sentence is a limitation about the research boundary. Both belong in the cell note, which already discloses the boundary, rather than in the supporting claim list."
+      },
+      "id": "corr_chennai_water_connection_r05"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_public_status_route_4",
+      "fieldPath": "/basis",
+      "old": "observation",
+      "new": "inference",
+      "reason": "PROTOCOL section 5: observation records what a source or interface directly shows. The online services route does not display the proposition that whether either destination requires authentication is not established; that proposition is a conclusion about the limits of the research pass, drawn from the fact that neither link was exercised. A Grade B source does not turn that conclusion into an observation.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_online_route"
+        ],
+        "auditNote": "The claim's own notes say neither link was exercised, no login was used and no application reference was entered, which is the reasoning behind the statement rather than an observed page element."
+      },
+      "id": "corr_chennai_water_connection_r06"
+    },
+    {
+      "id": "corr_chennai_water_connection_i01",
+      "recordType": "source",
+      "recordId": "source_chennai_water_online_route",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. Direct current observation of a public official interface offering two links, one to apply for a new water or sewer connection and one to know the status of such an application. Neither was exercised; no application reference was entered. Archive: the Wayback availability API returned no snapshot for this route on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run. Date quality: this record carries no publishedAt and states no visible version or last-updated date for the route; the audit did not observe the page and records the absence as an unresolved limitation rather than asserting what the page displays.",
+      "new": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. Direct current observation of a public official interface offering two links, one to apply for a new water or sewer connection and one to know the status of such an application. Neither link was exercised; no login was used and no application reference was entered, so nothing is recorded about either destination. Visible date: none is shown; the route carries no publishedAt and states no visible version or last-updated date. Limitation: the route is undated, so its currency rests on the access-date observation alone. Archive: the Wayback availability API returned no snapshot for this route on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run.",
+      "reason": "The note contradicted itself, asserting both a direct current observation of the route and that the audit did not observe the page. The two statements were about different things: the official-source pass observed the route and its two links, and neither link's destination was opened. The note now says that plainly and keeps the date-quality and archive limitations.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_online_route"
+        ],
+        "auditNote": "IND-91 part B integrator follow-up, acting on the fresh re-auditor's finding."
+      }
+    }
+  ],
+  "runs": [
+    {
+      "runId": "ind91_part_b_integrator_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B integrator follow-up: findings raised by the fresh re-auditors that fall outside the field-level corrections contract (duplicate mis-graded split fragments, unsourced cell-note prose, a source record covering two routes, and missing archive limitations).",
+      "correctionIds": [
+        "corr_chennai_water_connection_i01"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_lint_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B pre-audit lint remediation (protocol section 8).",
+      "correctionIds": [
+        "corr_chennai_water_connection_b01",
+        "corr_chennai_water_connection_b02",
+        "corr_chennai_water_connection_b03",
+        "corr_chennai_water_connection_b04",
+        "corr_chennai_water_connection_b05",
+        "corr_chennai_water_connection_b06",
+        "corr_chennai_water_connection_b07",
+        "corr_chennai_water_connection_b08",
+        "corr_chennai_water_connection_b09",
+        "corr_chennai_water_connection_b10",
+        "corr_chennai_water_connection_b11",
+        "corr_chennai_water_connection_b12",
+        "corr_chennai_water_connection_b13",
+        "corr_chennai_water_connection_b14",
+        "corr_chennai_water_connection_b15",
+        "corr_chennai_water_connection_b16",
+        "corr_chennai_water_connection_b17",
+        "corr_chennai_water_connection_b18",
+        "corr_chennai_water_connection_b19",
+        "corr_chennai_water_connection_b20",
+        "corr_chennai_water_connection_b21",
+        "corr_chennai_water_connection_b22",
+        "corr_chennai_water_connection_b23",
+        "corr_chennai_water_connection_b24",
+        "corr_chennai_water_connection_b25",
+        "corr_chennai_water_connection_b26",
+        "corr_chennai_water_connection_b27",
+        "corr_chennai_water_connection_b28",
+        "corr_chennai_water_connection_b29",
+        "corr_chennai_water_connection_b30",
+        "corr_chennai_water_connection_b31",
+        "corr_chennai_water_connection_b32",
+        "corr_chennai_water_connection_b33",
+        "corr_chennai_water_connection_b34",
+        "corr_chennai_water_connection_b35",
+        "corr_chennai_water_connection_b36",
+        "corr_chennai_water_connection_b37",
+        "corr_chennai_water_connection_b38",
+        "corr_chennai_water_connection_b39",
+        "corr_chennai_water_connection_b40",
+        "corr_chennai_water_connection_b41",
+        "corr_chennai_water_connection_b42",
+        "corr_chennai_water_connection_b43",
+        "corr_chennai_water_connection_b44",
+        "corr_chennai_water_connection_b45",
+        "corr_chennai_water_connection_b46",
+        "corr_chennai_water_connection_b47",
+        "corr_chennai_water_connection_b48",
+        "corr_chennai_water_connection_b49",
+        "corr_chennai_water_connection_b50",
+        "corr_chennai_water_connection_b51",
+        "corr_chennai_water_connection_b52",
+        "corr_chennai_water_connection_b53",
+        "corr_chennai_water_connection_b54",
+        "corr_chennai_water_connection_b55",
+        "corr_chennai_water_connection_b56",
+        "corr_chennai_water_connection_b57",
+        "corr_chennai_water_connection_b58",
+        "corr_chennai_water_connection_b59",
+        "corr_chennai_water_connection_b60",
+        "corr_chennai_water_connection_b61",
+        "corr_chennai_water_connection_b62",
+        "corr_chennai_water_connection_b63",
+        "corr_chennai_water_connection_b64",
+        "corr_chennai_water_connection_b65",
+        "corr_chennai_water_connection_b66",
+        "corr_chennai_water_connection_b67",
+        "corr_chennai_water_connection_b68",
+        "corr_chennai_water_connection_b69",
+        "corr_chennai_water_connection_b70",
+        "corr_chennai_water_connection_b71",
+        "corr_chennai_water_connection_b72",
+        "corr_chennai_water_connection_b73",
+        "corr_chennai_water_connection_b74",
+        "corr_chennai_water_connection_b75",
+        "corr_chennai_water_connection_b76",
+        "corr_chennai_water_connection_b77",
+        "corr_chennai_water_connection_b78",
+        "corr_chennai_water_connection_b79",
+        "corr_chennai_water_connection_b80",
+        "corr_chennai_water_connection_b81",
+        "corr_chennai_water_connection_b82",
+        "corr_chennai_water_connection_b83",
+        "corr_chennai_water_connection_b84",
+        "corr_chennai_water_connection_b85",
+        "corr_chennai_water_connection_b86",
+        "corr_chennai_water_connection_b87",
+        "corr_chennai_water_connection_b88",
+        "corr_chennai_water_connection_b89",
+        "corr_chennai_water_connection_b90",
+        "corr_chennai_water_connection_b91",
+        "corr_chennai_water_connection_b92",
+        "corr_chennai_water_connection_b93",
+        "corr_chennai_water_connection_b94",
+        "corr_chennai_water_connection_b95",
+        "corr_chennai_water_connection_b96",
+        "corr_chennai_water_connection_b97",
+        "corr_chennai_water_connection_b98",
+        "corr_chennai_water_connection_b99",
+        "corr_chennai_water_connection_b100",
+        "corr_chennai_water_connection_b101",
+        "corr_chennai_water_connection_b102",
+        "corr_chennai_water_connection_b103",
+        "corr_chennai_water_connection_b104",
+        "corr_chennai_water_connection_b105",
+        "corr_chennai_water_connection_b106",
+        "corr_chennai_water_connection_b107",
+        "corr_chennai_water_connection_b108",
+        "corr_chennai_water_connection_b109",
+        "corr_chennai_water_connection_b110",
+        "corr_chennai_water_connection_b111",
+        "corr_chennai_water_connection_b112",
+        "corr_chennai_water_connection_b113",
+        "corr_chennai_water_connection_b114",
+        "corr_chennai_water_connection_b115"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_reaudit_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B re-audit by a fresh isolated auditor after lint remediation (protocol sections 12 and 13).",
+      "correctionIds": [
+        "corr_chennai_water_connection_r01",
+        "corr_chennai_water_connection_r02",
+        "corr_chennai_water_connection_r03",
+        "corr_chennai_water_connection_r04",
+        "corr_chennai_water_connection_r05",
+        "corr_chennai_water_connection_r06"
+      ]
     }
   ]
 }

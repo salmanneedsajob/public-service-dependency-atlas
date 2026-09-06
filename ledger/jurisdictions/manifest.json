@@ -9,7 +9,24 @@
       "ledgerFile": "ledger/jurisdictions/delhi/birth-certificate.json",
       "expectationsFile": "ledger/jurisdictions/delhi/expectations/birth-certificate.json",
       "auditFile": "ledger/jurisdictions/delhi/audits/birth-certificate.md",
-      "mode": "grid-only"
+      "mode": "grid-only",
+      "lintWaivers": [
+        {
+          "recordId": "claim_delhi_birth_issuing_local_bodies",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is which local bodies the Chief Registrar's charter names as issuers of birth certificates. The comma list is that one published list of bodies, not several independent assertions, and the claim supports no expectation cell."
+        },
+        {
+          "recordId": "claim_delhi_birth_application_particulars",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is the list of particulars the FAQ requires the plain-paper application to give, published as items i to v. The comma list is that one published list; the separately checkable place-of-birth rule was split out into claim_delhi_birth_application_particulars_2."
+        },
+        {
+          "recordId": "claim_delhi_birth_mcd_domiciliary_route",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is that MCD's charter lets parents of a home or other non-institutional delivery apply for the certificate directly on the MCD portal. The lint tripped on the conjunction inside the noun phrase 'home and other delivery events', not on two assertions, and the claim supports no expectation cell."
+        }
+      ]
     },
     {
       "jurisdictionSlug": "delhi",
@@ -19,7 +36,14 @@
       "ledgerFile": "ledger/jurisdictions/delhi/property-tax-payment.json",
       "expectationsFile": "ledger/jurisdictions/delhi/expectations/property-tax-payment.json",
       "auditFile": "ledger/jurisdictions/delhi/audits/property-tax-payment.md",
-      "mode": "grid-only"
+      "mode": "grid-only",
+      "lintWaivers": [
+        {
+          "recordId": "claim_delhi_ptax_upic_mandatory",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is that a Unique Property Identification Code is mandatory to pay tax for every property. The two commas set off an appositive giving the code's format, a 15-digit alphanumeric code, not a list of separate assertions."
+        }
+      ]
     },
     {
       "jurisdictionSlug": "delhi",
@@ -29,7 +53,14 @@
       "ledgerFile": "ledger/jurisdictions/delhi/water-connection.json",
       "expectationsFile": "ledger/jurisdictions/delhi/expectations/water-connection.json",
       "auditFile": "ledger/jurisdictions/delhi/audits/water-connection.md",
-      "mode": "grid-only"
+      "mode": "grid-only",
+      "lintWaivers": [
+        {
+          "recordId": "claim_delhi_water_simplified_document_list_2",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is the charter's published list of documents accepted as proof of identity of the present address. The comma list is that one published list of accepted proofs, any one of which satisfies the same requirement, not several independent requirements."
+        }
+      ]
     },
     {
       "jurisdictionSlug": "mumbai",
@@ -39,7 +70,19 @@
       "ledgerFile": "ledger/jurisdictions/mumbai/birth-certificate.json",
       "expectationsFile": "ledger/jurisdictions/mumbai/expectations/birth-certificate.json",
       "auditFile": "ledger/jurisdictions/mumbai/audits/birth-certificate.md",
-      "mode": "grid-only"
+      "mode": "grid-only",
+      "lintWaivers": [
+        {
+          "recordId": "claim_mumbai_birth_registered_in_concerned_ward",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is that a birth is registered in the ward office in whose area the event occurred. The lint tripped on the conjunction inside the noun phrase 'in a hospital or at home', which names two places the same rule covers rather than two assertions."
+        },
+        {
+          "recordId": "claim_mumbai_birth_search_by_registration_number_2",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is the FAQ's published list of fields the search may use where the registration number is not known. The comma list is that one published list of alternative fields, not several independent assertions."
+        }
+      ]
     },
     {
       "jurisdictionSlug": "mumbai",
@@ -49,7 +92,19 @@
       "ledgerFile": "ledger/jurisdictions/mumbai/property-tax-payment.json",
       "expectationsFile": "ledger/jurisdictions/mumbai/expectations/property-tax-payment.json",
       "auditFile": "ledger/jurisdictions/mumbai/audits/property-tax-payment.md",
-      "mode": "grid-only"
+      "mode": "grid-only",
+      "lintWaivers": [
+        {
+          "recordId": "claim_mumbai_ptax_public_instant_payment_route_3",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is the set of heads the Instant Payment route breaks an outstanding bill into. The comma list is that one published breakdown, read from the route's own field labels, not several independent assertions."
+        },
+        {
+          "recordId": "claim_mumbai_ptax_public_instant_payment_route_4",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is the set of amount labels the Instant Payment route displays. The comma list is that one published row of labels, read from the route's own fields, not several independent assertions."
+        }
+      ]
     },
     {
       "jurisdictionSlug": "mumbai",
@@ -59,7 +114,19 @@
       "ledgerFile": "ledger/jurisdictions/mumbai/water-connection.json",
       "expectationsFile": "ledger/jurisdictions/mumbai/expectations/water-connection.json",
       "auditFile": "ledger/jurisdictions/mumbai/audits/water-connection.md",
-      "mode": "grid-only"
+      "mode": "grid-only",
+      "lintWaivers": [
+        {
+          "recordId": "claim_mumbai_water_document_categories_2",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is the manual's own list of connection categories by which document requirements differ. The comma list is that one published set of categories, not several independent assertions."
+        },
+        {
+          "recordId": "claim_mumbai_water_deciding_officers",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is which officers the manual names as competent to approve a new connection, according to the powers vested in each. The comma list is that one published list of approving designations; the separately checkable scrutiny officer was split out into claim_mumbai_water_deciding_officers_2."
+        }
+      ]
     },
     {
       "jurisdictionSlug": "chennai",
@@ -69,7 +136,14 @@
       "ledgerFile": "ledger/jurisdictions/chennai/birth-certificate.json",
       "expectationsFile": "ledger/jurisdictions/chennai/expectations/birth-certificate.json",
       "auditFile": "ledger/jurisdictions/chennai/audits/birth-certificate.md",
-      "mode": "grid-only"
+      "mode": "grid-only",
+      "lintWaivers": [
+        {
+          "recordId": "claim_chennai_birth_gcc_routes_offered_2",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is which four routes the Greater Chennai Corporation's birth and death page offers. The comma list is that one published set of routes, read from the page itself, not several independent assertions."
+        }
+      ]
     },
     {
       "jurisdictionSlug": "chennai",
@@ -79,7 +153,14 @@
       "ledgerFile": "ledger/jurisdictions/chennai/property-tax-payment.json",
       "expectationsFile": "ledger/jurisdictions/chennai/expectations/property-tax-payment.json",
       "auditFile": "ledger/jurisdictions/chennai/audits/property-tax-payment.md",
-      "mode": "grid-only"
+      "mode": "grid-only",
+      "lintWaivers": [
+        {
+          "recordId": "claim_chennai_ptax_bill_number_required",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is the set of identifier fields the corporation's payment and receipt routes require before a payment can be made. The comma list is that one published set of input fields, read from the routes themselves, not several independent requirements."
+        }
+      ]
     },
     {
       "jurisdictionSlug": "chennai",
@@ -89,7 +170,14 @@
       "ledgerFile": "ledger/jurisdictions/chennai/water-connection.json",
       "expectationsFile": "ledger/jurisdictions/chennai/expectations/water-connection.json",
       "auditFile": "ledger/jurisdictions/chennai/audits/water-connection.md",
-      "mode": "grid-only"
+      "mode": "grid-only",
+      "lintWaivers": [
+        {
+          "recordId": "claim_chennai_water_six_particulars_3",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is the charter's own list of the six particulars the single-sheet application form asks for. The comma list is that one published set of particulars, not several independent assertions, and the claim supports no expectation cell."
+        }
+      ]
     },
     {
       "jurisdictionSlug": "hyderabad",
@@ -99,7 +187,19 @@
       "ledgerFile": "ledger/jurisdictions/hyderabad/birth-certificate.json",
       "expectationsFile": "ledger/jurisdictions/hyderabad/expectations/birth-certificate.json",
       "auditFile": "ledger/jurisdictions/hyderabad/audits/birth-certificate.md",
-      "mode": "grid-only"
+      "mode": "grid-only",
+      "lintWaivers": [
+        {
+          "recordId": "claim_hyderabad_birth_certificate_template_wording_3",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is which fields the corporation's birth certificate template prints. The comma list is that one published set of fields, read from the empty template itself, not several independent assertions."
+        },
+        {
+          "recordId": "claim_hyderabad_birth_form_particulars",
+          "check": "compound-claim",
+          "reason": "The single checkable fact is which identifying particulars the corporation's birth certificate application asks for. The comma list is that one published set of form fields; the separately checkable number-of-copies and courier questions were split out into claim_hyderabad_birth_form_particulars_2 and claim_hyderabad_birth_form_particulars_3."
+        }
+      ]
     },
     {
       "jurisdictionSlug": "hyderabad",

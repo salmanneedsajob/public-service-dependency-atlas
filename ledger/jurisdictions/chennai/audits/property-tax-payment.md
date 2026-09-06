@@ -115,3 +115,367 @@ Inputs were the integrated ledger, the expectations sidecar, `benchmark/schemas/
 Cell states accepted: **`cost` mentioned** (downgraded from `stated`, F1), **`documents` mentioned** (accepted, F3), **`eligibility` stated** (accepted), **`time` mentioned** (accepted), **`owner` stated** (accepted), **`after-submission` stated** (accepted, F2). **Stated count: 3 of 6.**
 
 Corrections proposed: 8 — one cell state, one cell note, one cell `claimIds`, one claim text with its notes, and three evidence-grade downgrades. Unresolved limitation carried forward: no archive snapshot was captured at access time for any source, and the two pages ending in "TO BE UPDATED" have none at all (F9).
+
+
+## Re-audit — 2026-09-06 (IND-91 part B)
+
+A fresh isolated auditor re-audited this row after pre-audit lint remediation, on the section 12 inputs only. 4 corrections were proposed and 4 applied; none unapplied.
+
+# Audit — Chennai, property-tax-payment
+
+Row: `chennai` / `property-tax-payment`, mode `grid-only`, primary scenario
+`scenario_property_tax_payment_known_sas_pid` (manifest, ledger and sidecar agree).
+Inputs: the ledger, the expectations sidecar, the manifest entry for this row,
+`benchmark/schemas/ledger.json`, `benchmark/PROTOCOL.md`, `benchmark/schemas/corrections.json`.
+No other file was read and no URL was opened; every judgement below is made from the
+ledger and sidecar text as written.
+
+**Correction policy used here.** Corrections are proposed only as field-level changes to
+existing records, where `old` can be quoted exactly and the generic application step can
+match `recordType` + `recordId` + field path + old value. Structural changes — splitting a
+compound claim, merging a duplicate, deleting a record — are recorded as findings for a
+remediation pass rather than encoded as corrections, because they would make the atomic
+correction set depend on record IDs that do not yet exist and risk rejecting the whole set.
+
+---
+
+## F1 — `cost` is recorded as `mentioned` but the evidence states an explicit zero
+
+Records: `expectations` cell `cost`; `claim_chennai_ptax_online_nil_transaction_fee`.
+Rules: PROTOCOL section 3, section 8 (`cost` definition), section 8 expectation-cell definitions.
+
+The cell's only claim is Grade B, `verified`, `observation`, and reads: the rules and
+procedure page "states that payment can be made online at www.chennaicorporation.gov.in
+with 'Nil' transaction fee by using a credit card, debit card or net banking." That is a
+quantified charge for using this service's online channel, published by the agency, with
+the value zero.
+
+Section 3 is not permissive on this point: "An explicit zero requirement is a stated value,
+not an absence and not a not-applicable state. For example, `free`, `no upload required`,
+`no fee` ... must be recorded as `stated` when the applicable evidence states it."
+
+The cell note misreads that rule. It says the Nil figure is "retained here under protocol
+section 3 so that the cell is not scored absent." Section 3 does not say an explicit zero
+rescues a cell from `absent`; it says an explicit zero **is** `stated`. The note's own
+wording concedes the substance — "one real charge is quantified" — which is exactly the
+section 8 test for `cost` (`stated` when the evidence gives an amount a citizen pays). The
+three `mentioned` triggers in the section 8 `cost` definition do not fit: this is not a fee
+"described only as prescribed", not "a payment step without an amount" (the online step has
+an amount, and it is nil), and not a penalty payable by the agency.
+
+The tax liability itself is genuinely underivable — the percentage table and the
+location-wise annexure the corporation's own method depends on are absent from the page that
+cites them, and the calculator that would supply them points at an unreachable staging host.
+That gap is correctly carried as `claim_chennai_ptax_amount_payable_unknown` /
+`_2` and, under the section 8 rule that an `Unknown` claim "records a limitation, not a
+positive cell value", it cannot pull the cell down any more than it could push it up. The
+cell's state is set by the strongest qualifying claim it holds, and that claim states an
+amount.
+
+Correction C1 proposed: `/cells/cost/state` `mentioned` → `stated`.
+
+**Flagged, not proposed:** section 9 requires a `stated` cell to carry an actionable-value
+note. The current `cost` note argues the case for `mentioned` and will read as drift once C1
+is applied. It must be rewritten to state the actionable value (Nil transaction fee on the
+online channel, by credit card, debit card or net banking) and to keep the tax-amount gap as
+the cell's stated limitation. I have not encoded that as a correction because this audit's
+correction set is confined to `/state` and `/claimIds` on expectation cells; the rewrite is
+an unapplied correction in the section 14 sense and should ship as a stated limitation until
+it is made. `searchedRoutes` on the cell may be retained; section 9 does not forbid it on a
+`stated` cell.
+
+## F2 — `documents` lists a claim that asserts nothing about documents
+
+Records: `expectations` cell `documents`; `claim_chennai_ptax_payment_modes`.
+Rules: PROTOCOL section 8 (`documents` definition), section 9 (topic-only `claimIds`).
+
+`claim_chennai_ptax_payment_modes` now reads, in full: "The corporation's property tax rules
+and procedure page lists the modes of paying property tax." After the IND-91 part B split,
+every substantive mode moved to `_2` through `_6` and the cheque-or-demand-draft instruction
+moved to `claim_chennai_ptax_revenue_officer_is_payee` (its own notes record both moves).
+What is left asserts that a list of payment modes exists. It names no document, and it does
+not name the documents topic at all, so it is not even a permissible topic-only claim for a
+`mentioned` cell under section 9. The cell's actual documents content is carried by
+`claim_chennai_ptax_assessment_documents_are_other_route` and `_2`, both of which remain in
+the list.
+
+Correction C2 proposed: remove `claim_chennai_ptax_payment_modes` from
+`/cells/documents/claimIds`. The cell state is unaffected — see F12.
+
+## F3 — `eligibility` lists a valuation-method claim that decides nothing
+
+Records: `expectations` cell `eligibility`; `claim_chennai_ptax_half_yearly_basis_2`.
+Rule: PROTOCOL section 8 (`eligibility` definition).
+
+`claim_chennai_ptax_half_yearly_basis_2` states that annual rental value "is arrived at from
+the reasonable letting value under section 100 of the Chennai City Municipal Corporation Act
+1919." That is how the base of the tax is computed. It gives no rule that decides who
+qualifies or which route applies, which is the whole of the section 8 `eligibility` test. It
+is also not reflected in the eligibility note, which cites the bill-number requirement, the
+payment modes and the half-yearly liability inside Chennai city limits, and says nothing
+about section 100.
+
+Correction C3 proposed: remove `claim_chennai_ptax_half_yearly_basis_2` from
+`/cells/eligibility/claimIds`.
+
+The cell's `stated` state survives independently and is correct: the bill-number requirement
+(`claim_chennai_ptax_bill_number_required`, waived as compound in the manifest on coherent
+reasoning — one published set of input fields read off the routes) plus the instruction to
+confirm the bill number before paying (`_2`) is a usable rule about which route a citizen can
+use, and the four published modes (`claim_chennai_ptax_payment_modes_2` … `_6`) decide which
+route applies. `claim_chennai_ptax_half_yearly_basis` is retained: on its own it would be
+applicability-only and therefore `mentioned`-level under section 8, but as supporting
+applicability inside a cell already `stated` on other claims it is properly placed.
+
+## F4 — `claim_chennai_ptax_public_receipt_route` is still marked `mixed` after its inference was split out
+
+Record: `claim_chennai_ptax_public_receipt_route`.
+Rule: PROTOCOL section 5 (basis rule).
+
+The claim's text is now purely observational: "The corporation publishes a Property Tax
+Online Payment Receipt route that is reachable without login." Its own notes confirm the
+whole of it was seen — "The observation is the route, its title and its four input fields on
+the access date" — and the inferential part, what the route returns for a real property,
+moved to `claim_chennai_ptax_public_receipt_route_2`, whose notes carry the boundary
+("The inference is what the route returns for a real property, since no identifier was
+entered and no case data was retrieved"). Section 5 reserves `mixed` for a claim whose notes
+"explain the boundary"; with the inference removed there is no boundary left inside this
+claim. `mixed` is a residue of the split.
+
+Correction C4 proposed: `claim_chennai_ptax_public_receipt_route` `/basis` `mixed` →
+`observation`.
+
+`/status` is deliberately left at `partial`. Section 13 lists downgrading, not upgrading,
+among the auditor's powers, and `partial` claims may support a `stated` cell under section 8,
+so nothing in the grid turns on it. Recorded here so a later pass can decide.
+
+## F5 — the `after-submission` note attributes `mixed`/`partial` to the wrong claim
+
+Record: `expectations` cell `after-submission` (note text).
+Rules: PROTOCOL section 5, section 9.
+
+The note explains "which is why the receipt claim is recorded as mixed and partial rather
+than as a verified observation of what it returns." That rationale now belongs only to
+`claim_chennai_ptax_public_receipt_route_2`; applied to
+`claim_chennai_ptax_public_receipt_route` it is the mislabel described in F4. Note-level
+only, no correction proposed.
+
+The cell state itself is correct. A published receipt route plus published status routes are
+surfaces the citizen sees after paying, which is the section 8 `after-submission` test, and
+none of the three cited claims is a step at or before submission. Both receipt claims are
+`partial`, which section 8 expressly permits in support of `stated`.
+
+## F6 — inconsistent grades across two sources with the same recorded defects
+
+Records: `source_chennai_ptax_rules_procedure`, `source_chennai_ptax_assessment_method`, and
+the claims drawn from each.
+Rule: PROTOCOL section 4 (evidence-grade table), section 8 lint checks 3 and 4.
+
+Both source notes record the same two defects: no visible last-updated or version date, and
+a page ending in the literal text "TO BE UPDATED". The rules-procedure note goes further and
+says the page "declares itself unfinished, so what it states may not be current or complete."
+Yet the substantive-rule claims drawn from the assessment-method page are Grade C
+(`claim_chennai_ptax_half_yearly_basis`, `_2`, `claim_chennai_ptax_annual_value_factor`,
+`claim_chennai_ptax_library_cess`, `_2`) while the substantive-rule claims drawn from the
+rules-procedure page are Grade B (`claim_chennai_ptax_online_nil_transaction_fee`,
+`claim_chennai_ptax_payment_modes_2` … `_6`, `claim_chennai_ptax_revenue_officer_is_payee`,
+`claim_chennai_ptax_assessment_documents_are_other_route_2`).
+
+The ledger does draw a defensible internal line at the assessment-method page — B for what
+the page's own surface shows (a reference exists, the table is absent, the page ends with
+"TO BE UPDATED": `claim_chennai_ptax_rate_table_and_annexure_missing` and `_2` … `_4`), C for
+the substantive rules whose currency depends on undated material. That line is not applied to
+the rules-procedure page.
+
+No correction is proposed, for three reasons. Section 4's rows genuinely overlap here: the B
+row covers "a current official procedure ... or agency page, including direct current
+observation of a public official interface", and every one of these claims is of the form
+"the page states X", read live on 2026-09-06; the C row covers "incomplete ... or undated
+official material", which also fits. Section 8's lint check 4 treats Grade C on observed
+current official material as a defect rather than a virtue, so a blanket downgrade is not
+obviously the safer reading. And nothing in the grid turns on it — section 8 admits Grade A,
+B or C alike for `stated`, so every cell holds its state either way. The row should
+nonetheless settle on one treatment; the assessment-method page carries an extra defect the
+rules-procedure page does not (authorities dated 1972 to 2001), which is a sufficient reason
+for the split as it stands, and that reasoning should be written into the source notes rather
+than left implicit.
+
+## F7 — unwaived compound and list claims
+
+Records: `claim_chennai_ptax_annual_value_factor`, `claim_chennai_ptax_payment_status_route`,
+`claim_chennai_ptax_online_nil_transaction_fee`,
+`claim_chennai_ptax_assessment_documents_are_other_route_2`; manifest `lintWaivers`.
+Rules: PROTOCOL section 1 ("one claim asserts one checkable thing"), section 8 lint check 1
+and the waiver rule.
+
+The manifest carries exactly one waiver, for `claim_chennai_ptax_bill_number_required`, on
+reasoning I accept. Four claims the part B split did not reach are not covered by it:
+
+- `claim_chennai_ptax_annual_value_factor` — genuinely compound. It asserts the 10.92
+  multiplier **and**, in a trailing clause, that the page "works the derivation through a
+  numeric example." Those are two independently checkable things; the second is the same kind
+  of page-surface observation that was split out elsewhere in this ledger. Recommended split:
+  narrow the text to the multiplier and record the worked example as
+  `claim_chennai_ptax_annual_value_factor_2`, same source, same grade.
+- `claim_chennai_ptax_payment_status_route` — asserts two distinct published routes ("a
+  Property Tax Status route **and** a Property Tax Payment Status route"). Each is separately
+  checkable. This claim supports the `after-submission` cell, so the split matters to the
+  evidence behind a `stated` cell, though the cell's state does not depend on it —
+  `claim_chennai_ptax_public_receipt_route` and `_2` carry it.
+- `claim_chennai_ptax_online_nil_transaction_fee` — presents as a list claim (credit card,
+  debit card, net banking). I read the instruments as the scope of one published fee
+  statement, on the same reasoning the manifest already accepted for
+  `claim_chennai_ptax_bill_number_required`, but that reasoning is not recorded anywhere for
+  this claim. Since F1 makes this claim the sole support for a `stated` cell, it should
+  carry an explicit waiver entry rather than rest on an unstated analogy.
+- `claim_chennai_ptax_assessment_documents_are_other_route_2` — the same pattern (registered
+  documents **or** Form-6 **or** last tax paid receipt): one published list, expressed as
+  alternatives. Waivable on the same reasoning; presently unwaived.
+
+Section 8 says an unwaived lint finding blocks audit. Recorded as findings for a remediation
+pass under the correction policy stated at the top: two of these need new claim records and
+two need manifest waiver entries, neither of which is a field-level correction on an existing
+ledger record.
+
+## F8 — an observed absence recorded as `Unknown` with no source, duplicating a sourced claim
+
+Records: `claim_chennai_ptax_amount_payable_unknown_2`,
+`claim_chennai_ptax_rate_table_and_annexure_missing_3`.
+Rules: PROTOCOL section 4 (`Unknown` = "No usable source yet"), section 5, section 13
+(auditor may merge duplicates).
+
+`claim_chennai_ptax_amount_payable_unknown_2` reads: "The percentage of annual value and the
+location-wise basic rate the corporation's own method depends on are both missing from the
+page that cites them." That is an observation of a specific page, made on the access date. It
+is graded `Unknown`, based on `inference`, with an empty `sourceIds`. The identical fact is
+already recorded as `claim_chennai_ptax_rate_table_and_annexure_missing_3` ("Neither that
+table nor that annexure appears anywhere on the page"), Grade B, `observation`, `verified`,
+cited to `source_chennai_ptax_assessment_method`. Its own notes even say the point: "The
+observed absence is separately checkable from the unknown it produces" — which is the reason
+it should not itself be the unknown.
+
+The claim escapes the section 7 citation gate only because `Unknown` exempts it, and it is a
+duplicate of a properly sourced claim. Recommended: delete it as a duplicate of
+`claim_chennai_ptax_rate_table_and_annexure_missing_3` and keep
+`claim_chennai_ptax_amount_payable_unknown`, which is a true unknown (the payable amount)
+correctly graded. No correction encoded — a deletion is a structural change under the policy
+above. Nothing in the grid depends on it; the claim supports no cell.
+
+`claim_chennai_ptax_due_date_unknown`, `_2` and `claim_chennai_ptax_amount_payable_unknown`
+are by contrast correctly `Unknown`/`inference`/no source: each records an absence of
+published information rather than an observation of a page, and none of them appears in any
+cell's `claimIds`, which is what section 8 requires of an `Unknown` claim.
+
+## F9 — residual header claims left by the part B split
+
+Records: `claim_chennai_ptax_payment_modes`,
+`claim_chennai_ptax_assessment_documents_are_other_route`.
+Rule: PROTOCOL section 1, section 8 lint check 1.
+
+Both now assert only that the page publishes a list — the substance sits in their numbered
+siblings. They are atomic, so they do not fail lint, and they are legitimate as scaffolding.
+They should not be leaned on as supporting evidence, which is the specific defect in F2;
+`claim_chennai_ptax_payment_modes` also appears in the `eligibility` list, where it is
+harmless because `_2` … `_6` carry the actual rule. No correction proposed there.
+
+## F10 — the `cost` cell's claim list against the published method claims
+
+Records: `expectations` cell `cost`; `claim_chennai_ptax_half_yearly_basis`,
+`claim_chennai_ptax_annual_value_factor`, `claim_chennai_ptax_library_cess`, `_2`.
+Rules: PROTOCOL section 9, section 8 (`cost` definition).
+
+Four `verified` claims describe the published half of the tax computation — a half-yearly
+percentage of annual rental value, the 10.92 multiplier, and a 10 per cent library cess on
+the general tax component — and none appears in the `cost` cell. Under the current
+`mentioned` state they would have been the natural topic-only `claimIds` section 9 allows,
+and the cell instead carries the argument in prose. With C1 applied the cell becomes
+`stated` on the explicit zero, and section 9 asks a `stated` cell for the claims that give
+the actionable value; these method fragments do not give one (each is a rate applied to a
+base the corporation does not publish), so they are correctly left out. No correction. The
+rewritten note called for in F1 should keep the tax-side gap visible.
+
+## F11 — the `documents` cell state is right, and the two near-misses that do not change it
+
+Records: `expectations` cell `documents`; `claim_chennai_ptax_revenue_officer_is_payee`,
+`claim_chennai_ptax_assessment_documents_are_other_route_3`.
+Rule: PROTOCOL section 8 (`documents` definition and the boundary-claim rule).
+
+Two readings could have moved this cell and both fail.
+
+A cheque or demand draft drawn in favour of "The Revenue Officer, Corporation of Chennai" is
+a concrete instrument the citizen hands over, which brushes against the section 8 `stated`
+trigger ("names a concrete document with a requirement to submit, provide, upload, produce,
+or attach it"). I concur with the cell note that it does not qualify: it is the payment
+itself, not a document produced in support of the payment, and section 8 keeps payment in the
+`cost` cell. The published document list — registered documents, Form-6, last tax paid
+receipt — is real and actionable but is given for applying for assessment, which this
+scenario's summary excludes, so it cannot make this scenario's cell `stated`. The evidence
+does touch the topic, so `absent` is wrong too. `mentioned` is correct.
+
+Separately, `claim_chennai_ptax_assessment_documents_are_other_route_3` ("That document list
+is not given for paying tax on an existing assessment") is a scope-boundary statement, and
+section 8 says a boundary statement "records a limitation, not a positive cell value". It is
+retained here because it is doing the opposite of inflating the cell — it is the reason the
+list is not counted — and the cell note says so explicitly. Flagged so the reading is on the
+record; no correction.
+
+## F12 — checks that passed
+
+- Reference integrity: every `claimId` in the sidecar resolves to a claim in the ledger;
+  every `sourceId` on every claim resolves to a source; no dangling references.
+- Scenario policy (section 2): manifest `primaryScenarioId`, sidecar `primaryScenarioId` and
+  the ledger's single scenario all read `scenario_property_tax_payment_known_sas_pid`; all 34
+  claims are tagged to it and to nothing else; no aliases.
+- Citation gate (section 7): every non-`Unknown` claim carries at least one source; all four
+  empty-source claims are graded `Unknown`, which the ledger schema's conditional permits. No
+  claim rests on a department homepage — `source_chennai_ptax_section_index` is the property
+  tax section index and the claims drawn from it (the calculator link target, the HTTP 404,
+  the published status routes) are direct observations of that specific page, which section 4
+  grades B.
+- Dates and jurisdiction (section 7): all five sources carry `accessedAt` 2026-09-06 in ISO
+  form, matching `meta.asOf`; every claim's jurisdiction text is "Chennai, Tamil Nadu, India",
+  matching the manifest.
+- Archive rule (section 11): each of the five sources records either a Wayback snapshot URL
+  or a documented capture failure, with the staleness of the three old snapshots stated as a
+  limitation. No substitute homepage was used for a failed capture.
+- Grid-only mode: `nodes`, `edges`, `roadblocks` and `journeys` are empty and
+  `scenarios[0].pathNodeIds` is empty, consistent with the manifest's `mode: grid-only`; there
+  are no `researchedNoSourceFound` markers to verify under section 6.
+- Six cells present with a state each (section 9); `owner`, `time` and `after-submission`
+  states are correct as recorded — `owner` `stated` on a named role plus a published contact
+  route (section 8 expressly counts "a contact route for that role"); `time` `mentioned`
+  because a half-yearly cycle is a cycle without a due date, penalty date, rebate deadline or
+  service-level figure, and the note says so.
+- Boundary and `Unknown` claims (`claim_chennai_ptax_due_date_unknown`, `_2`,
+  `claim_chennai_ptax_amount_payable_unknown`, `_2`,
+  `claim_chennai_ptax_rate_table_and_annexure_missing` and `_2` … `_4`,
+  `claim_chennai_ptax_calculator_points_to_staging_host` and `_2`,
+  `claim_chennai_ptax_know_your_status_404`) are absent from every cell's `claimIds`, as
+  section 8 requires.
+- Safety: the ledger records read-only observation of the payment, status and receipt routes
+  with no identifier entered and no payment begun, and the disclaimer and `asOf` are present.
+  No URL was opened during this audit.
+
+---
+
+## Corrections proposed
+
+| # | Record | Field | Old → New |
+| --- | --- | --- | --- |
+| C1 | `expectations` `property-tax-payment:cost` | `/cells/cost/state` | `mentioned` → `stated` |
+| C2 | `expectations` `property-tax-payment:documents` | `/cells/documents/claimIds` | drop `claim_chennai_ptax_payment_modes` |
+| C3 | `expectations` `property-tax-payment:eligibility` | `/cells/eligibility/claimIds` | drop `claim_chennai_ptax_half_yearly_basis_2` |
+| C4 | `claim` `claim_chennai_ptax_public_receipt_route` | `/basis` | `mixed` → `observation` |
+
+One cell state changes: `cost`, `mentioned` → `stated`. No other cell state changes.
+
+## Unapplied items to carry as stated limitations
+
+- The `cost` cell note must be rewritten as an actionable-value note (F1).
+- Splits for `claim_chennai_ptax_annual_value_factor` and
+  `claim_chennai_ptax_payment_status_route`; waiver entries for
+  `claim_chennai_ptax_online_nil_transaction_fee` and
+  `claim_chennai_ptax_assessment_documents_are_other_route_2` (F7).
+- Deletion of `claim_chennai_ptax_amount_payable_unknown_2` as a duplicate (F8).
+- The grade treatment across `source_chennai_ptax_rules_procedure` and
+  `source_chennai_ptax_assessment_method` should be reconciled in the source notes (F6).

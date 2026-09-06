@@ -116,3 +116,139 @@ No finding in this run blocks the service. Four corrections change evidence grad
 Accepted cell states: **cost = stated; documents = stated; eligibility = stated; time = stated; owner = stated; after-submission = mentioned — 5 of 6 stated.**
 
 `documents` and `time` were tested hardest and are upheld on the section 8 definitions, `time` on Grade C evidence whose undated provenance is now stated in the cell note. `eligibility` is upheld as `stated` on the copy-route rules alone, after the institutional and domiciliary registration-stage evidence was removed from it. `after-submission` remains `mentioned`: no reviewed public route shows an acknowledgement, application number, tracker, receipt, rejection reason or downloadable result for a copy of an already registered birth, and the MCD citizen surface that might carry one lies behind portal signup, which this run correctly did not cross.
+
+
+## Re-audit — 2026-09-06 (IND-91 part B)
+
+A fresh isolated auditor re-audited this row after pre-audit lint remediation, on the section 12 inputs only. 4 corrections were proposed and 4 applied; none unapplied.
+
+# Re-audit — Delhi, birth certificate (grid-only row)
+
+Row: `delhi` / `birth-certificate`
+Primary scenario: `scenario_ind32_birth_copy_workflow`
+Mode: grid-only (manifest); ledger carries no nodes, edges, roadblocks or journeys.
+Inputs: ledger, expectations sidecar, the manifest entry for this row, `schemas/ledger.json`, `PROTOCOL.md`, `schemas/corrections.json`. Nothing else was opened; no URL was visited.
+
+## Summary
+
+Sixteen findings. Four corrections proposed. No expectation-cell **state** changes: all six cells are recorded correctly against the section 8 definitions. Two corrections touch claim metadata (`basis`, `evidenceGrade`); two touch cell `claimIds` lists without changing any cell state.
+
+---
+
+## Cell-by-cell verdicts
+
+### F1 — `cost` = `stated` is correct
+
+Section 8 (`cost`): `stated` when the evidence gives an amount a citizen pays. `claim_delhi_birth_additional_copy_fee` gives Rs. 20 per additional copy of a birth certificate under section 17 — a payable amount, not a fee "as prescribed" and not a payment step without a figure. `claim_delhi_birth_first_copy_free` is an explicit zero and section 3 requires it to be recorded as a stated value rather than an absence. Both are `verified`, both Grade C, and section 8 admits A, B or C for `stated`. The cell note discloses the Grade C basis and that no current MCD page restates the copy fee. Correct.
+
+`claim_delhi_birth_first_copy_free_2` (free copy to the informant immediately after registration) is checked and retained: it delimits *which* copy the zero attaches to, and the cell note's phrase "the first copy free to the informant" rests on it. It is scope-limiting support for the zero, not a stray timing claim. No change.
+
+### F2 — `documents` = `stated` is correct
+
+Section 8 (`documents`): `stated` when the evidence names a concrete document with a requirement to submit it, or gives an actionable document list. `claim_delhi_birth_application_plain_paper` names a concrete document (an application on plain paper) with a requirement to submit it to the concerned area Registrar or Sub-Registrar; `claim_delhi_birth_application_particulars` supplies the actionable content list (five particulars, items i to v); `_2` supplies the place-of-birth content rule for a domiciliary birth. All three are `verified` Grade B.
+
+Checked against the obvious challenge: the `after-submission` definition expressly excludes "the act of submission", but the `documents` definition carries no equivalent exclusion, so the application form itself is legitimate `documents` evidence. The cell note honestly records the residual boundary — no reviewed official route publishes a supporting proof-of-identity list for a copy of an already registered birth. Correct.
+
+### F3 — `eligibility` = `stated` is correct
+
+Section 8 (`eligibility`): `stated` when the evidence gives a rule that decides who qualifies or which route applies. Three usable rules are cited: registration only at the place of occurrence, so an event outside Delhi cannot be handled here (`claim_delhi_birth_place_of_occurrence_rule`, B, `verified`); the birth must already be registered (`claim_delhi_birth_issue_within_seven_days_2`, C, `verified`); and the request must go to the zone in which the event took place or may be rejected (`claim_delhi_birth_mcd_zone_routing`, B, `verified`). None is a bare naming of "applicability" or an applicant category. Correct.
+
+The cell note's removal of the two MCD citizen-charter rows is also correct under section 2 (the grid scores the primary scenario only): `claim_delhi_birth_mcd_institutional_processing` is a hospital-side registration step the scenario excludes, and `claim_delhi_birth_mcd_domiciliary_route` describes the registration application rather than a request for a copy of a birth already on the register. Both are retained in the ledger as `partial`, which is the right disposition — scope-limited, not deleted.
+
+### F4 — `time` = `stated` is correct
+
+Section 8 (`time`): `stated` when the evidence gives an actionable duration, deadline, processing period, or service-level target, and where the figure covers only one stage the cell note must say so. The 7-day issue period and the 3-day/7-day delivery schedule are actionable figures, and the note discharges the one-stage duty explicitly ("covers issue of the certificate only, not any counter queue or collection step"). The note also states the Grade C limitation for every figure in the cell. Correct. See F9 for a `claimIds` completeness point that does not change the state.
+
+### F5 — `owner` = `stated` is correct
+
+Section 8 (`owner`): `stated` when the citizen can identify the office, officer, or operational role that holds or decides the case, including a designation tied to a jurisdiction rule or a specific office list. `claim_delhi_birth_registrar_designation` is exactly a designation tied to a jurisdiction rule — the Deputy Health Officer of the zone is Registrar for events in that zone — and `claim_delhi_birth_registrar_directory_published` supplies the area-wise office list. Those two alone carry the cell past `mentioned` (which is where a bare statutory designation or general agency name would leave it). `claim_delhi_birth_collection_point` and `claim_delhi_birth_chief_registrar_not_issuer` add the collection point and the negative routing rule. Correct. See F10 for one listed claim that does not support the cell.
+
+### F6 — `after-submission` = `mentioned` is correct, and is not `stated`
+
+This is the cell most exposed to an over-read. `claim_delhi_birth_mcd_certificate_printout` — a printout of the certificate may be taken after approval of MCD officials — looks on its face like the "downloadable result" that section 8 admits for `stated`, and section 8 permits a `partial` claim to support a positive cell value, so status alone does not bar it. The correct ground for `mentioned` is scope: the guideline sits in the sequence that begins with the informant registering the event, so the submission it follows is a *registration* submission, not the copy request this scenario scores. Section 2 restricts the grid to the primary scenario. For that scenario the outcome is named with no visible or actionable post-submission surface, which is section 8's definition of `mentioned`. The cell note states this reasoning. Correct.
+
+The exclusions are also handled correctly under section 8's last sentence — only `verified` or `partial` claims may support a cell value, and a boundary statement or `Unknown` claim records a limitation, never a positive value:
+
+- `claim_delhi_birth_post_submission_surface_unknown` (Grade `Unknown`, status `unknown`) appears in **no** cell's `claimIds` and is referenced only as a limitation in the note. Correct.
+- `claim_delhi_birth_mcd_citizen_surface_behind_signup` and `_2` are boundary statements about the portal signup wall; both appear in no cell's `claimIds`, and the note records the boundary as a limitation rather than a finding. Correct.
+
+`searchedRoutes` is populated with four URLs, satisfying section 9's requirement that a `mentioned` cell record searched routes and a search note. The other five cells are `stated` and record `claimIds` plus an actionable-value note, which is what section 9 asks of them; their empty `searchedRoutes` arrays are not a defect.
+
+---
+
+## Defects (corrections proposed)
+
+### F7 — `claim_delhi_birth_mcd_citizen_surface_behind_signup`: `basis` "mixed" is no longer supported → CORRECTION 1
+
+Section 5: `observation` records what a source or interface directly shows, `inference` records a conclusion drawn from it, and `mixed` **must explain the boundary in `notes`**.
+
+The claim text as it now stands is "MCD's public instructions direct the citizen to sign up on the portal with a preferably Aadhaar-linked mobile number." That is purely what the page displays; it contains no inferential component. Its notes record that the boundary was not crossed and that the claim was split, but they do not explain any observation/inference boundary — because the inference was moved out during the IND-91 part B split. The sibling `_2` carries the inference and correctly explains the boundary in its own notes ("the observation is that the public page offers signup and instructions only; the inference is that the citizen certificate surface lies past that boundary"), so `mixed` is right there and stale here.
+
+Proposed: `/basis` `"mixed"` → `"observation"`. Grade B and status `partial` are unaffected; the claim continues to support no cell value.
+
+### F8 — `claim_delhi_birth_mcd_charter_key_contacts_empty`: Grade B contradicts its own source and its four siblings → CORRECTION 2
+
+Section 4 assigns **C** to "Archived, undated, or visibly outdated official material; state the date and limitation". The source `source_delhi_birth_mcd_citizen_charter` records "Visible date: none is shown" and states, in its own notes, "the document is undated, so its currency cannot be checked, **which is why claims resting on it are graded C**."
+
+Four claims resting on that source are graded C and say so in their notes (`claim_delhi_birth_mcd_sla_one_week`, `claim_delhi_birth_mcd_sla_institutional_instant`, `claim_delhi_birth_mcd_institutional_processing`, `claim_delhi_birth_mcd_domiciliary_route`). `claim_delhi_birth_mcd_charter_key_contacts_empty` rests on the same undated document but is graded B. Section 4's B row for "direct current observation of a public official interface" cannot distinguish it, since the same observation route produced the four C-graded siblings. Section 4 also states that grades describe source strength, not convenience.
+
+Proposed: `/evidenceGrade` `"B"` → `"C"`. The claim is not cited in any cell's `claimIds`, so no cell state depends on this; the `owner` note's use of it as a counter-observation is unaffected.
+
+### F9 — `time` cell note asserts a qualifier whose claim is not in its `claimIds` → CORRECTION 3
+
+The `time` note reads "7 days from the date of receipt of the application, **expressly for a birth that has already been registered**". That qualifier is asserted by `claim_delhi_birth_issue_within_seven_days_2`, which was split out of the 7-day claim precisely to carry the proviso. It is listed under `eligibility` but not under `time`, so the `time` cell states a claim-backed fact without listing its claim.
+
+Section 9 requires a `stated` cell to record its `claimIds` and an actionable-value note; the qualifier is part of the actionable value, since it tells the citizen which applicants the 7-day figure applies to. Multi-cell listing is already the pattern in this sidecar (`claim_delhi_birth_collection_point` appears under both `owner` and `after-submission`), so nothing bars listing it twice.
+
+Proposed: add `claim_delhi_birth_issue_within_seven_days_2` to `/cells/time/claimIds`. The state remains `stated` — the figure itself comes from `claim_delhi_birth_issue_within_seven_days`.
+
+### F10 — `owner` cell lists a contact route for an office it separately says is not the case-holder → CORRECTION 4
+
+Section 8 (`owner`) admits "a contact route for **that role**" — the role that holds or decides the case. `claim_delhi_birth_directorate_office_contact` gives the Directorate's office email and telephone. But `claim_delhi_birth_chief_registrar_not_issuer`, listed in the same cell, establishes that the Office of Chief Registrar (B&D) does not itself issue birth certificates. So the contact is a route to an office that expressly does not hold this case, and for this scenario it points away from the zone Registrar the cell is meant to identify — the very failure mode the negative routing claim warns about.
+
+Two further signals that the listing is an artefact rather than a judgement: the cell note enumerates four items (zone Registrar designation, collection point, area-wise directory, Chief Registrar not the issuer) and does not mention the directorate contact at all; and the claim was created by the previous audit as an atomicity split out of `claim_delhi_birth_registrar_directory_published`, so it appears to have inherited that claim's cell membership.
+
+Proposed: remove `claim_delhi_birth_directorate_office_contact` from `/cells/owner/claimIds`. The state remains `stated` on the designation tied to a jurisdiction rule plus the published area-wise directory. The claim stays in the ledger as `verified` Grade B institutional contact detail.
+
+---
+
+## Findings recorded without a correction
+
+### F11 — `claim_delhi_birth_delivery_time_schedule` carries two durations and has no lint waiver
+
+Section 8, first check, flags compound or list claims. The claim asserts "3 days for a new record **and** 7 days for an old manual record" — two separately checkable figures, and two different answers for two different citizens. It is cited in the `time` cell, so unlike the waived list claims it is load-bearing.
+
+The manifest entry waives three comparable claims (`claim_delhi_birth_issuing_local_bodies`, `claim_delhi_birth_application_particulars`, `claim_delhi_birth_mcd_domiciliary_route`) on the reasoning that a single published list or row is one checkable fact. That reasoning reaches this claim too — it reports one row of one published time schedule — but no waiver names it. Section 8 states an unwaived finding blocks audit.
+
+No ledger correction proposed: the honest remedies are either a manifest `lintWaivers` entry on the same reasoning already accepted for `claim_delhi_birth_application_particulars`, or a split into two claims with both added to `/cells/time/claimIds`. Choosing between them is a maintainer call, and the manifest is not an expectations or ledger record. Flagged for disposition.
+
+### F12 — `claim_delhi_birth_mcd_citizen_surface_behind_signup_2` asserts more breadth than it cites
+
+The claim text is a negative across "**any** reviewed public MCD page", but its `sourceIds` list only `source_delhi_birth_mcd_rbd_instructions`. A second MCD source exists in this ledger (`source_delhi_birth_mcd_citizen_charter`, whose notes record it was "found after the first audit run and added before re-audit"). Section 7 requires the citation to carry the claim.
+
+No correction proposed. Narrowing the text to the page actually cited would be the safe fix, and adding the charter as a second source would be the other, but I cannot confirm from the ledger and sidecar text alone that the certificate search-and-download surface was looked for on the charter — and section 13 bars inventing evidence to make a record complete. The claim supports no cell value, so nothing downstream turns on it.
+
+### F13 — the two Sub-Registrar designation claims are cited in no cell; checked and correct
+
+`claim_delhi_birth_subregistrar_designation` (vaccinators) and `_2` (paramedical staff of health centres) are `verified` Grade C and are cited in no cell's `claimIds`, even though the first claim's notes argue relevance to the copy route because the FAQ directs the plain-paper application to the concerned area Registrar or Sub-Registrar.
+
+That omission is correct. Section 8 (`owner`) says "A statutory designation or general agency name alone is `mentioned`" — a designation by staff category tells a citizen what a Sub-Registrar is, but not which office holds their case. The `owner` cell reaches `stated` on the zone-tied Registrar designation and the area-wise directory, and adding these would not strengthen it. They are correctly retained in the ledger and correctly left out of the grid.
+
+### F14 — archive-snapshot rule: consistent documented deviation across all five sources
+
+Section 11 requires an archive snapshot captured **at access time** for every public source used, and where capture fails, a recorded access date, failure, and limitation. All five sources record a pre-existing Wayback snapshot, state "no new capture was pushed from this run", and state the limitation that the snapshot predates the 2026-09-06 access date. This is documented rather than silent, and section 14 accepts "a Wayback snapshot or documented archival failure", but a not-attempted capture is not a failed capture. Flagged; no correction, since this is a run-level practice issue affecting every source uniformly rather than a defect in any one record.
+
+### F15 — two borderline compound claims checked and judged atomic
+
+`claim_delhi_birth_chief_registrar_not_issuer` ("does not itself issue ... and issues only certified copies of English-translated birth certificates") is one delimitation of a single office's issuing scope, the second half being a carve-out from the first, not an independent assertion. `claim_delhi_birth_mcd_zone_routing` ("must be applied to the zone where the event took place and ... an incorrect zone might lead to rejection") is one published instruction with its stated consequence. Both pass the section 8 atomicity check. No change.
+
+### F16 — gate checks that pass
+
+- **Citation gate (section 7).** Every non-`Unknown` claim carries at least one `sourceId`; the only claim with an empty `sourceIds` is `claim_delhi_birth_post_submission_surface_unknown`, which is Grade `Unknown` and so is permitted by both the gate and `schemas/ledger.json`'s conditional `minItems`. All five source URLs resolve to specific pages, forms or documents — none is a department homepage used as a specific citation, so no claim is downgraded on that ground.
+- **Source dates (section 8, check 5).** The two DES pages carry `publishedAt` 2026-08-17 with a note naming the visible footer date. The three undated sources each state "no visible date" plus an explicit currency limitation. Clean.
+- **Grades (section 4).** Grade C on all Chief Registrar charter claims is right — the document is undated and names the pre-2022 trifurcated corporations. Grade B on the DES FAQ, DES registration page and MCD instructions claims is right — current official agency pages and direct observation of a public official interface. The single defect is F8.
+- **Basis (section 5).** All `observation` claims report what a source shows; the one `inference` claim (`claim_delhi_birth_post_submission_surface_unknown`) is correctly Grade `Unknown` and status `unknown`; the one correctly-`mixed` claim explains its boundary in notes. The single defect is F7.
+- **Cell support status (section 8).** Every claim listed in every cell's `claimIds` is `verified` or `partial`. No `contested` or `unknown` claim supports any cell value.
+- **Scenario tags and reference integrity (sections 2, 7).** Every claim carries `scenario_ind32_birth_copy_workflow` and no other scenario; no aliases. Every `sourceId` referenced by a claim, and every `claimId` referenced by the sidecar, resolves to an existing record. `primaryScenarioId` matches across manifest, ledger and sidecar.
+- **Grid-only shape.** `nodes`, `edges`, `roadblocks` and `journeys` are empty and `pathNodeIds` is empty, consistent with the manifest's `mode: "grid-only"`. Section 6's `researchedNoSourceFound` rules are therefore not engaged: no node exists to carry a marker, so there is no unbacked marker to remove.
+- **Safety (section 16).** The ledger records the portal signup wall as an uncrossed boundary, states no login was used and no personal data entered, and carries the disclaimer and `asOf` date in `meta`.

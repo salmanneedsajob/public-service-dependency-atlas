@@ -13,7 +13,9 @@
       "new": "BMC publishes a ward list naming its twenty-four wards.",
       "reason": "Compound claim. Protocol section 1 requires one claim to assert one checkable thing and section 8 lint item 1 flags compound claims; the publication of the ward list and the portal runtime error observed on the same page are two independently checkable facts joined by 'and'. The text is narrowed to the publication fact and the observation is moved to a new atomic claim. Record identity is preserved as section 1 requires; no expectation cell cites this claim, so no cell is affected.",
       "support": {
-        "sourceIds": ["source_mumbai_birth_ward_list"],
+        "sourceIds": [
+          "source_mumbai_birth_ward_list"
+        ],
         "auditNote": "Both facts are already recorded verbatim in the notes of source_mumbai_birth_ward_list, so the split creates no new evidence. See audit finding F1."
       }
     },
@@ -27,9 +29,13 @@
         "id": "claim_mumbai_birth_ward_list_runtime_error",
         "text": "BMC's ward list page rendered a portal runtime error reading 'An exception occurred while processing your request. Send the exception ID to your portal administrator.' with exception ID 10:21_06/09/26_302592051 on the access date.",
         "jurisdiction": "Mumbai, Maharashtra, India",
-        "scenarioIds": ["scenario_ind32_birth_copy_workflow"],
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
         "nodeIds": [],
-        "sourceIds": ["source_mumbai_birth_ward_list"],
+        "sourceIds": [
+          "source_mumbai_birth_ward_list"
+        ],
         "evidenceGrade": "B",
         "basis": "observation",
         "status": "verified",
@@ -38,7 +44,9 @@
       },
       "reason": "Addition completing the atomicity split in the preceding correction: the runtime error observed on the ward list page is recorded as its own claim so it can be checked, contradicted or superseded independently of the fact that the ward list is published.",
       "support": {
-        "sourceIds": ["source_mumbai_birth_ward_list"],
+        "sourceIds": [
+          "source_mumbai_birth_ward_list"
+        ],
         "auditNote": "The error text and exception ID are taken from the existing text of claim_mumbai_birth_ward_list_published and the notes of source_mumbai_birth_ward_list. No new evidence is asserted. See audit finding F1."
       }
     },
@@ -51,7 +59,9 @@
       "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: the document's own masthead reads 'MUNICIPAL CORPORATION OF GREATER MUMBAI, PUBLIC HEALTH DEPARTMENT' and it is signed 'sd/- Executive Health Officer'. It carries no visible date on its face; the PDF metadata records a creation date of 2018-09-10, which is recorded as the best available dating and as a limitation, so claims from it are graded C as potentially outdated official material. Six pages in English, Marathi and Hindi; only the English section is quoted. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240616125010/https://portal.mcgm.gov.in/irj/go/km/docs/documents/MCGM%20Department%20List/Public%20Health%20Department/Docs/FAQ%20Birth%20and%20Death%20Registration%20-%20English,%20Marathi,%20Hindi.pdf (2024-06-16); no new capture was pushed from this run.",
       "reason": "Protocol section 11 requires the snapshot URL to be recorded with the source, and section 14 requires a Wayback snapshot or a documented archival failure. The recorded URL is truncated after the timestamp and carries no target, so it does not resolve to the snapshot the note asserts was found. The URL is completed to the canonical Wayback form using the timestamp already recorded and this source's own url field.",
       "support": {
-        "sourceIds": ["source_mumbai_birth_ph_faq"],
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
         "auditNote": "Change of expression only: the same snapshot and the same capture date already asserted in the record are rewritten in resolvable form. No new snapshot, date or finding is asserted. See audit finding F2."
       }
     },
@@ -64,9 +74,1111 @@
       "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'MyBMC - Welcome to BMC's Website'. A live official interface reached without login; it shows no visible last-updated or version date, which is recorded as a limitation. Fourteen questions in English, read in full. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220307174225/https://portal.mcgm.gov.in/irj/servlet/prt/portal/prtroot/com.mcgm.acitizenservices_healthservices.HowToApplyForBirthCertificate (2022-03-07); no new capture was pushed from this run.",
       "reason": "Protocol section 11 requires the snapshot URL to be recorded with the source, and section 14 requires a Wayback snapshot or a documented archival failure. The recorded URL is truncated after the timestamp and carries no target, so it does not resolve. The URL is completed to the canonical Wayback form using the timestamp already recorded and this source's own url field.",
       "support": {
-        "sourceIds": ["source_mumbai_birth_portal_apply_faq"],
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
         "auditNote": "Change of expression only; no new snapshot, date or finding is asserted. See audit finding F3."
       }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b01",
+      "recordType": "source",
+      "recordId": "source_mumbai_birth_portal_health_page",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'MyBMC - Welcome to BMC's Website', with the page text naming 'the Health Department ... of BMC'. The page footer displays 'Last updated on 31/12/2016', recorded as publishedAt; on that basis it is visibly outdated and claims from it are graded C. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250430014324/https://portal.mcgm.gov.in/irj/portal/anonymous/qlhealth?guest_user=english (2025-04-30); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'MyBMC - Welcome to BMC's Website', with the page text naming 'the Health Department ... of BMC'. The page footer displays 'Last updated on 31/12/2016', recorded as publishedAt; on that basis it is visibly outdated and claims from it are graded C. Limitation: the page has not been updated for nearly ten years, so what it states may not be current. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250430014324/https://portal.mcgm.gov.in/irj/portal/anonymous/qlhealth?guest_user=english (2025-04-30); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the page as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an outdated, archived source without a stated limitation. The staleness limitation and the archive limitation are now stated in words; the grade C already assigned is unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_health_page"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b02",
+      "recordType": "source",
+      "recordId": "source_mumbai_birth_quicklink_error",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: the page renders inside the 'MyBMC' shell of the Brihanmumbai Municipal Corporation. Direct current observation of a public official interface: the route returns 'Service cannot be reached', 'URL call was terminated because the corresponding service is not available', 'HTTP 403 - Forbidden'. The same result was observed on the parallel host www.mcgm.gov.in. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20251228084813/https://portal.mcgm.gov.in/irj/portal/anonymous/qlbirthcertificate?guest_user=english (2025-12-28); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: the page renders inside the 'MyBMC' shell of the Brihanmumbai Municipal Corporation. Visible date: none is shown; the error page carries no publication or revision date. Direct current observation of a public official interface: the route returns 'Service cannot be reached', 'URL call was terminated because the corresponding service is not available', 'HTTP 403 - Forbidden'. The same result was observed on the parallel host www.mcgm.gov.in. Limitation: an error page is undated by nature, so this records the route's state on the access date only. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20251228084813/https://portal.mcgm.gov.in/irj/portal/anonymous/qlbirthcertificate?guest_user=english (2025-12-28); no new capture was pushed from this run. Limitation: that snapshot predates the access date and does not preserve the failure observed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported that the source lacks publishedAt without a visible-date note and that an undated, archived source carried no stated limitation. Both are now stated, including the limitation that no snapshot preserves the observed failure.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_quicklink_error"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b03",
+      "recordType": "source",
+      "recordId": "source_mumbai_birth_ward_list",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'MyBMC - Welcome to BMC's Website'. The page footer displays 'Last updated on 16/04/2026', recorded as publishedAt. Direct current observation: the page lists the wards and, below the list, renders 'Portal runtime error - An exception occurred while processing your request. Send the exception ID to your portal administrator. Exception ID 10:21_06/09/26_302592051'. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220805115551/https://portal.mcgm.gov.in/irj/portal/anonymous/qlallward (2022-08-05); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'MyBMC - Welcome to BMC's Website'. The page footer displays 'Last updated on 16/04/2026', recorded as publishedAt. Direct current observation: the page lists the wards and, below the list, renders 'Portal runtime error - An exception occurred while processing your request. Send the exception ID to your portal administrator. Exception ID 10:21_06/09/26_302592051'. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220805115551/https://portal.mcgm.gov.in/irj/portal/anonymous/qlallward (2022-08-05); no new capture was pushed from this run. Limitation: that snapshot is four years older than the access date and does not preserve the runtime error observed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an archived source without a stated limitation. The archive limitation is now stated: the only snapshot long predates the access date and does not preserve the observed error.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ward_list"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b04",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_fee_post_2016_six_rupees",
+      "fieldPath": "/text",
+      "old": "The MCGM Public Health Department FAQ states that for birth events occurring after 1 January 2016 a charge of Rs. 6 applies for each copy, because the certificates are generated from the Central Government's Civil Registration System software on the website crs.orgi.gov.in.",
+      "new": "The MCGM Public Health Department FAQ states that for birth events occurring after 1 January 2016 a charge of Rs. 6 applies for each copy.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried an amount and the reason the FAQ gives for it, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b05",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_fee_post_2016_six_rupees",
+      "fieldPath": "/notes",
+      "old": "An amount a citizen pays, for the period that covers a birth registered in recent years. Graded C because the document is undated on its face and its file metadata dates it to 2018.",
+      "new": "An amount a citizen pays, for the period that covers a birth registered in recent years. Graded C because the document is undated on its face and its file metadata dates it to 2018. Split during IND-91 part B lint remediation; the reason the FAQ gives for the charge is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried an amount and the reason the FAQ gives for it, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b06",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_fee_post_2016_six_rupees_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_fee_post_2016_six_rupees_2",
+        "text": "The same FAQ attributes that charge to certificates being generated from the Central Government's Civil Registration System software on crs.orgi.gov.in.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_fee_post_2016_six_rupees. The reason given for the charge is separately checkable from the amount."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried an amount and the reason the FAQ gives for it, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b07",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_obtain_at_ward_cfc",
+      "fieldPath": "/text",
+      "old": "The MCGM Public Health Department FAQ states that citizens can obtain a birth certificate from the Civic Facility Center of the ward office after applying in the prescribed format and paying the necessary charges, on working days between 8 a.m. and 8 p.m.",
+      "new": "The MCGM Public Health Department FAQ states that citizens can obtain a birth certificate from the Civic Facility Center of the ward office after applying in the prescribed format.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried where the certificate is obtained, that charges are paid there, and the counter's opening hours: three independently checkable facts, and the time and owner cells rest on different ones.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b08",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_obtain_at_ward_cfc",
+      "fieldPath": "/notes",
+      "old": "Counter opening hours, not a processing duration.",
+      "new": "Split during IND-91 part B lint remediation into the collection point, the payment step and the counter hours.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried where the certificate is obtained, that charges are paid there, and the counter's opening hours: three independently checkable facts, and the time and owner cells rest on different ones.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b09",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_obtain_at_ward_cfc_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_obtain_at_ward_cfc_2",
+        "text": "The same FAQ states that the necessary charges are paid at that Civic Facility Center.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_obtain_at_ward_cfc. The payment step is separately checkable from the collection point."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried where the certificate is obtained, that charges are paid there, and the counter's opening hours: three independently checkable facts, and the time and owner cells rest on different ones.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b10",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_obtain_at_ward_cfc_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_obtain_at_ward_cfc_3",
+        "text": "The same FAQ gives the Civic Facility Center hours as working days between 8 a.m. and 8 p.m.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_obtain_at_ward_cfc. Counter opening hours, not a processing duration."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried where the certificate is obtained, that charges are paid there, and the counter's opening hours: three independently checkable facts, and the time and owner cells rest on different ones.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b11",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_issued_by_registrar_of_place",
+      "fieldPath": "/text",
+      "old": "The MCGM Public Health Department FAQ states that a birth certificate is issued by the Registrar of the local government institution of the place where the event occurred, so a certificate cannot be obtained in Mumbai for an event that happened outside Mumbai.",
+      "new": "The MCGM Public Health Department FAQ states that a birth certificate is issued by the Registrar of the local government institution of the place where the event occurred.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried an issuing rule and the territorial consequence drawn from it, two independently checkable facts cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility and owner cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b12",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_issued_by_registrar_of_place",
+      "fieldPath": "/notes",
+      "old": "",
+      "new": "Split during IND-91 part B lint remediation; the consequence for an event outside Mumbai is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried an issuing rule and the territorial consequence drawn from it, two independently checkable facts cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b13",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_issued_by_registrar_of_place_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_issued_by_registrar_of_place_2",
+        "text": "The same FAQ states that a certificate cannot be obtained in Mumbai for an event that happened outside Mumbai.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_issued_by_registrar_of_place. The territorial consequence is separately checkable from the issuing rule."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried an issuing rule and the territorial consequence drawn from it, two independently checkable facts cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility and owner cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b14",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_apply_at_cfc_or_online",
+      "fieldPath": "/text",
+      "old": "BMC's birth-certificate application FAQ states that the applicant may visit the nearest Citizen Facilitation Center established by the Municipal Corporation belonging to any of the 24 wards of BMC, or fill in the online application form on the Citizen Portal, provided the applicant's birth is already registered with BMC.",
+      "new": "BMC's birth-certificate application FAQ states that the applicant may visit the nearest Citizen Facilitation Center established by the Municipal Corporation belonging to any of the 24 wards of BMC.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The sentence carried two alternative routes and a proviso governing both, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b15",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_apply_at_cfc_or_online",
+      "fieldPath": "/notes",
+      "old": "The proviso 'provided applicant's birth is already registered with BMC' matches this scenario's trigger.",
+      "new": "Split during IND-91 part B lint remediation into the counter route, the online route and the proviso common to both.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The sentence carried two alternative routes and a proviso governing both, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b16",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_apply_at_cfc_or_online_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_apply_at_cfc_or_online_2",
+        "text": "The same FAQ states that the applicant may instead fill in the online application form on the Citizen Portal.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_apply_at_cfc_or_online. The online route is separately checkable from the counter route."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The sentence carried two alternative routes and a proviso governing both, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b17",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_apply_at_cfc_or_online_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_apply_at_cfc_or_online_3",
+        "text": "The same FAQ makes both routes available provided the applicant's birth is already registered with BMC.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_apply_at_cfc_or_online. The proviso 'provided applicant's birth is already registered with BMC' matches this scenario's trigger and is the part of the sentence the eligibility cell rests on."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The sentence carried two alternative routes and a proviso governing both, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b18",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_records_after_1996_online",
+      "fieldPath": "/text",
+      "old": "BMC's birth-certificate application FAQ states that birth records after the year 1996 are available in the system but records prior to 1996 may not be available in the system as of now, and directs the applicant to the nearest ward for further help.",
+      "new": "BMC's birth-certificate application FAQ states that birth records after the year 1996 are available in the system.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried a rule, its qualification and a fallback route, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b19",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_records_after_1996_online",
+      "fieldPath": "/notes",
+      "old": "A rule that decides which route applies: online for post-1996 records, the ward counter otherwise.",
+      "new": "A rule that decides which route applies: online for post-1996 records, the ward counter otherwise. Split during IND-91 part B lint remediation into the post-1996 rule, the pre-1996 qualification and the direction to the ward.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried a rule, its qualification and a fallback route, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b20",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_records_after_1996_online_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_records_after_1996_online_2",
+        "text": "The same FAQ states that records prior to 1996 may not be available in the system as of now.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_records_after_1996_online. The pre-1996 qualification is separately checkable from the post-1996 rule."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried a rule, its qualification and a fallback route, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b21",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_records_after_1996_online_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_records_after_1996_online_3",
+        "text": "The same FAQ directs an applicant whose record is not in the system to the nearest ward for further help.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_records_after_1996_online. The fallback route is separately checkable from the availability rule."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried a rule, its qualification and a fallback route, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b22",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_search_by_registration_number",
+      "fieldPath": "/text",
+      "old": "BMC's birth-certificate application FAQ states that the applicant searches the registration record by entering the registration number provided by the hospital, nursing home or maternity home, and that where the registration number is not known the search may instead use gender, date of birth, ward, father's name, mother's name or hospital name.",
+      "new": "BMC's birth-certificate application FAQ states that the applicant searches the registration record by entering the registration number provided by the hospital, nursing home or maternity home.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 347 characters. The sentence carried the default search route and the alternative route where the registration number is not known, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b23",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_search_by_registration_number",
+      "fieldPath": "/notes",
+      "old": "",
+      "new": "Split during IND-91 part B lint remediation; the alternative search fields are asserted separately by claim_mumbai_birth_search_by_registration_number_2.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 347 characters. The sentence carried the default search route and the alternative route where the registration number is not known, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b24",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_search_by_registration_number_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_search_by_registration_number_2",
+        "text": "Where the registration number is not known the same FAQ allows the search to use gender, date of birth, ward, father's name, mother's name or hospital name.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_search_by_registration_number. This fragment carries the FAQ's published list of alternative search fields, which is one published list and is waived on the manifest entry."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 347 characters. The sentence carried the default search route and the alternative route where the registration number is not known, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b25",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_fee_topic_without_amount",
+      "fieldPath": "/text",
+      "old": "BMC's birth-certificate application FAQ answers the question whether a fee must be paid by describing only how to pay, saying that online payment can be made by net banking from the listed banks through the payment gateway, without stating any amount.",
+      "new": "BMC's birth-certificate application FAQ answers the question whether a fee must be paid without stating any amount.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried what the FAQ omits and what it says instead, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b26",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_fee_topic_without_amount",
+      "fieldPath": "/notes",
+      "old": "A payment step without an amount; recorded to show where the citizen is left, not to support the cost cell, which rests on the Public Health Department schedule.",
+      "new": "A payment step without an amount; recorded to show where the citizen is left, not to support the cost cell, which rests on the Public Health Department schedule. Split during IND-91 part B lint remediation; what the answer does describe is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried what the FAQ omits and what it says instead, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b27",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_fee_topic_without_amount_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_fee_topic_without_amount_2",
+        "text": "That answer describes only how to pay, saying that online payment can be made by net banking from the listed banks through the payment gateway.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_fee_topic_without_amount. What the FAQ does say is separately checkable from what it omits."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried what the FAQ omits and what it says instead, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b28",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_cfc_issues_certificate_and_receipt",
+      "fieldPath": "/text",
+      "old": "BMC's birth-certificate application FAQ states that the Citizen Facilitation Center agent collects the necessary fees and required documents, and as a final step prints and issues the certificates and a fee receipt to the applicant.",
+      "new": "BMC's birth-certificate application FAQ states that the Citizen Facilitation Center agent collects the necessary fees and required documents.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried what the counter agent takes in and what the applicant receives at the end, two independently checkable facts, and only the second is after-submission evidence.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b29",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_cfc_issues_certificate_and_receipt",
+      "fieldPath": "/notes",
+      "old": "A result and a receipt the applicant receives after submitting at the counter.",
+      "new": "Split during IND-91 part B lint remediation; what the applicant receives at the end is asserted separately by claim_mumbai_birth_cfc_issues_certificate_and_receipt_2, which is the fragment the after-submission cell rests on.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried what the counter agent takes in and what the applicant receives at the end, two independently checkable facts, and only the second is after-submission evidence.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b30",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_cfc_issues_certificate_and_receipt_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_cfc_issues_certificate_and_receipt_2",
+        "text": "The same FAQ states that as a final step the agent prints and issues the certificate and a fee receipt to the applicant.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_cfc_issues_certificate_and_receipt. A result and a receipt the applicant receives after submitting at the counter."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried what the counter agent takes in and what the applicant receives at the end, two independently checkable facts, and only the second is after-submission evidence.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b31",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_delivery_mode_choice",
+      "fieldPath": "/text",
+      "old": "BMC's birth-certificate application FAQ states that the applicant chooses a mode of delivery, either collecting the certificate from the ward or having it couriered to the applicant's address, and that a couriered certificate will arrive within the days stipulated by the Department of Posts.",
+      "new": "BMC's birth-certificate application FAQ states that the applicant chooses a mode of delivery, either collecting the certificate from the ward or having it couriered to the applicant's address.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried the choice of delivery mode and the period for the courier option, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: the time cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b32",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_delivery_mode_choice",
+      "fieldPath": "/notes",
+      "old": "The delivery period is expressed by reference to another department's unstated schedule, so it carries no figure the citizen can act on.",
+      "new": "Split during IND-91 part B lint remediation; the courier period is asserted separately by claim_mumbai_birth_delivery_mode_choice_2.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried the choice of delivery mode and the period for the courier option, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b33",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_delivery_mode_choice_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_delivery_mode_choice_2",
+        "text": "The same FAQ states that a couriered certificate will arrive within the days stipulated by the Department of Posts.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_delivery_mode_choice. The delivery period is expressed by reference to another department's unstated schedule, so it carries no figure the citizen can act on."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried the choice of delivery mode and the period for the courier option, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: the time cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b34",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_quicklink_http_403",
+      "fieldPath": "/text",
+      "old": "The corporation's own quick link 'Application for Birth Certificate' returned an error page reading 'Service cannot be reached', 'URL call was terminated because the corresponding service is not available' and 'HTTP 403 - Forbidden' on the access date, on both portal.mcgm.gov.in and www.mcgm.gov.in.",
+      "new": "The corporation's own quick link 'Application for Birth Certificate' returned an error page reading 'Service cannot be reached' on the access date.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 300 characters. The observation carried three separately checkable parts: the headline message, the error text with its status code, and that both hosts behaved the same way.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_quicklink_error"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b35",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_quicklink_http_403",
+      "fieldPath": "/notes",
+      "old": "Direct current observation of a public official interface. Recorded as observed rather than replaced by a homepage.",
+      "new": "Direct current observation of a public official interface. Recorded as observed rather than replaced by a homepage. Split during IND-91 part B lint remediation into the three separately checkable parts of the observation.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 300 characters. The observation carried three separately checkable parts: the headline message, the error text with its status code, and that both hosts behaved the same way.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_quicklink_error"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b36",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_quicklink_http_403_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_quicklink_http_403_2",
+        "text": "The same error page read 'URL call was terminated because the corresponding service is not available' and 'HTTP 403 - Forbidden'.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_quicklink_error"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_quicklink_http_403. The error text and status code are separately checkable from the page's headline message."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 300 characters. The observation carried three separately checkable parts: the headline message, the error text with its status code, and that both hosts behaved the same way.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_quicklink_error"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b37",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_quicklink_http_403_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_quicklink_http_403_3",
+        "text": "The same result was observed on both portal.mcgm.gov.in and www.mcgm.gov.in.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_quicklink_error"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_quicklink_http_403. That both hosts fail is separately checkable from what the failure says."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 300 characters. The observation carried three separately checkable parts: the headline message, the error text with its status code, and that both hosts behaved the same way.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_quicklink_error"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b38",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_ward_list_runtime_error",
+      "fieldPath": "/text",
+      "old": "BMC's ward list page rendered a portal runtime error reading 'An exception occurred while processing your request. Send the exception ID to your portal administrator.' with exception ID 10:21_06/09/26_302592051 on the access date.",
+      "new": "BMC's ward list page rendered a portal runtime error reading 'An exception occurred while processing your request.' on the access date.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The observation carried the error message, the instruction it gives and the exception ID, three separately checkable parts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ward_list"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b39",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_ward_list_runtime_error",
+      "fieldPath": "/notes",
+      "old": "Split by audit from claim_mumbai_birth_ward_list_published for atomicity under protocol section 1. Direct current observation of a public official interface, graded B under the section 4 table and the public-workflow rule in section 1.",
+      "new": "Split by audit from claim_mumbai_birth_ward_list_published for atomicity under protocol section 1. Direct current observation of a public official interface, graded B under the section 4 table and the public-workflow rule in section 1. Split again during IND-91 part B lint remediation into the error, its instruction and its exception ID.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The observation carried the error message, the instruction it gives and the exception ID, three separately checkable parts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ward_list"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b40",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_ward_list_runtime_error_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_ward_list_runtime_error_2",
+        "text": "The same error page instructed the reader to send the exception ID to the portal administrator.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_ward_list"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_ward_list_runtime_error. The instruction is separately checkable from the error message."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The observation carried the error message, the instruction it gives and the exception ID, three separately checkable parts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ward_list"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b41",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_ward_list_runtime_error_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_ward_list_runtime_error_3",
+        "text": "The exception ID displayed on the access date was 10:21_06/09/26_302592051.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_birth_ward_list"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_birth_ward_list_runtime_error. A system-generated diagnostic identifier, not personal data."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The observation carried the error message, the instruction it gives and the exception ID, three separately checkable parts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ward_list"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b42",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:cost",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_mumbai_birth_fee_post_2016_six_rupees",
+        "claim_mumbai_birth_fee_pre_2016_first_copy_free",
+        "claim_mumbai_birth_fee_pre_2016_non_relative"
+      ],
+      "new": [
+        "claim_mumbai_birth_fee_post_2016_six_rupees",
+        "claim_mumbai_birth_fee_post_2016_six_rupees_2",
+        "claim_mumbai_birth_fee_pre_2016_first_copy_free",
+        "claim_mumbai_birth_fee_pre_2016_non_relative"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the Rs. 6 amount, eligibility the two routes and the proviso, time the counter hours and the courier period, after-submission the certificate and receipt the applicant is given. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b43",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_mumbai_birth_apply_at_cfc_or_online",
+        "claim_mumbai_birth_records_after_1996_online",
+        "claim_mumbai_birth_issued_by_registrar_of_place",
+        "claim_mumbai_birth_registered_in_concerned_ward"
+      ],
+      "new": [
+        "claim_mumbai_birth_apply_at_cfc_or_online",
+        "claim_mumbai_birth_apply_at_cfc_or_online_2",
+        "claim_mumbai_birth_apply_at_cfc_or_online_3",
+        "claim_mumbai_birth_records_after_1996_online",
+        "claim_mumbai_birth_records_after_1996_online_2",
+        "claim_mumbai_birth_records_after_1996_online_3",
+        "claim_mumbai_birth_issued_by_registrar_of_place",
+        "claim_mumbai_birth_issued_by_registrar_of_place_2",
+        "claim_mumbai_birth_registered_in_concerned_ward"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the Rs. 6 amount, eligibility the two routes and the proviso, time the counter hours and the courier period, after-submission the certificate and receipt the applicant is given. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq",
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b44",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:time",
+      "fieldPath": "/cells/time/claimIds",
+      "old": [
+        "claim_mumbai_birth_obtain_at_ward_cfc",
+        "claim_mumbai_birth_delivery_mode_choice"
+      ],
+      "new": [
+        "claim_mumbai_birth_obtain_at_ward_cfc",
+        "claim_mumbai_birth_obtain_at_ward_cfc_3",
+        "claim_mumbai_birth_delivery_mode_choice",
+        "claim_mumbai_birth_delivery_mode_choice_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the Rs. 6 amount, eligibility the two routes and the proviso, time the counter hours and the courier period, after-submission the certificate and receipt the applicant is given. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq",
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b45",
+      "recordType": "expectations",
+      "recordId": "birth-certificate:after-submission",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [
+        "claim_mumbai_birth_cfc_issues_certificate_and_receipt"
+      ],
+      "new": [
+        "claim_mumbai_birth_cfc_issues_certificate_and_receipt",
+        "claim_mumbai_birth_cfc_issues_certificate_and_receipt_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the Rs. 6 amount, eligibility the two routes and the proviso, time the counter hours and the courier period, after-submission the certificate and receipt the applicant is given. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_mumbai_birth_certificate_b01",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_ward_list_runtime_error_3",
+      "fieldPath": "/notes",
+      "old": "Split during IND-91 part B lint remediation from claim_mumbai_birth_ward_list_runtime_error. A system-generated diagnostic identifier, not personal data.",
+      "new": "Split during IND-91 part B lint remediation from claim_mumbai_birth_ward_list_runtime_error. A system-generated diagnostic identifier printed on a public error page. The page was read without a login and no personal data was entered.",
+      "reason": "Pre-audit lint reported login-boundary-overclaim because the note used the phrase 'personal data' without uncertainty wording. The note now records the observation boundary: the page is public, it was read without a login, and no personal data was entered.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ward_list"
+        ],
+        "auditNote": "IND-91 part B: login-boundary-overclaim finding fixed by recording the observation boundary in the notes."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "birth-certificate:after-submission",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [
+        "claim_mumbai_birth_cfc_issues_certificate_and_receipt",
+        "claim_mumbai_birth_cfc_issues_certificate_and_receipt_2"
+      ],
+      "new": [
+        "claim_mumbai_birth_cfc_issues_certificate_and_receipt_2"
+      ],
+      "reason": "claim_mumbai_birth_cfc_issues_certificate_and_receipt asserts only that the Citizen Facilitation Center agent collects the necessary fees and required documents. Under the PROTOCOL section 8 after-submission definition, a step at or before submission, including document presentation and payment, is not after-submission evidence, so this claim cannot support the cell. The cell remains stated on claim_mumbai_birth_cfc_issues_certificate_and_receipt_2, which gives the printed certificate and the fee receipt the applicant receives.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "The ledger note on the removed claim already says the _2 fragment 'is the fragment the after-submission cell rests on', and the cell note already excludes online payment 'because payment is a step at submission under the cell definition'; the listing contradicted the sidecar's own reasoning. No state change: after-submission stays stated."
+      },
+      "id": "corr_mumbai_birth_certificate_r01"
+    },
+    {
+      "recordType": "source",
+      "recordId": "source_mumbai_birth_ph_faq",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: the document's own masthead reads 'MUNICIPAL CORPORATION OF GREATER MUMBAI, PUBLIC HEALTH DEPARTMENT' and it is signed 'sd/- Executive Health Officer'. It carries no visible date on its face; the PDF metadata records a creation date of 2018-09-10, which is recorded as the best available dating and as a limitation, so claims from it are graded C as potentially outdated official material. Six pages in English, Marathi and Hindi; only the English section is quoted. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240616125010/https://portal.mcgm.gov.in/irj/go/km/docs/documents/MCGM%20Department%20List/Public%20Health%20Department/Docs/FAQ%20Birth%20and%20Death%20Registration%20-%20English,%20Marathi,%20Hindi.pdf (2024-06-16); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: the document's own masthead reads 'MUNICIPAL CORPORATION OF GREATER MUMBAI, PUBLIC HEALTH DEPARTMENT' and it is signed 'sd/- Executive Health Officer'. It carries no visible date on its face; the PDF metadata records a creation date of 2018-09-10, which is recorded as the best available dating and as a limitation, so claims from it are graded C as potentially outdated official material. Six pages in English, Marathi and Hindi; only the English section is quoted. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240616125010/https://portal.mcgm.gov.in/irj/go/km/docs/documents/MCGM%20Department%20List/Public%20Health%20Department/Docs/FAQ%20Birth%20and%20Death%20Registration%20-%20English,%20Marathi,%20Hindi.pdf (2024-06-16); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the source as reviewed on 2026-09-06.",
+      "reason": "PROTOCOL section 11 requires that where no snapshot is captured at access time the access date, the failure and a limitation are recorded. The recorded Wayback copy is dated 2024-06-16, more than two years before the 2026-09-06 access date, and no capture was pushed from this run. The limitation was omitted, unlike source_mumbai_birth_portal_health_page, source_mumbai_birth_quicklink_error and source_mumbai_birth_ward_list, which record exactly this limitation for the same situation.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_ph_faq"
+        ],
+        "auditNote": "Judged from the source's own notes field as written; no URL was opened and no archive was checked. The added sentence reuses the wording the other three sources in this ledger already use."
+      },
+      "id": "corr_mumbai_birth_certificate_r02"
+    },
+    {
+      "recordType": "source",
+      "recordId": "source_mumbai_birth_portal_apply_faq",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'MyBMC - Welcome to BMC's Website'. A live official interface reached without login; it shows no visible last-updated or version date, which is recorded as a limitation. Fourteen questions in English, read in full. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220307174225/https://portal.mcgm.gov.in/irj/servlet/prt/portal/prtroot/com.mcgm.acitizenservices_healthservices.HowToApplyForBirthCertificate (2022-03-07); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'MyBMC - Welcome to BMC's Website'. A live official interface reached without login; it shows no visible last-updated or version date, which is recorded as a limitation. Fourteen questions in English, read in full. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220307174225/https://portal.mcgm.gov.in/irj/servlet/prt/portal/prtroot/com.mcgm.acitizenservices_healthservices.HowToApplyForBirthCertificate (2022-03-07); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the source as reviewed on 2026-09-06.",
+      "reason": "PROTOCOL section 11 requires that where no snapshot is captured at access time the access date, the failure and a limitation are recorded. The recorded Wayback copy is dated 2022-03-07, more than four years before the 2026-09-06 access date on which the page was read in full, and no capture was pushed from this run. The limitation was omitted, unlike source_mumbai_birth_portal_health_page, source_mumbai_birth_quicklink_error and source_mumbai_birth_ward_list, which record exactly this limitation for the same situation.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_birth_portal_apply_faq"
+        ],
+        "auditNote": "Judged from the source's own notes field as written; no URL was opened and no archive was checked. The added sentence reuses the wording the other three sources in this ledger already use."
+      },
+      "id": "corr_mumbai_birth_certificate_r03"
+    }
+  ],
+  "runs": [
+    {
+      "runId": "ind91_part_b_lint_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B pre-audit lint remediation (protocol section 8).",
+      "correctionIds": [
+        "corr_mumbai_birth_certificate_b01",
+        "corr_mumbai_birth_certificate_b02",
+        "corr_mumbai_birth_certificate_b03",
+        "corr_mumbai_birth_certificate_b04",
+        "corr_mumbai_birth_certificate_b05",
+        "corr_mumbai_birth_certificate_b06",
+        "corr_mumbai_birth_certificate_b07",
+        "corr_mumbai_birth_certificate_b08",
+        "corr_mumbai_birth_certificate_b09",
+        "corr_mumbai_birth_certificate_b10",
+        "corr_mumbai_birth_certificate_b11",
+        "corr_mumbai_birth_certificate_b12",
+        "corr_mumbai_birth_certificate_b13",
+        "corr_mumbai_birth_certificate_b14",
+        "corr_mumbai_birth_certificate_b15",
+        "corr_mumbai_birth_certificate_b16",
+        "corr_mumbai_birth_certificate_b17",
+        "corr_mumbai_birth_certificate_b18",
+        "corr_mumbai_birth_certificate_b19",
+        "corr_mumbai_birth_certificate_b20",
+        "corr_mumbai_birth_certificate_b21",
+        "corr_mumbai_birth_certificate_b22",
+        "corr_mumbai_birth_certificate_b23",
+        "corr_mumbai_birth_certificate_b24",
+        "corr_mumbai_birth_certificate_b25",
+        "corr_mumbai_birth_certificate_b26",
+        "corr_mumbai_birth_certificate_b27",
+        "corr_mumbai_birth_certificate_b28",
+        "corr_mumbai_birth_certificate_b29",
+        "corr_mumbai_birth_certificate_b30",
+        "corr_mumbai_birth_certificate_b31",
+        "corr_mumbai_birth_certificate_b32",
+        "corr_mumbai_birth_certificate_b33",
+        "corr_mumbai_birth_certificate_b34",
+        "corr_mumbai_birth_certificate_b35",
+        "corr_mumbai_birth_certificate_b36",
+        "corr_mumbai_birth_certificate_b37",
+        "corr_mumbai_birth_certificate_b38",
+        "corr_mumbai_birth_certificate_b39",
+        "corr_mumbai_birth_certificate_b40",
+        "corr_mumbai_birth_certificate_b41",
+        "corr_mumbai_birth_certificate_b42",
+        "corr_mumbai_birth_certificate_b43",
+        "corr_mumbai_birth_certificate_b44",
+        "corr_mumbai_birth_certificate_b45",
+        "corr_mumbai_birth_certificate_b01"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_reaudit_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B re-audit by a fresh isolated auditor after lint remediation (protocol sections 12 and 13).",
+      "correctionIds": [
+        "corr_mumbai_birth_certificate_r01",
+        "corr_mumbai_birth_certificate_r02",
+        "corr_mumbai_birth_certificate_r03"
+      ]
     }
   ]
 }

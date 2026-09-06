@@ -132,3 +132,139 @@ Two further grades I considered and accept without correction: `claim_chennai_wa
 I tested each cell in both directions against the section 8 definitions and accept all six as authored. `cost` is `stated` on an actionable fee schedule, section 8's own independent trigger, with the unpublished deposit components correctly quarantined as an `Unknown` claim that supports no cell (F-01). `time` is `stated`; the one-stage disclosure rule is not triggered by a five-stage figure and is satisfied by the note regardless (F-04). `documents` is `stated`; section 8 imposes no publication-location requirement and section 4 grades an observed current official form at B (F-08). `after-submission` is `stated`, but is scored from two routes rather than one and requires the route split and the login gate to be disclosed in its note; it survives on the observed public status route and the route-agnostic charter statement (F-06, F-07). `eligibility` and `owner` are `stated` on usable rules and a specific office list (F-09, F-10). No correction changes a cell state. Five corrections are proposed, none inventing evidence; three protect against overclaim or unlabelled inference, one closes a lint item 5 date-quality gap, and one improves note traceability.
 
 **Cell states accepted: cost `stated`, documents `stated`, eligibility `stated`, time `stated`, owner `stated`, after-submission `stated` — 6 of 6 stated.**
+
+
+## Re-audit — 2026-09-06 (IND-91 part B)
+
+A fresh isolated auditor re-audited this row after pre-audit lint remediation, on the section 12 inputs only. 6 corrections were proposed and 6 applied; none unapplied.
+
+# Re-audit: Chennai, new domestic water connection (grid-only)
+
+Row: `chennai` / `water-connection`, primary scenario `scenario_ind32_water_residential`, ledger `asOf` 2026-09-06, manifest mode `grid-only` with one declared lint waiver (`claim_chennai_water_six_particulars_3`, compound-claim).
+
+Inputs read: the ledger, the expectations sidecar, the manifest entry for this row only, `benchmark/schemas/ledger.json`, `benchmark/PROTOCOL.md`, `benchmark/schemas/corrections.json`. No URL was opened and no other jurisdiction, audit file or corrections file was read.
+
+Verdict in one line: all six cell states are correct and none is changed; six corrections are proposed, all of them to cell membership plus one claim `basis`; several unwaived atomicity findings are raised that need either a split by the integrator or a manifest waiver before the row can be treated as audit-clean.
+
+---
+
+## Cell-by-cell verdict (PROTOCOL section 8)
+
+| Cell | Recorded | Audit verdict | Membership change |
+| --- | --- | --- | --- |
+| cost | `stated` | correct | 1 removal |
+| documents | `stated` | correct | 1 removal, 1 addition |
+| eligibility | `stated` | correct | 2 removals |
+| time | `stated` | correct | 1 addition |
+| owner | `stated` | correct | none |
+| after-submission | `stated` | correct | 2 removals |
+
+Every claim listed in every cell has `status: "verified"`, so the section 8 gate that only `verified` or `partial` claims may support `stated` or `mentioned` is satisfied on its face. The two records that are not positive evidence — `claim_chennai_water_online_application_needs_login` (`partial`, boundary statement) and `claim_chennai_water_deposit_amounts_unknown` (`unknown`, Grade Unknown, no sources) — are correctly kept out of every cell and referenced only in prose. Reference integrity is clean: all 89 cell-referenced IDs resolve, no dangling IDs, 90 claims in the ledger.
+
+---
+
+## Findings
+
+### F1 — `after-submission` cites a boundary statement as support
+**Record:** expectations `/cells/after-submission/claimIds`, entry `claim_chennai_water_public_status_route_4`.
+**Rule:** PROTOCOL section 8, expectation-cell definitions: "a boundary statement or `Unknown` claim records a limitation, not a positive cell value."
+The claim reads "Whether either destination requires authentication is not established by this observation." That is precisely a boundary statement about an authentication boundary. Its `verified` status lets it past the status gate, but its substance is a limitation and it cannot count toward a positive cell value. The cell note already carries this limitation in prose, which is the right place for it. **Correction proposed:** remove from the cell's `claimIds`. The cell stays `stated`.
+
+### F2 — `after-submission` cites a pre-submission surface
+**Record:** expectations `/cells/after-submission/claimIds`, entry `claim_chennai_water_public_status_route_2`.
+**Rule:** PROTOCOL section 8, `after-submission`: "A step at or before submission — including registration, document presentation, payment, appointment booking, or the act of submission — is not after-submission evidence."
+The claim records that the online services route publishes a link *to apply* for a new water or sewer connection. An apply link is the act of submission, not something the citizen sees after it. Its sibling `_3` (link to know the status) is the after-submission limb and is correctly listed. **Correction proposed:** remove `_2`. The cell stays `stated` on `_3`, `claim_chennai_water_status_published_periodically`, the sanction-order family and the registration-ID family.
+
+### F3 — `basis` on `claim_chennai_water_public_status_route_4` is not observation
+**Record:** claim `claim_chennai_water_public_status_route_4`, field `/basis`.
+**Rule:** PROTOCOL section 5: "`observation` records what a source or interface directly shows … A source grade does not turn an inference into an observation."
+The online services route does not display the proposition that authentication behind its two links is unestablished. That proposition is a conclusion about the limits of the research pass, and the claim's own notes give the reasoning (neither link exercised, no login used, no reference entered). **Correction proposed:** `/basis` `observation` → `inference`. Grade B and `verified` are left alone; the source was genuinely observed, only the inferential step is mislabelled.
+
+### F4 — `cost` cites a claim that asserts no amount
+**Record:** expectations `/cells/cost/claimIds`, entry `claim_chennai_water_meter_testing_charges_7`.
+**Rule:** PROTOCOL section 8, `cost`: `stated` requires "an amount a citizen pays or an actionable fee schedule."
+The claim asserts that the table gives the bore size for the water connection and the size of the sewer connection for each band. That is a technical specification carrying no figure in rupees and no fee rule. It was split out of the meter-testing family during IND-91 part B but does not belong to the cost topic at all. **Correction proposed:** remove. The cell stays `stated` on the Rs. 100 / Rs. 5,000 / Rs. 7,500 connection-charge bands and the Rs. 100–500 meter-testing bands.
+
+### F5 — the industrial limb is scored into two cells but is outside the primary scenario
+**Record:** `claim_chennai_water_completion_certificate_exemption_3`, listed in `/cells/documents/claimIds` and `/cells/eligibility/claimIds`.
+**Rule:** PROTOCOL section 2 ("The six-cell expectation grid scores that scenario only") and section 8, second audit check.
+The claim states that all types of industrial buildings are exempt from producing a completion certificate. `scenario_ind32_water_residential` is an individual owner of a built residential property, with commercial and bulk connections expressly excluded, so the industrial limb asserts nothing about the scored case. The residential limbs (`_1` height, `_2` dwelling units and area) do the work and remain in both cells. **Correction proposed:** remove from `documents` and from `eligibility`. Neither state changes.
+Note on scope: the claim is tagged to `scenario_ind32_water_residential` because that is the ledger's only scenario, and section 2 forbids inventing aliases. Keeping the record in the ledger while dropping it from the two cell lists is the right resolution; I do not propose a scenario-tag change.
+
+### F6 — `eligibility` cites a fee-schedule claim as an eligibility rule
+**Record:** expectations `/cells/eligibility/claimIds`, entry `claim_chennai_water_connection_charge_table`.
+**Rule:** PROTOCOL section 8, `eligibility`: `stated` requires "a rule that decides who qualifies or which route applies."
+The claim asserts only that the form publishes a table of connection charges per equivalent dwelling unit for residential independent houses. It states no rule about applicant category, qualification or route. The cell note's reasoning — that "the charge and the enclosures turn on the equivalent dwelling units computed from built-up area" — is the note author's synthesis and is not what the cited claim asserts, so the claim cannot carry the cell. **Correction proposed:** remove. The cell stays `stated` on the completion-certificate exemption rule and the self-assessment / no-licensed-plumber rules.
+
+### F7 — `documents` is missing a claim that supports it
+**Record:** `claim_chennai_water_registration_acknowledgement_4`, absent from `/cells/documents/claimIds`.
+**Rule:** PROTOCOL section 8, `documents`, and the second audit check on claims that support a cell but are missing from its list.
+The claim states that the filled application must carry the receipt for payment of the connection charges and the necessary enclosures. That names a concrete document with a requirement to attach it, which is exactly the section 8 documents test. It is currently in no cell at all. **Correction proposed:** add to `documents`.
+
+### F8 — `time` is missing an actionable deadline
+**Record:** `claim_chennai_water_registration_acknowledgement_3`, absent from `/cells/time/claimIds`.
+**Rule:** PROTOCOL section 8, `time`: `stated` on "an actionable duration, deadline, processing period, or service-level target."
+The claim states that the registration counter accepts applications before 3.00 p.m. on working days. That is a usable deadline on the counter route from which the cost, documents and eligibility cells are scored, and it is distinct from the 15-day service-level target already cited. It is currently in no cell. **Correction proposed:** add to `time`.
+
+### F9 — unwaived list claims survive the IND-91 part B split
+**Records:** `claim_chennai_water_amount_payable_components_2`, `claim_chennai_water_amount_payable_components_3`, `claim_chennai_water_area_office_directory_2`, `claim_chennai_water_registration_acknowledgement_2`, `claim_chennai_water_meter_testing_charges_7`.
+**Rule:** PROTOCOL section 8, pre-audit lint check 1 (compound or list claims), and section 8's first audit check: one claim asserts one checkable thing. "An unwaived finding blocks audit."
+Each of these packs several independently checkable items into one claim:
+- `_components_2`: connection charges for water, connection charges for sewer, advance tax where applicable, meter testing charges (four items).
+- `_components_3`: deposit for water, deposit for sewer, caution deposit for a temporary connection, any penalty (four items).
+- `area_office_directory_2`: area number, location, office address, telephone number (four columns).
+- `registration_acknowledgement_2`: in person, by an authorised person, by post (three modes).
+- `meter_testing_charges_7`: bore size for the water connection and size of the sewer connection (two specs).
+The manifest declares exactly one lint waiver, for `claim_chennai_water_six_particulars_3`, whose reasoning ("one published set of particulars, not several independent assertions, and the claim supports no expectation cell") applies with equal force to `area_office_directory_2` and `registration_acknowledgement_2` and with less force to the two `_components` claims, which enumerate charge heads a citizen must each compute. No correction is proposed here: the contract in section 13 changes fields on existing records, whereas the fix is either a split by the integrator or an extension of the manifest's `lintWaivers`. Recorded as a blocking lint finding.
+
+### F10 — two officer-role claims are compound across stages
+**Records:** `claim_chennai_water_officer_roles_in_process_2` ("receives the application and schedules and conducts the inspection and completes the connection") and `claim_chennai_water_officer_roles_in_process_4` ("approves the connection and issues the work order").
+**Rule:** PROTOCOL section 8, lint check 1 and the first audit check.
+`_2` in particular bundles three duties that fall at three different stages of the published process and are separately checkable against the charter. Same disposition as F9: split or waive. This does not affect the `owner` cell state, which is comfortably `stated` on the area-office table with addresses and telephone numbers, the form's addressee, and the four-designation escalation matrix.
+
+### F11 — internal contradiction in the online-route source note
+**Record:** source `source_chennai_water_online_route`, `notes`.
+**Rule:** PROTOCOL section 4 (Grade B includes "direct current observation of a public official interface") and section 8 lint check 5 (source-date quality).
+The same note asserts "Direct current observation of a public official interface offering two links" and, two sentences later, "the audit did not observe the page and records the absence as an unresolved limitation rather than asserting what the page displays." Read charitably the second sentence is about the absence of a visible last-updated date only, but as written it undercuts the observation on which the Grade B of `claim_chennai_water_public_status_route`, `_2` and `_3` rests, and those three claims carry part of the `after-submission` cell. No correction is proposed because the fix is a wording repair by the researcher, not a field-value change an auditor can assert; recorded as a limitation to resolve before the row ships.
+
+### F12 — the login boundary on the registration-ID family is disclosed and does not overclaim
+**Records:** `claim_chennai_water_registration_id_and_sms` and `_2`–`_5`, read against `claim_chennai_water_online_application_needs_login`.
+**Rule:** PROTOCOL section 8, lint check 6 (overclaims across a login or other authentication boundary).
+Reviewed, no change. The registration-ID surfaces are expressly conditioned on a successful online transaction, and the online route requires an applicant login first. The claims nevertheless record what the citizen charter publishes about that route, not anything observed behind a login, and the cell note discloses the boundary at length and states that the cell is carried independently by the public status link and the charter's statement that the status of registered applications is published periodically. The boundary claim itself is `partial` / `mixed`, with the observation-versus-inference split explained in its notes as section 5 requires, and it is kept out of every cell. This is correct handling.
+
+### F13 — Grade B on the 2021 citizen charter is defensible
+**Record:** source `source_chennai_water_citizen_charter`.
+**Rule:** PROTOCOL section 4 (Grade B "a current official procedure … or agency page"; Grade C "archived, undated, or visibly outdated official material; state the date and limitation") and section 8 lint check 5.
+Reviewed, no change. The charter identifies itself as the Citizen Charter 2021 and shows "last reviewed and updated on 08-04-2024" against an access date of 2026-09-06, which is a real staleness risk. But it is the document the board currently publishes on its live host, not archived or superseded material, so Grade B holds; and the source note states both the date and the limitation that its standards and rates may have moved, which is what check 5 asks for. The same reasoning sustains Grade B on the 2023-2024 application form, which is an observed current official form and would be a check 4 violation at Grade C.
+
+### F14 — explicit zeros and out-of-scope costs are handled correctly
+**Records:** `claim_chennai_water_application_free_and_where` (form free of cost), `claim_chennai_water_small_house_document_relief_4` (no advance tax for the smallest band), the `claim_chennai_water_domestic_tariff` family, `claim_chennai_water_deposit_amounts_unknown`.
+**Rule:** PROTOCOL section 3 (explicit zero counts as stated) and section 8, cost cell.
+Reviewed, no change. Both explicit zeros are recorded as stated values inside the cost cell, which is what section 3 requires. The ongoing metered tariff family is deliberately excluded from the cost cell — it is what the household pays once connected, not what the connection costs — and that exclusion is right for a cell scoped to obtaining the connection. The unpublished water and sewer deposit amounts are carried as a separate Grade Unknown claim with no sources, correctly outside the cell and correctly flagged in the cell note, which is the section 8 treatment of an Unknown claim. The three form-availability claims (`_2`, `_3`, `_4`) were examined and retained: they scope where the free-of-cost form can be had and so attach to the explicit zero rather than floating free of the cost topic.
+
+### F15 — citation gate and archive rule are green
+**Rule:** PROTOCOL sections 7 and 11.
+Reviewed, no change. Every non-Unknown claim carries at least one source; the only sourceless claim is Grade Unknown, as the ledger schema's conditional requires. All five sources give a specific page or file rather than a homepage, with ISO access dates and jurisdiction text specific to Chennai, Tamil Nadu, India. Two sources point to pre-access-date Wayback snapshots and state the limitation that the snapshot does not preserve the page as reviewed; three record the capture failure, retain the original official URL, and state the limitation, which is exactly what section 11 permits. No substitute homepage was used anywhere.
+
+### F16 — grid-only shape and scenario policy are consistent
+**Rule:** PROTOCOL sections 1, 2 and the ledger schema.
+Reviewed, no change. `nodes`, `edges`, `roadblocks` and `journeys` are empty and the manifest declares `mode: "grid-only"`, which the meta disclaimer repeats. Section 6's `researchedNoSourceFound` rule is therefore not engaged. Exactly one scenario is declared, it matches the manifest's `primaryScenarioId` and the sidecar's `primaryScenarioId`, and every claim is tagged to it. `scenario.status` is `partial`, which is honest for a grid-only run.
+
+---
+
+## Corrections summary
+
+Six correction objects, in `reaudit-chennai-water-connection.corrections.json`:
+
+1. `expectations` / `water-connection:cost` / `/cells/cost/claimIds` — remove `claim_chennai_water_meter_testing_charges_7` (F4).
+2. `expectations` / `water-connection:documents` / `/cells/documents/claimIds` — remove `claim_chennai_water_completion_certificate_exemption_3`, add `claim_chennai_water_registration_acknowledgement_4` (F5, F7).
+3. `expectations` / `water-connection:eligibility` / `/cells/eligibility/claimIds` — remove `claim_chennai_water_completion_certificate_exemption_3` and `claim_chennai_water_connection_charge_table` (F5, F6).
+4. `expectations` / `water-connection:time` / `/cells/time/claimIds` — add `claim_chennai_water_registration_acknowledgement_3` (F8).
+5. `expectations` / `water-connection:after-submission` / `/cells/after-submission/claimIds` — remove `claim_chennai_water_public_status_route_2` and `claim_chennai_water_public_status_route_4` (F1, F2).
+6. `claim` / `claim_chennai_water_public_status_route_4` / `/basis` — `observation` → `inference` (F3).
+
+No cell state changes. No `/cells/<cell>/state` correction is proposed: all six cells are `stated` and all six remain `stated` after every proposed membership change.
+
+Findings raised without a correction, because the fix is a split or a waiver rather than a field-value change: F9, F10 (atomicity, blocking under section 8 until split or waived) and F11 (source note wording).
+
+No evidence was invented and no URL was opened; every judgement above rests on the ledger and sidecar text as written.

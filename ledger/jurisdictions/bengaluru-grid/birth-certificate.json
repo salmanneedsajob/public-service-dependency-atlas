@@ -51,7 +51,7 @@
       "accessedAt": "2026-09-06",
       "publishedAt": "2026-02-09",
       "type": "official_portal",
-      "notes": "Jurisdiction: Bengaluru, Karnataka, India; the portal is state-wide and its own text addresses the BBMP area specifically. Agency naming as displayed on the access date: 'Office of the Chief Registrar of Births and Deaths, Government Of Karnataka', with the footer 'CONTENT OWNED AND MAINTAINED BY : DIRECTORATE OF ECONOMICS AND STATISTICS' and 'Designed & developed by NATIONAL INFORMATICS CENTRE (NIC) Karnataka'. The footer displays 'Last Update Date : 09/02/2026 1.30 PM' and 'Version : eJanMa 3.0/3'; the date is recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240611195411/https://ejanma.karnataka.gov.in/ (2024-06-11); no new capture was pushed from this run."
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India; the portal is state-wide and its own text addresses the BBMP area specifically. Agency naming as displayed on the access date: 'Office of the Chief Registrar of Births and Deaths, Government Of Karnataka', with the footer 'CONTENT OWNED AND MAINTAINED BY : DIRECTORATE OF ECONOMICS AND STATISTICS' and 'Designed & developed by NATIONAL INFORMATICS CENTRE (NIC) Karnataka'. The footer displays 'Last Update Date : 09/02/2026 1.30 PM' and 'Version : eJanMa 3.0/3'; the date is recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240611195411/https://ejanma.karnataka.gov.in/ (2024-06-11); no new capture was pushed from this run. Limitation: that snapshot is two years older than the access date and predates the portal version recorded here, so it does not preserve the page as reviewed on 2026-09-06."
     },
     {
       "id": "source_bengaluru_grid_birth_ka_rbd_rules",
@@ -70,7 +70,7 @@
       "accessedAt": "2026-09-06",
       "publishedAt": "2026-02-09",
       "type": "official_portal",
-      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Office of the Chief Registrar of Births and Deaths, Government Of Karnataka'. Direct current observation of a public route reachable without login, which states where certificates are downloaded and links user manuals for birth and death certificates. The footer displays 'Last Update Date : 09/02/2026 1.30 PM', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240529072356/https://ejanma.karnataka.gov.in/frmDownloadCertificate.aspx (2024-05-29); no new capture was pushed from this run."
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Office of the Chief Registrar of Births and Deaths, Government Of Karnataka'. Direct current observation of a public route reachable without login, which states where certificates are downloaded and links user manuals for birth and death certificates. The footer displays 'Last Update Date : 09/02/2026 1.30 PM', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240529072356/https://ejanma.karnataka.gov.in/frmDownloadCertificate.aspx (2024-05-29); no new capture was pushed from this run. Limitation: that snapshot is two years older than the access date, so it does not preserve the route as reviewed on 2026-09-06."
     },
     {
       "id": "source_bengaluru_grid_birth_status_route",
@@ -80,7 +80,7 @@
       "accessedAt": "2026-09-06",
       "publishedAt": "2026-02-09",
       "type": "official_portal",
-      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Office of the Chief Registrar of Births and Deaths, Government Of Karnataka'. Direct current observation of a public route reachable without login, offering a type selector and fields for a registration number and a Sakala number. The route was read only: nothing was entered and no case data was retrieved. The footer displays 'Last Update Date : 09/02/2026 1.30 PM', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240610080224/https://ejanma.karnataka.gov.in/frmApplicationStatus.aspx (2024-06-10); no new capture was pushed from this run."
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Office of the Chief Registrar of Births and Deaths, Government Of Karnataka'. Direct current observation of a public route reachable without login, offering a type selector and fields for a registration number and a Sakala number. The route was read only: nothing was entered and no case data was retrieved. The footer displays 'Last Update Date : 09/02/2026 1.30 PM', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240610080224/https://ejanma.karnataka.gov.in/frmApplicationStatus.aspx (2024-06-10); no new capture was pushed from this run. Limitation: that snapshot is two years older than the access date, so it does not preserve the route as reviewed on 2026-09-06."
     }
   ],
   "claims": [
@@ -137,7 +137,7 @@
     },
     {
       "id": "claim_bengaluru_grid_birth_no_documents_required",
-      "text": "The Seva Sindhu service card for a birth certificate states, under what you need to know, that the documents to be submitted with the application are NIL.",
+      "text": "The Seva Sindhu service card for a birth certificate states under 'what you need to know' that the documents to be submitted with the application are NIL.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow"
@@ -188,7 +188,7 @@
     },
     {
       "id": "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma",
-      "text": "The Chief Registrar's download route states that birth and death certificates for the events which are registered in eJanMa can be downloaded from the Seva Sindhu portal by paying a specific fee.",
+      "text": "The Chief Registrar's download route states that a birth certificate for an event registered in eJanMa can be downloaded from the Seva Sindhu portal.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow"
@@ -201,11 +201,28 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A rule that decides which route applies, by whether the event is on the electronic register. The route names a fee without giving its amount; the amount is on the Seva Sindhu card."
+      "notes": "A rule that decides which route applies, by whether the event is on the electronic register. The route's own wording covers birth and death certificates together; this claim carries the birth limb, which is this scenario's service. Split during IND-91 part B lint remediation; the fee condition is asserted separately."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma_2",
+      "text": "That route states that the download requires payment of a fee, without giving the amount.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_download_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_download_requires_registration_in_ejanma. The route names a fee without giving its amount; the amount is on the Seva Sindhu card."
     },
     {
       "id": "claim_bengaluru_grid_birth_bbmp_registrars",
-      "text": "The Chief Registrar's portal states that births, deaths and still births occurring in urban local body areas and in the BBMP area are registered in eJanMa by Health Officers and Health Inspectors in their respective areas.",
+      "text": "The Chief Registrar's portal states that births occurring in the BBMP area are registered in eJanMa.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow"
@@ -218,7 +235,41 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A designation tied to a jurisdiction rule, specific to the city this row scores."
+      "notes": "A designation tied to a jurisdiction rule, specific to the city this row scores. The portal's own wording covers births, deaths and still births together; this claim carries the birth limb, which is this scenario's service. Split during IND-91 part B lint remediation into the BBMP rule, the officers who register, and the urban local body areas."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_bbmp_registrars_2",
+      "text": "That portal states that Health Officers and Health Inspectors register those events in their respective areas.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ejanma_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_bbmp_registrars. Who registers the event is separately checkable from where it is registered, and it is the fragment the owner cell rests on."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_bbmp_registrars_3",
+      "text": "That portal applies the same rule to births occurring in urban local body areas.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ejanma_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_bbmp_registrars. The wider territorial limb is separately checkable from the BBMP limb."
     },
     {
       "id": "claim_bengaluru_grid_birth_private_hospital_reporting",
@@ -239,7 +290,7 @@
     },
     {
       "id": "claim_bengaluru_grid_birth_additional_copies_contact",
-      "text": "The Chief Registrar's portal states that for additional copies of the birth or death certificate, and for any corrections, the citizen should contact the data entry operators of the concerned Nadakacheri and the respective birth and death registration centres.",
+      "text": "The Chief Registrar's portal states that for additional copies of the birth certificate the citizen should contact the data entry operators of the concerned Nadakacheri.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow"
@@ -252,11 +303,45 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A contact route named for exactly the request this scenario covers."
+      "notes": "A contact route named for exactly the request this scenario covers. Split during IND-91 part B lint remediation into the Nadakacheri contact, the registration centres and the corrections limb."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_additional_copies_contact_2",
+      "text": "That portal also names the respective birth and death registration centres as a contact for additional copies.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ejanma_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_additional_copies_contact. The second contact route is separately checkable from the first."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_additional_copies_contact_3",
+      "text": "That portal gives the same contacts for any corrections.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ejanma_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_additional_copies_contact. The corrections limb is outside this scenario's scope and is recorded for completeness."
     },
     {
       "id": "claim_bengaluru_grid_birth_clarifications_contact",
-      "text": "The Chief Registrar's portal states that for any clarifications the citizen should contact the District Statistical Officer of the concerned district, and publishes a toll-free number 1800-425-6578.",
+      "text": "The Chief Registrar's portal states that for any clarifications the citizen should contact the District Statistical Officer of the concerned district.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow"
@@ -269,11 +354,28 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "Institutional contact only; a named office plus a published helpline."
+      "notes": "Institutional contact only: a named office tied to the concerned district. The published toll-free helpline is recorded separately at claim_bengaluru_grid_birth_clarifications_contact_2 following the audit split under protocol section 13."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_clarifications_contact_2",
+      "text": "That portal publishes a toll-free number 1800-425-6578.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ejanma_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split from claim_bengaluru_grid_birth_clarifications_contact by audit under protocol section 13. Wording, source, grade, basis and status are unchanged from the compound original; nothing was added. The published helpline is separately checkable from the instruction to contact the District Statistical Officer, and it is a contact route the owner cell rests on."
     },
     {
       "id": "claim_bengaluru_grid_birth_rule_13_issuer_and_form",
-      "text": "Rule 13(2) of the Karnataka Registration of Births and Deaths Rules, 1999 provides that an extract in regard to a birth is issued by the Registrar or the Tahsildar or the Commissioner or Chief Officer of the Municipal Corporation or Municipal Council, in Form No. 5, certified in the manner provided for in section 76 of the Indian Evidence Act, 1872.",
+      "text": "Rule 13(2) of the Karnataka Registration of Births and Deaths Rules, 1999 provides that an extract in regard to a birth is issued by the Registrar or the Tahsildar.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow"
@@ -286,11 +388,62 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "Identifies both the office that issues the extract and the document the citizen receives."
+      "notes": "Identifies the office that issues the extract. Split during IND-91 part B lint remediation into the two groups of issuers, the form and the certification."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_rule_13_issuer_and_form_2",
+      "text": "Rule 13(2) also names the Commissioner or Chief Officer of the Municipal Corporation or Municipal Council as an issuer of that extract.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ka_rbd_rules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_rule_13_issuer_and_form. The municipal issuers are separately checkable from the Registrar and Tahsildar, and they are the ones that apply in a city corporation area."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_rule_13_issuer_and_form_3",
+      "text": "Rule 13(2) provides that the extract is issued in Form No. 5.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ka_rbd_rules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_rule_13_issuer_and_form. The form of the extract is separately checkable from who issues it."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_rule_13_issuer_and_form_4",
+      "text": "Rule 13(2) provides that the extract is certified in the manner provided for in section 76 of the Indian Evidence Act, 1872.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ka_rbd_rules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_rule_13_issuer_and_form. The manner of certification is separately checkable from the form."
     },
     {
       "id": "claim_bengaluru_grid_birth_public_status_route",
-      "text": "The Chief Registrar's portal publishes an Application Status route, reachable without login, offering a type selector and fields for a registration number and a Sakala number.",
+      "text": "The Chief Registrar's portal publishes an Application Status route that is reachable without login.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow"
@@ -303,7 +456,24 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "The route's own fields were observed; nothing was entered, so no claim is made about what it returns. The Sakala field indicates the service is tracked under the state's service-guarantee scheme."
+      "notes": "The route's own fields were observed; nothing was entered, no login was used, so no claim is made about what it returns. Split during IND-91 part B lint remediation; the route's fields are asserted separately."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_public_status_route_2",
+      "text": "That route offers a type selector and fields for a registration number and a Sakala number.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_status_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_public_status_route. The route's fields are separately checkable from its existence. The Sakala field indicates the service is tracked under the state's service-guarantee scheme. Nothing was entered and no login was used."
     },
     {
       "id": "claim_bengaluru_grid_birth_public_verification_route",
@@ -358,7 +528,7 @@
     },
     {
       "id": "claim_bengaluru_grid_birth_fee_currency_unknown",
-      "text": "Whether the Rs. 5.00 extract fee fixed by rule in 1999 has since been revised is not established by any reviewed public page; the copy of the rules published by the Chief Registrar carries no amendment history.",
+      "text": "Whether the Rs. 5.00 extract fee fixed by rule in 1999 has since been revised is not established by any reviewed public page.",
       "jurisdiction": "Bengaluru, Karnataka, India",
       "scenarioIds": [
         "scenario_ind32_birth_copy_workflow"
@@ -369,7 +539,24 @@
       "basis": "inference",
       "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related. The current service card's Rs. 5 figure is consistent with the 1999 rule, which is some evidence that it stands."
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related. The current service card's Rs. 5 figure is consistent with the 1999 rule, which is some evidence that it stands. Split during IND-91 part B lint remediation; the observed reason for the uncertainty is asserted separately."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_fee_currency_unknown_2",
+      "text": "The copy of the rules published by the Chief Registrar carries no amendment history.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ka_rbd_rules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_bengaluru_grid_birth_fee_currency_unknown. The observed absence is separately checkable from the unknown it produces."
     },
     {
       "id": "claim_bengaluru_grid_birth_rule_13_search_fee",

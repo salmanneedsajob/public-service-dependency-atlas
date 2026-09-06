@@ -13,7 +13,9 @@
       "new": "mentioned",
       "reason": "Section 8 defines absent as evidence that does not touch the topic. A reviewed claim touches it: claim_mumbai_ptax_account_number_from_bill names a concrete document, the property tax bill, as where the Property Account No. this scenario depends on is printed. No route requires the citizen to submit, provide, upload, produce or attach anything, so the cell cannot be stated; a reference to a document without telling the citizen what is required is the definition of mentioned.",
       "support": {
-        "sourceIds": ["source_mumbai_ptax_portal_home"],
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
         "auditNote": "Finding F-01. The existing cell note is accurate about the missing requirement, but that distinguishes stated from mentioned, not mentioned from absent. No explicit zero is stated on any reviewed route, so section 3 does not lift the cell."
       }
     },
@@ -23,10 +25,14 @@
       "recordId": "property-tax-payment",
       "fieldPath": "/cells/documents/claimIds",
       "old": [],
-      "new": ["claim_mumbai_ptax_account_number_from_bill"],
+      "new": [
+        "claim_mumbai_ptax_account_number_from_bill"
+      ],
       "reason": "Section 9 allows a mentioned cell to carry optional topic-only claimIds. This is the reviewed claim that touches the documents topic, and it is Grade B and verified, so it is eligible to support a mentioned cell under section 8.",
       "support": {
-        "sourceIds": ["source_mumbai_ptax_portal_home"],
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
         "auditNote": "Finding F-01. Searched routes are retained unchanged."
       }
     },
@@ -51,7 +57,9 @@
       "new": "mentioned",
       "reason": "Section 8 names sequence and processing as time-topic references that yield mentioned when no figure accompanies them. claim_mumbai_ptax_first_in_first_out_rule states that an online payment is applied first-in first-out with the oldest bill adjusted first, which is a rule about the order in which payments are processed. No duration, deadline, processing period or service-level target appears on any reviewed route, so the cell stays well short of stated.",
       "support": {
-        "sourceIds": ["source_mumbai_ptax_instant_payment"],
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
         "auditNote": "Finding F-02, the closest call in this audit. Rejected as not touching time: the instant-payment route's discount and advance fields, since reading an early-payment window or deadline out of those labels is an inference section 5 forbids the auditor from supplying; and claim_mumbai_ptax_due_date_unknown, which is Unknown and records a limitation, not a cell value."
       }
     },
@@ -61,10 +69,14 @@
       "recordId": "property-tax-payment",
       "fieldPath": "/cells/time/claimIds",
       "old": [],
-      "new": ["claim_mumbai_ptax_first_in_first_out_rule"],
+      "new": [
+        "claim_mumbai_ptax_first_in_first_out_rule"
+      ],
       "reason": "Section 9 allows a mentioned cell to carry optional topic-only claimIds. This Grade B verified claim is the processing-sequence reference that takes the cell off absent.",
       "support": {
-        "sourceIds": ["source_mumbai_ptax_instant_payment"],
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
         "auditNote": "Finding F-02. Searched routes are retained unchanged, including the Citizen Charter route."
       }
     },
@@ -89,7 +101,9 @@
       "new": "mentioned",
       "reason": "Section 8 assigns mentioned to an outcome named without a visible or actionable post-submission surface. claim_mumbai_ptax_first_in_first_out_rule describes what becomes of the money after it is paid, that it is applied to the oldest bill first, and names the ward Assessment and Collection department as the recourse when the citizen wanted it applied elsewhere. Payment is the submission; the application of the payment and the recourse are after it, not steps at or before it. No receipt, acknowledgement, transaction reference, status route or downloadable result is named anywhere on the reviewed evidence, so the cell cannot be stated.",
       "support": {
-        "sourceIds": ["source_mumbai_ptax_instant_payment"],
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
         "auditNote": "Finding F-03. The original note addressed only the outstanding-bill display, correctly holding it to be pre-payment, and did not address the application rule at all. The CAPTCHA boundary claim and the Unknown receipt claim remain excluded from support, as section 8 requires."
       }
     },
@@ -99,10 +113,14 @@
       "recordId": "property-tax-payment",
       "fieldPath": "/cells/after-submission/claimIds",
       "old": [],
-      "new": ["claim_mumbai_ptax_first_in_first_out_rule"],
+      "new": [
+        "claim_mumbai_ptax_first_in_first_out_rule"
+      ],
       "reason": "Section 9 allows a mentioned cell to carry optional topic-only claimIds. This Grade B verified claim names the post-payment outcome and the post-payment recourse.",
       "support": {
-        "sourceIds": ["source_mumbai_ptax_instant_payment"],
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
         "auditNote": "Finding F-03. Searched routes are retained unchanged."
       }
     },
@@ -127,9 +145,1517 @@
       "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo. Direct current observation of two sibling routes on the same portal: the Contact Us route, which is the url recorded on this source at https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/contactus, and the FAQ route at https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/faq, which is the specific page claim_mumbai_ptax_faq_route_empty rests on. Neither shows a visible last-updated date. Archive: the Wayback availability API returned the portal snapshot of 2026-03-09 as the nearest copy for these hash routes; no separate snapshot exists and no new capture was pushed from this run.",
       "reason": "Section 7 requires a source to supply the direct link and citations to resolve to specific pages. This record documents two routes but records only the Contact Us URL, so the citation on claim_mumbai_ptax_faq_route_empty resolves to a page other than the one that claim asserts about. Recording both route URLs closes the gap.",
       "support": {
-        "sourceIds": ["source_mumbai_ptax_contact_and_faq"],
+        "sourceIds": [
+          "source_mumbai_ptax_contact_and_faq"
+        ],
         "auditNote": "Finding F-04. Minimal fix: no grade, status or claim linkage changes, and no new record is created. The FAQ route URL is already recorded in the expectations sidecar's searched routes for the documents, time and after-submission cells, so nothing is invented here."
       }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b01",
+      "recordType": "source",
+      "recordId": "source_mumbai_ptax_portal_home",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo, with the banner 'BMC'S CAPITAL VALUE BASED PROPERTY TAX INFORMATION SYSTEM'. Direct current observation of a public official interface, reached without login; it shows no visible last-updated or version date. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260309232045/https://ptaxportal.mcgm.gov.in/CitizenPortal/ (2026-03-09); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo, with the banner 'BMC'S CAPITAL VALUE BASED PROPERTY TAX INFORMATION SYSTEM'. Direct current observation of a public official interface, reached without login; it shows no visible last-updated or version date. Limitation: the portal is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260309232045/https://ptaxportal.mcgm.gov.in/CitizenPortal/ (2026-03-09); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the portal as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an undated, archived source without a stated limitation. Both limitations are now stated in words; no claim, grade or cell state changes.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b02",
+      "recordType": "source",
+      "recordId": "source_mumbai_ptax_instant_payment",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo. Direct current observation of a public official interface reachable without login. The route was read only: no property account number was entered, no amount was submitted and no payment was attempted. Shows no visible last-updated date. Archive: the Wayback availability API returned no snapshot for this hash route; the underlying portal snapshot of 2026-03-09 is the nearest available copy. No new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo. Direct current observation of a public official interface reachable without login. The route was read only: no property account number was entered, no amount was submitted and no payment was attempted. Shows no visible last-updated date. Limitation: the route is undated, so its currency rests on the access-date observation alone. Archive: the Wayback availability API returned no snapshot for this hash route; the underlying portal snapshot of 2026-03-09 is the nearest available copy. No new capture was pushed from this run. Limitation: no snapshot preserves this route, and the nearest copy is of the portal shell rather than of the route as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an undated, archived source without a stated limitation. Both limitations are now stated, including that no snapshot exists for this route.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b03",
+      "recordType": "source",
+      "recordId": "source_mumbai_ptax_contact_and_faq",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo. Direct current observation of two sibling routes on the same portal: the Contact Us route, which is the url recorded on this source at https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/contactus, and the FAQ route at https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/faq, which is the specific page claim_mumbai_ptax_faq_route_empty rests on. Neither shows a visible last-updated date. Archive: the Wayback availability API returned the portal snapshot of 2026-03-09 as the nearest copy for these hash routes; no separate snapshot exists and no new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo. Direct current observation of two sibling routes on the same portal: the Contact Us route, which is the url recorded on this source at https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/contactus, and the FAQ route at https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/faq, which is the specific page claim_mumbai_ptax_faq_route_empty rests on. Neither shows a visible last-updated date. Limitation: both routes are undated, so their currency rests on the access-date observation alone. Archive: the Wayback availability API returned the portal snapshot of 2026-03-09 as the nearest copy for these hash routes; no separate snapshot exists and no new capture was pushed from this run. Limitation: no snapshot preserves either route as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an undated, archived source without a stated limitation. Both limitations are now stated, including that no snapshot exists for either hash route.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_contact_and_faq"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b04",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_ward_assessor_email_table",
+      "fieldPath": "/notes",
+      "old": "A specific office list with a contact route for the role that assesses and collects, indexed by ward. Institutional addresses only; no personal data recorded.",
+      "new": "A specific office list with a contact route for the role that assesses and collects, indexed by ward. Institutional addresses only. The page was read without a login and no personal data was entered.",
+      "reason": "Pre-audit lint reported login-boundary-overclaim because the note used the phrase 'personal data' without uncertainty wording. The note now records the observation boundary: the table is on a public entry page, it was read without a login, and no personal data was entered.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "auditNote": "IND-91 part B: login-boundary-overclaim finding fixed by recording the observation boundary in the notes."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b05",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_residential_rate_table",
+      "fieldPath": "/text",
+      "old": "The Assessment & Collection Department's published rates of taxation on capital value, with effect from 1 April 2015, give the residential user category a general tax including fire tax of 0.110 per cent, water tax 0.253 per cent, water benefit tax 0.069 per cent, sewerage tax 0.163 per cent, sewerage benefit tax 0.043 per cent, municipal education cess 0.040 per cent, state education cess 0.035 per cent, employment guarantee cess 0.010 per cent, tree cess 0.002 per cent and street tax 0.050 per cent.",
+      "new": "With effect from 1 April 2015 the Assessment & Collection Department's published rates of taxation on capital value give the residential user category a general tax including fire tax of 0.110 per cent.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 506 characters. The sentence carried ten separate published rates, each a percentage a citizen applies and each independently checkable against the published schedule, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b06",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_residential_rate_table",
+      "fieldPath": "/notes",
+      "old": "An actionable fee schedule: percentages a citizen applies to the capital value of a residential property. Graded C because currency is not established by any reviewed route.",
+      "new": "An actionable fee schedule: percentages a citizen applies to the capital value of a residential property. Graded C because currency is not established by any reviewed route. Split during IND-91 part B lint remediation into one claim per rate line.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 506 characters. The sentence carried ten separate published rates, each a percentage a citizen applies and each independently checkable against the published schedule, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b07",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_residential_rate_table_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_residential_rate_table_2",
+        "text": "The same published rates give the residential user category a water tax of 0.253 per cent.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 506 characters. The sentence carried ten separate published rates, each a percentage a citizen applies and each independently checkable against the published schedule, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b08",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_residential_rate_table_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_residential_rate_table_3",
+        "text": "The same published rates give the residential user category a water benefit tax of 0.069 per cent.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 506 characters. The sentence carried ten separate published rates, each a percentage a citizen applies and each independently checkable against the published schedule, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b09",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_residential_rate_table_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_residential_rate_table_4",
+        "text": "The same published rates give the residential user category a sewerage tax of 0.163 per cent.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 506 characters. The sentence carried ten separate published rates, each a percentage a citizen applies and each independently checkable against the published schedule, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b10",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_residential_rate_table_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_residential_rate_table_5",
+        "text": "The same published rates give the residential user category a sewerage benefit tax of 0.043 per cent.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 506 characters. The sentence carried ten separate published rates, each a percentage a citizen applies and each independently checkable against the published schedule, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b11",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_residential_rate_table_6",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_residential_rate_table_6",
+        "text": "The same published rates give the residential user category a municipal education cess of 0.040 per cent.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 506 characters. The sentence carried ten separate published rates, each a percentage a citizen applies and each independently checkable against the published schedule, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b12",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_residential_rate_table_7",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_residential_rate_table_7",
+        "text": "The same published rates give the residential user category a state education cess of 0.035 per cent.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 506 characters. The sentence carried ten separate published rates, each a percentage a citizen applies and each independently checkable against the published schedule, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b13",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_residential_rate_table_8",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_residential_rate_table_8",
+        "text": "The same published rates give the residential user category a employment guarantee cess of 0.010 per cent.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 506 characters. The sentence carried ten separate published rates, each a percentage a citizen applies and each independently checkable against the published schedule, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b14",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_residential_rate_table_9",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_residential_rate_table_9",
+        "text": "The same published rates give the residential user category a tree cess of 0.002 per cent.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 506 characters. The sentence carried ten separate published rates, each a percentage a citizen applies and each independently checkable against the published schedule, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b15",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_residential_rate_table_10",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_residential_rate_table_10",
+        "text": "The same published rates give the residential user category a street tax of 0.050 per cent.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 506 characters. The sentence carried ten separate published rates, each a percentage a citizen applies and each independently checkable against the published schedule, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b16",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_rate_documents_stop_at_2019_20",
+      "fieldPath": "/text",
+      "old": "The corporation's capital-value document index publishes rate and rule files whose latest coverage is the rates effective from 1 April 2015 and the rules for fixation of capital value for 2015-16 to 2019-20, with no document covering any later financial year.",
+      "new": "The corporation's capital-value document index publishes rate and rule files whose latest coverage is the rates effective from 1 April 2015.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried the latest rate file, the latest rule file and the absence of any later document, three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_capital_value_index"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b17",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_rate_documents_stop_at_2019_20",
+      "fieldPath": "/notes",
+      "old": "Checkable from the index's own file list on the access date. The current financial year is 2026-27.",
+      "new": "Checkable from the index's own file list on the access date. The current financial year is 2026-27. Split during IND-91 part B lint remediation into the latest rate file, the latest rule file and the absence of any later document.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried the latest rate file, the latest rule file and the absence of any later document, three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_capital_value_index"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b18",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_rate_documents_stop_at_2019_20_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_rate_documents_stop_at_2019_20_2",
+        "text": "That index's latest rule file covers fixation of capital value for 2015-16 to 2019-20.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_capital_value_index"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_rate_documents_stop_at_2019_20. Checkable from the index's own file list."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried the latest rate file, the latest rule file and the absence of any later document, three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_capital_value_index"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b19",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_rate_documents_stop_at_2019_20_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_rate_documents_stop_at_2019_20_3",
+        "text": "No document in that index covers any financial year later than 2019-20.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_capital_value_index"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_rate_documents_stop_at_2019_20. The absence is separately checkable from what the index does publish."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried the latest rate file, the latest rule file and the absence of any later document, three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_capital_value_index"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b20",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_account_number_from_bill",
+      "fieldPath": "/text",
+      "old": "The property-tax portal states that the citizen enters the Property Account No. to log in, that the number is shown on the upper portion of the property tax bill, and that a Search button is provided to find it.",
+      "new": "The property-tax portal states that the citizen enters the Property Account No. to log in.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration, and login-boundary-overclaim for a sentence naming a login without uncertainty wording. The sentence carried three independently checkable facts: what the login form asks for, where the number is printed, and that a search route to it exists. Each fragment now records that the portal was read without a login.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b21",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_account_number_from_bill",
+      "fieldPath": "/notes",
+      "old": "A usable rule for the identifier this scenario assumes the owner already has.",
+      "new": "A usable rule for the identifier this scenario assumes the owner already has. The portal was read without a login and no property account number was entered. Split during IND-91 part B lint remediation into the login field, where the number is printed and the search route to it.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration, and login-boundary-overclaim for a sentence naming a login without uncertainty wording. The sentence carried three independently checkable facts: what the login form asks for, where the number is printed, and that a search route to it exists. Each fragment now records that the portal was read without a login.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b22",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_account_number_from_bill_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_account_number_from_bill_2",
+        "text": "The portal states that the Property Account No. is shown on the upper portion of the property tax bill.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_account_number_from_bill. Where the number is printed is separately checkable from what the login form asks for. The portal was read without a login and no property account number was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration, and login-boundary-overclaim for a sentence naming a login without uncertainty wording. The sentence carried three independently checkable facts: what the login form asks for, where the number is printed, and that a search route to it exists. Each fragment now records that the portal was read without a login.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b23",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_account_number_from_bill_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_account_number_from_bill_3",
+        "text": "The portal provides a Search button to find the Property Account No.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_account_number_from_bill. The search route is separately checkable from the bill. The portal was read without a login and no property account number was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration, and login-boundary-overclaim for a sentence naming a login without uncertainty wording. The sentence carried three independently checkable facts: what the login form asks for, where the number is printed, and that a search route to it exists. Each fragment now records that the portal was read without a login.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b24",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_public_instant_payment_route",
+      "fieldPath": "/text",
+      "old": "The property-tax portal publishes an Instant Payment route reachable without login, which displays the property account number, billing name, property address, an outstanding-bill breakdown into property tax, GPR, repair cess and MTOB, and the outstanding, discount, net and advance amounts, alongside an online payment action.",
+      "new": "The property-tax portal publishes an Instant Payment route reachable without login.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 327 characters. The sentence carried the existence of the route and three separate groups of fields it displays plus a payment action, which are independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b25",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_public_instant_payment_route",
+      "fieldPath": "/notes",
+      "old": "The route's own field labels were observed. No property account number was entered, so nothing is claimed about what it returns for a real property.",
+      "new": "The route's own field labels were observed. No property account number was entered, so nothing is claimed about what it returns for a real property. Split during IND-91 part B lint remediation into the route and the field groups it displays.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 327 characters. The sentence carried the existence of the route and three separate groups of fields it displays plus a payment action, which are independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b26",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_public_instant_payment_route_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_public_instant_payment_route_2",
+        "text": "That route displays the property account number, the billing name and the property address.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_public_instant_payment_route. Read from the route's own field labels; no property account number was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 327 characters. The sentence carried the existence of the route and three separate groups of fields it displays plus a payment action, which are independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b27",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_public_instant_payment_route_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_public_instant_payment_route_3",
+        "text": "That route displays an outstanding-bill breakdown into property tax, GPR, repair cess and MTOB.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_public_instant_payment_route. This fragment carries the route's published breakdown heads, one published list, waived on the manifest entry. No property account number was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 327 characters. The sentence carried the existence of the route and three separate groups of fields it displays plus a payment action, which are independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b28",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_public_instant_payment_route_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_public_instant_payment_route_4",
+        "text": "That route displays the outstanding, discount, net and advance amounts.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_public_instant_payment_route. This fragment carries the route's published amount labels, one published list, waived on the manifest entry. No property account number was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 327 characters. The sentence carried the existence of the route and three separate groups of fields it displays plus a payment action, which are independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b29",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_public_instant_payment_route_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_public_instant_payment_route_5",
+        "text": "That route offers an online payment action.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_public_instant_payment_route. No payment was attempted."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 327 characters. The sentence carried the existence of the route and three separate groups of fields it displays plus a payment action, which are independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b30",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_first_in_first_out_rule",
+      "fieldPath": "/text",
+      "old": "The Instant Payment route states that online payment is applied on a first-in first-out basis, with the oldest bill adjusted first, and that a citizen wishing to pay against a specific bill should contact the Assessment & Collection department of the respective ward.",
+      "new": "The Instant Payment route states that online payment is applied on a first-in first-out basis.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried a payment-ordering rule and a routing instruction to a named office, which four different cells were citing as one claim. Splitting lets each cell cite the fragment that actually supports it.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "auditNote": "IND-91 part B: the eligibility and owner cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b31",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_first_in_first_out_rule",
+      "fieldPath": "/notes",
+      "old": "A rule about how a payment is applied, and a named office to approach when it is not what the citizen wants.",
+      "new": "A rule about how a payment is applied. Split during IND-91 part B lint remediation into the ordering rule, its effect on the oldest bill, and the office to approach when the citizen wants something else.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried a payment-ordering rule and a routing instruction to a named office, which four different cells were citing as one claim. Splitting lets each cell cite the fragment that actually supports it.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b32",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_first_in_first_out_rule_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_first_in_first_out_rule_2",
+        "text": "That route states that the oldest bill is adjusted first.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_first_in_first_out_rule. The effect of the ordering rule is separately checkable from the rule itself."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried a payment-ordering rule and a routing instruction to a named office, which four different cells were citing as one claim. Splitting lets each cell cite the fragment that actually supports it.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "auditNote": "IND-91 part B: the eligibility and owner cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b33",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_first_in_first_out_rule_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_first_in_first_out_rule_3",
+        "text": "That route states that a citizen wishing to pay against a specific bill should contact the Assessment & Collection department of the respective ward.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_first_in_first_out_rule. A named office to approach when the ordering rule is not what the citizen wants; this is the fragment the owner cell rests on."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried a payment-ordering rule and a routing instruction to a named office, which four different cells were citing as one claim. Splitting lets each cell cite the fragment that actually supports it.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "auditNote": "IND-91 part B: the eligibility and owner cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b34",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_kyc_does_not_change_name",
+      "fieldPath": "/text",
+      "old": "The property-tax portal states that registration of KYC does not change the billing name or owner name and only allows the property owner to access the property account number on the portal after authorisation through an OTP.",
+      "new": "The property-tax portal states that registration of KYC does not change the billing name or the owner name.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters and login-boundary-overclaim for a sentence naming an OTP without uncertainty wording. The sentence carried what KYC registration does not change and what it does allow, two independently checkable facts; both fragments now record that no login was used and no OTP was requested.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b35",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_kyc_does_not_change_name",
+      "fieldPath": "/notes",
+      "old": "Recorded for the boundary it draws between this scenario and the excluded name-change route.",
+      "new": "Recorded for the boundary it draws between this scenario and the excluded name-change route. No login was used and no OTP was requested. Split during IND-91 part B lint remediation into what KYC does not do and what it does.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters and login-boundary-overclaim for a sentence naming an OTP without uncertainty wording. The sentence carried what KYC registration does not change and what it does allow, two independently checkable facts; both fragments now record that no login was used and no OTP was requested.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b36",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_kyc_does_not_change_name_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_kyc_does_not_change_name_2",
+        "text": "The portal states that KYC only allows the property owner to access the property account number after authorisation through an OTP.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_kyc_does_not_change_name. Boundary statement supporting no cell. No login was used and no OTP was requested."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters and login-boundary-overclaim for a sentence naming an OTP without uncertainty wording. The sentence carried what KYC registration does not change and what it does allow, two independently checkable facts; both fragments now record that no login was used and no OTP was requested.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b37",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_contact_page_headquarters_only",
+      "fieldPath": "/text",
+      "old": "The property-tax portal's Contact Us route gives only the corporation's headquarters address at Mumbai C.S.T. 400001 and a portal feedback e-mail address, with no property-tax office, officer or telephone number.",
+      "new": "The property-tax portal's Contact Us route gives only the corporation's headquarters address at Mumbai C.S.T. 400001 and a portal feedback e-mail address.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. The sentence carried what the Contact Us route publishes and what it omits, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_contact_and_faq"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b38",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_contact_page_headquarters_only",
+      "fieldPath": "/notes",
+      "old": "",
+      "new": "Split during IND-91 part B lint remediation; what the route omits is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. The sentence carried what the Contact Us route publishes and what it omits, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_contact_and_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b39",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_contact_page_headquarters_only_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_contact_page_headquarters_only_2",
+        "text": "That route gives no property-tax office, officer or telephone number.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_contact_and_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_contact_page_headquarters_only. What the route omits is separately checkable from what it gives."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. The sentence carried what the Contact Us route publishes and what it omits, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_contact_and_faq"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b40",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_login_behind_captcha",
+      "fieldPath": "/text",
+      "old": "The property-tax portal's citizen login requires a property account number and a CAPTCHA, so the account view of bills and receipts is not visible on any reviewed public page.",
+      "new": "The property-tax portal's citizen login requires a property account number and a CAPTCHA.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and login-boundary-overclaim for a boundary sentence without uncertainty wording. Protocol section 5 keeps observation and inference separate, so the observed login form and the conclusion about the public surface are now separate claims, each recording that no login was used.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b41",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_login_behind_captcha",
+      "fieldPath": "/notes",
+      "old": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is the login form; the inference is that the account view lies past it. No CAPTCHA was attempted.",
+      "new": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is the login form. No login was used and no CAPTCHA was attempted. Split during IND-91 part B lint remediation into the observation and the inference drawn from it.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and login-boundary-overclaim for a boundary sentence without uncertainty wording. Protocol section 5 keeps observation and inference separate, so the observed login form and the conclusion about the public surface are now separate claims, each recording that no login was used.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b42",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_login_behind_captcha_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_login_behind_captcha_2",
+        "text": "The account view of bills and receipts is not visible on any reviewed public page.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "evidenceGrade": "B",
+        "basis": "mixed",
+        "status": "partial",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_login_behind_captcha. This is the inference drawn from the observed login form. No login was used and no CAPTCHA was attempted, so what lies past the boundary is unknown."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and login-boundary-overclaim for a boundary sentence without uncertainty wording. Protocol section 5 keeps observation and inference separate, so the observed login form and the conclusion about the public surface are now separate claims, each recording that no login was used.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b43",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_payment_receipt_surface_unknown",
+      "fieldPath": "/text",
+      "old": "What the citizen is shown or given after paying property tax, whether a receipt, an acknowledgement or a status route, is not established by any reviewed public page.",
+      "new": "What the citizen is shown after paying property tax is not established by any reviewed public page.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration. The sentence carried three separate unknowns about the post-payment surface, each independently checkable if a public page ever states it.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b44",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_payment_receipt_surface_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Not login-related in origin: the instant-payment route is public and was simply not carried through, because completing a payment is outside the safety boundary.",
+      "new": "Retained because the uncertainty itself matters to the journey. Not login-related in origin: the instant-payment route is public and was simply not carried through, because completing a payment is outside the safety boundary. Split during IND-91 part B lint remediation into the separate unknowns.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration. The sentence carried three separate unknowns about the post-payment surface, each independently checkable if a public page ever states it.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b45",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_payment_receipt_surface_unknown_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_payment_receipt_surface_unknown_2",
+        "text": "Whether a receipt or an acknowledgement is given after payment is not established by any reviewed public page.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_payment_receipt_surface_unknown. Retained because the uncertainty itself matters to the journey."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration. The sentence carried three separate unknowns about the post-payment surface, each independently checkable if a public page ever states it.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b46",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_payment_receipt_surface_unknown_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_payment_receipt_surface_unknown_3",
+        "text": "Whether a status route exists after payment is not established by any reviewed public page.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_payment_receipt_surface_unknown. Retained because the uncertainty itself matters to the journey."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration. The sentence carried three separate unknowns about the post-payment surface, each independently checkable if a public page ever states it.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b47",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_due_date_unknown",
+      "fieldPath": "/text",
+      "old": "When the current year's property tax falls due, and whether any rebate or penalty attaches to paying early or late, is not established by any reviewed public page.",
+      "new": "When the current year's property tax falls due is not established by any reviewed public page.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. The sentence carried two separate unknowns, the due date and the rebate or penalty rule, each independently checkable.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b48",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_due_date_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Not login-related.",
+      "new": "Retained because the uncertainty itself matters to the journey. Not login-related. Split during IND-91 part B lint remediation; the rebate and penalty unknown is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. The sentence carried two separate unknowns, the due date and the rebate or penalty rule, each independently checkable.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b49",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_due_date_unknown_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_ptax_due_date_unknown_2",
+        "text": "Whether any rebate or penalty attaches to paying early or late is not established by any reviewed public page.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_due_date_unknown. Retained because the uncertainty itself matters to the journey. Not login-related."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration of three or more items. The sentence carried two separate unknowns, the due date and the rebate or penalty rule, each independently checkable.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b50",
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:cost",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_mumbai_ptax_residential_rate_table",
+        "claim_mumbai_ptax_user_category_determines_rate"
+      ],
+      "new": [
+        "claim_mumbai_ptax_residential_rate_table",
+        "claim_mumbai_ptax_residential_rate_table_2",
+        "claim_mumbai_ptax_residential_rate_table_3",
+        "claim_mumbai_ptax_residential_rate_table_4",
+        "claim_mumbai_ptax_residential_rate_table_5",
+        "claim_mumbai_ptax_residential_rate_table_6",
+        "claim_mumbai_ptax_residential_rate_table_7",
+        "claim_mumbai_ptax_residential_rate_table_8",
+        "claim_mumbai_ptax_residential_rate_table_9",
+        "claim_mumbai_ptax_residential_rate_table_10",
+        "claim_mumbai_ptax_user_category_determines_rate"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the ten published rate lines, documents the property tax bill on which the account number is printed, eligibility the identifier rule and the payment-ordering rule, time and after-submission the ordering rule, owner the named ward department. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b51",
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:documents",
+      "fieldPath": "/cells/documents/claimIds",
+      "old": [
+        "claim_mumbai_ptax_account_number_from_bill"
+      ],
+      "new": [
+        "claim_mumbai_ptax_account_number_from_bill_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the ten published rate lines, documents the property tax bill on which the account number is printed, eligibility the identifier rule and the payment-ordering rule, time and after-submission the ordering rule, owner the named ward department. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b52",
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_mumbai_ptax_account_number_from_bill",
+        "claim_mumbai_ptax_user_category_determines_rate",
+        "claim_mumbai_ptax_first_in_first_out_rule"
+      ],
+      "new": [
+        "claim_mumbai_ptax_account_number_from_bill",
+        "claim_mumbai_ptax_account_number_from_bill_2",
+        "claim_mumbai_ptax_account_number_from_bill_3",
+        "claim_mumbai_ptax_user_category_determines_rate",
+        "claim_mumbai_ptax_first_in_first_out_rule",
+        "claim_mumbai_ptax_first_in_first_out_rule_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the ten published rate lines, documents the property tax bill on which the account number is printed, eligibility the identifier rule and the payment-ordering rule, time and after-submission the ordering rule, owner the named ward department. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment",
+          "source_mumbai_ptax_portal_home",
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b53",
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:time",
+      "fieldPath": "/cells/time/claimIds",
+      "old": [
+        "claim_mumbai_ptax_first_in_first_out_rule"
+      ],
+      "new": [
+        "claim_mumbai_ptax_first_in_first_out_rule",
+        "claim_mumbai_ptax_first_in_first_out_rule_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the ten published rate lines, documents the property tax bill on which the account number is printed, eligibility the identifier rule and the payment-ordering rule, time and after-submission the ordering rule, owner the named ward department. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b54",
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:owner",
+      "fieldPath": "/cells/owner/claimIds",
+      "old": [
+        "claim_mumbai_ptax_ward_assessor_email_table",
+        "claim_mumbai_ptax_first_in_first_out_rule"
+      ],
+      "new": [
+        "claim_mumbai_ptax_ward_assessor_email_table",
+        "claim_mumbai_ptax_first_in_first_out_rule_3"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the ten published rate lines, documents the property tax bill on which the account number is printed, eligibility the identifier rule and the payment-ordering rule, time and after-submission the ordering rule, owner the named ward department. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment",
+          "source_mumbai_ptax_portal_home"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_b55",
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:after-submission",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [
+        "claim_mumbai_ptax_first_in_first_out_rule"
+      ],
+      "new": [
+        "claim_mumbai_ptax_first_in_first_out_rule",
+        "claim_mumbai_ptax_first_in_first_out_rule_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: cost the ten published rate lines, documents the property tax bill on which the account number is printed, eligibility the identifier rule and the payment-ordering rule, time and after-submission the ordering rule, owner the named ward department. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_mumbai_ptax_account_number_from_bill",
+        "claim_mumbai_ptax_account_number_from_bill_2",
+        "claim_mumbai_ptax_account_number_from_bill_3",
+        "claim_mumbai_ptax_user_category_determines_rate",
+        "claim_mumbai_ptax_first_in_first_out_rule",
+        "claim_mumbai_ptax_first_in_first_out_rule_2"
+      ],
+      "new": [
+        "claim_mumbai_ptax_account_number_from_bill",
+        "claim_mumbai_ptax_account_number_from_bill_2",
+        "claim_mumbai_ptax_account_number_from_bill_3",
+        "claim_mumbai_ptax_user_category_determines_rate",
+        "claim_mumbai_ptax_first_in_first_out_rule_3"
+      ],
+      "reason": "PROTOCOL section 8 defines eligibility as a rule that decides who qualifies or which route applies. claim_mumbai_ptax_first_in_first_out_rule and _2 assert only processing sequence (an online payment is applied first-in first-out; the oldest bill is adjusted first) and decide neither, so they do not support this cell's state; the row's own time-cell note classifies them as processing sequence. The route rule the eligibility note actually relies on, that a citizen wishing to pay against a specific bill must contact the ward Assessment and Collection department, is asserted by claim_mumbai_ptax_first_in_first_out_rule_3, which was missing from the list. The cell stays stated on the identifier and user-category rules.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment",
+          "source_mumbai_ptax_portal_home",
+          "source_mumbai_ptax_rates_2015"
+        ],
+        "auditNote": "claim_mumbai_ptax_first_in_first_out_rule_3 is verified, Grade B, basis observation, and is a self-contained route rule; removing the two sequence claims does not weaken the stated state, which rests on claim_mumbai_ptax_account_number_from_bill (+_2, _3) and claim_mumbai_ptax_user_category_determines_rate."
+      },
+      "id": "corr_mumbai_property_tax_payment_r01"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:after-submission",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [
+        "claim_mumbai_ptax_first_in_first_out_rule",
+        "claim_mumbai_ptax_first_in_first_out_rule_2"
+      ],
+      "new": [
+        "claim_mumbai_ptax_first_in_first_out_rule",
+        "claim_mumbai_ptax_first_in_first_out_rule_2",
+        "claim_mumbai_ptax_first_in_first_out_rule_3"
+      ],
+      "reason": "PROTOCOL section 8 requires every claim that supports a cell's state to be listed. The after-submission note rests explicitly on the ward Assessment and Collection department being named as the recourse for a citizen who wanted a payment applied to a specific bill, which is asserted by claim_mumbai_ptax_first_in_first_out_rule_3, but that claim was absent from the list. It is recourse after payment, so it supports the mentioned state alongside the two ordering claims. The state stays mentioned: no receipt, acknowledgement, tracker or downloadable result is identified.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_instant_payment"
+        ],
+        "auditNote": "claim_mumbai_ptax_first_in_first_out_rule_3 is verified, Grade B, basis observation, read from the Instant Payment route; it names an outcome route after payment without identifying any post-submission surface, which is mentioned-level evidence."
+      },
+      "id": "corr_mumbai_property_tax_payment_r02"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_login_behind_captcha",
+      "fieldPath": "/basis",
+      "old": "mixed",
+      "new": "observation",
+      "reason": "PROTOCOL section 5 reserves mixed for a claim carrying both an observation and a conclusion drawn from it, with the boundary explained in notes. After the lint-remediation split, this claim asserts only what the login form directly shows, that citizen login requires a property account number and a CAPTCHA; the inference is carried separately by claim_mumbai_ptax_login_behind_captcha_2. Its own notes say the observation is the login form, so basis should be observation.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_portal_home"
+        ],
+        "auditNote": "Direct current observation of a public official interface read without login; no CAPTCHA was attempted. Nothing else changes: the claim remains a boundary statement supporting no cell, so its partial status is left as recorded."
+      },
+      "id": "corr_mumbai_property_tax_payment_r03"
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_i01",
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:documents",
+      "fieldPath": "/cells/documents/note",
+      "old": "The topic is touched, but no requirement is given. The portal names one concrete document, the property tax bill, as the place the Property Account No. is printed, and offers a Search route for an owner who does not have it to hand. That is a reference to a document, not a requirement to submit, provide, upload, produce or attach anything: nothing on any reviewed route tells an owner paying on a known account number what to supply, and the portal's own FAQ route rendered empty. No reviewed route states an explicit zero either, so section 3 does not apply. Document requirements do appear on the corporation's circular for change of name in the property-tax record, but mutation is an excluded route and it is not counted here.",
+      "new": "The topic is touched, but no requirement is given. The portal names one concrete document, the property tax bill, as the place the Property Account No. is printed, and offers a Search route for an owner who does not have it to hand. That is a reference to a document, not a requirement to submit, provide, upload, produce or attach anything: nothing on any reviewed route tells an owner paying on a known account number what to supply, and the portal's own FAQ route rendered empty. No reviewed route states an explicit zero either, so section 3 does not apply.",
+      "reason": "The closing sentence asserted that the corporation publishes a document list on a circular for change of name in the property-tax record. No source or claim in this ledger records that circular, so the sentence asserted evidence the row does not hold. It is removed; nothing else in the cell changes and the state stays mentioned.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B integrator follow-up, acting on the fresh re-auditor's finding."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_i02",
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:time",
+      "fieldPath": "/cells/time/note",
+      "old": "The topic is touched only as processing sequence. The Instant Payment route states that an online payment is applied first-in first-out, oldest bill first, which is a rule about the order in which payments are processed and carries no figure and no usable time rule. Nothing else follows: there is no due date, no instalment period, no rebate or penalty deadline and no service-level target for the payment route anywhere on the portal, so the cell falls well short of stated. The instant-payment route's discount and advance fields are amount fields and are not read here as timing evidence. The one timeline the portal does publish, real-time or three days, belongs to change of name in the property-tax record, which this scope excludes, so it is not counted. BMC's Citizen Charter route was searched and is a folder of ward-level documents rather than a service-standards table. That when the tax falls due is unestablished is recorded as an Unknown claim, which is a limitation and not a cell value.",
+      "new": "The topic is touched only as processing sequence. The Instant Payment route states that an online payment is applied first-in first-out, oldest bill first, which is a rule about the order in which payments are processed and carries no figure and no usable time rule. Nothing else follows: there is no due date, no instalment period, no rebate or penalty deadline and no service-level target for the payment route anywhere on the portal, so the cell falls well short of stated. The instant-payment route's discount and advance fields are amount fields and are not read here as timing evidence. BMC's Citizen Charter route was searched and is a folder of ward-level documents rather than a service-standards table. That when the tax falls due is unestablished is recorded as an Unknown claim, which is a limitation and not a cell value.",
+      "reason": "The note asserted that the portal publishes a real-time or three-day timeline for change of name in the property-tax record. No source or claim in this ledger records that timeline, so the sentence asserted evidence the row does not hold. It is removed; nothing else in the cell changes and the state stays mentioned.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B integrator follow-up, acting on the fresh re-auditor's finding."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_i03",
+      "recordType": "source",
+      "recordId": "source_mumbai_ptax_faq_route",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "source_mumbai_ptax_faq_route",
+        "title": "FAQ route - BMC property tax citizen portal",
+        "publisher": "Brihanmumbai Municipal Corporation",
+        "url": "https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/faq",
+        "accessedAt": "2026-09-06",
+        "type": "official_portal",
+        "notes": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo. Visible date: none is shown on the route. Direct current observation of the FAQ route: the heading rendered and the body did not. Limitation: the route is undated, so its currency rests on the access-date observation alone. Archive: the Wayback availability API returned the portal snapshot of 2026-03-09 as the nearest copy for this hash route; no separate snapshot exists and no new capture was pushed from this run. Limitation: no snapshot preserves this route as reviewed on 2026-09-06. Split out of source_mumbai_ptax_contact_and_faq during the IND-91 part B integrator follow-up so that each source record covers one specific page, as protocol section 7 requires."
+      },
+      "reason": "Protocol section 7 requires a specific citation rather than a record covering more than one page. source_mumbai_ptax_contact_and_faq carried both the Contact Us route and the FAQ route under a single url, and claim_mumbai_ptax_faq_route_empty rests on the FAQ route. The FAQ route is given its own source record at its own url; the observation, the access date and the archive position are unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_faq_route"
+        ],
+        "auditNote": "IND-91 part B integrator follow-up, acting on the fresh re-auditor's finding."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_i04",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_ptax_faq_route_empty",
+      "fieldPath": "/sourceIds",
+      "old": [
+        "source_mumbai_ptax_contact_and_faq"
+      ],
+      "new": [
+        "source_mumbai_ptax_faq_route"
+      ],
+      "reason": "Repointed to the source record for the specific page the claim rests on, as protocol section 7 requires. The observation is unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_contact_and_faq"
+        ],
+        "auditNote": "IND-91 part B integrator follow-up, acting on the fresh re-auditor's finding."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_i05",
+      "recordType": "source",
+      "recordId": "source_mumbai_ptax_contact_and_faq",
+      "fieldPath": "/title",
+      "old": "Contact Us and FAQ routes - BMC property tax citizen portal",
+      "new": "Contact Us route - BMC property tax citizen portal",
+      "reason": "The record now covers only the Contact Us route at its own url; the FAQ route has its own source record.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_contact_and_faq"
+        ],
+        "auditNote": "IND-91 part B integrator follow-up, acting on the fresh re-auditor's finding."
+      }
+    },
+    {
+      "id": "corr_mumbai_property_tax_payment_i06",
+      "recordType": "source",
+      "recordId": "source_mumbai_ptax_contact_and_faq",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo. Direct current observation of two sibling routes on the same portal: the Contact Us route, which is the url recorded on this source at https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/contactus, and the FAQ route at https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/faq, which is the specific page claim_mumbai_ptax_faq_route_empty rests on. Neither shows a visible last-updated date. Limitation: both routes are undated, so their currency rests on the access-date observation alone. Archive: the Wayback availability API returned the portal snapshot of 2026-03-09 as the nearest copy for these hash routes; no separate snapshot exists and no new capture was pushed from this run. Limitation: no snapshot preserves either route as reviewed on 2026-09-06.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo. Visible date: none is shown on the route. Direct current observation of the Contact Us route at https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/contactus. Limitation: the route is undated, so its currency rests on the access-date observation alone. Archive: the Wayback availability API returned the portal snapshot of 2026-03-09 as the nearest copy for this hash route; no separate snapshot exists and no new capture was pushed from this run. Limitation: no snapshot preserves this route as reviewed on 2026-09-06. The FAQ route this record previously also covered is now source_mumbai_ptax_faq_route, split out during the IND-91 part B integrator follow-up under protocol section 7.",
+      "reason": "The notes described two routes under one record. They now describe only the Contact Us route and point at the new FAQ source record.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_ptax_contact_and_faq"
+        ],
+        "auditNote": "IND-91 part B integrator follow-up, acting on the fresh re-auditor's finding."
+      }
+    }
+  ],
+  "runs": [
+    {
+      "runId": "ind91_part_b_integrator_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B integrator follow-up: findings raised by the fresh re-auditors that fall outside the field-level corrections contract (duplicate mis-graded split fragments, unsourced cell-note prose, a source record covering two routes, and missing archive limitations).",
+      "correctionIds": [
+        "corr_mumbai_property_tax_payment_i01",
+        "corr_mumbai_property_tax_payment_i02",
+        "corr_mumbai_property_tax_payment_i03",
+        "corr_mumbai_property_tax_payment_i04",
+        "corr_mumbai_property_tax_payment_i05",
+        "corr_mumbai_property_tax_payment_i06"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_lint_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B pre-audit lint remediation (protocol section 8).",
+      "correctionIds": [
+        "corr_mumbai_property_tax_payment_b01",
+        "corr_mumbai_property_tax_payment_b02",
+        "corr_mumbai_property_tax_payment_b03",
+        "corr_mumbai_property_tax_payment_b04",
+        "corr_mumbai_property_tax_payment_b05",
+        "corr_mumbai_property_tax_payment_b06",
+        "corr_mumbai_property_tax_payment_b07",
+        "corr_mumbai_property_tax_payment_b08",
+        "corr_mumbai_property_tax_payment_b09",
+        "corr_mumbai_property_tax_payment_b10",
+        "corr_mumbai_property_tax_payment_b11",
+        "corr_mumbai_property_tax_payment_b12",
+        "corr_mumbai_property_tax_payment_b13",
+        "corr_mumbai_property_tax_payment_b14",
+        "corr_mumbai_property_tax_payment_b15",
+        "corr_mumbai_property_tax_payment_b16",
+        "corr_mumbai_property_tax_payment_b17",
+        "corr_mumbai_property_tax_payment_b18",
+        "corr_mumbai_property_tax_payment_b19",
+        "corr_mumbai_property_tax_payment_b20",
+        "corr_mumbai_property_tax_payment_b21",
+        "corr_mumbai_property_tax_payment_b22",
+        "corr_mumbai_property_tax_payment_b23",
+        "corr_mumbai_property_tax_payment_b24",
+        "corr_mumbai_property_tax_payment_b25",
+        "corr_mumbai_property_tax_payment_b26",
+        "corr_mumbai_property_tax_payment_b27",
+        "corr_mumbai_property_tax_payment_b28",
+        "corr_mumbai_property_tax_payment_b29",
+        "corr_mumbai_property_tax_payment_b30",
+        "corr_mumbai_property_tax_payment_b31",
+        "corr_mumbai_property_tax_payment_b32",
+        "corr_mumbai_property_tax_payment_b33",
+        "corr_mumbai_property_tax_payment_b34",
+        "corr_mumbai_property_tax_payment_b35",
+        "corr_mumbai_property_tax_payment_b36",
+        "corr_mumbai_property_tax_payment_b37",
+        "corr_mumbai_property_tax_payment_b38",
+        "corr_mumbai_property_tax_payment_b39",
+        "corr_mumbai_property_tax_payment_b40",
+        "corr_mumbai_property_tax_payment_b41",
+        "corr_mumbai_property_tax_payment_b42",
+        "corr_mumbai_property_tax_payment_b43",
+        "corr_mumbai_property_tax_payment_b44",
+        "corr_mumbai_property_tax_payment_b45",
+        "corr_mumbai_property_tax_payment_b46",
+        "corr_mumbai_property_tax_payment_b47",
+        "corr_mumbai_property_tax_payment_b48",
+        "corr_mumbai_property_tax_payment_b49",
+        "corr_mumbai_property_tax_payment_b50",
+        "corr_mumbai_property_tax_payment_b51",
+        "corr_mumbai_property_tax_payment_b52",
+        "corr_mumbai_property_tax_payment_b53",
+        "corr_mumbai_property_tax_payment_b54",
+        "corr_mumbai_property_tax_payment_b55"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_reaudit_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B re-audit by a fresh isolated auditor after lint remediation (protocol sections 12 and 13).",
+      "correctionIds": [
+        "corr_mumbai_property_tax_payment_r01",
+        "corr_mumbai_property_tax_payment_r02",
+        "corr_mumbai_property_tax_payment_r03"
+      ]
     }
   ]
 }

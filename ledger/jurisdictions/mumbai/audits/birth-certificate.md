@@ -130,3 +130,127 @@ The ledger states the fact of no new capture but does not record it as an archiv
 Accepted cell states: **cost = stated; documents = mentioned; eligibility = stated; time = mentioned; owner = stated; after-submission = stated. Stated count: 4 of 6.**
 
 Corrections proposed: 4 (one claim text narrowed, one claim added by split, two source archive URLs made resolvable). Blocking findings: none. Stated limitation carried forward under F4: no archive snapshot was captured at access time, so the observed HTTP 403 and the ward-list portal runtime error are unarchived; and under F9, the derived-sounding consequence clause in `claim_mumbai_birth_issued_by_registrar_of_place` was not re-verified against its source within the section 12 input boundary.
+
+
+## Re-audit — 2026-09-06 (IND-91 part B)
+
+A fresh isolated auditor re-audited this row after pre-audit lint remediation, on the section 12 inputs only. 3 corrections were proposed and 3 applied; none unapplied.
+
+# Re-audit — Mumbai, birth certificate (grid-only row)
+
+- Ledger: `ledger/jurisdictions/mumbai/birth-certificate.json`
+- Expectations: `ledger/jurisdictions/mumbai/expectations/birth-certificate.json`
+- Manifest entry: `mumbai` / `birth-certificate`, mode `grid-only`, primary scenario `scenario_ind32_birth_copy_workflow`, two declared lint waivers
+- Protocol: benchmark v0.1; corrections contract PROTOCOL section 13 + `benchmark/schemas/corrections.json`
+- Judged only on the text of the ledger and sidecar as written. No URL was opened; no evidence was invented.
+
+## Cell verdicts
+
+| Cell | Recorded | Audit verdict |
+| --- | --- | --- |
+| cost | `stated` | correct; one claimId is non-load-bearing (F7) |
+| documents | `mentioned` | retained, but the record sits on a genuine definitional edge (F4) |
+| eligibility | `stated` | correct |
+| time | `mentioned` | correct |
+| owner | `stated` | correct |
+| after-submission | `stated` | state correct; claimId list contains excluded evidence (F1) |
+
+No cell state change is proposed.
+
+## Findings
+
+### F1 — `after-submission` lists a claim the cell definition explicitly excludes
+Record: expectations `birth-certificate`, `/cells/after-submission/claimIds`; claim `claim_mumbai_birth_cfc_issues_certificate_and_receipt`.
+Rule: PROTOCOL section 8, `after-submission` cell definition — "A step at or before submission — including registration, document presentation, payment, appointment booking, or the act of submission — is not after-submission evidence."
+
+The listed claim asserts only that "the Citizen Facilitation Center agent collects the necessary fees and required documents." That is a payment step plus a document-presentation step, both named in the exclusion. It is not evidence of anything the citizen sees after submitting.
+
+The cell is nonetheless correctly `stated`, because `claim_mumbai_birth_cfc_issues_certificate_and_receipt_2` ("the agent prints and issues the certificate and a fee receipt to the applicant") gives both a receipt and a downloadable/handed result — squarely within the definition, Grade B, status `verified`. The ledger's own note on the excluded claim already says `_2` "is the fragment the after-submission cell rests on," and the cell note already reasons that payment is excluded "because payment is a step at submission under the cell definition" — so the listing is internally inconsistent with the sidecar's own stated reasoning.
+
+**Correction 1** removes the excluded claim from the list. State stays `stated`.
+
+### F2 — `claim_mumbai_birth_fee_pre_2016_non_relative` is compound and unwaived
+Record: claim `claim_mumbai_birth_fee_pre_2016_non_relative`.
+Rule: PROTOCOL section 1 ("one claim asserts one checkable thing") and section 8 pre-audit lint check 1 (compound or list claims); manifest `lintWaivers` cover only `claim_mumbai_birth_registered_in_concerned_ward` and `claim_mumbai_birth_search_by_registration_number_2`.
+
+The text asserts two separately checkable prices: (a) a non-relative pays Rs. 20 plus Rs. 2 searching charges, and (b) Rs. 30 for each further copy. These are two distinct amounts for two distinct situations joined by "and", not one published list. The same run split far tighter conjunctions elsewhere (the CFC answer became three claims; the quick-link observation became three), so this is an internal inconsistency as well as a lint miss.
+
+Recommended remedy: split into `claim_mumbai_birth_fee_pre_2016_non_relative` (first copy to a non-relative) and a new `..._2` (each further copy), and add the new id to `/cells/cost/claimIds`. No structured correction is emitted: the split needs a whole new claim record, and section 13 requires the correction set to apply atomically, so a record-addition of uncertain field-path shape would put the safe corrections at risk of joint rejection. This is flagged for the integrator instead.
+
+### F3 — `claim_mumbai_birth_documents_unnamed` is compound and unwaived
+Record: claim `claim_mumbai_birth_documents_unnamed`.
+Rule: PROTOCOL section 1 and section 8 lint check 1.
+
+The text asserts a positive requirement ("needs to submit the duly signed application form along with required documents") and a negative observation about the same passage ("without naming any document"). Those are two checkable things. The run split exactly this shape for the fee topic — `claim_mumbai_birth_fee_topic_without_amount` (what the answer omits) versus `..._2` (what it does say) — so the documents claim should have been split the same way. Not covered by either waiver.
+
+This matters beyond tidiness: the compounding is what makes F4 hard to adjudicate, because the positive half and the evaluative half are asserted as one record. Same remedy route as F2; no structured correction emitted.
+
+### F4 — `documents` sits on an unresolved edge in the section 8 definition
+Record: expectations `birth-certificate`, `/cells/documents/state` (`mentioned`).
+Rule: PROTOCOL section 8, `documents` — "`stated` when the evidence gives an actionable document list or **names a concrete document with a requirement to submit, provide, upload, produce, or attach it**. A reference to documents without telling the citizen what is required is `mentioned`."
+
+Both halves of that definition fit this record, and they point opposite ways:
+
+- Toward `stated`: `claim_mumbai_birth_documents_unnamed` names "the duly signed application form" and requires it to be submitted, and `claim_mumbai_birth_form_download_route` establishes that form as a concrete, published, downloadable artefact at a specific URL. On the literal first branch, a concrete document is named with a requirement to submit it.
+- Toward `mentioned`: everything the citizen actually has to bring beyond the form is "required documents", "necessary documents" or "the prescribed format" — a reference to documents without telling the citizen what is required, which is the definition's own worked example of `mentioned`.
+
+I retain `mentioned` and propose no state change. Reason: the application form is the vehicle of the application rather than a document the evidence requires the citizen to produce alongside it, and the cell would otherwise read `stated` for any service that says "submit the form", which would empty the cell of discriminating power. That reading is a judgment, not a derivation — the protocol does not carve the application form out of "concrete document" the way the `after-submission` definition explicitly carves out the act of submission. Recorded here for the protocol owner: if the first branch is intended to cover the application form itself, this cell is `stated`, and the same question will recur on every row.
+
+The cell's `searchedRoutes` (four routes, including the scanned form PDF) and its note satisfy section 9 for a `mentioned` cell, and the unreadable scanned form is correctly recorded as a limit on this run rather than as a finding about the form.
+
+### F5 — `source_mumbai_birth_ph_faq` records no archive limitation
+Record: source `source_mumbai_birth_ph_faq`, `/notes`.
+Rule: PROTOCOL section 11 — a snapshot is to be captured at access time, and where capture is not made the access date, the failure, and a limitation must be recorded.
+
+The notes record an existing Wayback copy dated 2024-06-16 and state that "no new capture was pushed from this run", but stop there. Three of the five sources in this ledger (`..._portal_health_page`, `..._quicklink_error`, `..._ward_list`) go on to record the limitation that the snapshot predates the access date and so does not preserve the source as reviewed on 2026-09-06. This one does not, though the same fact holds. **Correction 2** adds the limitation sentence in the ledger's own wording.
+
+### F6 — `source_mumbai_birth_portal_apply_faq` records no archive limitation
+Record: source `source_mumbai_birth_portal_apply_faq`, `/notes`.
+Rule: PROTOCOL section 11, as F5.
+
+Stronger case than F5: this is a live HTML page, "read in full" on 2026-09-06, whose only snapshot is 2022-03-07 — four and a half years older than the reading, and the ledger applies exactly that four-year reasoning to the ward-list source. Six of this row's Grade B claims rest on this source, so the gap between what was read and what is preserved is the largest in the file. **Correction 3** adds the limitation sentence.
+
+### F7 — non-load-bearing claimIds in `cost` and `time`
+Records: `/cells/cost/claimIds` → `claim_mumbai_birth_fee_post_2016_six_rupees_2`; `/cells/time/claimIds` → `claim_mumbai_birth_obtain_at_ward_cfc`, `claim_mumbai_birth_delivery_mode_choice`.
+Rule: PROTOCOL section 9 — a `stated` cell writes "its state, `claimIds`, and an actionable-value note".
+
+- `..._six_rupees_2` asserts why the Rs. 6 charge exists (certificates generated from the CRS software on crs.orgi.gov.in). It carries no amount and no schedule, so it does not itself support `stated` on `cost`.
+- `claim_mumbai_birth_obtain_at_ward_cfc`, after the IND-91 split, carries only the collection point; its sole timing content is the sequence word "after applying". `claim_mumbai_birth_delivery_mode_choice` carries only the choice between ward collection and courier.
+
+No correction is proposed. Section 8's `time` definition expressly counts a reference to "sequence" as `mentioned`-supporting evidence, so the two time entries are within the definition; and the sidecar's consistent convention is to list a split family together with the fragment that carries the value. Unlike F1, nothing here is listed against an explicit exclusion. Flagged so the convention is a decision rather than an accident: if the benchmark wants cell `claimIds` to be strictly load-bearing, these three go, and so do several parallel entries in other rows.
+
+### F8 — `claim_mumbai_birth_online_surface_behind_login` is compound and half-duplicated
+Record: claim `claim_mumbai_birth_online_surface_behind_login`.
+Rule: PROTOCOL section 1 (atomicity) and section 5 (a `mixed` basis must explain the boundary in `notes`).
+
+The text asserts both what the FAQ says (directs the applicant to the Citizen Portal) and what this run did not do (did not enter that surface). The first half restates `claim_mumbai_birth_apply_at_cfc_or_online_2` almost exactly. The `mixed` basis is correctly used and the notes do explain the boundary, as section 5 requires, so the grade and basis stand; the claim would be cleaner as the boundary statement alone.
+
+Handling is otherwise correct and worth recording as correct: this `partial` boundary claim and the `Unknown` claim `claim_mumbai_birth_current_fee_currency_unknown` appear in **no** cell's `claimIds`, which is what section 8 requires — "a boundary statement or `Unknown` claim records a limitation, not a positive cell value."
+
+### F9 — two `stated` cells assert negative search results with no searched routes recorded
+Records: `/cells/after-submission` and `/cells/owner` (`searchedRoutes: []`).
+Rule: PROTOCOL section 9 (searched routes are required for `mentioned`/`absent` cells) read with section 6's principle that a "no public source found" statement rests on a recorded search of the relevant public route.
+
+Both notes make negative assertions — "No status page or tracker for a birth-certificate application was found on any reviewed public route" and, in `owner`, that the ward list carries no Civic Facility Center address — while recording no routes at all. Section 9 does not require `searchedRoutes` on a `stated` cell, so this is not a rule breach; but the notes claim more than the cell records. No correction: the routes are recoverable from the `documents` and `time` cells and the source list, and inventing a route list here would be manufacturing a search record I cannot verify.
+
+## Checks that passed
+
+- **Citation gate (section 7).** Every non-`Unknown` claim carries at least one `sourceId`; the single `Unknown` claim carries none, as the schema's conditional allows. All five sources are specific pages, not homepages; each has a direct link, ISO access date `2026-09-06` matching `meta.asOf`, and jurisdiction text specific to Mumbai, Maharashtra, India. Agency naming as displayed on the access date is recorded per source.
+- **Evidence grades (section 4).** Consistent and defensible. The undated 2018-metadata FAQ PDF and the page stamped "Last updated on 31/12/2016" carry Grade C with the date and limitation stated, per the "archived, undated, or visibly outdated official material" row. The live application FAQ, the ward list and the two error observations carry Grade B, correct under "direct current observation of a public official interface" and section 1's instruction to grade such observation B rather than E. No Grade B on a secondary source; no Grade C on an observed current official form.
+- **Basis (section 5).** `observation` used for what a source or interface shows; `inference` only on the `Unknown` fee-currency claim; the one `mixed` claim explains its boundary in `notes`.
+- **Explicit zero (section 3).** The free first copy to relatives for pre-2016 events is recorded as a `verified` stated value and carried into a `stated` `cost` cell, not as an absence.
+- **Scenario tags (section 2).** Every claim tags `scenario_ind32_birth_copy_workflow`, which matches the manifest's `primaryScenarioId` and the sidecar's `primaryScenarioId`. No aliases; empty `pathNodeIds`, `nodes`, `edges`, `roadblocks`, `journeys` are consistent with the manifest's `grid-only` mode.
+- **Reference integrity.** Every `claimId` in all six cells resolves to a claim in the ledger; every `sourceId` on every claim resolves to a source; no dangling or duplicate ids; all ids match the schema id pattern; source URLs are distinct, so lint check 2 (duplicate source, same URL and access date) is clean.
+- **Contradiction links (section 1).** All `contradictsClaimIds` are empty, and correctly so. The nearest tension — the FAQ offering an online route while the corporation's own "Application for Birth Certificate" quick link returned HTTP 403 on the access date — is not a contradiction between the claims as worded, because each is framed as a reported statement or a dated observation and both are true. The practical conflict is carried in `meta.disclaimer` and in the boundary claim.
+- **Waivers (section 8).** Both manifest waivers name an affected record id and a reason, and both reasons hold on inspection: "in a hospital or at home" is one rule over two places, and the alternative search fields are one published list.
+- **Safety (section 16).** No login, no submission, no personal data. The recorded portal exception id is a system-generated diagnostic printed on a public error page, not case or identity data.
+
+## Corrections summary
+
+Three corrections, in `reaudit-mumbai-birth-certificate.corrections.json`:
+
+1. `expectations` / `birth-certificate:after-submission` — `/cells/after-submission/claimIds`: drop the submission-step claim (F1).
+2. `source` / `source_mumbai_birth_ph_faq` — `/notes`: add the missing archive limitation (F5).
+3. `source` / `source_mumbai_birth_portal_apply_faq` — `/notes`: add the missing archive limitation (F6).
+
+F2, F3, F4, F7, F8 and F9 are recorded as findings without structured corrections, for the reasons given under each.

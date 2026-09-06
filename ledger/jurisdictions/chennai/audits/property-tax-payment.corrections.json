@@ -13,7 +13,10 @@
       "new": "mentioned",
       "reason": "Section 8 makes cost stated only when the evidence gives an amount a citizen pays or an actionable fee schedule, and names a payment step without an amount as mentioned. The cell rests solely on a 'Nil' transaction fee for the online channel, while the ledger's own claim_chennai_ptax_amount_payable_unknown records that the tax itself cannot be derived because the percentage table and the basic-rate annexure the corporation's method depends on are absent from the page that cites them. A zero on the channel charge does not supply the amount a citizen pays for this service. Section 3 is preserved: the explicit zero is retained in the cell's claimIds as a topic-only claim under section 9 and keeps the cell off absent, but it does not carry the cell to stated.",
       "support": {
-        "sourceIds": ["source_chennai_ptax_rules_procedure", "source_chennai_ptax_assessment_method"],
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure",
+          "source_chennai_ptax_assessment_method"
+        ],
         "auditNote": "Audit finding F1. The nil transaction fee is one component of a two-part sum whose other component is underivable by the corporation's own published method; the calculator that would supply the missing rate points at an unreachable staging host. The cell already records three searched routes, satisfying section 9 for a mentioned cell."
       }
     },
@@ -26,7 +29,10 @@
       "new": "The topic is named and one real charge is quantified, but no amount a citizen pays for this service is given. The corporation states a 'Nil' transaction fee for online payment, which is an explicit zero on the channel charge and is retained here under protocol section 3 so that the cell is not scored absent. It is not the amount the citizen pays: the tax itself cannot be derived from any public page, because the corporation's own method points to a percentage table 'given above' and to an annexure of location-wise basic rates, neither of which is on the page, which ends with the text 'TO BE UPDATED'; the calculator that would supply them points at an unreachable staging host. That gap is carried as a separate unknown claim rather than folded into this cell. Under the section 8 cost definition the payment route is a payment step without an amount, which is mentioned.",
       "reason": "The cell note argued for a stated cell. It is rewritten to state the mentioned ruling and the searched-route rationale required of a mentioned cell by section 9, while keeping the explicit zero visible as section 3 requires.",
       "support": {
-        "sourceIds": ["source_chennai_ptax_rules_procedure", "source_chennai_ptax_assessment_method"],
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure",
+          "source_chennai_ptax_assessment_method"
+        ],
         "auditNote": "Audit finding F1. Consequential on the state change in the same correction set."
       }
     },
@@ -39,7 +45,9 @@
       "new": "The corporation's property tax rules and procedure page lists the modes of paying property tax as through the tax collectors, through eleven named banks under a walk-in payment system, at e-seva common service centres run by Tamil Nadu Arasu Cable Television Corporation in taluk offices, zonal offices, divisional offices and headquarters, and online.",
       "reason": "Section 1 requires one claim to assert one checkable thing, and section 8 lint item 1 flags compound claims. This claim asserted two distinct rules: the cheque or demand draft payee instruction and the list of payment channels. The payee limb is already recorded atomically as claim_chennai_ptax_revenue_officer_is_payee, so the claim is narrowed to the channel list rather than split into a new record, preserving record identity under section 1.",
       "support": {
-        "sourceIds": ["source_chennai_ptax_rules_procedure"],
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
         "auditNote": "Audit finding F4. No evidence is added or removed: both limbs remain in the ledger, each on one record. The enumeration of channels the page itself lists is one checkable thing and is not split further."
       }
     },
@@ -52,7 +60,9 @@
       "new": "A usable rule about where the tax may be paid. The cheque or demand draft instruction this claim previously also carried is recorded atomically at claim_chennai_ptax_revenue_officer_is_payee.",
       "reason": "The second clause of the note referred to the payee and instrument limb removed from /text by the accompanying correction, and would otherwise be stale.",
       "support": {
-        "sourceIds": ["source_chennai_ptax_rules_procedure"],
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
         "auditNote": "Audit finding F4. Consequential on the text narrowing in the same correction set."
       }
     },
@@ -72,7 +82,9 @@
       ],
       "reason": "The documents cell note reasons about the cheque or demand draft drawn in a named favour, which it took from claim_chennai_ptax_payment_modes. That limb moves to claim_chennai_ptax_revenue_officer_is_payee under the accompanying atomicity correction, so the claim is added here to preserve the cell's topic anchor. Section 9 permits topic-only claimIds on a mentioned cell.",
       "support": {
-        "sourceIds": ["source_chennai_ptax_rules_procedure"],
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
         "auditNote": "Audit finding F3 and F4. The cell state is unchanged at mentioned: a payment instrument is not a document the citizen must produce, and the corporation's real document list is scoped to the excluded assessment route."
       }
     },
@@ -85,7 +97,9 @@
       "new": "C",
       "reason": "Section 4 grades as C official material that is incomplete, potentially outdated, or undated and visibly outdated, with the date and limitation stated. The claim asserts a present-tense substantive rule taken solely from source_chennai_ptax_assessment_method, a page that shows no visible date, cites nothing later than 2001, omits the percentage table and basic-rate annexure its own method requires, and ends with the literal placeholder 'TO BE UPDATED'.",
       "support": {
-        "sourceIds": ["source_chennai_ptax_assessment_method"],
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
         "auditNote": "Audit finding F5. The section 4 requirement to state the date and limitation is already met by the source record and by meta.disclaimer, so no further edit is proposed. No cell state changes, because section 8 admits a Grade A, B or C claim as the basis for stated."
       }
     },
@@ -98,7 +112,9 @@
       "new": "C",
       "reason": "Section 4 grades as C official material that is incomplete, potentially outdated, or undated and visibly outdated. The 10.92 multiplier and its worked example are asserted as a current rule solely from source_chennai_ptax_assessment_method, which is undated, cites authorities only up to 2001, is missing the figures its own method depends on, and declares itself 'TO BE UPDATED'.",
       "support": {
-        "sourceIds": ["source_chennai_ptax_assessment_method"],
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
         "auditNote": "Audit finding F5. Graded on source strength, not on how usable the figure is."
       }
     },
@@ -111,9 +127,1266 @@
       "new": "C",
       "reason": "Section 4 grades as C official material that is incomplete, potentially outdated, or undated and visibly outdated. The 10 per cent library cess is asserted as a current rule from source_chennai_ptax_assessment_method on the strength of a 1992 government order and a 2001 council resolution, on a page that is undated, incomplete on its face, and ends with 'TO BE UPDATED'.",
       "support": {
-        "sourceIds": ["source_chennai_ptax_assessment_method"],
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
         "auditNote": "Audit finding F5. The claim's own note records that the rate is published but the base it applies to is not."
       }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b01",
+      "recordType": "source",
+      "recordId": "source_chennai_ptax_section_index",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION', with the footer naming 'Website Information Manager : Programmer, IT Cell, 3rd Floor, Muthamizh Arignar Kalaignar Mu.Karunanithi Maaligai, Greater Chennai Corporation'. The page shows no visible last-updated or version date. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240704143235/https://chennaicorporation.gov.in/gcc/online-services/property-tax/ (2024-07-04); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION', with the footer naming 'Website Information Manager : Programmer, IT Cell, 3rd Floor, Muthamizh Arignar Kalaignar Mu.Karunanithi Maaligai, Greater Chennai Corporation'. The page shows no visible last-updated or version date. Limitation: the page is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240704143235/https://chennaicorporation.gov.in/gcc/online-services/property-tax/ (2024-07-04); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the page as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an undated, archived source without a stated limitation. Both limitations are now stated in words; no claim, grade or cell state changes.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_section_index"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b02",
+      "recordType": "source",
+      "recordId": "source_chennai_ptax_rules_procedure",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION'. The page shows no visible last-updated or version date and ends with the literal text 'TO BE UPDATED'. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220717070055/https://chennaicorporation.gov.in/gcc/online-services/property-tax/rules-procedure/ (2022-07-17), more than four years before the access date; no new capture was pushed from this run.",
+      "new": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION'. The page shows no visible last-updated or version date and ends with the literal text 'TO BE UPDATED'. Limitation: the page is undated and declares itself unfinished, so what it states may not be current or complete. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220717070055/https://chennaicorporation.gov.in/gcc/online-services/property-tax/rules-procedure/ (2022-07-17), more than four years before the access date; no new capture was pushed from this run. Limitation: that snapshot long predates the access date, so it does not preserve the page as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an undated, archived source without a stated limitation. Both limitations are now stated, including that the page declares itself unfinished.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b03",
+      "recordType": "source",
+      "recordId": "source_chennai_ptax_online_payment_route",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION'. Direct current observation of a public official interface reachable without login; the route was read only and no payment was begun. Shows no visible last-updated date. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220926164430/https://chennaicorporation.gov.in/new_site/property-tax-online-payment/ (2022-09-26); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION'. Direct current observation of a public official interface reachable without login; the route was read only and no payment was begun. Shows no visible last-updated date. Limitation: the route is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220926164430/https://chennaicorporation.gov.in/new_site/property-tax-online-payment/ (2022-09-26); no new capture was pushed from this run. Limitation: that snapshot long predates the access date, so it does not preserve the route as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an undated, archived source without a stated limitation. Both limitations are now stated in words.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_online_payment_route"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b04",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_payment_modes",
+      "fieldPath": "/text",
+      "old": "The corporation's property tax rules and procedure page lists the modes of paying property tax as through the tax collectors, through eleven named banks under a walk-in payment system, at e-seva common service centres run by Tamil Nadu Arasu Cable Television Corporation in taluk offices, zonal offices, divisional offices and headquarters, and online.",
+      "new": "The corporation's property tax rules and procedure page lists the modes of paying property tax.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 352 characters. The page lists four separate payment modes and the locations of one of them, which are independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b05",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_payment_modes",
+      "fieldPath": "/notes",
+      "old": "A usable rule about where the tax may be paid. The cheque or demand draft instruction this claim previously also carried is recorded atomically at claim_chennai_ptax_revenue_officer_is_payee.",
+      "new": "A usable rule about where the tax may be paid. The cheque or demand draft instruction this claim previously also carried is recorded atomically at claim_chennai_ptax_revenue_officer_is_payee. Split during IND-91 part B lint remediation into one claim per published mode.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 352 characters. The page lists four separate payment modes and the locations of one of them, which are independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b06",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_payment_modes_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_payment_modes_2",
+        "text": "One mode is payment through the tax collectors.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_payment_modes; one published mode, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 352 characters. The page lists four separate payment modes and the locations of one of them, which are independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b07",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_payment_modes_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_payment_modes_3",
+        "text": "One mode is payment through eleven named banks under a walk-in payment system.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_payment_modes; one published mode, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 352 characters. The page lists four separate payment modes and the locations of one of them, which are independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b08",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_payment_modes_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_payment_modes_4",
+        "text": "One mode is payment at e-seva common service centres run by Tamil Nadu Arasu Cable Television Corporation.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_payment_modes; one published mode, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 352 characters. The page lists four separate payment modes and the locations of one of them, which are independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b09",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_payment_modes_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_payment_modes_5",
+        "text": "Those e-seva centres are located in taluk offices or zonal offices or divisional offices or headquarters.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_payment_modes. Where the e-seva centres sit is separately checkable from the mode itself."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 352 characters. The page lists four separate payment modes and the locations of one of them, which are independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b10",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_payment_modes_6",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_payment_modes_6",
+        "text": "One mode is payment online.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_payment_modes; one published mode, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 352 characters. The page lists four separate payment modes and the locations of one of them, which are independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b11",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_bill_number_required",
+      "fieldPath": "/text",
+      "old": "The corporation's online payment and receipt routes require a zone number, division code, bill number and sub number, and both tell the citizen to ensure the property tax bill number before making payment.",
+      "new": "The corporation's online payment and receipt routes require a zone number, a division code, a bill number and a sub number.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration. The fields the routes require and the instruction to confirm the bill number first are two separately checkable facts; the field list itself is one published set of inputs and is waived.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_online_payment_route",
+          "source_chennai_ptax_receipt_route"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b12",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_bill_number_required",
+      "fieldPath": "/notes",
+      "old": "Matches this scenario's premise of a known property identifier.",
+      "new": "Matches this scenario's premise of a known property identifier. Split during IND-91 part B lint remediation; the instruction to confirm the bill number first is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration. The fields the routes require and the instruction to confirm the bill number first are two separately checkable facts; the field list itself is one published set of inputs and is waived.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_online_payment_route",
+          "source_chennai_ptax_receipt_route"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b13",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_bill_number_required_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_bill_number_required_2",
+        "text": "Both routes tell the citizen to ensure the property tax bill number before making payment.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_online_payment_route",
+          "source_chennai_ptax_receipt_route"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_bill_number_required. The instruction is separately checkable from the fields the routes require."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration. The fields the routes require and the instruction to confirm the bill number first are two separately checkable facts; the field list itself is one published set of inputs and is waived.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_online_payment_route",
+          "source_chennai_ptax_receipt_route"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b14",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_half_yearly_basis",
+      "fieldPath": "/text",
+      "old": "The corporation's assessment method page states that property tax in Chennai city limits is a half-yearly tax calculated as a percentage of annual rental value, which is arrived at from the reasonable letting value under section 100 of the Chennai City Municipal Corporation Act 1919.",
+      "new": "The corporation's assessment method page states that property tax in Chennai city limits is a half-yearly tax calculated as a percentage of annual rental value.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried the tax cycle and the statutory derivation of the value it is charged on, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b15",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_half_yearly_basis",
+      "fieldPath": "/notes",
+      "old": "A half-yearly cycle, without any date on which a half year's tax falls due.",
+      "new": "A half-yearly cycle, without any date on which a half year's tax falls due. Split during IND-91 part B lint remediation; how annual rental value is arrived at is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried the tax cycle and the statutory derivation of the value it is charged on, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b16",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_half_yearly_basis_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_half_yearly_basis_2",
+        "text": "That page states that the annual rental value is arrived at from the reasonable letting value under section 100 of the Chennai City Municipal Corporation Act 1919.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_half_yearly_basis. The statutory basis of the value is separately checkable from the half-yearly cycle."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried the tax cycle and the statutory derivation of the value it is charged on, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b17",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_rate_table_and_annexure_missing",
+      "fieldPath": "/text",
+      "old": "The corporation's assessment method page refers the citizen to a percentage table 'given above' for the half-yearly tax and to an annexure for location-wise basic rates per square foot, and neither the table nor the annexure appears anywhere on the page, which ends with the text 'TO BE UPDATED'.",
+      "new": "The corporation's assessment method page refers the citizen to a percentage table 'given above' for the half-yearly tax.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 296 characters. The observation carried two references, their absence from the page and the page's closing text, four separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b18",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_rate_table_and_annexure_missing",
+      "fieldPath": "/notes",
+      "old": "Direct current observation of the page's own contents. The two missing pieces are exactly the two numbers a citizen needs to compute the tax.",
+      "new": "Direct current observation of the page's own contents. The two missing pieces are exactly the two numbers a citizen needs to compute the tax. Split during IND-91 part B lint remediation into the two references, their absence and the page's closing text.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 296 characters. The observation carried two references, their absence from the page and the page's closing text, four separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b19",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_rate_table_and_annexure_missing_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_rate_table_and_annexure_missing_2",
+        "text": "The same page refers the citizen to an annexure for location-wise basic rates per square foot.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_rate_table_and_annexure_missing. The second reference is separately checkable from the first."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 296 characters. The observation carried two references, their absence from the page and the page's closing text, four separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b20",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_rate_table_and_annexure_missing_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_rate_table_and_annexure_missing_3",
+        "text": "Neither that table nor that annexure appears anywhere on the page.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_rate_table_and_annexure_missing. The absence is separately checkable from the references to them."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 296 characters. The observation carried two references, their absence from the page and the page's closing text, four separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b21",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_rate_table_and_annexure_missing_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_rate_table_and_annexure_missing_4",
+        "text": "The page ends with the text 'TO BE UPDATED'.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_rate_table_and_annexure_missing. Direct observation of the page's closing text."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 296 characters. The observation carried two references, their absence from the page and the page's closing text, four separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b22",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_library_cess",
+      "fieldPath": "/text",
+      "old": "The corporation's assessment method page states that a 10 per cent library cess is calculated from the general tax component of property tax, citing G.O.Ms.No.492 dated 19 May 1992 and Council Resolution No.246/2001 dated 22 May 2001.",
+      "new": "The corporation's assessment method page states that a 10 per cent library cess is calculated from the general tax component of property tax.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The rate and the authorities cited for it are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b23",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_library_cess",
+      "fieldPath": "/notes",
+      "old": "A rate that is published, applied to a base that is not.",
+      "new": "A rate that is published, applied to a base that is not. Split during IND-91 part B lint remediation; the authorities cited are asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The rate and the authorities cited for it are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b24",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_library_cess_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_library_cess_2",
+        "text": "That page cites G.O.Ms.No.492 dated 19 May 1992 and Council Resolution No.246/2001 dated 22 May 2001 for the library cess.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_library_cess. The authorities cited are separately checkable from the rate."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The rate and the authorities cited for it are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b25",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_public_receipt_route",
+      "fieldPath": "/text",
+      "old": "The corporation publishes a Property Tax Online Payment Receipt route, reachable without login, which returns a payment receipt for a property identified by its zone number, division code, bill number and sub number.",
+      "new": "The corporation publishes a Property Tax Online Payment Receipt route that is reachable without login.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration. The existence of a public receipt route and what it returns are two separately checkable facts, and protocol section 5 keeps the observed route separate from the inference about its output.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_receipt_route"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b26",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_public_receipt_route",
+      "fieldPath": "/notes",
+      "old": "The observation is the route, its title and its four input fields on the access date; the inference is what it returns for a real property, since no identifier was entered and no case data was retrieved.",
+      "new": "The observation is the route, its title and its four input fields on the access date. No identifier was entered, no login was used and no case data was retrieved. Split during IND-91 part B lint remediation; what the route returns is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration. The existence of a public receipt route and what it returns are two separately checkable facts, and protocol section 5 keeps the observed route separate from the inference about its output.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_receipt_route"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b27",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_public_receipt_route_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_public_receipt_route_2",
+        "text": "That route returns a payment receipt for a property identified by those four bill fields.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_receipt_route"
+        ],
+        "evidenceGrade": "B",
+        "basis": "mixed",
+        "status": "partial",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_public_receipt_route. The four fields are the ones asserted by claim_chennai_ptax_bill_number_required. The inference is what the route returns for a real property, since no identifier was entered and no case data was retrieved."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration. The existence of a public receipt route and what it returns are two separately checkable facts, and protocol section 5 keeps the observed route separate from the inference about its output.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_receipt_route"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b28",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_revenue_officer_contact",
+      "fieldPath": "/text",
+      "old": "The corporation's payment and receipt routes both carry a note directing a citizen with any discrepancy in their property tax to submit complaints with particulars to the Revenue Officer, giving telephone numbers 2538 3614 and 2538 4510 extension 370.",
+      "new": "The corporation's payment and receipt routes both carry a note directing a citizen with any discrepancy in their property tax to submit complaints with particulars to the Revenue Officer.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. Where the citizen is directed and the telephone numbers published for that role are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_online_payment_route",
+          "source_chennai_ptax_receipt_route"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b29",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_revenue_officer_contact",
+      "fieldPath": "/notes",
+      "old": "A named role with a direct contact route, published on the payment surface itself. Institutional contact details only.",
+      "new": "A named role with a direct contact route, published on the payment surface itself. Institutional contact details only. Split during IND-91 part B lint remediation; the telephone numbers are asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. Where the citizen is directed and the telephone numbers published for that role are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_online_payment_route",
+          "source_chennai_ptax_receipt_route"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b30",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_revenue_officer_contact_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_revenue_officer_contact_2",
+        "text": "That note gives telephone numbers 2538 3614 and 2538 4510 extension 370 for the Revenue Officer.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_online_payment_route",
+          "source_chennai_ptax_receipt_route"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_revenue_officer_contact. The contact numbers are separately checkable from the routing instruction. Institutional contact details only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. Where the citizen is directed and the telephone numbers published for that role are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_online_payment_route",
+          "source_chennai_ptax_receipt_route"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b31",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_calculator_points_to_staging_host",
+      "fieldPath": "/text",
+      "old": "The Property Tax Calculator link on the corporation's live property tax section index points to a third-party staging host, coc-staging.egovernments.org, over plain HTTP on port 9980, and the address did not connect on the access date.",
+      "new": "The Property Tax Calculator link on the corporation's live property tax section index points to a third-party staging host, coc-staging.egovernments.org, over plain HTTP on port 9980.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. Where the link points and whether it connects are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_section_index"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b32",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_calculator_points_to_staging_host",
+      "fieldPath": "/notes",
+      "old": "Recorded as observed. The calculator is the route that would supply the missing rate, so its failure and the missing table are the same gap seen twice.",
+      "new": "Recorded as observed. The calculator is the route that would supply the missing rate, so its failure and the missing table are the same gap seen twice. Split during IND-91 part B lint remediation; the connection failure is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. Where the link points and whether it connects are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_section_index"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b33",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_calculator_points_to_staging_host_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_calculator_points_to_staging_host_2",
+        "text": "That address did not connect on the access date.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_section_index"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_calculator_points_to_staging_host. The failure is separately checkable from where the link points."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. Where the link points and whether it connects are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_section_index"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b34",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_assessment_documents_are_other_route",
+      "fieldPath": "/text",
+      "old": "The document list the corporation publishes on its property tax rules and procedure page, comprising registered documents in the applicant's favour, a filled application Form-6 and the last tax paid receipt, is given for the submission of an application for assessment of property tax, not for paying tax on an existing assessment.",
+      "new": "The corporation's property tax rules and procedure page publishes a document list for the submission of an application for assessment of property tax.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 331 characters. The existence of the list, its contents and its scope are three separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "IND-91 part B: the documents cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b35",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_assessment_documents_are_other_route",
+      "fieldPath": "/notes",
+      "old": "Recorded to mark the boundary with this scenario's excluded first-assessment route, not to support the documents cell.",
+      "new": "Recorded to mark the boundary with this scenario's excluded first-assessment route, not to support the documents cell. Split during IND-91 part B lint remediation into the list, its contents and its scope.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 331 characters. The existence of the list, its contents and its scope are three separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b36",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_assessment_documents_are_other_route_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_assessment_documents_are_other_route_2",
+        "text": "That list comprises registered documents in the applicant's favour or a filled application Form-6 or the last tax paid receipt.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_assessment_documents_are_other_route. What the list contains is separately checkable from what it is for."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 331 characters. The existence of the list, its contents and its scope are three separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "IND-91 part B: the documents cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b37",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_assessment_documents_are_other_route_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_assessment_documents_are_other_route_3",
+        "text": "That document list is not given for paying tax on an existing assessment.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_assessment_documents_are_other_route. The scope limit is the reason this claim does not support the documents cell of this scenario."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 331 characters. The existence of the list, its contents and its scope are three separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "IND-91 part B: the documents cell that cites this claim is mentioned, not stated."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b38",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_due_date_unknown",
+      "fieldPath": "/text",
+      "old": "The date on which a half year's property tax falls due, and whether any penalty or rebate attaches to paying late or early, is not established by any reviewed public page.",
+      "new": "The date on which a half year's property tax falls due is not established by any reviewed public page.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration. The sentence carried two separate unknowns, the due date and the penalty or rebate rule, each independently checkable.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b39",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_due_date_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Not login-related; the payment route is public.",
+      "new": "Retained because the uncertainty itself matters to the journey. Not login-related; the payment route is public. Split during IND-91 part B lint remediation; the penalty and rebate unknown is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration. The sentence carried two separate unknowns, the due date and the penalty or rebate rule, each independently checkable.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b40",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_due_date_unknown_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_due_date_unknown_2",
+        "text": "Whether any penalty or rebate attaches to paying late or early is not established by any reviewed public page.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_due_date_unknown. Retained because the uncertainty itself matters to the journey. Not login-related."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration. The sentence carried two separate unknowns, the due date and the penalty or rebate rule, each independently checkable.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b41",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_amount_payable_unknown",
+      "fieldPath": "/text",
+      "old": "The amount of property tax payable on a residential property for the current half year cannot be derived from any reviewed public page, because the percentage of annual value and the location-wise basic rate the corporation's own method depends on are both missing from the page that cites them.",
+      "new": "The amount of property tax payable on a residential property for the current half year cannot be derived from any reviewed public page.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 295 characters. The unknown and the observed absence that causes it are two separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b42",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_amount_payable_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Not login-related; the calculator that would answer it points at an unreachable staging host.",
+      "new": "Retained because the uncertainty itself matters to the journey. Not login-related; the calculator that would answer it points at an unreachable staging host. Split during IND-91 part B lint remediation; the reason for the gap is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 295 characters. The unknown and the observed absence that causes it are two separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b43",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_amount_payable_unknown_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_chennai_ptax_amount_payable_unknown_2",
+        "text": "The percentage of annual value and the location-wise basic rate the corporation's own method depends on are both missing from the page that cites them.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_amount_payable_unknown. The observed absence is separately checkable from the unknown it produces."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 295 characters. The unknown and the observed absence that causes it are two separately checkable statements of different kinds.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b44",
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:documents",
+      "fieldPath": "/cells/documents/claimIds",
+      "old": [
+        "claim_chennai_ptax_payment_modes",
+        "claim_chennai_ptax_assessment_documents_are_other_route",
+        "claim_chennai_ptax_revenue_officer_is_payee"
+      ],
+      "new": [
+        "claim_chennai_ptax_payment_modes",
+        "claim_chennai_ptax_assessment_documents_are_other_route",
+        "claim_chennai_ptax_assessment_documents_are_other_route_2",
+        "claim_chennai_ptax_assessment_documents_are_other_route_3",
+        "claim_chennai_ptax_revenue_officer_is_payee"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: eligibility the identifier fields and the published payment modes, owner the routing note with its published telephone numbers, after-submission the public receipt route and what it returns, documents the assessment-route list and its scope limit. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b45",
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_chennai_ptax_bill_number_required",
+        "claim_chennai_ptax_payment_modes",
+        "claim_chennai_ptax_half_yearly_basis"
+      ],
+      "new": [
+        "claim_chennai_ptax_bill_number_required",
+        "claim_chennai_ptax_bill_number_required_2",
+        "claim_chennai_ptax_payment_modes",
+        "claim_chennai_ptax_payment_modes_2",
+        "claim_chennai_ptax_payment_modes_3",
+        "claim_chennai_ptax_payment_modes_4",
+        "claim_chennai_ptax_payment_modes_5",
+        "claim_chennai_ptax_payment_modes_6",
+        "claim_chennai_ptax_half_yearly_basis",
+        "claim_chennai_ptax_half_yearly_basis_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: eligibility the identifier fields and the published payment modes, owner the routing note with its published telephone numbers, after-submission the public receipt route and what it returns, documents the assessment-route list and its scope limit. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method",
+          "source_chennai_ptax_online_payment_route",
+          "source_chennai_ptax_receipt_route",
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b46",
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:owner",
+      "fieldPath": "/cells/owner/claimIds",
+      "old": [
+        "claim_chennai_ptax_revenue_officer_contact",
+        "claim_chennai_ptax_revenue_officer_is_payee"
+      ],
+      "new": [
+        "claim_chennai_ptax_revenue_officer_contact",
+        "claim_chennai_ptax_revenue_officer_contact_2",
+        "claim_chennai_ptax_revenue_officer_is_payee"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: eligibility the identifier fields and the published payment modes, owner the routing note with its published telephone numbers, after-submission the public receipt route and what it returns, documents the assessment-route list and its scope limit. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_online_payment_route",
+          "source_chennai_ptax_receipt_route",
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b47",
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:after-submission",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [
+        "claim_chennai_ptax_public_receipt_route",
+        "claim_chennai_ptax_payment_status_route"
+      ],
+      "new": [
+        "claim_chennai_ptax_public_receipt_route",
+        "claim_chennai_ptax_public_receipt_route_2",
+        "claim_chennai_ptax_payment_status_route"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: eligibility the identifier fields and the published payment modes, owner the routing note with its published telephone numbers, after-submission the public receipt route and what it returns, documents the assessment-route list and its scope limit. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_online_payment_route",
+          "source_chennai_ptax_receipt_route",
+          "source_chennai_ptax_section_index"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_b01",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_library_cess_2",
+      "fieldPath": "/text",
+      "old": "That page cites G.O.Ms.No.492 dated 19 May 1992 and Council Resolution No.246/2001 dated 22 May 2001 for the library cess.",
+      "new": "That page cites G.O.Ms.No.492 of 19.05.1992 and Council Resolution No.246/2001 of 22.05.2001 for the library cess.",
+      "reason": "Pre-audit lint still reported compound-claim after the split, because the month name 'May' matches the lint's verb pattern and so put a verb in both clauses. The two dates are written numerically instead; the authorities cited are unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "auditNote": "IND-91 part B: wording only; this claim supports no expectation cell."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:cost",
+      "fieldPath": "/cells/cost/state",
+      "old": "mentioned",
+      "new": "stated",
+      "reason": "PROTOCOL section 3 says an explicit zero is a stated value, not an absence: 'no fee' must be recorded as stated when the applicable evidence states it. The cell's only claim, claim_chennai_ptax_online_nil_transaction_fee (Grade B, verified, observation), records the corporation's own statement of a 'Nil' transaction fee for paying online by credit card, debit card or net banking. That is an amount a citizen pays for this service's online channel, which is the section 8 cost test for stated, and it is none of the three mentioned triggers: it is not a fee described only as prescribed, not a payment step without an amount, and not a penalty payable by the agency. The cell note misreads section 3 as a rule that keeps the cell from being scored absent; section 3 makes the explicit zero stated. The separate fact that the tax liability itself cannot be derived is carried by claim_chennai_ptax_amount_payable_unknown, an Unknown claim, which under section 8 records a limitation and cannot set a cell value in either direction. On application, the cell note must be rewritten as an actionable-value note per section 9; that rewrite is recorded as a finding, not encoded here.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "F1. Supporting claim claim_chennai_ptax_online_nil_transaction_fee is verified and Grade B, so it satisfies the section 8 rule that only verified or partial claims may support stated. Grade B is within the A/B/C range section 8 requires for stated."
+      },
+      "id": "corr_chennai_property_tax_payment_r01"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:documents",
+      "fieldPath": "/cells/documents/claimIds",
+      "old": [
+        "claim_chennai_ptax_payment_modes",
+        "claim_chennai_ptax_assessment_documents_are_other_route",
+        "claim_chennai_ptax_assessment_documents_are_other_route_2",
+        "claim_chennai_ptax_assessment_documents_are_other_route_3",
+        "claim_chennai_ptax_revenue_officer_is_payee"
+      ],
+      "new": [
+        "claim_chennai_ptax_assessment_documents_are_other_route",
+        "claim_chennai_ptax_assessment_documents_are_other_route_2",
+        "claim_chennai_ptax_assessment_documents_are_other_route_3",
+        "claim_chennai_ptax_revenue_officer_is_payee"
+      ],
+      "reason": "claim_chennai_ptax_payment_modes now reads in full 'The corporation's property tax rules and procedure page lists the modes of paying property tax.' After the IND-91 part B split its substantive content moved to claim_chennai_ptax_payment_modes_2 through _6 and the cheque or demand draft instruction moved to claim_chennai_ptax_revenue_officer_is_payee, as its own notes record. What remains names no document and does not touch the documents topic at all, so it is not a supporting claim under the section 8 documents definition and not a permissible topic-only claimId under section 9 either. The cell's documents content is carried by claim_chennai_ptax_assessment_documents_are_other_route and _2, which remain.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_rules_procedure"
+        ],
+        "auditNote": "F2. The cell state mentioned is unaffected: the published assessment document list still touches the topic without giving an actionable value for this scenario, whose summary excludes first-time assessment."
+      },
+      "id": "corr_chennai_property_tax_payment_r02"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "property-tax-payment:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_chennai_ptax_bill_number_required",
+        "claim_chennai_ptax_bill_number_required_2",
+        "claim_chennai_ptax_payment_modes",
+        "claim_chennai_ptax_payment_modes_2",
+        "claim_chennai_ptax_payment_modes_3",
+        "claim_chennai_ptax_payment_modes_4",
+        "claim_chennai_ptax_payment_modes_5",
+        "claim_chennai_ptax_payment_modes_6",
+        "claim_chennai_ptax_half_yearly_basis",
+        "claim_chennai_ptax_half_yearly_basis_2"
+      ],
+      "new": [
+        "claim_chennai_ptax_bill_number_required",
+        "claim_chennai_ptax_bill_number_required_2",
+        "claim_chennai_ptax_payment_modes",
+        "claim_chennai_ptax_payment_modes_2",
+        "claim_chennai_ptax_payment_modes_3",
+        "claim_chennai_ptax_payment_modes_4",
+        "claim_chennai_ptax_payment_modes_5",
+        "claim_chennai_ptax_payment_modes_6",
+        "claim_chennai_ptax_half_yearly_basis"
+      ],
+      "reason": "claim_chennai_ptax_half_yearly_basis_2 states how annual rental value is arrived at, from the reasonable letting value under section 100 of the Chennai City Municipal Corporation Act 1919. That is a valuation method, not a rule that decides who qualifies or which route applies, which is the section 8 eligibility test. It is also absent from the cell's own note, which rests on the bill-number requirement, the published payment modes and the half-yearly liability inside Chennai city limits. The cell keeps its stated state on claim_chennai_ptax_bill_number_required, _2 and the four mode claims.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_assessment_method"
+        ],
+        "auditNote": "F3. claim_chennai_ptax_half_yearly_basis is retained: applicability inside Chennai city limits would be mentioned-level on its own under section 8, but it supports a cell already stated on the bill-number and route rules."
+      },
+      "id": "corr_chennai_property_tax_payment_r03"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_public_receipt_route",
+      "fieldPath": "/basis",
+      "old": "mixed",
+      "new": "observation",
+      "reason": "PROTOCOL section 5 reserves mixed for a claim whose notes explain the boundary between what a source directly shows and what is concluded from it. After the IND-91 part B split this claim asserts only that the corporation publishes a Property Tax Online Payment Receipt route reachable without login, and its own notes state that the route, its title and its four input fields were observed on the access date. The inferential part, what the route returns for a real property, moved to claim_chennai_ptax_public_receipt_route_2, whose notes carry the boundary. No inference remains inside this claim, so mixed is a residue of the split and observation is the correct basis. Status is deliberately left at partial: section 13 lists downgrading rather than upgrading among the auditor's powers, and section 8 permits a partial claim to support the stated after-submission cell.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_ptax_receipt_route"
+        ],
+        "auditNote": "F4. The source is recorded as a direct current observation of a public official interface read without login and with no identifier entered, which section 4 grades B and section 5 classes as observation."
+      },
+      "id": "corr_chennai_property_tax_payment_r04"
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_i01",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_amount_payable_unknown_2",
+      "fieldPath": "/",
+      "old": {
+        "id": "claim_chennai_ptax_amount_payable_unknown_2",
+        "text": "The percentage of annual value and the location-wise basic rate the corporation's own method depends on are both missing from the page that cites them.",
+        "jurisdiction": "Chennai, Tamil Nadu, India",
+        "scenarioIds": [
+          "scenario_property_tax_payment_known_sas_pid"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_amount_payable_unknown. The observed absence is separately checkable from the unknown it produces."
+      },
+      "new": null,
+      "reason": "A fragment created by the IND-91 part B split asserts a directly observed fact but inherited evidenceGrade Unknown, basis inference and an empty sourceIds list from its Unknown parent, which protocol sections 4, 5 and 7 do not permit. The same fact is already carried by a sourced, graded claim in this ledger, so the fragment is deleted as a duplicate under section 13 and the fact is recorded in the parent claim's notes. No evidence is lost and no cell cited the fragment. The fact is carried by claim_chennai_ptax_rate_table_and_annexure_missing_3, which is Grade B, verified and sourced to the assessment method page.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B integrator follow-up, on the re-audit finding. Deletion, not a downgrade."
+      }
+    },
+    {
+      "id": "corr_chennai_property_tax_payment_i02",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_amount_payable_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Not login-related; the calculator that would answer it points at an unreachable staging host. Split during IND-91 part B lint remediation; the reason for the gap is asserted separately.",
+      "new": "Retained because the uncertainty itself matters to the journey. Not login-related; the calculator that would answer it points at an unreachable staging host. The observed reason is carried by claim_chennai_ptax_rate_table_and_annexure_missing_3, which records that neither the percentage table nor the annexure appears anywhere on the page that cites them.",
+      "reason": "The deleted fragment recorded an observation already carried by a sourced Grade B claim. The notes now point at that claim.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B integrator follow-up, acting on the fresh re-auditor's finding."
+      }
+    }
+  ],
+  "runs": [
+    {
+      "runId": "ind91_part_b_integrator_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B integrator follow-up: findings raised by the fresh re-auditors that fall outside the field-level corrections contract (duplicate mis-graded split fragments, unsourced cell-note prose, a source record covering two routes, and missing archive limitations).",
+      "correctionIds": [
+        "corr_chennai_property_tax_payment_i01",
+        "corr_chennai_property_tax_payment_i02"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_lint_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B pre-audit lint remediation (protocol section 8).",
+      "correctionIds": [
+        "corr_chennai_property_tax_payment_b01",
+        "corr_chennai_property_tax_payment_b02",
+        "corr_chennai_property_tax_payment_b03",
+        "corr_chennai_property_tax_payment_b04",
+        "corr_chennai_property_tax_payment_b05",
+        "corr_chennai_property_tax_payment_b06",
+        "corr_chennai_property_tax_payment_b07",
+        "corr_chennai_property_tax_payment_b08",
+        "corr_chennai_property_tax_payment_b09",
+        "corr_chennai_property_tax_payment_b10",
+        "corr_chennai_property_tax_payment_b11",
+        "corr_chennai_property_tax_payment_b12",
+        "corr_chennai_property_tax_payment_b13",
+        "corr_chennai_property_tax_payment_b14",
+        "corr_chennai_property_tax_payment_b15",
+        "corr_chennai_property_tax_payment_b16",
+        "corr_chennai_property_tax_payment_b17",
+        "corr_chennai_property_tax_payment_b18",
+        "corr_chennai_property_tax_payment_b19",
+        "corr_chennai_property_tax_payment_b20",
+        "corr_chennai_property_tax_payment_b21",
+        "corr_chennai_property_tax_payment_b22",
+        "corr_chennai_property_tax_payment_b23",
+        "corr_chennai_property_tax_payment_b24",
+        "corr_chennai_property_tax_payment_b25",
+        "corr_chennai_property_tax_payment_b26",
+        "corr_chennai_property_tax_payment_b27",
+        "corr_chennai_property_tax_payment_b28",
+        "corr_chennai_property_tax_payment_b29",
+        "corr_chennai_property_tax_payment_b30",
+        "corr_chennai_property_tax_payment_b31",
+        "corr_chennai_property_tax_payment_b32",
+        "corr_chennai_property_tax_payment_b33",
+        "corr_chennai_property_tax_payment_b34",
+        "corr_chennai_property_tax_payment_b35",
+        "corr_chennai_property_tax_payment_b36",
+        "corr_chennai_property_tax_payment_b37",
+        "corr_chennai_property_tax_payment_b38",
+        "corr_chennai_property_tax_payment_b39",
+        "corr_chennai_property_tax_payment_b40",
+        "corr_chennai_property_tax_payment_b41",
+        "corr_chennai_property_tax_payment_b42",
+        "corr_chennai_property_tax_payment_b43",
+        "corr_chennai_property_tax_payment_b44",
+        "corr_chennai_property_tax_payment_b45",
+        "corr_chennai_property_tax_payment_b46",
+        "corr_chennai_property_tax_payment_b47",
+        "corr_chennai_property_tax_payment_b01"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_reaudit_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B re-audit by a fresh isolated auditor after lint remediation (protocol sections 12 and 13).",
+      "correctionIds": [
+        "corr_chennai_property_tax_payment_r01",
+        "corr_chennai_property_tax_payment_r02",
+        "corr_chennai_property_tax_payment_r03",
+        "corr_chennai_property_tax_payment_r04"
+      ]
     }
   ]
 }

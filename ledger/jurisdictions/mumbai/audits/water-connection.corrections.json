@@ -81,6 +81,2068 @@
         ],
         "auditNote": "Finding F4. Paired with the /basis correction on the same claim; apply both or neither, since a mixed basis without the boundary note would itself breach section 5."
       }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b01",
+      "recordType": "source",
+      "recordId": "source_mumbai_water_nwc_forms_page",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'MyBMC - Welcome to BMC's Website'. Direct current observation of a public official interface: the route renders a document folder holding exactly two files, an application form for the slum category and one for other categories, each showing a 'Changed On' date of 18 September 2015, and no guidance text of any kind. Archive: the Wayback availability API returned no snapshot for this route on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'MyBMC - Welcome to BMC's Website'. Visible date: the route itself shows none; the two files it holds each show a 'Changed On' date of 18 September 2015. Direct current observation of a public official interface: the route renders a document folder holding exactly two files, an application form for the slum category and one for other categories, and no guidance text of any kind. Archive: the Wayback availability API returned no snapshot for this route on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported that the source lacks publishedAt without a visible-date note. The absence of a route-level visible date, and the file-level 'Changed On' date that does exist, are now recorded in the phrasing the check recognises.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_nwc_forms_page"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b02",
+      "recordType": "source",
+      "recordId": "source_mumbai_water_rti_manual_dward",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'BRIHANMUMBAI MAHANAGARPALIKA'. Thirty-six pages, published by the office of the Assistant Engineer (Water Works), D ward. It carries no visible issue date; the PDF metadata records a creation date of 2015-04-06, so claims from it are graded C. It is read here only as a cross-check that a second ward publishes the same procedure and the same time-limit table. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220307174103/https://portal.mcgm.gov.in/irj/go/km/docs/documents/MCGM%20Department%20List/Wards/Assistant%20Commissioner%20(D%20Ward)/RTI%20Manuals/RTI%2017%20Manual%20AE%20WW%20D%20Ward.pdf (2022-03-07); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'BRIHANMUMBAI MAHANAGARPALIKA'. Thirty-six pages, published by the office of the Assistant Engineer (Water Works), D ward. It carries no visible issue date; the PDF metadata records a creation date of 2015-04-06, so claims from it are graded C. Limitation: the manual is undated on its face and its metadata is eleven years old, so what it states may not be current. It is read here only as a cross-check that a second ward publishes the same procedure and the same time-limit table. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220307174103/https://portal.mcgm.gov.in/irj/go/km/docs/documents/MCGM%20Department%20List/Wards/Assistant%20Commissioner%20(D%20Ward)/RTI%20Manuals/RTI%2017%20Manual%20AE%20WW%20D%20Ward.pdf (2022-03-07); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the file as retrieved on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an undated, archived source without a stated limitation. The staleness limitation and the archive limitation are now stated; the grade C already assigned is unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b03",
+      "recordType": "source",
+      "recordId": "source_mumbai_water_aquaptax_portal",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Brihanmumbai Municipal Corporation (BMC)'. The page footer displays 'Last Updated on 05/09/2026', recorded as publishedAt. Direct current observation of a public official interface. It serves an existing consumer number and is cited here only for what happens once a connection exists, not for the application route. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260606021528/https://aquaptax.mcgm.gov.in/aqua/CitizenHome.html (2026-06-06); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Brihanmumbai Municipal Corporation (BMC)'. The page footer displays 'Last Updated on 05/09/2026', recorded as publishedAt. Direct current observation of a public official interface. It serves an existing consumer number and is cited here only for what happens once a connection exists, not for the application route. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260606021528/https://aquaptax.mcgm.gov.in/aqua/CitizenHome.html (2026-06-06); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the page as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an archived source without a stated limitation. The archive limitation is now stated: the only snapshot predates the access date.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_aquaptax_portal"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b04",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_charges_manual_not_published",
+      "fieldPath": "/text",
+      "old": "The ward water works RTI manual records the Manual of Water Charges Rules and the Manual of Water Bye-Laws for water connections as available with the PRO department on payment of fees, rather than as published documents.",
+      "new": "The ward water works RTI manual records the Manual of Water Charges Rules and the Manual of Water Bye-Laws as available with the PRO department on payment of fees, rather than as published documents.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 221 characters, one over the limit. The redundant phrase 'for water connections' is removed; the claim asserts the same single fact, that the two manuals are obtainable from the PRO department on payment rather than published.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: wording only; the claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b05",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_application_through_licensed_plumber",
+      "fieldPath": "/text",
+      "old": "The ward water works RTI manual states that standard application forms are available in the wards, and that the applicant fills in the form, attaches references and requisite documents, and submits the papers in the respective ward through a licensed plumber.",
+      "new": "The ward water works RTI manual states that standard application forms are available in the wards.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried the availability of the form, what the applicant does with it and the requirement that a licensed plumber lodges the papers: three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b06",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_application_through_licensed_plumber",
+      "fieldPath": "/notes",
+      "old": "The same sentence appears verbatim in the manuals of two different wards, which is why both are cited.",
+      "new": "The same sentence appears verbatim in the manuals of two different wards, which is why both are cited. Split during IND-91 part B lint remediation into the availability of the form, what the applicant does with it and how the papers are submitted.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried the availability of the form, what the applicant does with it and the requirement that a licensed plumber lodges the papers: three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b07",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_application_through_licensed_plumber_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_application_through_licensed_plumber_2",
+        "text": "The manual states that the applicant fills in the form and attaches references with the requisite documents.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_application_through_licensed_plumber."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried the availability of the form, what the applicant does with it and the requirement that a licensed plumber lodges the papers: three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b08",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_application_through_licensed_plumber_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_application_through_licensed_plumber_3",
+        "text": "The manual states that the papers are submitted in the respective ward through a licensed plumber.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_application_through_licensed_plumber. The licensed-plumber requirement is the route rule the eligibility cell rests on."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried the availability of the form, what the applicant does with it and the requirement that a licensed plumber lodges the papers: three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b09",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_documents_planned_building",
+      "fieldPath": "/text",
+      "old": "The ward water works RTI manual lists the documents for a water connection to a planned building as a no-objection certificate from the Hydraulic Engineer's Department, a copy of the plans approved by the planning authority, a copy of the IOD, amended plans or commencement certificate, a copy of the occupation certificate or building completion certificate, and a copy of any other applicable no-objection certificate.",
+      "new": "The ward water works RTI manual lists the documents for a water connection to a planned building.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 420 characters. The sentence carried five separate document requirements, each independently checkable against the manual, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the documents and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b10",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_documents_planned_building",
+      "fieldPath": "/notes",
+      "old": "The category that covers an authorised built residential property, which is this scenario's trigger.",
+      "new": "The category that covers an authorised built residential property, which is this scenario's trigger. Split during IND-91 part B lint remediation into one claim per required document.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 420 characters. The sentence carried five separate document requirements, each independently checkable against the manual, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b11",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_documents_planned_building_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_documents_planned_building_2",
+        "text": "That list requires a no-objection certificate from the Hydraulic Engineer's Department.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_documents_planned_building; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 420 characters. The sentence carried five separate document requirements, each independently checkable against the manual, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the documents and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b12",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_documents_planned_building_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_documents_planned_building_3",
+        "text": "That list requires a copy of the plans approved by the planning authority.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_documents_planned_building; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 420 characters. The sentence carried five separate document requirements, each independently checkable against the manual, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the documents and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b13",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_documents_planned_building_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_documents_planned_building_4",
+        "text": "That list requires a copy of the IOD with amended plans or the commencement certificate.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_documents_planned_building; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 420 characters. The sentence carried five separate document requirements, each independently checkable against the manual, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the documents and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b14",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_documents_planned_building_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_documents_planned_building_5",
+        "text": "That list requires a copy of the occupation certificate or the building completion certificate.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_documents_planned_building; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 420 characters. The sentence carried five separate document requirements, each independently checkable against the manual, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the documents and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b15",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_documents_planned_building_6",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_documents_planned_building_6",
+        "text": "That list requires a copy of any other applicable no-objection certificate.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_documents_planned_building; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 420 characters. The sentence carried five separate document requirements, each independently checkable against the manual, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the documents and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b16",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_documents_tolerable_structure",
+      "fieldPath": "/text",
+      "old": "The ward water works RTI manual lists the documents for a water connection to a tolerable structure as a copy of the assessment bill of the structure, a copy of the ration card, a copy of the rent receipt and a no-objection certificate from the owner of the premises.",
+      "new": "The ward water works RTI manual lists the documents for a water connection to a tolerable structure.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried four separate document requirements, each independently checkable against the manual.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b17",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_documents_tolerable_structure",
+      "fieldPath": "/notes",
+      "old": "A second document list, for the older-structure category, alongside the planned-building one.",
+      "new": "A second document list, for the older-structure category, alongside the planned-building one. Split during IND-91 part B lint remediation into one claim per required document.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried four separate document requirements, each independently checkable against the manual.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b18",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_documents_tolerable_structure_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_documents_tolerable_structure_2",
+        "text": "That list requires a copy of the assessment bill of the structure.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_documents_tolerable_structure; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried four separate document requirements, each independently checkable against the manual.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b19",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_documents_tolerable_structure_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_documents_tolerable_structure_3",
+        "text": "That list requires a copy of the ration card.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_documents_tolerable_structure; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried four separate document requirements, each independently checkable against the manual.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b20",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_documents_tolerable_structure_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_documents_tolerable_structure_4",
+        "text": "That list requires a copy of the rent receipt.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_documents_tolerable_structure; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried four separate document requirements, each independently checkable against the manual.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b21",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_documents_tolerable_structure_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_documents_tolerable_structure_5",
+        "text": "That list requires a no-objection certificate from the owner of the premises.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_documents_tolerable_structure; one published item, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried four separate document requirements, each independently checkable against the manual.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b22",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_document_categories",
+      "fieldPath": "/text",
+      "old": "The ward water works RTI manual sets out separate document requirements by connection category, covering stand-post connections for slum dwellers, connections to a tolerable structure, connections to a planned building, connections on humanitarian grounds, connections for commercial use and unmetered connections for construction purposes.",
+      "new": "The ward water works RTI manual sets out separate document requirements by connection category.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 340 characters. The rule that requirements differ by category, and the manual's list of what those categories are, are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the documents and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b23",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_document_categories",
+      "fieldPath": "/notes",
+      "old": "A rule that decides which document set and which route apply to a given property.",
+      "new": "A rule that decides which document set and which route apply to a given property. Split during IND-91 part B lint remediation; the manual's own list of categories is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 340 characters. The rule that requirements differ by category, and the manual's list of what those categories are, are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b24",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_document_categories_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_document_categories_2",
+        "text": "Those categories are stand-post connections for slum dwellers, connections to a tolerable structure, connections to a planned building, connections on humanitarian grounds, connections for commercial use and unmetered construction connections.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_document_categories. This fragment carries the manual's own published list of connection categories, one published list, waived on the manifest entry."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 340 characters. The rule that requirements differ by category, and the manual's list of what those categories are, are two separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the documents and eligibility cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b25",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_time_limit_table",
+      "fieldPath": "/text",
+      "old": "The ward water works RTI manual publishes a step-by-step time limit table for granting a water connection: scrutiny of the application 15 days, letter to the party 2 days, compliance by the party with the scrutiny fee 30 days, site visit report after compliance 7 days, proposal to higher authority 15 days, recommendation by the Assistant Engineer Water Works 5 days, approval or rejection by the competent higher authority 7 days at each level, preparation of the permission form or rejection letter 7 days, signature 7 days, and issue of the permission form with the connection form 2 days.",
+      "new": "The ward water works RTI manual publishes a step-by-step time limit table for granting a water connection.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 593 characters. The table carried ten separate published time limits, each a figure a citizen can act on and each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b26",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_time_limit_table",
+      "fieldPath": "/notes",
+      "old": "The same table appears in the manuals of two different wards. It covers the sanction stage only; the manual gives the installation stage separately.",
+      "new": "The same table appears in the manuals of two different wards. It covers the sanction stage only; the manual gives the installation stage separately. Split during IND-91 part B lint remediation into one claim per published step.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 593 characters. The table carried ten separate published time limits, each a figure a citizen can act on and each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b27",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_time_limit_table_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_time_limit_table_2",
+        "text": "That table allows 15 days for scrutiny of the application.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_time_limit_table; one published item, one claim. The table covers the sanction stage only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 593 characters. The table carried ten separate published time limits, each a figure a citizen can act on and each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b28",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_time_limit_table_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_time_limit_table_3",
+        "text": "That table allows 2 days for the letter to the party.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_time_limit_table; one published item, one claim. The table covers the sanction stage only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 593 characters. The table carried ten separate published time limits, each a figure a citizen can act on and each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b29",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_time_limit_table_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_time_limit_table_4",
+        "text": "That table allows 30 days for compliance by the party with the scrutiny fee.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_time_limit_table; one published item, one claim. The table covers the sanction stage only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 593 characters. The table carried ten separate published time limits, each a figure a citizen can act on and each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b30",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_time_limit_table_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_time_limit_table_5",
+        "text": "That table allows 7 days for the site visit report after compliance.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_time_limit_table; one published item, one claim. The table covers the sanction stage only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 593 characters. The table carried ten separate published time limits, each a figure a citizen can act on and each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b31",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_time_limit_table_6",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_time_limit_table_6",
+        "text": "That table allows 15 days for the proposal to the higher authority.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_time_limit_table; one published item, one claim. The table covers the sanction stage only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 593 characters. The table carried ten separate published time limits, each a figure a citizen can act on and each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b32",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_time_limit_table_7",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_time_limit_table_7",
+        "text": "That table allows 5 days for the recommendation by the Assistant Engineer Water Works.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_time_limit_table; one published item, one claim. The table covers the sanction stage only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 593 characters. The table carried ten separate published time limits, each a figure a citizen can act on and each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b33",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_time_limit_table_8",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_time_limit_table_8",
+        "text": "That table allows 7 days at each level for approval or rejection by the competent higher authority.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_time_limit_table; one published item, one claim. The table covers the sanction stage only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 593 characters. The table carried ten separate published time limits, each a figure a citizen can act on and each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b34",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_time_limit_table_9",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_time_limit_table_9",
+        "text": "That table allows 7 days for preparation of the permission form or rejection letter.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_time_limit_table; one published item, one claim. The table covers the sanction stage only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 593 characters. The table carried ten separate published time limits, each a figure a citizen can act on and each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b35",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_time_limit_table_10",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_time_limit_table_10",
+        "text": "That table allows 7 days for signature.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_time_limit_table; one published item, one claim. The table covers the sanction stage only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 593 characters. The table carried ten separate published time limits, each a figure a citizen can act on and each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b36",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_time_limit_table_11",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_time_limit_table_11",
+        "text": "That table allows 2 days for issue of the permission form with the connection form.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_time_limit_table; one published item, one claim. The table covers the sanction stage only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 593 characters. The table carried ten separate published time limits, each a figure a citizen can act on and each independently checkable, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b37",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_installation_time_limits",
+      "fieldPath": "/text",
+      "old": "The ward water works RTI manual gives further time limits after the permission form: compliance with the permission and connection forms within one year by the plumber or applicant, road opening permit 15 days, preparation of the meter card 10 days, physical connection of the water meter 7 days, and generation of the consumer number with updating of the meter reading card 10 days.",
+      "new": "The ward water works RTI manual gives further time limits after the permission form.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 383 characters. The sentence carried five separate published time limits for the installation stage, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b38",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_installation_time_limits",
+      "fieldPath": "/notes",
+      "old": "",
+      "new": "Split during IND-91 part B lint remediation into one claim per published step of the installation stage.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 383 characters. The sentence carried five separate published time limits for the installation stage, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b39",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_installation_time_limits_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_installation_time_limits_2",
+        "text": "The plumber or applicant must comply with the permission and connection forms within one year.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_installation_time_limits; one published item, one claim. The installation stage follows the sanction stage."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 383 characters. The sentence carried five separate published time limits for the installation stage, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b40",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_installation_time_limits_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_installation_time_limits_3",
+        "text": "The road opening permit is allowed 15 days.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_installation_time_limits; one published item, one claim. The installation stage follows the sanction stage."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 383 characters. The sentence carried five separate published time limits for the installation stage, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b41",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_installation_time_limits_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_installation_time_limits_4",
+        "text": "Preparation of the meter card is allowed 10 days.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_installation_time_limits; one published item, one claim. The installation stage follows the sanction stage."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 383 characters. The sentence carried five separate published time limits for the installation stage, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b42",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_installation_time_limits_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_installation_time_limits_5",
+        "text": "Physical connection of the water meter is allowed 7 days.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_installation_time_limits; one published item, one claim. The installation stage follows the sanction stage."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 383 characters. The sentence carried five separate published time limits for the installation stage, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b43",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_installation_time_limits_6",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_installation_time_limits_6",
+        "text": "Generation of the consumer number with updating of the meter reading card is allowed 10 days.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_installation_time_limits; one published item, one claim. The installation stage follows the sanction stage."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 383 characters. The sentence carried five separate published time limits for the installation stage, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b44",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_deciding_officers",
+      "fieldPath": "/text",
+      "old": "The ward water works RTI manual states that approval of a new or additional connection rests, depending on the powers vested in each, with the Assistant Engineer, the Executive Engineer, the Deputy Hydraulic Engineer and the Hydraulic Engineer, and names the Junior or Sub Engineer (Distribution) as the officer responsible for scrutiny, the site visit and the proposal.",
+      "new": "The manual states that approval of a new connection rests with the Assistant Engineer, the Executive Engineer, the Deputy Hydraulic Engineer or the Hydraulic Engineer, according to the powers vested in each.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 370 characters. Who approves the connection and who prepares the case are two separately checkable facts; the approving officers remain one published list and are waived.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b45",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_deciding_officers",
+      "fieldPath": "/notes",
+      "old": "Designations tied to the decision, each with the step it owns in the published time-limit table.",
+      "new": "Designations tied to the decision, each with the step it owns in the published time-limit table. Split during IND-91 part B lint remediation; the scrutiny officer is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 370 characters. Who approves the connection and who prepares the case are two separately checkable facts; the approving officers remain one published list and are waived.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b46",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_deciding_officers_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_deciding_officers_2",
+        "text": "The manual names the Junior or Sub Engineer (Distribution) as the officer responsible for scrutiny, the site visit and the proposal.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_deciding_officers. The officer who prepares the case is separately checkable from the officers who approve it."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 370 characters. Who approves the connection and who prepares the case are two separately checkable facts; the approving officers remain one published list and are waived.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b47",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_ward_office_contact_published",
+      "fieldPath": "/text",
+      "old": "The K/West ward water works RTI manual publishes the office of the Assistant Engineer (Water Works) for that ward with its street address, telephone number with extension, e-mail address, office timings and visiting hours.",
+      "new": "The K/West ward water works RTI manual publishes the office of the Assistant Engineer (Water Works) for that ward.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 222 characters. Which office is published, and each contact detail it gives, are separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b48",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_ward_office_contact_published",
+      "fieldPath": "/notes",
+      "old": "A contact route for the office that handles the application in that ward. Institutional contact details only; no individual officer's details are recorded here.",
+      "new": "A contact route for the office that handles the application in that ward. Institutional contact details only; no individual officer's details are recorded here. Split during IND-91 part B lint remediation into the office entry and the contact details it gives.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 222 characters. Which office is published, and each contact detail it gives, are separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b49",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_ward_office_contact_published_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_ward_office_contact_published_2",
+        "text": "That entry gives the office street address and telephone number with extension.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_ward_office_contact_published; one published item, one claim. Institutional contact details only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 222 characters. Which office is published, and each contact detail it gives, are separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b50",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_ward_office_contact_published_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_ward_office_contact_published_3",
+        "text": "That entry gives the office e-mail address.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_ward_office_contact_published; one published item, one claim. Institutional contact details only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 222 characters. Which office is published, and each contact detail it gives, are separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b51",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_ward_office_contact_published_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_ward_office_contact_published_4",
+        "text": "That entry gives the office timings and visiting hours.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_ward_office_contact_published; one published item, one claim. Institutional contact details only."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length of 222 characters. Which office is published, and each contact detail it gives, are separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the owner cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b52",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_permission_form_issued",
+      "fieldPath": "/text",
+      "old": "The ward water works RTI manual states that on receipt of approval from the competent authority the applicant is informed by the issue of a Permission Form, which enlists various approvals and conditions, and that the permission form is issued by the Assistant Engineer Water Works of the ward.",
+      "new": "The ward water works RTI manual states that on receipt of approval from the competent authority the applicant is informed by the issue of a Permission Form.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 294 characters. The sentence carried what the applicant receives, what it contains and which office issues it, cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the owner and after-submission cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b53",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_permission_form_issued",
+      "fieldPath": "/notes",
+      "old": "A document the applicant receives after applying, naming what has been approved and on what conditions.",
+      "new": "A document the applicant receives after applying. Split during IND-91 part B lint remediation into the issue of the form, what it contains and who issues it.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 294 characters. The sentence carried what the applicant receives, what it contains and which office issues it, cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b54",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_permission_form_issued_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_permission_form_issued_2",
+        "text": "The manual states that the Permission Form enlists various approvals and conditions.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_permission_form_issued. What the form contains is separately checkable from the fact that it is issued."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 294 characters. The sentence carried what the applicant receives, what it contains and which office issues it, cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the owner and after-submission cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b55",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_permission_form_issued_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_permission_form_issued_3",
+        "text": "The manual states that the permission form is issued by the Assistant Engineer Water Works of the ward.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_permission_form_issued. Who issues the form is the fragment the owner cell rests on."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 294 characters. The sentence carried what the applicant receives, what it contains and which office issues it, cited by two different cells.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "IND-91 part B: the owner and after-submission cells are stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b56",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_rejection_letter_step",
+      "fieldPath": "/text",
+      "old": "The ward water works RTI manual's time limit table names preparation of a Permission Form or a rejection letter as a step, and signature of the permission form or rejection letter by the Assistant Engineer Water Works as the step after it.",
+      "new": "The ward water works RTI manual's time limit table names preparation of a Permission Form or a rejection letter as a step.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried two separate published steps of the table, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b57",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_rejection_letter_step",
+      "fieldPath": "/notes",
+      "old": "A refusal reaches the applicant as a letter; the manual does not say whether the letter carries reasons.",
+      "new": "A refusal reaches the applicant as a letter; the manual does not say whether the letter carries reasons. Split during IND-91 part B lint remediation into the preparation step and the signature step.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried two separate published steps of the table, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b58",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_rejection_letter_step_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_rejection_letter_step_2",
+        "text": "That table names signature of the permission form or rejection letter by the Assistant Engineer Water Works as the step after it.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_rejection_letter_step. The signature step is separately checkable from the preparation step."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried two separate published steps of the table, each independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b59",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_nwc_route_is_forms_only",
+      "fieldPath": "/text",
+      "old": "The corporation's New Water Connection route publishes only two application forms, for the slum category and for other categories, each last changed on 18 September 2015, and carries no guidance on eligibility, documents, charges, timelines or offices.",
+      "new": "The corporation's New Water Connection route publishes only two application forms, one for the slum category and one for other categories.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. What the route publishes, when those files were last changed and what the route omits are three separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_nwc_forms_page"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b60",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_nwc_route_is_forms_only",
+      "fieldPath": "/notes",
+      "old": "Direct current observation of the folder listing on the access date.",
+      "new": "Direct current observation of the folder listing on the access date. Split during IND-91 part B lint remediation into what the route publishes, when the files were last changed and what it omits.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. What the route publishes, when those files were last changed and what the route omits are three separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_nwc_forms_page"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b61",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_nwc_route_is_forms_only_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_nwc_route_is_forms_only_2",
+        "text": "Each of those two forms was last changed on 18 September 2015.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_nwc_forms_page"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_nwc_route_is_forms_only. Read from the folder listing's own 'Changed On' column."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. What the route publishes, when those files were last changed and what the route omits are three separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_nwc_forms_page"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b62",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_nwc_route_is_forms_only_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_nwc_route_is_forms_only_3",
+        "text": "That route carries no guidance on eligibility or documents or charges or timelines or offices.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_nwc_forms_page"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_nwc_route_is_forms_only. Each topic named was searched for on the route and none was present."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. What the route publishes, when those files were last changed and what the route omits are three separately checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_nwc_forms_page"
+        ],
+        "auditNote": "IND-91 part B: this claim supports no expectation cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b63",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_application_status_route_unknown",
+      "fieldPath": "/text",
+      "old": "Whether an applicant for a new water connection can check the progress of the application on any public route, and what reference number they are given when the papers are lodged, is not established by any reviewed public page.",
+      "new": "Whether an applicant for a new water connection can check the progress of the application on any public route is not established by any reviewed public page.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The sentence carried two separate unknowns, each independently checkable if a public page ever states it.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b64",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_application_status_route_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Not login-related.",
+      "new": "Retained because the uncertainty itself matters to the journey. Not login-related. Split during IND-91 part B lint remediation; the reference-number unknown is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The sentence carried two separate unknowns, each independently checkable if a public page ever states it.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b65",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_application_status_route_unknown_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_application_status_route_unknown_2",
+        "text": "What reference number the applicant is given when the papers are lodged is not established by any reviewed public page.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_application_status_route_unknown. Retained because the uncertainty itself matters to the journey. Not login-related."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The sentence carried two separate unknowns, each independently checkable if a public page ever states it.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b66",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_connection_charges_unknown",
+      "fieldPath": "/text",
+      "old": "What the citizen pays for the connection itself, beyond the Rs. 200 scrutiny fee, is not established by any reviewed public page: no deposit, connection charge, meter cost or road-opening charge figure is published on any route reviewed.",
+      "new": "What the citizen pays for the connection itself, beyond the Rs. 200 scrutiny fee, is not established by any reviewed public page.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The general unknown and the specific figures searched for are two separately checkable statements.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b67",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_connection_charges_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Not login-related; the charges manual is recorded as obtainable only from the PRO department on payment of fees.",
+      "new": "Retained because the uncertainty itself matters to the journey. Not login-related; the charges manual is recorded as obtainable only from the PRO department on payment of fees. Split during IND-91 part B lint remediation; the specific figures searched for are asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The general unknown and the specific figures searched for are two separately checkable statements.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b68",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_connection_charges_unknown_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_connection_charges_unknown_2",
+        "text": "No figure is published on any route reviewed for a deposit or a connection charge or a meter cost or a road-opening charge.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_mumbai_water_connection_charges_unknown. Each figure named was searched for on the reviewed routes and none was present."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The general unknown and the specific figures searched for are two separately checkable statements.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b69",
+      "recordType": "expectations",
+      "recordId": "water-connection:documents",
+      "fieldPath": "/cells/documents/claimIds",
+      "old": [
+        "claim_mumbai_water_documents_planned_building",
+        "claim_mumbai_water_documents_tolerable_structure",
+        "claim_mumbai_water_document_categories"
+      ],
+      "new": [
+        "claim_mumbai_water_documents_planned_building",
+        "claim_mumbai_water_documents_planned_building_2",
+        "claim_mumbai_water_documents_planned_building_3",
+        "claim_mumbai_water_documents_planned_building_4",
+        "claim_mumbai_water_documents_planned_building_5",
+        "claim_mumbai_water_documents_planned_building_6",
+        "claim_mumbai_water_documents_tolerable_structure",
+        "claim_mumbai_water_documents_tolerable_structure_2",
+        "claim_mumbai_water_documents_tolerable_structure_3",
+        "claim_mumbai_water_documents_tolerable_structure_4",
+        "claim_mumbai_water_documents_tolerable_structure_5",
+        "claim_mumbai_water_document_categories",
+        "claim_mumbai_water_document_categories_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: documents the two published document lists and the category rule, eligibility the category rule and the licensed-plumber route, time the fifteen published step limits, owner the approving and preparing officers with the published ward office, after-submission the permission form and the rejection letter. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b70",
+      "recordType": "expectations",
+      "recordId": "water-connection:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_mumbai_water_document_categories",
+        "claim_mumbai_water_application_through_licensed_plumber",
+        "claim_mumbai_water_documents_planned_building"
+      ],
+      "new": [
+        "claim_mumbai_water_document_categories",
+        "claim_mumbai_water_document_categories_2",
+        "claim_mumbai_water_application_through_licensed_plumber",
+        "claim_mumbai_water_application_through_licensed_plumber_2",
+        "claim_mumbai_water_application_through_licensed_plumber_3",
+        "claim_mumbai_water_documents_planned_building"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: documents the two published document lists and the category rule, eligibility the category rule and the licensed-plumber route, time the fifteen published step limits, owner the approving and preparing officers with the published ward office, after-submission the permission form and the rejection letter. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_dward",
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b71",
+      "recordType": "expectations",
+      "recordId": "water-connection:time",
+      "fieldPath": "/cells/time/claimIds",
+      "old": [
+        "claim_mumbai_water_time_limit_table",
+        "claim_mumbai_water_installation_time_limits"
+      ],
+      "new": [
+        "claim_mumbai_water_time_limit_table",
+        "claim_mumbai_water_time_limit_table_2",
+        "claim_mumbai_water_time_limit_table_3",
+        "claim_mumbai_water_time_limit_table_4",
+        "claim_mumbai_water_time_limit_table_5",
+        "claim_mumbai_water_time_limit_table_6",
+        "claim_mumbai_water_time_limit_table_7",
+        "claim_mumbai_water_time_limit_table_8",
+        "claim_mumbai_water_time_limit_table_9",
+        "claim_mumbai_water_time_limit_table_10",
+        "claim_mumbai_water_time_limit_table_11",
+        "claim_mumbai_water_installation_time_limits",
+        "claim_mumbai_water_installation_time_limits_2",
+        "claim_mumbai_water_installation_time_limits_3",
+        "claim_mumbai_water_installation_time_limits_4",
+        "claim_mumbai_water_installation_time_limits_5",
+        "claim_mumbai_water_installation_time_limits_6"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: documents the two published document lists and the category rule, eligibility the category rule and the licensed-plumber route, time the fifteen published step limits, owner the approving and preparing officers with the published ward office, after-submission the permission form and the rejection letter. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_dward",
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b72",
+      "recordType": "expectations",
+      "recordId": "water-connection:owner",
+      "fieldPath": "/cells/owner/claimIds",
+      "old": [
+        "claim_mumbai_water_deciding_officers",
+        "claim_mumbai_water_ward_office_contact_published",
+        "claim_mumbai_water_permission_form_issued"
+      ],
+      "new": [
+        "claim_mumbai_water_deciding_officers",
+        "claim_mumbai_water_deciding_officers_2",
+        "claim_mumbai_water_ward_office_contact_published",
+        "claim_mumbai_water_ward_office_contact_published_2",
+        "claim_mumbai_water_ward_office_contact_published_3",
+        "claim_mumbai_water_ward_office_contact_published_4",
+        "claim_mumbai_water_permission_form_issued_3"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: documents the two published document lists and the category rule, eligibility the category rule and the licensed-plumber route, time the fifteen published step limits, owner the approving and preparing officers with the published ward office, after-submission the permission form and the rejection letter. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_dward",
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_b73",
+      "recordType": "expectations",
+      "recordId": "water-connection:after-submission",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [
+        "claim_mumbai_water_permission_form_issued",
+        "claim_mumbai_water_rejection_letter_step",
+        "claim_mumbai_water_connection_released_after_p_form"
+      ],
+      "new": [
+        "claim_mumbai_water_permission_form_issued",
+        "claim_mumbai_water_permission_form_issued_2",
+        "claim_mumbai_water_rejection_letter_step",
+        "claim_mumbai_water_rejection_letter_step_2",
+        "claim_mumbai_water_connection_released_after_p_form"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that assert the facts it rests on: documents the two published document lists and the category rule, eligibility the category rule and the licensed-plumber route, time the fifteen published step limits, owner the approving and preparing officers with the published ward office, after-submission the permission form and the rejection letter. No cell state is changed by this edit.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_dward",
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "water-connection:cost",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_mumbai_water_scrutiny_fee_200"
+      ],
+      "new": [
+        "claim_mumbai_water_scrutiny_fee_200",
+        "claim_mumbai_water_time_limit_table_4"
+      ],
+      "reason": "The cost note asserts that the party must comply with the scrutiny fee within 30 days, but the claim that carries that published step is not cited. PROTOCOL section 8 treats a payment step as cost evidence, and section 9 requires a stated cell's claimIds to cite what its note asserts. claim_mumbai_water_time_limit_table_4 supports the cell and was missing from its list.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "F2. claim_mumbai_water_time_limit_table_4 is Grade C, basis observation, status verified, so it may support a positive cell value; the Rs. 200 amount still comes from claim_mumbai_water_scrutiny_fee_200 and the cell stays stated."
+      },
+      "id": "corr_mumbai_water_connection_r01"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "water-connection:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_mumbai_water_document_categories",
+        "claim_mumbai_water_document_categories_2",
+        "claim_mumbai_water_application_through_licensed_plumber",
+        "claim_mumbai_water_application_through_licensed_plumber_2",
+        "claim_mumbai_water_application_through_licensed_plumber_3",
+        "claim_mumbai_water_documents_planned_building"
+      ],
+      "new": [
+        "claim_mumbai_water_document_categories",
+        "claim_mumbai_water_document_categories_2",
+        "claim_mumbai_water_application_through_licensed_plumber_3",
+        "claim_mumbai_water_documents_planned_building",
+        "claim_mumbai_water_documents_planned_building_5"
+      ],
+      "reason": "Two cited claims assert no eligibility or route rule under the PROTOCOL section 8 eligibility definition: claim_mumbai_water_application_through_licensed_plumber asserts only that standard forms are available in the wards, and claim_mumbai_water_application_through_licensed_plumber_2 asserts only that the applicant fills in the form and attaches references. The route rule sits in claim_mumbai_water_application_through_licensed_plumber_3, which stays. The note's third rule, that a planned-building connection turns on an occupation or building completion certificate, rests on claim_mumbai_water_documents_planned_building_5, which was not cited.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "F7, F8, F9. The cell remains stated: the connection-category rule and the licensed-plumber route rule are both Grade C, observation, verified. claim_mumbai_water_application_through_licensed_plumber_3's own note records that the licensed-plumber requirement is the rule this cell rests on."
+      },
+      "id": "corr_mumbai_water_connection_r02"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_ward_office_contact_published_2",
+      "fieldPath": "/text",
+      "old": "That entry gives the office street address and telephone number with extension.",
+      "new": "That entry gives the office street address.",
+      "reason": "The record bundles two separately checkable published items, the street address and the telephone number with extension, which breaches the atomicity rule in PROTOCOL section 1 and lint check 1 in section 8, and contradicts its own note that one published item makes one claim. Its siblings _3 and _4 each carry a single item and the manifest entry declares no waiver for this record. PROTOCOL section 13 permits the auditor to split a compound claim; the telephone assertion is preserved in the companion addition, so no evidence is lost.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "F13. Apply together with the addition of claim_mumbai_water_ward_office_contact_published_5 and the owner claimIds update; a manifest lint waiver naming this record would be an acceptable alternative remedy."
+      },
+      "id": "corr_mumbai_water_connection_r03"
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_ward_office_contact_published_5",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_water_ward_office_contact_published_5",
+        "text": "That entry gives the office telephone number with extension.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split by audit from claim_mumbai_water_ward_office_contact_published_2 under PROTOCOL section 1 atomicity and section 8 lint check 1; one published item, one claim. Institutional contact details only; no individual officer's details are recorded here."
+      },
+      "reason": "Addition holding the telephone half of the compound claim claim_mumbai_water_ward_office_contact_published_2, with the same source, grade, basis, status and scenario tag as the record it was split from. This preserves an assertion already present in the ledger rather than adding new evidence, as PROTOCOL section 13 requires.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "F13. Grade C follows the parent record: the K/West manual is undated on its face with 2017 file metadata, and that limitation is stated on the source."
+      },
+      "id": "corr_mumbai_water_connection_r04"
+    },
+    {
+      "recordType": "expectations",
+      "recordId": "water-connection:owner",
+      "fieldPath": "/cells/owner/claimIds",
+      "old": [
+        "claim_mumbai_water_deciding_officers",
+        "claim_mumbai_water_deciding_officers_2",
+        "claim_mumbai_water_ward_office_contact_published",
+        "claim_mumbai_water_ward_office_contact_published_2",
+        "claim_mumbai_water_ward_office_contact_published_3",
+        "claim_mumbai_water_ward_office_contact_published_4",
+        "claim_mumbai_water_permission_form_issued_3"
+      ],
+      "new": [
+        "claim_mumbai_water_deciding_officers",
+        "claim_mumbai_water_deciding_officers_2",
+        "claim_mumbai_water_ward_office_contact_published",
+        "claim_mumbai_water_ward_office_contact_published_2",
+        "claim_mumbai_water_ward_office_contact_published_3",
+        "claim_mumbai_water_ward_office_contact_published_4",
+        "claim_mumbai_water_ward_office_contact_published_5",
+        "claim_mumbai_water_permission_form_issued_3"
+      ],
+      "reason": "Consequential on the atomicity split: the owner note cites the K/West office's address, telephone, e-mail and visiting hours as the contact route for the deciding role, so the telephone claim created by that split must be listed for the note to stay cited under PROTOCOL section 9.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "F13. The cell stays stated; the state is carried by claim_mumbai_water_permission_form_issued_3, a designation tied to a jurisdiction rule under PROTOCOL section 8."
+      },
+      "id": "corr_mumbai_water_connection_r05"
+    },
+    {
+      "id": "corr_mumbai_water_connection_i01",
+      "recordType": "source",
+      "recordId": "source_mumbai_water_nwc_form_other",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: the form's Marathi masthead reads 'Brihanmumbai Mahanagarpalika, Jal Abhiyanta Khate' (Hydraulic Engineer's Department). The form is currently published on the corporation's own new-connection route and is read here as an observed current official form; the folder listing gives its last change as 18 September 2015, which is recorded as a limitation on its currency. It was read only: nothing was filled in, printed or submitted. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220307174231/https://portal.mcgm.gov.in/irj/go/km/docs/documents/NewWaterConnection/2%20Application%20form%20for%20new%20water%20connection%20for%20other%20categories.pdf (2022-03-07); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: the form's Marathi masthead reads 'Brihanmumbai Mahanagarpalika, Jal Abhiyanta Khate' (Hydraulic Engineer's Department). The form is currently published on the corporation's own new-connection route and is read here as an observed current official form; the folder listing gives its last change as 18 September 2015, which is recorded as a limitation on its currency. It was read only: nothing was filled in, printed or submitted. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220307174231/https://portal.mcgm.gov.in/irj/go/km/docs/documents/NewWaterConnection/2%20Application%20form%20for%20new%20water%20connection%20for%20other%20categories.pdf (2022-03-07); no new capture was pushed from this run. Limitation: that snapshot is four years older than the access date, so it does not preserve the form as retrieved on 2026-09-06.",
+      "reason": "The record cited a 2022 snapshot without the predates-the-access-date limitation its sibling sources record. The limitation is now stated.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_nwc_form_other"
+        ],
+        "auditNote": "IND-91 part B integrator follow-up, acting on the fresh re-auditor's finding."
+      }
+    },
+    {
+      "id": "corr_mumbai_water_connection_i02",
+      "recordType": "source",
+      "recordId": "source_mumbai_water_rti_manual_kwest",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'BRIHANMUMBAI MAHANAGARPALIKA' and 'MUNICIPAL CORPORATION OF GREATER MUMBAI, Hydraulic Engineer's Department'. Forty-four pages, published by the office of the Assistant Engineer (Water Works), K/West ward under section 4 of the RTI Act. It carries no visible issue date; the PDF metadata records a creation date of 2017-03-02, so claims from it are graded C as potentially outdated official material. Its provenance is one ward, which is recorded as a limitation on reading it as the city-wide procedure. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220307174203/https://portal.mcgm.gov.in/irj/go/km/docs/documents/MCGM%20Department%20List/Wards/Assistant%20Commissioner%20(KWest-Ward)/RTI%20Manuals/WaterWorksDept.pdf (2022-03-07); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'BRIHANMUMBAI MAHANAGARPALIKA' and 'MUNICIPAL CORPORATION OF GREATER MUMBAI, Hydraulic Engineer's Department'. Forty-four pages, published by the office of the Assistant Engineer (Water Works), K/West ward under section 4 of the RTI Act. It carries no visible issue date; the PDF metadata records a creation date of 2017-03-02, so claims from it are graded C as potentially outdated official material. Its provenance is one ward, which is recorded as a limitation on reading it as the city-wide procedure. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220307174203/https://portal.mcgm.gov.in/irj/go/km/docs/documents/MCGM%20Department%20List/Wards/Assistant%20Commissioner%20(KWest-Ward)/RTI%20Manuals/WaterWorksDept.pdf (2022-03-07); no new capture was pushed from this run. Limitation: that snapshot is four years older than the access date, so it does not preserve the file as retrieved on 2026-09-06.",
+      "reason": "The record cited a 2022 snapshot without the predates-the-access-date limitation its sibling sources record. The limitation is now stated.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "IND-91 part B integrator follow-up, acting on the fresh re-auditor's finding."
+      }
+    }
+  ],
+  "runs": [
+    {
+      "runId": "ind91_part_b_integrator_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B integrator follow-up: findings raised by the fresh re-auditors that fall outside the field-level corrections contract (duplicate mis-graded split fragments, unsourced cell-note prose, a source record covering two routes, and missing archive limitations).",
+      "correctionIds": [
+        "corr_mumbai_water_connection_i01",
+        "corr_mumbai_water_connection_i02"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_lint_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B pre-audit lint remediation (protocol section 8).",
+      "correctionIds": [
+        "corr_mumbai_water_connection_b01",
+        "corr_mumbai_water_connection_b02",
+        "corr_mumbai_water_connection_b03",
+        "corr_mumbai_water_connection_b04",
+        "corr_mumbai_water_connection_b05",
+        "corr_mumbai_water_connection_b06",
+        "corr_mumbai_water_connection_b07",
+        "corr_mumbai_water_connection_b08",
+        "corr_mumbai_water_connection_b09",
+        "corr_mumbai_water_connection_b10",
+        "corr_mumbai_water_connection_b11",
+        "corr_mumbai_water_connection_b12",
+        "corr_mumbai_water_connection_b13",
+        "corr_mumbai_water_connection_b14",
+        "corr_mumbai_water_connection_b15",
+        "corr_mumbai_water_connection_b16",
+        "corr_mumbai_water_connection_b17",
+        "corr_mumbai_water_connection_b18",
+        "corr_mumbai_water_connection_b19",
+        "corr_mumbai_water_connection_b20",
+        "corr_mumbai_water_connection_b21",
+        "corr_mumbai_water_connection_b22",
+        "corr_mumbai_water_connection_b23",
+        "corr_mumbai_water_connection_b24",
+        "corr_mumbai_water_connection_b25",
+        "corr_mumbai_water_connection_b26",
+        "corr_mumbai_water_connection_b27",
+        "corr_mumbai_water_connection_b28",
+        "corr_mumbai_water_connection_b29",
+        "corr_mumbai_water_connection_b30",
+        "corr_mumbai_water_connection_b31",
+        "corr_mumbai_water_connection_b32",
+        "corr_mumbai_water_connection_b33",
+        "corr_mumbai_water_connection_b34",
+        "corr_mumbai_water_connection_b35",
+        "corr_mumbai_water_connection_b36",
+        "corr_mumbai_water_connection_b37",
+        "corr_mumbai_water_connection_b38",
+        "corr_mumbai_water_connection_b39",
+        "corr_mumbai_water_connection_b40",
+        "corr_mumbai_water_connection_b41",
+        "corr_mumbai_water_connection_b42",
+        "corr_mumbai_water_connection_b43",
+        "corr_mumbai_water_connection_b44",
+        "corr_mumbai_water_connection_b45",
+        "corr_mumbai_water_connection_b46",
+        "corr_mumbai_water_connection_b47",
+        "corr_mumbai_water_connection_b48",
+        "corr_mumbai_water_connection_b49",
+        "corr_mumbai_water_connection_b50",
+        "corr_mumbai_water_connection_b51",
+        "corr_mumbai_water_connection_b52",
+        "corr_mumbai_water_connection_b53",
+        "corr_mumbai_water_connection_b54",
+        "corr_mumbai_water_connection_b55",
+        "corr_mumbai_water_connection_b56",
+        "corr_mumbai_water_connection_b57",
+        "corr_mumbai_water_connection_b58",
+        "corr_mumbai_water_connection_b59",
+        "corr_mumbai_water_connection_b60",
+        "corr_mumbai_water_connection_b61",
+        "corr_mumbai_water_connection_b62",
+        "corr_mumbai_water_connection_b63",
+        "corr_mumbai_water_connection_b64",
+        "corr_mumbai_water_connection_b65",
+        "corr_mumbai_water_connection_b66",
+        "corr_mumbai_water_connection_b67",
+        "corr_mumbai_water_connection_b68",
+        "corr_mumbai_water_connection_b69",
+        "corr_mumbai_water_connection_b70",
+        "corr_mumbai_water_connection_b71",
+        "corr_mumbai_water_connection_b72",
+        "corr_mumbai_water_connection_b73"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_reaudit_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B re-audit by a fresh isolated auditor after lint remediation (protocol sections 12 and 13).",
+      "correctionIds": [
+        "corr_mumbai_water_connection_r01",
+        "corr_mumbai_water_connection_r02",
+        "corr_mumbai_water_connection_r03",
+        "corr_mumbai_water_connection_r04",
+        "corr_mumbai_water_connection_r05"
+      ]
     }
   ]
 }

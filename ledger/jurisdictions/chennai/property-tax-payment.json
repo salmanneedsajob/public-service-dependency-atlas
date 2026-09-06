@@ -35,7 +35,7 @@
       "url": "https://chennaicorporation.gov.in/gcc/online-services/property-tax/",
       "accessedAt": "2026-09-06",
       "type": "official_portal",
-      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION', with the footer naming 'Website Information Manager : Programmer, IT Cell, 3rd Floor, Muthamizh Arignar Kalaignar Mu.Karunanithi Maaligai, Greater Chennai Corporation'. The page shows no visible last-updated or version date. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240704143235/https://chennaicorporation.gov.in/gcc/online-services/property-tax/ (2024-07-04); no new capture was pushed from this run."
+      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION', with the footer naming 'Website Information Manager : Programmer, IT Cell, 3rd Floor, Muthamizh Arignar Kalaignar Mu.Karunanithi Maaligai, Greater Chennai Corporation'. The page shows no visible last-updated or version date. Limitation: the page is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240704143235/https://chennaicorporation.gov.in/gcc/online-services/property-tax/ (2024-07-04); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the page as reviewed on 2026-09-06."
     },
     {
       "id": "source_chennai_ptax_rules_procedure",
@@ -44,7 +44,7 @@
       "url": "https://chennaicorporation.gov.in/gcc/online-services/property-tax/rules-procedure/",
       "accessedAt": "2026-09-06",
       "type": "official_guidance",
-      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION'. The page shows no visible last-updated or version date and ends with the literal text 'TO BE UPDATED'. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220717070055/https://chennaicorporation.gov.in/gcc/online-services/property-tax/rules-procedure/ (2022-07-17), more than four years before the access date; no new capture was pushed from this run."
+      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION'. The page shows no visible last-updated or version date and ends with the literal text 'TO BE UPDATED'. Limitation: the page is undated and declares itself unfinished, so what it states may not be current or complete. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220717070055/https://chennaicorporation.gov.in/gcc/online-services/property-tax/rules-procedure/ (2022-07-17), more than four years before the access date; no new capture was pushed from this run. Limitation: that snapshot long predates the access date, so it does not preserve the page as reviewed on 2026-09-06."
     },
     {
       "id": "source_chennai_ptax_assessment_method",
@@ -71,7 +71,7 @@
       "url": "https://chennaicorporation.gov.in/new_site/property-tax-online-payment/",
       "accessedAt": "2026-09-06",
       "type": "official_portal",
-      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION'. Direct current observation of a public official interface reachable without login; the route was read only and no payment was begun. Shows no visible last-updated date. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220926164430/https://chennaicorporation.gov.in/new_site/property-tax-online-payment/ (2022-09-26); no new capture was pushed from this run."
+      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION'. Direct current observation of a public official interface reachable without login; the route was read only and no payment was begun. Shows no visible last-updated date. Limitation: the route is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220926164430/https://chennaicorporation.gov.in/new_site/property-tax-online-payment/ (2022-09-26); no new capture was pushed from this run. Limitation: that snapshot long predates the access date, so it does not preserve the route as reviewed on 2026-09-06."
     }
   ],
   "claims": [
@@ -94,7 +94,7 @@
     },
     {
       "id": "claim_chennai_ptax_payment_modes",
-      "text": "The corporation's property tax rules and procedure page lists the modes of paying property tax as through the tax collectors, through eleven named banks under a walk-in payment system, at e-seva common service centres run by Tamil Nadu Arasu Cable Television Corporation in taluk offices, zonal offices, divisional offices and headquarters, and online.",
+      "text": "The corporation's property tax rules and procedure page lists the modes of paying property tax.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -107,11 +107,96 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A usable rule about where the tax may be paid. The cheque or demand draft instruction this claim previously also carried is recorded atomically at claim_chennai_ptax_revenue_officer_is_payee."
+      "notes": "A usable rule about where the tax may be paid. The cheque or demand draft instruction this claim previously also carried is recorded atomically at claim_chennai_ptax_revenue_officer_is_payee. Split during IND-91 part B lint remediation into one claim per published mode."
+    },
+    {
+      "id": "claim_chennai_ptax_payment_modes_2",
+      "text": "One mode is payment through the tax collectors.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_rules_procedure"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_payment_modes; one published mode, one claim."
+    },
+    {
+      "id": "claim_chennai_ptax_payment_modes_3",
+      "text": "One mode is payment through eleven named banks under a walk-in payment system.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_rules_procedure"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_payment_modes; one published mode, one claim."
+    },
+    {
+      "id": "claim_chennai_ptax_payment_modes_4",
+      "text": "One mode is payment at e-seva common service centres run by Tamil Nadu Arasu Cable Television Corporation.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_rules_procedure"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_payment_modes; one published mode, one claim."
+    },
+    {
+      "id": "claim_chennai_ptax_payment_modes_5",
+      "text": "Those e-seva centres are located in taluk offices or zonal offices or divisional offices or headquarters.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_rules_procedure"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_payment_modes. Where the e-seva centres sit is separately checkable from the mode itself."
+    },
+    {
+      "id": "claim_chennai_ptax_payment_modes_6",
+      "text": "One mode is payment online.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_rules_procedure"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_payment_modes; one published mode, one claim."
     },
     {
       "id": "claim_chennai_ptax_bill_number_required",
-      "text": "The corporation's online payment and receipt routes require a zone number, division code, bill number and sub number, and both tell the citizen to ensure the property tax bill number before making payment.",
+      "text": "The corporation's online payment and receipt routes require a zone number, a division code, a bill number and a sub number.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -125,11 +210,29 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "Matches this scenario's premise of a known property identifier."
+      "notes": "Matches this scenario's premise of a known property identifier. Split during IND-91 part B lint remediation; the instruction to confirm the bill number first is asserted separately."
+    },
+    {
+      "id": "claim_chennai_ptax_bill_number_required_2",
+      "text": "Both routes tell the citizen to ensure the property tax bill number before making payment.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_online_payment_route",
+        "source_chennai_ptax_receipt_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_bill_number_required. The instruction is separately checkable from the fields the routes require."
     },
     {
       "id": "claim_chennai_ptax_half_yearly_basis",
-      "text": "The corporation's assessment method page states that property tax in Chennai city limits is a half-yearly tax calculated as a percentage of annual rental value, which is arrived at from the reasonable letting value under section 100 of the Chennai City Municipal Corporation Act 1919.",
+      "text": "The corporation's assessment method page states that property tax in Chennai city limits is a half-yearly tax calculated as a percentage of annual rental value.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -142,7 +245,24 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A half-yearly cycle, without any date on which a half year's tax falls due."
+      "notes": "A half-yearly cycle, without any date on which a half year's tax falls due. Split during IND-91 part B lint remediation; how annual rental value is arrived at is asserted separately."
+    },
+    {
+      "id": "claim_chennai_ptax_half_yearly_basis_2",
+      "text": "That page states that the annual rental value is arrived at from the reasonable letting value under section 100 of the Chennai City Municipal Corporation Act 1919.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_assessment_method"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_half_yearly_basis. The statutory basis of the value is separately checkable from the half-yearly cycle."
     },
     {
       "id": "claim_chennai_ptax_annual_value_factor",
@@ -163,7 +283,7 @@
     },
     {
       "id": "claim_chennai_ptax_rate_table_and_annexure_missing",
-      "text": "The corporation's assessment method page refers the citizen to a percentage table 'given above' for the half-yearly tax and to an annexure for location-wise basic rates per square foot, and neither the table nor the annexure appears anywhere on the page, which ends with the text 'TO BE UPDATED'.",
+      "text": "The corporation's assessment method page refers the citizen to a percentage table 'given above' for the half-yearly tax.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -176,11 +296,62 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "Direct current observation of the page's own contents. The two missing pieces are exactly the two numbers a citizen needs to compute the tax."
+      "notes": "Direct current observation of the page's own contents. The two missing pieces are exactly the two numbers a citizen needs to compute the tax. Split during IND-91 part B lint remediation into the two references, their absence and the page's closing text."
+    },
+    {
+      "id": "claim_chennai_ptax_rate_table_and_annexure_missing_2",
+      "text": "The same page refers the citizen to an annexure for location-wise basic rates per square foot.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_assessment_method"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_rate_table_and_annexure_missing. The second reference is separately checkable from the first."
+    },
+    {
+      "id": "claim_chennai_ptax_rate_table_and_annexure_missing_3",
+      "text": "Neither that table nor that annexure appears anywhere on the page.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_assessment_method"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_rate_table_and_annexure_missing. The absence is separately checkable from the references to them."
+    },
+    {
+      "id": "claim_chennai_ptax_rate_table_and_annexure_missing_4",
+      "text": "The page ends with the text 'TO BE UPDATED'.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_assessment_method"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_rate_table_and_annexure_missing. Direct observation of the page's closing text."
     },
     {
       "id": "claim_chennai_ptax_library_cess",
-      "text": "The corporation's assessment method page states that a 10 per cent library cess is calculated from the general tax component of property tax, citing G.O.Ms.No.492 dated 19 May 1992 and Council Resolution No.246/2001 dated 22 May 2001.",
+      "text": "The corporation's assessment method page states that a 10 per cent library cess is calculated from the general tax component of property tax.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -193,11 +364,45 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A rate that is published, applied to a base that is not."
+      "notes": "A rate that is published, applied to a base that is not. Split during IND-91 part B lint remediation; the authorities cited are asserted separately."
+    },
+    {
+      "id": "claim_chennai_ptax_library_cess_2",
+      "text": "That page cites G.O.Ms.No.492 of 19.05.1992 and Council Resolution No.246/2001 of 22.05.2001 for the library cess.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_assessment_method"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_library_cess. The authorities cited are separately checkable from the rate."
     },
     {
       "id": "claim_chennai_ptax_public_receipt_route",
-      "text": "The corporation publishes a Property Tax Online Payment Receipt route, reachable without login, which returns a payment receipt for a property identified by its zone number, division code, bill number and sub number.",
+      "text": "The corporation publishes a Property Tax Online Payment Receipt route that is reachable without login.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_receipt_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "The observation is the route, its title and its four input fields on the access date. No identifier was entered, no login was used and no case data was retrieved. Split during IND-91 part B lint remediation; what the route returns is asserted separately."
+    },
+    {
+      "id": "claim_chennai_ptax_public_receipt_route_2",
+      "text": "That route returns a payment receipt for a property identified by those four bill fields.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -210,7 +415,7 @@
       "basis": "mixed",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "The observation is the route, its title and its four input fields on the access date; the inference is what it returns for a real property, since no identifier was entered and no case data was retrieved."
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_public_receipt_route. The four fields are the ones asserted by claim_chennai_ptax_bill_number_required. The inference is what the route returns for a real property, since no identifier was entered and no case data was retrieved."
     },
     {
       "id": "claim_chennai_ptax_payment_status_route",
@@ -232,7 +437,7 @@
     },
     {
       "id": "claim_chennai_ptax_revenue_officer_contact",
-      "text": "The corporation's payment and receipt routes both carry a note directing a citizen with any discrepancy in their property tax to submit complaints with particulars to the Revenue Officer, giving telephone numbers 2538 3614 and 2538 4510 extension 370.",
+      "text": "The corporation's payment and receipt routes both carry a note directing a citizen with any discrepancy in their property tax to submit complaints with particulars to the Revenue Officer.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -246,7 +451,25 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A named role with a direct contact route, published on the payment surface itself. Institutional contact details only."
+      "notes": "A named role with a direct contact route, published on the payment surface itself. Institutional contact details only. Split during IND-91 part B lint remediation; the telephone numbers are asserted separately."
+    },
+    {
+      "id": "claim_chennai_ptax_revenue_officer_contact_2",
+      "text": "That note gives telephone numbers 2538 3614 and 2538 4510 extension 370 for the Revenue Officer.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_online_payment_route",
+        "source_chennai_ptax_receipt_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_revenue_officer_contact. The contact numbers are separately checkable from the routing instruction. Institutional contact details only."
     },
     {
       "id": "claim_chennai_ptax_revenue_officer_is_payee",
@@ -267,7 +490,7 @@
     },
     {
       "id": "claim_chennai_ptax_calculator_points_to_staging_host",
-      "text": "The Property Tax Calculator link on the corporation's live property tax section index points to a third-party staging host, coc-staging.egovernments.org, over plain HTTP on port 9980, and the address did not connect on the access date.",
+      "text": "The Property Tax Calculator link on the corporation's live property tax section index points to a third-party staging host, coc-staging.egovernments.org, over plain HTTP on port 9980.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -280,7 +503,24 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "Recorded as observed. The calculator is the route that would supply the missing rate, so its failure and the missing table are the same gap seen twice."
+      "notes": "Recorded as observed. The calculator is the route that would supply the missing rate, so its failure and the missing table are the same gap seen twice. Split during IND-91 part B lint remediation; the connection failure is asserted separately."
+    },
+    {
+      "id": "claim_chennai_ptax_calculator_points_to_staging_host_2",
+      "text": "That address did not connect on the access date.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_section_index"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_calculator_points_to_staging_host. The failure is separately checkable from where the link points."
     },
     {
       "id": "claim_chennai_ptax_know_your_status_404",
@@ -301,7 +541,7 @@
     },
     {
       "id": "claim_chennai_ptax_assessment_documents_are_other_route",
-      "text": "The document list the corporation publishes on its property tax rules and procedure page, comprising registered documents in the applicant's favour, a filled application Form-6 and the last tax paid receipt, is given for the submission of an application for assessment of property tax, not for paying tax on an existing assessment.",
+      "text": "The corporation's property tax rules and procedure page publishes a document list for the submission of an application for assessment of property tax.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -314,11 +554,45 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "Recorded to mark the boundary with this scenario's excluded first-assessment route, not to support the documents cell."
+      "notes": "Recorded to mark the boundary with this scenario's excluded first-assessment route, not to support the documents cell. Split during IND-91 part B lint remediation into the list, its contents and its scope."
+    },
+    {
+      "id": "claim_chennai_ptax_assessment_documents_are_other_route_2",
+      "text": "That list comprises registered documents in the applicant's favour or a filled application Form-6 or the last tax paid receipt.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_rules_procedure"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_assessment_documents_are_other_route. What the list contains is separately checkable from what it is for."
+    },
+    {
+      "id": "claim_chennai_ptax_assessment_documents_are_other_route_3",
+      "text": "That document list is not given for paying tax on an existing assessment.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_ptax_rules_procedure"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_assessment_documents_are_other_route. The scope limit is the reason this claim does not support the documents cell of this scenario."
     },
     {
       "id": "claim_chennai_ptax_due_date_unknown",
-      "text": "The date on which a half year's property tax falls due, and whether any penalty or rebate attaches to paying late or early, is not established by any reviewed public page.",
+      "text": "The date on which a half year's property tax falls due is not established by any reviewed public page.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -329,11 +603,26 @@
       "basis": "inference",
       "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related; the payment route is public."
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related; the payment route is public. Split during IND-91 part B lint remediation; the penalty and rebate unknown is asserted separately."
+    },
+    {
+      "id": "claim_chennai_ptax_due_date_unknown_2",
+      "text": "Whether any penalty or rebate attaches to paying late or early is not established by any reviewed public page.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_ptax_due_date_unknown. Retained because the uncertainty itself matters to the journey. Not login-related."
     },
     {
       "id": "claim_chennai_ptax_amount_payable_unknown",
-      "text": "The amount of property tax payable on a residential property for the current half year cannot be derived from any reviewed public page, because the percentage of annual value and the location-wise basic rate the corporation's own method depends on are both missing from the page that cites them.",
+      "text": "The amount of property tax payable on a residential property for the current half year cannot be derived from any reviewed public page.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -344,7 +633,7 @@
       "basis": "inference",
       "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related; the calculator that would answer it points at an unreachable staging host."
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related; the calculator that would answer it points at an unreachable staging host. The observed reason is carried by claim_chennai_ptax_rate_table_and_annexure_missing_3, which records that neither the percentage table nor the annexure appears anywhere on the page that cites them."
     }
   ],
   "nodes": [],

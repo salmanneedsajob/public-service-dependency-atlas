@@ -157,3 +157,281 @@ Accepted cell states, after the four corrections in `water-connection.correction
 **Verdict: cost mentioned, documents stated, eligibility stated, time mentioned, owner mentioned, after-submission stated — stated count 3 of 6.**
 
 No cell state proposed by the sidecar is changed by this audit. Corrections proposed: 4.
+
+
+## Re-audit — 2026-09-06 (IND-91 part B)
+
+A fresh isolated auditor re-audited this row after pre-audit lint remediation, on the section 12 inputs only. 3 corrections were proposed and 3 applied; none unapplied.
+
+# Re-audit — bengaluru-grid / water-connection
+
+Row: `ledger/jurisdictions/bengaluru-grid/water-connection.json`, sidecar
+`ledger/jurisdictions/bengaluru-grid/expectations/water-connection.json`,
+manifest entry `bengaluru-grid` / `water-connection` (mode `grid-only`,
+`primaryScenarioId` `scenario_ind32_water_residential`).
+Protocol: benchmark v0.1. Audit date 2026-09-06.
+
+Inputs were limited to the six records named in the audit brief. No URL was
+opened, no other jurisdiction or audit file was read, and no evidence outside
+the ledger and sidecar text was used.
+
+Counts: 68 claims, 5 sources, 1 scenario, 0 nodes/edges/roadblocks/journeys
+(consistent with `grid-only`). Claim statuses: 54 verified, 4 partial,
+1 contested, 9 unknown. Grades: 59 B, 9 Unknown.
+
+---
+
+## Cell states
+
+### F1 — `cost` = `mentioned` is correct (§8 cost)
+
+No reviewed record gives an amount the citizen pays for the connection or an
+actionable fee schedule. Every charge head is named
+(`claim_bengaluru_grid_water_rate_components_published_2` … `_11`) with no
+figure; the linked rate documents are unreadable scans
+(`..._rate_documents_unreadable`, `_2`); the route titled Know Your Connection
+Fees returns a zero-byte file (`..._know_your_fees_empty`); the computed figure
+appears only past login (`..._tentative_charges_after_entry`). That is exactly
+§8's "a fee described only as prescribed, a payment step without an amount"
+pattern.
+
+The one readable figure in the ledger is Rs. 1,000 in
+`claim_bengaluru_grid_water_application_types_2`, an entry payment that starts
+instalments on a principal the board never discloses. It fixes no price for the
+service, so it does not lift the cell to `stated`. The cell note already says
+this in terms. State upheld; no correction.
+
+### F2 — `cost` claimIds include three claims that assert nothing about cost (§8, second audit check)
+
+`claim_bengaluru_grid_water_application_form_purchased` ("the applicant logs in
+with a mobile number"), `..._2` ("provides an email address and mobile number")
+and `..._4` ("fills the application and uploads the documents") assert
+authentication and form-filling steps. None of them touches an amount, a fee, or
+a payment. They were pulled into the cell when the IND-91 part B split
+propagated every fragment of the parent claim into the list that had cited the
+unsplit parent. Only `..._3` ("the applicant makes payment to buy the
+application form") is cost-bearing, and it is the archetypal "payment step
+without an amount" that supports `mentioned`.
+
+**Correction C1** — `/cells/cost/claimIds`, drop the three.
+
+### F3 — `eligibility` claimIds include two claims that are not eligibility rules (§8 eligibility)
+
+§8 requires a rule that decides who qualifies or which route applies.
+`claim_bengaluru_grid_water_application_types_2` states the EMI payment terms
+(Rs. 1,000 entry payment, balance billed monthly) and
+`..._application_types_4` states which charge heads attach to the 110-village
+route. Both describe what a route costs, not who may use it or when it applies.
+The cell note reaches past §8 when it treats "which charge set applies" as an
+eligibility rule.
+
+Removing them does not change the state: `..._application_types` (the three
+application types offered) and `..._application_types_3` (the 110-village route
+covers the villages integrated into the city network) give a rule that decides
+which route applies, and `..._rwh_threshold` gives a rule that turns on a
+measurable property of the premises. `stated` is upheld.
+
+**Correction C2** — `/cells/eligibility/claimIds`, drop the two.
+
+Both claims are legitimate `cost` citations if the row wants them listed
+(charge heads named without amounts, and an amount that is an instalment entry
+rather than a price). §9 makes claimIds optional for a `mentioned` cell, so no
+addition is proposed; if either is added later, the cost note must keep saying
+that Rs. 1,000 does not establish what the connection costs.
+
+### F4 — `documents` = `stated` is correct (§8 documents)
+
+`claim_bengaluru_grid_water_documents_required_2` … `_6` name concrete
+documents with a requirement to produce them, and the manual repeats the list
+(`..._mandatory_documents_manual`, `_2`). All are verified Grade B, so §8's
+"only verified or partial claims may support stated" is met. The two upload
+limits (`..._mandatory_documents_manual_3`, `_4`) are submission mechanics for
+those same documents and are accepted as supporting citations. Every listed
+claim supports the cell; no correction.
+
+### F5 — `time` = `mentioned` is correct (§8 time)
+
+`..._status_shows_stage_and_officer` and `_2` name sequence and progress with no
+period, no total, no deadline and no service-level target — §8's "a reference to
+timing, delay, sequence, or processing without a figure". The four
+`..._timeline_unknown*` claims are Unknown-grade and correctly cited nowhere,
+per §8's rule that an Unknown claim records a limitation and never a positive
+cell value. `searchedRoutes` are recorded as §9 requires for a `mentioned` cell.
+
+The note's line about the expired demand-note notice rests on
+`claim_bengaluru_grid_water_stale_notice`, which the cell does not cite. §9
+makes topic-only claimIds optional for a `mentioned` cell, so this is not a
+defect; citing it would be an improvement, not a fix. No correction.
+
+### F6 — `owner` = `mentioned` is correct (§8 owner)
+
+The helpline and general contact routes (`..._toll_free_and_helpdesk`, `_2`) are
+a route into the agency, not to the office, officer or role that decides the
+case — §8's "general agency name alone is `mentioned`".
+`..._status_shows_stage_and_officer_3` is a verified Grade B observation of the
+public manual (the manual says the tab shows an assigned officer), so citing it
+is permitted; but what it establishes is that a name is disclosed privately to
+one applicant after login, which is not published documentation a citizen can
+act on before applying. It correctly does not lift the cell.
+
+`claim_bengaluru_grid_water_english_route_not_carried` is `contested` and is
+correctly excluded: §8 admits only `verified` or `partial` claims in support of
+a cell value. The note states this. No correction.
+
+### F7 — `after-submission` = `stated` is correct (§8 after-submission)
+
+Two login-free status routes (`..._public_status_routes`, `_2`, `_3`), a
+downloadable acknowledgement, a demand note on approval and a payment receipt
+(`..._acknowledgement_and_demand_note`, `_2`, `_3`), and the status tab's
+contents (`..._status_shows_stage_and_officer`, `_2`, `_3`) all identify
+something the citizen sees after submitting. Nothing in the list is a step at or
+before submission, which §8 excludes. The gated surfaces are asserted as what
+the published manual states rather than as observations of the gated screens, so
+§8 lint check 6 (overclaims across a login boundary) is not tripped. No
+correction.
+
+---
+
+## Atomicity (§8 lint check 1)
+
+### F8 — `claim_bengaluru_grid_water_mandatory_documents_manual` is a list claim
+
+Its text asserts four documents at once ("the building plan or a building photo
+with the owner or the lease-cum-sale deed or the khata"), while its own note
+says the record was split "into the list, the additional document and the two
+upload limits". The parent kept the list. The row applies the opposite standard
+to the same content from the entry page, which was split into
+`..._documents_required_2` … `_6`, one item per claim. Unwaived, this blocks
+audit under §8.
+
+No correction is proposed: a faithful split means authoring four new claim
+records, and the auditor must not invent the per-item evidence attribution
+without re-observing the manual (§13, "may not invent evidence"). The split is
+owed in a re-observation pass.
+
+### F9 — `claim_bengaluru_grid_water_toll_free_and_helpdesk_2` is a four-item conjunction
+
+"a contact document and a plumber list and a grievance form and a frequently
+asked questions route" is four checkable things in one claim, and its note
+asserts "one published item, one claim", which is not true of the text as
+written. The claim cites two sources
+(`..._owcv2_consumer` and `..._consumer_manual`) collectively; the ledger text
+does not say which source shows which item, so the split cannot be performed
+without re-observation. Finding only; it supports the `owner` cell's
+`mentioned` state either way.
+
+### F10 — `claim_bengaluru_grid_water_application_types_4` is a three-item conjunction
+
+"Zone charges and layout charges and ETP charges apply" is three charge heads in
+one claim, again against a note that claims one item per claim. Single source,
+so this one is splittable without re-observation, but it is left as a finding
+for the same pass that resolves F8 and F9 so the cell lists are rewritten once.
+
+### F11 — `claim_bengaluru_grid_water_english_route_not_carried` is compound
+
+It asserts both that the corporate site offers an English route and that the
+route did not carry through to the contact and office-location pages. The claim
+is `contested` and supports no cell, so it gates nothing, but the split is owed
+alongside the source record that F14 describes.
+
+---
+
+## Grades, basis, citation gate
+
+### F12 — evidence grades and basis are correct (§4, §5)
+
+All 59 non-Unknown claims are Grade B, and each rests on direct current
+observation of a public official interface, an official consumer manual, or an
+official tariff document — precisely the §4 Grade B rows. No Grade B sits on a
+secondary source (§8 lint check 3) and no observed official form is graded C
+(check 4). The nine Unknown claims are negative universals ("not established by
+any reviewed public page", "only inside an individual application after login"),
+which are conclusions drawn from observation rather than observations
+themselves; `inference` is the right basis under §5, and Unknown is the right
+grade under §4's last row. The four `..._login_boundary*` claims are `mixed` and
+their notes state the boundary, as §5 requires. No correction.
+
+### F13 — citation gate (§7)
+
+Every non-Unknown claim carries at least one source; every source id resolves;
+every source records a direct link, an ISO access date and jurisdiction text
+specific to Bengaluru, Karnataka, India. No claim rests on a department
+homepage presented as a specific citation. There are no duplicate source
+URL/access-date pairs (§8 lint check 2). Every claim is tagged to the declared
+primary scenario and no undeclared scenario id appears (check 7). `grid-only`
+means there are no nodes, so §6 `researchedNoSourceFound` verification does not
+apply.
+
+The one §7 exposure is `claim_bengaluru_grid_water_english_route_not_carried`:
+its only source, `source_bengaluru_grid_water_owc_portal`, covers the Jaladhare
+consumer portal at owc.bwssb.gov.in, not the corporate-site pages the claim
+describes. The prior disposition — retain the observation, mark it `contested`,
+record the reason in `notes`, and let it support no cell — is the correct §13
+remedy short of re-observation. Upheld; no further change.
+
+### F14 — the ledger's own stated limitation about source dates is false (§8 lint check 5, §14)
+
+`meta.disclaimer` says "the source record for the board's rate documents carries
+neither a publication date nor a visible-date note". The record
+`source_bengaluru_grid_water_fee_documents` does carry one, verbatim: "Visible
+date: none is shown on the route or on the files it links." Lint check 5 is
+therefore satisfied for that source and the limitation is stale. The other two
+undated sources carry equivalent notes ("The page shows no visible last-updated
+date", "Shows no visible last-updated date"), so no source-date finding remains
+open on this row.
+
+The same sentence's second limb is also imprecise: it says the corporate site
+bwssb.karnataka.gov.in "has no source record in this ledger", but
+`source_bengaluru_grid_water_tariff_2025` is a record on that host. The accurate
+limitation is narrower — the corporate site's English landing page, contact
+information page and office-location page (all three listed in the `owner`
+cell's `searchedRoutes`) have no source record, which is what leaves F13's
+contested claim uncited.
+
+**Correction C3** — `/meta/disclaimer`, replace the closing limitation sentence
+with an accurate one.
+
+---
+
+## Other observations, no correction
+
+### F15 — archive records comply with §11
+
+Each source records the access date and either a snapshot URL or a documented
+capture failure with a limitation. `source_bengaluru_grid_water_owc_portal`
+carries a snapshot and correctly flags that it predates the access date; the
+other four record the availability-API miss as a limitation and retain the
+original official URL. No homepage was substituted for a failed capture.
+
+### F16 — record-id drift after the split, cosmetic only
+
+`claim_bengaluru_grid_water_application_form_purchased` now asserts the login
+step, while its id and its `notes` still describe the "form is bought rather
+than free" assertion that moved to `..._3`. §1 requires reusing a published
+record id and changing content rather than identity, so the id must stay. The
+stale sentence in `notes` is worth tidying but changes no evidence and gates no
+cell.
+
+### F17 — manifest and scenario policy (§2, §12)
+
+The manifest entry's `primaryScenarioId`, `ledgerFile` and `expectationsFile`
+match the records audited; the sidecar's `primaryScenarioId` matches the single
+scenario in the ledger; there are no scenario aliases and no branch scenarios
+recorded. `mode: grid-only` matches the empty `nodes`, `edges`, `roadblocks` and
+`journeys` arrays and the meta disclaimer. Six authored cells are present, the
+three `stated` cells cite claim ids and the three `mentioned` cells record
+searched routes, as §14 requires.
+
+---
+
+## Summary
+
+17 findings, 3 corrections. No cell state changes: `cost` `mentioned`,
+`documents` `stated`, `eligibility` `stated`, `time` `mentioned`, `owner`
+`mentioned` and `after-submission` `stated` are all upheld against §8. The
+corrections remove five non-supporting claim ids from two cells and repair a
+false stated limitation in `meta.disclaimer`. Three atomicity violations (F8,
+F9, F10) and one compound contested claim (F11) are reported without
+corrections because splitting them faithfully requires re-observation of the
+sources; they are unwaived §8 lint check 1 findings and block audit sign-off
+until split or waived with a named record id and reason.

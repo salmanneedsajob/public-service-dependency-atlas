@@ -36,7 +36,7 @@
       "accessedAt": "2026-09-06",
       "publishedAt": "2024-04-08",
       "type": "official_guidance",
-      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. The page footer displays 'Last reviewed and updated on 08-04-2024', recorded as publishedAt; the charter identifies itself as the Citizen Charter 2021, revising a charter first published in 1998 under Government Order No.58, Municipal Administration and Water Supply Department, dated 16 April 1998. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250427164610/https://cmwssb.tn.gov.in/citizencharter (2025-04-27); no new capture was pushed from this run."
+      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. The page footer displays 'Last reviewed and updated on 08-04-2024', recorded as publishedAt; the charter identifies itself as the Citizen Charter 2021, revising a charter first published in 1998 under Government Order No.58, Municipal Administration and Water Supply Department, dated 16 April 1998. Limitation: the charter is dated 2021 and was last reviewed in April 2024, so its standards and rates may have moved since. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250427164610/https://cmwssb.tn.gov.in/citizencharter (2025-04-27); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the page as reviewed on 2026-09-06."
     },
     {
       "id": "source_chennai_water_application_form",
@@ -55,7 +55,7 @@
       "url": "https://cmwssb.tn.gov.in/area-office",
       "accessedAt": "2026-09-06",
       "type": "official_portal",
-      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. Direct current observation: a table giving, for each area, the area number, the location, the office address and a telephone number. Shows no separate last-updated date beyond the site footer. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250417233511/https://cmwssb.tn.gov.in/area-office (2025-04-17); no new capture was pushed from this run."
+      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. Direct current observation: a table giving, for each area, the area number, the location, the office address and a telephone number. Shows no separate last-updated date beyond the site footer. Limitation: the table carries no date of its own, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250417233511/https://cmwssb.tn.gov.in/area-office (2025-04-17); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the table as reviewed on 2026-09-06."
     },
     {
       "id": "source_chennai_water_online_route",
@@ -64,7 +64,7 @@
       "url": "https://cmwssb.tn.gov.in/online-water-sewer",
       "accessedAt": "2026-09-06",
       "type": "official_portal",
-      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. Direct current observation of a public official interface offering two links, one to apply for a new water or sewer connection and one to know the status of such an application. Neither was exercised; no application reference was entered. Archive: the Wayback availability API returned no snapshot for this route on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run. Date quality: this record carries no publishedAt and states no visible version or last-updated date for the route; the audit did not observe the page and records the absence as an unresolved limitation rather than asserting what the page displays."
+      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. Direct current observation of a public official interface offering two links, one to apply for a new water or sewer connection and one to know the status of such an application. Neither link was exercised; no login was used and no application reference was entered, so nothing is recorded about either destination. Visible date: none is shown; the route carries no publishedAt and states no visible version or last-updated date. Limitation: the route is undated, so its currency rests on the access-date observation alone. Archive: the Wayback availability API returned no snapshot for this route on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
     },
     {
       "id": "source_chennai_water_general_tariff",
@@ -79,7 +79,7 @@
   "claims": [
     {
       "id": "claim_chennai_water_connection_charge_table",
-      "text": "The board's application form for a water or sewer connection publishes a table of connection charges per equivalent dwelling unit for residential independent houses: Rs. 100 for water and Rs. 100 for sewer up to 500 square feet, that is 46.47 square metres; Rs. 5,000 and Rs. 5,000 for a building up to G+1 with a dwelling unit area above 46.47 and up to 100 square metres; and Rs. 7,500 and Rs. 7,500 above 100 and up to 200 square metres, the same rate applying to all other residential buildings and flats.",
+      "text": "The board's application form for a water or sewer connection publishes a table of connection charges per equivalent dwelling unit for residential independent houses.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -92,11 +92,79 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "Amounts the citizen pays, banded by the dwelling unit area of the property, for the residential categories this scenario covers."
+      "notes": "Amounts the citizen pays, banded by the dwelling unit area of the property, for the residential categories this scenario covers. Split during IND-91 part B lint remediation into one claim per published band."
+    },
+    {
+      "id": "claim_chennai_water_connection_charge_table_2",
+      "text": "That table gives Rs. 100 for water and Rs. 100 for sewer up to 500 square feet, that is 46.47 square metres.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_connection_charge_table; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_connection_charge_table_3",
+      "text": "That table gives Rs. 5,000 for water and Rs. 5,000 for sewer for a building up to G+1 with a dwelling unit area above 46.47 and up to 100 square metres.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_connection_charge_table; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_connection_charge_table_4",
+      "text": "That table gives Rs. 7,500 for water and Rs. 7,500 for sewer above 100 and up to 200 square metres.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_connection_charge_table; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_connection_charge_table_5",
+      "text": "The same rate applies to all other residential buildings and flats.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_connection_charge_table; one published item, one claim."
     },
     {
       "id": "claim_chennai_water_meter_testing_charges",
-      "text": "The board's application form guidelines publish meter testing charges by equivalent dwelling units: Rs. 100 up to 6 units, Rs. 200 for 7 to 20, Rs. 300 for 21 to 40, Rs. 400 for 41 to 70 and Rs. 500 above 70, alongside the bore size for the water connection and the size of the sewer connection for each band.",
+      "text": "The board's application form guidelines publish meter testing charges by equivalent dwelling units.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -109,11 +177,113 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": ""
+      "notes": "Split during IND-91 part B lint remediation into one claim per published band."
+    },
+    {
+      "id": "claim_chennai_water_meter_testing_charges_2",
+      "text": "Those charges are Rs. 100 up to 6 units.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_meter_testing_charges; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_meter_testing_charges_3",
+      "text": "Those charges are Rs. 200 for 7 to 20 units.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_meter_testing_charges; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_meter_testing_charges_4",
+      "text": "Those charges are Rs. 300 for 21 to 40 units.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_meter_testing_charges; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_meter_testing_charges_5",
+      "text": "Those charges are Rs. 400 for 41 to 70 units.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_meter_testing_charges; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_meter_testing_charges_6",
+      "text": "Those charges are Rs. 500 above 70 units.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_meter_testing_charges; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_meter_testing_charges_7",
+      "text": "The same table gives the bore size for the water connection and the size of the sewer connection for each band.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_meter_testing_charges; one published item, one claim."
     },
     {
       "id": "claim_chennai_water_amount_payable_components",
-      "text": "The board's application form sets out the components of the amount payable as connection charges for water, connection charges for sewer, advance tax where applicable, meter testing charges, a deposit amount for water, a deposit amount for sewer, a caution deposit for a temporary connection and any penalty, with a total to be computed by the applicant.",
+      "text": "The board's application form sets out the components of the amount payable.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -126,11 +296,62 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "The form names every component, and gives figures for the connection charges and meter testing charges; the deposit amounts are not printed on the reviewed pages."
+      "notes": "The form names every component, and gives figures for the connection charges and meter testing charges; the deposit amounts are not printed on the reviewed pages. Split during IND-91 part B lint remediation into the components and the rule about the total."
+    },
+    {
+      "id": "claim_chennai_water_amount_payable_components_2",
+      "text": "Those components are connection charges for water or connection charges for sewer or advance tax where applicable or meter testing charges.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_amount_payable_components; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_amount_payable_components_3",
+      "text": "Those components also include a deposit amount for water or a deposit amount for sewer or a caution deposit for a temporary connection or any penalty.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_amount_payable_components; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_amount_payable_components_4",
+      "text": "The form leaves the total to be computed by the applicant.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_amount_payable_components; one published item, one claim."
     },
     {
       "id": "claim_chennai_water_self_assessment_no_plumber",
-      "text": "The board's citizen charter states that it has dispensed with the system of licensed plumbers for submitting water and sewer applications, and that connection proposals, connection charges and deposits can be self assessed and self certified by the applicant as per the guidelines and instructions issued with the application form.",
+      "text": "The board's citizen charter states that it has dispensed with the system of licensed plumbers for submitting water and sewer applications.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -143,11 +364,45 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A rule about who may lodge the application, and the reason the charge table has to be published for the citizen to use."
+      "notes": "A rule about who may lodge the application, and the reason the charge table has to be published for the citizen to use. Split during IND-91 part B lint remediation into the removal of the plumber requirement, self assessment and self certification."
+    },
+    {
+      "id": "claim_chennai_water_self_assessment_no_plumber_2",
+      "text": "The charter states that the applicant may self assess the connection proposal, the connection charges and the deposits.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_self_assessment_no_plumber; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_self_assessment_no_plumber_3",
+      "text": "The charter states that the applicant may self certify those items as per the guidelines and instructions issued with the application form.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_self_assessment_no_plumber; one published item, one claim."
     },
     {
       "id": "claim_chennai_water_application_free_and_where",
-      "text": "The board's citizen charter states that application forms are available free of cost at the head office at No.1, Pumping Station Road, Chintadripet, Chennai 600 002, at 15 area offices and at 200 depot offices, and can also be downloaded from the board's official website.",
+      "text": "The board's citizen charter states that application forms are available free of cost.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -160,11 +415,62 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "An explicit zero for the form itself, recorded under protocol section 3."
+      "notes": "An explicit zero for the form itself, recorded under protocol section 3. Split during IND-91 part B lint remediation into the zero fee and the places the form can be had."
+    },
+    {
+      "id": "claim_chennai_water_application_free_and_where_2",
+      "text": "Those forms are available at the head office at No.1 Pumping Station Road in Chintadripet, Chennai 600 002.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_application_free_and_where; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_application_free_and_where_3",
+      "text": "Those forms are also available at 15 area offices and at 200 depot offices.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_application_free_and_where; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_application_free_and_where_4",
+      "text": "Those forms can also be downloaded from the board's official website.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_application_free_and_where; one published item, one claim."
     },
     {
       "id": "claim_chennai_water_enclosure_list",
-      "text": "The board's application form guidelines list the documents to be attached with the application, including a true copy of the plans sanctioned by CMDA, the Corporation of Chennai or the local authority, a copy of the notice issued for assessment of property with floor-wise assessment details, copies of acknowledged letters seeking assessment of property tax and water and sewerage tax where not assessed, drawings showing internal plumbing work and the connection to the public main signed by the owner, proof of having paid taxes and charges up to date, a true copy of the completion certificate where applicable, proof of having paid infrastructure development charges where applicable, and floor-wise area details for each dwelling.",
+      "text": "The board's application form guidelines list the documents to be attached with the application.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -177,11 +483,147 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "An actionable enclosure list published on the form itself."
+      "notes": "An actionable enclosure list published on the form itself. Split during IND-91 part B lint remediation into one claim per required enclosure."
+    },
+    {
+      "id": "claim_chennai_water_enclosure_list_2",
+      "text": "That list includes a true copy of the plans sanctioned by CMDA or the Corporation of Chennai or the local authority.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_enclosure_list_3",
+      "text": "That list includes a copy of the notice issued for assessment of property with floor-wise assessment details.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_enclosure_list_4",
+      "text": "That list includes copies of acknowledged letters seeking assessment of property tax and water and sewerage tax where not assessed.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_enclosure_list_5",
+      "text": "That list includes drawings showing internal plumbing work and the connection to the public main signed by the owner.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_enclosure_list_6",
+      "text": "That list includes proof of having paid taxes and charges up to date.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_enclosure_list_7",
+      "text": "That list includes a true copy of the completion certificate where applicable.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_enclosure_list_8",
+      "text": "That list includes proof of having paid infrastructure development charges where applicable.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_enclosure_list_9",
+      "text": "That list includes floor-wise area details for each dwelling.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_enclosure_list; one published item, one claim."
     },
     {
       "id": "claim_chennai_water_small_house_document_relief",
-      "text": "The board's application form guidelines state that an applicant seeking a water or sewer connection for a residential independent house up to 500 square feet need not enclose the drawing showing internal plumbing works but must furnish a built-up area statement with a signature, must enclose a copy of the ration card as address proof, and need not pay advance tax.",
+      "text": "The board's application form guidelines state that an applicant for a residential independent house up to 500 square feet need not enclose the drawing showing internal plumbing works.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -194,11 +636,62 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A rule that decides which enclosures and which charges apply to the smallest residential category, including an explicit zero for advance tax."
+      "notes": "A rule that decides which enclosures and which charges apply to the smallest residential category. Split during IND-91 part B lint remediation into the enclosure relieved, the two enclosures still required and the explicit zero for advance tax."
+    },
+    {
+      "id": "claim_chennai_water_small_house_document_relief_2",
+      "text": "That applicant must furnish a built-up area statement with a signature.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_small_house_document_relief; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_small_house_document_relief_3",
+      "text": "That applicant must enclose a copy of the ration card as address proof.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_small_house_document_relief; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_small_house_document_relief_4",
+      "text": "That applicant need not pay advance tax.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_small_house_document_relief; one published item, one claim. An explicit zero, recorded as a stated value under protocol section 3; this is the fragment the cost cell rests on."
     },
     {
       "id": "claim_chennai_water_completion_certificate_exemption",
-      "text": "The board's citizen charter states that residential buildings up to 12 metres in height not exceeding 3 dwelling units or 750 square metres, and all types of industrial buildings, are exempted from producing a completion certificate for availing a water or sewer connection.",
+      "text": "The board's citizen charter states that residential buildings up to 12 metres in height are exempted from producing a completion certificate for a water connection.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -211,11 +704,45 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A usable rule that decides whether the hardest enclosure applies to a given house."
+      "notes": "A usable rule that decides whether the hardest enclosure applies to a given house. Split during IND-91 part B lint remediation into the height limb, the size limb and the industrial limb."
+    },
+    {
+      "id": "claim_chennai_water_completion_certificate_exemption_2",
+      "text": "That exemption applies where the building does not exceed 3 dwelling units or 750 square metres.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_completion_certificate_exemption; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_completion_certificate_exemption_3",
+      "text": "The charter also exempts all types of industrial buildings from producing a completion certificate.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_completion_certificate_exemption; one published item, one claim."
     },
     {
       "id": "claim_chennai_water_six_particulars",
-      "text": "The board's citizen charter states that a single sheet application form can be used for a new water or sewer connection and that only six particulars are required to be filled up, namely the name and address of the applicant, the address of the premises, whether a rainwater harvesting structure is provided, the Metro Water area, zone or division number, the calculation of equivalent dwelling units and connection charges, and the amount payable.",
+      "text": "The board's citizen charter states that a single sheet application form can be used for a new water or sewer connection.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -228,11 +755,45 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": ""
+      "notes": "Split during IND-91 part B lint remediation into the single-sheet form, the number of particulars and the list of them."
+    },
+    {
+      "id": "claim_chennai_water_six_particulars_2",
+      "text": "The charter states that only six particulars are required to be filled up.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_six_particulars; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_six_particulars_3",
+      "text": "The six particulars are the applicant's name and address, the premises address, the rainwater harvesting structure, the Metro Water zone number, the dwelling unit calculation and the amount payable.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_six_particulars. This fragment carries the charter's own list of the form's particulars, one published list, waived on the manifest entry."
     },
     {
       "id": "claim_chennai_water_performance_standards_table",
-      "text": "The board's citizen charter publishes performance standards for a water connection: intimation to the applicant in case of a deficiency in the application form within 3 days from the date of registration, issue of the sanction order within 5 days from the date of registration, and effecting the house service connection within 15 days from the date of registration on its merits.",
+      "text": "The board's citizen charter publishes performance standards for a water connection.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -245,11 +806,62 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "Service-level targets stated against named activities."
+      "notes": "Service-level targets stated against named activities. Split during IND-91 part B lint remediation into one claim per published standard."
+    },
+    {
+      "id": "claim_chennai_water_performance_standards_table_2",
+      "text": "One standard is intimation to the applicant of a deficiency in the application form within 3 days from the date of registration.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_performance_standards_table; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_performance_standards_table_3",
+      "text": "One standard is issue of the sanction order within 5 days from the date of registration.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_performance_standards_table; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_performance_standards_table_4",
+      "text": "One standard is effecting the house service connection within 15 days from the date of registration on its merits.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_performance_standards_table; one published item, one claim."
     },
     {
       "id": "claim_chennai_water_stage_timeline_table",
-      "text": "The board's citizen charter publishes a stage-by-stage timeline totalling 15 days: scheduling and site inspection 3 days, processing, verification and approval of the application 5 days, payment to be made by the consumer 3 days, issue of the work order to the contractor 2 days, and effecting the connection and raising the demand 2 days.",
+      "text": "The board's citizen charter publishes a stage-by-stage timeline totalling 15 days.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -262,7 +874,92 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "The stages sum to the headline figure, and one of the five is a deadline on the citizen rather than the board."
+      "notes": "The stages sum to the headline figure, and one of the five is a deadline on the citizen rather than the board. Split during IND-91 part B lint remediation into one claim per published stage."
+    },
+    {
+      "id": "claim_chennai_water_stage_timeline_table_2",
+      "text": "That timeline allows 3 days for scheduling and site inspection.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_stage_timeline_table; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_stage_timeline_table_3",
+      "text": "That timeline allows 5 days for processing, verification and approval of the application.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_stage_timeline_table; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_stage_timeline_table_4",
+      "text": "That timeline allows 3 days for payment to be made by the consumer.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_stage_timeline_table; one published item, one claim. This stage is a deadline on the citizen rather than on the board."
+    },
+    {
+      "id": "claim_chennai_water_stage_timeline_table_5",
+      "text": "That timeline allows 2 days for issue of the work order to the contractor.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_stage_timeline_table; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_stage_timeline_table_6",
+      "text": "That timeline allows 2 days for effecting the connection and raising the demand.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_stage_timeline_table; one published item, one claim."
     },
     {
       "id": "claim_chennai_water_form_addressed_to_area_engineer",
@@ -283,7 +980,7 @@
     },
     {
       "id": "claim_chennai_water_officer_roles_in_process",
-      "text": "The board's citizen charter names the officers who handle a new connection at each stage: the Depot Engineer receives the application, schedules and conducts the inspection and completes the connection, the Deputy Area Engineer verifies the estimate, and the Area Engineer approves the connection and issues the work order.",
+      "text": "The board's citizen charter names the officers who handle a new connection at each stage.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -296,11 +993,62 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": ""
+      "notes": "Split during IND-91 part B lint remediation into one claim per named officer."
+    },
+    {
+      "id": "claim_chennai_water_officer_roles_in_process_2",
+      "text": "The Depot Engineer receives the application and schedules and conducts the inspection and completes the connection.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_officer_roles_in_process; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_officer_roles_in_process_3",
+      "text": "The Deputy Area Engineer verifies the estimate.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_officer_roles_in_process; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_officer_roles_in_process_4",
+      "text": "The Area Engineer approves the connection and issues the work order.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_officer_roles_in_process; one published item, one claim."
     },
     {
       "id": "claim_chennai_water_escalation_matrix",
-      "text": "The board's citizen charter publishes a complaint escalation matrix for grievances about an application for a new water or sewer connection, allowing 7 days at the Depot Engineer, 4 days at the Deputy Area Engineer, 3 days at the Area Engineer and 2 days at the Superintendent Engineer, after which notification is sent to the Chief Engineer.",
+      "text": "The board's citizen charter publishes a complaint escalation matrix for grievances about an application for a new water or sewer connection.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -313,11 +1061,96 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A named escalation path with a period at each level, specific to this service rather than to supply complaints."
+      "notes": "A named escalation path with a period at each level, specific to this service rather than to supply complaints. Split during IND-91 part B lint remediation into one claim per level."
+    },
+    {
+      "id": "claim_chennai_water_escalation_matrix_2",
+      "text": "That matrix allows 7 days at the Depot Engineer.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_escalation_matrix; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_escalation_matrix_3",
+      "text": "That matrix allows 4 days at the Deputy Area Engineer.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_escalation_matrix; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_escalation_matrix_4",
+      "text": "That matrix allows 3 days at the Area Engineer.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_escalation_matrix; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_escalation_matrix_5",
+      "text": "That matrix allows 2 days at the Superintendent Engineer.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_escalation_matrix; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_escalation_matrix_6",
+      "text": "After those levels notification is sent to the Chief Engineer.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_escalation_matrix; one published item, one claim."
     },
     {
       "id": "claim_chennai_water_area_office_directory",
-      "text": "The board publishes a table of its area offices giving, for each area, the area number, the location, the office address and a telephone number.",
+      "text": "The board publishes a table of its area offices.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -330,11 +1163,28 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A specific office list a citizen can use to find the office that holds their case. Institutional contact details only."
+      "notes": "A specific office list a citizen can use to find the office that holds their case. Institutional contact details only. Split during IND-91 part B lint remediation; what the table gives is asserted separately."
+    },
+    {
+      "id": "claim_chennai_water_area_office_directory_2",
+      "text": "That table gives for each area the area number and the location and the office address and a telephone number.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_area_office_list"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_area_office_directory; one published item, one claim. Institutional contact details only."
     },
     {
       "id": "claim_chennai_water_registration_acknowledgement",
-      "text": "The board's application form guidelines state that the filled application, with the receipt for payment of the connection charges and the necessary enclosures, must be registered at the registration counter of the head office in person, by an authorised person or by post before 3.00 p.m. on working days, and that applicants are requested to get the acknowledgment from the registration counter on submission of the application.",
+      "text": "The board's application form guidelines state that the filled application must be registered at the registration counter of the head office.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -347,11 +1197,79 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "The acknowledgment is given at the counter on submission; recorded for the route rather than for the after-submission cell."
+      "notes": "The acknowledgment is given at the counter on submission; recorded for the route rather than for the after-submission cell. Split during IND-91 part B lint remediation into the counter, the modes, the cut-off, what must accompany the application and the acknowledgment."
+    },
+    {
+      "id": "claim_chennai_water_registration_acknowledgement_2",
+      "text": "That registration may be done in person or by an authorised person or by post.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_acknowledgement; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_registration_acknowledgement_3",
+      "text": "The registration counter accepts applications before 3.00 p.m. on working days.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_acknowledgement; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_registration_acknowledgement_4",
+      "text": "The filled application must carry the receipt for payment of the connection charges and the necessary enclosures.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_acknowledgement; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_registration_acknowledgement_5",
+      "text": "Applicants are requested to get the acknowledgment from the registration counter on submission of the application.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_acknowledgement; one published item, one claim."
     },
     {
       "id": "claim_chennai_water_registration_id_and_sms",
-      "text": "The board's citizen charter states that on a successful online transaction a unique registration ID is generated and displayed on the screen and emailed or sent by SMS to the consumer, that a slot allotted for verification of the premises is intimated by SMS, that discrepancies are notified by email or SMS, and that the date allotted for issue of the connection is intimated by email or SMS.",
+      "text": "The board's citizen charter states that on a successful online transaction a unique registration ID is generated and displayed on the screen.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -364,11 +1282,79 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "Surfaces the applicant sees after submitting: an identifier, and dated intimations at each subsequent step."
+      "notes": "Surfaces the applicant sees after submitting: an identifier, and dated intimations at each subsequent step. Split during IND-91 part B lint remediation into one claim per surface."
+    },
+    {
+      "id": "claim_chennai_water_registration_id_and_sms_2",
+      "text": "The charter states that the registration ID is emailed or sent by SMS to the consumer.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_id_and_sms; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_registration_id_and_sms_3",
+      "text": "The charter states that a slot allotted for verification of the premises is intimated by SMS.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_id_and_sms; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_registration_id_and_sms_4",
+      "text": "The charter states that discrepancies are notified by email or SMS.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_id_and_sms; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_registration_id_and_sms_5",
+      "text": "The charter states that the date allotted for issue of the connection is intimated by email or SMS.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_registration_id_and_sms; one published item, one claim."
     },
     {
       "id": "claim_chennai_water_sanction_order_after_payment",
-      "text": "The board's citizen charter states that on approval by the Area Engineer an intimation is sent to the applicant to make payment, and that after payment the sanction order is generated and intimation is given to the applicant by SMS.",
+      "text": "The board's citizen charter states that on approval by the Area Engineer an intimation is sent to the applicant to make payment.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -381,11 +1367,45 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": ""
+      "notes": "Split during IND-91 part B lint remediation into the payment intimation, the sanction order and its intimation."
+    },
+    {
+      "id": "claim_chennai_water_sanction_order_after_payment_2",
+      "text": "The charter states that after payment the sanction order is generated.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_sanction_order_after_payment; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_sanction_order_after_payment_3",
+      "text": "The charter states that intimation of the sanction order is given to the applicant by SMS.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_sanction_order_after_payment; one published item, one claim."
     },
     {
       "id": "claim_chennai_water_public_status_route",
-      "text": "The board's water and sewer connection online services route, a page reachable without login, publishes two links, one to apply for a new water or sewer connection and one to know the status of a new water or sewer connection; neither link was exercised, so whether either destination requires authentication is not established by this observation.",
+      "text": "The board's water and sewer connection online services route is a page reachable without login.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -398,11 +1418,62 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "The links were observed on the access date; neither was exercised and no application reference was entered."
+      "notes": "The links were observed on the access date; neither was exercised, no login was used and no application reference was entered. Split during IND-91 part B lint remediation into the page, its two links and the limit of the observation."
+    },
+    {
+      "id": "claim_chennai_water_public_status_route_2",
+      "text": "That route publishes a link to apply for a new water or sewer connection.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_online_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_public_status_route; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_public_status_route_3",
+      "text": "That route publishes a link to know the status of a new water or sewer connection.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_online_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_public_status_route; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_public_status_route_4",
+      "text": "Whether either destination requires authentication is not established by this observation.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_online_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "inference",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_public_status_route. Neither link was exercised, no login was used and no application reference was entered, so what lies behind either link is unknown."
     },
     {
       "id": "claim_chennai_water_status_published_periodically",
-      "text": "The board's citizen charter states that the status of registered water and sewer applications is published periodically on the board's official website.",
+      "text": "The board's citizen charter states that the status of registered applications is published periodically on the board's official website.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -419,7 +1490,7 @@
     },
     {
       "id": "claim_chennai_water_domestic_tariff",
-      "text": "The board's general tariff publishes the metered domestic residential rate as Rs. 8 per kilolitre up to 10 kilolitres, Rs. 20 from 11 to 15, Rs. 32 from 16 to 25 and Rs. 51 above 25, with a minimum chargeable rate including sewerage charges of Rs. 100 per month per dwelling unit, billed monthly.",
+      "text": "The board's general tariff publishes the metered domestic residential rate as Rs. 8 per kilolitre up to 10 kilolitres.",
       "jurisdiction": "Chennai, Tamil Nadu, India",
       "scenarioIds": [
         "scenario_ind32_water_residential"
@@ -432,7 +1503,75 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "What the household pays once connected, not what the connection costs; recorded for completeness."
+      "notes": "What the household pays once connected, not what the connection costs; recorded for completeness. Split during IND-91 part B lint remediation into one claim per published band."
+    },
+    {
+      "id": "claim_chennai_water_domestic_tariff_2",
+      "text": "That tariff gives Rs. 20 per kilolitre from 11 to 15 kilolitres.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_general_tariff"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_domestic_tariff; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_domestic_tariff_3",
+      "text": "That tariff gives Rs. 32 per kilolitre from 16 to 25 kilolitres.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_general_tariff"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_domestic_tariff; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_domestic_tariff_4",
+      "text": "That tariff gives Rs. 51 per kilolitre above 25 kilolitres.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_general_tariff"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_domestic_tariff; one published item, one claim."
+    },
+    {
+      "id": "claim_chennai_water_domestic_tariff_5",
+      "text": "That tariff sets a minimum chargeable rate including sewerage charges of Rs. 100 per month per dwelling unit, billed monthly.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_general_tariff"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_chennai_water_domestic_tariff; one published item, one claim."
     },
     {
       "id": "claim_chennai_water_online_application_needs_login",
@@ -449,7 +1588,7 @@
       "basis": "mixed",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Boundary statement, recorded as a limitation and not used to support any positive cell value. Basis boundary as required by protocol section 5: the observed element is the citizen charter's own text stating that the consumer must first create an applicant login with a mobile number, email id and password before applying on the revised online route; the inferred element is the reading that the counter route needs no login and is where the published charges, enclosures and timelines apply, which is drawn from the application form's counter registration instructions rather than stated as such by either source. Nothing behind the login was observed."
+      "notes": "Boundary statement, recorded as a limitation and not used to support any positive cell value. Basis boundary as required by protocol section 5: the observed element is the citizen charter's own text stating that the consumer must first create an applicant login with a mobile number, email id and password before applying on the revised online route; the inferred element is the reading that the counter route needs no login and is where the published charges, enclosures and timelines apply, which is drawn from the application form's counter registration instructions rather than stated as such by either source. Nothing behind the login was observed: no login was used, no account was created and no personal data was entered."
     },
     {
       "id": "claim_chennai_water_deposit_amounts_unknown",

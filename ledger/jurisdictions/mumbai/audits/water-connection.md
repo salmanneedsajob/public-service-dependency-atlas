@@ -128,3 +128,71 @@ The one currency point that cuts the other way is graded correctly and should st
 **Accepted cell states — cost: stated; documents: stated; eligibility: stated; time: stated; owner: stated; after-submission: stated. Stated count: 6 of 6.**
 
 No blocking findings. Five corrections proposed, all to cell notes or to one unused claim's `basis` and `notes`; none changes a cell state, a claim status, an evidence grade, or the stated count. The ward-manual provenance and the 2015–2017 currency of the underlying material are accepted as Grade C evidence with limitations stated, per sections 4, 7 and 8, and remain the dominant qualification on everything this grid reports.
+
+
+## Re-audit — 2026-09-06 (IND-91 part B)
+
+A fresh isolated auditor re-audited this row after pre-audit lint remediation, on the section 12 inputs only. 5 corrections were proposed and 5 applied; none unapplied.
+
+# Re-audit: Mumbai new domestic water connection (grid-only)
+
+Row: `mumbai` / `water-connection`, primary scenario `scenario_ind32_water_residential`, mode `grid-only`, ledger `asOf` 2026-09-06.
+Inputs: ledger, expectations sidecar, the manifest entry for this row, `benchmark/schemas/ledger.json`, `benchmark/PROTOCOL.md`, `benchmark/schemas/corrections.json`. Nothing else was read; no URL was opened.
+
+## Cost
+
+**F1 — cost `stated` is correct (PROTOCOL section 8, `cost`).** `claim_mumbai_water_scrutiny_fee_200` gives an amount the citizen pays, Rs. 200, read off the corporation's own application form. It is Grade B, basis `observation`, status `verified`, so it is a claim permitted to support a positive cell value under the last sentence of the section 8 cell definitions. No state change.
+
+**F2 — cost `claimIds` is incomplete (PROTOCOL section 9, and the `cost` definition in section 8).** The cell note asserts that "the published time limit table makes the party's compliance with that fee a step the application must pass ... compliance by the party with the scrutiny fee within 30 days". That assertion is carried by `claim_mumbai_water_time_limit_table_4` ("That table allows 30 days for compliance by the party with the scrutiny fee"), which is not listed in the cell. Under section 8 a payment step is cost evidence in its own right; here it also tells the citizen when the Rs. 200 falls due. It is a claim that supports the cell and is missing from its list. Correction proposed. The neighbouring sequence claims (`_2`, `_3`, `_5`) assert nothing about the fee and are correctly left in the `time` cell only.
+
+**F3 — the cost note carries no currency limitation (PROTOCOL section 7, "required limitations", and section 4's Grade C row).** The Rs. 200 figure comes from a form whose folder listing shows a last change of 18 September 2015, eleven years before the `asOf` date. The source record `source_mumbai_water_nwc_form_other` states that limitation and the `documents` cell note models the right behaviour by recording its own Grade C single-ward limitation, but the `cost` note does not tell the reader the fee figure is that old. Recommend adding it. No correction is proposed: the correction scope for this row is cell `state` and `claimIds`.
+
+**F4 — grade tension on the fee claim, resolved in favour of B (PROTOCOL section 4; section 8 lint check 4).** Section 4 grades "an observed current official form" B, and lint check 4 makes Grade C on an observed current official form an error; section 4 also grades "visibly outdated official material" C, which is how the two ward manuals were graded for 2015/2017 metadata. The claim text is narrow — what the form as published today states — so B with `observation` and `verified` stands. No change.
+
+## Documents
+
+**F5 — documents `stated` is correct (PROTOCOL section 8, `documents`).** The thirteen cited claims give two actionable lists, one per connection category, each naming a concrete document to produce. All are Grade C, `observation`, `verified`, which section 8 permits for `stated`. The note discloses that both lists rest on one ward's Section 4 manual and that the D-ward manual was read only as a procedural cross-check, so no cross-ward corroboration is claimed for the lists themselves. No state change.
+
+**F6 — `claim_mumbai_water_document_categories_2` in the documents list is marginal but acceptable (audit check 2).** That fragment asserts only the manual's enumeration of connection categories and no document content; the document content sits in `claim_mumbai_water_document_categories`. It is retained because the cell note's "enumerated by connection category" wording rests on it and because the two fragments were split from one record. No correction.
+
+## Eligibility
+
+**F7 — `claim_mumbai_water_application_through_licensed_plumber` does not support the eligibility cell (PROTOCOL section 8, `eligibility`; audit check 2).** After the IND-91 part B split, that record asserts only "standard application forms are available in the wards" — form availability, not a rule that decides who qualifies or which route applies. Its own sibling `_3` records that "the licensed-plumber requirement is the route rule the eligibility cell rests on", which confirms the route rule moved out of this record. Remove from the cell.
+
+**F8 — `claim_mumbai_water_application_through_licensed_plumber_2` does not support the eligibility cell either (same rule).** It asserts that the applicant fills in the form and attaches references with the requisite documents — a submission-procedure step, not an eligibility or route rule. Remove from the cell.
+
+**F9 — the cell's third stated rule is uncited (PROTOCOL section 9).** The note says "a connection to a planned building turns on the building already holding an occupation or building completion certificate". The record that carries the occupation/completion certificate is `claim_mumbai_water_documents_planned_building_5`, which is not listed; only the umbrella `claim_mumbai_water_documents_planned_building` is. Add `_5`. F7, F8 and F9 are one correction, because they share the field path `/cells/eligibility/claimIds`.
+
+**F10 — eligibility `stated` survives the repair (PROTOCOL section 8).** `claim_mumbai_water_document_categories` (+ `_2`) gives the rule that the connection category decides which document set and route apply, and `claim_mumbai_water_application_through_licensed_plumber_3` gives the rule that the papers go in through a licensed plumber. Both are Grade C, `observation`, `verified`. No state change.
+
+## Time
+
+**F11 — time `stated` is correct and the claim list is complete (PROTOCOL section 8, `time`).** The seventeen cited records are exactly the eleven sanction-stage records (`claim_mumbai_water_time_limit_table` plus `_2` to `_11`) and the six installation-stage records (`claim_mumbai_water_installation_time_limits` plus `_2` to `_6`); no step record in the ledger is missing from the cell and none listed is unrelated. Section 8 requires the note to say when a figure covers only one stage; the note does so, separating the sanction table from the installation limits and flagging that the table gives per-step figures with no total and that the 7-days-per-level approval step has no stated number of levels. No state change.
+
+## Owner
+
+**F12 — owner `stated` is correct (PROTOCOL section 8, `owner`).** `claim_mumbai_water_permission_form_issued_3` gives a designation tied to a jurisdiction rule — the Assistant Engineer Water Works of the ward issues the permission form — and the K/West contact fragments give a contact route for that role; `claim_mumbai_water_deciding_officers` and `_2` name the deciding and preparing officers. The note is honest that contact details were read for one ward only. No state change.
+
+**F13 — `claim_mumbai_water_ward_office_contact_published_2` is compound (PROTOCOL section 1 atomicity; section 8 lint check 1).** Its text bundles two separately checkable published items, "the office street address **and** telephone number with extension", while its siblings `_3` (e-mail) and `_4` (timings) each carry one item, and its own note claims "one published item, one claim". The manifest entry carries lint waivers for `claim_mumbai_water_document_categories_2` and `claim_mumbai_water_deciding_officers` but none for this record, so the finding is unwaived and blocks audit under section 8. Section 13 lets the auditor split compound claims, so the corrections narrow `_2` to the street address, add `claim_mumbai_water_ward_office_contact_published_5` for the telephone with the identical source, grade, basis, status and scenario, and add the new id to `/cells/owner/claimIds` so the owner note's contact-route wording stays cited. No evidence is created: the telephone assertion already exists inside `_2`. A manifest lint waiver naming `_2` would be an acceptable alternative remedy if the researcher prefers to treat the manual's contact block as one published entry.
+
+**F14 — borderline atomicity elsewhere, flagged not corrected (same rule).** `claim_mumbai_water_deciding_officers_2` (one officer, three duties), `claim_mumbai_water_charges_manual_not_published` (two manuals, one predicate), `claim_mumbai_water_complaint_route` (two complaint routes), `claim_mumbai_water_nwc_route_is_forms_only_3` (five absent topics in one observation) and `claim_mumbai_water_ward_office_contact_published_4` (timings and visiting hours) each read as one published entry or one search observation rather than several independent assertions, which is the same reasoning the manifest already accepted for the two waived records. None of them carries a cell on its own wording. No corrections; a waiver entry would settle them if the lint disagrees.
+
+## After-submission
+
+**F15 — after-submission `stated` is correct (PROTOCOL section 8, `after-submission`).** `claim_mumbai_water_permission_form_issued` identifies a document the applicant receives after applying — "on receipt of approval from the competent authority the applicant is informed by the issue of a Permission Form" — `_2` gives what that form contains, and `claim_mumbai_water_connection_released_after_p_form` gives the result that follows compliance with it. None of these is a step at or before submission. No state change.
+
+**F16 — the two rejection-letter records in the list are weak but retained (audit check 2).** `claim_mumbai_water_rejection_letter_step` and `_2` record internal steps of the time-limit table, preparation and signature of a permission form or rejection letter, and neither states that the letter reaches the applicant or carries reasons; `_2` in particular asserts who signs, which is owner material. They are retained because they characterise the alternative outcome document that the note describes, and because the cell state does not rest on them. No correction; the note should not be read as establishing that a refusal is delivered with reasons.
+
+**F17 — Unknown claims are correctly kept out of every positive cell (PROTOCOL section 8, final sentence of the cell definitions).** `claim_mumbai_water_application_status_route_unknown`, `_2`, `claim_mumbai_water_connection_charges_unknown` and `_2` are Grade Unknown with status `unknown`, and no cell cites them; the `cost` and `after-submission` notes point at them as limitations instead of folding them in. That is the correct treatment.
+
+## Cross-cutting checks
+
+**F18 — citation gate green (PROTOCOL section 7).** Every non-Unknown claim in the ledger carries at least one `sourceIds` entry; the four Unknown claims carry empty `sourceIds`, which the ledger schema's conditional permits and section 7 requires. All five sources give a specific page or file rather than a homepage, an ISO `accessedAt` of 2026-09-06, the jurisdiction text "Mumbai, Maharashtra, India", and the agency naming as displayed on the access date. Every claimId referenced by the sidecar resolves to a claim in the ledger.
+
+**F19 — grades and basis are sound (PROTOCOL sections 4 and 5).** The two ward RTI manuals are Grade C with the undated-and-outdated limitation stated on each source, which matches section 4; the two portal routes and the form are Grade B as direct current observation of a public official interface and as an observed current official form, which matches section 4 and the section 1 public-workflow rule. Every cell-supporting claim is `observation` and is worded as what the source states, not as a conclusion about the world. `claim_mumbai_water_bills_and_receipts_by_ccn` is the only `mixed` record and explains its boundary in notes as section 5 requires.
+
+**F20 — archive records are inconsistent (PROTOCOL section 11).** `source_mumbai_water_nwc_forms_page` documents a capture failure with the access date and a limitation, which section 11 allows. `source_mumbai_water_rti_manual_dward` and `source_mumbai_water_aquaptax_portal` cite an existing snapshot and add the limitation that the snapshot predates the access date. `source_mumbai_water_nwc_form_other` and `source_mumbai_water_rti_manual_kwest` cite 2022-03-07 snapshots and note that no new capture was pushed, but omit that same predates-the-access-date limitation, so the two Grade B/C records that carry the cost and documents cells are the ones with the weaker archive note. Recommend adding the limitation to both. No correction is proposed: it is a verbatim rewrite of source notes, outside this row's cell-correction scope.
+
+**F21 — manifest agreement (PROTOCOL sections 2 and 12).** The manifest's `primaryScenarioId` matches the sidecar's and every claim's `scenarioIds`; `mode` is `grid-only`, consistent with the ledger's empty `nodes`, `edges`, `roadblocks` and `journeys` and with the disclaimer; both declared lint waivers name records that exist and give reasons that fit section 8 check 1.
+
+**F22 — no cell state change.** All six cells were and remain `stated`. The corrections change which claims are cited, not what the grid scores.

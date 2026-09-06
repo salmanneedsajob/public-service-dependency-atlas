@@ -7,7 +7,11 @@
       "state": "mentioned",
       "claimIds": [
         "claim_hyderabad_ptax_rate_notification_excludes_residential",
-        "claim_hyderabad_ptax_assessment_method_named"
+        "claim_hyderabad_ptax_rate_notification_excludes_residential_2",
+        "claim_hyderabad_ptax_assessment_method_named",
+        "claim_hyderabad_ptax_assessment_method_named_2",
+        "claim_hyderabad_ptax_assessment_method_named_3",
+        "claim_hyderabad_ptax_assessment_method_named_4"
       ],
       "searchedRoutes": [
         "https://www.ghmc.gov.in/Propertytax.aspx",
@@ -28,15 +32,17 @@
         "https://onlinepayments.ghmc.gov.in/PTax/PT_Recipts_Main",
         "https://www.ghmc.gov.in/Menu_Files/citizen-charter-19-06_compress.pdf"
       ],
-      "note": "The reviewed evidence does not touch the topic for this scenario. What the payment route asks for is an identifier, a property tax identification number or a registered mobile number, rather than a document to submit, provide, upload, produce or attach, so the route does not refer to documents at all. The corporation does publish real document lists — registered sale deed, link documents, building sanction plan, occupancy certificate — but they belong to new assessment and to mutation, which this scope excludes, and they are not counted here. The searched routes are listed above; claim_hyderabad_ptax_documents_for_payment_unknown records the resulting limitation and, as an Unknown claim, supports no positive cell value."
+      "note": "The reviewed evidence does not touch the topic for this scenario. What the payment route asks for is an identifier, a property tax identification number or a registered mobile number, rather than a document to submit, provide, upload, produce or attach, so the route does not refer to documents at all. The corporation does publish document lists elsewhere, but they belong to new assessment and to mutation, which this scope excludes; no source in this ledger records their contents, so none is named here. The searched routes are listed above; claim_hyderabad_ptax_documents_for_payment_unknown records the resulting limitation and, as an Unknown claim, supports no positive cell value."
     },
     "eligibility": {
       "state": "stated",
       "claimIds": [
         "claim_hyderabad_ptax_ptin_or_mobile_required",
+        "claim_hyderabad_ptax_ptin_or_mobile_required_2",
         "claim_hyderabad_ptax_payment_mode_handheld",
         "claim_hyderabad_ptax_payment_mode_meeseva",
         "claim_hyderabad_ptax_thirty_circles",
+        "claim_hyderabad_ptax_thirty_circles_2",
         "claim_hyderabad_ptax_payment_mode_online_neft_rtgs",
         "claim_hyderabad_ptax_payment_mode_banks"
       ],
@@ -47,7 +53,7 @@
       "state": "mentioned",
       "claimIds": [
         "claim_hyderabad_ptax_no_manual_transactions",
-        "claim_hyderabad_ptax_public_receipt_route"
+        "claim_hyderabad_ptax_public_receipt_route_3"
       ],
       "searchedRoutes": [
         "https://www.ghmc.gov.in/Propertytax.aspx",
@@ -61,9 +67,12 @@
       "state": "stated",
       "claimIds": [
         "claim_hyderabad_ptax_circle_office_dc",
+        "claim_hyderabad_ptax_circle_office_dc_2",
         "claim_hyderabad_ptax_thirty_circles",
         "claim_hyderabad_ptax_zone_and_circle_maps",
-        "claim_hyderabad_ptax_head_office_contacts"
+        "claim_hyderabad_ptax_head_office_contacts",
+        "claim_hyderabad_ptax_head_office_contacts_2",
+        "claim_hyderabad_ptax_head_office_contacts_3"
       ],
       "searchedRoutes": [],
       "note": "The citizen can identify the office that holds the case by a jurisdiction rule and reach the corporation: the circle office, headed by a Deputy Commissioner, handles all services related to property tax; there are 30 circles, each with a citizen service centre; published zone, circle and ward maps let an owner find which circle their property falls in; and the corporation publishes a head office address, a helpline and a switchboard number with an officers contacts table. The circle-office designation comes from a charter twelve years past its own stated revision date, though the 30-circle structure is confirmed by a current page."
@@ -71,7 +80,9 @@
     "after-submission": {
       "state": "stated",
       "claimIds": [
-        "claim_hyderabad_ptax_public_receipt_route"
+        "claim_hyderabad_ptax_public_receipt_route",
+        "claim_hyderabad_ptax_public_receipt_route_2",
+        "claim_hyderabad_ptax_public_receipt_route_3"
       ],
       "searchedRoutes": [],
       "note": "A visible post-payment surface exists and is public: a Property Tax Payment Receipts route that takes the property tax identification number or the registered mobile number and needs no login. Its own scope notice is recorded with it — only online transactions paid after 1 April 2016 can be downloaded — so an owner who paid at a counter or by an older online transaction has no route named. The route was read, not exercised; nothing was entered and no case data was retrieved."

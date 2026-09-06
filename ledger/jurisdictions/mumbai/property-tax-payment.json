@@ -35,7 +35,7 @@
       "url": "https://ptaxportal.mcgm.gov.in/CitizenPortal/",
       "accessedAt": "2026-09-06",
       "type": "official_portal",
-      "notes": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo, with the banner 'BMC'S CAPITAL VALUE BASED PROPERTY TAX INFORMATION SYSTEM'. Direct current observation of a public official interface, reached without login; it shows no visible last-updated or version date. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260309232045/https://ptaxportal.mcgm.gov.in/CitizenPortal/ (2026-03-09); no new capture was pushed from this run."
+      "notes": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo, with the banner 'BMC'S CAPITAL VALUE BASED PROPERTY TAX INFORMATION SYSTEM'. Direct current observation of a public official interface, reached without login; it shows no visible last-updated or version date. Limitation: the portal is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260309232045/https://ptaxportal.mcgm.gov.in/CitizenPortal/ (2026-03-09); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the portal as reviewed on 2026-09-06."
     },
     {
       "id": "source_mumbai_ptax_rates_2015",
@@ -63,22 +63,31 @@
       "url": "https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/instantPayment",
       "accessedAt": "2026-09-06",
       "type": "official_portal",
-      "notes": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo. Direct current observation of a public official interface reachable without login. The route was read only: no property account number was entered, no amount was submitted and no payment was attempted. Shows no visible last-updated date. Archive: the Wayback availability API returned no snapshot for this hash route; the underlying portal snapshot of 2026-03-09 is the nearest available copy. No new capture was pushed from this run."
+      "notes": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo. Direct current observation of a public official interface reachable without login. The route was read only: no property account number was entered, no amount was submitted and no payment was attempted. Shows no visible last-updated date. Limitation: the route is undated, so its currency rests on the access-date observation alone. Archive: the Wayback availability API returned no snapshot for this hash route; the underlying portal snapshot of 2026-03-09 is the nearest available copy. No new capture was pushed from this run. Limitation: no snapshot preserves this route, and the nearest copy is of the portal shell rather than of the route as reviewed on 2026-09-06."
     },
     {
       "id": "source_mumbai_ptax_contact_and_faq",
-      "title": "Contact Us and FAQ routes - BMC property tax citizen portal",
+      "title": "Contact Us route - BMC property tax citizen portal",
       "publisher": "Brihanmumbai Municipal Corporation",
       "url": "https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/contactus",
       "accessedAt": "2026-09-06",
       "type": "official_portal",
-      "notes": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo. Direct current observation of two sibling routes on the same portal: the Contact Us route, which is the url recorded on this source at https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/contactus, and the FAQ route at https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/faq, which is the specific page claim_mumbai_ptax_faq_route_empty rests on. Neither shows a visible last-updated date. Archive: the Wayback availability API returned the portal snapshot of 2026-03-09 as the nearest copy for these hash routes; no separate snapshot exists and no new capture was pushed from this run."
+      "notes": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo. Visible date: none is shown on the route. Direct current observation of the Contact Us route at https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/contactus. Limitation: the route is undated, so its currency rests on the access-date observation alone. Archive: the Wayback availability API returned the portal snapshot of 2026-03-09 as the nearest copy for this hash route; no separate snapshot exists and no new capture was pushed from this run. Limitation: no snapshot preserves this route as reviewed on 2026-09-06. The FAQ route this record previously also covered is now source_mumbai_ptax_faq_route, split out during the IND-91 part B integrator follow-up under protocol section 7."
+    },
+    {
+      "id": "source_mumbai_ptax_faq_route",
+      "title": "FAQ route - BMC property tax citizen portal",
+      "publisher": "Brihanmumbai Municipal Corporation",
+      "url": "https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/faq",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo. Visible date: none is shown on the route. Direct current observation of the FAQ route: the heading rendered and the body did not. Limitation: the route is undated, so its currency rests on the access-date observation alone. Archive: the Wayback availability API returned the portal snapshot of 2026-03-09 as the nearest copy for this hash route; no separate snapshot exists and no new capture was pushed from this run. Limitation: no snapshot preserves this route as reviewed on 2026-09-06. Split out of source_mumbai_ptax_contact_and_faq during the IND-91 part B integrator follow-up so that each source record covers one specific page, as protocol section 7 requires."
     }
   ],
   "claims": [
     {
       "id": "claim_mumbai_ptax_residential_rate_table",
-      "text": "The Assessment & Collection Department's published rates of taxation on capital value, with effect from 1 April 2015, give the residential user category a general tax including fire tax of 0.110 per cent, water tax 0.253 per cent, water benefit tax 0.069 per cent, sewerage tax 0.163 per cent, sewerage benefit tax 0.043 per cent, municipal education cess 0.040 per cent, state education cess 0.035 per cent, employment guarantee cess 0.010 per cent, tree cess 0.002 per cent and street tax 0.050 per cent.",
+      "text": "With effect from 1 April 2015 the Assessment & Collection Department's published rates of taxation on capital value give the residential user category a general tax including fire tax of 0.110 per cent.",
       "jurisdiction": "Mumbai, Maharashtra, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -91,11 +100,164 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "An actionable fee schedule: percentages a citizen applies to the capital value of a residential property. Graded C because currency is not established by any reviewed route."
+      "notes": "An actionable fee schedule: percentages a citizen applies to the capital value of a residential property. Graded C because currency is not established by any reviewed route. Split during IND-91 part B lint remediation into one claim per rate line."
+    },
+    {
+      "id": "claim_mumbai_ptax_residential_rate_table_2",
+      "text": "The same published rates give the residential user category a water tax of 0.253 per cent.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_rates_2015"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+    },
+    {
+      "id": "claim_mumbai_ptax_residential_rate_table_3",
+      "text": "The same published rates give the residential user category a water benefit tax of 0.069 per cent.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_rates_2015"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+    },
+    {
+      "id": "claim_mumbai_ptax_residential_rate_table_4",
+      "text": "The same published rates give the residential user category a sewerage tax of 0.163 per cent.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_rates_2015"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+    },
+    {
+      "id": "claim_mumbai_ptax_residential_rate_table_5",
+      "text": "The same published rates give the residential user category a sewerage benefit tax of 0.043 per cent.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_rates_2015"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+    },
+    {
+      "id": "claim_mumbai_ptax_residential_rate_table_6",
+      "text": "The same published rates give the residential user category a municipal education cess of 0.040 per cent.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_rates_2015"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+    },
+    {
+      "id": "claim_mumbai_ptax_residential_rate_table_7",
+      "text": "The same published rates give the residential user category a state education cess of 0.035 per cent.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_rates_2015"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+    },
+    {
+      "id": "claim_mumbai_ptax_residential_rate_table_8",
+      "text": "The same published rates give the residential user category a employment guarantee cess of 0.010 per cent.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_rates_2015"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+    },
+    {
+      "id": "claim_mumbai_ptax_residential_rate_table_9",
+      "text": "The same published rates give the residential user category a tree cess of 0.002 per cent.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_rates_2015"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
+    },
+    {
+      "id": "claim_mumbai_ptax_residential_rate_table_10",
+      "text": "The same published rates give the residential user category a street tax of 0.050 per cent.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_rates_2015"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_residential_rate_table; one rate line, one claim. Graded C because currency is not established by any reviewed route."
     },
     {
       "id": "claim_mumbai_ptax_rate_documents_stop_at_2019_20",
-      "text": "The corporation's capital-value document index publishes rate and rule files whose latest coverage is the rates effective from 1 April 2015 and the rules for fixation of capital value for 2015-16 to 2019-20, with no document covering any later financial year.",
+      "text": "The corporation's capital-value document index publishes rate and rule files whose latest coverage is the rates effective from 1 April 2015.",
       "jurisdiction": "Mumbai, Maharashtra, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -108,11 +270,45 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "Checkable from the index's own file list on the access date. The current financial year is 2026-27."
+      "notes": "Checkable from the index's own file list on the access date. The current financial year is 2026-27. Split during IND-91 part B lint remediation into the latest rate file, the latest rule file and the absence of any later document."
+    },
+    {
+      "id": "claim_mumbai_ptax_rate_documents_stop_at_2019_20_2",
+      "text": "That index's latest rule file covers fixation of capital value for 2015-16 to 2019-20.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_capital_value_index"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_rate_documents_stop_at_2019_20. Checkable from the index's own file list."
+    },
+    {
+      "id": "claim_mumbai_ptax_rate_documents_stop_at_2019_20_3",
+      "text": "No document in that index covers any financial year later than 2019-20.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_capital_value_index"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_rate_documents_stop_at_2019_20. The absence is separately checkable from what the index does publish."
     },
     {
       "id": "claim_mumbai_ptax_account_number_from_bill",
-      "text": "The property-tax portal states that the citizen enters the Property Account No. to log in, that the number is shown on the upper portion of the property tax bill, and that a Search button is provided to find it.",
+      "text": "The property-tax portal states that the citizen enters the Property Account No. to log in.",
       "jurisdiction": "Mumbai, Maharashtra, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -125,7 +321,41 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A usable rule for the identifier this scenario assumes the owner already has."
+      "notes": "A usable rule for the identifier this scenario assumes the owner already has. The portal was read without a login and no property account number was entered. Split during IND-91 part B lint remediation into the login field, where the number is printed and the search route to it."
+    },
+    {
+      "id": "claim_mumbai_ptax_account_number_from_bill_2",
+      "text": "The portal states that the Property Account No. is shown on the upper portion of the property tax bill.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_portal_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_account_number_from_bill. Where the number is printed is separately checkable from what the login form asks for. The portal was read without a login and no property account number was entered."
+    },
+    {
+      "id": "claim_mumbai_ptax_account_number_from_bill_3",
+      "text": "The portal provides a Search button to find the Property Account No.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_portal_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_account_number_from_bill. The search route is separately checkable from the bill. The portal was read without a login and no property account number was entered."
     },
     {
       "id": "claim_mumbai_ptax_user_category_determines_rate",
@@ -146,7 +376,7 @@
     },
     {
       "id": "claim_mumbai_ptax_public_instant_payment_route",
-      "text": "The property-tax portal publishes an Instant Payment route reachable without login, which displays the property account number, billing name, property address, an outstanding-bill breakdown into property tax, GPR, repair cess and MTOB, and the outstanding, discount, net and advance amounts, alongside an online payment action.",
+      "text": "The property-tax portal publishes an Instant Payment route reachable without login.",
       "jurisdiction": "Mumbai, Maharashtra, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -159,11 +389,79 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "The route's own field labels were observed. No property account number was entered, so nothing is claimed about what it returns for a real property."
+      "notes": "The route's own field labels were observed. No property account number was entered, so nothing is claimed about what it returns for a real property. Split during IND-91 part B lint remediation into the route and the field groups it displays."
+    },
+    {
+      "id": "claim_mumbai_ptax_public_instant_payment_route_2",
+      "text": "That route displays the property account number, the billing name and the property address.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_instant_payment"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_public_instant_payment_route. Read from the route's own field labels; no property account number was entered."
+    },
+    {
+      "id": "claim_mumbai_ptax_public_instant_payment_route_3",
+      "text": "That route displays an outstanding-bill breakdown into property tax, GPR, repair cess and MTOB.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_instant_payment"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_public_instant_payment_route. This fragment carries the route's published breakdown heads, one published list, waived on the manifest entry. No property account number was entered."
+    },
+    {
+      "id": "claim_mumbai_ptax_public_instant_payment_route_4",
+      "text": "That route displays the outstanding, discount, net and advance amounts.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_instant_payment"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_public_instant_payment_route. This fragment carries the route's published amount labels, one published list, waived on the manifest entry. No property account number was entered."
+    },
+    {
+      "id": "claim_mumbai_ptax_public_instant_payment_route_5",
+      "text": "That route offers an online payment action.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_instant_payment"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_public_instant_payment_route. No payment was attempted."
     },
     {
       "id": "claim_mumbai_ptax_first_in_first_out_rule",
-      "text": "The Instant Payment route states that online payment is applied on a first-in first-out basis, with the oldest bill adjusted first, and that a citizen wishing to pay against a specific bill should contact the Assessment & Collection department of the respective ward.",
+      "text": "The Instant Payment route states that online payment is applied on a first-in first-out basis.",
       "jurisdiction": "Mumbai, Maharashtra, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -176,7 +474,41 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A rule about how a payment is applied, and a named office to approach when it is not what the citizen wants."
+      "notes": "A rule about how a payment is applied. Split during IND-91 part B lint remediation into the ordering rule, its effect on the oldest bill, and the office to approach when the citizen wants something else."
+    },
+    {
+      "id": "claim_mumbai_ptax_first_in_first_out_rule_2",
+      "text": "That route states that the oldest bill is adjusted first.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_instant_payment"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_first_in_first_out_rule. The effect of the ordering rule is separately checkable from the rule itself."
+    },
+    {
+      "id": "claim_mumbai_ptax_first_in_first_out_rule_3",
+      "text": "That route states that a citizen wishing to pay against a specific bill should contact the Assessment & Collection department of the respective ward.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_instant_payment"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_first_in_first_out_rule. A named office to approach when the ordering rule is not what the citizen wants; this is the fragment the owner cell rests on."
     },
     {
       "id": "claim_mumbai_ptax_ward_assessor_email_table",
@@ -193,11 +525,11 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "A specific office list with a contact route for the role that assesses and collects, indexed by ward. Institutional addresses only; no personal data recorded."
+      "notes": "A specific office list with a contact route for the role that assesses and collects, indexed by ward. Institutional addresses only. The page was read without a login and no personal data was entered."
     },
     {
       "id": "claim_mumbai_ptax_kyc_does_not_change_name",
-      "text": "The property-tax portal states that registration of KYC does not change the billing name or owner name and only allows the property owner to access the property account number on the portal after authorisation through an OTP.",
+      "text": "The property-tax portal states that registration of KYC does not change the billing name or the owner name.",
       "jurisdiction": "Mumbai, Maharashtra, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -210,7 +542,24 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": "Recorded for the boundary it draws between this scenario and the excluded name-change route."
+      "notes": "Recorded for the boundary it draws between this scenario and the excluded name-change route. No login was used and no OTP was requested. Split during IND-91 part B lint remediation into what KYC does not do and what it does."
+    },
+    {
+      "id": "claim_mumbai_ptax_kyc_does_not_change_name_2",
+      "text": "The portal states that KYC only allows the property owner to access the property account number after authorisation through an OTP.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_portal_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_kyc_does_not_change_name. Boundary statement supporting no cell. No login was used and no OTP was requested."
     },
     {
       "id": "claim_mumbai_ptax_public_tax_calculator",
@@ -231,7 +580,7 @@
     },
     {
       "id": "claim_mumbai_ptax_contact_page_headquarters_only",
-      "text": "The property-tax portal's Contact Us route gives only the corporation's headquarters address at Mumbai C.S.T. 400001 and a portal feedback e-mail address, with no property-tax office, officer or telephone number.",
+      "text": "The property-tax portal's Contact Us route gives only the corporation's headquarters address at Mumbai C.S.T. 400001 and a portal feedback e-mail address.",
       "jurisdiction": "Mumbai, Maharashtra, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -244,7 +593,24 @@
       "basis": "observation",
       "status": "verified",
       "contradictsClaimIds": [],
-      "notes": ""
+      "notes": "Split during IND-91 part B lint remediation; what the route omits is asserted separately."
+    },
+    {
+      "id": "claim_mumbai_ptax_contact_page_headquarters_only_2",
+      "text": "That route gives no property-tax office, officer or telephone number.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_contact_and_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_contact_page_headquarters_only. What the route omits is separately checkable from what it gives."
     },
     {
       "id": "claim_mumbai_ptax_faq_route_empty",
@@ -255,7 +621,7 @@
       ],
       "nodeIds": [],
       "sourceIds": [
-        "source_mumbai_ptax_contact_and_faq"
+        "source_mumbai_ptax_faq_route"
       ],
       "evidenceGrade": "B",
       "basis": "observation",
@@ -265,7 +631,24 @@
     },
     {
       "id": "claim_mumbai_ptax_login_behind_captcha",
-      "text": "The property-tax portal's citizen login requires a property account number and a CAPTCHA, so the account view of bills and receipts is not visible on any reviewed public page.",
+      "text": "The property-tax portal's citizen login requires a property account number and a CAPTCHA.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_ptax_portal_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is the login form. No login was used and no CAPTCHA was attempted. Split during IND-91 part B lint remediation into the observation and the inference drawn from it."
+    },
+    {
+      "id": "claim_mumbai_ptax_login_behind_captcha_2",
+      "text": "The account view of bills and receipts is not visible on any reviewed public page.",
       "jurisdiction": "Mumbai, Maharashtra, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -278,11 +661,11 @@
       "basis": "mixed",
       "status": "partial",
       "contradictsClaimIds": [],
-      "notes": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is the login form; the inference is that the account view lies past it. No CAPTCHA was attempted."
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_login_behind_captcha. This is the inference drawn from the observed login form. No login was used and no CAPTCHA was attempted, so what lies past the boundary is unknown."
     },
     {
       "id": "claim_mumbai_ptax_payment_receipt_surface_unknown",
-      "text": "What the citizen is shown or given after paying property tax, whether a receipt, an acknowledgement or a status route, is not established by any reviewed public page.",
+      "text": "What the citizen is shown after paying property tax is not established by any reviewed public page.",
       "jurisdiction": "Mumbai, Maharashtra, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -293,11 +676,41 @@
       "basis": "inference",
       "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related in origin: the instant-payment route is public and was simply not carried through, because completing a payment is outside the safety boundary."
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related in origin: the instant-payment route is public and was simply not carried through, because completing a payment is outside the safety boundary. Split during IND-91 part B lint remediation into the separate unknowns."
+    },
+    {
+      "id": "claim_mumbai_ptax_payment_receipt_surface_unknown_2",
+      "text": "Whether a receipt or an acknowledgement is given after payment is not established by any reviewed public page.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_payment_receipt_surface_unknown. Retained because the uncertainty itself matters to the journey."
+    },
+    {
+      "id": "claim_mumbai_ptax_payment_receipt_surface_unknown_3",
+      "text": "Whether a status route exists after payment is not established by any reviewed public page.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_payment_receipt_surface_unknown. Retained because the uncertainty itself matters to the journey."
     },
     {
       "id": "claim_mumbai_ptax_due_date_unknown",
-      "text": "When the current year's property tax falls due, and whether any rebate or penalty attaches to paying early or late, is not established by any reviewed public page.",
+      "text": "When the current year's property tax falls due is not established by any reviewed public page.",
       "jurisdiction": "Mumbai, Maharashtra, India",
       "scenarioIds": [
         "scenario_property_tax_payment_known_sas_pid"
@@ -308,7 +721,22 @@
       "basis": "inference",
       "status": "unknown",
       "contradictsClaimIds": [],
-      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related."
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related. Split during IND-91 part B lint remediation; the rebate and penalty unknown is asserted separately."
+    },
+    {
+      "id": "claim_mumbai_ptax_due_date_unknown_2",
+      "text": "Whether any rebate or penalty attaches to paying early or late is not established by any reviewed public page.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_property_tax_payment_known_sas_pid"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Split during IND-91 part B lint remediation from claim_mumbai_ptax_due_date_unknown. Retained because the uncertainty itself matters to the journey. Not login-related."
     }
   ],
   "nodes": [],

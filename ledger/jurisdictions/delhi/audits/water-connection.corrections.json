@@ -13,7 +13,9 @@
       "new": "C",
       "reason": "Section 4 grades undated or visibly outdated official material at C. The cited citizens charter PDF carries no visible issue or revision date and its own text refers to a Board resolution of 26 October 2021 and to timelines extended to 30 September 2022, so its currency is not established by the document; the source record itself records this. Grade B is reserved for current official procedure, form, portal, circular or agency pages.",
       "support": {
-        "sourceIds": ["source_delhi_water_djb_citizens_charter"],
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
         "auditNote": "Audit finding F1. Cell state is unaffected: section 8 admits a Grade C claim as support for stated."
       }
     },
@@ -26,7 +28,9 @@
       "new": "C",
       "reason": "Section 4 grades undated or visibly outdated official material at C. The cited citizens charter PDF is undated and its own text refers to a 2021 Board resolution and to 2022 timelines, so its currency is not established by the document.",
       "support": {
-        "sourceIds": ["source_delhi_water_djb_citizens_charter"],
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
         "auditNote": "Audit finding F1. The cost cell retains Grade B support from the FAQ charges table."
       }
     },
@@ -39,7 +43,9 @@
       "new": "C",
       "reason": "Section 4 grades undated or visibly outdated official material at C. The cited citizens charter PDF is undated and its own text refers to a 2021 Board resolution and to 2022 timelines, so its currency is not established by the document.",
       "support": {
-        "sourceIds": ["source_delhi_water_djb_citizens_charter"],
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
         "auditNote": "Audit finding F1. After this correction both service-level figures in the time cell rest on Grade C material; the rewritten time note records that."
       }
     },
@@ -52,7 +58,9 @@
       "new": "C",
       "reason": "Section 4 grades undated or visibly outdated official material at C. The cited citizens charter PDF is undated and its own text refers to a 2021 Board resolution and to 2022 timelines, so its currency is not established by the document.",
       "support": {
-        "sourceIds": ["source_delhi_water_djb_citizens_charter"],
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
         "auditNote": "Audit finding F1."
       }
     },
@@ -65,7 +73,9 @@
       "new": "C",
       "reason": "Section 4 grades undated or visibly outdated official material at C. The cited citizens charter PDF is undated and its own text refers to a 2021 Board resolution and to 2022 timelines, so its currency is not established by the document.",
       "support": {
-        "sourceIds": ["source_delhi_water_djb_citizens_charter"],
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
         "auditNote": "Audit finding F1. The owner cell retains Grade B support from the FAQ and from the published ZRO office directory."
       }
     },
@@ -78,7 +88,9 @@
       "new": "C",
       "reason": "Section 4 grades undated or visibly outdated official material at C. The cited citizens charter PDF is undated and its own text refers to a 2021 Board resolution and to 2022 timelines, so its currency is not established by the document.",
       "support": {
-        "sourceIds": ["source_delhi_water_djb_citizens_charter"],
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
         "auditNote": "Audit finding F1. The after-submission cell retains Grade B support from the directly observed public status route."
       }
     },
@@ -91,7 +103,9 @@
       "new": "mixed",
       "reason": "Section 5 requires basis to separate what a source directly shows from a conclusion drawn from it, and section 10 requires case-data-bound surfaces to remain unknown rather than inferred. The route's existence, public reachability and reference-number input were observed; what it returns on submission was not, because the claim's own notes record that no reference number was entered and no case data was retrieved. The notes already explain the boundary, as section 5 requires for mixed.",
       "support": {
-        "sourceIds": ["source_delhi_water_djb_track_status"],
+        "sourceIds": [
+          "source_delhi_water_djb_track_status"
+        ],
         "auditNote": "Audit finding F3. No change to /notes is needed; the boundary explanation section 5 requires for mixed is already present."
       }
     },
@@ -104,7 +118,9 @@
       "new": "partial",
       "reason": "Part of the claim's assertion — the content the route returns — was never observed and cannot be verified from a read-only visit, so verified overstates the record. Partial is accurate and, under section 8, still supports a stated cell.",
       "support": {
-        "sourceIds": ["source_delhi_water_djb_track_status"],
+        "sourceIds": [
+          "source_delhi_water_djb_track_status"
+        ],
         "auditNote": "Audit finding F3. The after-submission cell stays stated: the directly observed half is a public, actionable status page, which section 8 names as qualifying post-submission evidence."
       }
     },
@@ -117,7 +133,9 @@
       "new": "The Delhi Jal Board FAQ states that a new connection will be sanctioned subject to the approval of the ZRO or competent authority.",
       "reason": "Section 1 requires one claim to assert one checkable thing and section 13 permits the auditor to split compound claims. This claim named two different decision-makers for two different service routes — the ZRO for the in-scope residential sanction, the Executive Engineer for the commercial and bulk routes this scenario excludes. The excluded-route half is retained verbatim as a separate claim rather than dropped.",
       "support": {
-        "sourceIds": ["source_delhi_water_djb_faq"],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
         "auditNote": "Audit finding F4. Apply together with corr_delhi_water_10 and corr_delhi_water_11; no evidence is lost by the split."
       }
     },
@@ -129,7 +147,9 @@
       "old": "The Executive Engineer half marks the boundary with the excluded commercial and bulk routes.",
       "new": "Split by audit: the Executive Engineer half, which marks the boundary with the excluded commercial and bulk routes, is now carried by claim_delhi_water_executive_engineer_scope. What remains is the decision rule for the in-scope residential sanction, which is what the owner cell scores.",
       "support": {
-        "sourceIds": ["source_delhi_water_djb_faq"],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
         "auditNote": "Audit finding F4. Without this the note would reference a half the claim no longer contains."
       },
       "reason": "The existing note describes content removed from /text by corr_delhi_water_09 and would otherwise be stale and misleading."
@@ -144,9 +164,13 @@
         "id": "claim_delhi_water_executive_engineer_scope",
         "text": "The Delhi Jal Board FAQ states that assessment of technical feasibility and sanction of a commercial or bulk connection falls in the jurisdiction of the Executive Engineer concerned.",
         "jurisdiction": "Delhi, NCT of Delhi, India",
-        "scenarioIds": ["scenario_ind32_water_residential"],
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
         "nodeIds": [],
-        "sourceIds": ["source_delhi_water_djb_faq"],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
         "evidenceGrade": "B",
         "basis": "observation",
         "status": "verified",
@@ -155,7 +179,9 @@
       },
       "reason": "Addition completing the section 13 split of a compound claim. The text is carried over verbatim from the record it was split out of, so no evidence is invented; section 2 requires every claim to carry at least one scenario tag, and the primary scenario is the only scenario in this ledger.",
       "support": {
-        "sourceIds": ["source_delhi_water_djb_faq"],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
         "auditNote": "Audit finding F4. Apply together with corr_delhi_water_09 and corr_delhi_water_10."
       }
     },
@@ -182,6 +208,1699 @@
       "support": {
         "auditNote": "Audit finding F6, with F1. Cell state unchanged at stated: a published 15-day delivery time in a charter's table of services is a service-level target under section 8, and the one-stage condition attached to that definition is satisfied by this note. Claim IDs are unchanged."
       }
+    },
+    {
+      "id": "corr_delhi_water_connection_b01",
+      "recordType": "source",
+      "recordId": "source_delhi_water_djb_new_connection_form",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Delhi, NCT of Delhi, India. Observed current official form, reachable without login. It was read only: no field was filled, no file uploaded and nothing submitted. The page shows no visible last-updated or version date, re-observed on 2026-09-06 by the official-source pass after the audit noted the omission; its currency rests on it being a live official interface on the access date. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250809154416/https://djb.gov.in/DJBRMSPortal/portal/newConnection.html (2025-08-09); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Delhi, NCT of Delhi, India. Observed current official form, reachable without login. It was read only: no field was filled, no file uploaded and nothing submitted. The page shows no visible last-updated or version date, re-observed on 2026-09-06 by the official-source pass after the audit noted the omission; its currency rests on it being a live official interface on the access date. Limitation: the form is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250809154416/https://djb.gov.in/DJBRMSPortal/portal/newConnection.html (2025-08-09); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the form as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an undated, archived source without a stated limitation. Both limitations are now stated in words; the grade and every claim on this source are unchanged.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_new_connection_form"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b02",
+      "recordType": "source",
+      "recordId": "source_delhi_water_djb_track_status",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Delhi, NCT of Delhi, India. A public route reachable without login. It was read only: no application reference number was entered and no case data was retrieved. The page shows no visible last-updated or version date, re-observed on 2026-09-06 by the official-source pass after the audit noted the omission; its currency rests on it being a live official interface on the access date. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260215222512/https://djb.gov.in/DJBRMSPortal/portal/arnStatus.html (2026-02-15); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Delhi, NCT of Delhi, India. A public route reachable without login. It was read only: no application reference number was entered and no case data was retrieved. The page shows no visible last-updated or version date, re-observed on 2026-09-06 by the official-source pass after the audit noted the omission; its currency rests on it being a live official interface on the access date. Limitation: the route is undated, so its currency rests on the access-date observation alone. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260215222512/https://djb.gov.in/DJBRMSPortal/portal/arnStatus.html (2026-02-15); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the route as reviewed on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported an undated, archived source without a stated limitation. Both limitations are now stated in words.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_track_status"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b03",
+      "recordType": "source",
+      "recordId": "source_delhi_water_djb_contact_directory",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Delhi, NCT of Delhi, India. A zone-by-zone directory of designated offices with office addresses and the assembly constituencies each covers. Individual officers' names and mobile numbers appear in the file; they are deliberately not recorded in this ledger, and only the existence and structure of the directory is claimed. The file shows no visible issue date. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250704064455/https://djb.gov.in/StaticContent/ContactUs.pdf (2025-07-04); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Delhi, NCT of Delhi, India. A zone-by-zone directory of designated offices with office addresses and the assembly constituencies each covers. Individual officers' names and mobile numbers appear in the file; they are deliberately not recorded in this ledger, and only the existence and structure of the directory is claimed. Visible date: none is shown; the file carries no issue or revision date. Limitation: the file is undated, so the directory's currency cannot be checked. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250704064455/https://djb.gov.in/StaticContent/ContactUs.pdf (2025-07-04); no new capture was pushed from this run. Limitation: that snapshot predates the access date, so it does not preserve the file as retrieved on 2026-09-06.",
+      "reason": "Pre-audit lint (protocol section 8, source-date quality) reported that the source lacks publishedAt without a visible-date note and that an undated, archived source carried no stated limitation. The absence of a visible date and both limitations are now stated in the phrasing the check recognises.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_contact_directory"
+        ],
+        "auditNote": "IND-91 part B: source-date-quality finding fixed in words; no claim, grade or cell state changed."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b04",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_who_can_apply",
+      "fieldPath": "/text",
+      "old": "The Delhi Jal Board FAQ states that any resident of Delhi who is the owner of the premises or a tenant and who has valid proof of identity and property ownership can apply for a new water and sewer connection, except in the areas under the control of NDMC and the Delhi Cantonment Board.",
+      "new": "The Delhi Jal Board FAQ states that a resident of Delhi who owns the premises can apply for a new water connection.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried a rule, a second limb of that rule, a condition on it and a territorial exception: four independently checkable facts, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b05",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_who_can_apply",
+      "fieldPath": "/notes",
+      "old": "A rule that decides who qualifies and where the route does not run.",
+      "new": "A rule that decides who qualifies. Split during IND-91 part B lint remediation into the owner limb, the tenant limb, the proof condition and the territorial exception.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried a rule, a second limb of that rule, a condition on it and a territorial exception: four independently checkable facts, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b06",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_who_can_apply_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_who_can_apply_2",
+        "text": "The Delhi Jal Board FAQ states that a tenant of the premises may equally apply for a new water connection.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_who_can_apply. The tenant limb is separately checkable from the owner limb."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried a rule, a second limb of that rule, a condition on it and a territorial exception: four independently checkable facts, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b07",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_who_can_apply_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_who_can_apply_3",
+        "text": "The Delhi Jal Board FAQ requires the applicant to hold valid proof of identity together with proof of property ownership.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_who_can_apply. The proof condition is separately checkable from who may apply."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried a rule, a second limb of that rule, a condition on it and a territorial exception: four independently checkable facts, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b08",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_who_can_apply_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_who_can_apply_4",
+        "text": "The Delhi Jal Board FAQ excepts the areas under the control of NDMC and the Delhi Cantonment Board from the new-connection route.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_who_can_apply. The territorial exception tells the applicant where the route does not run and is separately checkable from the rule it excepts."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried a rule, a second limb of that rule, a condition on it and a territorial exception: four independently checkable facts, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b09",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_network_precondition",
+      "fieldPath": "/text",
+      "old": "The Delhi Jal Board FAQ states that a new water connection may be sanctioned only where the Board has provided or extended the water distribution system in the applicant's area or colony, or has taken it over for water supply and sewer maintenance.",
+      "new": "The Delhi Jal Board FAQ states that a new connection may be sanctioned only where the Board has provided or extended the water distribution system in the applicant's area.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried two independently checkable ways the network precondition is satisfied: the Board having provided or extended the system, and the Board having taken it over.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b10",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_network_precondition",
+      "fieldPath": "/notes",
+      "old": "",
+      "new": "Split during IND-91 part B lint remediation; the take-over limb of the same precondition is asserted separately by claim_delhi_water_network_precondition_2.",
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried two independently checkable ways the network precondition is satisfied: the Board having provided or extended the system, and the Board having taken it over.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b11",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_network_precondition_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_network_precondition_2",
+        "text": "The Delhi Jal Board FAQ extends that precondition to an area the Board has taken over for water supply and sewer maintenance.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_network_precondition, which carried two ways the network precondition can be met."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length over 220 characters. The sentence carried two independently checkable ways the network precondition is satisfied: the Board having provided or extended the system, and the Board having taken it over.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b12",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_completed_authorised_construction",
+      "fieldPath": "/text",
+      "old": "The Delhi Jal Board FAQ states that an application may be made by the owner or occupier once construction is completed, provided the construction is authorised, and that no regular connection will be allowed on a vacant plot or piece of land.",
+      "new": "The Delhi Jal Board FAQ states that an application may be made once construction is completed.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The sentence carried a rule, a condition on it and an exclusion, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b13",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_completed_authorised_construction",
+      "fieldPath": "/notes",
+      "old": "Matches this scenario's trigger, an existing built residential property.",
+      "new": "Matches this scenario's trigger, an existing built residential property. The FAQ puts this limb on the owner or occupier, who are covered by claim_delhi_water_who_can_apply and claim_delhi_water_who_can_apply_2. Split during IND-91 part B lint remediation into the completion rule, the authorisation condition and the vacant-plot exclusion.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The sentence carried a rule, a condition on it and an exclusion, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b14",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_completed_authorised_construction_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_completed_authorised_construction_2",
+        "text": "The Delhi Jal Board FAQ requires the completed construction to be authorised.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_completed_authorised_construction. The authorisation condition is separately checkable from the completion rule."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The sentence carried a rule, a condition on it and an exclusion, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b15",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_completed_authorised_construction_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_completed_authorised_construction_3",
+        "text": "The Delhi Jal Board FAQ states that no regular connection will be allowed on a vacant plot.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_completed_authorised_construction. The FAQ's wording is 'a vacant plot or piece of land'; both describe the same excluded case."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters. The sentence carried a rule, a condition on it and an exclusion, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b16",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_one_connection_per_dwelling",
+      "fieldPath": "/text",
+      "old": "The Delhi Jal Board FAQ states that only one water connection is sanctioned per dwelling unit and that individual connections may be sanctioned only for dwelling units within a building height of up to 15 metres.",
+      "new": "The Delhi Jal Board FAQ states that only one water connection is sanctioned per dwelling unit.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'and'. The sentence carried a per-dwelling limit and a separate building-height limit, two independently checkable rules.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b17",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_one_connection_per_dwelling",
+      "fieldPath": "/notes",
+      "old": "The height rule marks the boundary with the excluded high-rise and bulk routes.",
+      "new": "Split during IND-91 part B lint remediation; the building-height rule is asserted separately by claim_delhi_water_one_connection_per_dwelling_2.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'and'. The sentence carried a per-dwelling limit and a separate building-height limit, two independently checkable rules.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b18",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_one_connection_per_dwelling_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_one_connection_per_dwelling_2",
+        "text": "The Delhi Jal Board FAQ states that individual connections may be sanctioned only for dwelling units within a building height of up to 15 metres.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_one_connection_per_dwelling. The height rule marks the boundary with the excluded high-rise and bulk routes."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'and'. The sentence carried a per-dwelling limit and a separate building-height limit, two independently checkable rules.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the eligibility cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b19",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_simplified_document_list",
+      "fieldPath": "/text",
+      "old": "The Delhi Jal Board citizens charter states that in unauthorised or regularised colonies, urban and rural villages and slum katras a connection may be sanctioned to an applicant who submits any proof of identity of the present address, namely a voter ID card, ration card, passport, PAN card, driving licence, Aadhaar card, bank passbook or a photo identity card issued by a government agency, together with the last three months' paid electricity bills in the applicant's name, and an undertaking where ownership documents are not available and ownership is undisputed.",
+      "new": "The Delhi Jal Board citizens charter publishes a simplified document list for unauthorised or regularised colonies, urban or rural villages and slum katras.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 570 characters. The sentence carried the scope of the simplified list and three separate document requirements: identity proof, electricity bills and an undertaking. Each is independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b20",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_simplified_document_list",
+      "fieldPath": "/notes",
+      "old": "An actionable document list for the colony categories named. It does not state the list for a property outside those categories, where the FAQ's identity-and-ownership condition applies instead.",
+      "new": "An actionable document list for the colony categories named. It does not state the list for a property outside those categories, where the FAQ's identity-and-ownership condition applies instead. Split during IND-91 part B lint remediation into the scope of the list and its three requirements.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 570 characters. The sentence carried the scope of the simplified list and three separate document requirements: identity proof, electricity bills and an undertaking. Each is independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b21",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_simplified_document_list_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_simplified_document_list_2",
+        "text": "Under that list proof of identity of the present address may be a voter ID card, ration card, passport, PAN card, driving licence, Aadhaar card, bank passbook or a government photo identity card.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_simplified_document_list. This fragment carries the charter's published list of accepted identity proofs, which is one published list and is waived on the manifest entry."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 570 characters. The sentence carried the scope of the simplified list and three separate document requirements: identity proof, electricity bills and an undertaking. Each is independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b22",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_simplified_document_list_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_simplified_document_list_3",
+        "text": "Under that list the applicant must also submit the last three months' paid electricity bills in the applicant's name.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_simplified_document_list. A separately checkable document requirement."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 570 characters. The sentence carried the scope of the simplified list and three separate document requirements: identity proof, electricity bills and an undertaking. Each is independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b23",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_simplified_document_list_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_simplified_document_list_4",
+        "text": "Under that list an undertaking replaces ownership documents that are not available, where ownership is undisputed.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_simplified_document_list. A separately checkable document requirement."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length of 570 characters. The sentence carried the scope of the simplified list and three separate document requirements: identity proof, electricity bills and an undertaking. Each is independently checkable.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
+        "auditNote": "IND-91 part B: the documents cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b24",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_domestic_charges_table",
+      "fieldPath": "/text",
+      "old": "The Delhi Jal Board FAQ publishes a table of charges applicable to a new water and sewer connection for a domestic property giving an application fee for water of Rs. 10, an opening fee of Rs. 250 for water and Rs. 250 for sewer, a trade advance of Rs. 5,000, an occupier security of Rs. 500 for water and Rs. 500 for sewer, and road restoration charges of Rs. 1,600 for water and Rs. 3,200 for sewer where the distance from the property to the DJB network is up to 5 metres.",
+      "new": "The Delhi Jal Board FAQ publishes a table of charges applicable to a new water and sewer connection for a domestic property.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 475 characters. The sentence carried five separate charge lines, each an amount a citizen pays and each independently checkable against the published table, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b25",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_domestic_charges_table",
+      "fieldPath": "/notes",
+      "old": "Amounts a citizen pays, listed line by line for the domestic category, which is this scenario's category.",
+      "new": "Amounts a citizen pays, listed line by line for the domestic category, which is this scenario's category. Split during IND-91 part B lint remediation into one claim per charge line.",
+      "reason": "Pre-audit lint reported compound-claim for text length of 475 characters. The sentence carried five separate charge lines, each an amount a citizen pays and each independently checkable against the published table, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b26",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_domestic_charges_table_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_domestic_charges_table_2",
+        "text": "That table gives an application fee for water of Rs. 10.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_domestic_charges_table; one charge line, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 475 characters. The sentence carried five separate charge lines, each an amount a citizen pays and each independently checkable against the published table, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b27",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_domestic_charges_table_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_domestic_charges_table_3",
+        "text": "That table gives an opening fee of Rs. 250 for water and Rs. 250 for sewer.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_domestic_charges_table; one charge line, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 475 characters. The sentence carried five separate charge lines, each an amount a citizen pays and each independently checkable against the published table, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b28",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_domestic_charges_table_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_domestic_charges_table_4",
+        "text": "That table gives a trade advance of Rs. 5,000.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_domestic_charges_table; one charge line, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 475 characters. The sentence carried five separate charge lines, each an amount a citizen pays and each independently checkable against the published table, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b29",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_domestic_charges_table_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_domestic_charges_table_5",
+        "text": "That table gives an occupier security of Rs. 500 for water and Rs. 500 for sewer.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_domestic_charges_table; one charge line, one claim."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 475 characters. The sentence carried five separate charge lines, each an amount a citizen pays and each independently checkable against the published table, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b30",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_domestic_charges_table_6",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_domestic_charges_table_6",
+        "text": "That table gives road restoration charges of Rs. 1,600 for water and Rs. 3,200 for sewer where the distance from the property to the DJB network is up to 5 metres.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_domestic_charges_table; one charge line, one claim. The distance condition is part of this line as published."
+      },
+      "reason": "Pre-audit lint reported compound-claim for text length of 475 characters. The sentence carried five separate charge lines, each an amount a citizen pays and each independently checkable against the published table, which protocol section 5 requires to be asserted one per claim.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b31",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_development_charges_unauthorised_colonies",
+      "fieldPath": "/text",
+      "old": "The Delhi Jal Board FAQ states a fixed development charge for water and sewer in unauthorised regularised colonies of Rs. 45,000 where the plot size is up to 50 square metres and Rs. 1,00,000 where it is beyond 50 square metres.",
+      "new": "The Delhi Jal Board FAQ states a fixed development charge of Rs. 45,000 for water plus sewer in unauthorised regularised colonies where the plot size is up to 50 square metres.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried two amounts, each turning on a different plot size, which are two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b32",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_development_charges_unauthorised_colonies",
+      "fieldPath": "/notes",
+      "old": "A charge that turns on the colony's status, not on regularising an unauthorised connection, which this scenario excludes.",
+      "new": "A charge that turns on the colony's status, not on regularising an unauthorised connection, which this scenario excludes. Split during IND-91 part B lint remediation into the two published amounts.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried two amounts, each turning on a different plot size, which are two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b33",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_development_charges_unauthorised_colonies_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_development_charges_unauthorised_colonies_2",
+        "text": "The Delhi Jal Board FAQ states the same development charge as Rs. 1,00,000 where the plot size is beyond 50 square metres.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_development_charges_unauthorised_colonies, which carried two amounts in one sentence."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried two amounts, each turning on a different plot size, which are two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b34",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_application_form_fee",
+      "fieldPath": "/text",
+      "old": "The Delhi Jal Board FAQ states that the application form is available at every office of the Zonal Revenue Officer at a nominal fee of Rs. 10 towards the cost of the form and the processing fee, and can also be downloaded from the consumer portal.",
+      "new": "The Delhi Jal Board FAQ states that the application form is available at every office of the Zonal Revenue Officer at a nominal fee of Rs. 10.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried an amount, what that amount covers and a second route to the form, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b35",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_application_form_fee",
+      "fieldPath": "/notes",
+      "old": "",
+      "new": "Split during IND-91 part B lint remediation into the counter availability and fee, what the fee covers, and the download route.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried an amount, what that amount covers and a second route to the form, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b36",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_application_form_fee_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_application_form_fee_2",
+        "text": "The Delhi Jal Board FAQ states that the Rs. 10 covers the cost of the form together with the processing fee.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_application_form_fee. What the fee covers is separately checkable from its amount."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried an amount, what that amount covers and a second route to the form, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b37",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_application_form_fee_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_application_form_fee_3",
+        "text": "The Delhi Jal Board FAQ states that the application form can also be downloaded from the consumer portal.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_application_form_fee. The download route is separately checkable from the counter route."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried an amount, what that amount covers and a second route to the form, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b38",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_doorstep_fee",
+      "fieldPath": "/text",
+      "old": "The Delhi Jal Board citizens charter states that doorstep delivery of the sanction of a new water or sewer connection is available through the toll-free number 1076 and that a fee of Rs. 50 is charged for providing the doorstep service.",
+      "new": "The Delhi Jal Board citizens charter states that doorstep delivery of the sanction of a new water connection is available through the toll-free number 1076.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried the availability of a doorstep route and an amount charged for it, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b39",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_doorstep_fee",
+      "fieldPath": "/notes",
+      "old": "",
+      "new": "The charter's wording covers a new water or sewer connection; this scenario is the water limb. Split during IND-91 part B lint remediation into the availability of the service and its fee.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried the availability of a doorstep route and an amount charged for it, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b40",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_doorstep_fee_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_doorstep_fee_2",
+        "text": "The Delhi Jal Board citizens charter states that a fee of Rs. 50 is charged for providing the doorstep service.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
+        "evidenceGrade": "C",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_doorstep_fee. The amount is separately checkable from the availability of the service."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and text length over 220 characters. The sentence carried the availability of a doorstep route and an amount charged for it, two independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter"
+        ],
+        "auditNote": "IND-91 part B: the cost cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b41",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_demand_payment_deadline",
+      "fieldPath": "/text",
+      "old": "The Delhi Jal Board FAQ states that the applicant must pay the demand raised by the ZRO office within fifteen days or by the due date of the new connection bill, failing which the sanction is withdrawn.",
+      "new": "The Delhi Jal Board FAQ states that the applicant must pay the demand raised by the ZRO office within fifteen days.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'or'. The sentence carried two deadlines and the consequence of missing them, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b42",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_demand_payment_deadline",
+      "fieldPath": "/notes",
+      "old": "A deadline binding on the applicant after sanction, distinct from the Board's own delivery time.",
+      "new": "A deadline binding on the applicant after sanction, distinct from the Board's own delivery time. Split during IND-91 part B lint remediation into the fifteen-day period, the alternative deadline and the consequence of missing it.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'or'. The sentence carried two deadlines and the consequence of missing them, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b43",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_demand_payment_deadline_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_demand_payment_deadline_2",
+        "text": "The Delhi Jal Board FAQ gives the due date of the new connection bill as the alternative deadline for that payment.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_demand_payment_deadline. The alternative deadline is separately checkable from the fifteen-day period."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'or'. The sentence carried two deadlines and the consequence of missing them, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b44",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_demand_payment_deadline_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_demand_payment_deadline_3",
+        "text": "The Delhi Jal Board FAQ states that the sanction is withdrawn where the demand is not paid by then.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_demand_payment_deadline. The consequence of missing the deadline is separately checkable from the deadline itself."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses joined by 'or'. The sentence carried two deadlines and the consequence of missing them, which are three independently checkable facts.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: the time cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b45",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_public_status_tracking_route",
+      "fieldPath": "/text",
+      "old": "The Delhi Jal Board portal publishes a Track Application Status route, reachable without login, that takes an application reference number for a new connection and returns the applicant's details, the application status, and a dated list of actions performed with remarks.",
+      "new": "The Delhi Jal Board portal publishes a Track Application Status route that takes an application reference number for a new connection.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried the existence of the route, its reachability without login and three things it returns, which are independently checkable facts about the post-submission surface.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_track_status"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b46",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_public_status_tracking_route",
+      "fieldPath": "/notes",
+      "old": "The route's own field labels were observed; no reference number was entered and no case data was retrieved.",
+      "new": "The route's own field labels were observed; no reference number was entered, no login was used and no case data was retrieved. Split during IND-91 part B lint remediation into the route, its public reachability and what it returns.",
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried the existence of the route, its reachability without login and three things it returns, which are independently checkable facts about the post-submission surface.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_track_status"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b47",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_public_status_tracking_route_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_public_status_tracking_route_2",
+        "text": "That Track Application Status route is reachable without login.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_track_status"
+        ],
+        "evidenceGrade": "B",
+        "basis": "mixed",
+        "status": "partial",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_public_status_tracking_route. The route was observed without a login; no reference number was entered and no case data was retrieved."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried the existence of the route, its reachability without login and three things it returns, which are independently checkable facts about the post-submission surface.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_track_status"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b48",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_public_status_tracking_route_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_public_status_tracking_route_3",
+        "text": "That route returns the applicant's details and the application status.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_track_status"
+        ],
+        "evidenceGrade": "B",
+        "basis": "mixed",
+        "status": "partial",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_public_status_tracking_route. Read from the route's own field labels; no reference number was entered and no case data was retrieved."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried the existence of the route, its reachability without login and three things it returns, which are independently checkable facts about the post-submission surface.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_track_status"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b49",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_public_status_tracking_route_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_public_status_tracking_route_4",
+        "text": "That route returns a dated list of actions performed with remarks.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_track_status"
+        ],
+        "evidenceGrade": "B",
+        "basis": "mixed",
+        "status": "partial",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_public_status_tracking_route. Read from the route's own field labels; no reference number was entered and no case data was retrieved."
+      },
+      "reason": "Pre-audit lint reported compound-claim for an enumeration and text length over 220 characters. The sentence carried the existence of the route, its reachability without login and three things it returns, which are independently checkable facts about the post-submission surface.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_track_status"
+        ],
+        "auditNote": "IND-91 part B: the after-submission cell is stated on this claim, so the row is re-audited."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b50",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_registered_consumer_boundary",
+      "fieldPath": "/text",
+      "old": "The Delhi Jal Board FAQ states that only registered consumers can apply online for disconnection, lodge a grievance, update a profile and view previous bills and receipts, which places those surfaces past a login boundary that this run did not cross.",
+      "new": "The Delhi Jal Board FAQ states that only registered consumers can apply online for disconnection.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters, and login-boundary-overclaim for a boundary sentence without uncertainty wording. The FAQ names four separate surfaces and the boundary inference is a fifth checkable statement; each fragment now records that no login was used and no personal data was entered.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b51",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_registered_consumer_boundary",
+      "fieldPath": "/notes",
+      "old": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is the FAQ's own list; the inference is that those surfaces sit past the boundary. Applying for a new connection is not in that list, which is why the new-connection form and the status route are reachable publicly.",
+      "new": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is the FAQ's own list. No login was used and no personal data was entered. Applying for a new connection is not in that list, which is why the new-connection form and the status route are reachable publicly. Split during IND-91 part B lint remediation into the four surfaces the FAQ names and the inference drawn from them.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters, and login-boundary-overclaim for a boundary sentence without uncertainty wording. The FAQ names four separate surfaces and the boundary inference is a fifth checkable statement; each fragment now records that no login was used and no personal data was entered.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b52",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_registered_consumer_boundary_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_registered_consumer_boundary_2",
+        "text": "The Delhi Jal Board FAQ states that only registered consumers can lodge a grievance online.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "mixed",
+        "status": "partial",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_registered_consumer_boundary. Boundary statement supporting no cell. No login was used and no personal data was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters, and login-boundary-overclaim for a boundary sentence without uncertainty wording. The FAQ names four separate surfaces and the boundary inference is a fifth checkable statement; each fragment now records that no login was used and no personal data was entered.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b53",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_registered_consumer_boundary_3",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_registered_consumer_boundary_3",
+        "text": "The Delhi Jal Board FAQ states that only registered consumers can update a profile online.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "mixed",
+        "status": "partial",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_registered_consumer_boundary. Boundary statement supporting no cell. No login was used and no personal data was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters, and login-boundary-overclaim for a boundary sentence without uncertainty wording. The FAQ names four separate surfaces and the boundary inference is a fifth checkable statement; each fragment now records that no login was used and no personal data was entered.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b54",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_registered_consumer_boundary_4",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_registered_consumer_boundary_4",
+        "text": "The Delhi Jal Board FAQ states that only registered consumers can view previous bills and receipts online.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "mixed",
+        "status": "partial",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_registered_consumer_boundary. Boundary statement supporting no cell. No login was used and no personal data was entered."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters, and login-boundary-overclaim for a boundary sentence without uncertainty wording. The FAQ names four separate surfaces and the boundary inference is a fifth checkable statement; each fragment now records that no login was used and no personal data was entered.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b55",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_registered_consumer_boundary_5",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_registered_consumer_boundary_5",
+        "text": "Those registered-consumer surfaces sit past a boundary that this run did not cross.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "mixed",
+        "status": "partial",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_registered_consumer_boundary. This is the inference drawn from the FAQ's list. No login was used and no personal data was entered, so what lies past the boundary is unknown."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses, an enumeration and text length over 220 characters, and login-boundary-overclaim for a boundary sentence without uncertainty wording. The FAQ names four separate surfaces and the boundary inference is a fifth checkable statement; each fragment now records that no login was used and no personal data was entered.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: a boundary claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b56",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_sanction_outcome_notice_unknown",
+      "fieldPath": "/text",
+      "old": "What the applicant is shown or sent at the moment a new connection is sanctioned or refused, and whether a refusal states its reason, is not established by any reviewed public page.",
+      "new": "What the applicant is shown at the moment a new connection is sanctioned is not established by any reviewed public page.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration. The sentence carried two separate unknowns: what the applicant sees at the moment of sanction, and whether a refusal gives a reason.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b57",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_sanction_outcome_notice_unknown",
+      "fieldPath": "/notes",
+      "old": "Retained because the uncertainty itself matters to the journey. Not login-related: the status route is public and was simply not queried, because entering a real application reference number is outside the safety boundary.",
+      "new": "Retained because the uncertainty itself matters to the journey. Not login-related: the status route is public and was simply not queried, because entering a real application reference number is outside the safety boundary. Split during IND-91 part B lint remediation; whether a refusal states its reason is asserted separately.",
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration. The sentence carried two separate unknowns: what the applicant sees at the moment of sanction, and whether a refusal gives a reason.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: note updated to record the split."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b58",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_sanction_outcome_notice_unknown_2",
+      "fieldPath": "/claims/-",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_sanction_outcome_notice_unknown_2",
+        "text": "Whether a refusal of a new connection states its reason is not established by any reviewed public page.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [],
+        "evidenceGrade": "Unknown",
+        "basis": "inference",
+        "status": "unknown",
+        "contradictsClaimIds": [],
+        "notes": "Split during IND-91 part B lint remediation from claim_delhi_water_sanction_outcome_notice_unknown. Retained because the uncertainty itself matters to the journey. Not login-related: the status route is public and was simply not queried."
+      },
+      "reason": "Pre-audit lint reported compound-claim for independent verb clauses and an enumeration. The sentence carried two separate unknowns: what the applicant sees at the moment of sanction, and whether a refusal gives a reason.",
+      "support": {
+        "sourceIds": [],
+        "auditNote": "IND-91 part B: an Unknown claim supporting no cell."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b59",
+      "recordType": "expectations",
+      "recordId": "water-connection:cost",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_delhi_water_domestic_charges_table",
+        "claim_delhi_water_application_form_fee",
+        "claim_delhi_water_development_charges_unauthorised_colonies",
+        "claim_delhi_water_doorstep_fee"
+      ],
+      "new": [
+        "claim_delhi_water_domestic_charges_table",
+        "claim_delhi_water_domestic_charges_table_2",
+        "claim_delhi_water_domestic_charges_table_3",
+        "claim_delhi_water_domestic_charges_table_4",
+        "claim_delhi_water_domestic_charges_table_5",
+        "claim_delhi_water_domestic_charges_table_6",
+        "claim_delhi_water_application_form_fee",
+        "claim_delhi_water_application_form_fee_2",
+        "claim_delhi_water_application_form_fee_3",
+        "claim_delhi_water_development_charges_unauthorised_colonies",
+        "claim_delhi_water_development_charges_unauthorised_colonies_2",
+        "claim_delhi_water_doorstep_fee",
+        "claim_delhi_water_doorstep_fee_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that actually assert the facts it rests on. No cell state is changed by this edit; the re-audit of this row decides whether any state should change.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter",
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b60",
+      "recordType": "expectations",
+      "recordId": "water-connection:documents",
+      "fieldPath": "/cells/documents/claimIds",
+      "old": [
+        "claim_delhi_water_identity_and_ownership_documents",
+        "claim_delhi_water_simplified_document_list",
+        "claim_delhi_water_form_photo_and_id_upload"
+      ],
+      "new": [
+        "claim_delhi_water_identity_and_ownership_documents",
+        "claim_delhi_water_simplified_document_list",
+        "claim_delhi_water_simplified_document_list_2",
+        "claim_delhi_water_simplified_document_list_3",
+        "claim_delhi_water_simplified_document_list_4",
+        "claim_delhi_water_form_photo_and_id_upload"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that actually assert the facts it rests on. No cell state is changed by this edit; the re-audit of this row decides whether any state should change.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter",
+          "source_delhi_water_djb_faq",
+          "source_delhi_water_djb_new_connection_form"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b61",
+      "recordType": "expectations",
+      "recordId": "water-connection:eligibility",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_delhi_water_who_can_apply",
+        "claim_delhi_water_network_precondition",
+        "claim_delhi_water_no_arrears_precondition",
+        "claim_delhi_water_completed_authorised_construction",
+        "claim_delhi_water_one_connection_per_dwelling"
+      ],
+      "new": [
+        "claim_delhi_water_who_can_apply",
+        "claim_delhi_water_who_can_apply_2",
+        "claim_delhi_water_who_can_apply_3",
+        "claim_delhi_water_who_can_apply_4",
+        "claim_delhi_water_network_precondition",
+        "claim_delhi_water_network_precondition_2",
+        "claim_delhi_water_no_arrears_precondition",
+        "claim_delhi_water_completed_authorised_construction",
+        "claim_delhi_water_completed_authorised_construction_2",
+        "claim_delhi_water_completed_authorised_construction_3",
+        "claim_delhi_water_one_connection_per_dwelling",
+        "claim_delhi_water_one_connection_per_dwelling_2"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that actually assert the facts it rests on. No cell state is changed by this edit; the re-audit of this row decides whether any state should change.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b62",
+      "recordType": "expectations",
+      "recordId": "water-connection:time",
+      "fieldPath": "/cells/time/claimIds",
+      "old": [
+        "claim_delhi_water_charter_delivery_time_fifteen_days",
+        "claim_delhi_water_doorstep_timeframe",
+        "claim_delhi_water_demand_payment_deadline"
+      ],
+      "new": [
+        "claim_delhi_water_charter_delivery_time_fifteen_days",
+        "claim_delhi_water_doorstep_timeframe",
+        "claim_delhi_water_demand_payment_deadline",
+        "claim_delhi_water_demand_payment_deadline_2",
+        "claim_delhi_water_demand_payment_deadline_3"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that actually assert the facts it rests on. No cell state is changed by this edit; the re-audit of this row decides whether any state should change.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter",
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "corr_delhi_water_connection_b63",
+      "recordType": "expectations",
+      "recordId": "water-connection:after-submission",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [
+        "claim_delhi_water_public_status_tracking_route",
+        "claim_delhi_water_portal_tracking_facility_listed"
+      ],
+      "new": [
+        "claim_delhi_water_public_status_tracking_route",
+        "claim_delhi_water_public_status_tracking_route_2",
+        "claim_delhi_water_public_status_tracking_route_3",
+        "claim_delhi_water_public_status_tracking_route_4",
+        "claim_delhi_water_portal_tracking_facility_listed"
+      ],
+      "reason": "Claims cited by these cells were split into atomic fragments during IND-91 part B lint remediation. Each cell now lists the fragments that actually assert the facts it rests on. No cell state is changed by this edit; the re-audit of this row decides whether any state should change.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_citizens_charter",
+          "source_delhi_water_djb_track_status"
+        ],
+        "auditNote": "IND-91 part B: claimIds relisted after the split. The cell state is unchanged by this edit."
+      }
+    },
+    {
+      "id": "C1",
+      "recordType": "expectations",
+      "recordId": "water-connection:cost",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_delhi_water_domestic_charges_table",
+        "claim_delhi_water_domestic_charges_table_2",
+        "claim_delhi_water_domestic_charges_table_3",
+        "claim_delhi_water_domestic_charges_table_4",
+        "claim_delhi_water_domestic_charges_table_5",
+        "claim_delhi_water_domestic_charges_table_6",
+        "claim_delhi_water_application_form_fee",
+        "claim_delhi_water_application_form_fee_2",
+        "claim_delhi_water_application_form_fee_3",
+        "claim_delhi_water_development_charges_unauthorised_colonies",
+        "claim_delhi_water_development_charges_unauthorised_colonies_2",
+        "claim_delhi_water_doorstep_fee",
+        "claim_delhi_water_doorstep_fee_2"
+      ],
+      "new": [
+        "claim_delhi_water_domestic_charges_table",
+        "claim_delhi_water_domestic_charges_table_2",
+        "claim_delhi_water_domestic_charges_table_3",
+        "claim_delhi_water_domestic_charges_table_4",
+        "claim_delhi_water_domestic_charges_table_5",
+        "claim_delhi_water_domestic_charges_table_6",
+        "claim_delhi_water_application_form_fee",
+        "claim_delhi_water_application_form_fee_2",
+        "claim_delhi_water_development_charges_unauthorised_colonies",
+        "claim_delhi_water_development_charges_unauthorised_colonies_2",
+        "claim_delhi_water_doorstep_fee",
+        "claim_delhi_water_doorstep_fee_2"
+      ],
+      "reason": "claim_delhi_water_application_form_fee_3 asserts only that the application form can also be downloaded from the consumer portal. It carries no amount, no fee schedule and no explicit-zero statement, so it does not support the cost cell under the PROTOCOL section 8 cost definition. Section 3 is not engaged because the claim states no zero price for the download; it says nothing about price. Its fee-bearing siblings claim_delhi_water_application_form_fee and _2 remain cited, and the cell state stays stated on the twelve remaining claims.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "Finding F1. Cell-membership correction only; no state change. The cost cell note does not reference the download route, so no note correction follows."
+      }
+    },
+    {
+      "id": "C2",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_zro_office_directory_published",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "The claim rests solely on source_delhi_water_djb_contact_directory, a static PDF whose own source note records 'Visible date: none is shown; the file carries no issue or revision date. Limitation: the file is undated, so the directory's currency cannot be checked.' That is the PROTOCOL section 4 Grade C condition, 'Archived, undated, or visibly outdated official material; state the date and limitation'. The Grade B clause it would otherwise need, 'direct current observation of a public official interface', does not reach a static file: the ledger invokes that clause for the two undated live routes (new-connection form, track-status route) and correctly grades the other undated static PDF, the citizens charter, C. Grading this PDF C makes the file internally consistent.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_contact_directory",
+          "source_delhi_water_djb_citizens_charter"
+        ],
+        "auditNote": "Finding F2. Section 8 admits Grade C claims as support for a stated cell, and the owner cell also holds claim_delhi_water_officer_responsible_zro and claim_delhi_water_zro_approves_sanction, so owner remains stated."
+      }
+    },
+    {
+      "id": "C3",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_application_submission_routes",
+      "fieldPath": "/text",
+      "old": "The Delhi Jal Board FAQ states that a new connection application can be submitted online on the consumer portal or in the office of the concerned Zonal Revenue Office on all working days.",
+      "new": "The Delhi Jal Board FAQ states that a new connection application can be submitted online on the consumer portal.",
+      "reason": "The published text carries two independently checkable submission routes in one sentence, breaching the PROTOCOL section 1 atomicity rule ('one claim asserts one checkable thing') and section 8 pre-audit lint check 1. The manifest entry's lintWaivers cover only claim_delhi_water_simplified_document_list_2, so this finding is unwaived and blocks audit under section 8. This correction narrows the parent to the online limb; correction C4 carries the counter limb into a new record so no evidence is lost.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "Finding F3. Apply C3, C4 and C5 together. The claim is cited by no expectation cell, so no cell changes. Section 13 permits the auditor to split compound claims."
+      }
+    },
+    {
+      "id": "C4",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_application_submission_routes_2",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_application_submission_routes_2",
+        "text": "The Delhi Jal Board FAQ states that a new connection application can also be submitted in the office of the concerned Zonal Revenue Office on all working days.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_water_residential"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split by audit from claim_delhi_water_application_submission_routes, with the source, grade, basis and status unchanged and the wording carried over from the same FAQ sentence. The counter route and its working-days condition are separately checkable from the online route. A step at submission, not after it; recorded for the route, not for the after-submission cell."
+      },
+      "reason": "True addition (old null per PROTOCOL section 13) carrying the counter limb of the compound claim split in C3, so that splitting the parent does not delete published evidence. The new ID follows this ledger's established _2 suffix convention for split limbs, which keeps the parent's identity unchanged as section 1 requires.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "Finding F3. Grade B is unchanged from the parent and rests on the same FAQ page, a current official agency page under section 4. No new evidence is introduced; the wording is carried over from the parent's own sentence."
+      }
+    },
+    {
+      "id": "C5",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_application_submission_routes",
+      "fieldPath": "/notes",
+      "old": "A step at submission, not after it; recorded for the route, not for the after-submission cell.",
+      "new": "A step at submission, not after it; recorded for the route, not for the after-submission cell. Split by audit into the online route and the counter route, the latter carried by claim_delhi_water_application_submission_routes_2.",
+      "reason": "Records the C3/C4 split on the parent record, matching this ledger's existing convention of noting every split in the notes field (as done for claim_delhi_water_who_can_apply, claim_delhi_water_network_precondition and claim_delhi_water_zro_approves_sanction).",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "Finding F3. Bookkeeping only; the existing sentence is preserved verbatim and the split note appended."
+      }
+    },
+    {
+      "id": "C6",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_registered_consumer_boundary_5",
+      "fieldPath": "/basis",
+      "old": "mixed",
+      "new": "inference",
+      "reason": "PROTOCOL section 5 requires that mixed explain its observation/inference boundary in notes. This record's note states 'This is the inference drawn from the FAQ's list', and the observational limb (what the FAQ actually lists) is carried separately by claim_delhi_water_registered_consumer_boundary and its _2, _3 and _4 siblings. Nothing observational remains in this record, so there is no boundary for mixed to explain and the field contradicts the record's own note. Section 5 also holds that a source grade does not turn an inference into an observation.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_water_djb_faq"
+        ],
+        "auditNote": "Finding F4. Grounded in the record's own notes field, not in outside evidence. This is a boundary claim that section 8 bars from supporting any positive cell value, and the sidecar cites it in no cell, so no cell state is affected."
+      }
+    }
+  ],
+  "runs": [
+    {
+      "runId": "ind91_part_b_lint_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B pre-audit lint remediation (protocol section 8).",
+      "correctionIds": [
+        "corr_delhi_water_connection_b01",
+        "corr_delhi_water_connection_b02",
+        "corr_delhi_water_connection_b03",
+        "corr_delhi_water_connection_b04",
+        "corr_delhi_water_connection_b05",
+        "corr_delhi_water_connection_b06",
+        "corr_delhi_water_connection_b07",
+        "corr_delhi_water_connection_b08",
+        "corr_delhi_water_connection_b09",
+        "corr_delhi_water_connection_b10",
+        "corr_delhi_water_connection_b11",
+        "corr_delhi_water_connection_b12",
+        "corr_delhi_water_connection_b13",
+        "corr_delhi_water_connection_b14",
+        "corr_delhi_water_connection_b15",
+        "corr_delhi_water_connection_b16",
+        "corr_delhi_water_connection_b17",
+        "corr_delhi_water_connection_b18",
+        "corr_delhi_water_connection_b19",
+        "corr_delhi_water_connection_b20",
+        "corr_delhi_water_connection_b21",
+        "corr_delhi_water_connection_b22",
+        "corr_delhi_water_connection_b23",
+        "corr_delhi_water_connection_b24",
+        "corr_delhi_water_connection_b25",
+        "corr_delhi_water_connection_b26",
+        "corr_delhi_water_connection_b27",
+        "corr_delhi_water_connection_b28",
+        "corr_delhi_water_connection_b29",
+        "corr_delhi_water_connection_b30",
+        "corr_delhi_water_connection_b31",
+        "corr_delhi_water_connection_b32",
+        "corr_delhi_water_connection_b33",
+        "corr_delhi_water_connection_b34",
+        "corr_delhi_water_connection_b35",
+        "corr_delhi_water_connection_b36",
+        "corr_delhi_water_connection_b37",
+        "corr_delhi_water_connection_b38",
+        "corr_delhi_water_connection_b39",
+        "corr_delhi_water_connection_b40",
+        "corr_delhi_water_connection_b41",
+        "corr_delhi_water_connection_b42",
+        "corr_delhi_water_connection_b43",
+        "corr_delhi_water_connection_b44",
+        "corr_delhi_water_connection_b45",
+        "corr_delhi_water_connection_b46",
+        "corr_delhi_water_connection_b47",
+        "corr_delhi_water_connection_b48",
+        "corr_delhi_water_connection_b49",
+        "corr_delhi_water_connection_b50",
+        "corr_delhi_water_connection_b51",
+        "corr_delhi_water_connection_b52",
+        "corr_delhi_water_connection_b53",
+        "corr_delhi_water_connection_b54",
+        "corr_delhi_water_connection_b55",
+        "corr_delhi_water_connection_b56",
+        "corr_delhi_water_connection_b57",
+        "corr_delhi_water_connection_b58",
+        "corr_delhi_water_connection_b59",
+        "corr_delhi_water_connection_b60",
+        "corr_delhi_water_connection_b61",
+        "corr_delhi_water_connection_b62",
+        "corr_delhi_water_connection_b63"
+      ]
+    },
+    {
+      "runId": "ind91_part_b_reaudit_2026_09_06",
+      "date": "2026-09-06",
+      "description": "IND-91 part B re-audit by a fresh isolated auditor after lint remediation (protocol sections 12 and 13).",
+      "correctionIds": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ]
     }
   ]
 }

@@ -31,6 +31,8 @@ export default function AtlasHome() {
         <Link className="wordmark" href="/"><span className="wordmark-accent">BLR</span><span>Public Service Dependency Atlas</span></Link>
         <nav aria-label="Page navigation">
           <a className="primary-nav-link" href="#directory">Service directory</a>
+          <Link href="/report">Report</Link>
+          <Link href="/benchmark">Benchmark</Link>
           <a href="#method">Contribute</a>
         </nav>
         <ModeToggle mode="normal" />

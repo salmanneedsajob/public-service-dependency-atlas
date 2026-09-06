@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://public-service-legibility-benchmark.org/schemas/scorecard-0.1.json",
+  "version": "0.1",
+  "title": "Public Service Legibility Benchmark scorecard",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["serviceId", "jurisdiction", "primaryScenarioId", "asOf", "cells", "statedCount", "loginStrippedUnknownShare", "portalFriction", "auditFile", "benchmarkVersion", "source"],
+  "properties": {
+    "serviceId": { "type": "string", "minLength": 1 },
+    "jurisdiction": { "type": "string", "minLength": 1 },
+    "primaryScenarioId": { "type": "string", "minLength": 1 },
+    "asOf": { "type": "string", "format": "date" },
+    "cells": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cost", "documents", "eligibility", "time", "owner", "after-submission"],
+      "properties": {
+        "cost": { "$ref": "#/$defs/cell" }, "documents": { "$ref": "#/$defs/cell" }, "eligibility": { "$ref": "#/$defs/cell" }, "time": { "$ref": "#/$defs/cell" }, "owner": { "$ref": "#/$defs/cell" }, "after-submission": { "$ref": "#/$defs/cell" }
+      }
+    },
+    "statedCount": { "type": "integer", "minimum": 0, "maximum": 6 },
+    "loginStrippedUnknownShare": { "type": "number", "minimum": 0, "maximum": 1 },
+    "portalFriction": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["deadLinkRate", "undated", "captcha", "jsOnly", "appOnly", "languages"],
+      "properties": {
+        "deadLinkRate": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "undated": { "type": ["boolean", "null"] }, "captcha": { "type": ["boolean", "null"] }, "jsOnly": { "type": ["boolean", "null"] }, "appOnly": { "type": ["boolean", "null"] }, "languages": { "type": ["array", "null"], "items": { "type": "string" }, "uniqueItems": true }
+      }
+    },
+    "auditFile": { "type": ["string", "null"] },
+    "benchmarkVersion": { "const": "0.1" },
+    "source": { "enum": ["authored", "reviewed-regex"] }
+  },
+  "$defs": { "cell": { "type": "object", "additionalProperties": false, "required": ["state", "claimCount"], "properties": { "state": { "enum": ["stated", "mentioned", "absent"] }, "claimCount": { "type": "integer", "minimum": 0 } } } }
+}

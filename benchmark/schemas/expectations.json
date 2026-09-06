@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://public-service-legibility-benchmark.org/schemas/expectations-1.0.0.json",
+  "version": "0.1",
+  "title": "Authored expectations sidecar",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "serviceId", "primaryScenarioId", "cells"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "serviceId": { "type": "string", "minLength": 1 },
+    "primaryScenarioId": { "type": "string", "minLength": 1 },
+    "cells": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cost", "documents", "eligibility", "time", "owner", "after-submission"],
+      "properties": {
+        "cost": { "$ref": "#/$defs/cell" },
+        "documents": { "$ref": "#/$defs/cell" },
+        "eligibility": { "$ref": "#/$defs/cell" },
+        "time": { "$ref": "#/$defs/cell" },
+        "owner": { "$ref": "#/$defs/cell" },
+        "after-submission": { "$ref": "#/$defs/cell" }
+      }
+    }
+  },
+  "$defs": {
+    "cell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "claimIds", "searchedRoutes", "note"],
+      "properties": {
+        "state": { "enum": ["stated", "mentioned", "absent"] },
+        "claimIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "searchedRoutes": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}

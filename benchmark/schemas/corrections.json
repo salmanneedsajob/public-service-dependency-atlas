@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://public-service-legibility-benchmark.org/schemas/corrections-1.0.0.json",
+  "version": "0.1",
+  "title": "Structured audit corrections",
+  "oneOf": [
+    { "type": "array", "items": { "$ref": "#/$defs/correction" } },
+    {
+      "type": "object",
+      "required": ["corrections"],
+      "properties": {
+        "serviceId": { "type": "string" },
+        "ledgerPath": { "type": "string" },
+        "auditPath": { "type": "string" },
+        "protocolVersion": { "type": ["string", "number"] },
+        "corrections": { "type": "array", "items": { "$ref": "#/$defs/correction" } }
+      },
+      "additionalProperties": true
+    }
+  ],
+  "$defs": {
+    "correction": {
+      "type": "object",
+      "required": ["recordType", "recordId", "fieldPath", "old", "new", "reason", "support"],
+      "properties": {
+        "id": { "type": "string" },
+        "recordType": { "type": "string", "minLength": 1 },
+        "recordId": { "type": "string", "minLength": 1 },
+        "fieldPath": { "type": "string", "pattern": "^/" },
+        "old": {},
+        "new": {},
+        "reason": { "type": "string", "minLength": 1 },
+        "support": { "type": "object" }
+      },
+      "additionalProperties": true
+    }
+  }
+}

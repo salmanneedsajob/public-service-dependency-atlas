@@ -1,0 +1,204 @@
+# Public Service Legibility Benchmark protocol v0.1
+
+**Version:** 0.1
+**Parameters:** `<jurisdiction>`, `<issue tracker>`, `<work-item identifier>`, `<research environment>`
+
+Every agent writes findings into the shared ledger contract in `schemas/ledger.json`. Prefer a small number of precise claims over narrative summaries. This protocol is the benchmark's binding method.
+
+## 1. Research roles and the binding workflow
+
+One service per `<issue tracker>` work item and one service per `<research environment>` run. Do not batch.
+
+For each service, the binding workflow is: official-source pass, public-workflow pass, citizen-evidence pass, integration, then one audit in a separate fresh run. Passes write isolated handoffs. The audit input boundary is defined in section 12. No research may start until its blocking pre-flight work item is Done.
+
+### Official-source agent
+
+Find primary law, regulation, official pages, forms, circulars, portals, and help text. Create `sources` and atomic `claims`; one claim asserts one checkable thing. Connect claims to relevant nodes and scenarios. For every source, record the exact access date, jurisdiction, and agency name as displayed on that access date. Do not infer a working end-to-end journey merely because individual requirements are published.
+
+### Public-workflow agent
+
+Trace what an unauthenticated member of the public can see across official interfaces. Record steps, system handoffs, visible error text, prerequisites, and recovery routes. Grade direct current observation of a public official interface **B**, not E; reserve E for genuine citizen accounts. Never submit a live application or bypass access controls. Mark anything that requires login or cannot be checked as `unknown`.
+
+### Citizen-evidence agent
+
+Collect public first-person accounts only to expose failure modes, undocumented dependencies, terminology, and possible recovery paths. Remove personal details, grade these claims E or F as appropriate, and never treat one account as a universal rule. Link contradictions instead of resolving them by intuition.
+
+### Integrator
+
+Merge isolated handoffs without changing record identity. Reuse a record ID once published; change content, not identity. Put procedural sequence in `journeys`, reusable system relationships in `edges`, and user-visible blockers in `roadblocks`. Do not overwrite conflicting claims: retain both, cross-link them with `contradictsClaimIds`, and mark them `contested` until audited.
+
+### Auditor
+
+Check atomicity, source linkage, dates, jurisdiction, scenario tags, reference integrity, evidence grade, observation-versus-inference, contradiction links, portal records, expectation cells, archive records, and the rules below. Split compound claims. Downgrade or mark `contested` when evidence does not support the wording. Preserve unknowns. Its evidence verdict is final for what ships.
+
+The derived Mapped status remains a diagnostic: it is reached only when every node on the default scenario path has at least one `checks`, `failureSignals`, and `recoveries` entry, no node is `unknown`, and every edge has a supporting `claimId`. Do not edit status by hand. It is informational, never a research goal and never a substitute for this protocol's definition of done.
+
+## 2. Scenario policy
+
+Every ledger has exactly one manifest-declared `primaryScenarioId`. The six-cell expectation grid scores that scenario only. Branch IDs are predeclared in the service work item to keep identifiers stable, but a branch is recorded in the ledger only if a pass encounters it. Done is evaluated on the primary scenario alone; an unencountered branch neither blocks completion nor is represented as evidence.
+
+Do not introduce scenario aliases. Do not add node kinds or roadblock categories unless a probe proves that the current schema cannot represent the service. Tag every claim to at least one scenario and, where applicable, one dependency node.
+
+## 3. Explicit zero counts as stated
+
+An explicit zero requirement is a stated value, not an absence and not a not-applicable state. For example, `free`, `no upload required`, `no fee`, or `no additional eligibility requirement` must be recorded as `stated` when the applicable evidence states it. The expectation grid has no not-applicable state.
+
+## 4. Evidence-grade table
+
+| Grade | Use when the claim is supported by |
+| --- | --- |
+| A | A binding law, regulation, commission order, or gazette notification |
+| B | A current official procedure, form, service portal, circular, or agency page, including direct current observation of a public official interface |
+| B | An observed current official form |
+| C | Official but indirect, incomplete, archived, or potentially outdated material |
+| C | An official press release |
+| C | An official annual report |
+| C | A department homepage or general-site reference; never use it as a specific citation |
+| C | Archived, undated, or visibly outdated official material; state the date and limitation |
+| D | Reputable secondary reporting or professional guidance with attributable sources |
+| E | Genuine citizen accounts, public forum posts, or citizen-provided screenshots and first-person evidence |
+| F | An uncorroborated assertion retained only because it identifies something worth checking |
+| Unknown | No usable source yet; the uncertainty itself matters to the journey |
+
+Grades describe source strength, not whether a claim is convenient or likely.
+
+## 5. Basis rule
+
+Keep `basis` separate from grade. `observation` records what a source or interface directly shows; `inference` records a conclusion drawn from it; and `mixed` must explain the boundary in `notes`. A source grade does not turn an inference into an observation.
+
+## 6. Edge policy and `researchedNoSourceFound`
+
+An edge may exist when any evidence supports it, with its status reflecting the strongest evidence held. Remove an edge only when no evidence of any grade supports it.
+
+For each node field (`checks`, `failureSignals`, `recoveries`) that remains empty after the public-workflow pass, add that field name to the node's optional `researchedNoSourceFound` array **only** when that pass actually searched the field's relevant public route and found no public source. Record the searched route or URL and the search note. The omitted marker means `not yet researched`; it is a gap in our work, not evidence of a government documentation gap. Never infer the marker from an empty array, a login boundary, or another agent's notes.
+
+The auditor verifies every `researchedNoSourceFound` marker against public-workflow evidence. Remove a marker that rests only on assumption, a login boundary, or an unsearched route. Empty fields without this marker must remain visibly `not yet researched` in the renderer.
+
+## 7. Citation gate
+
+Every non-`Unknown` claim needs at least one source. A source supplies the direct link, exact access date, and jurisdiction. Citations must resolve to specific pages: a department homepage is a `General-site reference`, and claims resting on it are Grade C, never presented as a specific source. Do not replace a dead specific page with a homepage.
+
+Use ISO dates (`YYYY-MM-DD`) and jurisdiction text specific to `<jurisdiction>`. The citation gate is green only when these requirements, source links, claim-source references, scenario tags, and required limitations are present and valid.
+
+## 8. Pre-audit lint and waivers
+
+Before audit, run the pre-audit lint. It checks:
+
+1. compound or list claims;
+2. duplicate sources with the same URL and access date;
+3. Grade B assigned to secondary sources;
+4. Grade C assigned to observed current official forms;
+5. source-date quality: missing `publishedAt` without a visible-date note, or a stale or undated source without a stated limitation;
+6. overclaims across a login or other authentication boundary;
+7. undeclared or incorrect scenario IDs; and
+8. `researchedNoSourceFound` without a matching public-route search.
+
+A waiver names the affected record ID and the reason in the handoff. An unwaived finding blocks audit.
+
+### Expectation-cell definitions
+
+Each expectation cell has exactly one state. `stated` means a Grade A, B, or C claim gives a value a citizen can act on. `mentioned` means the topic is named but no actionable value is given. `absent` means the reviewed evidence does not touch the topic. Only `verified` or `partial` claims may support `stated` or `mentioned`; a boundary statement or `Unknown` claim records a limitation, not a positive cell value.
+
+- `cost`: `stated` when the evidence gives an amount a citizen pays or an actionable fee schedule. A fee described only as prescribed, a payment step without an amount, or a penalty payable by the agency is `mentioned`.
+- `documents`: `stated` when the evidence gives an actionable document list or names a concrete document with a requirement to submit, provide, upload, produce, or attach it. A reference to documents without telling the citizen what is required is `mentioned`.
+- `eligibility`: `stated` when the evidence gives a rule that decides who qualifies or which route applies. Naming eligibility, applicability, jurisdiction, or an applicant category without a usable rule is `mentioned`.
+- `time`: `stated` when the evidence gives an actionable duration, deadline, processing period, or service-level target. A reference to timing, delay, sequence, or processing without a figure or usable time rule is `mentioned`; when the figure covers only one stage, the cell note must say so.
+- `owner`: `stated` when the evidence lets a citizen identify the office, officer, or operational role that holds or decides the case, including a specific office list, a designation tied to a jurisdiction rule, or a contact route for that role. A statutory designation or general agency name alone is `mentioned`.
+- `after-submission`: `stated` only when the evidence identifies something the citizen sees after submitting, such as a status page, tracker, acknowledgement, receipt, rejection reason, or downloadable result. A step at or before submission—including registration, document presentation, payment, appointment booking, or the act of submission—is not after-submission evidence. An outcome named without a visible or actionable post-submission surface is `mentioned`.
+
+## 9. Expectations block written by the official pass
+
+The official-source pass writes a human-authored expectations block for the `primaryScenarioId`. It covers exactly these six cells: `cost`, `documents`, `eligibility`, `time`, `owner`, and `after-submission`.
+
+For a `stated` cell, write its state, `claimIds`, and an actionable-value note. For a `mentioned` or `absent` cell, write its state, searched route IDs or URLs, optional topic-only `claimIds`, and a search note. A regex or other automated extraction may cross-check the block but cannot replace it. Explicit zero values follow section 3.
+
+## 10. Portal record written by the public-workflow pass
+
+The public-workflow pass writes one portal record per portal, not one conclusion per host. Each portal record contains: `portalId`, `host`, observation timestamp, service owner, portal operator, agency naming shown, languages, visible version or last-updated date, and evidence source IDs.
+
+Each portal record contains nested `routeObservations`. Every route observation contains: `routeId`; service and scenario IDs; entry and final URLs; redirects; checked and dead-link counts; authentication prerequisites; the boundary between public procedure and case data; CAPTCHA, JavaScript, or app dependencies; public guidance, tracking, error, and recovery surfaces; evidence IDs; and limitations. Login- or case-data-bound surfaces remain unknown rather than inferred.
+
+## 11. Archive-snapshot rule
+
+At access time, capture an archive snapshot for every public source used. Record the snapshot URL with the source. Never archive authenticated, personal, payment, or case-specific pages. If capture fails, record the access date, the failure, and a limitation. Archive failure does not permit a substitute homepage or an unsupported claim. If a link later dies, retain the original URL and point to its snapshot.
+
+Quarantine is represented as the scenario ID `scenario_citizen_reported`; claims, nodes, edges, and roadblocks attached to it are quarantined.
+
+## 12. Auditor inputs and citizen-evidence quarantine
+
+The audit receives only the integrated ledger, the expectations sidecar, the portal sidecar, the service's entry from `schemas/manifest.json`, `schemas/ledger.json`, this protocol, and the corrections contract. Nothing else. It checks expectation-cell states against the section 8 definitions and route observations against section 9. It must not receive researcher reasoning or pass handoffs.
+
+Citizen evidence is quarantined to `citizen_reported`. It may expose a failure mode, undocumented dependency, terminology, or possible recovery path, but cannot establish an official rule. Redact names, handles, vehicle, property, account and application identifiers, addresses, phone numbers, and identity data. Cross-link a citizen contradiction to other evidence only when the account establishes the same route and a comparable period; otherwise keep it quarantined and do not resolve it by intuition.
+
+## 13. Structured audit corrections and auditor isolation
+
+The audit produces markdown findings and a corrections JSON document. Each correction object contains:
+
+```json
+{
+  "recordType": "claim",
+  "recordId": "claim_example",
+  "fieldPath": "/status",
+  "old": "stated",
+  "new": "contested",
+  "reason": "The cited source does not support the stronger wording.",
+  "support": {
+    "sourceIds": ["source_example"],
+    "auditNote": "Short evidence rationale."
+  }
+}
+```
+
+Use `null` for a true addition or deletion. The generic application step validates `recordType`, `recordId`, exact field path, and old value; applies the complete correction set atomically; rejects drift; and emits unapplied corrections as stated limitations. Corrections must state `recordType`, `recordId`, exact field path, `old`, `new`, `reason`, and source or audit support.
+
+The audit is isolated: one fresh audit run per service, subject to the section 12 input boundary. The auditor may split compound claims, merge duplicates, remove false contradiction links, and downgrade unsupported claims. It may not invent evidence to make a record complete.
+
+## 14. Definition of done
+
+A service is done when the primary scenario is fixed and present; the integrated ledger is schema-valid; six authored expectation cells are present; stated cells cite claim IDs and mentioned/absent cells record searched routes; public sources include visible agency naming, access date, and a Wayback snapshot or documented archival failure; required portal route records exist; every `researchedNoSourceFound` is backed by a recorded search; lint is clean or waived; a fresh audit has completed and structured corrections are applied; unapplied corrections are stated limitations; validation is green; and the service finish comment is posted.
+
+Branch IDs are declared for stability but are recorded only when encountered. Done depends on the primary scenario alone. Derived Mapped status is informational only, never a completion target.
+
+## 15. Start and finish comment formats
+
+Post this start comment before a service run:
+
+```text
+Service: <service name>
+Primary scenario: <primaryScenarioId>
+Predeclared branch IDs: <branch IDs>
+As of: <YYYY-MM-DD>
+Assigned pass: <official-source | public-workflow | citizen-evidence | integration | audit>
+Seeds: <public URLs>
+Safety boundary: <service-specific boundary>
+Handoff path: <path>
+```
+
+Post this finish comment when the service is complete:
+
+```text
+Primary scenario: <primaryScenarioId>; encountered branches: <IDs or none>
+Evidence counts: sources by grade; claims by status; nodes; edges; roadblocks; journeys
+Expectations: cost <claim IDs or searched routes>; documents <...>; eligibility <...>; time <...>; owner <...>; after-submission <...>
+Portal records written: <portal IDs>; route observations: <route IDs>
+Audit: <file>; corrections proposed/applied/unapplied: <counts and IDs>
+Validation: <results>; derived-status change: <informational before/after>
+Unresolved limitations: <explicit list or none>
+```
+
+## 16. Safety boundaries
+
+- Do not submit live government or utility applications.
+- Do not log in, use OTPs, pay, book appointments, upload documents, or query real case data.
+- Do not call private, undocumented, reverse-engineered, or otherwise undocumented APIs.
+- Do not collect, retain, or store account numbers, addresses, phone numbers, identity documents, login details, or other sensitive personal data.
+- Do not evade authentication, CAPTCHAs, paywalls, rate limits, or other access controls.
+- Do not present the ledger or site as official advice. Keep the disclaimer and `asOf` date visible.
+
+## Changes from earlier releases
+
+- Adds the binding per-service workflow, audit isolation, and primary-scenario-only completion rule.
+- Adds explicit-zero, expectation-block, portal-record, and archive-snapshot requirements.
+- Clarifies source-specific citation requirements, citizen-evidence quarantine, and route-backed `researchedNoSourceFound` markers.
+- Adds the structured audit-corrections contract plus required start and finish comments.
+- Preserves evidence grades, basis distinctions, edge policy, safety limits, and derived-status calculation while making derived status informational.

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://public-service-legibility-benchmark.org/schemas/manifest-1.0.0.json",
+  "version": "0.1",
+  "title": "Public Service Legibility Benchmark service manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "services"],
+  "properties": {
+    "version": { "type": "integer", "minimum": 1 },
+    "services": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "category", "href", "ledgerFile", "primaryScenarioId", "branchScenarioIds", "stratum", "lifeEvent", "serviceKind", "agencyTier", "published", "reportIncluded"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "reportServiceId": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "category": { "type": "string", "minLength": 1 },
+          "href": { "type": "string", "pattern": "^/" },
+          "ledgerFile": { "type": "string", "minLength": 1 },
+          "primaryScenarioId": { "type": "string", "minLength": 1 },
+          "branchScenarioIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+          "stratum": { "enum": ["existing", "deep", "breadth"] },
+          "lifeEvent": { "type": "string", "minLength": 1 },
+          "serviceKind": { "type": "string", "minLength": 1 },
+          "agencyTier": { "type": "string", "minLength": 1 },
+          "published": { "type": "boolean" },
+          "reportIncluded": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

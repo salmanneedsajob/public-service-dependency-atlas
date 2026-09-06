@@ -35,8 +35,9 @@ function validateManifest(manifest) {
 }
 
 function resolveEntryPath(manifestDirectory, value) {
-  const resolved = path.resolve(manifestDirectory, value);
-  if (resolved !== manifestDirectory && !resolved.startsWith(`${manifestDirectory}${path.sep}`)) throw new Error(`Manifest path escapes its directory: ${value}`);
+  const root = /^(?:ledger|public)\//.test(value) ? projectRoot : manifestDirectory;
+  const resolved = path.resolve(root, value);
+  if (resolved !== root && !resolved.startsWith(`${root}${path.sep}`)) throw new Error(`Manifest path escapes its directory: ${value}`);
   return resolved;
 }
 
@@ -56,11 +57,10 @@ async function validateEntry(entry, manifestDirectory, validators) {
   if (!ledger.scenarios.some((scenario) => scenario.id === entry.primaryScenarioId)) throw new Error(`ledger does not contain primary scenario ${entry.primaryScenarioId}.`);
   const claimIds = new Set(ledger.claims.map((claim) => claim.id));
   for (const column of columns) for (const claimId of expectations.cells[column].claimIds) if (!claimIds.has(claimId)) throw new Error(`${column} references unknown claim ${claimId}.`);
-  const lint = lintLedger(ledger, { id: entry.serviceId, primaryScenarioId: entry.primaryScenarioId, branchScenarioIds: [] });
-  if (lint.unwaived.length) throw new Error(`pre-audit lint: ${lint.unwaived.map((finding) => `${finding.recordId} ${finding.check}`).join(', ')}`);
+  const lint = lintLedger(ledger, { id: entry.serviceId, primaryScenarioId: entry.primaryScenarioId, branchScenarioIds: [] }, { lintWaivers: entry.lintWaivers ?? [] });
   const scorecard = score({ ledger, expectations, jurisdiction: entry.jurisdiction, source: 'authored', auditFile: entry.auditFile, schema: validators.scorecardSchema });
   if (!validators.scorecard(scorecard)) throw new Error(`scorecard schema: ${formatErrors(validators.scorecard.errors)}`);
-  return scorecard;
+  return { lint, scorecard };
 }
 
 async function createValidators() {
@@ -79,6 +79,17 @@ async function runSelfTest(validators) {
   if (!validators.corrections([])) throw new Error(`empty corrections schema: ${formatErrors(validators.corrections.errors)}`);
   const lint = lintLedger(ledger, { id: expectations.serviceId, primaryScenarioId: expectations.primaryScenarioId, branchScenarioIds: [] });
   if (lint.unwaived.length) throw new Error(`fixture pre-audit lint: ${lint.unwaived.map((finding) => finding.check).join(', ')}`);
+  const waivedLedger = structuredClone(ledger);
+  waivedLedger.claims[0].text = 'The fictional fee schedule lists a certificate fee; the counter route accepts the application.';
+  const waived = lintLedger(waivedLedger, {
+    id: expectations.serviceId,
+    primaryScenarioId: expectations.primaryScenarioId,
+    branchScenarioIds: [],
+  }, {
+    lintWaivers: [{ recordId: 'claim_example_fee', check: 'compound-claim', reason: 'Fixture covers a waiver for a regex-detected compound sentence.' }],
+  });
+  if (!waived.findings.some((finding) => finding.recordId === 'claim_example_fee' && finding.check === 'compound-claim' && finding.waived)) throw new Error('Fixture lint waiver self-test failed.');
+  if (resolveEntryPath(fixtureDirectory, 'ledger/jurisdictions/manifest.json') !== path.join(projectRoot, 'ledger/jurisdictions/manifest.json')) throw new Error('Fixture repo-relative path self-test failed.');
   const scorecard = score({ ledger, expectations, jurisdiction: ledger.meta.jurisdiction, source: 'authored', auditFile: 'audits/birth-certificate.md', schema: validators.scorecardSchema });
   if (!validators.scorecard(scorecard)) throw new Error(`fixture scorecard schema: ${formatErrors(validators.scorecard.errors)}`);
   console.log(`Grid-only fixture self-test passed: ${scorecard.statedCount}/6 stated.`);
@@ -91,7 +102,8 @@ async function main() {
   const manifestPath = args[0];
   const slugIndex = args.indexOf('--slug');
   const slug = slugIndex === -1 ? null : args[slugIndex + 1];
-  if (!manifestPath || (slugIndex !== -1 && !slug)) throw new Error('Usage: node benchmark/scripts/validate-jurisdiction.mjs <manifest.json> [--slug <slug>] | --self-test');
+  const allowLintFindings = args.includes('--allow-lint-findings');
+  if (!manifestPath || (slugIndex !== -1 && !slug)) throw new Error('Usage: node benchmark/scripts/validate-jurisdiction.mjs <manifest.json> [--slug <slug>] [--allow-lint-findings] | --self-test');
   const manifest = await readJson(manifestPath);
   validateManifest(manifest);
   const entries = slug ? manifest.entries.filter((entry) => entry.jurisdictionSlug === slug) : manifest.entries;
@@ -101,8 +113,11 @@ async function main() {
   for (const entry of entries) {
     const label = `${entry.jurisdictionSlug}/${entry.serviceId}`;
     try {
-      const scorecard = await validateEntry(entry, manifestDirectory, validators);
-      console.log(`${label}: ${scorecard.statedCount}/6 stated`);
+      const { lint, scorecard } = await validateEntry(entry, manifestDirectory, validators);
+      if (lint.unwaived.length && !allowLintFindings) throw new Error(`pre-audit lint: ${lint.unwaived[0].recordId} ${lint.unwaived[0].check}`);
+      if (lint.unwaived.length) console.log(`${label}: warning: pre-audit lint: ${lint.unwaived.map((finding) => `${finding.recordId} ${finding.check}`).join(', ')}`);
+      const waived = lint.findings.filter((finding) => finding.waived);
+      console.log(`${label}: ${scorecard.statedCount}/6 stated${waived.length ? `; waived: ${waived.map((finding) => `${finding.recordId} ${finding.check}`).join(', ')}` : ''}`);
     } catch (error) {
       failed = true;
       console.log(`${label}: ${error instanceof Error ? error.message : String(error)}`);

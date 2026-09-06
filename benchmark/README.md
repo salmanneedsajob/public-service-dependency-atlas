@@ -4,7 +4,7 @@ Run this on your city to measure whether a public-service route tells a citizen 
 
 ## Grid-only path
 
-A grid-only ledger carries `meta`, one primary `scenario` with an empty `pathNodeIds`, `sources`, and `claims`; `agencies`, `nodes`, `edges`, `roadblocks`, and `journeys` are present as schema-required empty arrays. It carries no portal records or workflow graph records.
+A grid-only ledger carries `meta`, one primary `scenario` with an empty `pathNodeIds`, `sources`, and `claims`; `agencies`, `nodes`, `edges`, `roadblocks`, and `journeys` are present as schema-required empty arrays. It carries no portal records or workflow graph records. A jurisdictions manifest entry may include `lintWaivers`, an array of `{ recordId, check, reason }`; the validator gives these the same meaning as pre-audit handoff waivers, and each reason must name why the claim is atomic in substance when a lint result is waived.
 
 1. Choose a city, a service, and one primary scenario using `templates/service-scoping.md`. Keep the same trigger, applicant type, and route class when comparing cities.
 2. Freeze a short preregistration with `templates/preregistration.md`: the services, predictions, cell definitions, login rule, and date.

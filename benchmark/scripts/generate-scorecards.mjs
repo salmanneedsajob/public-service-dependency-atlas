@@ -43,6 +43,13 @@ async function optionalDirectoryJson(file) {
   }
 }
 
+function resolveJurisdictionPath(manifestDirectory, value) {
+  const root = /^(?:ledger|public)\//.test(value) ? projectRoot : manifestDirectory;
+  const resolved = path.resolve(root, value);
+  if (resolved !== root && !resolved.startsWith(`${root}${path.sep}`)) throw new Error(`Manifest path escapes its directory: ${value}`);
+  return resolved;
+}
+
 function reviewedExpectations(service, tags) {
   const reviewed = tags.services[service.reportServiceId ?? service.id]?.claims ?? {};
   const cells = Object.fromEntries(columns.map((column) => {
@@ -84,8 +91,9 @@ async function generateJurisdictionScorecards({ manifestPath = jurisdictionManif
   const results = [];
   for (const entry of manifest.entries) {
     if (entry.mode !== 'grid-only') throw new Error(`${entry.jurisdictionSlug}/${entry.serviceId} must use grid-only mode.`);
-    const ledgerPath = path.resolve(manifestDirectory, entry.ledgerFile);
-    const expectationsPath = path.resolve(manifestDirectory, entry.expectationsFile);
+    const ledgerPath = resolveJurisdictionPath(manifestDirectory, entry.ledgerFile);
+    const expectationsPath = resolveJurisdictionPath(manifestDirectory, entry.expectationsFile);
+    resolveJurisdictionPath(manifestDirectory, entry.auditFile);
     const scorecard = score({
       ledger: await readJson(ledgerPath),
       expectations: await readJson(expectationsPath),

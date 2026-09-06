@@ -1,0 +1,423 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru new domestic water connection grid-only re-score evidence ledger",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-09-06",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Grid-only benchmark run: sources and claims only, no nodes, edges, roadblocks or journeys. This is a second, independently gathered row for Bengaluru, produced by the same method as the twelve city rows so that the pilot site is measured the way the comparison cities were; it does not reuse and did not read the deep pilot ledger for this service. Desk research, no counter visited. Limitations: every one of the board's published rate documents for a new connection is a one-page scan with no text layer, so no figure could be read from any of them; the board's own Know Your Connection Fees route returned a zero-byte file; the amount payable is computed inside the application after login, which was not crossed; a statement that the board's English-language route does not carry through to its contact and office-location pages was recorded during the pass, and the audit found it uncited under protocol section 7 because the ledger holds no source record for the corporate site those pages sit on; it is retained as a contested claim, supports no cell, and should not be read as an established finding; four of the five source URLs have no Wayback snapshot. Do not submit personal data through this ledger. Two further audit limitations ship unresolved: the source record for the board's rate documents carries neither a publication date nor a visible-date note, which was not correctable without re-observation; and the corporate site bwssb.karnataka.gov.in was searched during the pass but has no source record in this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_bengaluru_bwssb",
+      "name": "Bangalore Water Supply and Sewerage Board",
+      "shortName": "BWSSB",
+      "officialUrl": "https://owcv2.bwssb.gov.in/consumer"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind32_water_residential",
+      "label": "Bengaluru new domestic water connection",
+      "summary": "The individual owner of a built residential property with no connection applies to the city's water utility for a new domestic water supply, with sewer only where the same application covers it. Bulk or high-rise connections, commercial use, regularisation of unauthorised connections, name transfer on an existing account and tanker supply are excluded.",
+      "tags": [
+        "primary"
+      ],
+      "pathNodeIds": [],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_bengaluru_grid_water_owcv2_consumer",
+      "title": "BWSSB online water connection consumer entry page - information, rates for new connection and status lookup",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owcv2.bwssb.gov.in/consumer",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'BWSSB - Bangalore Water Supply and Sewerage Board', with a toll-free number 1916. Direct current observation of a public official interface reachable without login. The page shows no visible last-updated date and carries a notice about demand-note validity dated to 2021, which is recorded as a limitation on its currency. Archive: the Wayback availability API returned no snapshot for this page on the access date, so no archive copy exists to point to; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    },
+    {
+      "id": "source_bengaluru_grid_water_owc_portal",
+      "title": "BWSSB Jaladhare consumer portal - login, important documents and application status",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Bangalore Water Supply and Sewerage Board'. Direct current observation of the board's current consumer portal, reachable without login, offering OTP login, consumer user manuals in English and Kannada, an important documents route and a public application-status route. Shows no visible last-updated date. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260217062507/https://owc.bwssb.gov.in/ (2026-02-17); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_bengaluru_grid_water_consumer_manual",
+      "title": "Jaladhare Application Consumer User Manual, version 1.0",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/docs/Consumer-Manual-English.pdf",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2025-09-23",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: served from the board's own consumer portal as its English consumer user manual. Twenty-five pages; the file metadata records a creation date of 2025-09-23, recorded as publishedAt. Archive: the Wayback availability API returned no snapshot for this file on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    },
+    {
+      "id": "source_bengaluru_grid_water_fee_documents",
+      "title": "Important documents - the board's published rate documents for a new connection",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://owc.bwssb.gov.in/important-docs",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Bangalore Water Supply and Sewerage Board'. Direct current observation of the route that lists the board's rate documents and links each as a PDF. Each linked file was retrieved and each is a one-page scan with no extractable text layer, so no figure could be read from any of them; that is recorded as a limitation on this run's reach rather than as a claim about their contents. Archive: the Wayback availability API returned no snapshot for this route on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    },
+    {
+      "id": "source_bengaluru_grid_water_tariff_2025",
+      "title": "Revised Water Tariff Ready Reckoner, consumption with effect from 01-04-2025",
+      "publisher": "Bangalore Water Supply and Sewerage Board",
+      "url": "https://bwssb.karnataka.gov.in/storage/pdf-files/WaterTariff-2025.pdf",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2025-04-01",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'BANGALORE WATER SUPPLY AND SEWERAGE BOARD'. Twelve pages, headed 'REVISED WATER TARIFF CONSUMPTION W.E.F. 01-04-2025, BILLING W.E.F. 01-05-2025'; the effective date is recorded as publishedAt. It states the recurring tariff after connection, not the charge for obtaining one. Archive: the Wayback availability API returned no snapshot for this file on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_bengaluru_grid_water_documents_required",
+      "text": "The board's online water connection consumer page states that the documents required are a lease-cum-sale deed or sale deed, a khata certificate, a building plan or sanction plan, photographs of the building with the owner, and a rainwater harvesting adoption document for premises measuring 1200 square feet and above.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "An enumerated document list published on the public entry page, with one item conditioned on the size of the premises."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_mandatory_documents_manual",
+      "text": "The board's consumer user manual states that mandatory documents include the building plan, a building photo with the owner, the lease-cum-sale deed, the khata and a road cutting endorsement if applicable, that up to five documents may be uploaded per document type, and that each file is limited to 5 MB.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The manual's list agrees with the entry page's and adds the road cutting endorsement and the upload limits."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rwh_threshold",
+      "text": "The board's online water connection consumer page states that a rainwater harvesting adoption document is required for premises measuring 1200 square feet and above.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A usable rule that turns on a measurable property of the applicant's premises."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_application_types",
+      "text": "The board's consumer user manual states that the applicant chooses between a Regular Application, an EMI Based Application under which the water connection charges are paid in instalments after an initial payment of Rs. 1,000 with the balance billed monthly, and a 110 Village Based Application for the 110 villages integrated into the city network, to which zone, layout and ETP charges apply.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A rule that decides which route and which charge set apply, turning on where the property is and how the applicant wishes to pay. The Rs. 1,000 is an instalment entry payment, not the connection charge."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_application_form_purchased",
+      "text": "The board's online water connection consumer page states that the applicant logs in with a mobile number, provides an email address and mobile number, makes payment to buy the application form, and then fills the application and uploads the documents.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The application form is bought rather than free; no amount is given on this or any reviewed route."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rate_components_published",
+      "text": "The board publishes, as separate documents on its consumer routes, the application fee, attachment fee, inspection charges, three months minimum deposit, meter cost for mechanical and AMR meters, sanitary point charges, GBWASP and BCC charges, revised prorata charges for residential buildings, prorata charges for other buildings, and states that line cost is charged as per actuals.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_fee_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Every component of the charge is named and given its own published document; what those documents say could not be read."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_rate_documents_unreadable",
+      "text": "Each of the board's linked rate documents for a new connection was retrieved and is a one-page scan with no extractable text layer, so no figure could be read from any of them.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_fee_documents"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Recorded as a limitation on this run's reach, not as a claim about what the documents contain."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_know_your_fees_empty",
+      "text": "The board's Know Your Connection Fees route, published on its consumer entry page, returned a zero-byte file on the access date.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Recorded as observed. This is the one route whose title promises the citizen the total they would pay."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_tentative_charges_after_entry",
+      "text": "The board's consumer user manual states that on the final review screen the system displays the tentative charges payable for the water connection based on the information entered, and that the applicant then chooses to pay in full or opt for an EMI.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The amount is computed inside the application rather than published, and the screen that shows it sits past the login."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_recurring_tariff",
+      "text": "The board's revised water tariff ready reckoner, for consumption with effect from 1 April 2025, gives the domestic slab tariff as Rs. 8.5 per kilolitre for a minimum of 0 to 8 kilolitres, Rs. 14 from 8 to 25, Rs. 34 from 25 to 50 and Rs. 55 from 50 to 100 and above, with sanitary charges for a domestic connection of Rs. 14 flat for consumption up to 8,000 litres and 25 per cent of water supply charges per month above that.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_tariff_2025"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "What the household pays once connected, not what the connection costs; recorded for completeness and not used for the cost cell."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_public_status_routes",
+      "text": "The board publishes two public application-status routes reachable without login: one on its online water connection consumer page taking an application number, and one on its Jaladhare consumer portal to check the status of the application.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_owc_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The routes and their fields were observed; nothing was entered, so no claim is made about what they return."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_acknowledgement_and_demand_note",
+      "text": "The board's consumer user manual states that after submission the applicant can view and download an acknowledgement from the Acknowledgement tab, that on successful approval of the connection a demand note is generated and appears in the payment section of the application, and that once payment is completed a payment receipt is generated which can be saved.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Three distinct surfaces the applicant sees after submitting: an acknowledgement, a demand note on approval, and a payment receipt."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_status_shows_stage_and_officer",
+      "text": "The board's consumer user manual states that the Status tab shows the current status of the application, the number of stages completed, and the assigned officer for that stage.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Stages are counted rather than dated, and the officer is named to the individual applicant inside the application rather than published."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_toll_free_and_helpdesk",
+      "text": "The board publishes a toll-free number 1916 on its consumer routes for help, complaints or support related to a water connection application, and links a contact document, a plumber list, a grievance form and a frequently asked questions route.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer",
+        "source_bengaluru_grid_water_consumer_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Institutional contact only. A helpline is a route into the board, not a route to the office or role that decides an application."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_english_route_not_carried",
+      "text": "The board's corporate site offers an English language route, and on the access date that route did not carry through to its contact information and office location pages, which rendered in Kannada.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owc_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [],
+      "notes": "Recorded as observed. It bears on whether an English-reading applicant can reach the office list; a Kannada-reading applicant may be able to. Audit 2026-09-06: the only cited source is source_bengaluru_grid_water_owc_portal, the Jaladhare consumer portal at owc.bwssb.gov.in, whose source record describes that portal's login, consumer manuals, important-documents and application-status routes; it does not cover the corporate site at bwssb.karnataka.gov.in or its contact and office-location pages, and the ledger holds no source record for those pages. The observation is retained and marked contested pending a source record for the pages actually observed, and it supports no expectation cell."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_stale_notice",
+      "text": "The board's online water connection consumer page carries a notice stating that all demand notes cancelled since 3 May 2021 will be valid up to 31 July 2021.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A notice five years past its own expiry, still displayed on the page as its only notice."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_login_boundary",
+      "text": "The board's application route requires login with a mobile number and an OTP, so the application form, the tentative charges screen and the assigned-officer view sit past a boundary this run did not cross.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_water_owc_portal",
+        "source_bengaluru_grid_water_owcv2_consumer"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The status routes beside it need no login, which is why the after-submission evidence does not rest on the gated surface."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_connection_charge_unknown",
+      "text": "What a resident owner pays for a new domestic water connection is not established by any reviewed public page: every rate document the board publishes is an unreadable scan, the route that would give the total returns an empty file, and the computed amount appears only inside the application after login.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Part of the reason is a login boundary, and part is that the published documents cannot be read at all."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_timeline_unknown",
+      "text": "How long a new domestic water connection takes, at any stage or in total, is not established by any reviewed public page; the board publishes a count of stages completed but no period for any of them.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related: the stage count is described in a public manual and carries no days."
+    },
+    {
+      "id": "claim_bengaluru_grid_water_deciding_office_unknown",
+      "text": "Which office or officer sanctions a new domestic water connection is not established by any reviewed public page; the board names an assigned officer only inside an individual application after login, and its published contact routes give a helpline and a general contact document rather than the deciding role.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Partly login-related: the assigned officer is shown to the applicant past the boundary."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

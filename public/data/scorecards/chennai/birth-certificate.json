@@ -1,0 +1,38 @@
+{
+  "serviceId": "birth-certificate",
+  "jurisdiction": "Chennai, Tamil Nadu, India",
+  "primaryScenarioId": "scenario_ind32_birth_copy_workflow",
+  "asOf": "2026-09-06",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimCount": 3
+    },
+    "documents": {
+      "state": "mentioned",
+      "claimCount": 1
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimCount": 1
+    },
+    "time": {
+      "state": "mentioned",
+      "claimCount": 3
+    },
+    "owner": {
+      "state": "stated",
+      "claimCount": 2
+    },
+    "after-submission": {
+      "state": "mentioned",
+      "claimCount": 2
+    }
+  },
+  "statedCount": 3,
+  "loginStrippedUnknownShare": 1,
+  "portalFriction": null,
+  "auditFile": "ledger/jurisdictions/chennai/audits/birth-certificate.md",
+  "benchmarkVersion": "0.1",
+  "source": "authored"
+}

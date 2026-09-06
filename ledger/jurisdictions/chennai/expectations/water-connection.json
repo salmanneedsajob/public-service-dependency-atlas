@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "water-connection",
+  "primaryScenarioId": "scenario_ind32_water_residential",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimIds": [
+        "claim_chennai_water_connection_charge_table",
+        "claim_chennai_water_meter_testing_charges",
+        "claim_chennai_water_application_free_and_where",
+        "claim_chennai_water_small_house_document_relief",
+        "claim_chennai_water_amount_payable_components"
+      ],
+      "searchedRoutes": [],
+      "note": "Amounts the citizen pays are published as a banded schedule the applicant is expected to apply themselves: Rs. 100 for water and Rs. 100 for sewer per dwelling unit for a residential independent house up to 500 square feet, Rs. 5,000 and Rs. 5,000 up to 100 square metres, Rs. 7,500 and Rs. 7,500 above that, plus meter testing charges from Rs. 100 to Rs. 500 by equivalent dwelling units, a free application form, and no advance tax for the smallest residential band. The published total is not exhaustive: the form's own list of components includes deposit amounts for water and sewer whose figures do not appear on any reviewed route, and that gap is carried as a separate unknown claim."
+    },
+    "documents": {
+      "state": "stated",
+      "claimIds": [
+        "claim_chennai_water_enclosure_list",
+        "claim_chennai_water_small_house_document_relief",
+        "claim_chennai_water_completion_certificate_exemption"
+      ],
+      "searchedRoutes": [],
+      "note": "An enumerated enclosure list is published on the application form itself: sanctioned plans, the property assessment notice with floor-wise details, acknowledged letters seeking assessment where the property is not yet assessed, signed plumbing drawings, proof of taxes paid up to date, the completion certificate where applicable, proof of infrastructure development charges where applicable, and floor-wise area details. The list is qualified in the citizen's favour for the scoped case: a residential independent house up to 500 square feet needs a built-up area statement and a ration card instead of the plumbing drawing, and a house up to 12 metres with no more than three dwelling units is exempt from the completion certificate."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_chennai_water_completion_certificate_exemption",
+        "claim_chennai_water_self_assessment_no_plumber",
+        "claim_chennai_water_connection_charge_table"
+      ],
+      "searchedRoutes": [],
+      "note": "Usable rules decide which route and which band apply: the charge and the enclosures turn on the equivalent dwelling units computed from built-up area, a residential building up to 12 metres with not more than three dwelling units or 750 square metres is exempt from producing a completion certificate, and the applicant may lodge the application themselves, the board having dispensed with the licensed-plumber requirement and allowed the proposal, charges and deposits to be self assessed and self certified."
+    },
+    "time": {
+      "state": "stated",
+      "claimIds": [
+        "claim_chennai_water_performance_standards_table",
+        "claim_chennai_water_stage_timeline_table"
+      ],
+      "searchedRoutes": [],
+      "note": "Service-level targets are published against named activities: intimation of a deficiency in the form within 3 days of registration, the sanction order within 5 days, and the house service connection effected within 15 days of registration on its merits, with a stage-by-stage table that sums to the same 15 days. One of the five stages, three days for the consumer to pay, is a deadline on the citizen rather than on the board; the 15 days run from registration of the application, not from the day the citizen first walks in."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_chennai_water_form_addressed_to_area_engineer",
+        "claim_chennai_water_officer_roles_in_process",
+        "claim_chennai_water_area_office_directory",
+        "claim_chennai_water_escalation_matrix"
+      ],
+      "searchedRoutes": [],
+      "note": "The citizen can identify the office and the role that decides, and reach it: the application is addressed to the Area Engineer, the published process names the Depot Engineer, Deputy Area Engineer and Area Engineer against the stage each owns, the board publishes an area office table with location, address and telephone number, and a complaint escalation matrix specific to new-connection applications names four designations with a period at each level before the Chief Engineer is notified."
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimIds": [
+        "claim_chennai_water_registration_id_and_sms",
+        "claim_chennai_water_sanction_order_after_payment",
+        "claim_chennai_water_public_status_route",
+        "claim_chennai_water_status_published_periodically"
+      ],
+      "searchedRoutes": [],
+      "note": "Several surfaces the citizen sees after submitting are identified: a unique registration ID generated and displayed on screen and sent by email or SMS, SMS intimation of the inspection slot, of any discrepancy, and of the date allotted for the connection, a sanction order generated after payment with SMS intimation, a published route to know the status of a new water or sewer connection, and the board's statement that the status of registered applications is published periodically on its website. Route disclosure: this cell is scored from two routes rather than one. claim_chennai_water_registration_id_and_sms is expressly conditioned on a successful online transaction, and claim_chennai_water_online_application_needs_login records that the online route requires the consumer to create an applicant login first, so that registration-ID surface sits behind an authentication boundary the citizen must cross; claim_chennai_water_sanction_order_after_payment describes approval preceding payment, which is that same online sequence and not the counter sequence in claim_chennai_water_registration_acknowledgement, where the connection charges are paid and the receipt enclosed before registration. The charges, enclosures and registration instructions supporting the cost, documents and eligibility cells are counter-route material. The cell is nonetheless stated on evidence independent of that boundary: the board's online services page was observed publishing a link to know the status of a new water or sewer connection, and the charter states that the status of registered applications is published periodically on the website, which speaks of registered applications on either route. The status route was read, not queried; neither link was exercised and no application reference was entered, so whether either destination requires authentication is not established. The counter acknowledgment given at the registration desk is deliberately excluded, because it is handed over at submission rather than after it."
+    }
+  }
+}

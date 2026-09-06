@@ -1,0 +1,209 @@
+{
+  "serviceId": "property-tax-payment",
+  "ledgerPath": "ledger/jurisdictions/hyderabad/property-tax-payment.json",
+  "auditPath": "ledger/jurisdictions/hyderabad/audits/property-tax-payment.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "correction_ptax_split_payment_modes_delete",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_ptax_payment_modes",
+      "fieldPath": "/",
+      "old": {
+        "id": "claim_hyderabad_ptax_payment_modes",
+        "text": "The corporation's property tax page states that payment can be made through handheld machines of bill collectors integrated with a central server, at 72 Mee-Seva centres within corporation limits, at citizen service centres in all 30 circles and the corporation head office, and online or by NEFT and RTGS, and at 537 branches of 8 banks.",
+        "jurisdiction": "Hyderabad, Telangana, India",
+        "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+        "nodeIds": [],
+        "sourceIds": ["source_hyderabad_ptax_ghmc_page"],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "A usable rule about where the tax may be paid, with counts for each channel."
+      },
+      "new": null,
+      "reason": "Section 1 requires one claim to assert one checkable thing and section 8's lint item 1 flags list claims. This record bundles five payment channels and four independently falsifiable counts (72, 30, 537, 8) into a single verified assertion, so the status cannot be attributed to any one channel. No waiver is visible in the audit's permitted inputs. Section 13 authorises the auditor to split compound claims; the record is deleted and replaced by four atomic claims plus the amended claim_hyderabad_ptax_thirty_circles, all resting on the same observed page text and the same source.",
+      "support": {
+        "sourceIds": ["source_hyderabad_ptax_ghmc_page"],
+        "auditNote": "Split, not new evidence: each replacement record carries one channel from the deleted record's own wording, at the same grade, basis and status. The citizen-service-centre channel is carried by the existing claim_hyderabad_ptax_thirty_circles rather than a fifth new record, which also removes the same-source duplication between the two."
+      }
+    },
+    {
+      "id": "correction_ptax_split_payment_mode_handheld",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_ptax_payment_mode_handheld",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_hyderabad_ptax_payment_mode_handheld",
+        "text": "The corporation's property tax page states that property tax can be paid through handheld machines of bill collectors integrated with a central server.",
+        "jurisdiction": "Hyderabad, Telangana, India",
+        "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+        "nodeIds": [],
+        "sourceIds": ["source_hyderabad_ptax_ghmc_page"],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "One payment channel, split from the compound payment-modes claim at audit. No count attaches to this channel on the page."
+      },
+      "reason": "Atomic replacement for the first channel of the deleted compound claim, so that each channel carries its own status under section 1.",
+      "support": {
+        "sourceIds": ["source_hyderabad_ptax_ghmc_page"],
+        "auditNote": "Wording taken from the deleted record; same source, grade B, basis observation, status verified."
+      }
+    },
+    {
+      "id": "correction_ptax_split_payment_mode_meeseva",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_ptax_payment_mode_meeseva",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_hyderabad_ptax_payment_mode_meeseva",
+        "text": "The corporation's property tax page states that property tax can be paid at 72 Mee-Seva centres within corporation limits.",
+        "jurisdiction": "Hyderabad, Telangana, India",
+        "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+        "nodeIds": [],
+        "sourceIds": ["source_hyderabad_ptax_ghmc_page"],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "One payment channel, split from the compound payment-modes claim at audit. The count of 72 is now separately checkable."
+      },
+      "reason": "Atomic replacement for the Mee-Seva channel of the deleted compound claim, so that its count carries its own status under section 1.",
+      "support": {
+        "sourceIds": ["source_hyderabad_ptax_ghmc_page"],
+        "auditNote": "Wording taken from the deleted record; same source, grade B, basis observation, status verified."
+      }
+    },
+    {
+      "id": "correction_ptax_split_payment_mode_online_neft_rtgs",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_ptax_payment_mode_online_neft_rtgs",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_hyderabad_ptax_payment_mode_online_neft_rtgs",
+        "text": "The corporation's property tax page states that property tax can be paid online or by NEFT and RTGS.",
+        "jurisdiction": "Hyderabad, Telangana, India",
+        "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+        "nodeIds": [],
+        "sourceIds": ["source_hyderabad_ptax_ghmc_page"],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "One payment channel, split from the compound payment-modes claim at audit. This is the channel the primary scenario takes first."
+      },
+      "reason": "Atomic replacement for the online, NEFT and RTGS channel of the deleted compound claim, under section 1.",
+      "support": {
+        "sourceIds": ["source_hyderabad_ptax_ghmc_page"],
+        "auditNote": "Wording taken from the deleted record; same source, grade B, basis observation, status verified."
+      }
+    },
+    {
+      "id": "correction_ptax_split_payment_mode_banks",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_ptax_payment_mode_banks",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_hyderabad_ptax_payment_mode_banks",
+        "text": "The corporation's property tax page states that property tax can be paid at 537 branches of 8 banks.",
+        "jurisdiction": "Hyderabad, Telangana, India",
+        "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+        "nodeIds": [],
+        "sourceIds": ["source_hyderabad_ptax_ghmc_page"],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "One payment channel, split from the compound payment-modes claim at audit. The counts of 537 and 8 are now separately checkable; the page does not name the banks."
+      },
+      "reason": "Atomic replacement for the bank-branch channel of the deleted compound claim, so that its two counts carry their own status under section 1.",
+      "support": {
+        "sourceIds": ["source_hyderabad_ptax_ghmc_page"],
+        "auditNote": "Wording taken from the deleted record; same source, grade B, basis observation, status verified."
+      }
+    },
+    {
+      "id": "correction_ptax_thirty_circles_text",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_ptax_thirty_circles",
+      "fieldPath": "/text",
+      "old": "The corporation's property tax page states that citizen service centres exist in all 30 circles and at the corporation head office.",
+      "new": "The corporation's property tax page states that property tax can be paid at citizen service centres in all 30 circles and at the corporation head office.",
+      "reason": "The deleted compound claim asserted the citizen-service-centre channel as a payment route from the same page as this record, which asserted the same centres as a structure. Section 1 tells the integrator to reuse a published ID and change content rather than identity, and section 13 lets the auditor merge duplicates, so the payment-channel assertion is carried here instead of in a fifth new record. The amended wording preserves the 30-circle structure that the owner cell relies on and adds no fact absent from the deleted record.",
+      "support": {
+        "sourceIds": ["source_hyderabad_ptax_ghmc_page"],
+        "auditNote": "Both the deleted compound claim and this record rest on the same page and the same observation; the merged wording is drawn from the deleted record's own text. Record identity, grade B, basis observation and status verified are unchanged, so the owner cell's citation of this ID stays valid."
+      }
+    },
+    {
+      "id": "correction_ptax_eligibility_claimids",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_hyderabad_ptax_ptin_or_mobile_required",
+        "claim_hyderabad_ptax_payment_modes"
+      ],
+      "new": [
+        "claim_hyderabad_ptax_ptin_or_mobile_required",
+        "claim_hyderabad_ptax_payment_mode_handheld",
+        "claim_hyderabad_ptax_payment_mode_meeseva",
+        "claim_hyderabad_ptax_thirty_circles",
+        "claim_hyderabad_ptax_payment_mode_online_neft_rtgs",
+        "claim_hyderabad_ptax_payment_mode_banks"
+      ],
+      "reason": "Reference integrity after the split: claim_hyderabad_ptax_payment_modes no longer exists, so the cell must cite the five records that now carry its channels. The cell state is unchanged at stated, since the entry rule and the route menu that supported it are preserved in full.",
+      "support": {
+        "sourceIds": ["source_hyderabad_ptax_ghmc_page", "source_hyderabad_ptax_payment_portal"],
+        "auditNote": "Mechanical consequence of the split in the same correction set; all five cited records are Grade B and verified, so section 8's rule that only verified or partial claims may support a positive cell state is still satisfied."
+      }
+    },
+    {
+      "id": "correction_ptax_documents_state",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/documents/state",
+      "old": "mentioned",
+      "new": "absent",
+      "reason": "Section 8 sets mentioned where the topic is named but no actionable value is given, and absent where the reviewed evidence does not touch the topic. The only claim cited records a portal form asking for a property tax identification number or a registered mobile number. An identifier is a data field, not a document, and no reviewed route for this scenario refers to a document at all, so the topic is not named. The document lists the corporation publishes belong to new assessment and mutation, which the scenario summary excludes.",
+      "support": {
+        "sourceIds": ["source_hyderabad_ptax_payment_portal", "source_hyderabad_ptax_ghmc_page", "source_hyderabad_ptax_receipt_route", "source_hyderabad_ptax_citizen_charter"],
+        "auditNote": "The cell's own note already concedes that what the route asks for is an identifier rather than a document to submit, provide, upload, produce or attach. The limitation is carried by claim_hyderabad_ptax_documents_for_payment_unknown, an Unknown claim, which under section 8 records a limitation and cannot supply a positive cell value."
+      }
+    },
+    {
+      "id": "correction_ptax_documents_claimids",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/documents/claimIds",
+      "old": [
+        "claim_hyderabad_ptax_ptin_or_mobile_required"
+      ],
+      "new": [],
+      "reason": "Section 9 allows an absent cell only optional topic-only claimIds. claim_hyderabad_ptax_ptin_or_mobile_required does not touch the documents topic, so citing it would present an identifier field as document evidence. The claim remains in the ledger and continues to support the eligibility cell, where it does give a usable rule.",
+      "support": {
+        "sourceIds": ["source_hyderabad_ptax_payment_portal"],
+        "auditNote": "The four searched routes and the search note are retained, which is what section 9 requires of an absent cell."
+      }
+    },
+    {
+      "id": "correction_ptax_documents_note",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/documents/note",
+      "old": "The topic is named without an actionable value. What the payment route asks for is an identifier, a property tax identification number or a registered mobile number, rather than a document to submit, provide, upload, produce or attach. The corporation does publish real document lists — registered sale deed, link documents, building sanction plan, occupancy certificate — but they belong to new assessment and to mutation, which this scope excludes, and they are not counted here.",
+      "new": "The reviewed evidence does not touch the topic for this scenario. What the payment route asks for is an identifier, a property tax identification number or a registered mobile number, rather than a document to submit, provide, upload, produce or attach, so the route does not refer to documents at all. The corporation does publish real document lists — registered sale deed, link documents, building sanction plan, occupancy certificate — but they belong to new assessment and to mutation, which this scope excludes, and they are not counted here. The searched routes are listed above; claim_hyderabad_ptax_documents_for_payment_unknown records the resulting limitation and, as an Unknown claim, supports no positive cell value.",
+      "reason": "The existing note opens by asserting that the topic is named, which is the mentioned state the cell no longer holds. The note is rewritten so that it states the absent finding and the search that produced it, without changing the substance of what was searched or found.",
+      "support": {
+        "auditNote": "Consequence of the state change in the same correction set; section 9 requires an absent cell to carry a search note."
+      }
+    }
+  ]
+}

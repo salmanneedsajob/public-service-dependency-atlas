@@ -1,0 +1,285 @@
+{
+  "serviceId": "birth-certificate",
+  "ledgerPath": "ledger/jurisdictions/delhi/birth-certificate.json",
+  "auditPath": "ledger/jurisdictions/delhi/audits/birth-certificate.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "corr_delhi_birth_01",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_sla_one_week",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades undated official material C; the C row is disjunctive, so undated alone is sufficient. The source's own note records that MCD's citizen charter is served as a page-flip reader and shows no publication or revision date, and this claim asserts a prescribed service-delivery timeline whose currency cannot be established from an undated document.",
+      "support": {
+        "sourceIds": ["source_delhi_birth_mcd_citizen_charter"],
+        "auditNote": "F1. Grade C still supports a stated cell under section 8, so the time cell state does not change."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_02",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_sla_one_week",
+      "fieldPath": "/notes",
+      "old": "A current MCD statement of the same order as the Chief Registrar charter's 7-day figure, from a source that is not tied to the pre-2022 corporations.",
+      "new": "An MCD statement of the same order as the Chief Registrar charter's 7-day figure, from a source that is not tied to the pre-2022 corporations. Graded C by the second audit because the charter carries no visible publication or revision date. The row is generic to issuance of a birth and death certificate and is not specific to a copy of an already registered birth, so it corroborates the order of magnitude rather than supplying the scenario's own figure.",
+      "reason": "The note called the charter a current source, which section 4 does not permit for material carrying no visible publication or revision date, and it did not record that the row is generic to certificate issuance rather than specific to a copy of an already registered birth.",
+      "support": {
+        "sourceIds": ["source_delhi_birth_mcd_citizen_charter"],
+        "auditNote": "F1 and F5. The word 'current' was not established for an undated document."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_03",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_sla_institutional_instant",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades undated official material C. MCD's citizen charter shows no publication or revision date, and this claim asserts a prescribed timeline rather than the page's present visible state.",
+      "support": {
+        "sourceIds": ["source_delhi_birth_mcd_citizen_charter"],
+        "auditNote": "F1."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_04",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_sla_institutional_instant",
+      "fieldPath": "/status",
+      "old": "verified",
+      "new": "partial",
+      "reason": "The row is scoped to an institutional event, which the primary scenario excludes as a hospital-side registration step, and the scenario covers a birth already on the register. Recorded as partial for this scenario, following the treatment already applied to claim_delhi_birth_mcd_certificate_printout.",
+      "support": {
+        "sourceIds": ["source_delhi_birth_mcd_citizen_charter"],
+        "auditNote": "F3. The claim carries no cell weight; the status change is for scope consistency across the three institutional and domiciliary charter rows."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_05",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_sla_institutional_instant",
+      "fieldPath": "/notes",
+      "old": "The scoped scenario covers a birth already registered; this row applies where the event was institutional.",
+      "new": "The scoped scenario covers a birth already registered; this row applies where the event was institutional, which the scenario excludes as a hospital-side registration step. Recorded as partial for this scenario by the second audit and cited in no expectation cell. Graded C because the charter carries no visible publication or revision date.",
+      "reason": "The note recorded the scope mismatch but not that the institutional route is an excluded hospital-side registration step, nor the grade rationale; it must match the corrected status and grade.",
+      "support": {
+        "sourceIds": ["source_delhi_birth_mcd_citizen_charter"],
+        "auditNote": "F1 and F3."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_06",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_institutional_processing",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades undated official material C. MCD's citizen charter shows no publication or revision date, and this claim asserts a prescribed routing rule rather than the page's present visible state.",
+      "support": {
+        "sourceIds": ["source_delhi_birth_mcd_citizen_charter"],
+        "auditNote": "F1."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_07",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_institutional_processing",
+      "fieldPath": "/status",
+      "old": "verified",
+      "new": "partial",
+      "reason": "Processing by the health unit where the child is born is a hospital-side registration step, which the primary scenario expressly excludes, and it describes handling at the time of the event rather than a request for a copy of a birth already on the register. Retained as evidence but scoped, following claim_delhi_birth_mcd_certificate_printout.",
+      "support": {
+        "sourceIds": ["source_delhi_birth_mcd_citizen_charter"],
+        "auditNote": "F3. Read as a route rule for this scenario it would also conflict with the FAQ's plain-paper application to the concerned area Registrar and with MCD's own zone-routing instruction."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_08",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_institutional_processing",
+      "fieldPath": "/notes",
+      "old": "A routing rule that identifies which body handles the case.",
+      "new": "A routing rule that identifies which body handles the case at the time of an institutional event. Recorded as partial for this scenario by the second audit: the primary scenario excludes hospital-side registration steps and covers a birth already on the register, so this row is not a route rule for a copy request and was removed from the eligibility cell. Graded C because the charter carries no visible publication or revision date.",
+      "reason": "The note presented the row as a routing rule for this scenario without recording that it describes an excluded hospital-side step at the time of the event; it must match the corrected status and grade.",
+      "support": {
+        "sourceIds": ["source_delhi_birth_mcd_citizen_charter"],
+        "auditNote": "F1 and F3."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_09",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_domiciliary_route",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades undated official material C. MCD's citizen charter shows no publication or revision date, and this claim asserts a prescribed route rather than the page's present visible state.",
+      "support": {
+        "sourceIds": ["source_delhi_birth_mcd_citizen_charter"],
+        "auditNote": "F1."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_10",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_domiciliary_route",
+      "fieldPath": "/status",
+      "old": "verified",
+      "new": "partial",
+      "reason": "Parents applying on the MCD portal for a home or other delivery event is the initial application for a birth not yet on the register, whereas the primary scenario is scoped to a birth already registered. Retained as evidence but scoped, following claim_delhi_birth_mcd_certificate_printout.",
+      "support": {
+        "sourceIds": ["source_delhi_birth_mcd_citizen_charter"],
+        "auditNote": "F3. The reviewed public pages do not show a citizen surface for a copy of an already registered birth; that surface sits behind portal signup, per claim_delhi_birth_mcd_citizen_surface_behind_signup."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_11",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_mcd_domiciliary_route",
+      "fieldPath": "/notes",
+      "old": "Matches the scoped applicant type, a parent resident in the city.",
+      "new": "Matches the scoped applicant type, a parent resident in the city, but not the scenario's trigger: the row describes the application made for a home or other delivery event, which is the registration application rather than a request for a copy of a birth already on the register. Recorded as partial for this scenario by the second audit and removed from the eligibility cell. Graded C because the charter carries no visible publication or revision date.",
+      "reason": "The note asserted that the row matches the scoped scenario. It matches the applicant type only; the row describes the registration application for a birth not yet on the register, and the note must match the corrected status and grade.",
+      "support": {
+        "sourceIds": ["source_delhi_birth_mcd_citizen_charter"],
+        "auditNote": "F1 and F3."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_12",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_registrar_directory_published",
+      "fieldPath": "/text",
+      "old": "The Chief Registrar's births and deaths page publishes a downloadable Directory of Area Wise Registrar and Sub-Registrar and gives the directorate's office contact address jddes.delhi@gov.in and telephone 23812851.",
+      "new": "The Chief Registrar's births and deaths page publishes a downloadable Directory of Area Wise Registrar and Sub-Registrar.",
+      "reason": "Section 1 requires one claim to assert one checkable thing, and section 13 permits the auditor to split compound claims. The claim asserted both a published directory and a published contact route, two separately checkable things that were carrying two different prongs of the section 8 owner definition at once. The contact route moves to claim_delhi_birth_directorate_office_contact.",
+      "support": {
+        "sourceIds": ["source_delhi_birth_des_registration_page"],
+        "auditNote": "F4. No evidence is added or removed; the parent ID is retained for the directory half, following the precedent recorded in claim_delhi_birth_subregistrar_designation."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_13",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_registrar_directory_published",
+      "fieldPath": "/notes",
+      "old": "Institutional contact details published by the agency; no personal data recorded.",
+      "new": "Atomic after the second audit split the published office contact route out into claim_delhi_birth_directorate_office_contact; this claim now asserts only that the area-wise directory is published.",
+      "reason": "The note described the contact details, which have moved to the new claim.",
+      "support": {
+        "auditNote": "F4."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_14",
+      "recordType": "claim",
+      "recordId": "claim_delhi_birth_directorate_office_contact",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_birth_directorate_office_contact",
+        "text": "The Chief Registrar's births and deaths page gives the directorate's office contact address jddes.delhi@gov.in and telephone 23812851.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": [
+          "scenario_ind32_birth_copy_workflow"
+        ],
+        "nodeIds": [],
+        "sourceIds": [
+          "source_delhi_birth_des_registration_page"
+        ],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split by the second audit from claim_delhi_birth_registrar_directory_published for atomicity; that claim asserted a published directory and a published contact route, two separately checkable things. Institutional contact details published by the agency; no personal data recorded."
+      },
+      "reason": "The separated half of the compound claim, carrying the contact-route prong of the section 8 owner definition. Same source, grade, basis and status as the record it was split from.",
+      "support": {
+        "sourceIds": ["source_delhi_birth_des_registration_page"],
+        "auditNote": "F4. Addition of an existing assertion under its own ID, not new evidence."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_15",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_delhi_birth_place_of_occurrence_rule",
+        "claim_delhi_birth_issue_within_seven_days",
+        "claim_delhi_birth_mcd_zone_routing",
+        "claim_delhi_birth_mcd_domiciliary_route",
+        "claim_delhi_birth_mcd_institutional_processing"
+      ],
+      "new": [
+        "claim_delhi_birth_place_of_occurrence_rule",
+        "claim_delhi_birth_issue_within_seven_days",
+        "claim_delhi_birth_mcd_zone_routing"
+      ],
+      "reason": "Section 2 scores the grid on the primary scenario only. The two MCD citizen-charter rows removed here belong to the registration stage: the institutional row describes processing by the health unit where the child was born, a hospital-side step the scenario excludes, and the domiciliary row describes the application made for a home birth, not a request for a copy of a birth already on the register.",
+      "support": {
+        "sourceIds": ["source_delhi_birth_mcd_citizen_charter"],
+        "auditNote": "F3. The cell remains stated on the two on-route Grade B rules: registration and therefore issue only at the place of occurrence, and the request must go to the zone where the event took place or it may be rejected."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_16",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/eligibility/note",
+      "old": "Usable rules decide which route applies: the birth must already be registered, registration and therefore issue happen only at the place of occurrence, and the request must go to the zone in which the event took place or it may be rejected. MCD's citizen charter adds the split that decides the route: an institutional event is processed by the health unit where the child was born, while for home and other delivery events the parents apply directly on the MCD portal.",
+      "new": "Usable rules decide who qualifies and which route applies: the birth must already be registered, registration and therefore issue happen only at the place of occurrence so an event outside Delhi cannot be handled here, and the request must go to the zone in which the event took place or it may be rejected. The second audit removed the two MCD citizen-charter rows previously cited here. The institutional row describes processing by the health unit where the child was born, a hospital-side registration step this scenario excludes, and reading it as a route rule for a copy request would conflict with the FAQ's plain-paper application to the concerned area Registrar. The domiciliary row describes parents applying on the MCD portal for a home birth, which is the registration application rather than a request for a copy of a birth already on the register. Both are retained in the ledger as partial, scope-limited claims.",
+      "reason": "The note stated the removed institutional and domiciliary rows as the split that decides the route for this scenario. It must record the copy-route rules the cell actually rests on, and why the registration-stage evidence was removed.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_des_faq",
+          "source_delhi_birth_mcd_rbd_instructions",
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F3."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_17",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/time/note",
+      "old": "An actionable service-level target is published: 7 days from receipt of the application, and a delivery schedule of 3 days for a new record against 7 days for an old manual record. The figure covers issue of the certificate only, not any counter queue or collection step. A second, current MCD source, its citizen charter, publishes the same order of figure as 'Variable (Max timeline - 1 week)', which does not depend on the potentially outdated Chief Registrar charter.",
+      "new": "An actionable service-level target is published: 7 days from the date of receipt of the application, expressly for a birth that has already been registered, and a delivery schedule of 3 days for a new record against 7 days for an old manual record. The figure covers issue of the certificate only, not any counter queue or collection step. MCD's citizen charter corroborates the order of magnitude as 'Variable (Max timeline - 1 week)' from a source not tied to the pre-2022 corporations, but that charter carries no visible publication or revision date and its row is not specific to a copy of an already registered birth, so the second audit graded it C. Limitation: every figure in this cell now comes from official material that is undated, and in the Chief Registrar charter's case also visibly outdated, so the cell is stated on Grade C evidence.",
+      "reason": "Section 4 requires the date and limitation to be stated for undated material, and the note described that undated charter as a 'current' source. The single-stage caveat the section 8 definition requires is preserved.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_birth_citizen_charter",
+          "source_delhi_birth_mcd_citizen_charter"
+        ],
+        "auditNote": "F5 and F7. The cell state is upheld: Grade C supports stated under section 8, and the 7-day figure is expressly conditioned on the birth already being registered."
+      }
+    },
+    {
+      "id": "corr_delhi_birth_18",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/owner/claimIds",
+      "old": [
+        "claim_delhi_birth_registrar_designation",
+        "claim_delhi_birth_collection_point",
+        "claim_delhi_birth_registrar_directory_published",
+        "claim_delhi_birth_chief_registrar_not_issuer"
+      ],
+      "new": [
+        "claim_delhi_birth_registrar_designation",
+        "claim_delhi_birth_collection_point",
+        "claim_delhi_birth_registrar_directory_published",
+        "claim_delhi_birth_directorate_office_contact",
+        "claim_delhi_birth_chief_registrar_not_issuer"
+      ],
+      "reason": "Consequential on the atomicity split: the contact-route prong of the section 8 owner definition now lives in claim_delhi_birth_directorate_office_contact and must be cited alongside the directory claim it was separated from.",
+      "support": {
+        "sourceIds": ["source_delhi_birth_des_registration_page"],
+        "auditNote": "F4. No change to the cell state or to the evidence behind it."
+      }
+    }
+  ]
+}

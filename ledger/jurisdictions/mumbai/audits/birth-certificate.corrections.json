@@ -1,0 +1,72 @@
+{
+  "serviceId": "birth-certificate",
+  "ledgerPath": "ledger/jurisdictions/mumbai/birth-certificate.json",
+  "auditPath": "ledger/jurisdictions/mumbai/audits/birth-certificate.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "correction_mumbai_birth_ward_list_split_text",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_ward_list_published",
+      "fieldPath": "/text",
+      "old": "BMC publishes a ward list naming its twenty-four wards, and the same page rendered a portal runtime error reading 'An exception occurred while processing your request' with an exception ID on the access date.",
+      "new": "BMC publishes a ward list naming its twenty-four wards.",
+      "reason": "Compound claim. Protocol section 1 requires one claim to assert one checkable thing and section 8 lint item 1 flags compound claims; the publication of the ward list and the portal runtime error observed on the same page are two independently checkable facts joined by 'and'. The text is narrowed to the publication fact and the observation is moved to a new atomic claim. Record identity is preserved as section 1 requires; no expectation cell cites this claim, so no cell is affected.",
+      "support": {
+        "sourceIds": ["source_mumbai_birth_ward_list"],
+        "auditNote": "Both facts are already recorded verbatim in the notes of source_mumbai_birth_ward_list, so the split creates no new evidence. See audit finding F1."
+      }
+    },
+    {
+      "id": "correction_mumbai_birth_ward_list_split_add",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_birth_ward_list_runtime_error",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_mumbai_birth_ward_list_runtime_error",
+        "text": "BMC's ward list page rendered a portal runtime error reading 'An exception occurred while processing your request. Send the exception ID to your portal administrator.' with exception ID 10:21_06/09/26_302592051 on the access date.",
+        "jurisdiction": "Mumbai, Maharashtra, India",
+        "scenarioIds": ["scenario_ind32_birth_copy_workflow"],
+        "nodeIds": [],
+        "sourceIds": ["source_mumbai_birth_ward_list"],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split by audit from claim_mumbai_birth_ward_list_published for atomicity under protocol section 1. Direct current observation of a public official interface, graded B under the section 4 table and the public-workflow rule in section 1."
+      },
+      "reason": "Addition completing the atomicity split in the preceding correction: the runtime error observed on the ward list page is recorded as its own claim so it can be checked, contradicted or superseded independently of the fact that the ward list is published.",
+      "support": {
+        "sourceIds": ["source_mumbai_birth_ward_list"],
+        "auditNote": "The error text and exception ID are taken from the existing text of claim_mumbai_birth_ward_list_published and the notes of source_mumbai_birth_ward_list. No new evidence is asserted. See audit finding F1."
+      }
+    },
+    {
+      "id": "correction_mumbai_birth_ph_faq_snapshot_url",
+      "recordType": "source",
+      "recordId": "source_mumbai_birth_ph_faq",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: the document's own masthead reads 'MUNICIPAL CORPORATION OF GREATER MUMBAI, PUBLIC HEALTH DEPARTMENT' and it is signed 'sd/- Executive Health Officer'. It carries no visible date on its face; the PDF metadata records a creation date of 2018-09-10, which is recorded as the best available dating and as a limitation, so claims from it are graded C as potentially outdated official material. Six pages in English, Marathi and Hindi; only the English section is quoted. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240616125010/ for this file (2024-06-16); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: the document's own masthead reads 'MUNICIPAL CORPORATION OF GREATER MUMBAI, PUBLIC HEALTH DEPARTMENT' and it is signed 'sd/- Executive Health Officer'. It carries no visible date on its face; the PDF metadata records a creation date of 2018-09-10, which is recorded as the best available dating and as a limitation, so claims from it are graded C as potentially outdated official material. Six pages in English, Marathi and Hindi; only the English section is quoted. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240616125010/https://portal.mcgm.gov.in/irj/go/km/docs/documents/MCGM%20Department%20List/Public%20Health%20Department/Docs/FAQ%20Birth%20and%20Death%20Registration%20-%20English,%20Marathi,%20Hindi.pdf (2024-06-16); no new capture was pushed from this run.",
+      "reason": "Protocol section 11 requires the snapshot URL to be recorded with the source, and section 14 requires a Wayback snapshot or a documented archival failure. The recorded URL is truncated after the timestamp and carries no target, so it does not resolve to the snapshot the note asserts was found. The URL is completed to the canonical Wayback form using the timestamp already recorded and this source's own url field.",
+      "support": {
+        "sourceIds": ["source_mumbai_birth_ph_faq"],
+        "auditNote": "Change of expression only: the same snapshot and the same capture date already asserted in the record are rewritten in resolvable form. No new snapshot, date or finding is asserted. See audit finding F2."
+      }
+    },
+    {
+      "id": "correction_mumbai_birth_apply_faq_snapshot_url",
+      "recordType": "source",
+      "recordId": "source_mumbai_birth_portal_apply_faq",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'MyBMC - Welcome to BMC's Website'. A live official interface reached without login; it shows no visible last-updated or version date, which is recorded as a limitation. Fourteen questions in English, read in full. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220307174225/ for this route (2022-03-07); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'MyBMC - Welcome to BMC's Website'. A live official interface reached without login; it shows no visible last-updated or version date, which is recorded as a limitation. Fourteen questions in English, read in full. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220307174225/https://portal.mcgm.gov.in/irj/servlet/prt/portal/prtroot/com.mcgm.acitizenservices_healthservices.HowToApplyForBirthCertificate (2022-03-07); no new capture was pushed from this run.",
+      "reason": "Protocol section 11 requires the snapshot URL to be recorded with the source, and section 14 requires a Wayback snapshot or a documented archival failure. The recorded URL is truncated after the timestamp and carries no target, so it does not resolve. The URL is completed to the canonical Wayback form using the timestamp already recorded and this source's own url field.",
+      "support": {
+        "sourceIds": ["source_mumbai_birth_portal_apply_faq"],
+        "auditNote": "Change of expression only; no new snapshot, date or finding is asserted. See audit finding F3."
+      }
+    }
+  ]
+}

@@ -1,0 +1,440 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Mumbai birth certificate (copy of a registered birth) grid-only evidence ledger",
+    "jurisdiction": "Mumbai, Maharashtra, India",
+    "asOf": "2026-09-06",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Grid-only benchmark run: sources and claims only, no nodes, edges, roadblocks or journeys. Desk research, no counter visited. Limitations: the corporation's own quick link 'Application for Birth Certificate' returned HTTP 403 'Service cannot be reached' on the access date on both portal.mcgm.gov.in and www.mcgm.gov.in, so the online application route could not be reached at all; the Public Health Department FAQ that carries every fee figure has no visible date on its face and its file metadata gives a creation date of 10 September 2018, so it is treated as potentially outdated official material; the Birth/Death page that links it displays 'Last updated on 31/12/2016'; the downloadable application form is a scanned image with no text layer, so any document list printed on it could not be read; the citizen portal application surface itself requires login and was not entered. Do not submit personal data through this ledger. Audit limitation carried unresolved: no archive snapshot was captured at access time for the observed HTTP 403 on the birth-certificate quick link or for the ward-list portal runtime error, so neither observation is preserved in any archive; the existing Wayback copies of those routes predate the access date and show different content."
+  },
+  "agencies": [
+    {
+      "id": "agency_mumbai_mcgm_health",
+      "name": "Municipal Corporation of Greater Mumbai, Public Health Department",
+      "shortName": "MCGM Public Health Department",
+      "officialUrl": "https://portal.mcgm.gov.in/irj/portal/anonymous/qlhealth?guest_user=english"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind32_birth_copy_workflow",
+      "label": "Mumbai birth certificate copy",
+      "summary": "A parent resident in Mumbai seeks a certified copy or first certificate of a birth already registered in the city's civil register, by the municipal civil-registration route, public entry, online where offered and counter route otherwise. Delayed registration, name inclusion, corrections, births outside the city and hospital-side registration steps are excluded.",
+      "tags": [
+        "primary"
+      ],
+      "pathNodeIds": [],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_mumbai_birth_ph_faq",
+      "title": "FAQ on Birth and Death - Municipal Corporation of Greater Mumbai, Public Health Department",
+      "publisher": "Municipal Corporation of Greater Mumbai",
+      "url": "https://portal.mcgm.gov.in/irj/go/km/docs/documents/MCGM%20Department%20List/Public%20Health%20Department/Docs/FAQ%20Birth%20and%20Death%20Registration%20-%20English,%20Marathi,%20Hindi.pdf",
+      "accessedAt": "2026-09-06",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: the document's own masthead reads 'MUNICIPAL CORPORATION OF GREATER MUMBAI, PUBLIC HEALTH DEPARTMENT' and it is signed 'sd/- Executive Health Officer'. It carries no visible date on its face; the PDF metadata records a creation date of 2018-09-10, which is recorded as the best available dating and as a limitation, so claims from it are graded C as potentially outdated official material. Six pages in English, Marathi and Hindi; only the English section is quoted. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240616125010/https://portal.mcgm.gov.in/irj/go/km/docs/documents/MCGM%20Department%20List/Public%20Health%20Department/Docs/FAQ%20Birth%20and%20Death%20Registration%20-%20English,%20Marathi,%20Hindi.pdf (2024-06-16); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_mumbai_birth_portal_health_page",
+      "title": "Birth/Death - MyBMC citizen page",
+      "publisher": "Brihanmumbai Municipal Corporation",
+      "url": "https://portal.mcgm.gov.in/irj/portal/anonymous/qlhealth?guest_user=english",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2016-12-31",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'MyBMC - Welcome to BMC's Website', with the page text naming 'the Health Department ... of BMC'. The page footer displays 'Last updated on 31/12/2016', recorded as publishedAt; on that basis it is visibly outdated and claims from it are graded C. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250430014324/https://portal.mcgm.gov.in/irj/portal/anonymous/qlhealth?guest_user=english (2025-04-30); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_mumbai_birth_portal_apply_faq",
+      "title": "Frequently Asked Questions (FAQs) regarding the application process - birth certificate",
+      "publisher": "Brihanmumbai Municipal Corporation",
+      "url": "https://portal.mcgm.gov.in/irj/servlet/prt/portal/prtroot/com.mcgm.acitizenservices_healthservices.HowToApplyForBirthCertificate",
+      "accessedAt": "2026-09-06",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'MyBMC - Welcome to BMC's Website'. A live official interface reached without login; it shows no visible last-updated or version date, which is recorded as a limitation. Fourteen questions in English, read in full. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220307174225/https://portal.mcgm.gov.in/irj/servlet/prt/portal/prtroot/com.mcgm.acitizenservices_healthservices.HowToApplyForBirthCertificate (2022-03-07); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_mumbai_birth_quicklink_error",
+      "title": "Application for Birth Certificate quick link - portal error response",
+      "publisher": "Brihanmumbai Municipal Corporation",
+      "url": "https://portal.mcgm.gov.in/irj/portal/anonymous/qlbirthcertificate?guest_user=english",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: the page renders inside the 'MyBMC' shell of the Brihanmumbai Municipal Corporation. Direct current observation of a public official interface: the route returns 'Service cannot be reached', 'URL call was terminated because the corresponding service is not available', 'HTTP 403 - Forbidden'. The same result was observed on the parallel host www.mcgm.gov.in. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20251228084813/https://portal.mcgm.gov.in/irj/portal/anonymous/qlbirthcertificate?guest_user=english (2025-12-28); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_mumbai_birth_ward_list",
+      "title": "Ward list - MyBMC",
+      "publisher": "Brihanmumbai Municipal Corporation",
+      "url": "https://portal.mcgm.gov.in/irj/portal/anonymous/qlallward",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2026-04-16",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'MyBMC - Welcome to BMC's Website'. The page footer displays 'Last updated on 16/04/2026', recorded as publishedAt. Direct current observation: the page lists the wards and, below the list, renders 'Portal runtime error - An exception occurred while processing your request. Send the exception ID to your portal administrator. Exception ID 10:21_06/09/26_302592051'. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220805115551/https://portal.mcgm.gov.in/irj/portal/anonymous/qlallward (2022-08-05); no new capture was pushed from this run."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_mumbai_birth_fee_post_2016_six_rupees",
+      "text": "The MCGM Public Health Department FAQ states that for birth events occurring after 1 January 2016 a charge of Rs. 6 applies for each copy, because the certificates are generated from the Central Government's Civil Registration System software on the website crs.orgi.gov.in.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_ph_faq"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "An amount a citizen pays, for the period that covers a birth registered in recent years. Graded C because the document is undated on its face and its file metadata dates it to 2018."
+    },
+    {
+      "id": "claim_mumbai_birth_fee_pre_2016_first_copy_free",
+      "text": "The MCGM Public Health Department FAQ states that for birth events occurring before 31 December 2015 the first copy of the birth certificate is free of charge to relatives after producing necessary documents.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_ph_faq"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "An explicit zero, recorded as a stated value under protocol section 3."
+    },
+    {
+      "id": "claim_mumbai_birth_fee_pre_2016_non_relative",
+      "text": "The MCGM Public Health Department FAQ states that for birth events occurring before 31 December 2015 a person other than a relative pays Rs. 20 plus Rs. 2 searching charges, and Rs. 30 for each further copy.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_ph_faq"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The scoped applicant is a parent, so the relative rate applies; the non-relative rate is recorded because it is part of the same published schedule."
+    },
+    {
+      "id": "claim_mumbai_birth_obtain_at_ward_cfc",
+      "text": "The MCGM Public Health Department FAQ states that citizens can obtain a birth certificate from the Civic Facility Center of the ward office after applying in the prescribed format and paying the necessary charges, on working days between 8 a.m. and 8 p.m.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_ph_faq"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Counter opening hours, not a processing duration."
+    },
+    {
+      "id": "claim_mumbai_birth_registered_in_concerned_ward",
+      "text": "The MCGM Public Health Department FAQ states that a birth occurring in a hospital or at home is registered in the ward office of the Municipal Corporation of Greater Mumbai in whose area the event occurred.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_ph_faq"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A jurisdiction rule that identifies which office holds the record."
+    },
+    {
+      "id": "claim_mumbai_birth_issued_by_registrar_of_place",
+      "text": "The MCGM Public Health Department FAQ states that a birth certificate is issued by the Registrar of the local government institution of the place where the event occurred, so a certificate cannot be obtained in Mumbai for an event that happened outside Mumbai.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_ph_faq"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_mumbai_birth_faq_signed_by_eho",
+      "text": "The MCGM Public Health Department FAQ on birth and death is issued over the signature block of the Executive Health Officer.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_ph_faq"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A designation, recorded as the officer under whose authority the guidance is published rather than as the officer who decides an individual application."
+    },
+    {
+      "id": "claim_mumbai_birth_health_department_responsible",
+      "text": "BMC's Birth/Death citizen page states that the Health Department is the administrative department of BMC responsible for birth and death registrations and the issue of birth and death certificates.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_portal_health_page"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Graded C because the page displays a last-updated date of 31 December 2016."
+    },
+    {
+      "id": "claim_mumbai_birth_form_download_route",
+      "text": "BMC's Birth/Death citizen page offers the birth certificate application form as a download under the heading 'Online Applications - Apply', linking to a PDF file.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_portal_health_page"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The linked file was retrieved and is a scanned image with no text layer, so nothing printed on the form could be read in this environment; that is a limitation on this run's reach, not a claim about the form's content."
+    },
+    {
+      "id": "claim_mumbai_birth_apply_at_cfc_or_online",
+      "text": "BMC's birth-certificate application FAQ states that the applicant may visit the nearest Citizen Facilitation Center established by the Municipal Corporation belonging to any of the 24 wards of BMC, or fill in the online application form on the Citizen Portal, provided the applicant's birth is already registered with BMC.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_portal_apply_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The proviso 'provided applicant's birth is already registered with BMC' matches this scenario's trigger."
+    },
+    {
+      "id": "claim_mumbai_birth_records_after_1996_online",
+      "text": "BMC's birth-certificate application FAQ states that birth records after the year 1996 are available in the system but records prior to 1996 may not be available in the system as of now, and directs the applicant to the nearest ward for further help.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_portal_apply_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A rule that decides which route applies: online for post-1996 records, the ward counter otherwise."
+    },
+    {
+      "id": "claim_mumbai_birth_search_by_registration_number",
+      "text": "BMC's birth-certificate application FAQ states that the applicant searches the registration record by entering the registration number provided by the hospital, nursing home or maternity home, and that where the registration number is not known the search may instead use gender, date of birth, ward, father's name, mother's name or hospital name.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_portal_apply_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_mumbai_birth_fee_topic_without_amount",
+      "text": "BMC's birth-certificate application FAQ answers the question whether a fee must be paid by describing only how to pay, saying that online payment can be made by net banking from the listed banks through the payment gateway, without stating any amount.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_portal_apply_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A payment step without an amount; recorded to show where the citizen is left, not to support the cost cell, which rests on the Public Health Department schedule."
+    },
+    {
+      "id": "claim_mumbai_birth_documents_unnamed",
+      "text": "BMC's birth-certificate application FAQ states that an applicant at the Citizen Facilitation Center needs to submit the duly signed application form along with required documents, without naming any document.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_portal_apply_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The topic of documents is named without telling the citizen what is required."
+    },
+    {
+      "id": "claim_mumbai_birth_cfc_issues_certificate_and_receipt",
+      "text": "BMC's birth-certificate application FAQ states that the Citizen Facilitation Center agent collects the necessary fees and required documents, and as a final step prints and issues the certificates and a fee receipt to the applicant.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_portal_apply_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A result and a receipt the applicant receives after submitting at the counter."
+    },
+    {
+      "id": "claim_mumbai_birth_delivery_mode_choice",
+      "text": "BMC's birth-certificate application FAQ states that the applicant chooses a mode of delivery, either collecting the certificate from the ward or having it couriered to the applicant's address, and that a couriered certificate will arrive within the days stipulated by the Department of Posts.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_portal_apply_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The delivery period is expressed by reference to another department's unstated schedule, so it carries no figure the citizen can act on."
+    },
+    {
+      "id": "claim_mumbai_birth_quicklink_http_403",
+      "text": "The corporation's own quick link 'Application for Birth Certificate' returned an error page reading 'Service cannot be reached', 'URL call was terminated because the corresponding service is not available' and 'HTTP 403 - Forbidden' on the access date, on both portal.mcgm.gov.in and www.mcgm.gov.in.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_quicklink_error"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct current observation of a public official interface. Recorded as observed rather than replaced by a homepage."
+    },
+    {
+      "id": "claim_mumbai_birth_ward_list_published",
+      "text": "BMC publishes a ward list naming its twenty-four wards.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_ward_list"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The list names wards; it does not give a Civic Facility Center address or a contact for the birth-certificate route."
+    },
+    {
+      "id": "claim_mumbai_birth_current_fee_currency_unknown",
+      "text": "Whether the Rs. 6 per copy figure still applies on the access date is not established by any reviewed public page: the only route that states it is undated on its face, and no current BMC page restates any amount.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related."
+    },
+    {
+      "id": "claim_mumbai_birth_online_surface_behind_login",
+      "text": "BMC's birth-certificate application FAQ directs the applicant to the Citizen Portal to fill in the online form, and the citizen portal application surface was not entered in this run.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_portal_apply_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is the FAQ's instruction; the boundary was not crossed, and in any case the corporation's own entry point to that surface returned HTTP 403 on the access date."
+    },
+    {
+      "id": "claim_mumbai_birth_ward_list_runtime_error",
+      "text": "BMC's ward list page rendered a portal runtime error reading 'An exception occurred while processing your request. Send the exception ID to your portal administrator.' with exception ID 10:21_06/09/26_302592051 on the access date.",
+      "jurisdiction": "Mumbai, Maharashtra, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_mumbai_birth_ward_list"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split by audit from claim_mumbai_birth_ward_list_published for atomicity under protocol section 1. Direct current observation of a public official interface, graded B under the section 4 table and the public-workflow rule in section 1."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

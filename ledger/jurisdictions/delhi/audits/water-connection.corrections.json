@@ -1,0 +1,187 @@
+{
+  "serviceId": "water-connection",
+  "ledgerPath": "ledger/jurisdictions/delhi/water-connection.json",
+  "auditPath": "ledger/jurisdictions/delhi/audits/water-connection.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "corr_delhi_water_01",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_simplified_document_list",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades undated or visibly outdated official material at C. The cited citizens charter PDF carries no visible issue or revision date and its own text refers to a Board resolution of 26 October 2021 and to timelines extended to 30 September 2022, so its currency is not established by the document; the source record itself records this. Grade B is reserved for current official procedure, form, portal, circular or agency pages.",
+      "support": {
+        "sourceIds": ["source_delhi_water_djb_citizens_charter"],
+        "auditNote": "Audit finding F1. Cell state is unaffected: section 8 admits a Grade C claim as support for stated."
+      }
+    },
+    {
+      "id": "corr_delhi_water_02",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_doorstep_fee",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades undated or visibly outdated official material at C. The cited citizens charter PDF is undated and its own text refers to a 2021 Board resolution and to 2022 timelines, so its currency is not established by the document.",
+      "support": {
+        "sourceIds": ["source_delhi_water_djb_citizens_charter"],
+        "auditNote": "Audit finding F1. The cost cell retains Grade B support from the FAQ charges table."
+      }
+    },
+    {
+      "id": "corr_delhi_water_03",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_charter_delivery_time_fifteen_days",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades undated or visibly outdated official material at C. The cited citizens charter PDF is undated and its own text refers to a 2021 Board resolution and to 2022 timelines, so its currency is not established by the document.",
+      "support": {
+        "sourceIds": ["source_delhi_water_djb_citizens_charter"],
+        "auditNote": "Audit finding F1. After this correction both service-level figures in the time cell rest on Grade C material; the rewritten time note records that."
+      }
+    },
+    {
+      "id": "corr_delhi_water_04",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_doorstep_timeframe",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades undated or visibly outdated official material at C. The cited citizens charter PDF is undated and its own text refers to a 2021 Board resolution and to 2022 timelines, so its currency is not established by the document.",
+      "support": {
+        "sourceIds": ["source_delhi_water_djb_citizens_charter"],
+        "auditNote": "Audit finding F1."
+      }
+    },
+    {
+      "id": "corr_delhi_water_05",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_officer_responsible_zro",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades undated or visibly outdated official material at C. The cited citizens charter PDF is undated and its own text refers to a 2021 Board resolution and to 2022 timelines, so its currency is not established by the document.",
+      "support": {
+        "sourceIds": ["source_delhi_water_djb_citizens_charter"],
+        "auditNote": "Audit finding F1. The owner cell retains Grade B support from the FAQ and from the published ZRO office directory."
+      }
+    },
+    {
+      "id": "corr_delhi_water_06",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_portal_tracking_facility_listed",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades undated or visibly outdated official material at C. The cited citizens charter PDF is undated and its own text refers to a 2021 Board resolution and to 2022 timelines, so its currency is not established by the document.",
+      "support": {
+        "sourceIds": ["source_delhi_water_djb_citizens_charter"],
+        "auditNote": "Audit finding F1. The after-submission cell retains Grade B support from the directly observed public status route."
+      }
+    },
+    {
+      "id": "corr_delhi_water_07",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_public_status_tracking_route",
+      "fieldPath": "/basis",
+      "old": "observation",
+      "new": "mixed",
+      "reason": "Section 5 requires basis to separate what a source directly shows from a conclusion drawn from it, and section 10 requires case-data-bound surfaces to remain unknown rather than inferred. The route's existence, public reachability and reference-number input were observed; what it returns on submission was not, because the claim's own notes record that no reference number was entered and no case data was retrieved. The notes already explain the boundary, as section 5 requires for mixed.",
+      "support": {
+        "sourceIds": ["source_delhi_water_djb_track_status"],
+        "auditNote": "Audit finding F3. No change to /notes is needed; the boundary explanation section 5 requires for mixed is already present."
+      }
+    },
+    {
+      "id": "corr_delhi_water_08",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_public_status_tracking_route",
+      "fieldPath": "/status",
+      "old": "verified",
+      "new": "partial",
+      "reason": "Part of the claim's assertion — the content the route returns — was never observed and cannot be verified from a read-only visit, so verified overstates the record. Partial is accurate and, under section 8, still supports a stated cell.",
+      "support": {
+        "sourceIds": ["source_delhi_water_djb_track_status"],
+        "auditNote": "Audit finding F3. The after-submission cell stays stated: the directly observed half is a public, actionable status page, which section 8 names as qualifying post-submission evidence."
+      }
+    },
+    {
+      "id": "corr_delhi_water_09",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_zro_approves_sanction",
+      "fieldPath": "/text",
+      "old": "The Delhi Jal Board FAQ states that a new connection will be sanctioned subject to the approval of the ZRO or competent authority, and that assessment of technical feasibility and sanction of a commercial or bulk connection falls in the jurisdiction of the Executive Engineer concerned.",
+      "new": "The Delhi Jal Board FAQ states that a new connection will be sanctioned subject to the approval of the ZRO or competent authority.",
+      "reason": "Section 1 requires one claim to assert one checkable thing and section 13 permits the auditor to split compound claims. This claim named two different decision-makers for two different service routes — the ZRO for the in-scope residential sanction, the Executive Engineer for the commercial and bulk routes this scenario excludes. The excluded-route half is retained verbatim as a separate claim rather than dropped.",
+      "support": {
+        "sourceIds": ["source_delhi_water_djb_faq"],
+        "auditNote": "Audit finding F4. Apply together with corr_delhi_water_10 and corr_delhi_water_11; no evidence is lost by the split."
+      }
+    },
+    {
+      "id": "corr_delhi_water_10",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_zro_approves_sanction",
+      "fieldPath": "/notes",
+      "old": "The Executive Engineer half marks the boundary with the excluded commercial and bulk routes.",
+      "new": "Split by audit: the Executive Engineer half, which marks the boundary with the excluded commercial and bulk routes, is now carried by claim_delhi_water_executive_engineer_scope. What remains is the decision rule for the in-scope residential sanction, which is what the owner cell scores.",
+      "support": {
+        "sourceIds": ["source_delhi_water_djb_faq"],
+        "auditNote": "Audit finding F4. Without this the note would reference a half the claim no longer contains."
+      },
+      "reason": "The existing note describes content removed from /text by corr_delhi_water_09 and would otherwise be stale and misleading."
+    },
+    {
+      "id": "corr_delhi_water_11",
+      "recordType": "claim",
+      "recordId": "claim_delhi_water_executive_engineer_scope",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_water_executive_engineer_scope",
+        "text": "The Delhi Jal Board FAQ states that assessment of technical feasibility and sanction of a commercial or bulk connection falls in the jurisdiction of the Executive Engineer concerned.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": ["scenario_ind32_water_residential"],
+        "nodeIds": [],
+        "sourceIds": ["source_delhi_water_djb_faq"],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split from claim_delhi_water_zro_approves_sanction by audit, with the source, grade and basis unchanged and the wording carried over verbatim. Retained under the primary scenario as route-selection evidence: it identifies the decision-maker for the commercial and bulk routes this scenario excludes, and so tells a scoped applicant that the ZRO route is theirs. Deliberately not cited by the owner cell, which scores the residential route."
+      },
+      "reason": "Addition completing the section 13 split of a compound claim. The text is carried over verbatim from the record it was split out of, so no evidence is invented; section 2 requires every claim to carry at least one scenario tag, and the primary scenario is the only scenario in this ledger.",
+      "support": {
+        "sourceIds": ["source_delhi_water_djb_faq"],
+        "auditNote": "Audit finding F4. Apply together with corr_delhi_water_09 and corr_delhi_water_10."
+      }
+    },
+    {
+      "id": "corr_delhi_water_12",
+      "recordType": "expectation",
+      "recordId": "water-connection",
+      "fieldPath": "/cells/cost/note",
+      "old": "Amounts the citizen pays are published line by line for the domestic category: application fee Rs. 10, opening fee Rs. 250 water and Rs. 250 sewer, trade advance Rs. 5,000, occupier security Rs. 500 and Rs. 500, and road restoration Rs. 1,600 and Rs. 3,200 within 5 metres, with fixed development charges of Rs. 45,000 or Rs. 1,00,000 in regularised colonies and a Rs. 50 doorstep fee. The published total is not exhaustive: beyond 5 metres the applicant bears the contractor's cost, which the same route says is not billed by the Board.",
+      "new": "The FAQ publishes a line-by-line schedule of amounts the citizen pays in the domestic category, which is this scenario's category: application fee Rs. 10, opening fee Rs. 250 water and Rs. 250 sewer, trade advance Rs. 5,000, occupier security Rs. 500 water and Rs. 500 sewer, and road restoration Rs. 1,600 water and Rs. 3,200 sewer where the distance from the property to the DJB network is up to 5 metres. Two further amounts are route-specific rather than general: the fixed development charge of Rs. 45,000 or Rs. 1,00,000 applies only in unauthorised regularised colonies, which a scoped applicant may or may not live in, and the Rs. 50 doorstep fee only on the optional doorstep route. The FAQ also gives Rs. 10 for the application form and processing; the reviewed evidence does not establish whether that is the same Rs. 10 as the table's application fee, and this ledger does not resolve it. The schedule is not established as exhaustive: no claim in this ledger records what is payable where the distance to the network exceeds 5 metres, and that gap is recorded here as a limitation on the reviewed evidence, not as a finding about what the route says.",
+      "reason": "Sections 9 and 13. The closing sentence asserted that beyond 5 metres the applicant bears the contractor's cost and that the same route says the Board does not bill it. No claim in this ledger records any of that, so the sidecar was carrying an uncited evidential assertion in prose. The rewrite keeps the honest point — the schedule is not exhaustive — as a stated limitation, and scopes the route-specific amounts so the note does not read as though they stack for every applicant.",
+      "support": {
+        "auditNote": "Audit finding F5. Cell state unchanged at stated: section 8 asks for an amount a citizen pays or an actionable fee schedule and does not require exhaustiveness, and the FAQ domestic table supplies one. Claim IDs are unchanged."
+      }
+    },
+    {
+      "id": "corr_delhi_water_13",
+      "recordType": "expectation",
+      "recordId": "water-connection",
+      "fieldPath": "/cells/time/note",
+      "old": "An actionable service-level target is published: 15 days for a new water and sewer connection, named against the responsible officer in the charter's service table, and the same 15 days for the doorstep route. A second figure binds the applicant, who must pay the ZRO's demand within fifteen days or lose the sanction. The 15-day figure covers sanction; no figure is published for the physical installation that follows, which the same evidence says is executed by a licensed plumber at the applicant's cost.",
+      "new": "An actionable service-level target is published: the charter's table of services gives 15 days for a new water and sewer connection, and the charter gives the same 15 days for the doorstep route, where its wording ties the figure to sanction of the connection. The figure therefore covers one stage only. The reviewed evidence publishes no figure for anything that follows sanction, and this ledger records that a demand raised by the ZRO office must then be paid within fifteen days or the sanction is withdrawn — a deadline binding on the applicant, not a service-level target on the Board. What is required after that payment, and how long it takes, is not established by the reviewed evidence and is recorded here as a limitation. Both charter figures rest on a source whose currency is not established by the document and which audit grades C; the only Grade B figure in this cell is the applicant's own payment deadline.",
+      "reason": "Sections 8, 9 and 13. Section 8 requires the note to say when a time figure covers only one stage, which the original did; but the same sentence asserted that the stage which follows is a physical installation executed by a licensed plumber at the applicant's cost, and no claim in this ledger records any of that. The original also stated the 15 days is named against the responsible officer in the charter's service table, which no claim establishes. The rewrite keeps the one-stage disclosure section 8 demands, states the post-sanction gap as a limitation, and records the grade position after the F1 downgrades.",
+      "support": {
+        "auditNote": "Audit finding F6, with F1. Cell state unchanged at stated: a published 15-day delivery time in a charter's table of services is a service-level target under section 8, and the one-stage condition attached to that definition is satisfied by this note. Claim IDs are unchanged."
+      }
+    }
+  ]
+}

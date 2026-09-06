@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "birth-certificate",
+  "primaryScenarioId": "scenario_ind32_birth_copy_workflow",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimIds": [
+        "claim_mumbai_birth_fee_post_2016_six_rupees",
+        "claim_mumbai_birth_fee_pre_2016_first_copy_free",
+        "claim_mumbai_birth_fee_pre_2016_non_relative"
+      ],
+      "searchedRoutes": [],
+      "note": "Amounts the citizen pays are published as a schedule split by event date: Rs. 6 per copy for events after 1 January 2016, and for earlier events a free first copy to relatives, Rs. 20 plus Rs. 2 searching charges for a non-relative and Rs. 30 for each further copy. The schedule sits only in the Public Health Department FAQ, which is undated on its face and dated 2018 by its file metadata; the corporation's live application FAQ answers the fee question without any amount at all. Whether the figures still hold is separately recorded as unknown."
+    },
+    "documents": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_mumbai_birth_documents_unnamed",
+        "claim_mumbai_birth_form_download_route"
+      ],
+      "searchedRoutes": [
+        "https://portal.mcgm.gov.in/irj/servlet/prt/portal/prtroot/com.mcgm.acitizenservices_healthservices.HowToApplyForBirthCertificate",
+        "https://portal.mcgm.gov.in/irj/portal/anonymous/qlhealth?guest_user=english",
+        "https://portal.mcgm.gov.in/irj/go/km/docs/documents/MCGM%20Department%20List/Public%20Health%20Department/Docs/FAQ%20Birth%20and%20Death%20Registration%20-%20English,%20Marathi,%20Hindi.pdf",
+        "https://portal.mcgm.gov.in/irj/go/km/docs/documents/PDF%20Files/Birth%20Registration%2005.pdf"
+      ],
+      "note": "The topic is named without an actionable value. Every reviewed route speaks of 'required documents', 'necessary documents' or 'the prescribed format' and none names a document. The downloadable application form might carry a list, but the file is a scanned image with no text layer and could not be read in this environment; that is recorded as a limit on this run, not as a finding about the form."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_mumbai_birth_apply_at_cfc_or_online",
+        "claim_mumbai_birth_records_after_1996_online",
+        "claim_mumbai_birth_issued_by_registrar_of_place",
+        "claim_mumbai_birth_registered_in_concerned_ward"
+      ],
+      "searchedRoutes": [],
+      "note": "Usable rules decide who qualifies and which route applies: the birth must already be registered with BMC, the certificate is issued only by the registrar of the place where the event occurred so an event outside Mumbai cannot be served here, the record sits with the ward office in whose area the birth occurred, and records after 1996 are in the system while earlier ones may not be, which routes the applicant to the ward counter."
+    },
+    "time": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_mumbai_birth_obtain_at_ward_cfc",
+        "claim_mumbai_birth_delivery_mode_choice"
+      ],
+      "searchedRoutes": [
+        "https://portal.mcgm.gov.in/irj/servlet/prt/portal/prtroot/com.mcgm.acitizenservices_healthservices.HowToApplyForBirthCertificate",
+        "https://portal.mcgm.gov.in/irj/portal/anonymous/qlhealth?guest_user=english",
+        "https://portal.mcgm.gov.in/irj/go/km/docs/documents/MCGM%20Department%20List/Public%20Health%20Department/Docs/FAQ%20Birth%20and%20Death%20Registration%20-%20English,%20Marathi,%20Hindi.pdf",
+        "https://portal.mcgm.gov.in/irj/portal/anonymous/qlcitizenchar"
+      ],
+      "note": "Timing is touched without a figure the citizen can act on. The published figures are counter opening hours, 8 a.m. to 8 p.m. on working days, not a processing period; the only delivery period is expressed as 'within the days stipulated by the Department of Posts', which states no number. No reviewed route gives a processing period or a service-level target for issuing the certificate. BMC's Citizen Charter route is a folder of ward-level documents rather than a service-standards table, and was searched without finding one."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_mumbai_birth_registered_in_concerned_ward",
+        "claim_mumbai_birth_obtain_at_ward_cfc",
+        "claim_mumbai_birth_issued_by_registrar_of_place",
+        "claim_mumbai_birth_health_department_responsible"
+      ],
+      "searchedRoutes": [],
+      "note": "The citizen can identify the office that holds the case by a jurisdiction rule: the record sits in the ward office of the area where the birth occurred, the certificate is obtained from that ward office's Civic Facility Center, the issuing authority is the registrar of the local government institution of the place of the event, and the responsible department is named. What is not published is a named officer or a contact route for the deciding role: the ward list names wards without Civic Facility Center addresses, and the FAQ's only designation, Executive Health Officer, is the signatory of the guidance rather than the decider of an application."
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimIds": [
+        "claim_mumbai_birth_cfc_issues_certificate_and_receipt"
+      ],
+      "searchedRoutes": [],
+      "note": "Something the citizen sees after submitting is identified: at the Citizen Facilitation Center the agent prints and issues the certificates and a fee receipt to the applicant. Two nearby surfaces are deliberately excluded — the transaction id generated on online payment, because payment is a step at submission under the cell definition, and the printable version of the form that appears after submission, because it is the applicant's own form rather than an acknowledgement from the corporation. No status page or tracker for a birth-certificate application was found on any reviewed public route."
+    }
+  }
+}

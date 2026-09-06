@@ -1,0 +1,490 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Hyderabad new domestic water connection grid-only evidence ledger",
+    "jurisdiction": "Hyderabad, Telangana, India",
+    "asOf": "2026-09-06",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Grid-only benchmark run: sources and claims only, no nodes, edges, roadblocks or journeys. Desk research, no counter visited. Limitations: the board's site is fronted by a bot-detection challenge that a plain HTTP client could not pass, so the pages were read in a browser; no CAPTCHA was solved or attempted; the application, status and area-officer routes were read but never filled in, submitted or queried; four of the five source URLs have no Wayback snapshot, so nothing archived preserves what was observed; the service level agreement document sets out both an existing and a revised procedure and the reviewed evidence does not establish which is in force on the access date. Do not submit personal data through this ledger. Audit limitations carried unresolved: the sanctioning office for a 15mm domestic connection is not named by any reviewed route, the charter naming the Single Window Cell only for connections of 20mm and above; and archive captures were queried but never pushed for four of the five sources, so nothing archived preserves what was observed."
+  },
+  "agencies": [
+    {
+      "id": "agency_hyderabad_hmwssb",
+      "name": "Hyderabad Metropolitan Water Supply and Sewerage Board",
+      "shortName": "HMWSSB",
+      "officialUrl": "https://hyderabadwater.gov.in/en"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind32_water_residential",
+      "label": "Hyderabad new domestic water connection",
+      "summary": "The individual owner of a built residential property with no connection applies to the city's water utility for a new domestic water supply, with sewer only where the same application covers it. Bulk or high-rise connections, commercial use, regularisation of unauthorised connections, name transfer on an existing account and tanker supply are excluded.",
+      "tags": [
+        "primary"
+      ],
+      "pathNodeIds": [],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_hyderabad_water_citizen_charter",
+      "title": "Citizens Charter of HMWSSB, May 2024",
+      "publisher": "Hyderabad Metropolitan Water Supply and Sewerage Board",
+      "url": "https://hyderabadwater.gov.in/application/files/7417/3185/0800/updated_citizen_charter.pdf",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2024-05-01",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: 'Hyderabad Metropolitan Water Supply & Sewerage Board, Khairatabad, Hyderabad, TG 500004, India'. Thirty-one pages, dated 'May 2024' on its title page, recorded as publishedAt; the file metadata records a creation date of 2024-05-27. The charter states of itself that it is not a legal document for enforcement against either the Board or the customers. Archive: the Wayback availability API returned no snapshot for this file on the access date, so no archive copy exists to point to; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    },
+    {
+      "id": "source_hyderabad_water_documents_list",
+      "title": "Documents to Submit for New Connection - documents in attested copies to be submitted to the inspecting officer",
+      "publisher": "Hyderabad Metropolitan Water Supply and Sewerage Board",
+      "url": "https://hyderabadwater.gov.in/en/application/files/6917/3313/8023/document-to-download.pdf",
+      "accessedAt": "2026-09-06",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: served from the board's own Documents to Submit for New Connection page, whose title bar reads 'Hyderabad Metropolitan Water Supply and Sewerage Board'. One page. It carries no visible date on its face; the file metadata records a creation date of 2018-07-25, so claims from it are graded C. Archive: the Wayback availability API returned no snapshot for this file on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    },
+    {
+      "id": "source_hyderabad_water_swc_sla",
+      "title": "Single Window Cell service level agreement - timelines for new connection",
+      "publisher": "Hyderabad Metropolitan Water Supply and Sewerage Board",
+      "url": "https://hyderabadwater.gov.in/en/application/files/8017/3313/7016/SWC-SLA.pdf",
+      "accessedAt": "2026-09-06",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: served from the board's own Timelines for New Connection page, whose title bar reads 'Hyderabad Metropolitan Water Supply and Sewerage Board'. Six pages. It carries no visible date on its face; the file metadata records a creation date of 2020-03-12, so claims from it are graded C. It sets out an existing procedure and a revised procedure side by side, and does not state which is in force. Archive: the Wayback availability API returned no snapshot for this file on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    },
+    {
+      "id": "source_hyderabad_water_board_site",
+      "title": "Hyderabad Metropolitan Water Supply and Sewerage Board - customer and prospective consumer services",
+      "publisher": "Hyderabad Metropolitan Water Supply and Sewerage Board",
+      "url": "https://hyderabadwater.gov.in/en",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2026-09-02",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: 'HYDERABAD METROPOLITAN WATER SUPPLY AND SEWERAGE BOARD, Administrative Office Building, Khairatabad, Hyderabad - 4, Telangana'. The site footer displays 'Last Updated: 02-September-2026', recorded as publishedAt. The host is fronted by a bot-detection challenge which a plain HTTP client could not pass; the pages were read in a browser and no CAPTCHA was solved or attempted. Archive: the Wayback availability API returned no snapshot for this entry point on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    },
+    {
+      "id": "source_hyderabad_water_status_route",
+      "title": "Know Your Connection Status - prospective consumer services route",
+      "publisher": "Hyderabad Metropolitan Water Supply and Sewerage Board",
+      "url": "https://hyderabadwater.gov.in/en/index.php/services/prospective-consumer-services/know-your-connection-status",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: the page title bar reads 'Know Your Connection Status :: Hyderabad Metropolitan Water Supply and Sewerage Board'. Direct current observation that the board publishes the route under prospective consumer services; the route was read only and no application reference was entered. The page shows no visible last-updated or version date of its own beyond the site footer, re-observed on 2026-09-06 by the official-source pass after the audit noted the omission. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260119180209/https://www.hyderabadwater.gov.in/en/index.php/services/prospective-consumer-services/know-your-connection-status (2026-01-19); no new capture was pushed from this run."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_hyderabad_water_category_i_charges",
+      "text": "The board's citizens charter publishes water supply and sewerage connection charges for Category-1 individual connections banded by plot area for a 15mm connection: a fixed Rs. 2,500 up to 200 square metres, Rs. 8,250 plus Rs. 82.50 for each square metre in excess from 201 to 300, Rs. 16,500 plus Rs. 75.00 from 301 to 400, and Rs. 24,000 plus Rs. 60.00 from 401 upwards, subject to a maximum of Rs. 48,000.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Category-1 is defined in the same annexure as individual connections other than those covered by categories II and III, which is this scenario's case. The table is attributed to Managing Director's proceedings No.24/E1/97/2003 dated 30 January 2003."
+    },
+    {
+      "id": "claim_hyderabad_water_processing_fee",
+      "text": "The board's citizens charter states a non-refundable and non-adjustable processing fee of Rs. 1,000 for a 15mm diameter connection and Rs. 2,000 for connections of 20mm diameter and above.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_hyderabad_water_other_amounts_payable",
+      "text": "The board's citizens charter lists the further amounts payable towards a water supply and sewerage connection as the cost of water and sewer lines where they are not available, priced from an estimate on the current standard schedule of rates, Green Brigade physical connection charges, a deposit equivalent to two months' consumption with sewerage cess at current rates, AMR charges for connections of 25mm and above, rainwater harvesting charges and road restoration charges where applicable.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Every component is named; the figures for the line cost and the deposit are given as formulas rather than amounts, and source augmentation charges are excluded as bulk-only."
+    },
+    {
+      "id": "claim_hyderabad_water_cash_payment_cap",
+      "text": "The board's citizens charter states that cash payment of not more than Rs. 5,000 will be accepted at the single window cell, head office Khairatabad, and at the board's cash counters on working days during working hours.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_hyderabad_water_document_list_narrative",
+      "text": "The board's list of documents to submit for a new connection requires attested copies of the registered ownership deed, the municipal building sanctioned plan, the municipal tax assessment receipt, a no objection certificate if the property is in a specified locality, a house site patta certificate, a slum area certificate if in a slum area, an occupancy certificate, an affidavit on Rs. 20 non-judicial stamp paper duly notarised undertaking to abide by the HMWS&S Act 1989 and its rules, and an indemnity bond.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_documents_list",
+        "source_hyderabad_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The same list appears in the board's standalone documents file and in annexure IV of the citizens charter."
+    },
+    {
+      "id": "claim_hyderabad_water_occupancy_certificate_relief",
+      "text": "The board's list of documents states that an occupancy certificate is mandatory for all buildings, but that for individual buildings on plots up to 100 square metres with a height up to 7 metres obtaining an occupancy certificate is optional.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_documents_list"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A rule that decides whether the hardest enclosure applies to a given house. Graded C because its only source is undated on its face and dated 2018 by file metadata, so the rule may have been superseded since; the relief was not corroborated on any other reviewed route."
+    },
+    {
+      "id": "claim_hyderabad_water_document_matrix_by_category",
+      "text": "The board publishes a document matrix by application category, with Category I requiring a voter ID or Aadhaar card as identity proof, a latest photograph of the premises or building, an electricity bill or municipal tax receipt or gas bill or bank account as address proof, an indemnity bond, a copy of the registered deed or an affidavit as statutory proof, a municipal occupancy certificate, a municipal approved plan and an encumbrance certificate.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_documents_list"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The matrix also carries rows for Category II, Category III, below poverty line applicants and second connections, which are outside this scenario; only the Category I row is recited here. Graded C because its only source is undated on its face and dated 2018 by file metadata, so the matrix may have been superseded since."
+    },
+    {
+      "id": "claim_hyderabad_water_online_application_route",
+      "text": "The board's citizens charter states that the applicant submits the application online by uploading documents and latest building photographs with the date on them through the board's website customer service centre, produces the required documents to the inspecting officer visiting the house, and pays the connection and other charges as per the intimation given within the prescribed period.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The route in three steps: apply online, show documents to the visiting officer, pay on intimation."
+    },
+    {
+      "id": "claim_hyderabad_water_sanction_conditions",
+      "text": "The board's citizens charter states that connections are sanctioned subject to technical feasibility and the rules and regulations under the HMWS&S Act 1989, that sanction confers no right or evidence of ownership, that the applicant must construct a rainwater harvesting structure to specification before release of the connection, and must construct a sump able to store two days' requirement and a meter chamber before the connection is released.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Preconditions the applicant must satisfy before the connection is released."
+    },
+    {
+      "id": "claim_hyderabad_water_meter_obligation",
+      "text": "The board's citizens charter states that the customer has to procure a good quality ISO meter and construct a meter chamber for the safety of the meter, and that for release of a sewerage connection the customer must construct a sewer manhole with a silt catch pit within the premises before the board gives the connection.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_hyderabad_water_sla_category_i_stages",
+      "text": "The board's single window cell service level agreement gives stage timelines for a Category I 15mm connection under its revised procedure as 7 days for processing fee payment, 6 days for first level feasibility, 5 days for second level feasibility, 5 days for the option to re-upload missed documents, 15 days for payment of connection charges, automatic Green Brigade allotment within 24 hours after payment is received, and 5 days for generation of the consumer account number.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_swc_sla"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Graded C because the document is undated on its face, dated 2020 by file metadata, and sets out an existing and a revised procedure side by side without stating which is in force."
+    },
+    {
+      "id": "claim_hyderabad_water_sla_existing_procedure_stages",
+      "text": "The board's single window cell service level agreement gives the corresponding stage timelines for a Category I 15mm connection under its existing procedure as 15 days for first level feasibility, 10 days for second level feasibility, 10 days for the request for capturing documents, 20 days for final level feasibility, 5 days for proceeding generation, 60 days for payment of connection charges and 29 days for generation of the consumer account number.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_swc_sla"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Recorded alongside the revised figures because the document presents both and does not say which applies."
+    },
+    {
+      "id": "claim_hyderabad_water_days_are_working_days",
+      "text": "The board's citizens charter states that all service charges and fees mentioned by the department are to be paid within the stipulated timeline and that the days referred to in its timeframes mean working days.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Fixes the unit the published day counts are expressed in."
+    },
+    {
+      "id": "claim_hyderabad_water_swc_sanctions_and_address",
+      "text": "The board's citizens charter states that water supply and sewerage connections of 20mm diameter and above are sanctioned at the Single Window Cell at the head office, that all new connections are released through the Green Brigade of the Single Window Cell with generation of a consumer account number, and gives the address as General Manager (Engineering), Single Window Cell, HMWSSB, Khairatabad, Hyderabad, with a telephone number.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A named role with a postal address and a telephone number. Institutional contact only."
+    },
+    {
+      "id": "claim_hyderabad_water_circle_and_division_sanction",
+      "text": "The board's citizens charter states that circle offices sanction new water supply and sewerage connections and redress consumer grievances within the jurisdiction of the circle, and that divisional offices sanction new water supply and sewerage connections under the jurisdiction of the division.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A designation tied to a jurisdiction rule: the circle or division in which the property falls."
+    },
+    {
+      "id": "claim_hyderabad_water_jurisdiction_annexure",
+      "text": "The board's citizens charter publishes an annexure of jurisdiction details listing its operation and maintenance divisions against the localities, municipalities and constituencies each covers, and names its operation and maintenance circles with the divisions under each.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Lets a citizen move from an address to the division and circle that hold the case."
+    },
+    {
+      "id": "claim_hyderabad_water_escalation_columns",
+      "text": "The board's citizens charter publishes its key services table with a column for the office rendering the service and a separate column for the office to be contacted for delay or default in that service.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The escalation column is published for the service standards table generally; the rows reproduced in that table are water supply and sewerage maintenance complaints rather than a new connection."
+    },
+    {
+      "id": "claim_hyderabad_water_status_tracking_and_sms",
+      "text": "The board's citizens charter states that the status of a new connection application or a registered complaint can be tracked on the website and that SMS messages are also sent to the applicant.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Two surfaces after submission, a trackable status and an SMS to the applicant."
+    },
+    {
+      "id": "claim_hyderabad_water_prospective_routes_published",
+      "text": "The board publishes routes for prospective consumers titled Apply For Water and Sewerage Connection, Apply for New Connection Feasibility, Upload Shortfall Documents For Feasibility Connection, Check Feasibility Connection Status, Know Your Connection Status, Connection Charges NEFT or RTGS Receipt, Download Document Related Your Connection, Documents to Submit for New Connection, Timelines for New Connection, Register New Connection Grievances and Indemnity Bond Format.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_board_site"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Observed as published links on the board's own navigation on the access date; none was exercised. Graded C under protocol section 7 because the citation is the board's homepage, a general-site reference rather than a specific page, and site navigation may change without notice."
+    },
+    {
+      "id": "claim_hyderabad_water_status_route_published",
+      "text": "The board publishes a Know Your Connection Status route under its prospective consumer services, reachable without login.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_status_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The route and its title were observed; no application reference was entered, so nothing is claimed about what it returns."
+    },
+    {
+      "id": "claim_hyderabad_water_customer_care_contacts",
+      "text": "The board publishes a 24-hour customer care number 155313, telephone numbers 040-23300114 and 040-23433933, and a customer support email address on every page of its site.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_board_site"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Institutional contact details only. Graded C under protocol section 7 because the citation is the board's homepage, a general-site reference rather than a specific page. This is a general utility helpline, not a contact route for the office deciding a new connection case."
+    },
+    {
+      "id": "claim_hyderabad_water_which_sla_in_force_unknown",
+      "text": "Which of the two procedures set out in the board's service level agreement, the existing or the revised, governs a new connection application on the access date is not established by any reviewed public page.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey: the two procedures differ by weeks at several stages. Not login-related."
+    },
+    {
+      "id": "claim_hyderabad_water_deposit_amount_unknown",
+      "text": "The amount of the deposit equivalent to two months' consumption that a new applicant must pay cannot be derived before connection, because consumption for an unconnected property is not yet known and no reviewed route publishes an assumed figure for it.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related."
+    },
+    {
+      "id": "claim_hyderabad_water_application_help_resources",
+      "text": "The board's citizens charter states that a user manual for filling the online application is available on the website, with a dedicated help desk at the head office and kiosks at the cash counters.",
+      "jurisdiction": "Hyderabad, Telangana, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_hyderabad_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split out of claim_hyderabad_water_status_tracking_and_sms by audit for atomicity. These are help resources available at or before submission, so under protocol section 8 they are not after-submission evidence and this claim supports no expectation cell. Graded B on the May 2024 citizens charter, a current official publication dated on its face."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

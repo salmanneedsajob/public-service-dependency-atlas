@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "property-tax-payment",
+  "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
+  "cells": {
+    "cost": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_hyderabad_ptax_rate_notification_excludes_residential",
+        "claim_hyderabad_ptax_assessment_method_named"
+      ],
+      "searchedRoutes": [
+        "https://www.ghmc.gov.in/Propertytax.aspx",
+        "https://onlinepayments.ghmc.gov.in/",
+        "https://ghmc.gov.in/Property_Tax/first.pdf",
+        "https://ghmc.gov.in/Property_Tax/CALCULATION.pdf",
+        "https://sa.ghmc.gov.in/",
+        "https://www.ghmc.gov.in/Property_Tax/Procedure%20of%20New_Assessment_of_Property_Tax.pdf"
+      ],
+      "note": "The topic is named without an actionable value for this scenario. The corporation names the statutory method, sections 197 to 238 and 264 to 289 of the Hyderabad Municipal Corporations Act 1955 with the 1990 assessment rules, and publishes one rate notification with monthly rents per square foot of plinth area — but that notification is for non-residential buildings and says on its face that there is no revision of property tax on residential buildings. No reviewed route gives a residential rate, slab, zone value or amount. The public payment route would return the amount for a given identifier, but exercising it needs a real property tax identification number, which is outside the safety boundary."
+    },
+    "documents": {
+      "state": "absent",
+      "claimIds": [],
+      "searchedRoutes": [
+        "https://www.ghmc.gov.in/Propertytax.aspx",
+        "https://onlinepayments.ghmc.gov.in/",
+        "https://onlinepayments.ghmc.gov.in/PTax/PT_Recipts_Main",
+        "https://www.ghmc.gov.in/Menu_Files/citizen-charter-19-06_compress.pdf"
+      ],
+      "note": "The reviewed evidence does not touch the topic for this scenario. What the payment route asks for is an identifier, a property tax identification number or a registered mobile number, rather than a document to submit, provide, upload, produce or attach, so the route does not refer to documents at all. The corporation does publish real document lists — registered sale deed, link documents, building sanction plan, occupancy certificate — but they belong to new assessment and to mutation, which this scope excludes, and they are not counted here. The searched routes are listed above; claim_hyderabad_ptax_documents_for_payment_unknown records the resulting limitation and, as an Unknown claim, supports no positive cell value."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_hyderabad_ptax_ptin_or_mobile_required",
+        "claim_hyderabad_ptax_payment_mode_handheld",
+        "claim_hyderabad_ptax_payment_mode_meeseva",
+        "claim_hyderabad_ptax_thirty_circles",
+        "claim_hyderabad_ptax_payment_mode_online_neft_rtgs",
+        "claim_hyderabad_ptax_payment_mode_banks"
+      ],
+      "searchedRoutes": [],
+      "note": "Usable rules decide which route applies: the owner pays against a property tax identification number, or against the mobile number registered on that property, with a published route for finding the identification number; and the tax may be paid through bill collectors' handheld machines, 72 Mee-Seva centres, citizen service centres in all 30 circles and the head office, online, by NEFT or RTGS, or at 537 branches of 8 banks."
+    },
+    "time": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_hyderabad_ptax_no_manual_transactions",
+        "claim_hyderabad_ptax_public_receipt_route"
+      ],
+      "searchedRoutes": [
+        "https://www.ghmc.gov.in/Propertytax.aspx",
+        "https://onlinepayments.ghmc.gov.in/",
+        "https://onlinepayments.ghmc.gov.in/PTax/PT_Recipts_Main",
+        "https://www.ghmc.gov.in/Menu_Files/citizen-charter-19-06_compress.pdf"
+      ],
+      "note": "The topic is touched without an actionable value. An annual demand notice is named as the instrument by which the liability reaches the owner, which implies a yearly cycle but fixes no date; and the only date on any payment surface is a scope limit on the receipt route, that only online transactions paid after 1 April 2016 can be downloaded. No reviewed route gives a due date, a penalty date, a rebate deadline or a service-level target for the payment route, and the corporation's charter has no property tax payment row at all."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_hyderabad_ptax_circle_office_dc",
+        "claim_hyderabad_ptax_thirty_circles",
+        "claim_hyderabad_ptax_zone_and_circle_maps",
+        "claim_hyderabad_ptax_head_office_contacts"
+      ],
+      "searchedRoutes": [],
+      "note": "The citizen can identify the office that holds the case by a jurisdiction rule and reach the corporation: the circle office, headed by a Deputy Commissioner, handles all services related to property tax; there are 30 circles, each with a citizen service centre; published zone, circle and ward maps let an owner find which circle their property falls in; and the corporation publishes a head office address, a helpline and a switchboard number with an officers contacts table. The circle-office designation comes from a charter twelve years past its own stated revision date, though the 30-circle structure is confirmed by a current page."
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimIds": [
+        "claim_hyderabad_ptax_public_receipt_route"
+      ],
+      "searchedRoutes": [],
+      "note": "A visible post-payment surface exists and is public: a Property Tax Payment Receipts route that takes the property tax identification number or the registered mobile number and needs no login. Its own scope notice is recorded with it — only online transactions paid after 1 April 2016 can be downloaded — so an owner who paid at a counter or by an older online transaction has no route named. The route was read, not exercised; nothing was entered and no case data was retrieved."
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "property-tax-payment",
+  "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
+  "cells": {
+    "cost": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_delhi_ptax_fee_variable_only",
+        "claim_delhi_ptax_advance_rebate_deadline",
+        "claim_delhi_ptax_online_payment_rebate",
+        "claim_delhi_ptax_rate_schedule_latest_is_2025_26"
+      ],
+      "searchedRoutes": [
+        "https://mcdonline.nic.in/portal/citizenCharter",
+        "https://mcdonline.nic.in/ptrmcd/web/citizen/info",
+        "https://mcdonline.nic.in/ptrmcd/web/citizen/property/downloadPdfFile/Tax_Rate_and_Use_factor_applicable_for_FY_2025-2026",
+        "https://mcdonline.nic.in/ptrmcd/web/citizen/property/downloadPdfFile/Tax_Rate_and_Use_factor_applicable_for_FY_2026-2027",
+        "https://mcdonline.nic.in/ptrmcd/web/citizen/property/doDownloadPtrRulebook"
+      ],
+      "note": "The topic is named without an actionable value for the current year. The charter gives the fee only as 'Variable fees - according to area and annual value of the property'. Rebate percentages are published, but a rebate is a discount on an amount the reviewed routes never state. A rate schedule is published, and it would be an actionable fee schedule, except that the latest one on the portal is for FY 2025-2026 rather than the current FY 2026-2027, and it is a scanned image with no text layer, so no rate could be read from it; the equivalent 2026-2027 route returned a page, not a schedule. The Property Tax Calculation Parameters download is likewise a scanned file. Reading a value would require entering a real property identifier in the portal's calculator or crossing the login boundary, both outside the safety boundary."
+    },
+    "documents": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_delhi_ptax_documents_required"
+      ],
+      "searchedRoutes": [
+        "https://mcdonline.nic.in/portal/citizenCharter",
+        "https://mcdonline.nic.in/ptrmcd/web/citizen/info",
+        "https://mcdonline.nic.in/rbd/web/citizen/info"
+      ],
+      "note": "Mentioned only. The reviewed routes name the document topic but do not tell the citizen what is required for this scenario. The citizen charter's document row covers property tax return filing generally and does not distinguish a current-year payment on a known UPIC from first-time filing, a route this scenario excludes; its two items, the applicant's ID proof and a property document containing the property address, are retained as topic-only evidence in claim_delhi_ptax_documents_required. Neither the property-tax portal page nor the taxpayer instruction block states a document requirement for a payment on a known UPIC, and the surface that would state one is reached only past citizen login with an OTP and a CAPTCHA, which was not entered. No reviewed route states an explicit absence of a document requirement either, so no explicit zero is scored under section 3."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_delhi_ptax_eligibility_rule",
+        "claim_delhi_ptax_upic_mandatory",
+        "claim_delhi_ptax_portal_registration_mandatory",
+        "claim_delhi_ptax_portal_only_filing"
+      ],
+      "searchedRoutes": [],
+      "note": "Usable rules decide who qualifies and which route applies: the facility is for the general public holding residential or commercial property within MCD's jurisdiction, a 15-digit UPIC is mandatory to pay tax for every property, and portal registration is mandatory, with filing through the MCD portal only."
+    },
+    "time": {
+      "state": "stated",
+      "claimIds": [
+        "claim_delhi_ptax_receipt_instant_sla",
+        "claim_delhi_ptax_advance_rebate_deadline"
+      ],
+      "searchedRoutes": [],
+      "note": "An actionable service-level target and a deadline are both published: the property tax receipt is issued instantly, and the advance-payment rebate requires payment before 30 June of the current financial year. The figure covers issue of the receipt only, as section 8 requires this note to say; no claim in this ledger records a published timeline for any later stage."
+    },
+    "owner": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_delhi_ptax_department_named",
+        "claim_delhi_ptax_zone_ward_mapping_published",
+        "claim_delhi_ptax_support_mailbox"
+      ],
+      "searchedRoutes": [
+        "https://mcdonline.nic.in/portal/citizenCharter",
+        "https://mcdonline.nic.in/ptrmcd/web/citizen/info",
+        "https://mcdonline.nic.in/sdmcportal/knowYourCorporation"
+      ],
+      "note": "The topic is named without an actionable value. A general department name, Property Tax Department, is given; a zone, ward and colony mapping locates the property but names no office, officer or role that holds or decides the case; and the only contact is a general portal helpdesk mailbox rather than a route to the deciding role. The charter's own 'Key Contacts' heading for this service is published empty, and the portal's 'Know your corporation' link returned HTTP 404 on the access date."
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimIds": [
+        "claim_delhi_ptax_receipt_instant_sla",
+        "claim_delhi_ptax_receipt_download"
+      ],
+      "searchedRoutes": [],
+      "note": "The citizen is told what they see after paying: a property tax receipt, published in the citizen charter with the service delivery timeline 'Property Tax Receipt - Instant', which the public taxpayer instructions tell the taxpayer to download for future reference. That downloadable receipt is the post-submission surface carrying this cell. The 'Generate Tax Due Certificate' route recorded in claim_delhi_ptax_tax_due_certificate_route is reachable before any payment, so under section 8 it is not after-submission evidence and no longer supports this cell. The evidence is the public instruction to download the receipt; the authenticated receipt surface itself was not observed, as the payment route sits past citizen login with an OTP and a CAPTCHA."
+    }
+  }
+}

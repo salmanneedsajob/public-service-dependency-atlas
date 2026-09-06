@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "birth-certificate",
+  "primaryScenarioId": "scenario_ind32_birth_copy_workflow",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimIds": [
+        "claim_bengaluru_grid_birth_application_fee_5",
+        "claim_bengaluru_grid_birth_service_charge_20",
+        "claim_bengaluru_grid_birth_rule_13_extract_fee",
+        "claim_bengaluru_grid_birth_rule_13_search_fee"
+      ],
+      "searchedRoutes": [],
+      "note": "Amounts the citizen pays are published on the service card and fixed by rule: an application fee of Rs. 5, a Rs. 20 service charge where the application goes through a Grama One, B1 or K1 counter, and Rule 13 of the Karnataka Registration of Births and Deaths Rules, 1999 fixing Rs. 5.00 for an extract and Rs. 2.00 for a first-year search. The card figure and the statutory figure agree. Whether the 1999 figure has since been revised is separately recorded as unknown, since the copy the Chief Registrar publishes carries no amendment history."
+    },
+    "documents": {
+      "state": "stated",
+      "claimIds": [
+        "claim_bengaluru_grid_birth_no_documents_required"
+      ],
+      "searchedRoutes": [],
+      "note": "An explicit zero is stated: the service card answers the documents question with 'Documents to be submitted with application: NIL'. Under protocol section 3 an explicit zero is a stated value, and the citizen is told what is required rather than left to guess. The card is a state service card rather than a corporation page; no municipal route reviewed adds a document requirement for this service."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma",
+        "claim_bengaluru_grid_birth_bbmp_registrars",
+        "claim_bengaluru_grid_birth_eligibility_citizens"
+      ],
+      "searchedRoutes": [],
+      "note": "Usable rules decide which route applies: a certificate can be downloaded through Seva Sindhu only where the event is registered in eJanMa, and events in the BBMP area are registered in eJanMa by Health Officers and Health Inspectors for their areas, so an applicant knows both whether the online route is open to them and which office holds the record otherwise. The service card's own eligibility line, citizens of India, is a broad category rather than a route rule and is cited only for completeness."
+    },
+    "time": {
+      "state": "stated",
+      "claimIds": [
+        "claim_bengaluru_grid_birth_service_time_immediate"
+      ],
+      "searchedRoutes": [],
+      "note": "An actionable service time is published: the card's service time field is answered 'Immediate'. That is a period the citizen can act on — it tells them not to expect a wait — though it is a word rather than a number of days, and it covers issue of the certificate once the event is on the register, not any earlier registration step."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_bengaluru_grid_birth_rule_13_issuer_and_form",
+        "claim_bengaluru_grid_birth_bbmp_registrars",
+        "claim_bengaluru_grid_birth_additional_copies_contact",
+        "claim_bengaluru_grid_birth_clarifications_contact"
+      ],
+      "searchedRoutes": [],
+      "note": "The citizen can identify the office that issues the certificate and reach a person about it: the rules name the Registrar or the Commissioner or Chief Officer of the Municipal Corporation as the issuer of an extract, the portal names Health Officers and Health Inspectors as the registrars for the BBMP area, and it names, for the exact request this scenario covers, the data entry operators of the concerned Nadakacheri and the birth and death registration centres, with the District Statistical Officer for clarifications and a published toll-free number."
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimIds": [
+        "claim_bengaluru_grid_birth_public_status_route",
+        "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma",
+        "claim_bengaluru_grid_birth_public_verification_route"
+      ],
+      "searchedRoutes": [],
+      "note": "Surfaces the citizen sees after applying are identified and public: an Application Status route taking a registration number or a Sakala number, a downloadable certificate from the Seva Sindhu portal, and verification and registration-details routes beside them. The Sakala field indicates the application is tracked under the state's service-guarantee scheme. All were read, none queried; no number was entered."
+    }
+  }
+}

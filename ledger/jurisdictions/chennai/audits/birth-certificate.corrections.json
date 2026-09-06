@@ -1,0 +1,230 @@
+{
+  "serviceId": "birth-certificate",
+  "ledgerPath": "ledger/jurisdictions/chennai/birth-certificate.json",
+  "auditPath": "ledger/jurisdictions/chennai/audits/birth-certificate.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "correction_chennai_birth_time_state",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/time/state",
+      "old": "stated",
+      "new": "mentioned",
+      "reason": "Every figure cited for this cell attaches to a step the primary scenario excludes. Rule 8(2) runs thirty days from the reporting of the birth, Rule 8(4) is collection at the institution and the scenario summary excludes hospital-side registration steps by name, and Rule 8(5) is triggered by the expiry of that collection period without any request from the citizen. The scenario's trigger is a birth already registered where the family needs a copy or a first certificate, and no reviewed route gives a processing period or service-level target for that request. Section 2 scores the primary scenario only, so under the section 8 time definition this is a reference to timing without a usable time rule for the scenario in hand.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules",
+          "source_chennai_birth_crstn_portal",
+          "source_chennai_birth_gcc_page",
+          "source_chennai_birth_gccservices_route"
+        ],
+        "auditNote": "Audit finding F3. The sidecar's own note concedes that the figures cover the first extract and that no route gives a processing period for a later request."
+      }
+    },
+    {
+      "id": "correction_chennai_birth_time_note",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/time/note",
+      "old": "Actionable periods are fixed by rule: thirty days from reporting to collect a domiciliary extract from the Registrar, thirty days from the event to collect an institutional one from the institution, and a duty on the Registrar to post an uncollected extract within fifteen days of the expiry of that period. These cover the first extract; no reviewed route gives a processing period for a later request for a copy, and the state portal publishes no service-level target for its download.",
+      "new": "The topic is named without a usable time rule for this scenario. The three periods fixed by the Rules all attach to the registration event rather than to a request for a copy: thirty days from the reporting of the birth to collect a domiciliary extract from the Registrar (Rule 8(2)), thirty days from the event to collect an institutional one from the officer in charge of the institution (Rule 8(4)), which is the hospital-side step this scenario excludes, and a duty on the Registrar or that officer to post an uncollected extract within fifteen days of the expiry of that period (Rule 8(5)), which is triggered automatically and requires no submission by the citizen. The scenario's trigger is a birth already registered where the family now needs a certified copy or a first certificate. For that request no reviewed route gives a processing period, deadline or service-level target: the Greater Chennai Corporation's page carries no timeline text, its download route shows none before the OTP boundary, and the state portal publishes no target for its download and returned HTTP 404 on the download route itself. The three claims are retained as topic-only IDs.",
+      "reason": "A mentioned cell takes a search note under section 9. The replacement records what the evidence names, why each figure falls outside the primary scenario, and what was not found for the in-scope request.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules",
+          "source_chennai_birth_crstn_portal",
+          "source_chennai_birth_gcc_page",
+          "source_chennai_birth_gccservices_route"
+        ],
+        "auditNote": "Audit finding F3. Every statement in the replacement note is carried by an existing claim in the ledger; nothing new is asserted."
+      }
+    },
+    {
+      "id": "correction_chennai_birth_time_routes",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/time/searchedRoutes",
+      "old": [],
+      "new": [
+        "https://crstn.org/",
+        "https://chennaicorporation.gov.in/new_site/birth-certificate/",
+        "https://gccservices.in/crs/birth",
+        "https://www.crstn.org/birth_death_tn/rules/TNRBD%20Rules.pdf"
+      ],
+      "reason": "Section 9 requires a mentioned cell to record searched route IDs or URLs. The four URLs are exactly the source URLs the ledger records as accessed on 2026-09-06; no route is asserted that the ledger does not already evidence.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal",
+          "source_chennai_birth_gcc_page",
+          "source_chennai_birth_gccservices_route",
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "Audit finding F3. Populated from the ledger's own source records rather than from any route not on the record."
+      }
+    },
+    {
+      "id": "correction_chennai_birth_after_submission_state",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/after-submission/state",
+      "old": "stated",
+      "new": "mentioned",
+      "reason": "Neither cited claim meets the section 8 definition. Rule 8(5) is a consequence of registration, which the definition names in its exclusion list, and it answers to no submission by the in-scope citizen, so there is nothing they submit and nothing they then see. Rules 8(1) and 13(2) name the output, the extract in Form No. 5 certified under section 76 of the Indian Evidence Act, which is an outcome named without a status page, tracker, acknowledgement, receipt, rejection reason or downloadable result, and the definition's closing sentence sends exactly that case to mentioned. No other evidence reaches stated: the state portal's download route returned HTTP 404 on the access date and the corporation's download sits behind an uncrossed OTP.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules",
+          "source_chennai_birth_crstn_portal",
+          "source_chennai_birth_gccservices_route"
+        ],
+        "auditNote": "Audit finding F4."
+      }
+    },
+    {
+      "id": "correction_chennai_birth_after_submission_note",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/after-submission/note",
+      "old": "A result the citizen receives is identified and named: the extract in Form No. 5, certified in the manner provided by section 76 of the Indian Evidence Act, which the Registrar must send to the family by post if it is not collected in time. The corporation's download route is deliberately excluded from this cell: it sits behind registration and an OTP that this run did not cross, and the login boundary is recorded as a limitation rather than counted as a surface.",
+      "new": "An outcome is named but no post-submission surface was found. The Rules name the result, the extract in Form No. 5 certified in the manner provided by section 76 of the Indian Evidence Act, which identifies the document the citizen ends up with but is not a status page, tracker, acknowledgement, receipt, rejection reason or downloadable result. The posting duty in Rule 8(5) is a consequence of registration, which the cell definition excludes, and it is triggered by the expiry of the collection period rather than by anything the citizen submits. The two claims are retained as topic-only IDs. No surface was observed on either route: the state portal's own birth certificate download route returned HTTP 404 on the access date, and the corporation's working download route offers only registration with a name and mobile number and login by OTP, a boundary this run did not cross and which is recorded as a limitation rather than counted as a surface.",
+      "reason": "A mentioned cell takes a search note under section 9. The replacement records the outcome that is named, why neither claim reaches a post-submission surface, and the two routes on which no surface was observed.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_tn_rbd_rules",
+          "source_chennai_birth_crstn_portal",
+          "source_chennai_birth_gccservices_route"
+        ],
+        "auditNote": "Audit findings F4 and F13. The exclusion of the OTP-gated route is preserved verbatim in substance; only the claim that the cell is stated is withdrawn."
+      }
+    },
+    {
+      "id": "correction_chennai_birth_after_submission_routes",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/after-submission/searchedRoutes",
+      "old": [],
+      "new": [
+        "https://crstn.org/",
+        "https://chennaicorporation.gov.in/new_site/birth-certificate/",
+        "https://gccservices.in/crs/birth",
+        "https://www.crstn.org/birth_death_tn/rules/TNRBD%20Rules.pdf"
+      ],
+      "reason": "Section 9 requires a mentioned cell to record searched route IDs or URLs. The four URLs are exactly the source URLs the ledger records as accessed on 2026-09-06.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal",
+          "source_chennai_birth_gcc_page",
+          "source_chennai_birth_gccservices_route",
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "Audit finding F4. Populated from the ledger's own source records."
+      }
+    },
+    {
+      "id": "correction_chennai_birth_owner_state",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/owner/state",
+      "old": "mentioned",
+      "new": "stated",
+      "reason": "The section 8 owner definition is disjunctive and admits a designation tied to a jurisdiction rule, and its lead test admits an operational role, not only a named office. The portal states that registrars have been appointed for each local area under section 7 of the Registration of Births and Deaths Act, 1969 for births and deaths occurring in their jurisdiction: that is an operational role bound to a rule that tells the citizen which holder is theirs, which is what separates it from the statutory designation alone that the definition sends to mentioned. The portal's route rule supplies the body to approach and the ledger names it as the Greater Chennai Corporation. The absence of an office list or contact route is the test for a different admitted form and cannot be applied as the requirement without reading the second admitted form out of the definition; that deficit remains on the record as claim_chennai_birth_local_registrar_office_unknown.",
+      "support": {
+        "sourceIds": ["source_chennai_birth_crstn_portal"],
+        "auditNote": "Audit finding F5, tested in both directions. Decided on the protocol text and the claims, not on the argument the sidecar note addressed to the auditor (finding F6)."
+      }
+    },
+    {
+      "id": "correction_chennai_birth_owner_claims",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/owner/claimIds",
+      "old": [
+        "claim_chennai_birth_registrars_by_local_area",
+        "claim_chennai_birth_gcc_routes_offered"
+      ],
+      "new": [
+        "claim_chennai_birth_registrars_by_local_area",
+        "claim_chennai_birth_portal_covers_from_2018"
+      ],
+      "reason": "Section 9 requires a stated cell to cite the claims that give the actionable value. claim_chennai_birth_gcc_routes_offered enumerates four service routes and asserts an absence of guidance text; it names no office, officer or role and so cannot supply an owner value. claim_chennai_birth_portal_covers_from_2018 is the claim that routes the citizen to the body that holds a pre-2018 case, the respective local body, and so belongs with the section 7 designation. Both replacement claims are verified and Grade B, as section 8 requires of a claim supporting a cell.",
+      "support": {
+        "sourceIds": ["source_chennai_birth_crstn_portal"],
+        "auditNote": "Audit finding F5. The removal also means no compound claim carries a cell state after correction; see finding F9."
+      }
+    },
+    {
+      "id": "correction_chennai_birth_owner_note",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/owner/note",
+      "old": "The topic is named without an actionable value. The only designation offered is a recital of section 7, that registrars have been appointed for each local area, with no office named, no list published and no contact route; the corporation is identified only as the local body. The two routes that would resolve it, the portal's About Us file and the corporation's zonal details page, both returned HTTP 404 on the access date. Recorded for the auditor: this is thinner than a designation tied to a jurisdiction rule of the kind the cell definition admits, because nothing lets the citizen move from their address to a named office.",
+      "new": "A citizen can identify the operational role that holds the case: the state portal states that registrars have been appointed for each local area under section 7 of the Registration of Births and Deaths Act, 1969 for registration of births and deaths occurring in their jurisdiction, so a birth that occurred in Chennai is held by the Registrar of Births and Deaths for that local area. The portal's route rule supplies the body, directing events registered before 1 January 2018 to the respective local body, which for this service is the Greater Chennai Corporation. This is a designation tied to a jurisdiction rule, one of the three forms the cell definition admits, rather than a statutory designation standing alone. Limitation carried forward: no individual office is named, no office list is published and no contact route is given, and the two routes that would supply them, the portal's About Us file and the corporation's zonal details page, both returned HTTP 404 on the access date. That gap is recorded as claim_chennai_birth_local_registrar_office_unknown and is not counted as a cell value.",
+      "reason": "Section 9 requires a stated cell to carry an actionable-value note. The replacement states the value and preserves the office-list limitation. It also removes a passage addressed to the auditor, which routed researcher reasoning into the audit's permitted input contrary to the isolation section 12 imposes.",
+      "support": {
+        "sourceIds": ["source_chennai_birth_crstn_portal"],
+        "auditNote": "Audit findings F5 and F6."
+      }
+    },
+    {
+      "id": "correction_chennai_birth_eligibility_claims",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_chennai_birth_portal_covers_from_2018",
+        "claim_chennai_birth_collect_within_30_days",
+        "claim_chennai_birth_institutional_collect_within_30_days"
+      ],
+      "new": [
+        "claim_chennai_birth_portal_covers_from_2018"
+      ],
+      "reason": "Rules 8(2) and 8(4) govern who may collect the extract at the moment of registration, one of them at the institution counter that the scenario summary excludes by name, so for consistency with the time correction they cannot support this cell either. The cell stands unchanged at stated on the remaining claim, which gives a rule deciding which route applies by the date the event was registered, is in scope, verified and Grade B.",
+      "support": {
+        "sourceIds": ["source_chennai_birth_crstn_portal"],
+        "auditNote": "Audit finding F7. State unchanged; only the supporting evidence is trimmed to the primary scenario."
+      }
+    },
+    {
+      "id": "correction_chennai_birth_eligibility_note",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/eligibility/note",
+      "old": "Usable rules decide which route applies: certificates for events registered from 1 January 2018 are downloaded from the state portal, and for earlier events the respective local body is approached instead; and who may collect the first extract is fixed by the Rules, the head of the house or nearest relative present for a domiciliary birth, the nearest relative of the new born for an institutional one.",
+      "new": "A usable rule decides which route applies: certificates for events registered from 1 January 2018 are downloaded from the state portal, and for earlier events the respective local body is approached instead, which for this service is the Greater Chennai Corporation. The Rules also fix who may collect the first extract, the head of the house or nearest relative present for a domiciliary birth and the nearest relative of the new born for an institutional one, but those provisions govern collection at the moment of registration, one of them at the institution counter this scenario excludes, so they are not cited in support of this cell.",
+      "reason": "The note must match the corrected claim IDs and must not present out-of-scope provisions as supporting evidence. The route rule is stated in full and the collection rules are recorded as scope-excluded rather than deleted from the account.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_birth_crstn_portal",
+          "source_chennai_birth_tn_rbd_rules"
+        ],
+        "auditNote": "Audit finding F7."
+      }
+    },
+    {
+      "id": "correction_chennai_birth_institutional_claim_note",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_institutional_collect_within_30_days",
+      "fieldPath": "/notes",
+      "old": "",
+      "new": "Scope: this rule governs collection of the extract from the officer or person in charge of the institution, which is the hospital-side step the primary scenario excludes. The claim is retained because it is a true, sourced statement of the Rules and the schema requires a scenario tag, but it does not supply a value for any expectation cell of this scenario.",
+      "reason": "Section 8 lint item 7 covers incorrect scenario IDs, and section 2 confines the grid to the primary scenario. The claim is tagged to the only declared scenario yet states a rule that scenario excludes by name. The tag cannot be removed without deleting the claim, since the schema requires a non-empty scenarioIds and no other scenario is declared, and deleting a true Grade A statement of the Rules would destroy evidence to fix a label. Recording the scope on the claim prevents it from silently carrying cell weight again.",
+      "support": {
+        "sourceIds": ["source_chennai_birth_tn_rbd_rules"],
+        "auditNote": "Audit finding F8. The sibling claim claim_chennai_birth_collect_within_30_days already records that it concerns the first extract, and claim_chennai_birth_uncollected_posted_in_fifteen_days is addressed by the corrected time and after-submission cell notes."
+      }
+    },
+    {
+      "id": "correction_chennai_birth_uncollected_claim_note",
+      "recordType": "claim",
+      "recordId": "claim_chennai_birth_uncollected_posted_in_fifteen_days",
+      "fieldPath": "/notes",
+      "old": "A duty on the registrar with a stated period, and the surface by which the family receives the certificate without asking again.",
+      "new": "A duty on the Registrar or the officer in charge of the institution, with a stated period, arising on the expiry of the collection period that follows registration. Scope: it is triggered automatically rather than by anything the citizen submits, so under the section 8 after-submission definition, which excludes registration-stage steps, it is not a post-submission surface for this scenario, and its period is not a processing time for a request for a copy.",
+      "reason": "The existing note characterises the posting duty as a surface by which the family receives the certificate, which is the reading that carried the after-submission cell to stated. The section 8 definition excludes registration-stage steps and requires something the citizen sees after submitting; this duty answers to no submission. The note is corrected so it does not support wording the evidence does not carry.",
+      "support": {
+        "sourceIds": ["source_chennai_birth_tn_rbd_rules"],
+        "auditNote": "Audit findings F3 and F4. The claim text, grade A, basis and verified status are all sound and are unchanged; only the note's characterisation is corrected."
+      }
+    }
+  ]
+}

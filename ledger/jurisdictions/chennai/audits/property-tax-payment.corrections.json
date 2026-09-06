@@ -1,0 +1,119 @@
+{
+  "serviceId": "property-tax-payment",
+  "ledgerPath": "ledger/jurisdictions/chennai/property-tax-payment.json",
+  "auditPath": "ledger/jurisdictions/chennai/audits/property-tax-payment.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "correction_chennai_ptax_cost_state",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/cost/state",
+      "old": "stated",
+      "new": "mentioned",
+      "reason": "Section 8 makes cost stated only when the evidence gives an amount a citizen pays or an actionable fee schedule, and names a payment step without an amount as mentioned. The cell rests solely on a 'Nil' transaction fee for the online channel, while the ledger's own claim_chennai_ptax_amount_payable_unknown records that the tax itself cannot be derived because the percentage table and the basic-rate annexure the corporation's method depends on are absent from the page that cites them. A zero on the channel charge does not supply the amount a citizen pays for this service. Section 3 is preserved: the explicit zero is retained in the cell's claimIds as a topic-only claim under section 9 and keeps the cell off absent, but it does not carry the cell to stated.",
+      "support": {
+        "sourceIds": ["source_chennai_ptax_rules_procedure", "source_chennai_ptax_assessment_method"],
+        "auditNote": "Audit finding F1. The nil transaction fee is one component of a two-part sum whose other component is underivable by the corporation's own published method; the calculator that would supply the missing rate points at an unreachable staging host. The cell already records three searched routes, satisfying section 9 for a mentioned cell."
+      }
+    },
+    {
+      "id": "correction_chennai_ptax_cost_note",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/cost/note",
+      "old": "An explicit zero is stated: the corporation says online payment carries a 'Nil' transaction fee. Read narrowly, as the rule requires: that fixes what the channel costs, not what the tax costs. The tax itself cannot be derived from any public page, because the corporation's own method points to a percentage table 'given above' and to an annexure of location-wise basic rates, and neither is on the page; the calculator that would supply them points at an unreachable staging host. That gap is carried as a separate unknown claim rather than folded into this cell.",
+      "new": "The topic is named and one real charge is quantified, but no amount a citizen pays for this service is given. The corporation states a 'Nil' transaction fee for online payment, which is an explicit zero on the channel charge and is retained here under protocol section 3 so that the cell is not scored absent. It is not the amount the citizen pays: the tax itself cannot be derived from any public page, because the corporation's own method points to a percentage table 'given above' and to an annexure of location-wise basic rates, neither of which is on the page, which ends with the text 'TO BE UPDATED'; the calculator that would supply them points at an unreachable staging host. That gap is carried as a separate unknown claim rather than folded into this cell. Under the section 8 cost definition the payment route is a payment step without an amount, which is mentioned.",
+      "reason": "The cell note argued for a stated cell. It is rewritten to state the mentioned ruling and the searched-route rationale required of a mentioned cell by section 9, while keeping the explicit zero visible as section 3 requires.",
+      "support": {
+        "sourceIds": ["source_chennai_ptax_rules_procedure", "source_chennai_ptax_assessment_method"],
+        "auditNote": "Audit finding F1. Consequential on the state change in the same correction set."
+      }
+    },
+    {
+      "id": "correction_chennai_ptax_payment_modes_text",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_payment_modes",
+      "fieldPath": "/text",
+      "old": "The corporation's property tax rules and procedure page states that the assessee should pay by cheque or demand draft drawn in favour of 'The Revenue Officer, Corporation of Chennai', and lists the modes as through the tax collectors, through eleven named banks under a walk-in payment system, at e-seva common service centres run by Tamil Nadu Arasu Cable Television Corporation in taluk offices, zonal offices, divisional offices and headquarters, and online.",
+      "new": "The corporation's property tax rules and procedure page lists the modes of paying property tax as through the tax collectors, through eleven named banks under a walk-in payment system, at e-seva common service centres run by Tamil Nadu Arasu Cable Television Corporation in taluk offices, zonal offices, divisional offices and headquarters, and online.",
+      "reason": "Section 1 requires one claim to assert one checkable thing, and section 8 lint item 1 flags compound claims. This claim asserted two distinct rules: the cheque or demand draft payee instruction and the list of payment channels. The payee limb is already recorded atomically as claim_chennai_ptax_revenue_officer_is_payee, so the claim is narrowed to the channel list rather than split into a new record, preserving record identity under section 1.",
+      "support": {
+        "sourceIds": ["source_chennai_ptax_rules_procedure"],
+        "auditNote": "Audit finding F4. No evidence is added or removed: both limbs remain in the ledger, each on one record. The enumeration of channels the page itself lists is one checkable thing and is not split further."
+      }
+    },
+    {
+      "id": "correction_chennai_ptax_payment_modes_notes",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_payment_modes",
+      "fieldPath": "/notes",
+      "old": "A usable rule about where and how the tax may be paid, and the only instrument the counter route names.",
+      "new": "A usable rule about where the tax may be paid. The cheque or demand draft instruction this claim previously also carried is recorded atomically at claim_chennai_ptax_revenue_officer_is_payee.",
+      "reason": "The second clause of the note referred to the payee and instrument limb removed from /text by the accompanying correction, and would otherwise be stale.",
+      "support": {
+        "sourceIds": ["source_chennai_ptax_rules_procedure"],
+        "auditNote": "Audit finding F4. Consequential on the text narrowing in the same correction set."
+      }
+    },
+    {
+      "id": "correction_chennai_ptax_documents_claimids",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/documents/claimIds",
+      "old": [
+        "claim_chennai_ptax_payment_modes",
+        "claim_chennai_ptax_assessment_documents_are_other_route"
+      ],
+      "new": [
+        "claim_chennai_ptax_payment_modes",
+        "claim_chennai_ptax_assessment_documents_are_other_route",
+        "claim_chennai_ptax_revenue_officer_is_payee"
+      ],
+      "reason": "The documents cell note reasons about the cheque or demand draft drawn in a named favour, which it took from claim_chennai_ptax_payment_modes. That limb moves to claim_chennai_ptax_revenue_officer_is_payee under the accompanying atomicity correction, so the claim is added here to preserve the cell's topic anchor. Section 9 permits topic-only claimIds on a mentioned cell.",
+      "support": {
+        "sourceIds": ["source_chennai_ptax_rules_procedure"],
+        "auditNote": "Audit finding F3 and F4. The cell state is unchanged at mentioned: a payment instrument is not a document the citizen must produce, and the corporation's real document list is scoped to the excluded assessment route."
+      }
+    },
+    {
+      "id": "correction_chennai_ptax_half_yearly_grade",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_half_yearly_basis",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades as C official material that is incomplete, potentially outdated, or undated and visibly outdated, with the date and limitation stated. The claim asserts a present-tense substantive rule taken solely from source_chennai_ptax_assessment_method, a page that shows no visible date, cites nothing later than 2001, omits the percentage table and basic-rate annexure its own method requires, and ends with the literal placeholder 'TO BE UPDATED'.",
+      "support": {
+        "sourceIds": ["source_chennai_ptax_assessment_method"],
+        "auditNote": "Audit finding F5. The section 4 requirement to state the date and limitation is already met by the source record and by meta.disclaimer, so no further edit is proposed. No cell state changes, because section 8 admits a Grade A, B or C claim as the basis for stated."
+      }
+    },
+    {
+      "id": "correction_chennai_ptax_annual_value_grade",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_annual_value_factor",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades as C official material that is incomplete, potentially outdated, or undated and visibly outdated. The 10.92 multiplier and its worked example are asserted as a current rule solely from source_chennai_ptax_assessment_method, which is undated, cites authorities only up to 2001, is missing the figures its own method depends on, and declares itself 'TO BE UPDATED'.",
+      "support": {
+        "sourceIds": ["source_chennai_ptax_assessment_method"],
+        "auditNote": "Audit finding F5. Graded on source strength, not on how usable the figure is."
+      }
+    },
+    {
+      "id": "correction_chennai_ptax_library_cess_grade",
+      "recordType": "claim",
+      "recordId": "claim_chennai_ptax_library_cess",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "Section 4 grades as C official material that is incomplete, potentially outdated, or undated and visibly outdated. The 10 per cent library cess is asserted as a current rule from source_chennai_ptax_assessment_method on the strength of a 1992 government order and a 2001 council resolution, on a page that is undated, incomplete on its face, and ends with 'TO BE UPDATED'.",
+      "support": {
+        "sourceIds": ["source_chennai_ptax_assessment_method"],
+        "auditNote": "Audit finding F5. The claim's own note records that the rate is published but the base it applies to is not."
+      }
+    }
+  ]
+}

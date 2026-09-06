@@ -1,0 +1,212 @@
+{
+  "serviceId": "water-connection",
+  "ledgerPath": "ledger/jurisdictions/hyderabad/water-connection.json",
+  "auditPath": "ledger/jurisdictions/hyderabad/audits/water-connection.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "corr_time_cell_state",
+      "recordType": "expectation",
+      "recordId": "water-connection",
+      "fieldPath": "/cells/time/state",
+      "old": "stated",
+      "new": "mentioned",
+      "reason": "The cell rests on the revised column of a two-column service level agreement while the ledger's own claim_hyderabad_water_which_sla_in_force_unknown records that which procedure governs on the access date is not established by any reviewed public page. The two columns differ materially (15 days versus 60 for payment of connection charges; 5 versus 29 for consumer account number generation), so selecting one is an inference the ledger expressly declines to draw. Protocol section 8 requires a stated cell to give a value a citizen can act on and provides that an Unknown claim records a limitation, not a positive cell value; a disclosing note cannot convert that limitation into a stated value. Section 8 tolerates incompleteness in a time cell but not indeterminacy between two published, mutually exclusive schedules. The topic is named and figures appear, so mentioned is the correct state.",
+      "support": {
+        "sourceIds": ["source_hyderabad_water_swc_sla"],
+        "auditNote": "Audit finding F-01. The source record itself states the document sets out an existing and a revised procedure side by side and does not state which is in force, and it is undated on its face, so the revised column is not anchored as current in 2026 either."
+      }
+    },
+    {
+      "id": "corr_time_cell_claimids",
+      "recordType": "expectation",
+      "recordId": "water-connection",
+      "fieldPath": "/cells/time/claimIds",
+      "old": [
+        "claim_hyderabad_water_sla_category_i_stages",
+        "claim_hyderabad_water_days_are_working_days"
+      ],
+      "new": [
+        "claim_hyderabad_water_sla_category_i_stages",
+        "claim_hyderabad_water_sla_existing_procedure_stages",
+        "claim_hyderabad_water_days_are_working_days"
+      ],
+      "reason": "Protocol section 9 permits a mentioned cell to carry topic-only claim IDs. With the cell corrected to mentioned, listing only the revised procedure would continue to present one column as the answer. Adding claim_hyderabad_water_sla_existing_procedure_stages makes the cell show both published procedures as topic support without endorsing either.",
+      "support": {
+        "sourceIds": ["source_hyderabad_water_swc_sla"],
+        "auditNote": "Audit finding F-01. The Unknown claim is deliberately not listed here: under section 8 it records a limitation rather than supporting a cell, and it is described in the cell note instead."
+      }
+    },
+    {
+      "id": "corr_time_cell_searchedroutes",
+      "recordType": "expectation",
+      "recordId": "water-connection",
+      "fieldPath": "/cells/time/searchedRoutes",
+      "old": [],
+      "new": [
+        "https://hyderabadwater.gov.in/en/application/files/8017/3313/7016/SWC-SLA.pdf",
+        "https://hyderabadwater.gov.in/en"
+      ],
+      "reason": "Protocol section 9 requires a mentioned cell to record the searched route IDs or URLs. These are the two routes the ledger records as read for timing evidence: the Single Window Cell service level agreement, and the board site entry point from which the Timelines for New Connection route is published.",
+      "support": {
+        "sourceIds": ["source_hyderabad_water_swc_sla", "source_hyderabad_water_board_site"],
+        "auditNote": "Audit finding F-01. Both URLs are taken verbatim from source records in the ledger carrying accessedAt 2026-09-06; no route is asserted that the ledger does not already record as read."
+      }
+    },
+    {
+      "id": "corr_time_cell_note",
+      "recordType": "expectation",
+      "recordId": "water-connection",
+      "fieldPath": "/cells/time/note",
+      "old": "A stage-by-stage service level agreement is published for the Category I 15mm connection this scenario covers, running from 7 working days to pay the processing fee through 6 and 5 days of feasibility checks, 15 days to pay the connection charges, automatic Green Brigade allotment within 24 hours of payment and 5 days to generate the consumer account number, with the charter fixing that days mean working days. Two qualifications are recorded rather than resolved: the figures are per stage and no total is published, and the same document sets out a slower existing procedure beside the revised one without saying which is in force, which is carried as a separate unknown claim.",
+      "new": "Searched the board's Single Window Cell service level agreement and the board site's Timelines for New Connection route. Timing is named and stage figures are published for a Category I 15mm connection, but the same document sets out two procedures side by side and does not say which governs. Under the revised procedure the stages run 7 working days to pay the processing fee, 6 and 5 days of feasibility checks, 5 days to re-upload missed documents, 15 days to pay the connection charges, Green Brigade allotment within 24 hours of payment and 5 days to generate the consumer account number. Under the existing procedure the corresponding stages run 15, 10 and 20 days of feasibility checks, 10 days to capture documents, 5 days for proceeding generation, 60 days to pay the connection charges and 29 days to generate the consumer account number. The charter fixes that days mean working days, but no reviewed public page establishes which procedure applies on the access date, and the agreement is undated on its face. A citizen therefore cannot tell whether the payment window is 15 days or 60. That gap is carried as claim_hyderabad_water_which_sla_in_force_unknown. No total is published for either procedure; the figures are per stage.",
+      "reason": "Protocol section 9 requires a mentioned cell to carry a search note. The previous note was written as an actionable-value note for a stated cell, leading with the revised figures and relegating the indeterminacy to a closing qualification. The replacement records what was searched, sets both published procedures out on equal footing, and states plainly that the reviewed evidence does not establish which applies.",
+      "support": {
+        "sourceIds": ["source_hyderabad_water_swc_sla", "source_hyderabad_water_citizen_charter"],
+        "auditNote": "Audit finding F-01. Both sets of figures are taken verbatim from claim_hyderabad_water_sla_category_i_stages and claim_hyderabad_water_sla_existing_procedure_stages; the working-days point is from claim_hyderabad_water_days_are_working_days. No new figure is introduced."
+      }
+    },
+    {
+      "id": "corr_occupancy_relief_grade",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_water_occupancy_certificate_relief",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "The claim's only source is source_hyderabad_water_documents_list, which the ledger's own source record describes as carrying no visible date on its face, dated 2018-07-25 only by file metadata, and expressly states that claims from it are graded C. Protocol section 4 grades archived or undated official material C. The ledger applied this rule correctly to the parallel undated document, source_hyderabad_water_swc_sla, whose claims are graded C; this claim was not given the same treatment.",
+      "support": {
+        "sourceIds": ["source_hyderabad_water_documents_list"],
+        "auditNote": "Audit finding F-04. C still supports a stated cell under section 8, so the documents and eligibility cells are unaffected."
+      }
+    },
+    {
+      "id": "corr_occupancy_relief_notes",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_water_occupancy_certificate_relief",
+      "fieldPath": "/notes",
+      "old": "A rule that decides whether the hardest enclosure applies to a given house.",
+      "new": "A rule that decides whether the hardest enclosure applies to a given house. Graded C because its only source is undated on its face and dated 2018 by file metadata, so the rule may have been superseded since; the relief was not corroborated on any other reviewed route.",
+      "reason": "Protocol section 4 conditions the C grade on stating the date and the limitation. The claim previously carried no grading rationale; this matches the pattern the ledger already uses on the claims resting on the undated service level agreement.",
+      "support": {
+        "sourceIds": ["source_hyderabad_water_documents_list"],
+        "auditNote": "Audit finding F-04. The date is taken from the source record's own note; nothing new is asserted about the document."
+      }
+    },
+    {
+      "id": "corr_document_matrix_grade",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_water_document_matrix_by_category",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "The claim's only source is source_hyderabad_water_documents_list, whose source record states that it carries no visible date on its face, is dated 2018-07-25 by file metadata alone, and that claims from it are graded C. Protocol section 4 grades undated official material C.",
+      "support": {
+        "sourceIds": ["source_hyderabad_water_documents_list"],
+        "auditNote": "Audit finding F-05. C still supports a stated cell under section 8, so the documents cell is unaffected."
+      }
+    },
+    {
+      "id": "corr_document_matrix_notes",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_water_document_matrix_by_category",
+      "fieldPath": "/notes",
+      "old": "The matrix also carries rows for Category II, Category III, below poverty line applicants and second connections, which are outside this scenario.",
+      "new": "The matrix also carries rows for Category II, Category III, below poverty line applicants and second connections, which are outside this scenario; only the Category I row is recited here. Graded C because its only source is undated on its face and dated 2018 by file metadata, so the matrix may have been superseded since.",
+      "reason": "Protocol section 4 conditions the C grade on stating the date and the limitation. The scope note is preserved and the grading rationale added.",
+      "support": {
+        "sourceIds": ["source_hyderabad_water_documents_list"],
+        "auditNote": "Audit finding F-05. The date is taken from the source record's own note."
+      }
+    },
+    {
+      "id": "corr_prospective_routes_grade",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_water_prospective_routes_published",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "The claim's only source is source_hyderabad_water_board_site, whose URL is the board's homepage at https://hyderabadwater.gov.in/en. Protocol section 7 states that a department homepage is a general-site reference and claims resting on it are Grade C, never presented as a specific source, and section 4 repeats this in the C row. Section 4's B row for direct observation of a public official interface fixes observation against citizen report and inference; it does not displace the homepage rule. The claim is about the list of route titles in the site navigation on one date, which is the volatile general-site fact the rule targets.",
+      "support": {
+        "sourceIds": ["source_hyderabad_water_board_site"],
+        "auditNote": "Audit finding F-07. C still supports a stated cell under section 8, so the after-submission cell is unaffected. Contrast source_hyderabad_water_status_route, a specific page URL whose claim is properly graded B."
+      }
+    },
+    {
+      "id": "corr_prospective_routes_notes",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_water_prospective_routes_published",
+      "fieldPath": "/notes",
+      "old": "Observed as published links on the board's own navigation on the access date; none was exercised.",
+      "new": "Observed as published links on the board's own navigation on the access date; none was exercised. Graded C under protocol section 7 because the citation is the board's homepage, a general-site reference rather than a specific page, and site navigation may change without notice.",
+      "reason": "Protocol section 4 conditions the C grade on stating the limitation, and section 7 requires that a homepage-based citation never be presented as a specific source. The note now records why the grade is C.",
+      "support": {
+        "sourceIds": ["source_hyderabad_water_board_site"],
+        "auditNote": "Audit finding F-07."
+      }
+    },
+    {
+      "id": "corr_customer_care_grade",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_water_customer_care_contacts",
+      "fieldPath": "/evidenceGrade",
+      "old": "B",
+      "new": "C",
+      "reason": "The claim's only source is source_hyderabad_water_board_site, the board's homepage. Protocol section 7 requires that claims resting on a department homepage be Grade C. The claim's own text, that the contacts appear on every page of the site, is a general-site assertion by construction.",
+      "support": {
+        "sourceIds": ["source_hyderabad_water_board_site"],
+        "auditNote": "Audit finding F-08. C still supports a stated cell under section 8, and the owner cell does not depend on this claim in any event; it rests on the circle and division jurisdiction rule and the jurisdiction annexure."
+      }
+    },
+    {
+      "id": "corr_customer_care_notes",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_water_customer_care_contacts",
+      "fieldPath": "/notes",
+      "old": "Institutional contact details only.",
+      "new": "Institutional contact details only. Graded C under protocol section 7 because the citation is the board's homepage, a general-site reference rather than a specific page. This is a general utility helpline, not a contact route for the office deciding a new connection case.",
+      "reason": "Protocol section 4 conditions the C grade on stating the limitation. The note also records that this is not a role-specific contact route, so the owner cell is not read as resting on it.",
+      "support": {
+        "sourceIds": ["source_hyderabad_water_board_site"],
+        "auditNote": "Audit findings F-08 and F-13."
+      }
+    },
+    {
+      "id": "corr_status_tracking_split_text",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_water_status_tracking_and_sms",
+      "fieldPath": "/text",
+      "old": "The board's citizens charter states that the status of a new connection application or a registered complaint can be tracked on the website and that SMS messages are also sent to the applicant, and that a user manual for filling the online application is available on the website with a dedicated help desk at the head office and kiosks at cash counters.",
+      "new": "The board's citizens charter states that the status of a new connection application or a registered complaint can be tracked on the website and that SMS messages are also sent to the applicant.",
+      "reason": "Protocol section 1 requires one claim to assert one checkable thing, and section 8 lint item 1 flags compound claims. This claim asserted four things across two unrelated topics: two post-submission surfaces (status tracking, SMS to the applicant) and two help resources available at or before submission (an online-application user manual, a help desk and kiosks). Protocol section 8 provides that a step at or before submission is not after-submission evidence, so the two halves fall on opposite sides of an express boundary while the claim is the principal support for the after-submission cell. The claim is trimmed to the post-submission surfaces; the help resources move to claim_hyderabad_water_application_help_resources.",
+      "support": {
+        "sourceIds": ["source_hyderabad_water_citizen_charter"],
+        "auditNote": "Audit finding F-09. No content is lost: every assertion removed here reappears verbatim in the new claim. The after-submission cell note already draws only on the tracking and SMS content, so it remains accurate and needs no amendment."
+      }
+    },
+    {
+      "id": "corr_add_help_resources_claim",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_water_application_help_resources",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_hyderabad_water_application_help_resources",
+        "text": "The board's citizens charter states that a user manual for filling the online application is available on the website, with a dedicated help desk at the head office and kiosks at the cash counters.",
+        "jurisdiction": "Hyderabad, Telangana, India",
+        "scenarioIds": ["scenario_ind32_water_residential"],
+        "nodeIds": [],
+        "sourceIds": ["source_hyderabad_water_citizen_charter"],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split out of claim_hyderabad_water_status_tracking_and_sms by audit for atomicity. These are help resources available at or before submission, so under protocol section 8 they are not after-submission evidence and this claim supports no expectation cell. Graded B on the May 2024 citizens charter, a current official publication dated on its face."
+      },
+      "reason": "Completes the split at corr_status_tracking_split_text. The help resources are accurate charter content and are retained rather than discarded, but as pre-submission material they belong in their own claim and support no expectation cell.",
+      "support": {
+        "sourceIds": ["source_hyderabad_water_citizen_charter"],
+        "auditNote": "Audit finding F-09. Text is carried over verbatim from the compound claim; no new evidence is introduced. Grade B follows the charter's status as a current, face-dated official publication, the same basis on which the ledger's other charter claims are graded."
+      }
+    }
+  ]
+}

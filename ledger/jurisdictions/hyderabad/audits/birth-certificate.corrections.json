@@ -1,0 +1,248 @@
+{
+  "serviceId": "birth-certificate",
+  "ledgerPath": "ledger/jurisdictions/hyderabad/birth-certificate.json",
+  "auditPath": "ledger/jurisdictions/hyderabad/audits/birth-certificate.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "corr_01_fee45_contradiction_link",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_birth_meeseva_fee_45",
+      "fieldPath": "/contradictsClaimIds",
+      "old": [],
+      "new": ["claim_hyderabad_birth_charter_fee_20"],
+      "reason": "Protocol section 1 requires conflicting claims to be retained and cross-linked with contradictsClaimIds. The Rs. 45 and Rs. 20 figures are two amounts for the same output, a birth certificate for the citizen, published by the same agency on the same live site. Only the Rs. 45 claim is channel-scoped on its face; the charter's row is unqualified, and its counter-route scoping exists only in the claim notes as an inference.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_ghmc_page", "source_hyderabad_birth_ghmc_citizen_charter"],
+        "auditNote": "Audit finding 1. The two-routes reading is also in tension with the current page's own wording that certificates can be taken from Mee-Seva centres 'only', recorded at claim_hyderabad_birth_institutional_route."
+      }
+    },
+    {
+      "id": "corr_02_fee20_contradiction_link",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_birth_charter_fee_20",
+      "fieldPath": "/contradictsClaimIds",
+      "old": [],
+      "new": ["claim_hyderabad_birth_meeseva_fee_45"],
+      "reason": "Reciprocal cross-link required by protocol section 1 for the same conflict.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_ghmc_citizen_charter", "source_hyderabad_birth_ghmc_page"],
+        "auditNote": "Audit finding 1."
+      }
+    },
+    {
+      "id": "corr_03_fee20_status_contested",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_birth_charter_fee_20",
+      "fieldPath": "/status",
+      "old": "verified",
+      "new": "contested",
+      "reason": "Protocol section 1 marks conflicting claims contested until audited; this audit resolves the holding against the weaker figure rather than against both. Rs. 20 rests on a document twelve years past the revision date it states for itself and graded C, against a current Grade B figure directly observed on the corporation's live page, and the ledger's own unknown claim records that whether the Rs. 20 fee is still in force is not established by any reviewed public page.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_ghmc_citizen_charter"],
+        "auditNote": "Audit finding 1. Under section 8 a contested claim may not support a cell, so this claim also leaves /cells/cost/claimIds; the cost cell remains stated on the Rs. 45 figure alone."
+      }
+    },
+    {
+      "id": "corr_04_fee20_notes",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_birth_charter_fee_20",
+      "fieldPath": "/notes",
+      "old": "The charter's own service table, for the corporation counter route rendered by the AMOH. Graded C because the document is twelve years past the revision date it states for itself.",
+      "new": "The charter's own service table, which names the AMOH as the officer rendering the service but does not state that this fee is confined to a counter channel; the counter-route scoping was an inference, not an observation of the source. Graded C because the document is twelve years past the revision date it states for itself. Marked contested on audit: it gives a different amount for the same output as the corporation's current page, which gives Rs. 45, and claim_hyderabad_birth_current_fee_and_timeframe_unknown records that whether this figure is still in force is not established by any reviewed public page.",
+      "reason": "The existing note asserts the two-routes reconciliation this audit rejects, and protocol section 5 requires an inference not to be presented as what the source shows.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_ghmc_citizen_charter"],
+        "auditNote": "Audit finding 1."
+      }
+    },
+    {
+      "id": "corr_05_fee45_notes",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_birth_meeseva_fee_45",
+      "fieldPath": "/notes",
+      "old": "An amount the citizen pays on the Mee-Seva route, from the corporation's current page. The corporation's 2013 charter gives a different figure for its own counter route; the two are recorded separately because each source scopes itself to its own channel.",
+      "new": "An amount the citizen pays for a certificate, from the corporation's current page, directly observed. The corporation's 2013 Citizen's Charter gives Rs. 20 for the same output; neither source states that it prices a channel to the exclusion of the other, so the two are cross-linked as contradictory under protocol section 1 rather than treated as separate routes. This claim is the stronger evidence, being current, Grade B and observed on the corporation's live page, and is retained as verified; the charter figure is marked contested.",
+      "reason": "The existing note asserts the two-routes reconciliation this audit rejects and must record the retained contradiction instead.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_ghmc_page"],
+        "auditNote": "Audit finding 1."
+      }
+    },
+    {
+      "id": "corr_06_cost_cell_claimids",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_hyderabad_birth_meeseva_fee_45",
+        "claim_hyderabad_birth_charter_fee_20"
+      ],
+      "new": ["claim_hyderabad_birth_meeseva_fee_45"],
+      "reason": "Protocol section 8 admits only verified or partial claims in support of a cell. claim_hyderabad_birth_charter_fee_20 becomes contested and must leave the cell's support.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_ghmc_page"],
+        "auditNote": "Audit finding 1. The cell stays stated: Rs. 45 payable at any Mee-Seva centre is an amount the citizen pays, which satisfies the section 8 cost definition on its own."
+      }
+    },
+    {
+      "id": "corr_07_cost_cell_note",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/cost/note",
+      "old": "Amounts the citizen pays are published for both routes: Rs. 45 at a Mee-Seva centre on the corporation's current birth and death page, and Rs. 20 per certificate, or per extra copy, in the corporation's Citizen's Charter for its own counter route rendered by the AMOH. The two figures are not reconciled anywhere: each source scopes itself to its own channel, and neither mentions the other. The charter figure comes from a document twelve years past the revision date it states for itself, and whether it still holds is recorded separately as unknown.",
+      "new": "The corporation's current birth and death page gives Rs. 45 at any Mee-Seva centre, an amount the citizen pays, directly observed and graded B. The corporation's Citizen's Charter gives Rs. 20 per certificate, and Rs. 20 per extra copy, for the same output. Neither source states that it prices a channel to the exclusion of the other, so the two are cross-linked as contradictory under protocol section 1 rather than treated as separate routes; the charter figure is contested and therefore does not support this cell. The cell is stated on the Rs. 45 figure alone. The charter is twelve years past the revision date it states for itself, and whether its Rs. 20 figure is still in force is recorded separately as unknown.",
+      "reason": "The note presents the conflict as two channels, which this audit rejects, and must state which claim carries the cell after the contested figure is removed.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_ghmc_page", "source_hyderabad_birth_ghmc_citizen_charter"],
+        "auditNote": "Audit finding 1."
+      }
+    },
+    {
+      "id": "corr_08_form_particulars_grade",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_birth_form_particulars",
+      "fieldPath": "/evidenceGrade",
+      "old": "C",
+      "new": "B",
+      "reason": "Protocol section 4 grades an observed current official form B, and pre-audit lint item 4 makes Grade C on an observed current official form a finding. The application is served live from the corporation's own CSC_Applications directory, is the form it currently publishes for this service, and was directly observed on the access date. The 2010 PDF metadata date is a limitation to state, not a demotion of the artefact; section 4's general 'undated material' row yields to the specific row for forms.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_application_form"],
+        "auditNote": "Audit finding 5. No cell state moves, since section 8 admits Grade B and Grade C alike. If the research pass recorded a waiver for lint item 4 in its handoff, that waiver lies outside the section 12 audit input boundary."
+      }
+    },
+    {
+      "id": "corr_09_form_proviso_grade",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_birth_form_registration_proviso",
+      "fieldPath": "/evidenceGrade",
+      "old": "C",
+      "new": "B",
+      "reason": "Same ground as the preceding correction: the claim is drawn from an observed current official form, which protocol section 4 grades B and pre-audit lint item 4 protects from Grade C.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_application_form"],
+        "auditNote": "Audit finding 5. The eligibility cell remains stated either way."
+      }
+    },
+    {
+      "id": "corr_10_form_source_notes",
+      "recordType": "source",
+      "recordId": "source_hyderabad_birth_application_form",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: the file is served from the corporation's own CSC_Applications directory and its footer fields refer to a CSC transaction number and date. One page. It carries no visible date on its face; the PDF metadata records a creation date of 2010-04-02, recorded as publishedAt, so claims from it are graded C. It was read only: nothing was filled in or submitted. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260517060637/https://ghmc.gov.in/CSC_Applications/BIRTHREQAPP.pdf (2026-05-17); no new capture was pushed from this run.",
+      "new": "Jurisdiction: Hyderabad, Telangana, India. Agency naming as displayed on the access date: the file is served from the corporation's own CSC_Applications directory and its footer fields refer to a CSC transaction number and date. One page. It carries no visible date on its face; the PDF metadata records a creation date of 2010-04-02, recorded as publishedAt and carried as a stated limitation. Claims from it are graded B as an observed current official form under protocol section 4, the form being the one the corporation currently serves for this service and having been directly observed on the access date; the earlier Grade C reading was corrected on audit under pre-audit lint item 4. It was read only: nothing was filled in or submitted. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260517060637/https://ghmc.gov.in/CSC_Applications/BIRTHREQAPP.pdf (2026-05-17); no new capture was pushed from this run.",
+      "reason": "The source note states that claims from this form are graded C. Left unchanged it would contradict the corrected claim grades, while the 2010 metadata date must remain recorded as a limitation.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_application_form"],
+        "auditNote": "Audit finding 5."
+      }
+    },
+    {
+      "id": "corr_11_instant_issue_text_split",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_birth_meeseva_instant_issue",
+      "fieldPath": "/text",
+      "old": "The corporation's birth and death page states that for a non-institutional birth the citizen approaches the Mee-Seva centre with all required documents including Form 1, and that the certificates are then issued instantly from Mee-Seva centres after approval by the Registrar or AMOH.",
+      "new": "The corporation's birth and death page states that certificates are issued instantly from Mee-Seva centres after approval by the Registrar or AMOH.",
+      "reason": "Protocol section 1 requires one claim to assert one checkable thing, and pre-audit lint item 1 flags compound claims. This record packed a non-institutional intake step and an instant-issue timing statement, and was cited in four of the six cells, so every citation pointed at a record half of which was irrelevant to it. The record keeps its published identity, as section 1 requires, and is narrowed to the half its ID names; the intake half is added as a new claim.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_ghmc_page"],
+        "auditNote": "Audit finding 4. The time and owner cells rely on this half and need no claimIds change."
+      }
+    },
+    {
+      "id": "corr_12_instant_issue_notes",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_birth_meeseva_instant_issue",
+      "fieldPath": "/notes",
+      "old": "The documents are described only as 'all required documents including form-1', without a list.",
+      "new": "The timing figure covers the Mee-Seva counter step only and is expressly conditioned on prior approval by the Registrar or AMOH, for which no period is published. The intake sentence this record previously carried was split out on audit as claim_hyderabad_birth_meeseva_noninstitutional_intake; this record keeps its published identity under protocol section 1.",
+      "reason": "The existing note describes the intake half that has been split out and no longer belongs to this record.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_ghmc_page"],
+        "auditNote": "Audit finding 4. The staging is stated on the face of the source, which is why this figure and the charter's 7-day frame are complementary rather than contradictory."
+      }
+    },
+    {
+      "id": "corr_13_add_noninstitutional_intake_claim",
+      "recordType": "claim",
+      "recordId": "claim_hyderabad_birth_meeseva_noninstitutional_intake",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_hyderabad_birth_meeseva_noninstitutional_intake",
+        "text": "The corporation's birth and death page states that for a non-institutional birth the citizen approaches the Mee-Seva centre with all required documents including Form 1.",
+        "jurisdiction": "Hyderabad, Telangana, India",
+        "scenarioIds": ["scenario_ind32_birth_copy_workflow"],
+        "nodeIds": [],
+        "sourceIds": ["source_hyderabad_birth_ghmc_page"],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split from claim_hyderabad_birth_meeseva_instant_issue on audit for atomicity. The documents are described only as 'all required documents including form-1', without a list, which is why the documents cell is mentioned rather than stated. This sentence describes intake for a birth not yet on the register and so sits at the edge of a scenario scoped to a birth already registered; it is retained because the corporation's page presents Mee-Seva intake and certificate issue as one counter flow, and because the only cell it supports is mentioned rather than stated."
+      },
+      "reason": "The intake half of the split compound claim is retained as its own atomic record under protocol section 1, so that the documents and eligibility cells cite a record that actually asserts what they rely on.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_ghmc_page"],
+        "auditNote": "Audit finding 4. No evidence is invented: the text is the intake sentence removed verbatim from the original record, on the same source."
+      }
+    },
+    {
+      "id": "corr_14_documents_cell_claimids",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/documents/claimIds",
+      "old": [
+        "claim_hyderabad_birth_charter_application_prescribed_format",
+        "claim_hyderabad_birth_meeseva_instant_issue",
+        "claim_hyderabad_birth_form_particulars"
+      ],
+      "new": [
+        "claim_hyderabad_birth_charter_application_prescribed_format",
+        "claim_hyderabad_birth_meeseva_noninstitutional_intake",
+        "claim_hyderabad_birth_form_particulars"
+      ],
+      "reason": "The documents cell relies on the 'all required documents including Form 1' sentence, which after the split lives in claim_hyderabad_birth_meeseva_noninstitutional_intake and no longer in claim_hyderabad_birth_meeseva_instant_issue.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_ghmc_page"],
+        "auditNote": "Audit findings 4 and 8. The cell stays mentioned and its note remains accurate as written, since the note cites no claim IDs."
+      }
+    },
+    {
+      "id": "corr_15_eligibility_cell_claimids",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_hyderabad_birth_form_registration_proviso",
+        "claim_hyderabad_birth_institutional_route",
+        "claim_hyderabad_birth_meeseva_instant_issue"
+      ],
+      "new": [
+        "claim_hyderabad_birth_form_registration_proviso",
+        "claim_hyderabad_birth_institutional_route",
+        "claim_hyderabad_birth_meeseva_instant_issue",
+        "claim_hyderabad_birth_meeseva_noninstitutional_intake"
+      ],
+      "reason": "The eligibility note's home-birth route rule spans both halves of the split claim: the family bringing the birth to a Mee-Seva centre is now the intake claim, while issue there after approval by the Registrar or AMOH remains the retained claim. Both are cited so the note's support resolves.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_ghmc_page"],
+        "auditNote": "Audit finding 4. The cell stays stated regardless: claim_hyderabad_birth_form_registration_proviso alone gives a rule deciding who qualifies, the entry having to be found registered with corporation records."
+      }
+    },
+    {
+      "id": "corr_16_owner_cell_note",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/owner/note",
+      "old": "The citizen can identify the role that decides and the one to escalate to: the corporation's charter names the AMOH as the officer rendering the service for both the issue of a certificate and extra copies, and names the DC as the officer to be contacted for delay or default; the current page names the Registrar or AMOH as the approver and the Sub-Registrar or AMC as the recipient of an institutional request. What is not published on any reviewed route is a circle-level office list or a contact number for that role.",
+      "new": "The citizen can identify the role that decides and the one to escalate to: the corporation's charter names the AMOH as the officer rendering the service for both the issue of a certificate and extra copies, and names the DC as the officer to be contacted for delay or default; the current page names the Registrar or AMOH as the approver, and names the Registrars of Births and Deaths as the authority whose verification and approval precede a certificate being taken from a Mee-Seva centre. The page's naming of the Sub-Registrar or AMC as the recipient of a hospital's online request is not relied on here, because hospital-side registration steps are excluded from this scenario. What is not published on any reviewed route is a circle-level office list or a contact number for that role.",
+      "reason": "Protocol section 2 scores the primary scenario only, and this scenario excludes hospital-side registration steps by name. The note scored part of the owner cell from the office receiving the hospital's online submission, which is an excluded route.",
+      "support": {
+        "sourceIds": ["source_hyderabad_birth_ghmc_page", "source_hyderabad_birth_ghmc_citizen_charter"],
+        "auditNote": "Audit finding 6. The cell state does not move: the charter's AMOH designation plus the DC escalation route, and the current page's naming of the deciding approver, satisfy the section 8 owner definition on in-scope evidence alone."
+      }
+    }
+  ]
+}

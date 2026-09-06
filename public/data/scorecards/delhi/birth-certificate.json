@@ -1,0 +1,38 @@
+{
+  "serviceId": "birth-certificate",
+  "jurisdiction": "Delhi, NCT of Delhi, India",
+  "primaryScenarioId": "scenario_ind32_birth_copy_workflow",
+  "asOf": "2026-09-06",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimCount": 2
+    },
+    "documents": {
+      "state": "stated",
+      "claimCount": 2
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimCount": 3
+    },
+    "time": {
+      "state": "stated",
+      "claimCount": 3
+    },
+    "owner": {
+      "state": "stated",
+      "claimCount": 5
+    },
+    "after-submission": {
+      "state": "mentioned",
+      "claimCount": 2
+    }
+  },
+  "statedCount": 5,
+  "loginStrippedUnknownShare": 1,
+  "portalFriction": null,
+  "auditFile": "ledger/jurisdictions/delhi/audits/birth-certificate.md",
+  "benchmarkVersion": "0.1",
+  "source": "authored"
+}

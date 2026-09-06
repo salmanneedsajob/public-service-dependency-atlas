@@ -1,0 +1,201 @@
+{
+  "serviceId": "birth-certificate",
+  "ledgerPath": "ledger/jurisdictions/bengaluru-grid/birth-certificate.json",
+  "auditPath": "ledger/jurisdictions/bengaluru-grid/audits/birth-certificate.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "correction_birth_rule13_split_text",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_rule_13_extract_fee",
+      "fieldPath": "/text",
+      "old": "Rule 13(1) of the Karnataka Registration of Births and Deaths Rules, 1999 fixes the fee for granting an extract relating to each birth or death at Rs. 5.00, the fee for a search for a single entry in the first year at Rs. 2.00 and for every additional year at Rs. 2.00, and the fee for a non-availability certificate at Rs. 2.00.",
+      "new": "Rule 13(1) of the Karnataka Registration of Births and Deaths Rules, 1999 fixes the fee for granting an extract relating to each birth or death at Rs. 5.00.",
+      "reason": "Compound claim. Protocol section 1 requires one claim to assert one checkable thing, and section 8 lint item 1 flags compound or list claims; this sentence asserted three separately checkable statutory fees. Narrowed to the extract fee, which is the figure the cost cell uses. The record ID is retained per section 1's rule that content changes and identity does not. The other two fees are added as separate claims in this correction set with wording, source, grade, basis and status unchanged.",
+      "support": {
+        "sourceIds": ["source_bengaluru_grid_birth_ka_rbd_rules"],
+        "auditNote": "Audit finding F11. No evidence added or removed; the split redistributes the existing sentence across three atomic claims. Cost cell state unchanged."
+      }
+    },
+    {
+      "id": "correction_birth_rule13_split_notes",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_rule_13_extract_fee",
+      "fieldPath": "/notes",
+      "old": "The statutory figure behind the service card's Rs. 5 application fee. The reviewed copy carries no amendment history, so whether these figures have been revised since 1999 is not established here.",
+      "new": "The statutory figure behind the service card's Rs. 5 application fee. The reviewed copy carries no amendment history, so whether this figure has been revised since 1999 is not established here. The other fees fixed by the same rule are recorded separately at claim_bengaluru_grid_birth_rule_13_search_fee and claim_bengaluru_grid_birth_rule_13_nonavailability_fee following the audit split.",
+      "reason": "The note referred to 'these figures' in the plural, which no longer matches the narrowed claim text, and the reader needs a pointer to the two claims split out of it.",
+      "support": {
+        "sourceIds": ["source_bengaluru_grid_birth_ka_rbd_rules"],
+        "auditNote": "Audit finding F11. Housekeeping consequent on the text split; the amendment-history limitation is preserved verbatim."
+      }
+    },
+    {
+      "id": "correction_birth_rule13_add_search_fee",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_rule_13_search_fee",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_rule_13_search_fee",
+        "text": "Rule 13(1) of the Karnataka Registration of Births and Deaths Rules, 1999 fixes the fee for a search for a single entry in the first year at Rs. 2.00 and for every additional year at Rs. 2.00.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": ["scenario_ind32_birth_copy_workflow"],
+        "nodeIds": [],
+        "sourceIds": ["source_bengaluru_grid_birth_ka_rbd_rules"],
+        "evidenceGrade": "A",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split from claim_bengaluru_grid_birth_rule_13_extract_fee by audit under protocol section 13. Wording, source, grade, basis and status are unchanged from the compound original; nothing was added. One search-fee schedule with a first-year figure and a per-additional-year increment, so it remains one checkable fee item. The reviewed copy of the rules carries no amendment history, so whether this figure has been revised since 1999 is not established here."
+      },
+      "reason": "Second limb of the compound claim corrected above, recorded as its own atomic claim under protocol section 13, which permits the auditor to split compound claims.",
+      "support": {
+        "sourceIds": ["source_bengaluru_grid_birth_ka_rbd_rules"],
+        "auditNote": "Audit finding F11. The wording is taken verbatim from claim_bengaluru_grid_birth_rule_13_extract_fee as it stood before this correction set; no evidence is invented."
+      }
+    },
+    {
+      "id": "correction_birth_rule13_add_nonavailability_fee",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_rule_13_nonavailability_fee",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_rule_13_nonavailability_fee",
+        "text": "Rule 13(1) of the Karnataka Registration of Births and Deaths Rules, 1999 fixes the fee for a non-availability certificate at Rs. 2.00.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": ["scenario_ind32_birth_copy_workflow"],
+        "nodeIds": [],
+        "sourceIds": ["source_bengaluru_grid_birth_ka_rbd_rules"],
+        "evidenceGrade": "A",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split from claim_bengaluru_grid_birth_rule_13_extract_fee by audit under protocol section 13. Wording, source, grade, basis and status are unchanged from the compound original. A non-availability certificate is a different output from the certified copy this scenario covers, so this claim is deliberately not cited in the cost cell. The reviewed copy of the rules carries no amendment history, so whether this figure has been revised since 1999 is not established here."
+      },
+      "reason": "Third limb of the compound claim corrected above, recorded as its own atomic claim under protocol section 13.",
+      "support": {
+        "sourceIds": ["source_bengaluru_grid_birth_ka_rbd_rules"],
+        "auditNote": "Audit finding F11. Wording taken verbatim from the compound original. Retained rather than dropped because removing published statutory content would lose evidence, but kept out of the cost cell because it prices a different output."
+      }
+    },
+    {
+      "id": "correction_birth_cost_claimids_after_split",
+      "recordType": "expectation",
+      "recordId": "birth-certificate",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_bengaluru_grid_birth_application_fee_5",
+        "claim_bengaluru_grid_birth_service_charge_20",
+        "claim_bengaluru_grid_birth_rule_13_extract_fee"
+      ],
+      "new": [
+        "claim_bengaluru_grid_birth_application_fee_5",
+        "claim_bengaluru_grid_birth_service_charge_20",
+        "claim_bengaluru_grid_birth_rule_13_extract_fee",
+        "claim_bengaluru_grid_birth_rule_13_search_fee"
+      ],
+      "reason": "The cost cell note cites 'Rs. 2.00 for a first-year search'. After the atomicity split that figure lives in claim_bengaluru_grid_birth_rule_13_search_fee, so the new claim must be cited for the note to remain supported by the cell's own claimIds under protocol section 9. The non-availability fee claim is deliberately not added: it prices a different output.",
+      "support": {
+        "sourceIds": ["source_bengaluru_grid_birth_ka_rbd_rules"],
+        "auditNote": "Audit finding F11. Consequential on the split only. The cell state remains stated and is carried by the service card's Rs. 5 and Rs. 20 amounts regardless of this addition."
+      }
+    },
+    {
+      "id": "correction_birth_manual_split_text",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_user_manual_published",
+      "fieldPath": "/text",
+      "old": "The Chief Registrar's download route links a user manual to download a birth certificate, and the Seva Sindhu service card links an application user manual and a direct apply route for the service.",
+      "new": "The Chief Registrar's download route links a user manual to download a birth certificate.",
+      "reason": "Compound claim joining observations of two different official interfaces, each with its own source, in one sentence. Protocol section 1 requires one claim to assert one checkable thing and section 8 lint item 1 flags compound claims. Narrowed to the download-route observation; the Seva Sindhu card's links are added as a separate claim in this correction set.",
+      "support": {
+        "sourceIds": ["source_bengaluru_grid_birth_download_route"],
+        "auditNote": "Audit finding F12. This claim supports no expectation cell, so no cell state moves; corrected so the shipped ledger carries no unwaived lint failure."
+      }
+    },
+    {
+      "id": "correction_birth_manual_split_sourceids",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_user_manual_published",
+      "fieldPath": "/sourceIds",
+      "old": [
+        "source_bengaluru_grid_birth_download_route",
+        "source_bengaluru_grid_birth_seva_sindhu"
+      ],
+      "new": [
+        "source_bengaluru_grid_birth_download_route"
+      ],
+      "reason": "Consequent on the text narrowing above. The narrowed claim asserts only what the eJanMa download route shows, so the Seva Sindhu card is no longer a source for it; under protocol section 7 a citation must resolve to the page bearing the claimed content.",
+      "support": {
+        "sourceIds": ["source_bengaluru_grid_birth_download_route"],
+        "auditNote": "Audit finding F12. The Seva Sindhu card is carried over as the source of the new claim claim_bengaluru_grid_birth_seva_sindhu_manual_and_apply, so no source linkage is lost."
+      }
+    },
+    {
+      "id": "correction_birth_manual_split_notes",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_user_manual_published",
+      "fieldPath": "/notes",
+      "old": "The manuals were observed as published links; their contents were not read.",
+      "new": "The manual was observed as a published link on the download route on the access date; its contents were not read. The Seva Sindhu card's application user manual and apply route are recorded separately at claim_bengaluru_grid_birth_seva_sindhu_manual_and_apply following the audit split.",
+      "reason": "The note referred to 'the manuals' in the plural, which no longer matches the narrowed claim text, and the reader needs a pointer to the claim split out of it.",
+      "support": {
+        "sourceIds": ["source_bengaluru_grid_birth_download_route"],
+        "auditNote": "Audit finding F12. Housekeeping consequent on the text split; the 'contents were not read' limitation is preserved."
+      }
+    },
+    {
+      "id": "correction_birth_add_seva_sindhu_manual_claim",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_seva_sindhu_manual_and_apply",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_bengaluru_grid_birth_seva_sindhu_manual_and_apply",
+        "text": "The Seva Sindhu service card for a birth certificate links an application user manual and a direct apply route for the service.",
+        "jurisdiction": "Bengaluru, Karnataka, India",
+        "scenarioIds": ["scenario_ind32_birth_copy_workflow"],
+        "nodeIds": [],
+        "sourceIds": ["source_bengaluru_grid_birth_seva_sindhu"],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split from claim_bengaluru_grid_birth_user_manual_published by audit under protocol section 13, which had joined two different official interfaces in one sentence. Wording, source, grade, basis and status are unchanged from the compound original. Both links were observed as published on the card on the access date; the manual's contents were not read and the apply route was not entered, so nothing is asserted here about what either returns. The pairing is one observation of a single card's published entry points, not a compound requirement."
+      },
+      "reason": "Second limb of the compound claim corrected above, recorded as its own claim against its own source under protocol section 13.",
+      "support": {
+        "sourceIds": ["source_bengaluru_grid_birth_seva_sindhu"],
+        "auditNote": "Audit finding F12. Wording taken verbatim from claim_bengaluru_grid_birth_user_manual_published as it stood before this correction set; no evidence is invented. Supports no expectation cell."
+      }
+    },
+    {
+      "id": "correction_birth_verification_route_text",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_public_verification_route",
+      "fieldPath": "/text",
+      "old": "The Chief Registrar's portal publishes, alongside the download route, a Birth and Death Verification route and a Registration Details route, both reachable without login.",
+      "new": "The Chief Registrar's portal home page publishes navigation links to a Birth and Death Verification route and a Registration Details route.",
+      "reason": "The claim asserted that two routes are 'both reachable without login' while its own note records that neither was exercised, so that property was inferred rather than observed, contrary to protocol section 5. It also asserted properties of two pages that have their own URLs while citing only the portal root, which is the general-site reference protocol section 7 forbids as a specific citation. Narrowed to what the cited page directly shows, which leaves the claim a true observation at Grade B rather than requiring a downgrade.",
+      "support": {
+        "sourceIds": ["source_bengaluru_grid_birth_ejanma_home"],
+        "auditNote": "Audit finding F13. The after-submission cell is unaffected: it is carried by claim_bengaluru_grid_birth_public_status_route, whose route has its own source record and was directly read, and by the downloadable-result claim. This claim is supporting only, and the cell remains stated."
+      }
+    },
+    {
+      "id": "correction_birth_verification_route_notes",
+      "recordType": "claim",
+      "recordId": "claim_bengaluru_grid_birth_public_verification_route",
+      "fieldPath": "/notes",
+      "old": "Observed as published navigation links on the access date; neither was exercised.",
+      "new": "Observed as published navigation links on the portal home page on the access date; neither route was opened. Nothing is asserted here about whether either route is reachable without login, what either requires, or what either returns; the earlier wording asserted properties of pages that were not visited and that the cited home-page source could not support. Recording either route's own behaviour would need that route captured as its own source.",
+      "reason": "Protocol section 5 requires the observation boundary to be explicit. The narrowed claim needs a note that states what was and was not seen, and that names the missing source records, so the limitation is visible to the renderer and to any later pass.",
+      "support": {
+        "sourceIds": ["source_bengaluru_grid_birth_ejanma_home"],
+        "auditNote": "Audit finding F13. No source is invented for the two routes; the gap is recorded instead."
+      }
+    }
+  ]
+}

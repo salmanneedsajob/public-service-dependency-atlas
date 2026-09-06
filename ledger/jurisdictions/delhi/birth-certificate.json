@@ -1,0 +1,480 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Delhi birth certificate (copy of a registered birth) grid-only evidence ledger",
+    "jurisdiction": "Delhi, NCT of Delhi, India",
+    "asOf": "2026-09-06",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Grid-only benchmark run: sources and claims only, no nodes, edges, roadblocks or journeys. Desk research, no counter visited. Limitations: the Chief Registrar's citizen charter still names North, South and East Delhi Municipal Corporations, which were unified into the Municipal Corporation of Delhi in 2022, so its figures are treated as potentially outdated official material (Grade C); MCD's citizen search-and-download surface for an already registered birth sits behind portal signup and a registered mobile number and was not entered; the New Delhi Municipal Council and Delhi Cantonment Board areas are separate registering bodies outside this scoped route. Do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_delhi_mcd",
+      "name": "Municipal Corporation of Delhi",
+      "shortName": "MCD",
+      "officialUrl": "https://mcdonline.nic.in/rbd/web/citizen/info"
+    },
+    {
+      "id": "agency_delhi_chief_registrar_bd",
+      "name": "Directorate of Economics & Statistics and Office of Chief Registrar (Births & Deaths), Government of NCT of Delhi",
+      "shortName": "Chief Registrar (B&D), Delhi",
+      "officialUrl": "https://des.delhi.gov.in/des/registration-births-and-deaths-0"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind32_birth_copy_workflow",
+      "label": "Delhi birth certificate copy",
+      "summary": "A parent resident in Delhi seeks a certified copy or first certificate of a birth already registered in the city's civil register, by the municipal civil-registration route, public entry, online where offered and counter route otherwise. Delayed registration, name inclusion, corrections, births outside the city and hospital-side registration steps are excluded.",
+      "tags": [
+        "primary"
+      ],
+      "pathNodeIds": [],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_delhi_birth_citizen_charter",
+      "title": "Registration of Births and Deaths in Delhi - Citizen Charter, Office of the Chief Registrar of Births & Deaths",
+      "publisher": "Directorate of Economics & Statistics and Office of Chief Registrar (Births & Deaths), Government of NCT of Delhi",
+      "url": "https://des.delhi.gov.in/sites/default/files/DES/generic_multiple_files/link_5.pdf",
+      "accessedAt": "2026-09-06",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. Agency naming as displayed on the access date: 'Office of Chief Registrar (B&D), GNCT of Delhi'. The document carries no visible publication or revision date and names North/South/East Delhi Municipal Corporation, bodies unified into MCD in 2022, so it is treated as potentially outdated official material and graded C. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240809191301/https://des.delhi.gov.in/sites/default/files/DES/generic_multiple_files/link_5.pdf (2024-08-09); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_delhi_birth_des_faq",
+      "title": "Frequently Asked Questions (FAQ) - Section F, Obtaining of Birth/Death Certificate",
+      "publisher": "Directorate of Economics & Statistics and Office of Chief Registrar (Births & Deaths), Government of NCT of Delhi",
+      "url": "https://des.delhi.gov.in/des/frequently-asked-questions-faq",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2026-08-17",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. The page footer displays 'Last Updated: 17/08/2026', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260103074854/https://des.delhi.gov.in/des/frequently-asked-questions-faq (2026-01-03); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_delhi_birth_des_registration_page",
+      "title": "Registration of Births and Deaths - Directorate of Economics & Statistics and Office of Chief Registrar (Births & Deaths)",
+      "publisher": "Directorate of Economics & Statistics and Office of Chief Registrar (Births & Deaths), Government of NCT of Delhi",
+      "url": "https://des.delhi.gov.in/des/registration-births-and-deaths-0",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2026-08-17",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. The page footer displays 'Last Updated: 17/08/2026', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20251021161118/https://des.delhi.gov.in/des/registration-births-and-deaths-0 (2025-10-21); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_delhi_birth_mcd_rbd_instructions",
+      "title": "Citizen Portal - Registration of Birth and Death System, important instructions and general guidelines",
+      "publisher": "Municipal Corporation of Delhi",
+      "url": "https://mcdonline.nic.in/rbd/web/citizen/info",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. Agency naming as displayed on the access date: 'Municipal Corporation of Delhi'. The page shows no visible last-updated or version date and requires JavaScript. Everything beyond these public instructions is reached through citizen signup with a registered mobile number, which this run did not cross. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260109122524/https://mcdonline.nic.in/rbd/web/citizen/info (2026-01-09); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_delhi_birth_mcd_citizen_charter",
+      "title": "Citizen Charter, Public Document - Birth and Death Certificate",
+      "publisher": "Municipal Corporation of Delhi",
+      "url": "https://mcdonline.nic.in/portal/citizenCharter",
+      "accessedAt": "2026-09-06",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Delhi, NCT of Delhi, India. Agency naming as displayed on the access date: 'Municipal Corporation of Delhi, Civic Center, JLN Marg, New Delhi'. The document is served as a page-flip reader and shows no publication or revision date. Found after the first audit run and added before re-audit. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260213080503/https://mcdonline.nic.in/portal/citizenCharter (2026-02-13); no new capture was pushed from this run."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_delhi_birth_additional_copy_fee",
+      "text": "The Delhi Chief Registrar's citizen charter states that additional copies of the birth certificate are issued on payment of Rs. 20 per copy under section 17 of the RBD Act.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Quoted figure: 'Additional copies of the birth and death certificates are also issued on payment of Rs. 20/- and Rs.10/- per copy respectively under section 17 of the RBD Act'. Graded C because the same document names the pre-2022 trifurcated corporations."
+    },
+    {
+      "id": "claim_delhi_birth_first_copy_free",
+      "text": "The Delhi Chief Registrar's citizen charter states that a single copy of the birth certificate in Form No. 5 is given free of cost to the informant under section 12 of the RBD Act immediately after the registration procedure is completed.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "An explicit zero, recorded as a stated value under protocol section 3."
+    },
+    {
+      "id": "claim_delhi_birth_issue_within_seven_days",
+      "text": "The Delhi Chief Registrar's citizen charter states that birth certificates are issued by the local bodies within 7 days from the date of receipt of the application from the applicant, provided the birth has already been registered.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The proviso 'provided the birth and death has already been registered' matches this scenario's trigger."
+    },
+    {
+      "id": "claim_delhi_birth_delivery_time_schedule",
+      "text": "The Delhi Chief Registrar's citizen charter publishes a time schedule of delivery giving issue of certificate as 3 days for a new record and 7 days for an old manual record.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Same table gives name addition 7 or 15 days and correction 15 or 30 days; those rows are outside this scenario's scope."
+    },
+    {
+      "id": "claim_delhi_birth_issuing_local_bodies",
+      "text": "The Delhi Chief Registrar's citizen charter states that birth certificates are issued by the local bodies, namely North, South and East Delhi Municipal Corporation, the New Delhi Municipal Council and the Delhi Cantonment Board.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Recorded as partial: the three municipal corporations named were unified into the Municipal Corporation of Delhi in 2022, so the list of bodies is stale even though the routing rule it expresses, that the local body of the area issues the certificate, is unchanged."
+    },
+    {
+      "id": "claim_delhi_birth_registrar_designation",
+      "text": "The Delhi Chief Registrar's citizen charter states that the Deputy Health Officer of each municipal zone is designated Registrar of Births and Deaths for vital events occurring in that zone.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A designation tied to a jurisdiction rule: the office that holds the case is identified by the zone in which the event occurred."
+    },
+    {
+      "id": "claim_delhi_birth_collection_point",
+      "text": "The Delhi Chief Registrar's citizen charter states that the birth certificate can be obtained from the Registration Centres or the Zonal Office.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_delhi_birth_application_plain_paper",
+      "text": "The Chief Registrar's FAQ states that a birth certificate can be obtained after registration by submitting an application on plain paper to the concerned area Registrar or Sub-Registrar.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_des_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Section F of the FAQ, 'Obtaining of Birth/Death Certificate'."
+    },
+    {
+      "id": "claim_delhi_birth_application_particulars",
+      "text": "The Chief Registrar's FAQ states that the plain-paper application must give the date of birth, the sex, the place of birth as the name of the hospital, nursing home or medical institution or the residential address for a domiciliary birth, the father's name and the mother's name.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_des_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ lists these five particulars as items i to v."
+    },
+    {
+      "id": "claim_delhi_birth_place_of_occurrence_rule",
+      "text": "The Chief Registrar's FAQ states that a birth can be registered only at the place of occurrence, so an event that took place outside Delhi cannot be registered in Delhi.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_des_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The FAQ cites section 7(2) of the Registration of Births and Deaths Act, 1969."
+    },
+    {
+      "id": "claim_delhi_birth_chief_registrar_not_issuer",
+      "text": "The Chief Registrar's FAQ states that the Office of Chief Registrar (B&D) does not itself issue birth certificates and issues only certified copies of English-translated birth certificates.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_des_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A negative routing rule that tells the applicant which office not to approach."
+    },
+    {
+      "id": "claim_delhi_birth_registrar_directory_published",
+      "text": "The Chief Registrar's births and deaths page publishes a downloadable Directory of Area Wise Registrar and Sub-Registrar.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_des_registration_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Atomic after the second audit split the published office contact route out into claim_delhi_birth_directorate_office_contact; this claim now asserts only that the area-wise directory is published."
+    },
+    {
+      "id": "claim_delhi_birth_mcd_zone_routing",
+      "text": "MCD's public birth and death instructions state that the request must be applied to the zone where the event took place and that applying to an incorrect zone might lead to rejection of the request.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_mcd_rbd_instructions"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_delhi_birth_mcd_certificate_printout",
+      "text": "MCD's public general guidelines for the birth and death system state that a printout of the certificate issued after approval of MCD officials may be taken.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_mcd_rbd_instructions"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Recorded as partial for this scenario: the guideline sits in the sequence that begins with the informant registering the event, so it describes the surface that follows a registration application rather than an application for a copy of a birth already on the register."
+    },
+    {
+      "id": "claim_delhi_birth_mcd_citizen_surface_behind_signup",
+      "text": "MCD's public instructions direct the citizen to sign up on the portal with a preferably Aadhaar-linked mobile number, so the certificate search and download surface for an already registered birth is not visible on any reviewed public page.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_mcd_rbd_instructions"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is that the public page offers signup and instructions only; the inference is that the citizen certificate surface lies past that boundary. The boundary was not crossed."
+    },
+    {
+      "id": "claim_delhi_birth_post_submission_surface_unknown",
+      "text": "Whether an applicant who asks for a copy of an already registered birth receives an acknowledgement, an application number, or a public status route is not established by any reviewed public page.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Login-related, so it is stripped from the login-stripped Unknown share."
+    },
+    {
+      "id": "claim_delhi_birth_subregistrar_designation",
+      "text": "The Delhi Chief Registrar's citizen charter states that vaccinators of vaccination centres or paramedical staff of health centres are designated Sub-Registrars of Births and Deaths.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split by audit from claim_delhi_birth_registrar_designation for atomicity; the charter sentence carried two separate designations. Graded C for the same reason as its parent: the charter is undated and names the pre-2022 trifurcated corporations. Relevant to the copy route because the FAQ directs the plain-paper application to the concerned area Registrar or Sub-Registrar."
+    },
+    {
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_mcd_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "id": "claim_delhi_birth_mcd_sla_one_week",
+      "text": "MCD's citizen charter publishes a service delivery timeline for issuance of a birth and death certificate of 'Variable (Max timeline - 1 week)'.",
+      "notes": "An MCD statement of the same order as the Chief Registrar charter's 7-day figure, from a source that is not tied to the pre-2022 corporations. Graded C by the second audit because the charter carries no visible publication or revision date. The row is generic to issuance of a birth and death certificate and is not specific to a copy of an already registered birth, so it corroborates the order of magnitude rather than supplying the scenario's own figure."
+    },
+    {
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_mcd_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "id": "claim_delhi_birth_mcd_sla_institutional_instant",
+      "text": "MCD's citizen charter publishes a service delivery timeline for issuance of a birth and death certificate for an event that occurred in a hospital or institution of 'Variable (Max timeline - Instant)'.",
+      "notes": "The scoped scenario covers a birth already registered; this row applies where the event was institutional, which the scenario excludes as a hospital-side registration step. Recorded as partial for this scenario by the second audit and cited in no expectation cell. Graded C because the charter carries no visible publication or revision date."
+    },
+    {
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_mcd_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "id": "claim_delhi_birth_mcd_institutional_processing",
+      "text": "MCD's citizen charter states that in the case of an institutional event the processing for issuance of the certificate is done by the health unit where the child is born.",
+      "notes": "A routing rule that identifies which body handles the case at the time of an institutional event. Recorded as partial for this scenario by the second audit: the primary scenario excludes hospital-side registration steps and covers a birth already on the register, so this row is not a route rule for a copy request and was removed from the eligibility cell. Graded C because the charter carries no visible publication or revision date."
+    },
+    {
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_mcd_citizen_charter"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "id": "claim_delhi_birth_mcd_domiciliary_route",
+      "text": "MCD's citizen charter states that for home and other delivery events the parents can apply for the certificate directly on the MCD portal online with the required documents.",
+      "notes": "Matches the scoped applicant type, a parent resident in the city, but not the scenario's trigger: the row describes the application made for a home or other delivery event, which is the registration application rather than a request for a copy of a birth already on the register. Recorded as partial for this scenario by the second audit and removed from the eligibility cell. Graded C because the charter carries no visible publication or revision date."
+    },
+    {
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_mcd_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "id": "claim_delhi_birth_mcd_charter_key_contacts_empty",
+      "text": "The 'Key Contacts' heading in the birth and death certificate section of MCD's citizen charter is followed by no contact, name, designation or telephone number.",
+      "notes": "The same empty heading appears in the other service sections of the charter reviewed on the access date."
+    },
+    {
+      "id": "claim_delhi_birth_directorate_office_contact",
+      "text": "The Chief Registrar's births and deaths page gives the directorate's office contact address jddes.delhi@gov.in and telephone 23812851.",
+      "jurisdiction": "Delhi, NCT of Delhi, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_delhi_birth_des_registration_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split by the second audit from claim_delhi_birth_registrar_directory_published for atomicity; that claim asserted a published directory and a published contact route, two separately checkable things. Institutional contact details published by the agency; no personal data recorded."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

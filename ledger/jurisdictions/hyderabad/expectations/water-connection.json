@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "water-connection",
+  "primaryScenarioId": "scenario_ind32_water_residential",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimIds": [
+        "claim_hyderabad_water_category_i_charges",
+        "claim_hyderabad_water_processing_fee",
+        "claim_hyderabad_water_other_amounts_payable",
+        "claim_hyderabad_water_cash_payment_cap"
+      ],
+      "searchedRoutes": [],
+      "note": "Amounts the citizen pays are published as a banded schedule for the category this scenario falls in: Rs. 2,500 fixed for a 15mm connection on a plot up to 200 square metres, rising through Rs. 8,250, Rs. 16,500 and Rs. 24,000 with per-square-metre rates on the excess and a ceiling of Rs. 48,000, plus a non-refundable processing fee of Rs. 1,000 for 15mm. The published total is not exhaustive and the board says so: the cost of lines where none exist is an estimate on the standard schedule of rates, and the deposit is two months' consumption, which an unconnected property cannot yet know. That gap is carried as a separate unknown claim."
+    },
+    "documents": {
+      "state": "stated",
+      "claimIds": [
+        "claim_hyderabad_water_document_list_narrative",
+        "claim_hyderabad_water_document_matrix_by_category",
+        "claim_hyderabad_water_occupancy_certificate_relief"
+      ],
+      "searchedRoutes": [],
+      "note": "An actionable enclosure list is published twice, in a standalone documents file and in the charter's annexure: registered ownership deed, municipal sanctioned plan, municipal tax assessment receipt, no objection certificate where the locality requires it, house site patta, slum area certificate where applicable, occupancy certificate, a notarised affidavit on Rs. 20 stamp paper and an indemnity bond, with a category matrix naming acceptable alternatives for identity, address and statutory proof. The list is qualified in the citizen's favour: an individual building on a plot up to 100 square metres and up to 7 metres high need not obtain an occupancy certificate."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_hyderabad_water_sanction_conditions",
+        "claim_hyderabad_water_occupancy_certificate_relief",
+        "claim_hyderabad_water_category_i_charges",
+        "claim_hyderabad_water_meter_obligation"
+      ],
+      "searchedRoutes": [],
+      "note": "Usable rules decide who qualifies and on what terms: a connection is sanctioned subject to technical feasibility and the rules under the HMWS&S Act 1989; the charge band and the document set turn on the connection size and the plot area; a rainwater harvesting structure, a two-day sump and a meter chamber must be built before the connection is released, and an ISO meter procured; and the occupancy certificate requirement is waived for the smallest individual buildings."
+    },
+    "time": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_hyderabad_water_sla_category_i_stages",
+        "claim_hyderabad_water_sla_existing_procedure_stages",
+        "claim_hyderabad_water_days_are_working_days"
+      ],
+      "searchedRoutes": [
+        "https://hyderabadwater.gov.in/en/application/files/8017/3313/7016/SWC-SLA.pdf",
+        "https://hyderabadwater.gov.in/en"
+      ],
+      "note": "Searched the board's Single Window Cell service level agreement and the board site's Timelines for New Connection route. Timing is named and stage figures are published for a Category I 15mm connection, but the same document sets out two procedures side by side and does not say which governs. Under the revised procedure the stages run 7 working days to pay the processing fee, 6 and 5 days of feasibility checks, 5 days to re-upload missed documents, 15 days to pay the connection charges, Green Brigade allotment within 24 hours of payment and 5 days to generate the consumer account number. Under the existing procedure the corresponding stages run 15, 10 and 20 days of feasibility checks, 10 days to capture documents, 5 days for proceeding generation, 60 days to pay the connection charges and 29 days to generate the consumer account number. The charter fixes that days mean working days, but no reviewed public page establishes which procedure applies on the access date, and the agreement is undated on its face. A citizen therefore cannot tell whether the payment window is 15 days or 60. That gap is carried as claim_hyderabad_water_which_sla_in_force_unknown. No total is published for either procedure; the figures are per stage."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_hyderabad_water_swc_sanctions_and_address",
+        "claim_hyderabad_water_circle_and_division_sanction",
+        "claim_hyderabad_water_jurisdiction_annexure",
+        "claim_hyderabad_water_customer_care_contacts"
+      ],
+      "searchedRoutes": [],
+      "note": "The citizen can identify the office that decides and reach it: connections of 20mm and above are sanctioned at the Single Window Cell under the General Manager (Engineering), whose postal address and telephone number are published; circle and divisional offices sanction connections within their own jurisdictions; a jurisdiction annexure maps divisions and circles to the localities and municipalities they cover; and a 24-hour customer care number and support address appear on every page."
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimIds": [
+        "claim_hyderabad_water_status_tracking_and_sms",
+        "claim_hyderabad_water_status_route_published",
+        "claim_hyderabad_water_prospective_routes_published"
+      ],
+      "searchedRoutes": [],
+      "note": "Surfaces the citizen sees after applying are identified: the board states that the status of a new connection application can be tracked on its website and that SMS messages are sent to the applicant, and it publishes a Know Your Connection Status route alongside routes to check feasibility status, download the connection charges receipt and download documents related to the connection. The routes were read, not queried; no application reference was entered."
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "serviceId": "property-tax-payment",
+  "jurisdiction": "Hyderabad, Telangana, India",
+  "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
+  "asOf": "2026-09-06",
+  "cells": {
+    "cost": {
+      "state": "mentioned",
+      "claimCount": 2
+    },
+    "documents": {
+      "state": "absent",
+      "claimCount": 0
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimCount": 6
+    },
+    "time": {
+      "state": "mentioned",
+      "claimCount": 2
+    },
+    "owner": {
+      "state": "stated",
+      "claimCount": 4
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimCount": 1
+    }
+  },
+  "statedCount": 3,
+  "loginStrippedUnknownShare": 1,
+  "portalFriction": null,
+  "auditFile": "ledger/jurisdictions/hyderabad/audits/property-tax-payment.md",
+  "benchmarkVersion": "0.1",
+  "source": "authored"
+}

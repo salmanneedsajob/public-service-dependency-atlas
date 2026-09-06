@@ -1,0 +1,430 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru birth certificate (copy of a registered birth) grid-only re-score evidence ledger",
+    "jurisdiction": "Bengaluru, Karnataka, India",
+    "asOf": "2026-09-06",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Grid-only benchmark run: sources and claims only, no nodes, edges, roadblocks or journeys. This is a second, independently gathered row for Bengaluru, produced by the same method as the twelve city rows so that the pilot site is measured the way the comparison cities were; it does not reuse and did not read the deep pilot ledger for this service. Desk research, no counter visited. Limitations: the state service card that carries the fee, the document position and the service time shows no visible date and has no Wayback snapshot; the download and application-status routes were read but never queried, with no registration number or Sakala number entered; the state civil registration portal's FAQ file is a 76-page scan with no text layer, so nothing was read from it. Do not submit personal data through this ledger. Audit limitation carried unresolved: the Wayback snapshots that exist for the state civil registration portal and its routes predate the access date by two to four years, so nothing archived preserves what was observed on 6 September 2026; and the one municipal-specific claim, that BBMP-area events are registered by Health Officers and Health Inspectors, is the sole municipal anchor for both the eligibility and owner cells."
+  },
+  "agencies": [
+    {
+      "id": "agency_bengaluru_chief_registrar_ka",
+      "name": "Office of the Chief Registrar of Births and Deaths, Directorate of Economics and Statistics, Government of Karnataka",
+      "shortName": "Chief Registrar (B&D), Karnataka",
+      "officialUrl": "https://ejanma.karnataka.gov.in/"
+    },
+    {
+      "id": "agency_bengaluru_seva_sindhu",
+      "name": "Seva Sindhu, Government of Karnataka",
+      "shortName": "Seva Sindhu",
+      "officialUrl": "https://sevasindhu.karnataka.gov.in/Category/birth_certificate.html"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind32_birth_copy_workflow",
+      "label": "Bengaluru birth certificate copy",
+      "summary": "A parent resident in Bengaluru seeks a certified copy or first certificate of a birth already registered in the city's civil register, by the municipal civil-registration route, public entry, online where offered and counter route otherwise. Delayed registration, name inclusion, corrections, births outside the city and hospital-side registration steps are excluded.",
+      "tags": [
+        "primary"
+      ],
+      "pathNodeIds": [],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_bengaluru_grid_birth_seva_sindhu",
+      "title": "Birth Certificate - Seva Sindhu service card",
+      "publisher": "Seva Sindhu, Government of Karnataka",
+      "url": "https://sevasindhu.karnataka.gov.in/Category/birth_certificate.html",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India; the card is a state service card and Bengaluru is inside its coverage. Agency naming as displayed on the access date: 'Seva Sindhu'. Direct current observation of a public official interface, reachable without login, giving overview, what you need to know, eligibility and how to apply, and linking an application user manual and a direct apply route. The page shows no visible last-updated or version date, which is recorded as a limitation. Archive: the Wayback availability API returned no snapshot for this page on the access date, so no archive copy exists to point to; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    },
+    {
+      "id": "source_bengaluru_grid_birth_ejanma_home",
+      "title": "Births and Deaths - Office of the Chief Registrar of Births and Deaths, eJanMa portal",
+      "publisher": "Office of the Chief Registrar of Births and Deaths, Directorate of Economics and Statistics, Government of Karnataka",
+      "url": "https://ejanma.karnataka.gov.in/",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2026-02-09",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India; the portal is state-wide and its own text addresses the BBMP area specifically. Agency naming as displayed on the access date: 'Office of the Chief Registrar of Births and Deaths, Government Of Karnataka', with the footer 'CONTENT OWNED AND MAINTAINED BY : DIRECTORATE OF ECONOMICS AND STATISTICS' and 'Designed & developed by NATIONAL INFORMATICS CENTRE (NIC) Karnataka'. The footer displays 'Last Update Date : 09/02/2026 1.30 PM' and 'Version : eJanMa 3.0/3'; the date is recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240611195411/https://ejanma.karnataka.gov.in/ (2024-06-11); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_bengaluru_grid_birth_ka_rbd_rules",
+      "title": "Karnataka Registration of Births and Deaths Rules, 1999",
+      "publisher": "Directorate of Economics and Statistics, Government of Karnataka",
+      "url": "https://ejanma.karnataka.gov.in/Documents/ActRules/RBD1999E.pdf",
+      "accessedAt": "2026-09-06",
+      "type": "regulation",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India; the rules apply state-wide and Bengaluru is inside them. Agency naming as displayed on the access date: the document footer reads '© 2003, Directorate of Economics and Statistics, Govt. of Karnataka. All Rights Reserved.' Seven pages, published by the Chief Registrar's own Act and Rules route; the file metadata records a creation date of 2003-02-25 and the document carries no visible amendment history, which is recorded as a limitation on whether the fee figures have since been revised. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20221208130459/https://ejanma.karnataka.gov.in/Documents/ActRules/RBD1999E.pdf (2022-12-08); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_bengaluru_grid_birth_download_route",
+      "title": "Download Certificate route - eJanMa portal",
+      "publisher": "Office of the Chief Registrar of Births and Deaths, Government of Karnataka",
+      "url": "https://ejanma.karnataka.gov.in/frmDownloadCertificate.aspx",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2026-02-09",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Office of the Chief Registrar of Births and Deaths, Government Of Karnataka'. Direct current observation of a public route reachable without login, which states where certificates are downloaded and links user manuals for birth and death certificates. The footer displays 'Last Update Date : 09/02/2026 1.30 PM', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240529072356/https://ejanma.karnataka.gov.in/frmDownloadCertificate.aspx (2024-05-29); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_bengaluru_grid_birth_status_route",
+      "title": "Application Status route - eJanMa portal",
+      "publisher": "Office of the Chief Registrar of Births and Deaths, Government of Karnataka",
+      "url": "https://ejanma.karnataka.gov.in/frmApplicationStatus.aspx",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2026-02-09",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Bengaluru, Karnataka, India. Agency naming as displayed on the access date: 'Office of the Chief Registrar of Births and Deaths, Government Of Karnataka'. Direct current observation of a public route reachable without login, offering a type selector and fields for a registration number and a Sakala number. The route was read only: nothing was entered and no case data was retrieved. The footer displays 'Last Update Date : 09/02/2026 1.30 PM', recorded as publishedAt. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20240610080224/https://ejanma.karnataka.gov.in/frmApplicationStatus.aspx (2024-06-10); no new capture was pushed from this run."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_bengaluru_grid_birth_application_fee_5",
+      "text": "The Seva Sindhu service card for a birth certificate gives the application fee as Rs. 5.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_seva_sindhu"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "An amount the citizen pays. It matches the statutory extract fee fixed by rule, which is recorded separately."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_service_charge_20",
+      "text": "The Seva Sindhu service card for a birth certificate gives a service charge of Rs. 20 where the application is made through a Grama One, B1 or K1 counter.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_seva_sindhu"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A second amount, distinguished on the card itself by the channel it applies to, so it does not conflict with the application fee."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_rule_13_extract_fee",
+      "text": "Rule 13(1) of the Karnataka Registration of Births and Deaths Rules, 1999 fixes the fee for granting an extract relating to each birth or death at Rs. 5.00.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ka_rbd_rules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The statutory figure behind the service card's Rs. 5 application fee. The reviewed copy carries no amendment history, so whether this figure has been revised since 1999 is not established here. The other fees fixed by the same rule are recorded separately at claim_bengaluru_grid_birth_rule_13_search_fee and claim_bengaluru_grid_birth_rule_13_nonavailability_fee following the audit split."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_no_documents_required",
+      "text": "The Seva Sindhu service card for a birth certificate states, under what you need to know, that the documents to be submitted with the application are NIL.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_seva_sindhu"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "An explicit zero, recorded as a stated value under protocol section 3: the card answers the documents question rather than leaving it open."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_service_time_immediate",
+      "text": "The Seva Sindhu service card for a birth certificate gives the service time in days as Immediate.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_seva_sindhu"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The card's own service-time field is answered rather than left blank; the value is a period of zero waiting rather than a number of days."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_eligibility_citizens",
+      "text": "The Seva Sindhu service card for a birth certificate gives the eligibility for the service as citizens of India.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_seva_sindhu"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A broad category rather than a rule that decides between routes; recorded for completeness alongside the registration-based rules."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_download_requires_registration_in_ejanma",
+      "text": "The Chief Registrar's download route states that birth and death certificates for the events which are registered in eJanMa can be downloaded from the Seva Sindhu portal by paying a specific fee.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_download_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A rule that decides which route applies, by whether the event is on the electronic register. The route names a fee without giving its amount; the amount is on the Seva Sindhu card."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_bbmp_registrars",
+      "text": "The Chief Registrar's portal states that births, deaths and still births occurring in urban local body areas and in the BBMP area are registered in eJanMa by Health Officers and Health Inspectors in their respective areas.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ejanma_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A designation tied to a jurisdiction rule, specific to the city this row scores."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_private_hospital_reporting",
+      "text": "The Chief Registrar's portal states that events which occurred in private hospitals are reported by the concerned private hospital to the respective Registrar.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ejanma_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A hospital-side step, recorded for the route and not used for any cell, since this scenario excludes hospital-side registration."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_additional_copies_contact",
+      "text": "The Chief Registrar's portal states that for additional copies of the birth or death certificate, and for any corrections, the citizen should contact the data entry operators of the concerned Nadakacheri and the respective birth and death registration centres.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ejanma_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A contact route named for exactly the request this scenario covers."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_clarifications_contact",
+      "text": "The Chief Registrar's portal states that for any clarifications the citizen should contact the District Statistical Officer of the concerned district, and publishes a toll-free number 1800-425-6578.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ejanma_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Institutional contact only; a named office plus a published helpline."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_rule_13_issuer_and_form",
+      "text": "Rule 13(2) of the Karnataka Registration of Births and Deaths Rules, 1999 provides that an extract in regard to a birth is issued by the Registrar or the Tahsildar or the Commissioner or Chief Officer of the Municipal Corporation or Municipal Council, in Form No. 5, certified in the manner provided for in section 76 of the Indian Evidence Act, 1872.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ka_rbd_rules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Identifies both the office that issues the extract and the document the citizen receives."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_public_status_route",
+      "text": "The Chief Registrar's portal publishes an Application Status route, reachable without login, offering a type selector and fields for a registration number and a Sakala number.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_status_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The route's own fields were observed; nothing was entered, so no claim is made about what it returns. The Sakala field indicates the service is tracked under the state's service-guarantee scheme."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_public_verification_route",
+      "text": "The Chief Registrar's portal home page publishes navigation links to a Birth and Death Verification route and a Registration Details route.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ejanma_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Observed as published navigation links on the portal home page on the access date; neither route was opened. Nothing is asserted here about whether either route is reachable without login, what either requires, or what either returns; the earlier wording asserted properties of pages that were not visited and that the cited home-page source could not support. Recording either route's own behaviour would need that route captured as its own source."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_user_manual_published",
+      "text": "The Chief Registrar's download route links a user manual to download a birth certificate.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_download_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The manual was observed as a published link on the download route on the access date; its contents were not read. The Seva Sindhu card's application user manual and apply route are recorded separately at claim_bengaluru_grid_birth_seva_sindhu_manual_and_apply following the audit split."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_faq_unreadable",
+      "text": "The Chief Registrar's portal publishes a 76-page FAQ document which is a scan with no text layer, so nothing could be read from it in this environment.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ejanma_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Recorded as a limitation on this run's reach, not as a claim about what the FAQ contains."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_fee_currency_unknown",
+      "text": "Whether the Rs. 5.00 extract fee fixed by rule in 1999 has since been revised is not established by any reviewed public page; the copy of the rules published by the Chief Registrar carries no amendment history.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related. The current service card's Rs. 5 figure is consistent with the 1999 rule, which is some evidence that it stands."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_rule_13_search_fee",
+      "text": "Rule 13(1) of the Karnataka Registration of Births and Deaths Rules, 1999 fixes the fee for a search for a single entry in the first year at Rs. 2.00 and for every additional year at Rs. 2.00.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ka_rbd_rules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split from claim_bengaluru_grid_birth_rule_13_extract_fee by audit under protocol section 13. Wording, source, grade, basis and status are unchanged from the compound original; nothing was added. One search-fee schedule with a first-year figure and a per-additional-year increment, so it remains one checkable fee item. The reviewed copy of the rules carries no amendment history, so whether this figure has been revised since 1999 is not established here."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_rule_13_nonavailability_fee",
+      "text": "Rule 13(1) of the Karnataka Registration of Births and Deaths Rules, 1999 fixes the fee for a non-availability certificate at Rs. 2.00.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_ka_rbd_rules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split from claim_bengaluru_grid_birth_rule_13_extract_fee by audit under protocol section 13. Wording, source, grade, basis and status are unchanged from the compound original. A non-availability certificate is a different output from the certified copy this scenario covers, so this claim is deliberately not cited in the cost cell. The reviewed copy of the rules carries no amendment history, so whether this figure has been revised since 1999 is not established here."
+    },
+    {
+      "id": "claim_bengaluru_grid_birth_seva_sindhu_manual_and_apply",
+      "text": "The Seva Sindhu service card for a birth certificate links an application user manual and a direct apply route for the service.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_bengaluru_grid_birth_seva_sindhu"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Split from claim_bengaluru_grid_birth_user_manual_published by audit under protocol section 13, which had joined two different official interfaces in one sentence. Wording, source, grade, basis and status are unchanged from the compound original. Both links were observed as published on the card on the access date; the manual's contents were not read and the apply route was not entered, so nothing is asserted here about what either returns. The pairing is one observation of a single card's published entry points, not a compound requirement."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

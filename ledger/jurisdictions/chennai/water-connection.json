@@ -1,0 +1,474 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Chennai new domestic water connection grid-only evidence ledger",
+    "jurisdiction": "Chennai, Tamil Nadu, India",
+    "asOf": "2026-09-06",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Grid-only benchmark run: sources and claims only, no nodes, edges, roadblocks or journeys. Desk research, no counter visited. Limitations: the application form and the online application portal were read but never filled in or submitted, and the application-status route was read but never queried; the board's tariff revision route publishes a board resolution stating percentage increases rather than a revised schedule of amounts, so the connection charges recorded here come from the application form's own table; the board's older host chennaimetrowater.tn.gov.in did not connect on the access date and the working host is cmwssb.tn.gov.in; three of the five source URLs have no Wayback snapshot. Do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_chennai_cmwssb",
+      "name": "Chennai Metropolitan Water Supply and Sewerage Board",
+      "shortName": "CMWSSB",
+      "officialUrl": "https://cmwssb.tn.gov.in/"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind32_water_residential",
+      "label": "Chennai new domestic water connection",
+      "summary": "The individual owner of a built residential property with no connection applies to the city's water utility for a new domestic water supply, with sewer only where the same application covers it. Bulk or high-rise connections, commercial use, regularisation of unauthorised connections, name transfer on an existing account and tanker supply are excluded.",
+      "tags": [
+        "primary"
+      ],
+      "pathNodeIds": [],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_chennai_water_citizen_charter",
+      "title": "Citizen's Charter 2021 - Chennai Metropolitan Water Supply and Sewerage Board",
+      "publisher": "Chennai Metropolitan Water Supply and Sewerage Board",
+      "url": "https://cmwssb.tn.gov.in/citizencharter",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2024-04-08",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. The page footer displays 'Last reviewed and updated on 08-04-2024', recorded as publishedAt; the charter identifies itself as the Citizen Charter 2021, revising a charter first published in 1998 under Government Order No.58, Municipal Administration and Water Supply Department, dated 16 April 1998. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250427164610/https://cmwssb.tn.gov.in/citizencharter (2025-04-27); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_chennai_water_application_form",
+      "title": "Application for Water/Sewer Connection, general category, with Guidelines and Instructions to the Applicants, 2023-2024",
+      "publisher": "Chennai Metropolitan Water Supply and Sewerage Board",
+      "url": "https://cmwssb.tn.gov.in/sites/default/files/upload/08Apr2024110014_CMWSSBApplicationForm-2023-2024.pdf",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2024-04-08",
+      "type": "official_form",
+      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'CHENNAI METROPOLITAN WATER SUPPLY & SEWERAGE BOARD, No.1, Pumping Station Road, Chintadripet, Chennai - 600 002'. Fourteen pages, titled for 2023-2024; the file metadata records a creation date of 2024-04-08, recorded as publishedAt. Observed current official form, published from the board's own RTI new-connection route. It was read only: nothing was filled in, printed or submitted. Archive: the Wayback availability API returned no snapshot for this file on the access date, so no archive copy exists to point to; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    },
+    {
+      "id": "source_chennai_water_area_office_list",
+      "title": "Area Office - address and telephone list of CMWSSB area offices",
+      "publisher": "Chennai Metropolitan Water Supply and Sewerage Board",
+      "url": "https://cmwssb.tn.gov.in/area-office",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. Direct current observation: a table giving, for each area, the area number, the location, the office address and a telephone number. Shows no separate last-updated date beyond the site footer. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20250417233511/https://cmwssb.tn.gov.in/area-office (2025-04-17); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_chennai_water_online_route",
+      "title": "Water/Sewer Connection online services route - apply and know the status",
+      "publisher": "Chennai Metropolitan Water Supply and Sewerage Board",
+      "url": "https://cmwssb.tn.gov.in/online-water-sewer",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. Direct current observation of a public official interface offering two links, one to apply for a new water or sewer connection and one to know the status of such an application. Neither was exercised; no application reference was entered. Archive: the Wayback availability API returned no snapshot for this route on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run. Date quality: this record carries no publishedAt and states no visible version or last-updated date for the route; the audit did not observe the page and records the absence as an unresolved limitation rather than asserting what the page displays."
+    },
+    {
+      "id": "source_chennai_water_general_tariff",
+      "title": "General Tariff - metered consumers tariff table",
+      "publisher": "Chennai Metropolitan Water Supply and Sewerage Board",
+      "url": "https://cmwssb.tn.gov.in/general-tariff",
+      "accessedAt": "2026-09-06",
+      "type": "official_guidance",
+      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. Direct current observation of the published tariff table. It shows no visible effective date, which is recorded as a limitation, and the board's separate tariff-revision route publishes a board resolution about percentage increases rather than a dated schedule of amounts. Archive: the Wayback availability API returned no snapshot for this page on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_chennai_water_connection_charge_table",
+      "text": "The board's application form for a water or sewer connection publishes a table of connection charges per equivalent dwelling unit for residential independent houses: Rs. 100 for water and Rs. 100 for sewer up to 500 square feet, that is 46.47 square metres; Rs. 5,000 and Rs. 5,000 for a building up to G+1 with a dwelling unit area above 46.47 and up to 100 square metres; and Rs. 7,500 and Rs. 7,500 above 100 and up to 200 square metres, the same rate applying to all other residential buildings and flats.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Amounts the citizen pays, banded by the dwelling unit area of the property, for the residential categories this scenario covers."
+    },
+    {
+      "id": "claim_chennai_water_meter_testing_charges",
+      "text": "The board's application form guidelines publish meter testing charges by equivalent dwelling units: Rs. 100 up to 6 units, Rs. 200 for 7 to 20, Rs. 300 for 21 to 40, Rs. 400 for 41 to 70 and Rs. 500 above 70, alongside the bore size for the water connection and the size of the sewer connection for each band.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_chennai_water_amount_payable_components",
+      "text": "The board's application form sets out the components of the amount payable as connection charges for water, connection charges for sewer, advance tax where applicable, meter testing charges, a deposit amount for water, a deposit amount for sewer, a caution deposit for a temporary connection and any penalty, with a total to be computed by the applicant.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The form names every component, and gives figures for the connection charges and meter testing charges; the deposit amounts are not printed on the reviewed pages."
+    },
+    {
+      "id": "claim_chennai_water_self_assessment_no_plumber",
+      "text": "The board's citizen charter states that it has dispensed with the system of licensed plumbers for submitting water and sewer applications, and that connection proposals, connection charges and deposits can be self assessed and self certified by the applicant as per the guidelines and instructions issued with the application form.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A rule about who may lodge the application, and the reason the charge table has to be published for the citizen to use."
+    },
+    {
+      "id": "claim_chennai_water_application_free_and_where",
+      "text": "The board's citizen charter states that application forms are available free of cost at the head office at No.1, Pumping Station Road, Chintadripet, Chennai 600 002, at 15 area offices and at 200 depot offices, and can also be downloaded from the board's official website.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "An explicit zero for the form itself, recorded under protocol section 3."
+    },
+    {
+      "id": "claim_chennai_water_enclosure_list",
+      "text": "The board's application form guidelines list the documents to be attached with the application, including a true copy of the plans sanctioned by CMDA, the Corporation of Chennai or the local authority, a copy of the notice issued for assessment of property with floor-wise assessment details, copies of acknowledged letters seeking assessment of property tax and water and sewerage tax where not assessed, drawings showing internal plumbing work and the connection to the public main signed by the owner, proof of having paid taxes and charges up to date, a true copy of the completion certificate where applicable, proof of having paid infrastructure development charges where applicable, and floor-wise area details for each dwelling.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "An actionable enclosure list published on the form itself."
+    },
+    {
+      "id": "claim_chennai_water_small_house_document_relief",
+      "text": "The board's application form guidelines state that an applicant seeking a water or sewer connection for a residential independent house up to 500 square feet need not enclose the drawing showing internal plumbing works but must furnish a built-up area statement with a signature, must enclose a copy of the ration card as address proof, and need not pay advance tax.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A rule that decides which enclosures and which charges apply to the smallest residential category, including an explicit zero for advance tax."
+    },
+    {
+      "id": "claim_chennai_water_completion_certificate_exemption",
+      "text": "The board's citizen charter states that residential buildings up to 12 metres in height not exceeding 3 dwelling units or 750 square metres, and all types of industrial buildings, are exempted from producing a completion certificate for availing a water or sewer connection.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A usable rule that decides whether the hardest enclosure applies to a given house."
+    },
+    {
+      "id": "claim_chennai_water_six_particulars",
+      "text": "The board's citizen charter states that a single sheet application form can be used for a new water or sewer connection and that only six particulars are required to be filled up, namely the name and address of the applicant, the address of the premises, whether a rainwater harvesting structure is provided, the Metro Water area, zone or division number, the calculation of equivalent dwelling units and connection charges, and the amount payable.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_chennai_water_performance_standards_table",
+      "text": "The board's citizen charter publishes performance standards for a water connection: intimation to the applicant in case of a deficiency in the application form within 3 days from the date of registration, issue of the sanction order within 5 days from the date of registration, and effecting the house service connection within 15 days from the date of registration on its merits.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Service-level targets stated against named activities."
+    },
+    {
+      "id": "claim_chennai_water_stage_timeline_table",
+      "text": "The board's citizen charter publishes a stage-by-stage timeline totalling 15 days: scheduling and site inspection 3 days, processing, verification and approval of the application 5 days, payment to be made by the consumer 3 days, issue of the work order to the contractor 2 days, and effecting the connection and raising the demand 2 days.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The stages sum to the headline figure, and one of the five is a deadline on the citizen rather than the board."
+    },
+    {
+      "id": "claim_chennai_water_form_addressed_to_area_engineer",
+      "text": "The board's application form for a water or sewer connection is addressed to 'The Area Engineer'.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The office that receives the case, named on the instrument the citizen fills in."
+    },
+    {
+      "id": "claim_chennai_water_officer_roles_in_process",
+      "text": "The board's citizen charter names the officers who handle a new connection at each stage: the Depot Engineer receives the application, schedules and conducts the inspection and completes the connection, the Deputy Area Engineer verifies the estimate, and the Area Engineer approves the connection and issues the work order.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_chennai_water_escalation_matrix",
+      "text": "The board's citizen charter publishes a complaint escalation matrix for grievances about an application for a new water or sewer connection, allowing 7 days at the Depot Engineer, 4 days at the Deputy Area Engineer, 3 days at the Area Engineer and 2 days at the Superintendent Engineer, after which notification is sent to the Chief Engineer.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A named escalation path with a period at each level, specific to this service rather than to supply complaints."
+    },
+    {
+      "id": "claim_chennai_water_area_office_directory",
+      "text": "The board publishes a table of its area offices giving, for each area, the area number, the location, the office address and a telephone number.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_area_office_list"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A specific office list a citizen can use to find the office that holds their case. Institutional contact details only."
+    },
+    {
+      "id": "claim_chennai_water_registration_acknowledgement",
+      "text": "The board's application form guidelines state that the filled application, with the receipt for payment of the connection charges and the necessary enclosures, must be registered at the registration counter of the head office in person, by an authorised person or by post before 3.00 p.m. on working days, and that applicants are requested to get the acknowledgment from the registration counter on submission of the application.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_application_form"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The acknowledgment is given at the counter on submission; recorded for the route rather than for the after-submission cell."
+    },
+    {
+      "id": "claim_chennai_water_registration_id_and_sms",
+      "text": "The board's citizen charter states that on a successful online transaction a unique registration ID is generated and displayed on the screen and emailed or sent by SMS to the consumer, that a slot allotted for verification of the premises is intimated by SMS, that discrepancies are notified by email or SMS, and that the date allotted for issue of the connection is intimated by email or SMS.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Surfaces the applicant sees after submitting: an identifier, and dated intimations at each subsequent step."
+    },
+    {
+      "id": "claim_chennai_water_sanction_order_after_payment",
+      "text": "The board's citizen charter states that on approval by the Area Engineer an intimation is sent to the applicant to make payment, and that after payment the sanction order is generated and intimation is given to the applicant by SMS.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_chennai_water_public_status_route",
+      "text": "The board's water and sewer connection online services route, a page reachable without login, publishes two links, one to apply for a new water or sewer connection and one to know the status of a new water or sewer connection; neither link was exercised, so whether either destination requires authentication is not established by this observation.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_online_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The links were observed on the access date; neither was exercised and no application reference was entered."
+    },
+    {
+      "id": "claim_chennai_water_status_published_periodically",
+      "text": "The board's citizen charter states that the status of registered water and sewer applications is published periodically on the board's official website.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_chennai_water_domestic_tariff",
+      "text": "The board's general tariff publishes the metered domestic residential rate as Rs. 8 per kilolitre up to 10 kilolitres, Rs. 20 from 11 to 15, Rs. 32 from 16 to 25 and Rs. 51 above 25, with a minimum chargeable rate including sewerage charges of Rs. 100 per month per dwelling unit, billed monthly.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_general_tariff"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "What the household pays once connected, not what the connection costs; recorded for completeness."
+    },
+    {
+      "id": "claim_chennai_water_online_application_needs_login",
+      "text": "The board's citizen charter states that for the revised online route the consumer must first create an applicant login using a mobile number, email id and password before applying for a water or sewer connection.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_water_citizen_charter"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Boundary statement, recorded as a limitation and not used to support any positive cell value. Basis boundary as required by protocol section 5: the observed element is the citizen charter's own text stating that the consumer must first create an applicant login with a mobile number, email id and password before applying on the revised online route; the inferred element is the reading that the counter route needs no login and is where the published charges, enclosures and timelines apply, which is drawn from the application form's counter registration instructions rather than stated as such by either source. Nothing behind the login was observed."
+    },
+    {
+      "id": "claim_chennai_water_deposit_amounts_unknown",
+      "text": "The deposit amounts for water and for sewer that the application form requires the applicant to compute are not established by any reviewed public page.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_water_residential"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey: the form asks the applicant to self-assess a figure the reviewed routes do not publish. Not login-related."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

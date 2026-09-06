@@ -1,0 +1,367 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Chennai birth certificate (copy of a registered birth) grid-only evidence ledger",
+    "jurisdiction": "Chennai, Tamil Nadu, India",
+    "asOf": "2026-09-06",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Grid-only benchmark run: sources and claims only, no nodes, edges, roadblocks or journeys. Desk research, no counter visited. Limitations: on the access date every service route and every guidance document linked from the Tamil Nadu civil registration portal returned HTTP 404, including its own birth certificate download route, its child name inclusion route, its dashboard and its About Us, Procedures and Documents files; only the Act and Rules PDFs resolved. The Greater Chennai Corporation birth certificate page's own header links to About GCC, Departments, Online Services and zonal details also returned 404, under both the root and the /new_site/ prefix, while the equivalent pages exist under a /gcc/ prefix the page does not use. The corporation's working download route requires registration with a name and mobile number and login by OTP, which was not crossed, and the portal home page presents a CAPTCHA, which was not attempted. Do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_chennai_gcc",
+      "name": "Greater Chennai Corporation",
+      "shortName": "GCC",
+      "officialUrl": "https://chennaicorporation.gov.in/new_site/birth-certificate/"
+    },
+    {
+      "id": "agency_chennai_chief_registrar_tn",
+      "name": "Chief Registrar of Births and Deaths, Tamil Nadu",
+      "shortName": "Chief Registrar (B&D), Tamil Nadu",
+      "officialUrl": "https://crstn.org/"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_ind32_birth_copy_workflow",
+      "label": "Chennai birth certificate copy",
+      "summary": "A parent resident in Chennai seeks a certified copy or first certificate of a birth already registered in the city's civil register, by the municipal civil-registration route, public entry, online where offered and counter route otherwise. Delayed registration, name inclusion, corrections, births outside the city and hospital-side registration steps are excluded.",
+      "tags": [
+        "primary"
+      ],
+      "pathNodeIds": [],
+      "status": "partial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_chennai_birth_tn_rbd_rules",
+      "title": "The Tamil Nadu Registration of Births and Deaths Rules, 2000",
+      "publisher": "Health and Family Welfare Department, Government of Tamil Nadu, hosted by the Chief Registrar of Births and Deaths, Tamil Nadu",
+      "url": "https://www.crstn.org/birth_death_tn/rules/TNRBD%20Rules.pdf",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "1999-12-29",
+      "type": "regulation",
+      "notes": "Jurisdiction: Chennai, Tamil Nadu, India; the rules apply state-wide and Chennai is inside them. Agency naming as displayed on the access date: the document heads itself 'NOTIFICATIONS BY GOVERNMENT, HEALTH AND FAMILY WELFARE DEPARTMENT, TAMIL NADU REGISTRATION OF BIRTHS AND DEATHS RULES, 2000' and records publication in Tamil Nadu Government Gazette Extraordinary No.976 Part III Section 1(a) dated 29.12.1999, recorded as publishedAt. Thirteen pages. The fee figures cited here are the substituted ones, amended vide G.O.Ms.No.360 Health and Family Welfare (AB2) Department dated 12.10.2017, and the document prints both the current and the superseded figures. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260519065432/https://crstn.org/birth_death_tn/rules/TNRBD%20Rules.pdf (2026-05-19); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_chennai_birth_crstn_portal",
+      "title": "Birth And Death Registration - Tamil Nadu civil registration portal home page",
+      "publisher": "EDP Cell, Greater Chennai Corporation / Chief Registrar of Births and Deaths, Tamil Nadu",
+      "url": "https://crstn.org/",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2026-08-24",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Chennai, Tamil Nadu, India; the portal is state-wide and its footer names Greater Chennai Corporation as its developer. Agency naming as displayed on the access date: 'Designed and Developed by EDP Cell, Greater Chennai Corporation / Chief Registrar of Births and Deaths, Tamilnadu'. The footer displays 'Last Updated On 24-08-2026 11:10:20 AM', recorded as publishedAt. The home page presents a CAPTCHA, which was not attempted. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20260613063053/http://www.crstn.org/ (2026-06-13); no new capture was pushed from this run."
+    },
+    {
+      "id": "source_chennai_birth_gcc_page",
+      "title": "Online Services, Birth and Death - Greater Chennai Corporation",
+      "publisher": "Greater Chennai Corporation",
+      "url": "https://chennaicorporation.gov.in/new_site/birth-certificate/",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION'. The page shows no visible last-updated or version date. Direct current observation. Archive: an existing Wayback snapshot was found at https://web.archive.org/web/20220711214837/https://chennaicorporation.gov.in/new_site/birth-certificate/ (2022-07-11), more than four years before the access date; no new capture was pushed from this run."
+    },
+    {
+      "id": "source_chennai_birth_gccservices_route",
+      "title": "GCC Birth And Death - registration of birth certificate download",
+      "publisher": "Greater Chennai Corporation",
+      "url": "https://gccservices.in/crs/birth",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'GREATER CHENNAI CORPORATION'. Direct current observation of the corporation's working download route, which offers registration with a name and mobile number and login by OTP and nothing else; the boundary was not crossed. Shows no visible last-updated date. Archive: the Wayback availability API returned no snapshot for this URL on the access date, so no archive copy exists to point to; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_chennai_birth_extract_fee_200",
+      "text": "Rule 13(1) of the Tamil Nadu Registration of Births and Deaths Rules, 2000 fixes the fee for granting an extract relating to each birth or death at Rs. 200 and the fee for every additional copy of an extract at Rs. 200.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_birth_tn_rbd_rules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The figures are the ones substituted vide G.O.Ms.No.360 dated 12.10.2017, replacing Rs. 5 and Rs. 2 respectively."
+    },
+    {
+      "id": "claim_chennai_birth_search_fee_100",
+      "text": "Rule 13(1) of the Tamil Nadu Registration of Births and Deaths Rules, 2000 fixes the fee for a search for a single entry in the first year for which the search is made at Rs. 100, and Rs. 100 for every additional year for which the search is continued.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_birth_tn_rbd_rules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_chennai_birth_portal_download_free",
+      "text": "The Tamil Nadu civil registration portal states that the general public can download birth and death certificates free of cost for events registered from 1 January 2018 onwards.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_birth_crstn_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "An explicit zero for the online route, recorded as a stated value under protocol section 3. It does not displace the statutory fee, which governs an extract issued by the Registrar under section 17; the two describe different routes and both are recorded."
+    },
+    {
+      "id": "claim_chennai_birth_portal_covers_from_2018",
+      "text": "The Tamil Nadu civil registration portal states that birth and death certificates can be downloaded from the portal for events registered from 1 January 2018, and that for events prior to that date the respective local bodies may be approached.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_birth_crstn_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A rule that decides which route applies, by the date the event was registered."
+    },
+    {
+      "id": "claim_chennai_birth_registrars_by_local_area",
+      "text": "The Tamil Nadu civil registration portal states that registrars have been appointed for each local area under section 7 of the Registration of Births and Deaths Act, 1969 for registration of births and deaths occurring in their jurisdiction.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_birth_crstn_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A designation tied to a jurisdiction rule, without naming the office for any particular local area."
+    },
+    {
+      "id": "claim_chennai_birth_collect_within_30_days",
+      "text": "Rule 8(2) of the Tamil Nadu Registration of Births and Deaths Rules, 2000 provides that for a domiciliary birth reported directly to the Registrar, the head of the house or the nearest relative present may collect the extract of birth from the Registrar within 30 days of its reporting.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_birth_tn_rbd_rules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A deadline binding on the family for collecting the first extract."
+    },
+    {
+      "id": "claim_chennai_birth_institutional_collect_within_30_days",
+      "text": "Rule 8(4) of the Tamil Nadu Registration of Births and Deaths Rules, 2000 provides that for an institutional birth the nearest relative of the new born may collect the extract from the officer or person in charge of the institution within thirty days of the occurrence of the event.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_birth_tn_rbd_rules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Scope: this rule governs collection of the extract from the officer or person in charge of the institution, which is the hospital-side step the primary scenario excludes. The claim is retained because it is a true, sourced statement of the Rules and the schema requires a scenario tag, but it does not supply a value for any expectation cell of this scenario."
+    },
+    {
+      "id": "claim_chennai_birth_uncollected_posted_in_fifteen_days",
+      "text": "Rule 8(5) of the Tamil Nadu Registration of Births and Deaths Rules, 2000 provides that if the extract is not collected within the stipulated period, the Registrar or the officer in charge of the institution shall transmit it to the concerned family by post within fifteen days of the expiry of that period.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_birth_tn_rbd_rules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "A duty on the Registrar or the officer in charge of the institution, with a stated period, arising on the expiry of the collection period that follows registration. Scope: it is triggered automatically rather than by anything the citizen submits, so under the section 8 after-submission definition, which excludes registration-stage steps, it is not a post-submission surface for this scenario, and its period is not a processing time for a request for a copy."
+    },
+    {
+      "id": "claim_chennai_birth_extract_form_and_certification",
+      "text": "Rules 8(1) and 13(2) of the Tamil Nadu Registration of Births and Deaths Rules, 2000 provide that the extract of a birth is given in Form No. 5 and is certified in the manner provided for in section 76 of the Indian Evidence Act, 1872.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_birth_tn_rbd_rules"
+      ],
+      "evidenceGrade": "A",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Identifies the document the citizen receives, by form number."
+    },
+    {
+      "id": "claim_chennai_birth_gcc_routes_offered",
+      "text": "The Greater Chennai Corporation's birth and death page offers four routes, birth certificate download, death certificate download, child name inclusion and hospital registration for birth and death, and no guidance text on fees, documents, timelines or offices.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_birth_gcc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Direct current observation of the page's own contents on the access date."
+    },
+    {
+      "id": "claim_chennai_birth_gcc_page_nav_404",
+      "text": "On the access date the header links on the Greater Chennai Corporation's birth and death page to About GCC, Departments, Online Services and zonal details returned HTTP 404, under both the site root and the /new_site/ prefix, while equivalent pages exist under a /gcc/ prefix that the page does not use.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_birth_gcc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Recorded as observed rather than replaced with the working homepage equivalents."
+    },
+    {
+      "id": "claim_chennai_birth_gcc_page_unrendered_template",
+      "text": "The Greater Chennai Corporation's birth and death page serves one link whose href is an unrendered server template expression rather than a URL.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_birth_gcc_page"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Observed in the page source on the access date."
+    },
+    {
+      "id": "claim_chennai_birth_crstn_service_routes_404",
+      "text": "On the access date every service route linked from the Tamil Nadu civil registration portal's own menu returned HTTP 404, including the birth certificate download route, the child name inclusion route and the reported-and-registered dashboard.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_birth_crstn_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Each route was requested from the portal's own link with a referer from the portal home page; the responses were Apache Tomcat 404 pages naming the requested path."
+    },
+    {
+      "id": "claim_chennai_birth_crstn_guidance_pdfs_404",
+      "text": "On the access date the Tamil Nadu civil registration portal's About Us, Procedures and Documents files, and its birth reporting form, all returned HTTP 404, while the Act and Rules PDFs under its rules directory resolved.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_birth_crstn_portal"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The Documents file is the one route on the portal that would have carried a document list for this service."
+    },
+    {
+      "id": "claim_chennai_birth_gcc_download_needs_otp",
+      "text": "The Greater Chennai Corporation's working birth certificate download route offers only registration with a name and mobile number and login by an OTP sent to that number, and shows no fee, document list, timeline or office on the page.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_chennai_birth_gccservices_route"
+      ],
+      "evidenceGrade": "B",
+      "basis": "mixed",
+      "status": "partial",
+      "contradictsClaimIds": [],
+      "notes": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The observation is the page's own form; the inference is that the certificate lies past the OTP. The boundary was not crossed."
+    },
+    {
+      "id": "claim_chennai_birth_documents_for_copy_unknown",
+      "text": "What a parent must produce to obtain a copy of an already registered birth in Chennai is not established by any reviewed public page; the one portal route that would carry a document list returned HTTP 404.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related: the route is public and dead, not gated."
+    },
+    {
+      "id": "claim_chennai_birth_local_registrar_office_unknown",
+      "text": "Which office in Chennai a citizen should approach for a birth registered before 1 January 2018, and how to reach it, is not established by any reviewed public page; the corporation's zonal details route returned HTTP 404.",
+      "jurisdiction": "Chennai, Tamil Nadu, India",
+      "scenarioIds": [
+        "scenario_ind32_birth_copy_workflow"
+      ],
+      "nodeIds": [],
+      "sourceIds": [],
+      "evidenceGrade": "Unknown",
+      "basis": "inference",
+      "status": "unknown",
+      "contradictsClaimIds": [],
+      "notes": "Retained because the uncertainty itself matters to the journey. Not login-related."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

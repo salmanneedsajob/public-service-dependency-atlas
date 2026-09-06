@@ -1,0 +1,38 @@
+{
+  "serviceId": "property-tax-payment",
+  "jurisdiction": "Mumbai, Maharashtra, India",
+  "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
+  "asOf": "2026-09-06",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimCount": 2
+    },
+    "documents": {
+      "state": "mentioned",
+      "claimCount": 1
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimCount": 3
+    },
+    "time": {
+      "state": "mentioned",
+      "claimCount": 1
+    },
+    "owner": {
+      "state": "stated",
+      "claimCount": 2
+    },
+    "after-submission": {
+      "state": "mentioned",
+      "claimCount": 1
+    }
+  },
+  "statedCount": 3,
+  "loginStrippedUnknownShare": 1,
+  "portalFriction": null,
+  "auditFile": "ledger/jurisdictions/mumbai/audits/property-tax-payment.md",
+  "benchmarkVersion": "0.1",
+  "source": "authored"
+}

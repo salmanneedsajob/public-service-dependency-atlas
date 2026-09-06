@@ -1,0 +1,38 @@
+{
+  "serviceId": "birth-certificate",
+  "jurisdiction": "Mumbai, Maharashtra, India",
+  "primaryScenarioId": "scenario_ind32_birth_copy_workflow",
+  "asOf": "2026-09-06",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimCount": 3
+    },
+    "documents": {
+      "state": "mentioned",
+      "claimCount": 2
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimCount": 4
+    },
+    "time": {
+      "state": "mentioned",
+      "claimCount": 2
+    },
+    "owner": {
+      "state": "stated",
+      "claimCount": 4
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimCount": 1
+    }
+  },
+  "statedCount": 4,
+  "loginStrippedUnknownShare": 1,
+  "portalFriction": null,
+  "auditFile": "ledger/jurisdictions/mumbai/audits/birth-certificate.md",
+  "benchmarkVersion": "0.1",
+  "source": "authored"
+}

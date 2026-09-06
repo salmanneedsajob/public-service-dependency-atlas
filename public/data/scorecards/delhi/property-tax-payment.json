@@ -1,0 +1,38 @@
+{
+  "serviceId": "property-tax-payment",
+  "jurisdiction": "Delhi, NCT of Delhi, India",
+  "primaryScenarioId": "scenario_property_tax_payment_known_sas_pid",
+  "asOf": "2026-09-06",
+  "cells": {
+    "cost": {
+      "state": "mentioned",
+      "claimCount": 4
+    },
+    "documents": {
+      "state": "mentioned",
+      "claimCount": 1
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimCount": 4
+    },
+    "time": {
+      "state": "stated",
+      "claimCount": 2
+    },
+    "owner": {
+      "state": "mentioned",
+      "claimCount": 3
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimCount": 2
+    }
+  },
+  "statedCount": 3,
+  "loginStrippedUnknownShare": 1,
+  "portalFriction": null,
+  "auditFile": "ledger/jurisdictions/delhi/audits/property-tax-payment.md",
+  "benchmarkVersion": "0.1",
+  "source": "authored"
+}

@@ -1,0 +1,86 @@
+{
+  "serviceId": "water-connection",
+  "ledgerPath": "ledger/jurisdictions/mumbai/water-connection.json",
+  "auditPath": "ledger/jurisdictions/mumbai/audits/water-connection.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "correction_mumbai_water_cost_note_fee_sequence",
+      "recordType": "expectation",
+      "recordId": "water-connection",
+      "fieldPath": "/cells/cost/note",
+      "old": "One amount the citizen pays is published, a scrutiny fee of Rs. 200 printed on the corporation's own application form, and the published procedure requires it before the application is scrutinised. It is the only figure any reviewed route states, and it is a small part of what the connection costs: no deposit, connection charge, meter cost or road-opening charge is published anywhere reviewed, and the ward manual records the Manual of Water Charges Rules as obtainable from the PRO department on payment of fees rather than published. That gap is carried as a separate unknown claim rather than folded into this cell.",
+      "new": "One amount the citizen pays is published, a scrutiny fee of Rs. 200 printed on the corporation's own application form, and the published time limit table makes the party's compliance with that fee a step the application must pass: scrutiny of the application, then a letter to the party, then compliance by the party with the scrutiny fee within 30 days, then the site visit. It is the only figure any reviewed route states, and it is a small part of what the connection costs: no deposit, connection charge, meter cost or road-opening charge is published anywhere reviewed, and the ward manual records the Manual of Water Charges Rules as obtainable from the PRO department on payment of fees rather than published. That gap is carried as a separate unknown claim rather than folded into this cell.",
+      "reason": "The note says the scrutiny fee is required before the application is scrutinised. The ledger's own time-limit claim puts it after: scrutiny of the application 15 days, letter to the party 2 days, compliance by the party with the scrutiny fee 30 days, site visit report after compliance 7 days. The fee is paid at the compliance step that follows scrutiny, on the letter. The cell state is unaffected; the sequencing statement is corrected against the ledger's own evidence.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward",
+          "source_mumbai_water_nwc_form_other"
+        ],
+        "auditNote": "Finding F1. Corrected sequence read directly from claim_mumbai_water_time_limit_table, which is cross-checked in two wards' manuals. The Rs. 200 figure and its status as a mandatory step are unchanged, so cost remains stated."
+      }
+    },
+    {
+      "id": "correction_mumbai_water_documents_note_single_ward",
+      "recordType": "expectation",
+      "recordId": "water-connection",
+      "fieldPath": "/cells/documents/note",
+      "old": "Actionable document lists are published, enumerated by connection category. For an authorised built residential property the list is the Hydraulic Engineer's Department no-objection certificate, approved plans, the IOD or commencement certificate, the occupation or building completion certificate and any other applicable no-objection certificate; for an older tolerable structure it is the assessment bill, ration card, rent receipt and the owner's no-objection certificate. The lists sit in ward Section 4 RTI manuals rather than on any service page, and the corporation's own New Water Connection route publishes no document list at all.",
+      "new": "Actionable document lists are published, enumerated by connection category. For an authorised built residential property the list is the Hydraulic Engineer's Department no-objection certificate, approved plans, the IOD or commencement certificate, the occupation or building completion certificate and any other applicable no-objection certificate; for an older tolerable structure it is the assessment bill, ration card, rent receipt and the owner's no-objection certificate. Both lists come from the Section 4 RTI manual of a single ward, K/West, rather than from any service page; the second ward's manual is recorded as read only as a cross-check on the procedure and the time-limit table, so the document lists carry no cross-ward corroboration and are Grade C material from one ward's office. The corporation's own New Water Connection route publishes no document list at all.",
+      "reason": "The note attributes the lists to ward Section 4 RTI manuals in the plural, which reads as the cross-ward corroboration the time cell has. All three supporting claims cite source_mumbai_water_rti_manual_kwest alone, and the D-ward source note limits that manual's use to the procedure and the time-limit table. The provenance statement is narrowed to what the evidence shows. The state is unaffected: a single ward's Section 4 manual is Grade C official material giving a concrete list with a requirement to submit, which section 8 admits for a stated cell.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest",
+          "source_mumbai_water_rti_manual_dward"
+        ],
+        "auditNote": "Finding F2. claim_mumbai_water_documents_planned_building, claim_mumbai_water_documents_tolerable_structure and claim_mumbai_water_document_categories each cite the K/West manual only."
+      }
+    },
+    {
+      "id": "correction_mumbai_water_owner_note_kwest_scope",
+      "recordType": "expectation",
+      "recordId": "water-connection",
+      "fieldPath": "/cells/owner/note",
+      "old": "The citizen can identify the office and the role that decides: the published procedure names the Assistant Engineer, Executive Engineer, Deputy Hydraulic Engineer and Hydraulic Engineer as the approving authorities according to the powers vested in each, names the Junior or Sub Engineer (Distribution) as the officer who scrutinises and inspects, names the Assistant Engineer Water Works of the ward as the officer who signs and issues the permission form, and publishes that officer's ward office address, telephone, e-mail and visiting hours.",
+      "new": "The citizen can identify the office and the role that decides: the published procedure names the Assistant Engineer, Executive Engineer, Deputy Hydraulic Engineer and Hydraulic Engineer as the approving authorities according to the powers vested in each, names the Junior or Sub Engineer (Distribution) as the officer who scrutinises and inspects, and names the Assistant Engineer Water Works of the ward as the officer who signs and issues the permission form. That last is a designation tied to a jurisdiction rule, which is what carries this cell for any applicant. Published contact details were read for one ward only: the K/West manual gives that ward office's address, telephone, e-mail and visiting hours, so an applicant in another ward has the designation and the ward-office route but no ward-specific contact recorded here.",
+      "reason": "The note ends by saying the evidence publishes that officer's ward office address, telephone, e-mail and visiting hours, which reads as though any applicant can find their own ward office this way. claim_mumbai_water_ward_office_contact_published is scoped in its own text to K/West ward. The state is unaffected, because the Assistant Engineer Water Works of the ward is a designation tied to a jurisdiction rule and section 8 accepts that for a stated owner cell without any contact block.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_rti_manual_kwest"
+        ],
+        "auditNote": "Finding F3. Narrowed to what was read; no claim is made about whether other wards' manuals carry their own contact blocks, since only K/West's was examined for contact details."
+      }
+    },
+    {
+      "id": "correction_mumbai_water_aquaptax_basis_mixed",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_bills_and_receipts_by_ccn",
+      "fieldPath": "/basis",
+      "old": "observation",
+      "new": "mixed",
+      "reason": "Section 5 reserves observation for what the interface directly shows. The page directly showed duplicate bill and duplicate receipt options keyed to a consumer number, reachable without login; that a download is actually delivered is a conclusion drawn from those published options, and the claim's own note records that no consumer number was entered. Verifying further would have queried live case data, which section 16 forbids, so the record is properly mixed with the boundary explained in notes.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_aquaptax_portal"
+        ],
+        "auditNote": "Finding F4. The claim supports no expectation cell and is explicitly excluded from the after-submission cell, so the grid is unaffected."
+      }
+    },
+    {
+      "id": "correction_mumbai_water_aquaptax_notes_boundary",
+      "recordType": "claim",
+      "recordId": "claim_mumbai_water_bills_and_receipts_by_ccn",
+      "fieldPath": "/notes",
+      "old": "A surface that follows the connection, not the application; recorded for completeness and not used for the after-submission cell. The route was read only, with no consumer number entered.",
+      "new": "A surface that follows the connection, not the application; recorded for completeness and not used for the after-submission cell. The route was read only, with no consumer number entered. Basis boundary: the observation is of what the public page showed on the access date, duplicate bill and duplicate receipt options keyed to a consumer number and reachable without login; that a download is actually delivered is an inference from those published options, because confirming it would have required entering a real consumer number and querying live case data.",
+      "reason": "Section 5 requires a mixed basis to explain the observation-inference boundary in notes. This states the boundary that accompanies the basis change in the preceding correction.",
+      "support": {
+        "sourceIds": [
+          "source_mumbai_water_aquaptax_portal"
+        ],
+        "auditNote": "Finding F4. Paired with the /basis correction on the same claim; apply both or neither, since a mixed basis without the boundary note would itself breach section 5."
+      }
+    }
+  ]
+}

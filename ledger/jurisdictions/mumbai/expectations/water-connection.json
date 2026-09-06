@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "water-connection",
+  "primaryScenarioId": "scenario_ind32_water_residential",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimIds": [
+        "claim_mumbai_water_scrutiny_fee_200"
+      ],
+      "searchedRoutes": [
+        "https://portal.mcgm.gov.in/irj/portal/anonymous/qlNWConnection?guest_user=english",
+        "https://portal.mcgm.gov.in/irj/go/km/docs/documents/MCGM%20Department%20List/Wards/Assistant%20Commissioner%20(KWest-Ward)/RTI%20Manuals/WaterWorksDept.pdf",
+        "https://aquaptax.mcgm.gov.in/aqua/CitizenHome.html"
+      ],
+      "note": "One amount the citizen pays is published, a scrutiny fee of Rs. 200 printed on the corporation's own application form, and the published time limit table makes the party's compliance with that fee a step the application must pass: scrutiny of the application, then a letter to the party, then compliance by the party with the scrutiny fee within 30 days, then the site visit. It is the only figure any reviewed route states, and it is a small part of what the connection costs: no deposit, connection charge, meter cost or road-opening charge is published anywhere reviewed, and the ward manual records the Manual of Water Charges Rules as obtainable from the PRO department on payment of fees rather than published. That gap is carried as a separate unknown claim rather than folded into this cell."
+    },
+    "documents": {
+      "state": "stated",
+      "claimIds": [
+        "claim_mumbai_water_documents_planned_building",
+        "claim_mumbai_water_documents_tolerable_structure",
+        "claim_mumbai_water_document_categories"
+      ],
+      "searchedRoutes": [],
+      "note": "Actionable document lists are published, enumerated by connection category. For an authorised built residential property the list is the Hydraulic Engineer's Department no-objection certificate, approved plans, the IOD or commencement certificate, the occupation or building completion certificate and any other applicable no-objection certificate; for an older tolerable structure it is the assessment bill, ration card, rent receipt and the owner's no-objection certificate. Both lists come from the Section 4 RTI manual of a single ward, K/West, rather than from any service page; the second ward's manual is recorded as read only as a cross-check on the procedure and the time-limit table, so the document lists carry no cross-ward corroboration and are Grade C material from one ward's office. The corporation's own New Water Connection route publishes no document list at all."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_mumbai_water_document_categories",
+        "claim_mumbai_water_application_through_licensed_plumber",
+        "claim_mumbai_water_documents_planned_building"
+      ],
+      "searchedRoutes": [],
+      "note": "Usable rules decide which route applies: the connection category, set by what kind of structure the property is, determines the papers and the route; the application must be lodged in the ward through a licensed plumber, not by the applicant alone; and a connection to a planned building turns on the building already holding an occupation or building completion certificate, which is what marks this scenario's built, authorised property."
+    },
+    "time": {
+      "state": "stated",
+      "claimIds": [
+        "claim_mumbai_water_time_limit_table",
+        "claim_mumbai_water_installation_time_limits"
+      ],
+      "searchedRoutes": [],
+      "note": "An actionable step-by-step time limit table is published, from scrutiny at 15 days through to issue of the permission form, and a second set of limits covers the installation stage to generation of the consumer number. Two qualifications are recorded rather than resolved: the figures are per step and the published table gives no total, and one of the steps, approval by the competent higher authority at 7 days each level, has no stated number of levels."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_mumbai_water_deciding_officers",
+        "claim_mumbai_water_ward_office_contact_published",
+        "claim_mumbai_water_permission_form_issued"
+      ],
+      "searchedRoutes": [],
+      "note": "The citizen can identify the office and the role that decides: the published procedure names the Assistant Engineer, Executive Engineer, Deputy Hydraulic Engineer and Hydraulic Engineer as the approving authorities according to the powers vested in each, names the Junior or Sub Engineer (Distribution) as the officer who scrutinises and inspects, and names the Assistant Engineer Water Works of the ward as the officer who signs and issues the permission form. That last is a designation tied to a jurisdiction rule, which is what carries this cell for any applicant. Published contact details were read for one ward only: the K/West manual gives that ward office's address, telephone, e-mail and visiting hours, so an applicant in another ward has the designation and the ward-office route but no ward-specific contact recorded here."
+    },
+    "after-submission": {
+      "state": "stated",
+      "claimIds": [
+        "claim_mumbai_water_permission_form_issued",
+        "claim_mumbai_water_rejection_letter_step",
+        "claim_mumbai_water_connection_released_after_p_form"
+      ],
+      "searchedRoutes": [],
+      "note": "Something the citizen sees after submitting is identified: on approval the applicant is informed by the issue of a Permission Form listing the approvals and conditions, and the published step table carries a rejection letter as the alternative outcome, signed by the same officer. What is not published is any way to watch the application in the meantime; no status route or reference number for a pending application was found, and that is recorded separately as unknown."
+    }
+  }
+}

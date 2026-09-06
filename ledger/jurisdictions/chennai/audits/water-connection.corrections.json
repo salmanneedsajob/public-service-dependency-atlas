@@ -1,0 +1,95 @@
+{
+  "serviceId": "water-connection",
+  "ledgerPath": "ledger/jurisdictions/chennai/water-connection.json",
+  "auditPath": "ledger/jurisdictions/chennai/audits/water-connection.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "corr_water_connection_01",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_public_status_route",
+      "fieldPath": "/text",
+      "old": "The board's water and sewer connection online services route publishes two links, one to apply for a new water or sewer connection and one to know the status of a new water or sewer connection, both reachable without login.",
+      "new": "The board's water and sewer connection online services route, a page reachable without login, publishes two links, one to apply for a new water or sewer connection and one to know the status of a new water or sewer connection; neither link was exercised, so whether either destination requires authentication is not established by this observation.",
+      "reason": "The wording 'both reachable without login' is stronger than the observation supports. Neither link was exercised, so what was observed is that the page publishing the links is public, not that either destination is usable unauthenticated. As written it also reads against claim_chennai_water_online_application_needs_login, which states the online apply route requires an applicant login first. Protocol section 1 directs the auditor to downgrade wording the evidence does not support, and section 8 lint item 6 targets overclaims across an authentication boundary. No contradiction link is added, because the corrected wording removes the apparent conflict.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_online_route",
+          "source_chennai_water_citizen_charter"
+        ],
+        "auditNote": "Finding F-07. The claim's own note already records that neither link was exercised and no application reference was entered; the text is brought into line with that limitation. The corrected claim still identifies a published status tracker and continues to support the after-submission cell."
+      }
+    },
+    {
+      "id": "corr_water_connection_02",
+      "recordType": "claim",
+      "recordId": "claim_chennai_water_online_application_needs_login",
+      "fieldPath": "/notes",
+      "old": "Boundary statement, recorded as a limitation and not used to support any positive cell value. The counter route needs no login and is where the published charges, enclosures and timelines apply.",
+      "new": "Boundary statement, recorded as a limitation and not used to support any positive cell value. Basis boundary as required by protocol section 5: the observed element is the citizen charter's own text stating that the consumer must first create an applicant login with a mobile number, email id and password before applying on the revised online route; the inferred element is the reading that the counter route needs no login and is where the published charges, enclosures and timelines apply, which is drawn from the application form's counter registration instructions rather than stated as such by either source. Nothing behind the login was observed.",
+      "reason": "Protocol section 5 requires a claim with basis 'mixed' to explain the observation-versus-inference boundary in its notes. The existing notes explain the login boundary but never say which element is observed and which is inferred. The claim text is a pure recitation of the charter; the inferred element is the notes' own reading that the counter route needs no login, which neither source states.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_citizen_charter",
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "Finding F-12. Basis is left as 'mixed' rather than changed to 'observation', because the record does carry an inferred component; the defect is that the record did not label it."
+      }
+    },
+    {
+      "id": "corr_water_connection_03",
+      "recordType": "source",
+      "recordId": "source_chennai_water_online_route",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. Direct current observation of a public official interface offering two links, one to apply for a new water or sewer connection and one to know the status of such an application. Neither was exercised; no application reference was entered. Archive: the Wayback availability API returned no snapshot for this route on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run.",
+      "new": "Jurisdiction: Chennai, Tamil Nadu, India. Agency naming as displayed on the access date: 'Chennai Metropolitan Water Supply and Sewerage Board'. Direct current observation of a public official interface offering two links, one to apply for a new water or sewer connection and one to know the status of such an application. Neither was exercised; no application reference was entered. Archive: the Wayback availability API returned no snapshot for this route on the access date; the original official URL is retained and the capture failure is recorded here as a limitation. No new capture was pushed from this run. Date quality: this record carries no publishedAt and states no visible version or last-updated date for the route; the audit did not observe the page and records the absence as an unresolved limitation rather than asserting what the page displays.",
+      "reason": "Protocol section 8 lint item 5 requires source-date quality: a source missing publishedAt must carry a visible-date note, and an undated source must carry a stated limitation. This record has neither. Its two sibling undated sources meet the standard: source_chennai_water_general_tariff notes that no visible effective date is shown and source_chennai_water_area_office_list notes that no separate last-updated date is shown beyond the site footer. This one is silent, leaving an unwaived lint finding.",
+      "support": {
+        "auditNote": "Finding F-13. The added text records the gap in the record only. It asserts nothing about what the page displays, because the audit did not observe the page and protocol section 13 forbids inventing evidence to complete a record."
+      }
+    },
+    {
+      "id": "corr_water_connection_04",
+      "recordType": "expectation",
+      "recordId": "water-connection",
+      "fieldPath": "/cells/cost/claimIds",
+      "old": [
+        "claim_chennai_water_connection_charge_table",
+        "claim_chennai_water_meter_testing_charges",
+        "claim_chennai_water_application_free_and_where",
+        "claim_chennai_water_small_house_document_relief"
+      ],
+      "new": [
+        "claim_chennai_water_connection_charge_table",
+        "claim_chennai_water_meter_testing_charges",
+        "claim_chennai_water_application_free_and_where",
+        "claim_chennai_water_small_house_document_relief",
+        "claim_chennai_water_amount_payable_components"
+      ],
+      "reason": "Protocol section 9 requires a stated cell to record its claimIds alongside its actionable-value note. The cost note asserts that the form's component list includes deposit amounts whose figures appear on no reviewed route, but the record establishing that, claim_chennai_water_amount_payable_components, is cited by no cell. It is verified and Grade B, so section 8 admits it as support. The Unknown claim that carries the gap itself cannot be added, since section 8 allows an Unknown claim to record only a limitation.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "Finding F-02. Traceability only; the cell state is unchanged and remains stated."
+      }
+    },
+    {
+      "id": "corr_water_connection_05",
+      "recordType": "expectation",
+      "recordId": "water-connection",
+      "fieldPath": "/cells/after-submission/note",
+      "old": "Several surfaces the citizen sees after submitting are identified: a unique registration ID generated and displayed on screen and sent by email or SMS, SMS intimation of the inspection slot, of any discrepancy, and of the date allotted for the connection, a sanction order generated after payment with SMS intimation, a published route to know the status of a new water or sewer connection reachable without login, and the board's statement that the status of registered applications is published periodically on its website. The status route was read, not queried; no application reference was entered. The counter acknowledgment given at the registration desk is deliberately excluded, because it is handed over at submission rather than after it.",
+      "new": "Several surfaces the citizen sees after submitting are identified: a unique registration ID generated and displayed on screen and sent by email or SMS, SMS intimation of the inspection slot, of any discrepancy, and of the date allotted for the connection, a sanction order generated after payment with SMS intimation, a published route to know the status of a new water or sewer connection, and the board's statement that the status of registered applications is published periodically on its website. Route disclosure: this cell is scored from two routes rather than one. claim_chennai_water_registration_id_and_sms is expressly conditioned on a successful online transaction, and claim_chennai_water_online_application_needs_login records that the online route requires the consumer to create an applicant login first, so that registration-ID surface sits behind an authentication boundary the citizen must cross; claim_chennai_water_sanction_order_after_payment describes approval preceding payment, which is that same online sequence and not the counter sequence in claim_chennai_water_registration_acknowledgement, where the connection charges are paid and the receipt enclosed before registration. The charges, enclosures and registration instructions supporting the cost, documents and eligibility cells are counter-route material. The cell is nonetheless stated on evidence independent of that boundary: the board's online services page was observed publishing a link to know the status of a new water or sewer connection, and the charter states that the status of registered applications is published periodically on the website, which speaks of registered applications on either route. The status route was read, not queried; neither link was exercised and no application reference was entered, so whether either destination requires authentication is not established. The counter acknowledgment given at the registration desk is deliberately excluded, because it is handed over at submission rather than after it.",
+      "reason": "The cell is scored from two routes and the note does not disclose it. Two of the four cited claims are online-route evidence, one of them expressly conditioned on a successful online transaction, and the ledger's own boundary claim records that the online route requires the consumer to create an applicant login first, while the charges, enclosures and registration instructions carrying the cost, documents and eligibility cells are counter-route material. Presenting a login-gated surface without naming the gate is an overclaim across an authentication boundary under section 8 lint item 6, and section 9 requires the note of a stated cell to be actionable. The revised note discloses the split and identifies the evidence that carries the cell independently of the boundary. It also drops the phrase 'reachable without login', consistent with correction corr_water_connection_01.",
+      "support": {
+        "sourceIds": [
+          "source_chennai_water_online_route",
+          "source_chennai_water_citizen_charter",
+          "source_chennai_water_application_form"
+        ],
+        "auditNote": "Findings F-05, F-06 and F-07. The cited claims are retained: each reports what a public official page states, is attributed, verified and Grade B on observation of that page, and none is an observation of a logged-in interface. Disclosure is the proportionate remedy. The cell state is unchanged and remains stated, carried by claim_chennai_water_public_status_route and claim_chennai_water_status_published_periodically."
+      }
+    }
+  ]
+}

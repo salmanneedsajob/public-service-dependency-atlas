@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "birth-certificate",
+  "primaryScenarioId": "scenario_ind32_birth_copy_workflow",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimIds": [
+        "claim_chennai_birth_extract_fee_200",
+        "claim_chennai_birth_search_fee_100",
+        "claim_chennai_birth_portal_download_free"
+      ],
+      "searchedRoutes": [],
+      "note": "Amounts the citizen pays are fixed by rule and published: Rs. 200 for granting an extract of a birth, Rs. 200 for every additional copy, Rs. 100 for a search in the first year and Rs. 100 for each further year, all in Rule 13 of the Tamil Nadu Registration of Births and Deaths Rules, 2000 as amended in 2017; and an explicit zero for the online route, where the state portal says the public may download certificates free of cost for events registered from 1 January 2018. The two are recorded as different routes, not as a contradiction: the rule fixes the fee for an extract issued by the Registrar under section 17, the portal statement covers its own download."
+    },
+    "documents": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_chennai_birth_crstn_guidance_pdfs_404"
+      ],
+      "searchedRoutes": [
+        "https://crstn.org/",
+        "https://crstn.org/AboutUs/documents.pdf",
+        "https://crstn.org/AboutUs/FAQ.pdf",
+        "https://chennaicorporation.gov.in/new_site/birth-certificate/",
+        "https://gccservices.in/crs/birth",
+        "https://www.crstn.org/birth_death_tn/rules/TNRBD%20Rules.pdf"
+      ],
+      "note": "The topic is named without an actionable value. The state portal's own menu carries an item labelled Documents, which is the one route that would tell a citizen what to produce, and on the access date it returned HTTP 404, as did the Procedures item beside it. No other reviewed route names a single document a citizen must submit, provide, upload, produce or attach for a copy of an already registered birth, and the Rules impose no document requirement for an extract under section 17."
+    },
+    "eligibility": {
+      "state": "stated",
+      "claimIds": [
+        "claim_chennai_birth_portal_covers_from_2018"
+      ],
+      "searchedRoutes": [],
+      "note": "A usable rule decides which route applies: certificates for events registered from 1 January 2018 are downloaded from the state portal, and for earlier events the respective local body is approached instead, which for this service is the Greater Chennai Corporation. The Rules also fix who may collect the first extract, the head of the house or nearest relative present for a domiciliary birth and the nearest relative of the new born for an institutional one, but those provisions govern collection at the moment of registration, one of them at the institution counter this scenario excludes, so they are not cited in support of this cell."
+    },
+    "time": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_chennai_birth_collect_within_30_days",
+        "claim_chennai_birth_institutional_collect_within_30_days",
+        "claim_chennai_birth_uncollected_posted_in_fifteen_days"
+      ],
+      "searchedRoutes": [
+        "https://crstn.org/",
+        "https://chennaicorporation.gov.in/new_site/birth-certificate/",
+        "https://gccservices.in/crs/birth",
+        "https://www.crstn.org/birth_death_tn/rules/TNRBD%20Rules.pdf"
+      ],
+      "note": "The topic is named without a usable time rule for this scenario. The three periods fixed by the Rules all attach to the registration event rather than to a request for a copy: thirty days from the reporting of the birth to collect a domiciliary extract from the Registrar (Rule 8(2)), thirty days from the event to collect an institutional one from the officer in charge of the institution (Rule 8(4)), which is the hospital-side step this scenario excludes, and a duty on the Registrar or that officer to post an uncollected extract within fifteen days of the expiry of that period (Rule 8(5)), which is triggered automatically and requires no submission by the citizen. The scenario's trigger is a birth already registered where the family now needs a certified copy or a first certificate. For that request no reviewed route gives a processing period, deadline or service-level target: the Greater Chennai Corporation's page carries no timeline text, its download route shows none before the OTP boundary, and the state portal publishes no target for its download and returned HTTP 404 on the download route itself. The three claims are retained as topic-only IDs."
+    },
+    "owner": {
+      "state": "stated",
+      "claimIds": [
+        "claim_chennai_birth_registrars_by_local_area",
+        "claim_chennai_birth_portal_covers_from_2018"
+      ],
+      "searchedRoutes": [
+        "https://crstn.org/",
+        "https://crstn.org/AboutUs/About_us.pdf",
+        "https://chennaicorporation.gov.in/new_site/birth-certificate/",
+        "https://chennaicorporation.gov.in/department/zonal-details/",
+        "https://chennaicorporation.gov.in/new_site/department/zonal-details/"
+      ],
+      "note": "A citizen can identify the operational role that holds the case: the state portal states that registrars have been appointed for each local area under section 7 of the Registration of Births and Deaths Act, 1969 for registration of births and deaths occurring in their jurisdiction, so a birth that occurred in Chennai is held by the Registrar of Births and Deaths for that local area. The portal's route rule supplies the body, directing events registered before 1 January 2018 to the respective local body, which for this service is the Greater Chennai Corporation. This is a designation tied to a jurisdiction rule, one of the three forms the cell definition admits, rather than a statutory designation standing alone. Limitation carried forward: no individual office is named, no office list is published and no contact route is given, and the two routes that would supply them, the portal's About Us file and the corporation's zonal details page, both returned HTTP 404 on the access date. That gap is recorded as claim_chennai_birth_local_registrar_office_unknown and is not counted as a cell value."
+    },
+    "after-submission": {
+      "state": "mentioned",
+      "claimIds": [
+        "claim_chennai_birth_uncollected_posted_in_fifteen_days",
+        "claim_chennai_birth_extract_form_and_certification"
+      ],
+      "searchedRoutes": [
+        "https://crstn.org/",
+        "https://chennaicorporation.gov.in/new_site/birth-certificate/",
+        "https://gccservices.in/crs/birth",
+        "https://www.crstn.org/birth_death_tn/rules/TNRBD%20Rules.pdf"
+      ],
+      "note": "An outcome is named but no post-submission surface was found. The Rules name the result, the extract in Form No. 5 certified in the manner provided by section 76 of the Indian Evidence Act, which identifies the document the citizen ends up with but is not a status page, tracker, acknowledgement, receipt, rejection reason or downloadable result. The posting duty in Rule 8(5) is a consequence of registration, which the cell definition excludes, and it is triggered by the expiry of the collection period rather than by anything the citizen submits. The two claims are retained as topic-only IDs. No surface was observed on either route: the state portal's own birth certificate download route returned HTTP 404 on the access date, and the corporation's working download route offers only registration with a name and mobile number and login by OTP, a boundary this run did not cross and which is recorded as a limitation rather than counted as a surface."
+    }
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "serviceId": "property-tax-payment",
+  "ledgerPath": "ledger/jurisdictions/delhi/property-tax-payment.json",
+  "auditPath": "ledger/jurisdictions/delhi/audits/property-tax-payment.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "correction_split_portal_registration_text",
+      "recordType": "claim",
+      "recordId": "claim_delhi_ptax_portal_registration_mandatory",
+      "fieldPath": "/text",
+      "old": "MCD's public taxpayer instructions state that registration on the MCD portal is mandatory for all taxpayers and that all property tax must be filed through the Municipal Corporation of Delhi portal only.",
+      "new": "MCD's public taxpayer instructions state that registration on the MCD portal is mandatory for all taxpayers.",
+      "reason": "Compound claim. It asserted two separately checkable obligations, a registration prerequisite and a route-exclusivity rule. Protocol section 1 requires one claim to assert one checkable thing and authorises the auditor to split compound claims; section 8 lint item 1 flags compound claims and no waiver is present in the audit inputs. The portal-only filing half moves to claim_delhi_ptax_portal_only_filing.",
+      "support": {
+        "sourceIds": ["source_delhi_ptax_rbd_page_taxpayer_block"],
+        "auditNote": "Split only, on the same source, grade, basis and status. No new evidence introduced and no wording strengthened."
+      }
+    },
+    {
+      "id": "correction_add_portal_only_filing_claim",
+      "recordType": "claim",
+      "recordId": "claim_delhi_ptax_portal_only_filing",
+      "fieldPath": "/",
+      "old": null,
+      "new": {
+        "id": "claim_delhi_ptax_portal_only_filing",
+        "text": "MCD's public taxpayer instructions state that all property tax must be filed through the Municipal Corporation of Delhi portal only.",
+        "jurisdiction": "Delhi, NCT of Delhi, India",
+        "scenarioIds": ["scenario_property_tax_payment_known_sas_pid"],
+        "nodeIds": [],
+        "sourceIds": ["source_delhi_ptax_rbd_page_taxpayer_block"],
+        "evidenceGrade": "B",
+        "basis": "observation",
+        "status": "verified",
+        "contradictsClaimIds": [],
+        "notes": "Split out of claim_delhi_ptax_portal_registration_mandatory by the audit of 2026-09-06 under protocol section 1. Same source, grade, basis and status as the claim it was split from; a route-exclusivity rule, which is why it supports the eligibility cell."
+      },
+      "reason": "Second half of the split compound claim, added so the route-exclusivity rule remains recorded and citable in its own right.",
+      "support": {
+        "sourceIds": ["source_delhi_ptax_rbd_page_taxpayer_block"],
+        "auditNote": "Carries no assertion beyond the clause removed from claim_delhi_ptax_portal_registration_mandatory."
+      }
+    },
+    {
+      "id": "correction_eligibility_claimids_after_split",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/eligibility/claimIds",
+      "old": [
+        "claim_delhi_ptax_eligibility_rule",
+        "claim_delhi_ptax_upic_mandatory",
+        "claim_delhi_ptax_portal_registration_mandatory"
+      ],
+      "new": [
+        "claim_delhi_ptax_eligibility_rule",
+        "claim_delhi_ptax_upic_mandatory",
+        "claim_delhi_ptax_portal_registration_mandatory",
+        "claim_delhi_ptax_portal_only_filing"
+      ],
+      "reason": "Reference integrity after the split. The cell note relies on both the registration rule and the portal-only filing rule, so the cell must cite both claims now that they are separate records. The cell's evidence is unchanged in substance and it remains stated.",
+      "support": {
+        "sourceIds": ["source_delhi_ptax_rbd_page_taxpayer_block"],
+        "auditNote": "Bookkeeping consequence of correction_split_portal_registration_text; no change of cell state."
+      }
+    },
+    {
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/documents/state",
+      "old": "stated",
+      "new": "mentioned",
+      "reason": "Section 8 requires stated evidence to tell the citizen what is required for the scored scenario, and section 2 scores the primary scenario alone. The only cited evidence is the citizen charter's document row for property tax return filing, which names the applicant's ID proof and a property document containing the property address. Those are assessment-side inputs for establishing a property and an owner, and the primary scenario is a current-year payment on a property already on the register with a known UPIC, with first-time assessment and mutation excluded. The sidecar's own note concedes that the charter does not distinguish the payment case from first-time filing. No payment-route source states any document requirement, and the surface that would state one sits behind citizen login with an OTP and a CAPTCHA and was not entered. The topic is named and a topic-only claim exists, so the cell is mentioned, not absent. No explicit zero is scored under section 3: no reviewed route states that no document or upload is required.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_ptax_mcd_citizen_charter",
+          "source_delhi_ptax_ptr_portal_info",
+          "source_delhi_ptax_rbd_page_taxpayer_block"
+        ],
+        "auditNote": "claim_delhi_ptax_documents_required is accurate about what the charter lists and is not downgraded; it is retained as the cell's topic-only claim. claim_delhi_ptax_payment_behind_login_and_captcha records the boundary and correctly supports no positive cell value."
+      }
+    },
+    {
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/documents/searchedRoutes",
+      "old": [],
+      "new": [
+        "https://mcdonline.nic.in/portal/citizenCharter",
+        "https://mcdonline.nic.in/ptrmcd/web/citizen/info",
+        "https://mcdonline.nic.in/rbd/web/citizen/info"
+      ],
+      "reason": "Section 9 requires a mentioned cell to record searched route IDs or URLs alongside its search note.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_ptax_mcd_citizen_charter",
+          "source_delhi_ptax_ptr_portal_info",
+          "source_delhi_ptax_rbd_page_taxpayer_block"
+        ],
+        "auditNote": "These are the three public routes already recorded as sources in this ledger and accessed on 2026-09-06. No route is added that the ledger does not already evidence, and no new research was performed by the audit."
+      }
+    },
+    {
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/documents/note",
+      "old": "Two concrete documents are named with a requirement to produce them: the applicant's ID proof and a property document containing the property address. The list is short and the charter does not distinguish the payment case from first-time filing, which the cell note records rather than resolves.",
+      "new": "Mentioned only. The reviewed routes name the document topic but do not tell the citizen what is required for this scenario. The citizen charter's document row covers property tax return filing generally and does not distinguish a current-year payment on a known UPIC from first-time filing, a route this scenario excludes; its two items, the applicant's ID proof and a property document containing the property address, are retained as topic-only evidence in claim_delhi_ptax_documents_required. Neither the property-tax portal page nor the taxpayer instruction block states a document requirement for a payment on a known UPIC, and the surface that would state one is reached only past citizen login with an OTP and a CAPTCHA, which was not entered. No reviewed route states an explicit absence of a document requirement either, so no explicit zero is scored under section 3.",
+      "reason": "The note must be a section 9 search note for a mentioned cell, and the old wording read as the rationale for a stated cell while conceding the scope problem that defeats it.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_ptax_mcd_citizen_charter",
+          "source_delhi_ptax_ptr_portal_info",
+          "source_delhi_ptax_rbd_page_taxpayer_block"
+        ],
+        "auditNote": "Every statement in the new note is carried by an existing claim record; nothing is asserted about the unobserved post-login surface."
+      }
+    },
+    {
+      "recordType": "claim",
+      "recordId": "claim_delhi_ptax_documents_required",
+      "fieldPath": "/notes",
+      "old": "Two concrete documents, each with a requirement to produce them.",
+      "new": "Two concrete documents, each with a requirement to produce them. Scope limitation recorded by the audit of 2026-09-06: the charter row covers property tax return filing generally and does not distinguish a current-year payment on a known UPIC from first-time filing, which the primary scenario excludes, so this claim is topic-only evidence for the documents cell rather than an actionable list for this scenario.",
+      "reason": "The claim text is accurate and is not downgraded, but its note asserted the sufficiency rationale for a stated cell that section 8 does not support for this scenario. The limitation is recorded on the claim so the ledger does not carry a rejected rationale.",
+      "support": {
+        "sourceIds": ["source_delhi_ptax_mcd_citizen_charter"],
+        "auditNote": "No change to text, grade, basis or status; the claim remains Grade B, observation, verified."
+      }
+    },
+    {
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [
+        "claim_delhi_ptax_receipt_instant_sla",
+        "claim_delhi_ptax_receipt_download",
+        "claim_delhi_ptax_tax_due_certificate_route"
+      ],
+      "new": [
+        "claim_delhi_ptax_receipt_instant_sla",
+        "claim_delhi_ptax_receipt_download"
+      ],
+      "reason": "Section 8 states that after-submission evidence must identify something the citizen sees after submitting, and that a step at or before submission is not after-submission evidence. The Generate Tax Due Certificate route is a public route reachable at any time, including before any payment, so it cannot support this cell. The cell remains stated on claim_delhi_ptax_receipt_download, a downloadable result that exists only after payment, corroborated by the charter's instant receipt timeline.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_ptax_rbd_page_taxpayer_block",
+          "source_delhi_ptax_mcd_citizen_charter"
+        ],
+        "auditNote": "claim_delhi_ptax_tax_due_certificate_route stays in the ledger unchanged; it is only removed from this cell. The retained evidence is read from public pages, so the cell is not an overclaim across the login boundary."
+      }
+    },
+    {
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/after-submission/note",
+      "old": "The citizen is told what they see after paying: a property tax receipt issued instantly, which the taxpayer instructions tell them to download for future reference, plus a published Generate Tax Due Certificate route. The receipt is the downloadable result; the certificate route was not exercised and no identifier was entered.",
+      "new": "The citizen is told what they see after paying: a property tax receipt, published in the citizen charter with the service delivery timeline 'Property Tax Receipt - Instant', which the public taxpayer instructions tell the taxpayer to download for future reference. That downloadable receipt is the post-submission surface carrying this cell. The 'Generate Tax Due Certificate' route recorded in claim_delhi_ptax_tax_due_certificate_route is reachable before any payment, so under section 8 it is not after-submission evidence and no longer supports this cell. The evidence is the public instruction to download the receipt; the authenticated receipt surface itself was not observed, as the payment route sits past citizen login with an OTP and a CAPTCHA.",
+      "reason": "The note must match the cell's corrected claim list and must not rest on a route that section 8 excludes from after-submission evidence.",
+      "support": {
+        "sourceIds": [
+          "source_delhi_ptax_rbd_page_taxpayer_block",
+          "source_delhi_ptax_mcd_citizen_charter"
+        ],
+        "auditNote": "Every statement is carried by claim_delhi_ptax_receipt_download, claim_delhi_ptax_receipt_instant_sla or claim_delhi_ptax_payment_behind_login_and_captcha."
+      }
+    },
+    {
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/time/note",
+      "old": "An actionable service-level target and a deadline are both published: the property tax receipt is issued instantly, and the advance-payment rebate requires payment before 30 June of the current financial year. The figure covers issue of the receipt only; no timeline is published for the scrutiny step the same portal warns about.",
+      "new": "An actionable service-level target and a deadline are both published: the property tax receipt is issued instantly, and the advance-payment rebate requires payment before 30 June of the current financial year. The figure covers issue of the receipt only, as section 8 requires this note to say; no claim in this ledger records a published timeline for any later stage.",
+      "reason": "The old note ended on an assertion that no record in the audit inputs supports: no claim in this ledger records any portal warning about a scrutiny step. Section 7's citation gate requires claim references to be present and valid, and the auditor may not let an unsupported statement stand in a stated cell's note. The section 8 requirement to flag a one-stage figure is preserved. The cell state is unaffected.",
+      "support": {
+        "sourceIds": ["source_delhi_ptax_mcd_citizen_charter"],
+        "auditNote": "The 30 June deadline rests on claim_delhi_ptax_advance_rebate_deadline, which is verified and carries only the date the two pages agree on; the contested rebate percentages are cited by no cell, as section 8 requires."
+      }
+    }
+  ]
+}

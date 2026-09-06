@@ -1,0 +1,135 @@
+{
+  "serviceId": "property-tax-payment",
+  "ledgerPath": "ledger/jurisdictions/mumbai/property-tax-payment.json",
+  "auditPath": "ledger/jurisdictions/mumbai/audits/property-tax-payment.md",
+  "protocolVersion": "0.1",
+  "corrections": [
+    {
+      "id": "correction_documents_state",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/documents/state",
+      "old": "absent",
+      "new": "mentioned",
+      "reason": "Section 8 defines absent as evidence that does not touch the topic. A reviewed claim touches it: claim_mumbai_ptax_account_number_from_bill names a concrete document, the property tax bill, as where the Property Account No. this scenario depends on is printed. No route requires the citizen to submit, provide, upload, produce or attach anything, so the cell cannot be stated; a reference to a document without telling the citizen what is required is the definition of mentioned.",
+      "support": {
+        "sourceIds": ["source_mumbai_ptax_portal_home"],
+        "auditNote": "Finding F-01. The existing cell note is accurate about the missing requirement, but that distinguishes stated from mentioned, not mentioned from absent. No explicit zero is stated on any reviewed route, so section 3 does not lift the cell."
+      }
+    },
+    {
+      "id": "correction_documents_claimids",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/documents/claimIds",
+      "old": [],
+      "new": ["claim_mumbai_ptax_account_number_from_bill"],
+      "reason": "Section 9 allows a mentioned cell to carry optional topic-only claimIds. This is the reviewed claim that touches the documents topic, and it is Grade B and verified, so it is eligible to support a mentioned cell under section 8.",
+      "support": {
+        "sourceIds": ["source_mumbai_ptax_portal_home"],
+        "auditNote": "Finding F-01. Searched routes are retained unchanged."
+      }
+    },
+    {
+      "id": "correction_documents_note",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/documents/note",
+      "old": "No reviewed route touches the topic for this scenario. Nothing on the portal tells an owner paying tax on a known account number what to submit, provide, upload, produce or attach; the portal's own FAQ route rendered empty. Document requirements do appear on the corporation's circular for change of name in the property-tax record, but mutation is an excluded route and it is not counted here.",
+      "new": "The topic is touched, but no requirement is given. The portal names one concrete document, the property tax bill, as the place the Property Account No. is printed, and offers a Search route for an owner who does not have it to hand. That is a reference to a document, not a requirement to submit, provide, upload, produce or attach anything: nothing on any reviewed route tells an owner paying on a known account number what to supply, and the portal's own FAQ route rendered empty. No reviewed route states an explicit zero either, so section 3 does not apply. Document requirements do appear on the corporation's circular for change of name in the property-tax record, but mutation is an excluded route and it is not counted here.",
+      "reason": "The note must describe a mentioned cell: what the evidence touches and why no actionable value follows from it.",
+      "support": {
+        "auditNote": "Finding F-01. The original note's substance is preserved; only the opening claim of non-contact is replaced, and the section 3 check is made explicit."
+      }
+    },
+    {
+      "id": "correction_time_state",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/time/state",
+      "old": "absent",
+      "new": "mentioned",
+      "reason": "Section 8 names sequence and processing as time-topic references that yield mentioned when no figure accompanies them. claim_mumbai_ptax_first_in_first_out_rule states that an online payment is applied first-in first-out with the oldest bill adjusted first, which is a rule about the order in which payments are processed. No duration, deadline, processing period or service-level target appears on any reviewed route, so the cell stays well short of stated.",
+      "support": {
+        "sourceIds": ["source_mumbai_ptax_instant_payment"],
+        "auditNote": "Finding F-02, the closest call in this audit. Rejected as not touching time: the instant-payment route's discount and advance fields, since reading an early-payment window or deadline out of those labels is an inference section 5 forbids the auditor from supplying; and claim_mumbai_ptax_due_date_unknown, which is Unknown and records a limitation, not a cell value."
+      }
+    },
+    {
+      "id": "correction_time_claimids",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/time/claimIds",
+      "old": [],
+      "new": ["claim_mumbai_ptax_first_in_first_out_rule"],
+      "reason": "Section 9 allows a mentioned cell to carry optional topic-only claimIds. This Grade B verified claim is the processing-sequence reference that takes the cell off absent.",
+      "support": {
+        "sourceIds": ["source_mumbai_ptax_instant_payment"],
+        "auditNote": "Finding F-02. Searched routes are retained unchanged, including the Citizen Charter route."
+      }
+    },
+    {
+      "id": "correction_time_note",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/time/note",
+      "old": "No reviewed route touches the topic for this scenario. There is no due date, no instalment period, no rebate or penalty deadline and no service-level target for the payment route anywhere on the portal. The one timeline the portal does publish, real-time or three days, belongs to change of name in the property-tax record, which this scope excludes, so it is not counted. BMC's Citizen Charter route was searched and is a folder of ward-level documents rather than a service-standards table.",
+      "new": "The topic is touched only as processing sequence. The Instant Payment route states that an online payment is applied first-in first-out, oldest bill first, which is a rule about the order in which payments are processed and carries no figure and no usable time rule. Nothing else follows: there is no due date, no instalment period, no rebate or penalty deadline and no service-level target for the payment route anywhere on the portal, so the cell falls well short of stated. The instant-payment route's discount and advance fields are amount fields and are not read here as timing evidence. The one timeline the portal does publish, real-time or three days, belongs to change of name in the property-tax record, which this scope excludes, so it is not counted. BMC's Citizen Charter route was searched and is a folder of ward-level documents rather than a service-standards table. That when the tax falls due is unestablished is recorded as an Unknown claim, which is a limitation and not a cell value.",
+      "reason": "The note must describe a mentioned cell: the single sequence reference that touches the topic, and the complete absence of any figure that would make it stated.",
+      "support": {
+        "auditNote": "Finding F-02. Every substantive statement in the original note is preserved; the opening claim of non-contact is replaced and the two rejected readings are recorded."
+      }
+    },
+    {
+      "id": "correction_after_submission_state",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/after-submission/state",
+      "old": "absent",
+      "new": "mentioned",
+      "reason": "Section 8 assigns mentioned to an outcome named without a visible or actionable post-submission surface. claim_mumbai_ptax_first_in_first_out_rule describes what becomes of the money after it is paid, that it is applied to the oldest bill first, and names the ward Assessment and Collection department as the recourse when the citizen wanted it applied elsewhere. Payment is the submission; the application of the payment and the recourse are after it, not steps at or before it. No receipt, acknowledgement, transaction reference, status route or downloadable result is named anywhere on the reviewed evidence, so the cell cannot be stated.",
+      "support": {
+        "sourceIds": ["source_mumbai_ptax_instant_payment"],
+        "auditNote": "Finding F-03. The original note addressed only the outstanding-bill display, correctly holding it to be pre-payment, and did not address the application rule at all. The CAPTCHA boundary claim and the Unknown receipt claim remain excluded from support, as section 8 requires."
+      }
+    },
+    {
+      "id": "correction_after_submission_claimids",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/after-submission/claimIds",
+      "old": [],
+      "new": ["claim_mumbai_ptax_first_in_first_out_rule"],
+      "reason": "Section 9 allows a mentioned cell to carry optional topic-only claimIds. This Grade B verified claim names the post-payment outcome and the post-payment recourse.",
+      "support": {
+        "sourceIds": ["source_mumbai_ptax_instant_payment"],
+        "auditNote": "Finding F-03. Searched routes are retained unchanged."
+      }
+    },
+    {
+      "id": "correction_after_submission_note",
+      "recordType": "expectation",
+      "recordId": "property-tax-payment",
+      "fieldPath": "/cells/after-submission/note",
+      "old": "No reviewed route touches the topic. Nothing public says the citizen receives a receipt, an acknowledgement, a transaction reference or a status route after paying, and no downloadable result is named. The outstanding-bill display on the instant-payment route is what the citizen sees before paying, not after, and the account view that would hold receipts sits behind a property account number and a CAPTCHA that this run did not cross; that boundary is recorded as a limitation, not as a positive finding.",
+      "new": "The topic is touched, but no post-submission surface is identified. The Instant Payment route states what becomes of the money after it is paid, that an online payment is applied first-in first-out with the oldest bill adjusted first, and it names the ward Assessment and Collection department as the route for a citizen who wanted it applied to a specific bill instead; both are outcomes and recourse after payment, not steps at or before it. Against that, nothing public says the citizen receives a receipt, an acknowledgement, a transaction reference or a status route after paying, and no downloadable result is named, so no visible or actionable post-submission surface exists on the reviewed evidence. The outstanding-bill display on the instant-payment route is what the citizen sees before paying, not after, and the account view that would hold receipts sits behind a property account number and a CAPTCHA that this run did not cross; that boundary is recorded as a limitation, not as a positive finding.",
+      "reason": "The note must describe a mentioned cell: the post-payment outcome the evidence names, and the absence of any surface the citizen can see, which is what keeps the cell below stated.",
+      "support": {
+        "auditNote": "Finding F-03. Every statement in the original note is preserved; the opening claim of non-contact is replaced and the application rule is recorded."
+      }
+    },
+    {
+      "id": "correction_contact_and_faq_notes",
+      "recordType": "source",
+      "recordId": "source_mumbai_ptax_contact_and_faq",
+      "fieldPath": "/notes",
+      "old": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo. Direct current observation of two sibling routes on the same portal: the Contact Us route and the FAQ route. Neither shows a visible last-updated date. Archive: the Wayback availability API returned the portal snapshot of 2026-03-09 as the nearest copy for these hash routes; no separate snapshot exists and no new capture was pushed from this run.",
+      "new": "Jurisdiction: Mumbai, Maharashtra, India. Agency naming as displayed on the access date: 'Citizen Portal Services - Property Tax' under the MCGM logo. Direct current observation of two sibling routes on the same portal: the Contact Us route, which is the url recorded on this source at https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/contactus, and the FAQ route at https://ptaxportal.mcgm.gov.in/CitizenPortal/index.html#/faq, which is the specific page claim_mumbai_ptax_faq_route_empty rests on. Neither shows a visible last-updated date. Archive: the Wayback availability API returned the portal snapshot of 2026-03-09 as the nearest copy for these hash routes; no separate snapshot exists and no new capture was pushed from this run.",
+      "reason": "Section 7 requires a source to supply the direct link and citations to resolve to specific pages. This record documents two routes but records only the Contact Us URL, so the citation on claim_mumbai_ptax_faq_route_empty resolves to a page other than the one that claim asserts about. Recording both route URLs closes the gap.",
+      "support": {
+        "sourceIds": ["source_mumbai_ptax_contact_and_faq"],
+        "auditNote": "Finding F-04. Minimal fix: no grade, status or claim linkage changes, and no new record is created. The FAQ route URL is already recorded in the expectations sidecar's searched routes for the documents, time and after-submission cells, so nothing is invented here."
+      }
+    }
+  ]
+}

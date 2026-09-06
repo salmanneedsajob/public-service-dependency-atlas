@@ -7,6 +7,12 @@ import { columns, score } from './score.mjs';
 const projectRoot = process.cwd();
 const jurisdiction = 'Bengaluru, Karnataka, India';
 const outputDirectory = path.join(projectRoot, 'public/data/scorecards');
+const jurisdictionManifestPath = process.env.JURISDICTIONS_MANIFEST_PATH
+  ? path.resolve(projectRoot, process.env.JURISDICTIONS_MANIFEST_PATH)
+  : path.join(projectRoot, 'ledger/jurisdictions/manifest.json');
+const jurisdictionScorecardsDirectory = process.env.JURISDICTION_SCORECARDS_DIRECTORY
+  ? path.resolve(projectRoot, process.env.JURISDICTION_SCORECARDS_DIRECTORY)
+  : outputDirectory;
 const auditFiles = {
   passport: 'research/audits/ind71-passport-audit.md',
   'aadhaar-address-update': 'research/audits/ind70-aadhaar-address-update-fee-audit.md',
@@ -25,6 +31,15 @@ async function optionalJson(file) {
     return readJson(file);
   } catch {
     return null;
+  }
+}
+
+async function optionalDirectoryJson(file) {
+  try {
+    return await readJson(file);
+  } catch (error) {
+    if (error && error.code === 'ENOENT') return null;
+    throw error;
   }
 }
 
@@ -61,9 +76,35 @@ async function generateScorecards() {
   return results;
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  const results = await generateScorecards();
-  console.log(`Generated ${results.length} Bengaluru scorecards.`);
+async function generateJurisdictionScorecards({ manifestPath = jurisdictionManifestPath, scorecardsDirectory = jurisdictionScorecardsDirectory } = {}) {
+  const manifest = await optionalDirectoryJson(manifestPath);
+  if (!manifest || !Array.isArray(manifest.entries) || manifest.entries.length === 0) return [];
+  const schema = await readJson(path.join(projectRoot, 'benchmark/schemas/scorecard.json'));
+  const manifestDirectory = path.dirname(manifestPath);
+  const results = [];
+  for (const entry of manifest.entries) {
+    if (entry.mode !== 'grid-only') throw new Error(`${entry.jurisdictionSlug}/${entry.serviceId} must use grid-only mode.`);
+    const ledgerPath = path.resolve(manifestDirectory, entry.ledgerFile);
+    const expectationsPath = path.resolve(manifestDirectory, entry.expectationsFile);
+    const scorecard = score({
+      ledger: await readJson(ledgerPath),
+      expectations: await readJson(expectationsPath),
+      jurisdiction: entry.jurisdiction,
+      source: 'authored',
+      auditFile: entry.auditFile,
+      schema,
+    });
+    const directory = path.join(scorecardsDirectory, entry.jurisdictionSlug);
+    await mkdir(directory, { recursive: true });
+    await writeFile(path.join(directory, `${entry.serviceId}.json`), `${JSON.stringify(scorecard, null, 2)}\n`);
+    results.push(scorecard);
+  }
+  return results;
 }
 
-export { generateScorecards, reviewedExpectations };
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+  const [results, jurisdictionResults] = await Promise.all([generateScorecards(), generateJurisdictionScorecards()]);
+  console.log(`Generated ${results.length} Bengaluru scorecards and ${jurisdictionResults.length} jurisdiction scorecards.`);
+}
+
+export { generateScorecards, generateJurisdictionScorecards, reviewedExpectations };

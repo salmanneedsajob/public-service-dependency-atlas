@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Example City birth certificate grid-only fixture",
+    "jurisdiction": "Example City, Example State, India",
+    "asOf": "2026-09-06",
+    "dataKind": "template",
+    "disclaimer": "Fictional fixture for validating the grid-only ledger path. It is not public-service guidance."
+  },
+  "agencies": [],
+  "scenarios": [
+    {
+      "id": "scenario_example_grid",
+      "label": "Certified copy of a registered birth",
+      "summary": "A resident seeks a certified copy of an already registered birth.",
+      "tags": ["grid-only", "birth-certificate"],
+      "pathNodeIds": [],
+      "status": "verified"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_example_fee",
+      "title": "Example City certificate fee schedule",
+      "publisher": "Example City Civic Records",
+      "url": "https://example.invalid/civic-records/birth-certificate-fees",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2026-09-01",
+      "type": "official_guidance",
+      "notes": "Fictional fixture source."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_example_fee",
+      "text": "The fictional fee schedule lists a certificate fee of Rs 10.",
+      "jurisdiction": "Example City, Example State, India",
+      "scenarioIds": ["scenario_example_grid"],
+      "nodeIds": [],
+      "sourceIds": ["source_example_fee"],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "Fictional fixture claim."
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "roadblocks": [],
+  "journeys": []
+}

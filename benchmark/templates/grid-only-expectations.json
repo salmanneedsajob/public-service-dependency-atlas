@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "birth-certificate",
+  "primaryScenarioId": "scenario_example_grid",
+  "cells": {
+    "cost": {
+      "state": "stated",
+      "claimIds": ["claim_example_fee"],
+      "searchedRoutes": [],
+      "note": "The fictional fixture gives an actionable certificate fee."
+    },
+    "documents": {
+      "state": "absent",
+      "claimIds": [],
+      "searchedRoutes": ["https://example.invalid/civic-records/birth-certificate"],
+      "note": "The fictional fixture route does not list required documents."
+    },
+    "eligibility": {
+      "state": "absent",
+      "claimIds": [],
+      "searchedRoutes": ["https://example.invalid/civic-records/birth-certificate"],
+      "note": "The fictional fixture route does not give an eligibility rule."
+    },
+    "time": {
+      "state": "absent",
+      "claimIds": [],
+      "searchedRoutes": ["https://example.invalid/civic-records/birth-certificate"],
+      "note": "The fictional fixture route does not give a time rule."
+    },
+    "owner": {
+      "state": "absent",
+      "claimIds": [],
+      "searchedRoutes": ["https://example.invalid/civic-records/birth-certificate"],
+      "note": "The fictional fixture route does not identify a deciding office."
+    },
+    "after-submission": {
+      "state": "absent",
+      "claimIds": [],
+      "searchedRoutes": ["https://example.invalid/civic-records/birth-certificate"],
+      "note": "The fictional fixture route does not describe a public post-submission surface."
+    }
+  }
+}

@@ -4,7 +4,7 @@ import process from 'node:process';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import YAML from 'yaml';
-import { generateScorecards } from '../benchmark/scripts/generate-scorecards.mjs';
+import { generateJurisdictionScorecards, generateScorecards } from '../benchmark/scripts/generate-scorecards.mjs';
 
 const projectRoot = process.cwd();
 const inputPath = path.resolve(projectRoot, process.env.LEDGER_PATH ?? 'ledger/research.json');
@@ -117,4 +117,5 @@ try {
   if (error.code !== 'ENOENT') throw error;
 }
 await generateScorecards();
+await generateJurisdictionScorecards();
 console.log(`Prepared ${path.relative(projectRoot, inputPath)} for the site.`);

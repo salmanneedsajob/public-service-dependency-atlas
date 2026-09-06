@@ -4,6 +4,8 @@ Run this on your city to measure whether a public-service route tells a citizen 
 
 ## Grid-only path
 
+A grid-only ledger carries `meta`, one primary `scenario` with an empty `pathNodeIds`, `sources`, and `claims`; `agencies`, `nodes`, `edges`, `roadblocks`, and `journeys` are present as schema-required empty arrays. It carries no portal records or workflow graph records.
+
 1. Choose a city, a service, and one primary scenario using `templates/service-scoping.md`. Keep the same trigger, applicant type, and route class when comparing cities.
 2. Freeze a short preregistration with `templates/preregistration.md`: the services, predictions, cell definitions, login rule, and date.
 3. Run one official-source pass on public pages only. Do not log in, enter case data, pay, submit, or use an API.

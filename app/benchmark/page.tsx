@@ -50,11 +50,17 @@ function label(value: string) {
 }
 
 function sourceLabel(row: ScorecardRow) {
-  return row.comparable ? 'Comparable · authored' : 'Method comparison · reviewed-regex';
+  return row.comparable ? 'Comparable · authored' : 'Reviewed extraction over deep ledger · reviewed-regex';
 }
 
-function Cell({ state }: { state: CellState }) {
-  return <span className={`benchmark-cell benchmark-cell-${state}`}><b>{state}</b><span aria-hidden="true">{state === 'stated' ? '●' : state === 'mentioned' ? '◐' : '○'}</span></span>;
+function evidenceHref(row: ScorecardRow, cell?: string) {
+  if (row.source !== 'authored') return atlasServiceLinks.get(row.serviceId) ?? '/';
+  const jurisdictionSlug = row.jurisdictionSlug || 'bengaluru';
+  return `/benchmark/${jurisdictionSlug}/${row.serviceId}${cell ? `#cell-${cell}` : ''}`;
+}
+
+function Cell({ state, href }: { state: CellState; href: string }) {
+  return <a className={`benchmark-cell benchmark-cell-${state}`} href={href}><b>{state}</b><span aria-hidden="true">{state === 'stated' ? '●' : state === 'mentioned' ? '◐' : '○'}</span></a>;
 }
 
 function ScorecardLink({ row }: { row: ScorecardRow }) {
@@ -71,8 +77,8 @@ function ScorecardTable({ rows, caption, pilot = false }: { rows: ScorecardRow[]
           <tbody>{rows.map((row) => (
             <tr data-service-id={row.serviceId} data-jurisdiction-slug={row.jurisdictionSlug} data-stated-count={row.statedCount} key={`${row.serviceId}:${row.jurisdictionSlug}:${row.source}`}>
               <th scope="row"><span>{row.jurisdiction}</span>{pilot && !row.comparable ? <small>Method comparison</small> : null}</th>
-              {cellColumns.map((column) => <td key={column}><Cell state={row[column]} /></td>)}
-              <td className="benchmark-stated-count"><b>{row.statedCount}</b><span>of 6</span></td>
+              {cellColumns.map((column) => <td key={column}><Cell state={row[column]} href={evidenceHref(row, column)} /></td>)}
+              <td className="benchmark-stated-count"><a href={evidenceHref(row)}><b>{row.statedCount}</b><span>of 6</span></a></td>
               <td><span className={`benchmark-source benchmark-source-${row.source}`}>{sourceLabel(row)}</span></td>
               <td><time dateTime={row.asOf}>{row.asOf}</time></td>
               <td><ScorecardLink row={row} /></td>

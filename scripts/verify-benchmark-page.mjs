@@ -30,6 +30,12 @@ for (const row of displayedRows) {
 
 const birthRows = rows.filter((row) => row.serviceId === 'birth-certificate' && row.jurisdiction.startsWith('Bengaluru'));
 if (!birthRows.some((row) => row.comparable) || !birthRows.some((row) => !row.comparable)) errors.push('The table JSON does not contain both Bengaluru birth-certificate methods.');
+for (const serviceId of ['birth-certificate', 'water-connection']) {
+  const comparableStart = html.indexOf(`<tr data-service-id="${serviceId}" data-jurisdiction-slug="bengaluru-grid"`);
+  const deepStart = html.indexOf(`<tr data-service-id="${serviceId}" data-jurisdiction-slug=""`, comparableStart);
+  const nextRow = html.indexOf('<tr data-service-id=', comparableStart + 1);
+  if (comparableStart < 0 || deepStart !== nextRow) errors.push(`The Bengaluru ${serviceId} method-comparison row is not directly beneath its comparable row.`);
+}
 if (!html.includes('The authored and reviewed-regex source values measure different things')) errors.push('The rendered Bengaluru method-comparison note is missing.');
 
 if (errors.length) throw new Error(`Benchmark page verification failed:\n${errors.join('\n')}`);

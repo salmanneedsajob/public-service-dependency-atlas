@@ -40,7 +40,8 @@ const benchmarkVersion = '0.1';
 const atlasServiceLinks = new Map(atlasServices.map((service) => [service.id, service.href]));
 
 function comparePilotRows(left: ScorecardRow, right: ScorecardRow) {
-  return Number(right.comparable) - Number(left.comparable) || left.jurisdiction.localeCompare(right.jurisdiction) || left.source.localeCompare(right.source);
+  const jurisdictionOrder = Number(!left.jurisdiction.startsWith('Bengaluru')) - Number(!right.jurisdiction.startsWith('Bengaluru')) || left.jurisdiction.localeCompare(right.jurisdiction);
+  return jurisdictionOrder || Number(right.comparable) - Number(left.comparable) || left.source.localeCompare(right.source);
 }
 
 function label(value: string) {

@@ -15,6 +15,35 @@ const expectationsOutputDirectory = path.resolve(projectRoot, 'public/data/expec
 const portalsDirectory = path.resolve(projectRoot, 'ledger/portals');
 const portalsOutputDirectory = path.resolve(projectRoot, 'public/data/portals');
 
+// Some earlier hand-authored portal sidecars predate the structured route
+// observation schema. Export a schema-shaped copy while preserving those source
+// records unchanged. A status of 0 denotes an unrecorded legacy redirect or
+// final response, rather than an observed HTTP status.
+function normalizePortalSidecarForExport(sidecar) {
+  return {
+    ...sidecar,
+    portals: sidecar.portals.map((portal) => ({
+      ...portal,
+      routeObservations: portal.routeObservations.map((route) => ({
+        ...route,
+        redirects: route.redirects.map((redirect) => {
+          if (typeof redirect !== 'string') return redirect;
+          const arrowIndex = redirect.indexOf(' -> ');
+          return {
+            status: 0,
+            to: arrowIndex === -1 ? redirect : redirect.slice(arrowIndex + 4),
+          };
+        }),
+        finalUrl: route.finalUrl ?? route.entryUrl,
+        finalStatus: route.finalStatus ?? 0,
+        authenticationPrerequisites: Array.isArray(route.authenticationPrerequisites)
+          ? route.authenticationPrerequisites.join(' ')
+          : route.authenticationPrerequisites,
+      })),
+    })),
+  };
+}
+
 const [rawInput, rawSchema] = await Promise.all([
   readFile(inputPath, 'utf8'),
   readFile(schemaPath, 'utf8'),
@@ -65,7 +94,7 @@ try {
   const validatePortals = ajv.compile(portalsSchema);
   await mkdir(portalsOutputDirectory, { recursive: true });
   for (const filename of (await readdir(portalsDirectory)).filter((name) => name.endsWith('.json') && name !== 'schema.json')) {
-    const sidecar = JSON.parse(await readFile(path.resolve(portalsDirectory, filename), 'utf8'));
+    const sidecar = normalizePortalSidecarForExport(JSON.parse(await readFile(path.resolve(portalsDirectory, filename), 'utf8')));
     if (!validatePortals(sidecar)) throw new Error(`${filename} does not satisfy portals schema: ${(validatePortals.errors ?? []).map((error) => `${error.instancePath} ${error.message}`).join('; ')}`);
     const ledgerForService = serviceLedgers.get(sidecar.serviceId);
     if (!ledgerForService) throw new Error(`${filename} has no matching ledger for ${sidecar.serviceId}.`);

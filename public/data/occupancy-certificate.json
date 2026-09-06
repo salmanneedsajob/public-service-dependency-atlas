@@ -1,0 +1,857 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "title": "Bengaluru occupancy certificate evidence ledger v1",
+    "jurisdiction": "Bengaluru, Karnataka, India (BBMP/GBA building-permit service)",
+    "asOf": "2026-09-06",
+    "dataKind": "research",
+    "disclaimer": "Independent research, not official advice. Public sources and known gaps are shown together; do not submit personal data through this ledger."
+  },
+  "agencies": [
+    {
+      "id": "agency_occupancy_certificate",
+      "name": "Bruhat Bengaluru Mahanagara Palike (BBMP)",
+      "shortName": "Bruhat Bengaluru Mahanagara Palike (BBMP)",
+      "officialUrl": "https://site.bbmp.gov.in/PDF/buildingplanapproval/Occupancy%20Certificate%20%281%29.pdf"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_occupancy_certificate_sanctioned_residential",
+      "label": "Occupancy certificate for a sanctioned residential building",
+      "summary": "Public evidence for Occupancy certificate for a sanctioned residential building.",
+      "tags": [
+        "primary"
+      ],
+      "pathNodeIds": [
+        "node_final_e_khata",
+        "node_occupancy_certificate_public_route"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "scenario_citizen_reported",
+      "label": "Citizen-reported occupancy-certificate accounts",
+      "summary": "Quarantined first-person accounts that may identify a failure mode or terminology but do not establish an official rule.",
+      "tags": [
+        "citizen_reported",
+        "quarantine"
+      ],
+      "pathNodeIds": [],
+      "status": "contested"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_ind77_bbmp_oc_service_sheet",
+      "title": "Issue of Occupancy Certificate",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike (BBMP), as displayed in the document",
+      "url": "https://site.bbmp.gov.in/PDF/buildingplanapproval/Occupancy%20Certificate%20%281%29.pdf",
+      "accessedAt": "2026-09-06",
+      "type": "official_guidance",
+      "notes": "Official service sheet for the Town Planning Section, Head Office. No visible publication date was established from the accessed search rendering; use as current-hosted official guidance with that limitation. Wayback Save Page returned HTTP 523 on the first attempt and HTTP 429 on a retry; no snapshot URL was returned. The live official URL remains the citation; no archive substitute is claimed."
+    },
+    {
+      "id": "source_ind77_bbmp_oc_manual",
+      "title": "Occupancy Certificate User Manual for BBMP",
+      "publisher": "Bruhat Bengaluru Mahanagara Palike (BBMP), as displayed in the document",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/Downloads/OCManual.pdf",
+      "accessedAt": "2026-09-06",
+      "publishedAt": "2024-01-20",
+      "type": "official_guidance",
+      "notes": "The document revision history displays version 1.0.20 dated 2024-01-20. It is an authenticated-portal user manual; its screen-level instructions describe the official workflow but were not exercised in this pass. Wayback snapshot: https://web.archive.org/web/20260905185713/https://bpas.bbmpgov.in/BPAMSClient4/Downloads/OCManual.pdf Wayback Save Page returned a 302 redirect to this snapshot."
+    },
+    {
+      "id": "source_ind77_bpas_home_e_khata_notice",
+      "title": "General-site reference — Greater Bengaluru Authority BPAS public landing-page notice",
+      "publisher": "Greater Bengaluru Authority, as displayed on the page",
+      "url": "https://bpas.bbmpgov.in/",
+      "accessedAt": "2026-09-06",
+      "type": "official_portal",
+      "notes": "The public landing page displays an important message that e-Khata is mandatory for Building Licence, Plinth Certificate, and Occupancy Certificate applications from 1 July 2025. The Save Page request did not complete within the 30-second request bound, so no snapshot URL was received. The live public portal URL remains the citation; no archive substitute is claimed."
+    },
+    {
+      "id": "source_ind77_bpas_seed_home",
+      "title": "Greater Bengaluru Authority — BPAS seed",
+      "publisher": "occupancy-certificate",
+      "url": "https://bpas.bbmpgov.in/",
+      "accessedAt": "2026-09-05",
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
+    },
+    {
+      "id": "source_ind77_bpas_home",
+      "title": "Greater Bengaluru Authority — BPAS home",
+      "publisher": "occupancy-certificate",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/NewDefault1.aspx",
+      "accessedAt": "2026-09-05",
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
+    },
+    {
+      "id": "source_ind77_bpas_downloads",
+      "title": "BPAS Download & Manuals",
+      "publisher": "occupancy-certificate",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/download.aspx",
+      "accessedAt": "2026-09-05",
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
+    },
+    {
+      "id": "source_ind77_bpas_oc_manual",
+      "title": "Occupancy Certificate User Manual for BBMP",
+      "publisher": "occupancy-certificate",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/Downloads/OCManual.pdf",
+      "accessedAt": "2026-09-05",
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
+    },
+    {
+      "id": "source_ind77_bpas_faq",
+      "title": "BPAS FAQs",
+      "publisher": "occupancy-certificate",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/FAQs.aspx",
+      "accessedAt": "2026-09-05",
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
+    },
+    {
+      "id": "source_ind77_bpas_helpdesk_kb",
+      "title": "Greater Bengaluru Authority Helpdesk — Knowledge base",
+      "publisher": "occupancy-certificate",
+      "url": "https://bpas.bbmpgov.in/HelpDesk/KB",
+      "accessedAt": "2026-09-05",
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
+    },
+    {
+      "id": "source_ind77_bpas_contact",
+      "title": "BPAS Contact Us",
+      "publisher": "occupancy-certificate",
+      "url": "https://bpas.bbmpgov.in/BPAMSClient4/CommonForms/ContactUs.aspx",
+      "accessedAt": "2026-09-05",
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
+    },
+    {
+      "id": "source_ind77_legacy_seed_dead",
+      "title": "BBMP Building Plan Approval — supplied legacy seed",
+      "publisher": "occupancy-certificate",
+      "url": "https://site.bbmp.gov.in/buildingplan.html",
+      "accessedAt": "2026-09-05",
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this inaccessible public route."
+    },
+    {
+      "id": "source_ind77_gba_seed_home",
+      "title": "General-site reference — Greater Bengaluru Authority supplied BBMP seed",
+      "publisher": "occupancy-certificate",
+      "url": "https://bbmp.gov.in/",
+      "accessedAt": "2026-09-05",
+      "type": "official_guidance",
+      "notes": "Audit limitation: no Wayback snapshot URL, archive-capture failure, publication-date limitation, or source-level jurisdiction is recorded for this public observation."
+    },
+    {
+      "id": "source_ind77_citizen_reddit_oc_delay_2025",
+      "title": "Occupancy certificate delays",
+      "publisher": "Reddit / r/Bengaluru",
+      "url": "https://www.reddit.com/r/Bengaluru/comments/1mnhd3i/occupancy_certificate_delays/",
+      "accessedAt": "2026-09-05",
+      "publishedAt": "2025-08-11",
+      "type": "citizen_evidence",
+      "notes": "A Wayback retrieval attempt on 2026-09-05 was blocked by the research browser's URL-safety control; no snapshot is represented as captured. No author handles, project/developer names, locality names, contact details, or other property-identifying details are reproduced in this handoff."
+    },
+    {
+      "id": "source_ind77_citizen_reddit_plan_mismatch_2026",
+      "title": "Khata Bifurcation in Apartment",
+      "publisher": "Reddit / r/BangaloreRealEstates",
+      "url": "https://www.reddit.com/r/BangaloreRealEstates/comments/1ubym7b/khata_bifurcation_in_apartment/",
+      "accessedAt": "2026-09-05",
+      "publishedAt": "2026-06-21",
+      "type": "citizen_evidence",
+      "notes": "A Wayback retrieval attempt on 2026-09-05 was blocked by the research browser's URL-safety control; no snapshot is represented as captured. No author handle, builder/landowner details, property dimensions, unit configuration, floor number, or other property-identifying details are reproduced in this handoff."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_ind77_owner_with_plan_sanction_eligible",
+      "text": "The BBMP service sheet says that any property owner in the BBMP jurisdiction who has obtained plan sanction is eligible for this occupancy-certificate service.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The stated eligibility rule matches the sanctioned-residential primary scenario."
+    },
+    {
+      "id": "claim_ind77_schedule_viii_required",
+      "text": "The BBMP service sheet names Schedule VIII as the form to be submitted for the occupancy-certificate service.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_latest_khata_certificate_required",
+      "text": "The BBMP service sheet lists the latest BBMP Khata certificate among documents to enclose with the request.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_latest_khata_extract_required",
+      "text": "The BBMP service sheet lists the latest BBMP Khata Extract among documents to enclose with the request.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_tax_paid_receipt_required",
+      "text": "The BBMP service sheet lists the latest tax-paid receipt among documents to enclose with the request.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_conditional_cfo_fire_documents_required",
+      "text": "The BBMP service sheet lists CFO from KSPCB and Fire Clearance as documents to enclose wherever applicable.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The sheet makes these documents conditional; it does not state that every sanctioned residential case needs them."
+    },
+    {
+      "id": "claim_ind77_as_built_drawings_required",
+      "text": "The BBMP service sheet lists as-built drawings among documents to enclose with the request.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_photographs_required",
+      "text": "The BBMP service sheet lists photographs among documents to enclose with the request.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_compounding_fee_named_no_amount",
+      "text": "The BBMP service sheet identifies Compounding Fee as the fee or charge for the service but does not publish an amount or rate on that sheet.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is a named fee only; no amount is inferred."
+    },
+    {
+      "id": "claim_ind77_thirty_working_days",
+      "text": "The BBMP service sheet gives 30 working days as the maximum number of days for service delivery.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_town_planning_office_owner",
+      "text": "The BBMP service sheet identifies the Town Planning Section, Head Office, BBMP, and names the Additional Director of Town Planning under the Commissioner as the designated route for the service.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_oc_online_filing",
+      "text": "The BBMP service sheet says that the occupancy-certificate application is filed online.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "This is a published procedure description, not observation of a particular applicant's journey."
+    },
+    {
+      "id": "claim_ind77_oc_site_inspection",
+      "text": "The BBMP service sheet includes site inspection by an engineer in the occupancy-certificate procedure.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_oc_as_built_verification",
+      "text": "The BBMP service sheet includes verification of the as-built construction against the sanctioned drawing in the occupancy-certificate procedure.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_oc_decision",
+      "text": "The BBMP service sheet includes approval or rejection by the competent authority in the occupancy-certificate procedure.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_oc_compounding_demand_note",
+      "text": "The BBMP service sheet includes issuance of a demand note to the party for payment of Compounding Fee in the occupancy-certificate procedure.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_oc_certificate_issue",
+      "text": "The BBMP service sheet includes issuance of the occupancy certificate in the published procedure.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP jurisdiction)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_service_sheet"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_submitted_proposal_in_process_and_flow",
+      "text": "The BPAS Occupancy Certificate User Manual says that, after final submission, the proposal moves from Draft to In Process and the architect can check the proposal flow to see which officer holds the file.",
+      "jurisdiction": "Bengaluru, Karnataka, India (BBMP BPAS)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bbmp_oc_manual"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The manual documents an authenticated architect-console surface. This pass did not log in or verify live availability."
+    },
+    {
+      "id": "claim_ind77_e_khata_mandatory_for_oc_applications",
+      "text": "The public BPAS landing page states that e-Khata is mandatory for Occupancy Certificate applications from 1 July 2025.",
+      "jurisdiction": "Bengaluru, Karnataka, India (GBA BPAS)",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bpas_home_e_khata_notice"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "The public notice is date-specific and does not state how an e-Khata is obtained. It is retained as a Grade C General-site reference, not a substituted specific source."
+    },
+    {
+      "id": "claim_ind77_bpas_public_identity",
+      "text": "The current BPAS public home identifies itself as Greater Bengaluru Authority and describes a single-window construction-permit system for Bengaluru.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bpas_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_bpas_signin_boundary",
+      "text": "The BPAS public home exposes a Sign In form with username, password, CAPTCHA-code input and a login submit control; this pass stops before authentication and case data.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bpas_home"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_oc_manual_public",
+      "text": "The BPAS public Download & Manuals route lists a User Manual for OC and public forms/checklists including a plan-sanction checklist, affidavits, bonds, Schedule-II and Schedule-III; it notes that affidavits and bonds should be on stamp paper.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bpas_downloads"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_oc_submission_actor",
+      "text": "The official BPAS FAQ says an Occupancy Certificate/Building Completion Certificate application is submitted online by a Licensed Surveyor or Architect after building completion, with a request for joint site inspection and compliance of OCC/BCC conditions.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bpas_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_oc_processing_window",
+      "text": "The official BPAS FAQ states that Part/Full OCC/BCC is granted within 7 working days after the OC/BCC application when the required documents are submitted and the work is executed as approved.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bpas_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_oc_dashboard_output",
+      "text": "The official BPAS FAQ describes authenticated dashboard steps for viewing OCC/BCC status and certificate output through the approved OCC/BCC entry, Application Summary and Proposal Stages certificate column.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bpas_faq"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_public_support_surface",
+      "text": "BPAS exposes a public Helpdesk Knowledge base and a public Contact Us route as support surfaces; no case-specific recovery result was tested.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_bpas_helpdesk_kb",
+        "source_ind77_bpas_contact"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_legacy_route_dead",
+      "text": "The supplied site.bbmp.gov.in/buildingplan.html route was not live at access time and returned a browser ERR_CONNECTION_REFUSED observation; its older indexed content is not current workflow evidence.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_legacy_seed_dead"
+      ],
+      "evidenceGrade": "B",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": ""
+    },
+    {
+      "id": "claim_ind77_gba_home_no_bpas_handoff",
+      "text": "The current bbmp.gov.in/home page exposes a Building Permission e-Service tile, but the public DOM observation did not expose a target URL; no link to BPAS is asserted.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "nodeIds": [
+        "node_occupancy_certificate_public_route"
+      ],
+      "sourceIds": [
+        "source_ind77_gba_seed_home"
+      ],
+      "evidenceGrade": "C",
+      "basis": "observation",
+      "status": "verified",
+      "contradictsClaimIds": [],
+      "notes": "General-site observation only; it establishes neither a BPAS route nor an occupancy-certificate procedure."
+    },
+    {
+      "id": "claim_ind77_citizen_oc_issued_after_reported_delay",
+      "text": "A residential purchaser reported that an occupancy certificate was received after an earlier reported delay.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_citizen_reported"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind77_citizen_reddit_oc_delay_2025"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [],
+      "notes": "This is one account of a property-specific outcome. It does not establish that the building was sanctioned, identify an official route, or establish a general processing time or issuance requirement."
+    },
+    {
+      "id": "claim_ind77_citizen_pending_oc_after_reported_application",
+      "text": "A residential purchaser reported being told that an occupancy-certificate application had been made, while the certificate remained unissued several months later.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_citizen_reported"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind77_citizen_reddit_oc_delay_2025"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [],
+      "notes": "The reported application and elapsed time are not independently verified. This cannot establish an official application route, deadline, service level, cause of delay, or who is responsible."
+    },
+    {
+      "id": "claim_ind77_citizen_possible_plan_deviation_concern",
+      "text": "A purchaser reported observing construction that they believed differed from the plan they had seen, and expressed concern that this could affect the availability of an occupancy certificate.",
+      "jurisdiction": "Bengaluru, Karnataka, India",
+      "scenarioIds": [
+        "scenario_citizen_reported"
+      ],
+      "nodeIds": [],
+      "sourceIds": [
+        "source_ind77_citizen_reddit_plan_mismatch_2026"
+      ],
+      "evidenceGrade": "E",
+      "basis": "observation",
+      "status": "contested",
+      "contradictsClaimIds": [],
+      "notes": "The claimed mismatch, the plan's status, and any consequence for the certificate are unverified. This account cannot establish a deviation, official compliance rule, eligibility decision, or recovery route."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node_occupancy_certificate_public_route",
+      "label": "Public service route",
+      "kind": "service",
+      "ownerAgencyId": "agency_occupancy_certificate",
+      "summary": "Publicly observable route and published guidance; personal and case-specific stages remain outside this research.",
+      "requiredState": "Use only the published public route; do not enter personal, case, or payment data.",
+      "checks": [],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "claimIds": [
+        "claim_ind77_owner_with_plan_sanction_eligible",
+        "claim_ind77_schedule_viii_required",
+        "claim_ind77_latest_khata_certificate_required",
+        "claim_ind77_latest_khata_extract_required",
+        "claim_ind77_tax_paid_receipt_required",
+        "claim_ind77_conditional_cfo_fire_documents_required",
+        "claim_ind77_as_built_drawings_required",
+        "claim_ind77_photographs_required",
+        "claim_ind77_compounding_fee_named_no_amount",
+        "claim_ind77_thirty_working_days",
+        "claim_ind77_town_planning_office_owner",
+        "claim_ind77_oc_online_filing",
+        "claim_ind77_oc_site_inspection",
+        "claim_ind77_oc_as_built_verification",
+        "claim_ind77_oc_decision",
+        "claim_ind77_oc_compounding_demand_note",
+        "claim_ind77_oc_certificate_issue",
+        "claim_ind77_submitted_proposal_in_process_and_flow",
+        "claim_ind77_e_khata_mandatory_for_oc_applications",
+        "claim_ind77_bpas_public_identity",
+        "claim_ind77_bpas_signin_boundary",
+        "claim_ind77_oc_manual_public",
+        "claim_ind77_oc_submission_actor",
+        "claim_ind77_oc_processing_window",
+        "claim_ind77_oc_dashboard_output",
+        "claim_ind77_public_support_surface",
+        "claim_ind77_legacy_route_dead",
+        "claim_ind77_gba_home_no_bpas_handoff"
+      ],
+      "status": "partial",
+      "displayOrder": 1
+    },
+    {
+      "id": "node_final_e_khata",
+      "label": "Final e-Khata",
+      "kind": "record",
+      "ownerAgencyId": "agency_occupancy_certificate",
+      "summary": "Cross-ledger prerequisite represented by the existing khata ledger node ID node_final_e_khata.",
+      "requiredState": "A current e-Khata is mandatory before an Occupancy Certificate application under the public BPAS notice.",
+      "checks": [
+        {
+          "id": "detail_ind77_e_khata_requirement",
+          "label": "e-Khata prerequisite",
+          "description": "The BPAS public notice identifies e-Khata as mandatory for Occupancy Certificate applications from 1 July 2025.",
+          "url": "https://bpas.bbmpgov.in/",
+          "claimIds": [
+            "claim_ind77_e_khata_mandatory_for_oc_applications"
+          ],
+          "status": "verified"
+        }
+      ],
+      "failureSignals": [],
+      "recoveries": [],
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "claimIds": [
+        "claim_ind77_e_khata_mandatory_for_oc_applications"
+      ],
+      "status": "verified",
+      "displayOrder": 1
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_ind77_e_khata_to_occupancy_certificate",
+      "fromNodeId": "node_final_e_khata",
+      "toNodeId": "node_occupancy_certificate_public_route",
+      "relationship": "requires",
+      "label": "BPAS names e-Khata as mandatory for Occupancy Certificate applications.",
+      "scenarioIds": [
+        "scenario_occupancy_certificate_sanctioned_residential"
+      ],
+      "claimIds": [
+        "claim_ind77_e_khata_mandatory_for_oc_applications"
+      ],
+      "status": "verified"
+    }
+  ],
+  "roadblocks": [],
+  "journeys": []
+}

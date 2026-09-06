@@ -120,6 +120,56 @@ export const serviceGuides: Record<string, ServiceGuide> = {
     ],
     processSummary: 'Building plan approval is permission to build or alter a property under the responsible planning authority. Public material starts with confirming the authority and route, then points to an architect-led or manual route, plans and documents, scrutiny, inspection, fees and a sanction or licence result. No project-specific route or approval was tested.',
   },
+  passport: {
+    terms: [
+      { term: 'Passport Seva', definition: 'The Ministry of External Affairs public passport service and guidance portal.' },
+      { term: 'PSK', definition: 'Passport Seva Kendra, the service centre named for an appointment and document visit.' },
+      { term: 'RPO', definition: 'Regional Passport Office, the office selected by residence and named for Bengaluru.' },
+      { term: 'ARN', definition: 'Application Reference Number generated after a completed passport application is submitted.' },
+      { term: 'Non-ECR', definition: 'A passport-status category for which the published adult normal-route table names supporting documentation when applicable.' },
+    ],
+    processSummary: 'A fresh adult ordinary-passport route starts with the fresh category and public document guidance, then moves through registration, an account-bound application, payment and an appointment before a PSK visit. Public material gives a Rs.2,500 fee, pre-verification dispatch timing and an ARN after submission, but booking and case outcomes remain account-bound. This desk research used public pages only; no login, submission, payment or personal data was used.',
+  },
+  'aadhaar-address-update': {
+    terms: [
+      { term: 'myAadhaar', definition: 'UIDAI’s portal named for the online address-update route.' },
+      { term: 'Proof of address', definition: 'A current, verifiable document in the Aadhaar holder’s name showing an Indian address.' },
+      { term: 'SRN', definition: 'Service Request Number shown after a successful online address-update submission.' },
+      { term: 'Demographic update', definition: 'UIDAI’s update category that includes an address change.' },
+      { term: 'Document update', definition: 'A separate UIDAI service for submitting proof documents in support of details already enrolled.' },
+    ],
+    processSummary: 'An Aadhaar holder using the online own-document route needs a registered mobile number and a current proof of address in that person’s name. Published material gives a ₹75 fee, up to 30 days, later UIDAI quality review, and an SRN, invoice and status route after submission. This desk research used public pages only; no login, submission, payment or personal data was used.',
+  },
+  'property-tax-payment': {
+    terms: [
+      { term: 'Tax demand', definition: 'The property-tax amount the public service says the portal displays before payment.' },
+      { term: 'Payment gateway', definition: 'The integrated online payment service named in the municipal property-tax route.' },
+      { term: 'Payment confirmation', definition: 'The real-time confirmation the service says it provides after payment.' },
+      { term: 'Receipt', definition: 'The record the service says it generates after payment; the public print route asks for an application number.' },
+      { term: 'Failed transaction', definition: 'A policy-described case where an amount is debited but the online transaction fails through network or technical error.' },
+    ],
+    processSummary: 'For a property owner within Bengaluru City Corporation limits, the public route says the portal displays a tax demand, uses an integrated payment gateway, then gives real-time confirmation and a receipt. The City Corporation-added service fee is zero beyond statutory tax, while any bank or gateway charge remains unspecified. This desk research used public pages only; no login, submission, payment or personal data was used.',
+  },
+  'sale-deed-registration': {
+    terms: [
+      { term: 'Kaveri 2.0', definition: 'Karnataka’s registration system named for sale-of-immovable-property document registration.' },
+      { term: 'Sub-Registrar Office', definition: 'The registration office type operated by the Karnataka Registration and Stamps Department.' },
+      { term: 'Registration Act', definition: 'The law whose section 17(1)(b) sets the published registration rule for qualifying property instruments.' },
+      { term: 'Stamp fee', definition: 'A charge Kaveri documentation says the system can calculate automatically.' },
+      { term: 'Bhoomi', definition: 'A Karnataka land-record system identified as integrated with Kaveri 2.0.' },
+    ],
+    processSummary: 'A Bengaluru residential sale deed is a property-registration transaction under the Registration and Stamps Department, with District Registrar and Sub-Registrar offices in the published structure. Kaveri documentation names sale registration, fee calculation and stage messages, but the current public checklist, amount, booking route and post-submission result remain unknown. This desk research used public pages only; no login, submission, payment or personal data was used.',
+  },
+  'occupancy-certificate': {
+    terms: [
+      { term: 'BPAS', definition: 'Building Plan Approval System, the public Greater Bengaluru Authority construction-permit portal.' },
+      { term: 'e-Khata', definition: 'The municipal digital property record that BPAS says is mandatory for occupancy-certificate applications.' },
+      { term: 'Schedule VIII', definition: 'The form the BBMP service sheet names for an occupancy-certificate request.' },
+      { term: 'Compounding Fee', definition: 'The charge named in the service sheet when the published procedure issues a demand note, without an amount on that sheet.' },
+      { term: 'As-built drawings', definition: 'Drawings of completed construction listed among occupancy-certificate enclosures.' },
+    ],
+    processSummary: 'A property owner with plan sanction can use the published occupancy-certificate route, which names Schedule VIII, Khata records, tax receipt, as-built drawings and photographs as enclosures. The service sheet describes online filing, inspection, verification, a demand note where applicable and certificate issue; BPAS also says e-Khata is mandatory. This desk research used public pages only; no login, submission, payment or personal data was used.',
+  },
 };
 
 for (const service of serviceManifest.services.filter((service) => service.published)) {

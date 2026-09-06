@@ -1,20 +1,10 @@
 import { readFile } from 'node:fs/promises';
 import { serviceGuides } from '../lib/service-copy.ts';
+import serviceManifest from '../ledger/services.manifest.json' with { type: 'json' };
 
-const services = {
-  bescom: 'research.json',
-  khata: 'khata.json',
-  'property-tax': 'property-tax.json',
-  'water-connection': 'water-connection.json',
-  'birth-certificate': 'birth-certificate.json',
-  'water-account': 'water-account.json',
-  'new-electricity': 'new-electricity.json',
-  'death-certificate': 'death-certificate.json',
-  lpg: 'lpg.json',
-  marriage: 'marriage.json',
-  'trade-license': 'trade-license.json',
-  'building-plan': 'building-plan.json',
-};
+const services = Object.fromEntries(serviceManifest.services
+  .filter((service) => service.published)
+  .map((service) => [service.id, service.ledgerFile]));
 
 const normalize = (text) => text.toLowerCase().replace(/[^a-z0-9]+/g, '');
 const internalJargon = /\b(?:ledger|schema|node|edge|dependency|handoff|relationship)\b/i;
@@ -44,4 +34,4 @@ for (const [service, file] of Object.entries(services)) {
 }
 
 if (errors.length) throw new Error(`Comprehension copy check failed:\n${errors.join('\n')}`);
-console.log('Comprehension copy verified: all 12 entries have service-specific terms and process summaries.');
+console.log(`Comprehension copy verified: all ${Object.keys(services).length} published entries have service-specific terms and process summaries.`);

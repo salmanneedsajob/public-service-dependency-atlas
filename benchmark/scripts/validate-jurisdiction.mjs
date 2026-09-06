@@ -102,8 +102,7 @@ async function main() {
   const manifestPath = args[0];
   const slugIndex = args.indexOf('--slug');
   const slug = slugIndex === -1 ? null : args[slugIndex + 1];
-  const allowLintFindings = args.includes('--allow-lint-findings');
-  if (!manifestPath || (slugIndex !== -1 && !slug)) throw new Error('Usage: node benchmark/scripts/validate-jurisdiction.mjs <manifest.json> [--slug <slug>] [--allow-lint-findings] | --self-test');
+  if (!manifestPath || (slugIndex !== -1 && !slug)) throw new Error('Usage: node benchmark/scripts/validate-jurisdiction.mjs <manifest.json> [--slug <slug>] | --self-test');
   const manifest = await readJson(manifestPath);
   validateManifest(manifest);
   const entries = slug ? manifest.entries.filter((entry) => entry.jurisdictionSlug === slug) : manifest.entries;
@@ -114,8 +113,7 @@ async function main() {
     const label = `${entry.jurisdictionSlug}/${entry.serviceId}`;
     try {
       const { lint, scorecard } = await validateEntry(entry, manifestDirectory, validators);
-      if (lint.unwaived.length && !allowLintFindings) throw new Error(`pre-audit lint: ${lint.unwaived[0].recordId} ${lint.unwaived[0].check}`);
-      if (lint.unwaived.length) console.log(`${label}: warning: pre-audit lint: ${lint.unwaived.map((finding) => `${finding.recordId} ${finding.check}`).join(', ')}`);
+      if (lint.unwaived.length) throw new Error(`pre-audit lint: ${lint.unwaived[0].recordId} ${lint.unwaived[0].check}`);
       const waived = lint.findings.filter((finding) => finding.waived);
       console.log(`${label}: ${scorecard.statedCount}/6 stated${waived.length ? `; waived: ${waived.map((finding) => `${finding.recordId} ${finding.check}`).join(', ')}` : ''}`);
     } catch (error) {

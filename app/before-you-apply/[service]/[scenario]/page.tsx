@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import '../../before-you-apply.css';
 import { BriefExports } from '@/components/BriefExports';
@@ -31,24 +32,30 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   };
 }
 
-function Claim({ claim }: { claim: BriefClaim }) {
+function Claim({ claim, compact = false }: { claim: BriefClaim; compact?: boolean }) {
   return (
     <article className={`bya-claim bya-claim-${claim.status}`}>
       <p className="bya-claim-text">{claim.text}</p>
-      <p className="bya-claim-tags">
-        {claim.status === 'unknown' ? (
-          <span className="bya-kind">{claim.boundary ? 'Our reading stopped here' : 'The record leaves this open'}</span>
-        ) : null}
-        <span>
-          Evidence <b>{claim.grade}</b>
-        </span>
-        <span>
-          Record <b>{claim.status}</b>
-        </span>
-        <span>
-          Basis <b>{claim.basis}</b>
-        </span>
-      </p>
+      {compact ? (
+        <p className="bya-claim-tags">
+          <span className="bya-grade-chip">Evidence {claim.grade}</span>
+        </p>
+      ) : (
+        <p className="bya-claim-tags">
+          {claim.status === 'unknown' ? (
+            <span className="bya-kind">{claim.boundary ? 'Our reading stopped here' : 'The record leaves this open'}</span>
+          ) : null}
+          <span>
+            Evidence <b>{claim.grade}</b>
+          </span>
+          <span>
+            Record <b>{claim.status}</b>
+          </span>
+          <span>
+            Basis <b>{claim.basis}</b>
+          </span>
+        </p>
+      )}
       {claim.notes ? (
         <p className="bya-qualify">
           <b>{claim.status === 'unknown' ? (claim.boundary ? 'Where we stopped' : 'What we checked') : 'Read this with it'}</b>
@@ -72,6 +79,34 @@ function Claim({ claim }: { claim: BriefClaim }) {
   );
 }
 
+function EvidenceContainer({
+  children,
+  collapsible,
+  establishedCount,
+  unresolvedCount,
+}: {
+  children: ReactNode;
+  collapsible: boolean;
+  establishedCount: number;
+  unresolvedCount: number;
+}) {
+  if (!collapsible) return children;
+  return (
+    <details className="bya-evidence">
+      <summary>See the evidence behind this</summary>
+      <div className="bya-evidence-stats" aria-label="Evidence summary">
+        <span>
+          Supported <b>{establishedCount}</b>
+        </span>
+        <span>
+          Unresolved <b>{unresolvedCount}</b>
+        </span>
+      </div>
+      {children}
+    </details>
+  );
+}
+
 export default async function BriefPage({ params }: { params: Promise<Params> }) {
   const { service, scenario } = await params;
   const brief = getBrief(service, scenario);
@@ -79,6 +114,7 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
 
   const clarification = buildClarificationPacket(brief);
   const agentBrief = buildAgentBrief(brief);
+  const authored = brief.authored;
   const siblings = listBriefScenarios().filter((item) => item.serviceId === brief.service.id && item.scenarioId !== brief.scenario.id);
   const visibleClaims = 8;
   const gradesUsed = [...new Set([...brief.established, ...brief.contested, ...brief.unresolved].map((claim) => claim.grade))].sort();
@@ -118,24 +154,47 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
             <dt>Evidence as of</dt>
             <dd>{brief.asOf}</dd>
           </div>
-          <div>
-            <dt>Supported statements</dt>
-            <dd>{brief.established.length}</dd>
-          </div>
-          <div>
-            <dt>Left unresolved</dt>
-            <dd>{brief.unresolved.length + brief.contested.length}</dd>
-          </div>
-          <div>
-            <dt>Full research</dt>
-            <dd>
-              <Link href={brief.service.href}>Atlas entry →</Link>
-            </dd>
-          </div>
+          {!authored ? (
+            <>
+              <div>
+                <dt>Supported statements</dt>
+                <dd>{brief.established.length}</dd>
+              </div>
+              <div>
+                <dt>Left unresolved</dt>
+                <dd>{brief.unresolved.length + brief.contested.length}</dd>
+              </div>
+              <div>
+                <dt>Full research</dt>
+                <dd>
+                  <Link href={brief.service.href}>Atlas entry →</Link>
+                </dd>
+              </div>
+            </>
+          ) : null}
         </dl>
       </section>
 
-      <section className={`bya-action bya-action-${brief.nextAction.kind}`} aria-labelledby="next-action">
+      {authored ? (
+        <section className="bya-authored" aria-label="Scenario brief">
+          <div className="bya-authored-section">
+            <h2>What the rules say</h2>
+            <p>{authored.rules}</p>
+          </div>
+          <div className="bya-authored-section">
+            <h2>What nobody currently confirms</h2>
+            <p>{authored.unconfirmed}</p>
+          </div>
+          <section className={`bya-action bya-action-${brief.nextAction.kind}`} aria-labelledby="next-action">
+            <h2 id="next-action">What to do</h2>
+            <p>{authored.todo}</p>
+          </section>
+          <BriefExports clarification={clarification} agentBrief={agentBrief} />
+        </section>
+      ) : null}
+
+      {!authored ? (
+        <section className={`bya-action bya-action-${brief.nextAction.kind}`} aria-labelledby="next-action">
         <p className="bya-eyebrow">Your next step</p>
         <h2 id="next-action">{brief.nextAction.headline}</h2>
         <p>{brief.nextAction.detail}</p>
@@ -154,8 +213,14 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
             particular case.
           </p>
         ) : null}
-      </section>
+        </section>
+      ) : null}
 
+      <EvidenceContainer
+        collapsible={Boolean(authored)}
+        establishedCount={brief.established.length}
+        unresolvedCount={brief.unresolved.length + brief.contested.length}
+      >
       <section className="bya-block" aria-labelledby="established">
         <div className="bya-block-head">
           <div>
@@ -172,7 +237,7 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
           <>
             <div className="bya-claims">
               {brief.established.slice(0, visibleClaims).map((claim) => (
-                <Claim claim={claim} key={claim.id} />
+                <Claim claim={claim} compact={Boolean(authored)} key={claim.id} />
               ))}
             </div>
             {brief.established.length > visibleClaims ? (
@@ -180,7 +245,7 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
                 <summary>Show the remaining {brief.established.length - visibleClaims} statements</summary>
                 <div className="bya-claims">
                   {brief.established.slice(visibleClaims).map((claim) => (
-                    <Claim claim={claim} key={claim.id} />
+                    <Claim claim={claim} compact={Boolean(authored)} key={claim.id} />
                   ))}
                 </div>
               </details>
@@ -206,7 +271,7 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
           </div>
           <div className="bya-claims">
             {brief.contested.map((claim) => (
-              <Claim claim={claim} key={claim.id} />
+              <Claim claim={claim} compact={Boolean(authored)} key={claim.id} />
             ))}
           </div>
         </section>
@@ -228,7 +293,7 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
         {brief.unresolved.length ? (
           <div className="bya-claims">
             {brief.unresolved.map((claim) => (
-              <Claim claim={claim} key={claim.id} />
+              <Claim claim={claim} compact={Boolean(authored)} key={claim.id} />
             ))}
           </div>
         ) : (
@@ -279,7 +344,8 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
         </section>
       ) : null}
 
-      <section className="bya-block" aria-labelledby="take-it-with-you">
+      {!authored ? (
+        <section className="bya-block" aria-labelledby="take-it-with-you">
         <div className="bya-block-head">
           <div>
             <p className="bya-eyebrow">Take it with you</p>
@@ -288,7 +354,8 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
           </div>
         </div>
         <BriefExports clarification={clarification} agentBrief={agentBrief} />
-      </section>
+        </section>
+      ) : null}
 
       <section className="bya-block" aria-labelledby="sources">
         <div className="bya-block-head">
@@ -315,6 +382,7 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
           ))}
         </ul>
       </section>
+      </EvidenceContainer>
 
       {siblings.length ? (
         <section className="bya-block" aria-labelledby="other-situations">

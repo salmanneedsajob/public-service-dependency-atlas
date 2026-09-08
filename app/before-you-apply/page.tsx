@@ -46,11 +46,6 @@ export default function BeforeYouApplyIndex() {
           Tell us your situation. You get a short brief: what the published guidance actually says, what it leaves unresolved, where the
           route is known to break, and one next step.
         </p>
-        <p className="bya-note">
-          Every sentence in a brief comes from a dated public source we recorded and audited — {totals.claimCount} claims across{' '}
-          {totals.serviceCount} services, including {totals.unresolvedCount} places where we searched and the public record did not settle
-          the question. Nothing on these pages is generated when you open them. This is independent desk research, not official guidance.
-        </p>
       </section>
 
       {lead ? (
@@ -104,6 +99,11 @@ export default function BeforeYouApplyIndex() {
         Where our research could not establish the current position, the brief says so rather than guessing — that gap is the finding, not a
         defect. Other cities are measured on the six published expectations at{' '}
         <Link href="/benchmark">the benchmark</Link>, but only Bengaluru has the situation-level research these briefs need.
+        <br />
+        <br />
+        Every sentence in a brief comes from a dated public source we recorded and audited — {totals.claimCount} claims across{' '}
+        {totals.serviceCount} services, including {totals.unresolvedCount} places where we searched and the public record did not settle the
+        question. Nothing on these pages is generated when you open them. This is independent desk research, not official guidance.
       </p>
     </main>
   );

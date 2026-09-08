@@ -13,7 +13,7 @@ function Panel({ panel }: { panel: ExportPanel }) {
     try {
       await navigator.clipboard.writeText(panel.text);
       setState('copied');
-      window.setTimeout(() => setState('idle'), 2400);
+      window.setTimeout(() => setState('idle'), 2000);
     } catch {
       // Clipboard access can be refused; reveal the text and select it so the reader can copy it by hand.
       setState('failed');

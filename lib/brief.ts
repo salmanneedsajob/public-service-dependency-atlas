@@ -1,6 +1,7 @@
 import type { EvidenceGrade, Ledger, RecordStatus } from '@/lib/ledger-types';
 import { atlasServices, type AtlasService } from '@/lib/atlas-data';
 import { getServiceManifestEntry } from '@/lib/services-manifest';
+import { getAuthoredBrief, type AuthoredBrief } from '@/lib/brief-authored';
 
 /**
  * Before You Apply reads the published ledgers and renders one situation at a time.
@@ -73,6 +74,7 @@ export type Brief = {
   sources: BriefSource[];
   agencies: BriefAgency[];
   nextAction: BriefNextAction;
+  authored?: AuthoredBrief;
 };
 
 export type BriefScenarioRef = {
@@ -246,6 +248,7 @@ export function getBrief(serviceId: string, scenarioIdOrSlug: string): Brief | u
     sources: [...sourceIndex.values()].sort((left, right) => left.id.localeCompare(right.id)),
     agencies,
     nextAction: deriveNextAction(established, unresolved, contested, roadblocks, agencies),
+    authored: getAuthoredBrief(scenario.id),
   };
 }
 
@@ -373,7 +376,14 @@ export function buildClarificationPacket(brief: Brief): string {
     lines.push('');
   }
 
-  if (brief.unresolved.length) {
+  if (brief.authored?.questions.length) {
+    lines.push('Please confirm the current position on these points:');
+    lines.push('');
+    brief.authored.questions.forEach((question, index) => {
+      lines.push(`  ${index + 1}. ${question}`);
+      lines.push('');
+    });
+  } else if (brief.unresolved.length) {
     lines.push('These points are not settled by that material. They are quoted as our reading recorded them.');
     lines.push('Some record where our reading stopped — for example at a step behind a login we did not cross.');
     lines.push('We include those because the published material does not describe that step either.');
@@ -390,7 +400,8 @@ export function buildClarificationPacket(brief: Brief): string {
     lines.push('I also found accounts that disagree with each other. Please confirm which is correct today:');
     lines.push('');
     brief.contested.forEach((claim, index) => {
-      lines.push(`  ${brief.unresolved.length + index + 1}. "${claim.text}"`);
+      const previousQuestions = brief.authored?.questions.length ?? brief.unresolved.length;
+      lines.push(`  ${previousQuestions + index + 1}. "${claim.text}"`);
       if (claim.notes) lines.push(`     Our note: ${claim.notes}`);
       lines.push('');
     });
@@ -429,6 +440,22 @@ export function buildAgentBrief(brief: Brief): string {
   lines.push('- Historic guidance is marked as such. Do not state that it applies now.');
   lines.push('- Every statement carries an evidence grade and a date. Check the date against today before relying on it.');
   lines.push('');
+  if (brief.authored) {
+    lines.push('## Scenario brief');
+    lines.push('');
+    lines.push('### What the rules say');
+    lines.push(brief.authored.rules);
+    lines.push('');
+    lines.push('### What nobody currently confirms');
+    lines.push(brief.authored.unconfirmed);
+    lines.push('');
+    lines.push('### What to do');
+    lines.push(brief.authored.todo);
+    lines.push('');
+    lines.push('### Questions to take to BESCOM');
+    for (const [index, question] of brief.authored.questions.entries()) lines.push(`${index + 1}. ${question}`);
+    lines.push('');
+  }
   lines.push(`## Supported by the published record (${brief.established.length})`);
   lines.push('');
   for (const claim of brief.established) {

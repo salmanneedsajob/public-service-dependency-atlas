@@ -36,6 +36,9 @@ function Claim({ claim }: { claim: BriefClaim }) {
     <article className={`bya-claim bya-claim-${claim.status}`}>
       <p className="bya-claim-text">{claim.text}</p>
       <p className="bya-claim-tags">
+        {claim.status === 'unknown' ? (
+          <span className="bya-kind">{claim.boundary ? 'Our reading stopped here' : 'The record leaves this open'}</span>
+        ) : null}
         <span>
           Evidence <b>{claim.grade}</b>
         </span>
@@ -48,7 +51,7 @@ function Claim({ claim }: { claim: BriefClaim }) {
       </p>
       {claim.notes ? (
         <p className="bya-qualify">
-          <b>{claim.status === 'unknown' ? 'How far we got' : 'Read this with it'}</b>
+          <b>{claim.status === 'unknown' ? (claim.boundary ? 'Where we stopped' : 'What we checked') : 'Read this with it'}</b>
           {claim.notes}
         </p>
       ) : null}
@@ -77,6 +80,7 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
   const clarification = buildClarificationPacket(brief);
   const agentBrief = buildAgentBrief(brief);
   const siblings = listBriefScenarios().filter((item) => item.serviceId === brief.service.id && item.scenarioId !== brief.scenario.id);
+  const visibleClaims = 8;
   const gradesUsed = [...new Set([...brief.established, ...brief.contested, ...brief.unresolved].map((claim) => claim.grade))].sort();
 
   return (
@@ -101,7 +105,7 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
 
       <section className="bya-brief-head">
         <p className="bya-eyebrow">
-          {brief.service.title} · your situation
+          {brief.scenario.label === brief.service.title ? 'Your situation' : `${brief.service.title} · your situation`}
         </p>
         <h1>{brief.scenario.label}</h1>
         <p className="bya-situation-summary">{brief.scenario.summary}</p>
@@ -165,11 +169,23 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
           <span className="bya-count">{brief.established.length} statements</span>
         </div>
         {brief.established.length ? (
-          <div className="bya-claims">
-            {brief.established.map((claim) => (
-              <Claim claim={claim} key={claim.id} />
-            ))}
-          </div>
+          <>
+            <div className="bya-claims">
+              {brief.established.slice(0, visibleClaims).map((claim) => (
+                <Claim claim={claim} key={claim.id} />
+              ))}
+            </div>
+            {brief.established.length > visibleClaims ? (
+              <details className="bya-more">
+                <summary>Show the remaining {brief.established.length - visibleClaims} statements</summary>
+                <div className="bya-claims">
+                  {brief.established.slice(visibleClaims).map((claim) => (
+                    <Claim claim={claim} key={claim.id} />
+                  ))}
+                </div>
+              </details>
+            ) : null}
+          </>
         ) : (
           <p className="bya-empty">
             Our research recorded no supported statement scoped to this situation. That is a limit of what we found, not proof that no
@@ -200,10 +216,11 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
         <div className="bya-block-head">
           <div>
             <p className="bya-eyebrow">Block {brief.contested.length ? 'three' : 'two'}</p>
-            <h2 id="unresolved">What the public record does not settle</h2>
+            <h2 id="unresolved">What is still unsettled</h2>
             <p>
-              We looked for these and did not find an answer we could stand behind. This is the part no application page tells you, and the
-              reason for the clarification below.
+              Two kinds of thing sit here: questions the published record leaves open, and points where our own reading stopped — at a login
+              we did not cross, or a step we could not observe without applying. Each item says which it is. Both are reasons to ask before
+              you apply rather than after.
             </p>
           </div>
           <span className="bya-count">{brief.unresolved.length} open</span>
@@ -323,7 +340,15 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
         <br />
         <br />
         {brief.disclaimer} Evidence collected as of {brief.asOf}; nothing on this page is generated when you open it. Every statement is a
-        recorded claim you can trace to the source above, and the unresolved items stay unresolved on purpose.
+        recorded claim you can trace to the source above, and the unsettled items stay unsettled on purpose.
+        {brief.auditLimitations.length ? (
+          <>
+            <br />
+            <br />
+            <b>What our own audit said it could not close</b>
+            {brief.auditLimitations.map((limitation) => limitation.recovery || limitation.likelyCause).join(' ')}
+          </>
+        ) : null}
       </p>
     </main>
   );

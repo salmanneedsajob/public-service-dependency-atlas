@@ -31,6 +31,11 @@ export type BriefClaim = {
   contradicts: string[];
   /** How many situations this claim is scoped to. Fewer means more specific to the one being read. */
   scenarioCount: number;
+  /**
+   * True when the claim records where our own research stopped rather than a gap in the
+   * published record — a step behind a login we did not cross, an action we did not take.
+   */
+  boundary: boolean;
 };
 
 export type BriefRoadblock = {
@@ -63,6 +68,8 @@ export type Brief = {
   contested: BriefClaim[];
   unresolved: BriefClaim[];
   roadblocks: BriefRoadblock[];
+  /** Our own audit's stated limitations. Not failure points of the service; shown as our caveat. */
+  auditLimitations: BriefRoadblock[];
   sources: BriefSource[];
   agencies: BriefAgency[];
   nextAction: BriefNextAction;
@@ -83,6 +90,31 @@ export type BriefScenarioRef = {
   roadblockCount: number;
   href: string;
 };
+
+/**
+ * Our own audit's limitations describe our research, not the service. They are shown as
+ * our caveat rather than as a failure point of the route, and never sent to an office.
+ */
+const auditLimitationTitle = 'Independent audit limitations';
+
+/**
+ * An unresolved claim can mean two different things, and conflating them misleads in both
+ * directions: a gap in what the public record establishes, or a limit of how far our own
+ * unauthenticated pass could go. Only the first is a finding about the service.
+ *
+ * The ledger schema does not distinguish them, so this reads the claim's own subject: a
+ * sentence whose subject is the pass, or which reports an action we did not perform, is a
+ * boundary. Everything else defaults to a record gap — the safe default, because
+ * mislabelling a real finding as our own limitation would hide the thing worth publishing.
+ * A field on the claim would be better than a reading of its wording; that is a v0.2 item.
+ */
+const boundarySubject = /^(this (bounded |unauthenticated )?pass|the unauthenticated pass)\b/iu;
+const boundaryAction = /\b(?:was|were) (?:performed|made|attempted|produced|identified|observed|queried)\b/iu;
+const boundaryPhrase = /\bno public observation in this pass\b|\binspected publicly only\b/iu;
+
+function isResearchBoundary(text: string) {
+  return boundarySubject.test(text) || boundaryAction.test(text) || boundaryPhrase.test(text);
+}
 
 const statusRank: Record<RecordStatus, number> = { verified: 0, partial: 1, contested: 2, unknown: 3 };
 const gradeRank: Record<string, number> = { A: 0, B: 1, C: 2, D: 3, E: 4, F: 5, Unknown: 6 };
@@ -127,6 +159,7 @@ function toClaim(ledger: Ledger, claim: Ledger['claims'][number]): BriefClaim {
     notes: claim.notes,
     contradicts: claim.contradictsClaimIds,
     scenarioCount: claim.scenarioIds.length,
+    boundary: isResearchBoundary(claim.text),
     sources: claim.sourceIds.map((id) => toSource(ledger, id)).filter((source): source is BriefSource => Boolean(source)),
   };
 }
@@ -167,7 +200,7 @@ export function getBrief(serviceId: string, scenarioIdOrSlug: string): Brief | u
   const contested = sortClaims(scenarioClaims.filter((claim) => claim.status === 'contested'));
   const unresolved = sortClaims(scenarioClaims.filter((claim) => claim.status === 'unknown'));
 
-  const roadblocks: BriefRoadblock[] = service.ledger.roadblocks
+  const scenarioRoadblocks: BriefRoadblock[] = service.ledger.roadblocks
     .filter((roadblock) => roadblock.scenarioIds.includes(scenario.id))
     .map((roadblock) => ({
       id: roadblock.id,
@@ -179,6 +212,9 @@ export function getBrief(serviceId: string, scenarioIdOrSlug: string): Brief | u
       status: roadblock.status,
       owners: (roadblock.ownerAgencyIds ?? []).map((id) => toAgency(service.ledger, id)).filter((agency): agency is BriefAgency => Boolean(agency)),
     }));
+
+  const roadblocks = scenarioRoadblocks.filter((roadblock) => roadblock.title !== auditLimitationTitle);
+  const auditLimitations = scenarioRoadblocks.filter((roadblock) => roadblock.title === auditLimitationTitle);
 
   const sourceIndex = new Map<string, BriefSource>();
   for (const claim of scenarioClaims) for (const source of claim.sources) sourceIndex.set(source.id, source);
@@ -206,6 +242,7 @@ export function getBrief(serviceId: string, scenarioIdOrSlug: string): Brief | u
     contested,
     unresolved,
     roadblocks,
+    auditLimitations,
     sources: [...sourceIndex.values()].sort((left, right) => left.id.localeCompare(right.id)),
     agencies,
     nextAction: deriveNextAction(established, unresolved, contested, roadblocks, agencies),
@@ -305,12 +342,6 @@ function sourceLine(source: BriefSource) {
 }
 
 /**
- * Our own audit's limitations describe our research, not the service. They belong on the
- * page, where they qualify what we found, but not in a letter to a public office.
- */
-const auditLimitationTitle = 'Independent audit limitations';
-
-/**
  * A packet a person can paste into an email or carry to a counter.
  *
  * Three rules make it sendable. It carries no personal data: where a case detail is
@@ -322,7 +353,7 @@ const auditLimitationTitle = 'Independent audit limitations';
  */
 export function buildClarificationPacket(brief: Brief): string {
   const documentary = brief.sources.filter((source) => source.type !== 'citizen_evidence');
-  const conditions = brief.roadblocks.filter((roadblock) => roadblock.title !== auditLimitationTitle).slice(0, 6);
+  const conditions = brief.roadblocks.slice(0, 6);
   const lines: string[] = [];
 
   lines.push(`Subject: Clarification request — ${brief.service.title.toLowerCase()}, ${brief.scenario.label.toLowerCase()}`);

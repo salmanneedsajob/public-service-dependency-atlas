@@ -30,7 +30,8 @@ export default function AtlasHome() {
       <header className="site-header">
         <Link className="wordmark" href="/"><span className="wordmark-accent">BLR</span><span>Public Service Dependency Atlas</span></Link>
         <nav aria-label="Page navigation">
-          <a className="primary-nav-link" href="#directory">Service directory</a>
+          <Link className="primary-nav-link" href="/before-you-apply">Before you apply</Link>
+          <a href="#directory">Service directory</a>
           <Link href="/report">Report</Link>
           <Link href="/benchmark">Benchmark</Link>
           <a href="#method">Contribute</a>
@@ -44,7 +45,8 @@ export default function AtlasHome() {
         <p className="atlas-lede">A birth, a marriage, a death in the family, a move, a new home, a new business — every life event comes with paperwork. The record you need is often blocked by another record, held by another department, that nobody told you about.</p>
         <p className="atlas-thesis">This atlas maps those links for 12 Bengaluru services — what each one depends on, where it can break, and what no public document explains.</p>
         <div className="hero-actions">
-          <a className="primary-link" href="#directory">Explore the directory <span>↓</span></a>
+          <Link className="primary-link" href="/before-you-apply">Know what to do before you apply <span>→</span></Link>
+          <a className="secondary-link" href="#directory">Explore the research <span>↓</span></a>
         </div>
       </section>
 
